@@ -146,7 +146,7 @@ GLOBAL RULES
 FAILURE MODES TO AVOID
 ------------------------------------------------------------
 
-1. BRAND NAME AS THE FIRST WORD: "Edstellar presents a video on skills gap analysis..." wastes the first 150 characters on the brand rather than the keyword and hook. YouTube search shows the first 150 characters. Lead with the topic and the outcome.
+1. BRAND NAME AS THE FIRST WORD: "[Your Company] presents a video on skills gap analysis..." wastes the first 150 characters on the brand rather than the keyword and hook. YouTube search shows the first 150 characters. Lead with the topic and the outcome.
 
 2. MISSING CHAPTERS: A video over 5 minutes without chapter markers has lower average view duration than one with chapters. Viewers who cannot navigate to the section they want abandon the video. Chapters are the highest-leverage addition to any long-form video description.
 

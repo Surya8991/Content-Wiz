@@ -32,7 +32,7 @@ Keep it under 10 words. The subject line is the first credibility signal, not a 
 
 **Block 1: Credential (2 sentences, 25-40 words)**
 Name, title, company, one quantified claim that establishes authority on the specific topic. No adjectives. No superlatives. Verifiable facts only.
-Example: `Ravi Mehta is the Head of Corporate L&D at Edstellar, where the team has designed and delivered skills assessments for over 10,000 employees across 35 countries.`
+Example: `Ravi Mehta is the Head of Corporate L&D at [Your Company], where the team has designed and delivered skills assessments for over 10,000 employees across 35 countries.`
 
 **Block 2: Direct Answer (2-3 sentences, 40-70 words)**
 Answer the query question exactly, in plain language, written to be quoted. Bold the single most quotable sentence. Avoid jargon unless the publication is trade-specific.
@@ -47,8 +47,8 @@ Full name, title, company, URL, phone (optional). One sentence offering to share
 Example:
 ```
 Ravi Mehta
-Head of Corporate L&D, Edstellar
-https://edstellar.com
+Head of Corporate L&D, [Your Company]
+https://yourcompany.com
 [phone optional]
 Happy to promote this article to our audience once it goes live.
 ```
@@ -120,6 +120,6 @@ Never use vague qualifiers like "many companies" or "studies show." Name the stu
 
 ---
 
-## Edstellar and Invensis Learning Adaptation
+## Adaptation for Your Brand
 
 Brand voice rules from the project memory apply directly here. Use no em dashes in any section of the pitch. Write credential blocks and proof blocks in plain, declarative paragraph form (no bullet points in the credential block itself). Back every claim with a statistic sourced from brand data or a named third-party study. Because HARO pitches are attributed to a named expert rather than written in first person on behalf of the brand, the no-first-person-pronoun rule applies at the organizational voice level: the pitch is attributed to a specific named person and written in third person in the credential block, then switches to direct expert voice in the answer block only when quoting that expert directly.

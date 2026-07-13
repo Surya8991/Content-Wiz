@@ -13,7 +13,7 @@ Earn signed byline placements in Tier 1 and Tier 2 L&D, HR, and business publica
 
 **1. Reader-first, always.** The publication's editorial team exists to serve their readers, not to provide brands with backlink placements. Every pitch and every article must start from the question: what does this publication's reader need to know that they do not know yet? Articles that read as self-promotion get rejected. Articles that read as genuine expertise get published and shared.
 
-**2. Target publications your buyers actually read.** Domain authority matters for SEO, but audience relevance matters more for business outcomes. A byline in Chief Learning Officer (read by 280,000+ L&D leaders globally) does more for Edstellar's brand positioning than a high-DA tech blog with no L&D audience. Build the target list from buyer research first, then cross-check domain metrics.
+**2. Target publications your buyers actually read.** Domain authority matters for SEO, but audience relevance matters more for business outcomes. A byline in Chief Learning Officer (read by 280,000+ L&D leaders globally) does more for your brand's positioning than a high-DA tech blog with no L&D audience. Build the target list from buyer research first, then cross-check domain metrics.
 
 **3. The pitch is a sample of the writing quality.** Editors use the pitch to decide whether the author can write. A poorly structured pitch signals a poorly structured article. Treat the pitch email as a piece of writing that demonstrates the same clarity, specificity, and value you promise in the article.
 
@@ -44,7 +44,7 @@ Earn signed byline placements in Tier 1 and Tier 2 L&D, HR, and business publica
 - LinkedIn newsletters and articles published natively (no gating, full LinkedIn distribution)
 - Industry roundup sites that quote experts (can overlap with HARO strategy)
 
-**For Invensis Learning specifically:**
+**For example, for a certification-focused brand:**
 - Project Management.com - PMP and project management community
 - CertificationPoint.com - professional certification audience
 - PMI (Project Management Institute) blog - direct audience alignment
@@ -73,7 +73,7 @@ Provide two or three specific, editorial-quality headline options. Headlines sig
 
 **Block 3: Why this author (2 sentences max)**
 State the specific credential that qualifies the author to write this piece. Quantified experience, named client types, or verifiable outcomes. Not general bio information.
-Example: `Ravi Mehta oversees L&D program design for enterprise clients at Edstellar, having led skills architecture projects for over 60 organizations across 15 industries.`
+Example: `Ravi Mehta oversees L&D program design for enterprise clients at [Your Company], having led skills architecture projects for over 60 organizations across 15 industries.`
 
 **Block 4: Writing sample (1 link)**
 One link to the best published example of the author's writing that is closest in style to the target publication. Not a company blog post that reads as marketing. An analytical, bylined piece published on a credible third-party site.
@@ -158,6 +158,6 @@ Plan 2 pitches per week during the outreach ramp phase (first 8 weeks). At a 15 
 
 ---
 
-## Edstellar and Invensis Learning Adaptation
+## Adaptation for Your Brand
 
-Both brands have genuine first-hand expertise in the L&D space - not vendor opinion disguised as thought leadership. The most credible pitches will draw on specific outcomes from Edstellar's client portfolio and Invensis Learning's certification program data. The brand voice rules apply to article body content: no em dashes, plain paragraph format, stat-backed claims with named sources. The author bio should rotate between the CEO/founder, a named L&D director, or a subject matter expert depending on the topic - not always the same name, as diversifying bylined authors across publications builds a broader authority profile for the brand. Chief Learning Officer and Training Industry are the highest-priority targets for Edstellar; Project Management.com and PMI are the highest-priority targets for Invensis Learning.
+Your brand should have genuine first-hand expertise in its space - not vendor opinion disguised as thought leadership. The most credible pitches will draw on specific outcomes from your own client portfolio and, if you run multiple product lines or sub-brands, each line's own data. For example, a corporate training brand might draw on client program outcomes while its certification sub-brand draws on certification program data. The brand voice rules apply to article body content: no em dashes, plain paragraph format, stat-backed claims with named sources. The author bio should rotate between the CEO/founder, a named department director, or a subject matter expert depending on the topic - not always the same name, as diversifying bylined authors across publications builds a broader authority profile for the brand. Prioritize the highest-priority publication targets separately for each product line or sub-brand your company runs.

@@ -41,7 +41,7 @@ Pillar Page (for spoke articles): [URL of the pillar this article supports - req
 Spoke Articles to Link To (for pillar pages): [List URLs or topic placeholders - required for Type A]
 Target Audience Role: [e.g., L&D Manager, HR Director, Training Coordinator]
 Reference URL (optional): [existing content to repurpose or expand]
-First-Party Data to Include: [any Edstellar/Invensis client stats, program outcomes, or internal data - leave blank if none]
+First-Party Data to Include: [any of your brand's own client stats, program outcomes, or internal data - leave blank if none]
 CTA Destination URL: [URL the conclusion links to]
 Word Count Target: [leave blank to use type default]
 
@@ -79,7 +79,7 @@ Example: "Skills gap analysis: A skills gap analysis identifies the difference b
 
 EEAT AUTHOR BLOCK (required on all articles):
 At the end of the article, after the FAQ section, include an author attribution block:
-- Author name and title (or "Edstellar L&D Team" if no named author)
+- Author name and title (or "[Your Company] L&D Team" if no named author)
 - One sentence of relevant credential for this specific topic
 - Brand URL
 This signals Experience, Expertise, Authoritativeness, and Trustworthiness (EEAT) to both Google and AI retrieval systems. Pages without author attribution are deprioritized in 2026 search and AI citation.

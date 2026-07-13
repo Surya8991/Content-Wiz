@@ -23,7 +23,7 @@ TARGET PUBLICATION TIERS (L&D AND HR SPACE)
 Refer to strategy-guest-articles.md for the full publication list.
 
 TIER 1 (highest reach, most competitive):
-- Chief Learning Officer Magazine (CLO Media) - 280,000+ L&D and talent leaders. Highest priority for Edstellar.
+- Chief Learning Officer Magazine (CLO Media) - 280,000+ L&D and talent leaders. Highest priority pitch target.
 - Training Industry Magazine - L&D professionals and learning technology buyers.
 - HR Dive - HR directors and VPs.
 - SHRM HR Magazine - 300,000+ HR professionals globally.
@@ -36,8 +36,8 @@ TIER 2 (strong niche authority, more accessible):
 - eLearning Industry - Learning technology and instructional design community.
 - People Managing People - First-line and mid-level managers.
 
-FOR INVENSIS LEARNING SPECIFICALLY:
-- Project Management.com - PMP and project management community. Highest priority for Invensis.
+FOR EXAMPLE, FOR A CERTIFICATION-FOCUSED BRAND:
+- Project Management.com - PMP and project management community. Highest priority for certification-driven positioning.
 - PMI (Project Management Institute) blog - Direct audience alignment.
 - CertificationPoint.com - Professional certification audience.
 
@@ -84,7 +84,7 @@ Examples of editorial headlines:
   "The Skills Gap Most L&D Teams Create Themselves"
   "What 400 Training Programs Revealed About Why Employees Don't Apply Learning"
 Examples of headlines to avoid:
-  "How Edstellar Helps Organizations Train Better"
+  "How [Your Company] Helps Organizations Train Better"
   "The Importance of Corporate Training in Today's Business Environment"
 
 BLOCK 3: WHY THIS AUTHOR (2 sentences maximum)
@@ -131,7 +131,7 @@ No section should restate a previous section in different words.
 Evidence standard: every major claim needs one supporting item from the evidence hierarchy.
 
 Proof hierarchy for article body:
-  TIER 1: First-party data from brand programs with year ("A 2026 analysis of 40 Edstellar enterprise training programs found that...")
+  TIER 1: First-party data from brand programs with year ("A 2026 analysis of 40 [Your Company] enterprise training programs found that...")
   TIER 2: Named study from a recognized organization with year
   TIER 3: Named expert quote with name, title, and publication
   TIER 4: Specific client scenario with verifiable details

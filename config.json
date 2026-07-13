@@ -1,6 +1,7 @@
 {
+  "_comment": "Generic defaults apply to any brand. Add your own brand under 'brands', keyed by root domain, and pass --url when generating so the CLI can auto-fill the audience/hashtag for that brand. The entries below are working examples, not required defaults, keep, edit, or delete them freely.",
   "defaults": {
-    "audience": "L&Ds, HRs, and Decision makers in the organization",
+    "audience": "professionals in your target market",
     "wordcount": 1000,
     "llm_model": "claude-sonnet-5",
     "llm_max_tokens": 4096

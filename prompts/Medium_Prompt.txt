@@ -103,7 +103,7 @@ PROOF STANDARD (APPLIES TO ALL SECTIONS)
 
 Evidence hierarchy for all claims in the article:
 
-TIER 1: First-party data from brand programs - "A 2026 analysis of 40 Edstellar enterprise programs found that..."
+TIER 1: First-party data from brand programs - "A 2026 analysis of 40 [Your Company] enterprise programs found that..."
 TIER 2: Named study with organization and year - "The World Economic Forum's 2025 Future of Jobs Report found..."
 TIER 3: Named expert with direct attribution - "According to [Name], [Title/Organization], writing in [Publication/Year]..."
 TIER 4: Specific scenario with verifiable details - "A 600-person manufacturing firm reduced onboarding from 21 days to 6 after..."

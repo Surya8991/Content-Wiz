@@ -13,7 +13,7 @@ CORE RULES (APPLY TO BOTH MODES)
 ------------------------------------------------------------
 
 SENDER NAME RULE:
-Send from a person's name, not the brand name. "[Name] from Edstellar" or just "[First Name]" outperforms "Edstellar Newsletter" in open rates across B2B lists. Never send from a no-reply address.
+Send from a person's name, not the brand name. "[Name] from [Your Company]" or just "[First Name]" outperforms "[Your Company] Newsletter" in open rates across B2B lists. Never send from a no-reply address.
 
 4:1 VALUE RATIO:
 For every 4 emails that deliver pure insight or utility, one email may make a direct commercial ask (demo, trial, consultation). Violating this ratio accelerates unsubscribes and trains the audience to ignore CTAs.
@@ -205,6 +205,6 @@ FAILURE MODES TO AVOID
 
 4. TWO OR MORE CTAS: Every additional call to action after the first reduces the probability that the primary action gets taken. One email, one goal.
 
-5. SENDING FROM THE BRAND NAME: Emails from "Edstellar" are perceived as broadcasts. Emails from "Ravi at Edstellar" are perceived as correspondence. The sender name is the highest-leverage open rate variable available.
+5. SENDING FROM THE BRAND NAME: Emails from "[Your Company]" are perceived as broadcasts. Emails from "Ravi at [Your Company]" are perceived as correspondence. The sender name is the highest-leverage open rate variable available.
 
 6. MISSING PROOF IN THE MAIN INSIGHT: A newsletter insight without a named data point is an opinion. B2B audiences are skeptical of unsubstantiated claims. Every insight needs one named stat or one specific client example to earn credibility.

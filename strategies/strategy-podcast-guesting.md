@@ -5,7 +5,7 @@ _Last updated: May 2026_
 
 ## Goal and Metric
 
-Build brand authority and reach qualified corporate training buyers through podcast appearances on shows whose audiences match the Edstellar and Invensis Learning buyer profile. Target: 2 confirmed podcast bookings per month, on shows with 1,000 or more average downloads per episode, within 60 days of launching outreach. Podcast listeners spend 20 to 60 minutes with a guest - in a content landscape of three-second attention spans, this is one of the last formats that delivers sustained, undivided audience attention.
+Build brand authority and reach qualified buyers (for example, corporate training buyers, if that is your market) through podcast appearances on shows whose audiences match your brand's buyer profile. Target: 2 confirmed podcast bookings per month, on shows with 1,000 or more average downloads per episode, within 60 days of launching outreach. Podcast listeners spend 20 to 60 minutes with a guest - in a content landscape of three-second attention spans, this is one of the last formats that delivers sustained, undivided audience attention.
 
 ---
 
@@ -25,7 +25,7 @@ Build brand authority and reach qualified corporate training buyers through podc
 
 ## Target Podcast List (L&D, HR, and Professional Development)
 
-**Tier 1 (highest listener quality for Edstellar and Invensis Learning):**
+**Tier 1 (highest listener quality for your brand):**
 
 - **The Learning and Development Podcast** (David James) - L&D strategy, ROI, business alignment. Guest-friendly format, strong practitioner audience.
 - **Chief Learning Officer Magazine Podcast** - Leadership and talent development focus. 280,000+ L&D professional readership crossover.
@@ -39,7 +39,7 @@ Build brand authority and reach qualified corporate training buyers through podc
 **Tier 2 (adjacent audiences with training-buyer overlap):**
 
 - **The Diary of a CEO** (Steven Bartlett) - Broad business audience, high reach. Appropriate for CEO/founder-level appearances on workforce development topics.
-- **The Tim Ferriss Show** - Productivity, skills, learning optimization. Relevant for Invensis Learning's certification angle.
+- **The Tim Ferriss Show** - Productivity, skills, learning optimization. Relevant for a brand with a certification angle.
 - **Masters of Scale** (Reid Hoffman) - Scaling business and teams. Relevant for enterprise training audience.
 - **HBR IdeaCast** - Management and leadership focus. Harvard Business Review audience of senior decision-makers.
 - **The Knowledge Project** (Shane Parrish) - Mental models, learning, decision-making. High trust, intellectual audience.
@@ -66,7 +66,7 @@ Example: `Episode angle: "From Completion to Behavior Change: The 3-Step Measure
 
 **Block 4: The credential (2 sentences)**
 State the specific reason this guest can credibly speak to this topic. A quantified credential, not a general bio.
-Example: `Ravi Mehta oversees L&D program design at Edstellar, where the team has run skills measurement programs for over 60 enterprise organizations. He has direct data on what behavior metrics move budget decisions and what does not.`
+Example: `Ravi Mehta oversees L&D program design at [Your Company], where the team has run skills measurement programs for over 60 enterprise organizations. He has direct data on what behavior metrics move budget decisions and what does not.`
 
 **Sign-off:** Name, title, website, one link to a writing sample or previous podcast appearance.
 
@@ -92,14 +92,14 @@ The quality of a podcast appearance is determined more by preparation than by sp
 
 - State the primary takeaway framework early (within the first 10 minutes) and return to it at least twice more using different language.
 - Use named frameworks and models. "The Completion-to-Behavior Gap" is more memorable than "the problem with measuring training." Named concepts travel.
-- When citing data, give the source, the year, and the implication. "A 2026 Edstellar program analysis found that organizations measuring behavior change rather than completion approved 40% larger L&D budgets the following year" is citable. "Research shows training ROI matters" is not.
+- When citing data, give the source, the year, and the implication. "A 2026 [Your Company] program analysis found that organizations measuring behavior change rather than completion approved 40% larger L&D budgets the following year" is citable. "Research shows training ROI matters" is not.
 - Invite the host's experience and perspective. The best podcast conversations feel like peer dialogue, not keynote presentations.
 
 **After the recording:**
 
 - Send a thank-you message within 24 hours. Include 2 to 3 specific observations from the conversation that stood out.
 - Provide any promised resources (links, frameworks, study references) in the follow-up message.
-- Ask if the host would be open to a guest recommendation - if there is someone in the Edstellar network who would be a great fit for the show.
+- Ask if the host would be open to a guest recommendation - if there is someone in your brand's network who would be a great fit for the show.
 
 ---
 
@@ -144,6 +144,6 @@ The episode itself is one of eleven content pieces it should generate:
 
 ---
 
-## Edstellar and Invensis Learning Adaptation
+## Adapting This to Your Brand
 
-The brand's strongest podcast angle is operational specificity - not general thoughts on L&D trends, but specific frameworks backed by data from real program outcomes. The working titles to lead pitches with should always include a number and a named outcome: "The 3 Metrics That Predict Whether Corporate Training Will Change Behavior," "Why 70% of Skills Assessments Produce No Development Action (And How to Fix the Process)," or "How to Get Training Budget Approved When ROI Is Hard to Prove." Invensis Learning has a specific angle for certification-focused shows: "How Corporate-Sponsored Certification Programs Changed Career Outcomes for Mid-Level Managers" with data from cohort outcomes. Brand voice rules apply to any frameworks or statistics cited on air: specific, sourced, no vague qualifiers. Named data points from the brand's own programs are the strongest credibility signals available and should be prepared and approved before every recording.
+The brand's strongest podcast angle is operational specificity - not general thoughts on industry trends, but specific frameworks backed by data from real program outcomes. The working titles to lead pitches with should always include a number and a named outcome: for a corporate training brand, examples might be "The 3 Metrics That Predict Whether Corporate Training Will Change Behavior," "Why 70% of Skills Assessments Produce No Development Action (And How to Fix the Process)," or "How to Get Training Budget Approved When ROI Is Hard to Prove." If your brand serves certification-focused shows, it can lead with its own angle, for example: "How Corporate-Sponsored Certification Programs Changed Career Outcomes for Mid-Level Managers," backed by data from cohort outcomes. Brand voice rules apply to any frameworks or statistics cited on air: specific, sourced, no vague qualifiers. Named data points from your brand's own programs are the strongest credibility signals available and should be prepared and approved before every recording.

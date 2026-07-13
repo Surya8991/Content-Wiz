@@ -7,7 +7,7 @@ from datetime import datetime
 
 import templates
 import textprompts
-from config import DEFAULTS
+from config import DEFAULTS, brand_for_url
 
 # Prompts can contain characters outside the Windows console's legacy code page.
 # Force UTF-8 so printing never crashes with UnicodeEncodeError.
@@ -123,6 +123,19 @@ SUBFOLDER_MAP = {
 def subfolder_for(key):
     return SUBFOLDER_MAP.get(key, "Misc")
 
+
+def resolve_audience(explicit_audience, url):
+    """Pick the effective audience: an explicit --audience wins, otherwise a
+    brand configured for `url` in config.json's `brands` map, otherwise the
+    generic DEFAULTS["audience"] fallback."""
+    if explicit_audience:
+        return explicit_audience
+    brand = brand_for_url(url) if url else None
+    if brand and brand.get("audience"):
+        return brand["audience"]
+    return DEFAULT_AUDIENCE
+
+
 DEFAULT_AUDIENCE  = DEFAULTS["audience"]
 DEFAULT_WORDCOUNT = DEFAULTS["wordcount"]
 AVAILABLE_PLATFORMS = ", ".join(
@@ -213,11 +226,12 @@ def parse_bulk_row(row, i):
     topic    = row.get("topic",    "").strip()
     if not platform or not topic:
         return None, f"Row {i}: skipped - missing platform or topic"
+    url = row.get("url", "").strip() or None
     return {
         "platform":        platform,
         "topic":           topic,
         "wordcount":       int(row.get("wordcount", DEFAULT_WORDCOUNT) or DEFAULT_WORDCOUNT),
-        "audience":        row.get("audience",        "").strip() or DEFAULT_AUDIENCE,
+        "audience":        resolve_audience(row.get("audience", "").strip() or None, url),
         "title":           row.get("title",           "").strip() or None,
         "platform_target": row.get("platform_target", "").strip() or None,
         "cta":             row.get("cta",             "").strip() or None,
@@ -228,6 +242,7 @@ def parse_bulk_row(row, i):
 
 def run_single(args):
     output_dir = args.output_dir or default_output_dir()
+    effective_audience = resolve_audience(args.audience, args.url)
 
     kind = None
     key = None
@@ -254,7 +269,7 @@ def run_single(args):
 
     if kind == "text":
         prompt = textprompts.render(
-            normalized, topic=args.topic, audience=args.audience,
+            normalized, topic=args.topic, audience=effective_audience,
             wordcount=args.wordcount, cta=args.cta, url=args.url,
         )
         folder = textprompts.subfolder_for(normalized)
@@ -263,7 +278,7 @@ def run_single(args):
         prompt = build_prompt(
             key,
             topic=args.topic,
-            audience=args.audience,
+            audience=effective_audience,
             wordcount=args.wordcount,
             platform_label=normalized,
             platform_target=effective_platform_target,
@@ -429,15 +444,17 @@ def run_bulk(csv_path, output_dir_arg=None, global_cta=None):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Edstellar Content Distribution Prompt Generator",
+        description="Multi-Brand Content Distribution Prompt Generator",
         formatter_class=argparse.RawTextHelpFormatter,
     )
     parser.add_argument("--platform",        help="Target platform. Run without args to see full list.")
     parser.add_argument("--topic",           help="Blog/post topic or niche")
     parser.add_argument("--wordcount",       type=int, default=DEFAULT_WORDCOUNT,
                         help=f"Word count target (default: {DEFAULT_WORDCOUNT})")
-    parser.add_argument("--audience",        default=DEFAULT_AUDIENCE,
-                        help="Target audience description")
+    parser.add_argument("--audience",        default=None,
+                        help="Target audience description. If omitted, resolved from "
+                             "--url via config.json's brands map, else falls back to "
+                             f"'{DEFAULT_AUDIENCE}'")
     parser.add_argument("--title",           default=None,
                         help="(Medium Step 2) Article title chosen from Step 1")
     parser.add_argument("--platform-target", default=None, dest="platform_target",
@@ -453,7 +470,9 @@ def main():
     parser.add_argument("--bulk",            default=None, metavar="CSV_FILE",
                         help="CSV file for bulk generation. Outputs a ZIP + log CSV.")
     parser.add_argument("--url",             default=None,
-                        help="Brand URL for auto-detection (passed through to text prompts)")
+                        help="Brand URL. Matched against config.json's brands map to "
+                             "auto-fill --audience when --audience is omitted; also "
+                             "passed through to text prompts for brand auto-detection.")
     parser.add_argument("--list",            action="store_true", dest="list_platforms",
                         help="List all platforms/aliases and exit")
     parser.add_argument("--dry-run",         action="store_true", dest="dry_run",

@@ -11,11 +11,13 @@ Examples:
   https://www.invensislearning.com/xyz   -> invensislearning.com
   https://www.unknownbrand.com/xyz       -> unknownbrand.com
 
-STEP 2 - MATCH TO KNOWN BRANDS
+STEP 2 - CHECK CONFIGURED BRANDS (config.json)
+Check the domain against the "brands" map in config.json. This tool is multi-brand: config.json ships with Edstellar and Invensis Learning as two working example entries, shown below, so the detection format is clear. Any user of this tool can add their own brand to config.json following the same format (name, description, audience, hashtag) and it will be auto-detected the same way, no code changes needed.
+
 edstellar.com         -> Edstellar | Global corporate training company that partners with enterprises to deliver high-impact training solutions for modern teams | Audience: L&Ds, HRs, and decision-makers in the organization | Hashtag: #Edstellar
 invensislearning.com  -> Invensis Learning | Global professional training and certification provider empowering individuals and organizations with in-demand skills across project management, IT service management, agile, cybersecurity, and more | Audience: L&Ds, HRs, and decision-makers | Hashtag: #InvensisLearning
 
-STEP 3 - IF DOMAIN IS NOT IN THE KNOWN LIST
+STEP 3 - IF DOMAIN IS NOT IN CONFIG.JSON
 Research the brand using the domain/website to determine:
   - Brand name
   - One-line brand description (what they do and who they serve)
@@ -32,8 +34,8 @@ Ask the user:
 
 STEP 5 - IF NO URL IS PROVIDED
 Check if the user has mentioned a brand name in their message.
-  - If yes and it matches a known brand, use that brand's details.
-  - If yes but unknown, research the brand online.
+  - If yes and it matches a brand in config.json, use that brand's details.
+  - If yes but not in config.json, research the brand online.
   - If no brand is mentioned at all, ask the user for brand details before proceeding.
 
 ============================================================
@@ -41,7 +43,7 @@ PRIORITY ORDER
 ============================================================
 
 1. URL provided          -> Extract domain -> Match or research
-2. Brand name mentioned  -> Match known list or research
+2. Brand name mentioned  -> Match config.json or research
 3. Neither provided      -> Ask user
 
 ============================================================

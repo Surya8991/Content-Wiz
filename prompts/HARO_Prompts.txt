@@ -42,7 +42,7 @@ Rules:
 BLOCK 2: CREDENTIAL BLOCK (25-40 words)
 Open with the expert's name, title, and company. In the same block, state the one specific quantified credential that makes this source credible for this exact query. No general bio. No company description.
 - Format: "[Name] is [Title] at [Brand], where [specific quantified credential relevant to query]."
-- Example: "Ravi Mehta is L&D Director at Edstellar, where he has overseen skills measurement programs for more than 60 enterprise organizations across manufacturing, financial services, and healthcare."
+- Example: "Ravi Mehta is L&D Director at [Your Company], where he has overseen skills measurement programs for more than 60 enterprise organizations across manufacturing, financial services, and healthcare."
 - Never write: "a leading company" / "a pioneer in" / "passionate about"
 
 BLOCK 3: DIRECT ANSWER (40-70 words)
@@ -65,7 +65,7 @@ Hook patterns for opening Block 3 (choose the most accurate for the query):
 BLOCK 4: PROOF BLOCK (30-60 words)
 Back the direct answer with one specific data point or case reference. Do not repeat the stat already used in Block 3.
 Proof hierarchy (use the highest tier available):
-  TIER 1: First-party data from brand programs ("In a 2026 Edstellar analysis of 40 enterprise training programs...")
+  TIER 1: First-party data from brand programs ("In a 2026 [Your Company] analysis of 40 enterprise training programs...")
   TIER 2: Named third-party study with year ("A 2025 McKinsey study found..." / "World Economic Forum's 2025 Future of Jobs Report states...")
   TIER 3: Named industry report with year
   TIER 4: Verifiable scenario with named outcome ("A 600-person manufacturing client reduced onboarding from 21 days to 6 after...")

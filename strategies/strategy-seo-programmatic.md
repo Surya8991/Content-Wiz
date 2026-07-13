@@ -74,7 +74,7 @@ Invalid programmatic structures: Any template where removing the variable word a
 
 **Internal links:** Every pillar page links to 3 to 5 spoke pages within the cluster and 2 to 3 pages on adjacent clusters. Spoke pages link back to the pillar and to 2 to 3 other spokes.
 
-**Author block:** Every article must display a named, linkable author with visible credentials. A byline from the Head of Learning Design at Edstellar outranks an anonymous "editorial team" page in post-HCU Google rankings. Include a 2-sentence author bio and link to a full author profile.
+**Author block:** Every article must display a named, linkable author with visible credentials. A byline from a named subject-matter lead at your company (for example, a Head of Learning Design) outranks an anonymous "editorial team" page in post-HCU Google rankings. Include a 2-sentence author bio and link to a full author profile.
 
 **Closing CTA:** End with one clear next step. For research-stage content: download a related resource. For decision-stage content: a free consultation, demo, or assessment tool. The CTA should be logically connected to the article's topic.
 
@@ -82,7 +82,7 @@ Invalid programmatic structures: Any template where removing the variable word a
 
 ## Hook Patterns for SEO-Optimized Content That Also Gets Read
 
-1. **Original data in the first paragraph:** "Of the 1,200 L&D programs Edstellar tracked in 2026, only 23% tied training outcomes to a measurable business metric." Original stats rank faster (fewer pages compete) and earn more links.
+1. **Original data in the first paragraph:** "Of the 1,200 L&D programs [Your Company] tracked in 2026, only 23% tied training outcomes to a measurable business metric." Original stats rank faster (fewer pages compete) and earn more links.
 
 2. **The gap statement:** "Most organizations can tell you how many employees completed a training program. Fewer than one in four can tell you what changed as a result." Names the problem the reader is experiencing before naming the solution.
 
@@ -156,6 +156,6 @@ Before launching any programmatic content batch, each template page must satisfy
 
 ---
 
-## Edstellar and Invensis Learning Adaptation
+## Adapting This to Your Brand
 
-Both brands operate in a YMYL-adjacent space (corporate training decisions affect career and business outcomes), which means EEAT signals carry higher weight than for consumer lifestyle content. Prioritize named expert authors with real credentials on all pillar and decision-stage content. The brand's first-party data (course completion rates, skills assessment outcomes, certification pass rates by sector) is the single most valuable SEO asset because no competitor can reproduce it. Every piece of original data the brand publishes should be structured as a citable resource, not buried inside a general article. Brand voice rules from memory apply directly: no em dashes, plain paragraph format, stat-backed claims with named sources. Because the brand does not use first-person organizational voice, write content in second person ("your organization," "your L&D team") or in declarative authority statements, not in "we" or "I" brand voice.
+If your brand operates in a YMYL-adjacent space (for example, corporate training decisions that affect career and business outcomes), EEAT signals carry higher weight than for consumer lifestyle content. Prioritize named expert authors with real credentials on all pillar and decision-stage content. Your brand's first-party data (completion rates, assessment outcomes, pass rates by sector, or the equivalent for your industry) is the single most valuable SEO asset because no competitor can reproduce it. Every piece of original data your brand publishes should be structured as a citable resource, not buried inside a general article. Brand voice rules from your own guidelines apply directly: no em dashes, plain paragraph format, stat-backed claims with named sources. Whether to use first-person organizational voice is a brand-voice decision to set deliberately; if your brand avoids it, write content in second person ("your organization," "your team") or in declarative authority statements, not in "we" or "I" brand voice.

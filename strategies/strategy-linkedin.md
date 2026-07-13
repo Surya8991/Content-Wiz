@@ -74,7 +74,7 @@ On LinkedIn, credibility comes from specificity rather than authority:
 
 ---
 
-## Content Pillars for Edstellar and Invensis Learning
+## Content Pillars for Your Brand
 
 Three post types to rotate across the week:
 
@@ -130,6 +130,6 @@ Challenge a widely held belief in the L&D or corporate training space with evide
 
 ---
 
-## Edstellar and Invensis Learning Adaptation
+## Adapting This to Your Brand
 
-Brand posts follow the plain paragraph format without em dashes. The single-line writing format native to LinkedIn is consistent with the brand's plain text rule, since LinkedIn posts are already structured as short, punchy blocks rather than flowing paragraphs. For stat-backed claims, prioritize data from Edstellar's own client outcomes and Invensis Learning's program metrics over generic industry statistics, as first-party data differentiates the brand from competitors posting the same Gartner and Deloitte statistics. Because the brand does not use first-person pronouns at the organizational voice level, frame posts in second person ("your team," "your organization") or as declarative observations rather than personal narratives. When a named author is being positioned (a learning director, a course facilitator), personal-voice posts under their name are appropriate and often outperform brand-voice posts because they feel more human.
+Brand posts follow the plain paragraph format without em dashes. The single-line writing format native to LinkedIn is consistent with a plain text voice rule, since LinkedIn posts are already structured as short, punchy blocks rather than flowing paragraphs. For stat-backed claims, prioritize data from your brand's own client outcomes and program metrics over generic industry statistics, as first-party data differentiates the brand from competitors posting the same Gartner and Deloitte statistics. Whether the brand uses first-person pronouns at the organizational voice level is a brand-voice decision to make deliberately, not assume: if the house style avoids "we," frame posts in second person ("your team," "your organization") or as declarative observations rather than personal narratives. When a named author is being positioned (a learning director, a course facilitator), personal-voice posts under their name are appropriate and often outperform brand-voice posts because they feel more human.

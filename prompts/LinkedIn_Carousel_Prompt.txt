@@ -85,7 +85,7 @@ SECOND-TO-LAST SLIDE: THE SYNTHESIS
 Before the CTA, include one slide that pulls the carousel together:
   - What does following this framework / believing these facts / completing these steps actually produce?
   - State the result as a specific outcome, not a vague benefit.
-  - Example: "Organizations that complete these 5 steps reduce onboarding time by an average of 60%, according to 2026 Edstellar program data."
+  - Example: "Organizations that complete these 5 steps reduce onboarding time by an average of 60%, according to 2026 [Your Company] program data."
 
 FINAL SLIDE: CTA
 One ask only. Match to the carousel topic.

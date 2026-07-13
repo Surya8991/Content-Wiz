@@ -1,13 +1,24 @@
-# Edstellar Content Creation - Master Index
+# Content Wiz - Multi-Brand Content Distribution Prompt Generator
+
+Content Wiz assembles fully-specified, channel-ready content prompts for any brand.
+It is not tied to one company: `config.json` holds a `brands` map keyed by domain,
+where each entry defines a brand's name, description, audience, and hashtag. Pass
+`--url yourdomain.com` when generating and the audience auto-fills from the matching
+brand entry; without a matching entry (or without `--url`), it falls back to a
+neutral default audience. `--audience` always overrides both. Edstellar and Invensis
+Learning ship as two working example brands in `config.json` - edit them, delete
+them, or add your own.
 
 ## Directory Structure
 
 ```
-Edstellar Content Creation/
+Content Wiz/
 ├── README.md                         ← This file
 ├── strategies/                       ← Channel strategy documents (one per channel)
 ├── prompts/                          ← AI prompt files (one per content type)
 ├── output/                           ← Generated prompts, auto-routed into per-type subfolders
+│                                        (may contain real generated content for whichever
+│                                        brand you configured)
 ├── data/                             ← Persistent pitch-ready data bank (HARO_DataBank.csv)
 ├── bulk_template.csv
 ├── config.json                       ← Brands + defaults (edit here, not in code)
@@ -71,7 +82,9 @@ One document per channel. Each doc contains: goal and metric, core principles, r
 
 ## Prompt Files (`prompts/`)
 
-All prompts reference `_Brand_Detection_Rules.txt` for brand auto-detection. Known brands: `edstellar.com` and `invensislearning.com`.
+All prompts reference `_Brand_Detection_Rules.txt` for brand auto-detection. Brands are
+defined in `config.json`'s `brands` map (keyed by domain); `edstellar.com` and
+`invensislearning.com` ship as examples, and you can add your own brand's domain there.
 
 ### Core Content Prompts (upgraded with strategy frameworks)
 
@@ -269,7 +282,11 @@ All content produced in this system follows these rules (defined in [prompts/_Br
 
 ---
 
-## Known Brands
+## Example Brands (`config.json`)
+
+These ship as working examples in `config.json`'s `brands` map. Edit their fields,
+delete them, or add a new domain entry with your own brand's name, description,
+audience, and hashtag.
 
 | Domain | Brand | Description |
 |--------|-------|-------------|

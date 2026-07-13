@@ -91,7 +91,7 @@ Rules for content tweets:
 SECOND-TO-LAST TWEET: THE SYNTHESIS
 Bring the thread together in one tweet.
 - What does following this process or believing these facts produce as an outcome?
-- State it as a specific, named result: not "improved training outcomes" but "Organizations that do this approved 40% larger L&D budgets the following year. (Edstellar, 2026)"
+- State it as a specific, named result: not "improved training outcomes" but "Organizations that do this approved 40% larger L&D budgets the following year. ([Your Company], 2026)"
 
 FINAL TWEET: CTA
 One link. One ask.

@@ -1,11 +1,16 @@
-# agents.md - Content Wiz (Edstellar Content Creation)
+# agents.md - Content Wiz
 
 ## Project overview
-A B2B content-distribution **prompt generator** for Edstellar (and Invensis Learning).
-By default it assembles fully-specified prompts and writes them to `output/` for a
-human to paste into an AI tool. With `--generate` it can also call the Anthropic API
-and write finished content directly. Prompts encode channel strategy, brand voice,
-and formatting rules so output is consistent.
+A generic, multi-brand B2B content-distribution **prompt generator**. It is not
+built for one company: `config.json`'s `brands` map (keyed by domain) holds each
+brand's name, description, audience, and hashtag, and `--url yourdomain.com` at
+generation time auto-fills the audience from the matching entry. Edstellar and
+Invensis Learning ship as example brand configs in `config.json`, not the tool's
+identity - add, edit, or delete brand entries freely. By default the tool assembles
+fully-specified prompts and writes them to `output/` for a human to paste into an AI
+tool. With `--generate` it can also call the Anthropic API and write finished content
+directly. Prompts encode channel strategy, brand voice, and formatting rules so
+output is consistent.
 
 Two prompt layers, one unified CLI:
 1. **Rich templates** - `templates/`: 27 parameterized prompt builders, split by

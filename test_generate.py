@@ -162,6 +162,33 @@ class ConfigTests(unittest.TestCase):
         import config
         self.assertIsNone(config.brand_for_url("https://example.com"))
 
+    def test_default_audience_is_brand_neutral(self):
+        # The generic fallback must not assume any specific brand's audience
+        # (e.g. the L&D/HR phrasing that config.json's example brands use),
+        # so the tool behaves sanely with zero brands configured.
+        self.assertNotIn("L&Ds", generate.DEFAULT_AUDIENCE)
+        self.assertNotIn("HRs", generate.DEFAULT_AUDIENCE)
+
+
+class AudienceResolutionTests(unittest.TestCase):
+    def test_explicit_audience_wins_over_url(self):
+        result = generate.resolve_audience("custom audience", "https://www.edstellar.com")
+        self.assertEqual(result, "custom audience")
+
+    def test_url_resolves_configured_brand_audience(self):
+        import config
+        expected = config.BRANDS["edstellar.com"]["audience"]
+        result = generate.resolve_audience(None, "https://www.edstellar.com/blog/x")
+        self.assertEqual(result, expected)
+
+    def test_unconfigured_url_falls_back_to_default(self):
+        result = generate.resolve_audience(None, "https://example.com")
+        self.assertEqual(result, generate.DEFAULT_AUDIENCE)
+
+    def test_no_audience_no_url_falls_back_to_default(self):
+        result = generate.resolve_audience(None, None)
+        self.assertEqual(result, generate.DEFAULT_AUDIENCE)
+
 
 class LlmTests(unittest.TestCase):
     def test_missing_key_raises_runtime_error(self):

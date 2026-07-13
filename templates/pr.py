@@ -444,7 +444,7 @@ The single most credible, specific, and counterintuitive claim the spokesperson 
 BLOCK 2 - CREDENTIAL (1 sentence, 15 to 25 words):
 The spokesperson's relevant credential - stated as a result, not a role.
 - Format: "[Name], [title] at [company], [specific relevant credential or outcome]"
-- Example: "Rajiv Sharma, L&D Director at Edstellar, has designed training programs for over 200 enterprise clients across 15 industries."
+- Example: "Rajiv Sharma, L&D Director at [Company], has designed training programs for over 200 enterprise clients across 15 industries."
 
 BLOCK 3 - INSIGHT (2 to 3 sentences, 40 to 70 words):
 The substantive answer to the journalist's implied question.

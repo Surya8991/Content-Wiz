@@ -133,7 +133,7 @@ Segmented sends consistently produce 3 to 5x higher click rates than unsegmented
 
 ## Failure Modes
 
-1. **Sending from a generic company address.** Emails from "team@edstellar.com" or "noreply@" generate lower open rates than emails from a named person. Readers open emails from people they trust, not from company aliases.
+1. **Sending from a generic company address.** Emails from "team@yourcompany.com" or "noreply@" generate lower open rates than emails from a named person. Readers open emails from people they trust, not from company aliases.
 
 2. **No consistent format.** Readers open newsletters partly from habit. When the structure changes every issue - sometimes long, sometimes short, sometimes a listicle, sometimes a case study - readers cannot build the reading habit that drives consistent open rates.
 
@@ -145,6 +145,6 @@ Segmented sends consistently produce 3 to 5x higher click rates than unsegmented
 
 ---
 
-## Edstellar and Invensis Learning Adaptation
+## Adaptation for Your Brand
 
-The newsletter is sent from a named person - a learning director, a program lead, or a recognized expert from the brand - not from the company name. This applies the brand's no-first-person-organizational-voice rule correctly: the brand does not use "I," but a named individual author can. Plain paragraph format applies throughout; no em dashes. Every issue that cites performance data should draw on the brand's own program outcomes or a named external study. The weekly cadence is the recommended starting point; the nurture sequence should be built in parallel and automated before the weekly newsletter launches to ensure new subscribers receive a quality onboarding experience from day one.
+The newsletter is sent from a named person - a department director, a program lead, or a recognized expert from your brand - not from the company name. This applies the brand's no-first-person-organizational-voice rule correctly: the brand does not use "I," but a named individual author can. Plain paragraph format applies throughout; no em dashes. Every issue that cites performance data should draw on your brand's own program outcomes or a named external study. The weekly cadence is the recommended starting point; the nurture sequence should be built in parallel and automated before the weekly newsletter launches to ensure new subscribers receive a quality onboarding experience from day one.

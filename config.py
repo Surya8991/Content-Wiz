@@ -10,7 +10,7 @@ _CONFIG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.
 
 _FALLBACK = {
     "defaults": {
-        "audience": "L&Ds, HRs, and Decision makers in the organization",
+        "audience": "professionals in your target market",
         "wordcount": 1000,
         "llm_model": "claude-sonnet-5",
         "llm_max_tokens": 4096,
