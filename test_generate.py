@@ -418,6 +418,174 @@ class LlmResponseParsingTests(unittest.TestCase):
                 llm._generate_openai("prompt", "key", "model", 100)
 
 
+def _single_run_args(**overrides):
+    """Minimal argparse-shaped Namespace for generate.run_single, with sane
+    defaults for every attribute run_single touches."""
+    import types as _types
+    base = dict(
+        platform="blog", topic="leadership training", wordcount=generate.DEFAULT_WORDCOUNT,
+        audience=None, title=None, platform_target=None, cta=None, output_dir=None,
+        repurpose=None, from_platform="blog", url=None, dry_run=True, generate=False,
+        provider=None, model=None,
+    )
+    base.update(overrides)
+    return _types.SimpleNamespace(**base)
+
+
+class ProviderValidationTests(unittest.TestCase):
+    """E1: --generate --provider <bogus> must fail loudly, even under --dry-run,
+    instead of silently falling through to a prompt-only print."""
+
+    def test_bad_provider_exits_cleanly_under_dry_run(self):
+        import contextlib
+        import io
+
+        args = _single_run_args(generate=True, provider="not-a-real-provider", dry_run=True)
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            with self.assertRaises(SystemExit) as ctx:
+                generate.run_single(args)
+        self.assertEqual(ctx.exception.code, 1)
+        self.assertIn("Unknown LLM provider", buf.getvalue())
+
+    def test_bad_provider_rejected_before_prompt_is_printed(self):
+        import contextlib
+        import io
+
+        args = _single_run_args(generate=True, provider="not-a-real-provider", dry_run=True)
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            with self.assertRaises(SystemExit):
+                generate.run_single(args)
+        # Validation happens before the prompt is assembled/printed.
+        self.assertNotIn("leadership training", buf.getvalue())
+
+    def test_known_provider_passes_validation(self):
+        # Should not raise/exit - falls through to the normal dry-run prompt print.
+        import contextlib
+        import io
+
+        args = _single_run_args(generate=True, provider="anthropic", dry_run=True)
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            generate.run_single(args)
+        self.assertIn("[dry-run] Nothing written.", buf.getvalue())
+
+    def test_no_generate_skips_provider_validation(self):
+        # A bogus --provider with no --generate is inert and must not be validated.
+        args = _single_run_args(generate=False, provider="not-a-real-provider", dry_run=True)
+        generate.run_single(args)  # must not raise
+
+
+class BulkDryRunTests(unittest.TestCase):
+    """DI3: --bulk --dry-run must print prompts without writing a zip/log file."""
+
+    def _write_csv(self, tmpdir, rows):
+        import csv as _csv
+        import os as _os
+        path = _os.path.join(tmpdir, "bulk.csv")
+        with open(path, "w", newline="", encoding="utf-8") as f:
+            writer = _csv.DictWriter(f, fieldnames=["platform", "topic", "source_file"])
+            writer.writeheader()
+            writer.writerows(rows)
+        return path
+
+    def test_dry_run_writes_no_files(self):
+        import contextlib
+        import io
+        import os
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            csv_path = self._write_csv(tmpdir, [{"platform": "blog", "topic": "t1", "source_file": ""}])
+            out_dir = os.path.join(tmpdir, "out")
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                generate.run_bulk(csv_path, output_dir_arg=out_dir, dry_run=True)
+            self.assertFalse(os.path.isdir(out_dir), "dry-run must not create the output dir")
+            self.assertIn("[dry-run]", buf.getvalue())
+            self.assertIn("would be packaged", buf.getvalue())
+            self.assertIn("Nothing written", buf.getvalue())
+
+    def test_real_run_writes_zip_and_log(self):
+        import contextlib
+        import io
+        import os
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            csv_path = self._write_csv(tmpdir, [{"platform": "blog", "topic": "t1", "source_file": ""}])
+            out_dir = os.path.join(tmpdir, "out")
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                generate.run_bulk(csv_path, output_dir_arg=out_dir, dry_run=False)
+            files = os.listdir(out_dir)
+            self.assertTrue(any(name.startswith("bulk_") and name.endswith(".zip") for name in files))
+            self.assertTrue(any(name.startswith("log_") and name.endswith(".csv") for name in files))
+
+
+class PathContainmentTests(unittest.TestCase):
+    """S4: --repurpose FILE and bulk CSV source_file must reject paths that
+    resolve outside the project's working-directory tree."""
+
+    def test_repurpose_traversal_is_rejected(self):
+        import contextlib
+        import io
+
+        args = _single_run_args(
+            platform="blog", repurpose="../outside_project_file.txt", dry_run=True,
+        )
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            with self.assertRaises(SystemExit) as ctx:
+                generate.run_single(args)
+        self.assertEqual(ctx.exception.code, 1)
+        self.assertIn("escapes the project directory", buf.getvalue())
+
+    def test_repurpose_relative_path_within_project_is_allowed(self):
+        import contextlib
+        import io
+        import os
+        import tempfile
+
+        fd, path = tempfile.mkstemp(dir=os.getcwd(), suffix=".txt")
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8") as f:
+                f.write("Some source content to repurpose.")
+            rel_path = os.path.relpath(path, os.getcwd())
+            args = _single_run_args(platform="blog", repurpose=rel_path, dry_run=True)
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                generate.run_single(args)
+            self.assertIn("[dry-run] Nothing written.", buf.getvalue())
+        finally:
+            os.remove(path)
+
+    def test_bulk_source_file_traversal_is_rejected(self):
+        import contextlib
+        import csv as _csv
+        import io
+        import os
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            csv_path = os.path.join(tmpdir, "bulk.csv")
+            with open(csv_path, "w", newline="", encoding="utf-8") as f:
+                writer = _csv.DictWriter(f, fieldnames=["platform", "topic", "source_file"])
+                writer.writeheader()
+                writer.writerow({
+                    "platform": "repurpose", "topic": "t1",
+                    "source_file": "../../../../windows/system32/drivers/etc/hosts",
+                })
+            out_dir = os.path.join(tmpdir, "out")
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                generate.run_bulk(csv_path, output_dir_arg=out_dir, dry_run=True)
+            output = buf.getvalue()
+            self.assertIn("source_file escapes the project directory", output)
+            self.assertNotIn("[001]", output)  # row was skipped, not processed
+
+
 class LintContentTests(unittest.TestCase):
     def test_detects_em_dash(self):
         import os

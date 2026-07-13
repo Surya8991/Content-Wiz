@@ -5,6 +5,7 @@ import re
 import sys
 import zipfile
 from datetime import datetime
+from pathlib import Path
 
 import templates
 import textprompts
@@ -206,6 +207,35 @@ def build_prompt(key, topic, audience, wordcount, platform_label, platform_targe
     return fn(**kwargs)
 
 
+def _resolve_contained_path(path, base_dir=None):
+    """Resolve `path` and verify it stays within `base_dir`'s tree (default: CWD).
+
+    Containment boundary is the current working directory - the tool is run from
+    the project root, and both --repurpose files and bulk-CSV source_file entries
+    are expected to live inside it. Returns the resolved Path, or None if `path`
+    escapes that boundary (absolute path elsewhere, ../ traversal, UNC path, etc.).
+    """
+    base = Path(base_dir or os.getcwd()).resolve()
+    resolved = Path(path).resolve()
+    try:
+        resolved.relative_to(base)
+    except ValueError:
+        return None
+    return resolved
+
+
+def _validate_provider_or_exit(provider):
+    """When --generate is passed, validate --provider against llm's known provider
+    list before doing anything else (even under --dry-run), so a bogus provider
+    fails loudly instead of silently falling through to a prompt-only print."""
+    import llm  # deferred: avoids a hard dependency on any provider SDK unless --generate is used
+    try:
+        llm._resolve_provider(provider)
+    except RuntimeError as e:
+        print(f"Error: {e}")
+        sys.exit(1)
+
+
 def inject_cta(prompt, cta):
     if cta:
         return prompt.replace("[INSERT CTA LINK]", cta)
@@ -243,6 +273,9 @@ def parse_bulk_row(row, i):
 
 
 def run_single(args):
+    if args.generate:
+        _validate_provider_or_exit(args.provider)
+
     output_dir = args.output_dir or default_output_dir()
     effective_audience = resolve_audience(args.audience, args.url, (args.platform or "").lower().strip())
 
@@ -251,10 +284,14 @@ def run_single(args):
     source_content = None
 
     if args.repurpose:
-        if not os.path.exists(args.repurpose):
+        resolved_repurpose = _resolve_contained_path(args.repurpose)
+        if resolved_repurpose is None:
+            print(f"Error: --repurpose path escapes the project directory: {args.repurpose}")
+            sys.exit(1)
+        if not resolved_repurpose.exists():
             print(f"Error: repurpose file not found: {args.repurpose}")
             sys.exit(1)
-        with open(args.repurpose, "r", encoding="utf-8") as f:
+        with open(resolved_repurpose, "r", encoding="utf-8") as f:
             source_content = f.read()
         kind, key = "template", "repurpose"
         normalized = "repurpose"
@@ -332,13 +369,14 @@ def _maybe_generate(prompt, out_key, args):
     return content, out_key
 
 
-def run_bulk(csv_path, output_dir_arg=None, global_cta=None):
+def run_bulk(csv_path, output_dir_arg=None, global_cta=None, dry_run=False):
     if not os.path.exists(csv_path):
         print(f"Error: CSV file not found: {csv_path}")
         sys.exit(1)
 
     output_dir = output_dir_arg or default_output_dir()
-    os.makedirs(output_dir, exist_ok=True)
+    if not dry_run:
+        os.makedirs(output_dir, exist_ok=True)
 
     jobs = []
     errors = []
@@ -373,71 +411,96 @@ def run_bulk(csv_path, output_dir_arg=None, global_cta=None):
     log_path      = os.path.join(output_dir, log_filename)
     log_rows      = []
 
-    try:
-        with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
-            for i, job in jobs:
-                platform = job["platform"]
-                kind, key = resolve(platform)
+    def process_job(i, job, zf):
+        """Build the prompt for one row. Writes it into `zf` (real run), or just
+        prints it when `zf` is None (--dry-run: nothing touches disk). Appends
+        to the enclosing `errors`/`log_rows` lists as it goes."""
+        platform = job["platform"]
+        kind, key = resolve(platform)
 
-                if kind is None:
-                    msg = f"unknown platform '{platform}'"
-                    errors.append(f"Row {i}: {msg}")
-                    log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
-                                      "filename": "", "status": f"error: {msg}"})
-                    continue
+        if kind is None:
+            msg = f"unknown platform '{platform}'"
+            errors.append(f"Row {i}: {msg}")
+            log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
+                              "filename": "", "status": f"error: {msg}"})
+            return
 
-                source_content = None
-                if job["source_file"]:
-                    if os.path.exists(job["source_file"]):
-                        with open(job["source_file"], "r", encoding="utf-8") as sf:
-                            source_content = sf.read()
-                    else:
-                        msg = f"source_file not found: {job['source_file']}"
-                        errors.append(f"Row {i}: {msg}")
-                        log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
-                                          "filename": "", "status": f"error: {msg}"})
-                        continue
-
-                try:
-                    cta = job["cta"] or global_cta
-                    if kind == "text":
-                        prompt = textprompts.render(
-                            platform.lower(), topic=job["topic"], audience=job["audience"],
-                            wordcount=job["wordcount"], cta=cta,
-                        )
-                        folder = textprompts.subfolder_for(platform.lower())
-                        file_key = "text"
-                    else:
-                        prompt = build_prompt(
-                            key,
-                            topic=job["topic"],
-                            audience=job["audience"],
-                            wordcount=job["wordcount"],
-                            platform_label=platform.lower(),
-                            platform_target=job["platform_target"],
-                            title=job["title"],
-                            from_platform=job["from_platform"],
-                            source_content=source_content,
-                        )
-                        prompt = inject_cta(prompt, cta)
-                        folder = subfolder_for(key)
-                        file_key = key
-                except Exception as e:
-                    errors.append(f"Row {i}: error building prompt - {e}")
-                    log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
-                                      "filename": "", "status": f"error: {e}"})
-                    continue
-
-                filename = make_filename(platform, file_key, index=i)
-                arcname  = f"{folder}/{filename}"
-                zf.writestr(arcname, prompt)
+        source_content = None
+        if job["source_file"]:
+            resolved_src = _resolve_contained_path(job["source_file"])
+            if resolved_src is None:
+                msg = f"source_file escapes the project directory: {job['source_file']}"
+                errors.append(f"Row {i}: {msg}")
                 log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
-                                  "filename": arcname, "status": "ok"})
-                print(f"  [{i:03d}] {arcname}")
-    finally:
-        # Flush whatever log rows were produced so far, even if the loop above
-        # crashed partway through - a truncated zip should never ship with no log.
-        write_bulk_log(log_rows, log_path)
+                                  "filename": "", "status": f"error: {msg}"})
+                return
+            if resolved_src.exists():
+                with open(resolved_src, "r", encoding="utf-8") as sf:
+                    source_content = sf.read()
+            else:
+                msg = f"source_file not found: {job['source_file']}"
+                errors.append(f"Row {i}: {msg}")
+                log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
+                                  "filename": "", "status": f"error: {msg}"})
+                return
+
+        try:
+            cta = job["cta"] or global_cta
+            if kind == "text":
+                prompt = textprompts.render(
+                    platform.lower(), topic=job["topic"], audience=job["audience"],
+                    wordcount=job["wordcount"], cta=cta,
+                )
+                folder = textprompts.subfolder_for(platform.lower())
+                file_key = "text"
+            else:
+                prompt = build_prompt(
+                    key,
+                    topic=job["topic"],
+                    audience=job["audience"],
+                    wordcount=job["wordcount"],
+                    platform_label=platform.lower(),
+                    platform_target=job["platform_target"],
+                    title=job["title"],
+                    from_platform=job["from_platform"],
+                    source_content=source_content,
+                )
+                prompt = inject_cta(prompt, cta)
+                folder = subfolder_for(key)
+                file_key = key
+        except Exception as e:
+            errors.append(f"Row {i}: error building prompt - {e}")
+            log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
+                              "filename": "", "status": f"error: {e}"})
+            return
+
+        filename = make_filename(platform, file_key, index=i)
+        arcname  = f"{folder}/{filename}"
+
+        if zf is None:
+            print(f"\n[{i:03d}] {arcname}")
+            print("-" * 60)
+            print(prompt)
+            print("-" * 60)
+        else:
+            zf.writestr(arcname, prompt)
+            print(f"  [{i:03d}] {arcname}")
+
+        log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
+                          "filename": arcname, "status": "ok"})
+
+    if dry_run:
+        for i, job in jobs:
+            process_job(i, job, None)
+    else:
+        try:
+            with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
+                for i, job in jobs:
+                    process_job(i, job, zf)
+        finally:
+            # Flush whatever log rows were produced so far, even if the loop above
+            # crashed partway through - a truncated zip should never ship with no log.
+            write_bulk_log(log_rows, log_path)
 
     if errors:
         print("\nIssues:")
@@ -445,8 +508,11 @@ def run_bulk(csv_path, output_dir_arg=None, global_cta=None):
             print(f"  {e}")
 
     ok_count = sum(1 for r in log_rows if r["status"] == "ok")
-    print(f"\n{ok_count} prompt(s) packaged into: {os.path.relpath(zip_path)}")
-    print(f"Run log saved to:           {os.path.relpath(log_path)}")
+    if dry_run:
+        print(f"\n[dry-run] {ok_count} prompt(s) would be packaged. Nothing written.")
+    else:
+        print(f"\n{ok_count} prompt(s) packaged into: {os.path.relpath(zip_path)}")
+        print(f"Run log saved to:           {os.path.relpath(log_path)}")
 
 
 def main():
@@ -503,7 +569,7 @@ def main():
         return
 
     if args.bulk:
-        run_bulk(args.bulk, output_dir_arg=args.output_dir, global_cta=args.cta)
+        run_bulk(args.bulk, output_dir_arg=args.output_dir, global_cta=args.cta, dry_run=args.dry_run)
     elif args.repurpose:
         if not args.platform:
             parser.error("--platform is required with --repurpose (specifies the target platform)")
