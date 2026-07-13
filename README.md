@@ -13,7 +13,7 @@ Edstellar Content Creation/
 ├── config.json                       ← Brands + defaults (edit here, not in code)
 ├── config.py                         ← Loads config.json with a safe fallback
 ├── generate.py                       ← CLI prompt generator (single + bulk + --generate)
-├── templates.py                      ← 25 rich, parameterized prompt builders
+├── templates.py                      ← 27 rich, parameterized prompt builders
 ├── textprompts.py                    ← Loader wiring the flat prompts/*.txt into the CLI
 ├── llm.py                            ← Optional Anthropic generation (--generate)
 ├── lint_content.py                   ← Content-rule linter (no em-dashes, etc.)
@@ -30,14 +30,16 @@ The subfolders it can produce are:
 Blog/                Blog_Suggestions/    Case_Study/          Content_Brief/
 Content_Calendar/    DataBank/            DevTo_Hashnode/      FAQ/
 GEO/                 GMB/                 Guest_Articles/      HARO/
-Instagram/           LinkedIn/            LinkedIn_Carousel/   Medium/
-Meta/                Newsletter/          Pinterest/           Podcast/
-Press_Release/       Quora/               Twitter/             Video_Scripts/
-YouTube/             Misc/  (fallback for any unmapped key)
+Instagram/           LinkedIn/            LinkedIn_Carousel/   LiveJournal/
+Medium/              Meta/                Newsletter/          Pinterest/
+Podcast/             Press_Release/       Quora/               Tumblr/
+Twitter/             Video_Scripts/       YouTube/
+Misc/  (fallback for any unmapped key)
 ```
 
-Anything routed to a subfolder not in this list (e.g. `LiveJournal/`, `Tumblr/`)
-was placed there manually and is not produced by `generate.py`.
+Anything routed to a subfolder not produced via `generate.py --platform livejournal`
+or `--platform tumblr` (e.g. hand-written posts dropped into `LiveJournal/` or
+`Tumblr/` directly) was placed there manually.
 
 > **Note:** `gmb` and `pinterest` are print-only (`PRINT_ONLY`) in single-run mode
 > and write no file; they are still routed into their subfolders inside a bulk ZIP.
@@ -163,6 +165,8 @@ for what `generate.py` can produce.
 | `geo` | `geo`, `aeo`, `ai_search` | GEO |
 | `podcast` | `podcast`, `show_notes` | Podcast |
 | `guest_article` | `guest_article`, `guest`, `byline` | Guest_Articles |
+| `livejournal_post` | `livejournal`, `lj` | LiveJournal |
+| `tumblr_post` | `tumblr` | Tumblr |
 
 > **Alias gotcha:** `--platform linkedin`, `wordpress`, and `blog` all resolve to
 > `blog_writing` (long-form blog). For a LinkedIn *post*, use `--platform linkedin_post`.

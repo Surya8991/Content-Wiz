@@ -78,9 +78,12 @@ PLATFORM_MAP = {
     "guest_article":    "guest_article",
     "guest":            "guest_article",
     "byline":           "guest_article",
+    "livejournal":      "livejournal_post",
+    "lj":               "livejournal_post",
+    "tumblr":           "tumblr_post",
 }
 
-MD_KEYS   = {"blog_writing_md"}
+MD_KEYS   = {"blog_writing_md", "livejournal_post", "tumblr_post"}
 HTML_KEYS = {"medium"}
 
 PRINT_ONLY = {"gmb", "pinterest"}
@@ -112,6 +115,8 @@ SUBFOLDER_MAP = {
     "geo":               "GEO",
     "podcast":           "Podcast",
     "guest_article":     "Guest_Articles",
+    "livejournal_post":  "LiveJournal",
+    "tumblr_post":       "Tumblr",
 }
 
 

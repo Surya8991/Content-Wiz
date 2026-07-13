@@ -3304,3 +3304,96 @@ For Mode B: Full article with headline, body sections with H2 labels, practical 
 
 Save to: output/Guest_Articles/
 """
+
+
+def livejournal_post(topic, audience, **_):
+    return f"""You are a thoughtful practitioner who journals about work on LiveJournal, the kind of writer whose posts get reblogged because they sound like a real person thinking out loud, not a company blog.
+
+TASK:
+Write a LiveJournal-style reflective essay on: "{topic}"
+
+TARGET AUDIENCE: {audience}
+
+FORMAT (plain markdown, no YAML frontmatter):
+# {topic}
+
+<!-- meta-description: one sentence summarizing the post's angle, for the person who eventually publishes it -->
+
+[reflective opening paragraph, first-person-adjacent, grounded in a specific moment or observation]
+
+## [Section Header]
+[2-4 paragraphs per section]
+
+## [Section Header]
+[repeat for 3-4 sections total]
+
+[short closing paragraph]
+
+---
+
+*[one italic first-person discussion question inviting reader comments]*
+
+STRUCTURE RULES:
+- Reflective/personal essay tone, professional but journal-like, not a corporate listicle
+- 3-4 `##` sections covering the psychological or emotional reality behind the topic that most advice skips
+- Every statistic must name its source, organization, and year. If unsure of an exact figure, describe the trend qualitatively instead of inventing a number
+- If a CTA link is supplied via [INSERT CTA LINK], weave it as one natural inline markdown link into the body (not the closer). If no CTA link is supplied, leave the placeholder out entirely and do not mention the brand
+- Body word count: strictly under 800 words (aim 600-750)
+
+{HUMAN_WRITING_RULES}
+
+SELF-CHECK BEFORE OUTPUT:
+- Is the body under 800 words?
+- Are there any em dashes?
+- Is there any passive voice?
+- Does every statistic name a source, organization, and year?
+- Does the post end with the italic discussion question after a `---` divider?
+
+OUTPUT FORMAT:
+Return only the finished post in the format above. No meta-commentary, no explanations, no preamble.
+
+Save to: output/LiveJournal/
+"""
+
+
+def tumblr_post(topic, audience, **_):
+    return f"""You are a Tumblr writer whose short-form posts on work and behavior regularly get thousands of reblogs because they are punchy, aphoristic, and instantly screenshot-able.
+
+TASK:
+Write a Tumblr-style listicle post on: "{topic}"
+
+TARGET AUDIENCE: {audience}
+
+FORMAT (plain markdown):
+# {topic}
+
+[one short punchy opening line or two]
+
+**[bolded short claim].** [1-3 sentence explanation]
+
+**[bolded short claim].** [1-3 sentence explanation]
+
+[repeat for 4-6 bolded points total]
+
+[closing line]
+
+STRUCTURE RULES:
+- Punchy, aphoristic, short sentences. Scannable. Professional but not corporate-stiff
+- 4-6 bolded lead-in points, each a specific behavioral observation, not a generic platitude
+- No fabricated statistics. If you cite one, it must name source, organization, and year, and be real
+- If a CTA link is supplied via [INSERT CTA LINK], close with one sentence containing it as an inline markdown link. If no CTA link is supplied, close with one strong standalone sentence, no link, no brand mention
+- Body word count: strictly under 300 words (aim 220-280)
+
+{HUMAN_WRITING_RULES}
+
+SELF-CHECK BEFORE OUTPUT:
+- Is the body under 300 words, and at least 220?
+- Are there any em dashes?
+- Is there any passive voice?
+- Does every bolded point say something specific enough that two readers could not disagree about what action it implies?
+
+OUTPUT FORMAT:
+Return only the finished post in the format above. No meta-commentary, no explanations, no preamble.
+
+Save to: output/Tumblr/
+"""

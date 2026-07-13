@@ -8,7 +8,7 @@ and write finished content directly. Prompts encode channel strategy, brand voic
 and formatting rules so output is consistent.
 
 Two prompt layers, one unified CLI:
-1. **Rich templates** - `templates.py`: 25 parameterized prompt builders.
+1. **Rich templates** - `templates.py`: 27 parameterized prompt builders.
 2. **Text prompts** - `textprompts.py`: loads the flat `prompts/*.txt` files and
    substitutes tokens. Every prompt file is now reachable from the CLI.
 `generate.resolve(alias)` dispatches to the right layer. `python generate.py --list`
@@ -34,7 +34,10 @@ prints the authoritative alias list.
 - `data/HARO_DataBank.csv` - citable stats. Columns: Claim | Source | URL | Year |
   Context | Quotable Version | Topic Tags. Add a row per new first-party stat.
 - `output/` - generated prompts/content, auto-routed into per-type subfolders.
-  `LiveJournal/` and `Tumblr/` are legacy manual content, not produced by the CLI.
+  `LiveJournal/` (`livejournal_post`, aliases `livejournal`/`lj`) and `Tumblr/`
+  (`tumblr_post`, alias `tumblr`) are CLI-routed like every other platform; any
+  files in those folders not matching the CLI's date-stamped naming were placed
+  there manually.
 
 ## How to run
 ```bash
