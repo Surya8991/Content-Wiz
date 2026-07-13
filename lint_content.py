@@ -19,8 +19,8 @@ EM_DASH = "—"
 # purpose (to detect it) and would otherwise self-flag.
 SELF_REFERENTIAL = {"lint_content.py", "test_generate.py"}
 
-DEFAULT_TARGET_DIRS = ["prompts", "strategies"]
-DEFAULT_TARGET_FILES = ["templates.py", "generate.py", "textprompts.py", "README.md"]
+DEFAULT_TARGET_DIRS = ["prompts", "strategies", "templates"]
+DEFAULT_TARGET_FILES = ["generate.py", "textprompts.py", "README.md"]
 
 SCAN_EXTS = {".txt", ".md", ".py", ".csv"}
 

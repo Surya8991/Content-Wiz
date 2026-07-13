@@ -13,7 +13,10 @@ Edstellar Content Creation/
 ├── config.json                       ← Brands + defaults (edit here, not in code)
 ├── config.py                         ← Loads config.json with a safe fallback
 ├── generate.py                       ← CLI prompt generator (single + bulk + --generate)
-├── templates.py                      ← 27 rich, parameterized prompt builders
+├── templates/                        ← 27 rich, parameterized prompt builders, split by domain
+│   ├── __init__.py                   ← Re-exports every function at package level
+│   ├── _shared.py                    ← HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES
+│   ├── local.py, blog.py, social.py, community.py, video.py, growth.py, pr.py
 ├── textprompts.py                    ← Loader wiring the flat prompts/*.txt into the CLI
 ├── llm.py                            ← Optional Anthropic generation (--generate)
 ├── lint_content.py                   ← Content-rule linter (no em-dashes, etc.)

@@ -21,12 +21,13 @@ dev = ["ruff>=0.6"]
 content-wiz = "generate:main"
 
 [tool.setuptools]
-py-modules = ["generate", "templates", "textprompts", "llm", "config", "lint_content"]
+py-modules = ["generate", "textprompts", "llm", "config", "lint_content"]
+packages = ["templates"]
 
 [tool.ruff]
 line-length = 120
-# templates.py is generated-style long-string content; skip style noise there.
-extend-exclude = ["templates.py", "output"]
+# templates/ is generated-style long-string content; skip style noise there.
+extend-exclude = ["templates", "output"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I"]

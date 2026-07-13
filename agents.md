@@ -8,7 +8,10 @@ and write finished content directly. Prompts encode channel strategy, brand voic
 and formatting rules so output is consistent.
 
 Two prompt layers, one unified CLI:
-1. **Rich templates** - `templates.py`: 27 parameterized prompt builders.
+1. **Rich templates** - `templates/`: 27 parameterized prompt builders, split by
+   domain (`local.py`, `blog.py`, `social.py`, `community.py`, `video.py`,
+   `growth.py`, `pr.py`), re-exported at the package level via `__init__.py` so
+   `templates.<fn>` and `getattr(templates, key)` work exactly as before.
 2. **Text prompts** - `textprompts.py`: loads the flat `prompts/*.txt` files and
    substitutes tokens. Every prompt file is now reachable from the CLI.
 `generate.resolve(alias)` dispatches to the right layer. `python generate.py --list`
@@ -23,8 +26,12 @@ prints the authoritative alias list.
 - `generate.py` - CLI entry point. `PLATFORM_MAP` (alias → template key),
   `SUBFOLDER_MAP` (key → folder), `resolve()`/`build_prompt()`, single + `--bulk` modes.
   Reconfigures stdout to UTF-8 so prompt printing never crashes on Windows consoles.
-- `templates.py` - one function per template key; each returns a prompt string.
-  All take `**_` so extra kwargs never raise. ~3.3k lines, pure string building.
+- `templates/` - one function per template key; each returns a prompt string.
+  All take `**_` so extra kwargs never raise. `_shared.py` holds the three
+  cross-cutting rule blocks (`HUMAN_WRITING_RULES`, `RANKABILITY_RULES`,
+  `RESEARCH_RULES`); every other file imports from it. New template: add the
+  function to whichever domain module fits (or start a new one), then add its
+  name to that module's import line in `__init__.py`.
 - `textprompts.py` - `TEXT_PROMPT_MAP` (alias → file + folder) + `render()`.
 - `config.py` / `config.json` - brands + defaults (audience, wordcount, LLM model).
 - `llm.py` - optional Anthropic call; raises a clean RuntimeError if key/SDK missing.
@@ -73,7 +80,8 @@ CI runs all three (`.github/workflows/ci.yml`).
 - **No em-dashes anywhere** is a hard rule; `lint_content.py` + tests enforce it.
 - **Two alias maps must not collide** - a test asserts `PLATFORM_MAP` and
   `TEXT_PROMPT_MAP` share no aliases. Keep new aliases unique.
-- Adding a rich type: `templates.py` fn + `PLATFORM_MAP` alias + `SUBFOLDER_MAP` entry
-  + README row, same change. Adding a flat type: drop the `.txt` + one `TEXT_PROMPT_MAP`
-  row. Tests and the doc tables will otherwise drift.
-- Templates are large; grep for `def <key>(`, don't read the whole file.
+- Adding a rich type: fn in a `templates/*.py` module + its `__init__.py` import
+  + `PLATFORM_MAP` alias + `SUBFOLDER_MAP` entry + README row, same change.
+  Adding a flat type: drop the `.txt` + one `TEXT_PROMPT_MAP` row. Tests and the
+  doc tables will otherwise drift.
+- Templates are large; grep for `def <key>(` across `templates/`, don't read whole files.

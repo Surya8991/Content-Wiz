@@ -3,8 +3,8 @@
 Run: python -m unittest test_generate -v
 
 These guard against signature drift between generate.py's PLATFORM_MAP and
-templates.py: every routed platform must resolve to a template, render a
-non-empty prompt, and route to a declared output subfolder.
+the templates/ package: every routed platform must resolve to a template,
+render a non-empty prompt, and route to a declared output subfolder.
 """
 import unittest
 
