@@ -126,7 +126,7 @@ STRUCTURE RULES:
 - Reflective/personal essay tone, professional but journal-like, not a corporate listicle
 - 3-4 `##` sections covering the psychological or emotional reality behind the topic that most advice skips
 - Every statistic must name its source, organization, and year. If unsure of an exact figure, describe the trend qualitatively instead of inventing a number
-- If a CTA link is supplied via [INSERT CTA LINK], weave it as one natural inline markdown link into the body (not the closer). If no CTA link is supplied, leave the placeholder out entirely and do not mention the brand
+- Where a CTA link is provided, weave it into the body (not the closer) as a natural inline markdown link, formatted as [descriptive anchor text](url), using this destination: [INSERT CTA LINK]. If no CTA link is provided, omit it entirely and do not mention the brand
 - Body word count: strictly under 800 words (aim 600-750)
 
 {HUMAN_WRITING_RULES}
@@ -170,7 +170,7 @@ STRUCTURE RULES:
 - Punchy, aphoristic, short sentences. Scannable. Professional but not corporate-stiff
 - 4-6 bolded lead-in points, each a specific behavioral observation, not a generic platitude
 - No fabricated statistics. If you cite one, it must name source, organization, and year, and be real
-- If a CTA link is supplied via [INSERT CTA LINK], close with one sentence containing it as an inline markdown link. If no CTA link is supplied, close with one strong standalone sentence, no link, no brand mention
+- Where a CTA link is provided, close with one sentence containing it as an inline markdown link, formatted as [descriptive anchor text](url), using this destination: [INSERT CTA LINK]. If no CTA link is provided, close with one strong standalone sentence, no link, no brand mention
 - Body word count: strictly under 300 words (aim 220-280)
 
 {HUMAN_WRITING_RULES}
