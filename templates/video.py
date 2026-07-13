@@ -1,4 +1,11 @@
-from ._shared import HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES
+from ._shared import (
+    BANNED_CTA_PHRASES,
+    HUMAN_WRITING_RULES,
+    RANKABILITY_RULES,
+    RESEARCH_RULES,
+)
+
+_BANNED_CTA_LIST = ", ".join(f'"{p}"' for p in BANNED_CTA_PHRASES)
 
 
 def youtube_desc(topic, audience, wordcount, **_):
@@ -202,6 +209,95 @@ TITLE OPTION 2: [Curiosity-driven, outcome-forward]
 TITLE OPTION 3: [How-to or framework-forward]
 
 Save to: output/Video_Scripts/
+"""
+
+
+def short_form_video(topic, audience, wordcount=None, **_):
+    return f"""You are a short-form vertical video scriptwriter who has produced Reels, Shorts, and TikToks for B2B brands that hold above 50% average view duration on a 15 to 60 second runtime by applying the 3-second scroll-stop rule and a single-idea discipline.
+
+TASK:
+Write a complete short-form vertical video script (Instagram Reels, YouTube Shorts, TikTok) on: "{topic}"
+
+TARGET AUDIENCE: {audience}
+
+PRE-WRITE DIAGNOSTIC:
+1. What is the ONE idea this video proves? Not three ideas - one. If the topic has three angles, pick the sharpest and cut the rest.
+2. What is the scroll-stopping hook - the sentence a {audience} viewer would stop mid-scroll to hear, delivered before any logo, intro, or greeting?
+3. What is the single visual or pattern-interrupt beat that re-earns attention partway through, before natural drop-off hits?
+
+LENGTH MODE SELECTION:
+Choose the mode that fits the topic's depth. State the selected mode before writing.
+
+MODE A - QUICK HIT (15 to 30 seconds, approximately 45 to 90 spoken words): One claim, one proof point, one application. Best for a single stat, a myth-bust, or a one-line tip.
+MODE B - FULL BEAT (45 to 60 seconds, approximately 130 to 170 spoken words): One idea with a short framework or 2 to 3 supporting points. Best for a named framework, a mini case study, or a "3 things" list capped at 3.
+
+MODE A STRUCTURE - QUICK HIT (15 to 30 seconds):
+[0:00 - 0:03] HOOK: The scroll-stopping claim or question, spoken and on-screen, before any branding.
+[0:03 - 0:20] BODY: The single idea, stated plainly, with one concrete proof point (stat, example, or named result).
+[0:20 - 0:26] PATTERN INTERRUPT: One visual or delivery beat that breaks the frame - a cut, a prop, a text-slam, or a direct-to-camera lean-in - timed to land right before typical drop-off.
+[0:26 - 0:30] CLOSE: The takeaway in one sentence, plus one CTA if relevant.
+
+MODE B STRUCTURE - FULL BEAT (45 to 60 seconds):
+[0:00 - 0:03] HOOK: The scroll-stopping claim or question, spoken and on-screen, before any branding.
+[0:03 - 0:10] SET-UP: Why this matters to {audience} right now - the cost of not knowing this, in one or two sentences.
+[0:10 - 0:40] BODY: The single core idea, broken into 2 to 3 supporting points or framework steps. Each point gets one sentence of explanation and, where relevant, one named example.
+[0:40 - 0:48] PATTERN INTERRUPT: One visual or delivery beat that breaks the frame - a cut, a prop, a text-slam, an on-screen list reveal, or a direct-to-camera lean-in - placed to fight the mid-video drop-off window.
+[0:48 - 0:55] SYNTHESIS: Restate the single idea in one sentence. What the viewer does with it.
+[0:55 - 1:00] CLOSE + CTA: One ask, spoken and reinforced in the caption.
+
+SCRIPT FORMAT - THREE-COLUMN PRODUCTION BLOCK:
+Write every beat as a labeled three-part block so a human or a text-to-video tool can shoot directly from it. Never merge these into a paragraph:
+
+[TIME RANGE] BEAT NAME
+SPOKEN: [Exact words spoken on camera or in voiceover - natural, conversational, contractions allowed]
+ON-SCREEN TEXT: [The exact text overlay shown at this beat, in a few words, or "(none)" if no overlay]
+VISUAL DIRECTION: [What the camera/framing/prop/cut does at this beat, e.g. "Direct to camera, chest-up, plain background" or "Cut to screen recording of the dashboard"]
+
+Repeat this block for every beat in the selected structure.
+
+PLATFORM NOTES (short, non-negotiable production details):
+- Format vertical, 9:16. Keep all on-screen text and key visuals inside the center-safe zone - avoid the bottom 15% and top 10% of frame, where TikTok/Reels/Shorts UI (captions, buttons, usernames) overlaps.
+- Captions on by default: TikTok and Reels viewers watch muted more often than not, so the ON-SCREEN TEXT column is not optional decoration - it must carry the hook and the takeaway even with sound off.
+- TikTok rewards native, lower-polish delivery over produced-looking video; Reels and Shorts tolerate slightly more polish but still penalize anything that reads as an ad in the first 3 seconds.
+- On Shorts, the title/caption doubles as a discovery surface - lead the caption with the same claim as the spoken hook, not a generic label.
+- Put the CTA in the caption as well as (or instead of) spoken, since many viewers scroll before the video's final second - a caption-only CTA still converts if the hook already earned the watch.
+
+CTA RULES (only if a CTA or course link is relevant to this topic):
+- One CTA maximum, placed in the CLOSE beat and mirrored in the caption
+- Use the placeholder [INSERT CTA LINK] for any link - never fabricate a URL
+- Banned phrases (do not use, in the script, on-screen text, or caption): {_BANNED_CTA_LIST}
+- If no CTA is relevant to this topic, omit it and end on the synthesis sentence instead
+
+CITATION RULE:
+If the hook or body cites a stat (common in "did you know" openers), name the source organization and year inline, spoken and/or on-screen (e.g. "LinkedIn's 2024 report found..."). Never state a bare number with no attribution.
+
+NO EM DASHES: Use hyphens or restructure the sentence. This applies to spoken lines, on-screen text, and captions.
+
+{HUMAN_WRITING_RULES}
+
+{RESEARCH_RULES}
+
+SELF-CHECK BEFORE OUTPUT:
+- Does the hook land in the first 3 seconds, before any branding or greeting?
+- Does the script cover exactly one idea, not two or three stacked ideas?
+- Is there one clear pattern-interrupt beat placed before the typical drop-off point?
+- Does every beat have all three columns filled in (SPOKEN, ON-SCREEN TEXT, VISUAL DIRECTION)?
+- Does every on-screen text line carry enough meaning to work with sound off?
+- Does any stat name its source and year?
+- Is there at most one CTA, using [INSERT CTA LINK] and none of the banned phrases?
+- Are there zero em dashes anywhere in the output, including the caption?
+
+OUTPUT FORMAT:
+LENGTH MODE: [Mode A or Mode B, with runtime]
+SINGLE IDEA: [One sentence - the one thing this video proves]
+
+Then the full script as labeled three-column production blocks per beat, in order.
+
+After the script, output:
+CAPTION: [Platform caption, hook-forward, under 150 characters, with the CTA mirrored if one is used]
+PLATFORM NOTES: [2 to 3 sentences on any platform-specific adjustment worth flagging for this topic]
+
+Save to: output/Short_Form_Video/
 """
 
 

@@ -77,6 +77,12 @@ class CtaPlaceholderPresenceTests(unittest.TestCase):
     def test_tumblr_post_contains_cta_placeholder(self):
         self.assertIn("[INSERT CTA LINK]", generate.build_prompt("tumblr_post", **SAMPLE))
 
+    def test_short_form_video_contains_cta_placeholder(self):
+        self.assertIn("[INSERT CTA LINK]", generate.build_prompt("short_form_video", **SAMPLE))
+
+    def test_landing_page_contains_cta_placeholder(self):
+        self.assertIn("[INSERT CTA LINK]", generate.build_prompt("landing_page", **SAMPLE))
+
 
 class CtaInjectionTests(unittest.TestCase):
     def test_cta_replaces_placeholder(self):

@@ -25,7 +25,7 @@ Content Wiz/
 ├── config.json                       ← Brands + defaults (edit here, not in code)
 ├── config.py                         ← Loads config.json with a safe fallback
 ├── generate.py                       ← CLI prompt generator (single + bulk + --generate)
-├── templates/                        ← 27 rich, parameterized prompt builders, split by domain
+├── templates/                        ← 31 rich, parameterized prompt builders, split by domain
 │   ├── __init__.py                   ← Re-exports every function at package level
 │   ├── _shared.py                    ← HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES
 │   ├── local.py, blog.py, social.py, community.py, video.py, growth.py, pr.py
@@ -43,13 +43,14 @@ Content Wiz/
 The subfolders it can produce are:
 
 ```
-Blog/                Blog_Suggestions/    Case_Study/          Content_Brief/
-Content_Calendar/    DataBank/            DevTo_Hashnode/      FAQ/
-GEO/                 GMB/                 Guest_Articles/      HARO/
-Instagram/           LinkedIn/            LinkedIn_Carousel/   LiveJournal/
-Medium/              Meta/                Newsletter/          Pinterest/
-Podcast/             Press_Release/       Quora/               Tumblr/
-Twitter/             Video_Scripts/       YouTube/
+Blog/                Blog_Suggestions/    Business_Case/       Case_Study/
+Comparison_Pages/    Content_Brief/       Content_Calendar/    DataBank/
+DevTo_Hashnode/       FAQ/                 GEO/                 GMB/
+Guest_Articles/       HARO/                Instagram/           Landing_Pages/
+LinkedIn/             LinkedIn_Carousel/   LiveJournal/          Medium/
+Meta/                 Newsletter/          Pinterest/            Podcast/
+Press_Release/        Quora/               Short_Form_Video/     Tumblr/
+Twitter/              Video_Scripts/       YouTube/
 Misc/  (fallback for any unmapped key)
 ```
 
@@ -185,6 +186,10 @@ for what `generate.py` can produce.
 | `guest_article` | `guest_article`, `guest`, `byline` | Guest_Articles |
 | `livejournal_post` | `livejournal`, `lj` | LiveJournal |
 | `tumblr_post` | `tumblr` | Tumblr |
+| `short_form_video` | `short_form_video`, `shorts`, `reels`, `tiktok` | Short_Form_Video |
+| `landing_page` | `landing_page`, `landing`, `lp` | Landing_Pages |
+| `comparison_page` | `comparison_page`, `comparison`, `vs`, `alternative` | Comparison_Pages |
+| `business_case_one_pager` | `business_case_one_pager`, `business_case`, `one_pager`, `internal_pitch` | Business_Case |
 
 > **Alias gotcha:** `--platform linkedin`, `wordpress`, and `blog` all resolve to
 > `blog_writing` (long-form blog). For a LinkedIn *post*, use `--platform linkedin_post`.

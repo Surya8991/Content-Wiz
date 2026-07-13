@@ -1,4 +1,11 @@
-from ._shared import HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES
+from ._shared import (
+    BANNED_CTA_PHRASES,
+    HUMAN_WRITING_RULES,
+    RANKABILITY_RULES,
+    RESEARCH_RULES,
+)
+
+_BANNED_CTA_LIST = ", ".join(f'"{p}"' for p in BANNED_CTA_PHRASES)
 
 
 def newsletter(topic, audience, **_):
@@ -1130,4 +1137,127 @@ OUTPUT:
 Return only the repurposed content, formatted exactly as it should appear on {platform}, ready to publish. No preamble, no explanation, no notes about what was changed.
 
 If any source content was missing critical context (no source content provided), explicitly note: "⚠️ Source content was empty - this output uses placeholder structure. Paste the original content and re-run."
+"""
+
+
+# ─────────────────────────────────────────────
+# LANDING PAGE TEMPLATE
+# ─────────────────────────────────────────────
+
+
+def landing_page(topic, audience, wordcount=700, **_):
+    # Section-length guidance scales proportionally with the requested wordcount
+    # (see blog_writing's precedent in templates/blog.py). Percentages sum to
+    # exactly 100% at the target wordcount; the final CTA block absorbs any
+    # rounding remainder so the sections always add back up to {wordcount}
+    # exactly, rather than drifting the way a set of independently-floored
+    # ranges can.
+    hero_words = max(round(wordcount * 0.10), 40)
+    who_words = max(round(wordcount * 0.12), 50)
+    benefits_words = max(round(wordcount * 0.28), 120)
+    proof_words = max(round(wordcount * 0.12), 50)
+    mid_cta_words = max(round(wordcount * 0.05), 20)
+    faq_words = max(round(wordcount * 0.23), 100)
+    final_cta_words = wordcount - (
+        hero_words + who_words + benefits_words + proof_words + mid_cta_words + faq_words
+    )
+    return f"""You are a senior conversion copywriter who has built and A/B tested 200+ B2B landing pages for training, webinar, and course signups, with a specialization in pages that convert cold and warm traffic into completed registrations without relying on consumer-style hype.
+
+TASK:
+Write a complete, publish-ready landing page for the offer: "{topic}"
+
+TARGET AUDIENCE: {audience}
+TARGET LENGTH: {wordcount} words total (this is a scannable conversion page, not an article - hit this target, do not pad)
+
+PRE-WRITE DIAGNOSTIC (do this mentally before writing):
+1. What is the single decision this page exists to drive - registration, enrollment, demo request, waitlist signup? (Every section must point toward this one action, not several competing ones.)
+2. Who should immediately self-qualify as "yes, this is for me" within the first 5 seconds, and who should self-disqualify just as fast?
+3. What is the #1 objection a qualified reader will have right before clicking (price, time commitment, "will this actually apply to my team"), and where in the page does this get addressed before the final CTA?
+4. What outcome, not feature, is the real reason someone signs up? (Frame benefits around what changes for the learner or their organization, not what the course "includes.")
+
+PAGE PRINCIPLES (non-negotiable):
+- This page is skimmed in an F-pattern or Z-pattern, not read top to bottom like a blog post. Order every heading so the skim path alone (headline -> subheads -> bold phrases -> CTA buttons) tells the full story
+- Paragraphs: 1-3 sentences maximum. No walls of text - if a paragraph runs past 3 sentences, break it or convert it to a bullet list
+- Bold the key outcome phrase in every benefit bullet and every section's opening sentence - the skimmer should get the pitch from bolded text alone
+- Use bullet lists for anything enumerable (benefits, who it's for, FAQ answers where possible) instead of dense prose
+- Tone: authoritative peer-to-peer B2B, never consumer-hype. No exclamation-point stacking, no "AMAZING", no fake countdown timers, no manufactured scarcity
+
+PAGE STRUCTURE (follow this order exactly - it is the page's visual hierarchy):
+
+═══════════════════════════════════════════
+1. HERO: HEADLINE + SUBHEADLINE + PRIMARY CTA ({hero_words} words)
+═══════════════════════════════════════════
+- HEADLINE (8-12 words): States the specific outcome or transformation tied to "{topic}", not a generic course name. Lead with the outcome, not the format ("Cut Onboarding Time in Half" beats "Our New Onboarding Course")
+- SUBHEADLINE (1 sentence, 15-25 words): Names who it's for ({audience}) and the concrete mechanism or format (live cohort, self-paced, certification, workshop)
+- ONE supporting line naming the format specifics: duration, delivery mode (live/on-demand/hybrid), and start date if known, or "[INSERT START DATE]" if not yet set
+- PRIMARY CTA BUTTON: a specific, benefit-framed label (e.g. "Reserve Your Seat for the Cohort", "Get the Course Curriculum") linking to [INSERT CTA LINK] - never a banned generic phrase (see banned list below)
+
+═══════════════════════════════════════════
+2. WHO THIS IS FOR ({who_words} words)
+═══════════════════════════════════════════
+- One short qualifying sentence: "This is built for {audience} who [specific situation]."
+- A short bullet list (3-5 items) of specific roles, team sizes, or situations that should self-select in
+- One line of counter-qualification: who this is NOT for, or what they should look at instead - this builds trust by proving the page isn't chasing everyone
+- No CTA button in this section - qualification only, no ask yet
+
+═══════════════════════════════════════════
+3. BENEFITS & OUTCOMES ({benefits_words} words)
+═══════════════════════════════════════════
+- Frame every point as an outcome for the learner or their organization, never a feature list ("You'll be able to defend a training budget in front of finance" beats "Includes a budgeting module")
+- Structure as 4-6 bulded outcome statements, each bolding the specific result in the first few words
+- At least one outcome statement should be organization-level (what changes for the team/company), and at least one should be individual-level (what changes for the person's day-to-day role or career)
+- If citing an expected result stat ("teams report X% faster onboarding"), it must follow the citation rules below - name the source and year, or mark it for verification
+- Close this section with a secondary CTA button, worded differently from the hero CTA, linking to [INSERT CTA LINK]
+
+═══════════════════════════════════════════
+4. SOCIAL PROOF & CREDIBILITY ({proof_words} words)
+═══════════════════════════════════════════
+- Instructor/facilitator credibility line: relevant credential or experience, one sentence
+- Client/learner proof slots - use clearly marked placeholders, never fabricate a company name, person, or statistic:
+  - "[CLIENT LOGO PLACEHOLDER]" x3-6 for a logo strip
+  - "[CLIENT TESTIMONIAL - insert real quote, name, title, company]" x2-3 for testimonial blocks
+  - "[VERIFIED STAT PLACEHOLDER - e.g. number of learners trained, completion rate - insert real, sourced figure]" for any aggregate credibility stat
+- Do not invent a number of "companies trained" or "learners certified" under any circumstance - if no real figure is supplied, the placeholder stays in the output as-is
+
+═══════════════════════════════════════════
+5. MID-PAGE CTA BLOCK ({mid_cta_words} words)
+═══════════════════════════════════════════
+- One short reinforcing line (1-2 sentences) restating the core outcome in fresh phrasing, not a repeat of the hero headline
+- CTA button: specific and benefit-framed, must differ in wording from both the hero CTA and the final CTA, linking to [INSERT CTA LINK]
+
+═══════════════════════════════════════════
+6. OBJECTION HANDLING / FAQ ({faq_words} words)
+═══════════════════════════════════════════
+- 4-6 questions in the exact phrasing a hesitant buyer would ask themselves, covering at minimum: cost/budget justification, time commitment, applicability to their specific team or industry, and what happens after signup
+- Each answer: 2-3 sentences, direct answer first, no promotional filler
+- This section exists to remove the last objection before the final CTA - do not introduce new features here, only resolve doubt
+
+═══════════════════════════════════════════
+7. FINAL CTA BLOCK ({final_cta_words} words)
+═══════════════════════════════════════════
+- One short closing paragraph (2-3 sentences) that makes the decision feel low-risk and specific (mention format, start date or "[INSERT START DATE]", and what happens immediately after signup)
+- FINAL CTA BUTTON: specific and benefit-framed, must differ in wording from the hero CTA and the mid-page CTA - no two of the three CTA buttons on this page may share identical text, linking to [INSERT CTA LINK]
+- Optional one-line risk reducer directly under the button (e.g. "Free to join. Cancel anytime before the cohort starts." only if true - otherwise omit rather than invent a guarantee)
+
+CTA DISCIPLINE (applies to all three CTA placements above):
+- Banned CTA phrases (never use these, on this page or anywhere else in this project): {_BANNED_CTA_LIST}
+- Every CTA label must name the specific benefit or action, not a vague command - "Get the Full Curriculum PDF" beats "Sign Up Now"
+- The three CTA button labels on the page must all be different from each other - identical CTA text repeated at hero, mid-page, and final is a page-review failure
+- Every CTA links to the [INSERT CTA LINK] placeholder exactly as written, so the destination can be swapped in downstream without touching the copy
+
+{RESEARCH_RULES}
+
+{HUMAN_WRITING_RULES}
+
+SELF-CHECK BEFORE OUTPUT:
+- Does the section word count add up to {wordcount} total? (Recount: hero {hero_words} + who {who_words} + benefits {benefits_words} + proof {proof_words} + mid-CTA {mid_cta_words} + FAQ {faq_words} + final CTA {final_cta_words}.)
+- Are all three CTA button labels different from each other, and none of them a banned phrase?
+- Does every testimonial, logo, and aggregate stat in the social proof section use an explicit placeholder bracket instead of an invented name or number?
+- Does every benefit read as an outcome for the learner or organization, not a feature list?
+- Are paragraphs 1-3 sentences, with bolded key phrases carrying the skim path?
+- Is there zero em dash anywhere in the output?
+- Does the FAQ section resolve the top objection (cost, time, applicability) before the final CTA?
+
+OUTPUT FORMAT:
+Return the complete landing page copy in the exact section order above, with the "═══" section dividers and heading labels included so the structure maps directly onto page sections. Use Markdown bold (**phrase**) for the bolded key phrases and bullet lists (-) for enumerable content. No preamble, no meta-commentary about what was written.
 """

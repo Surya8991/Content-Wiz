@@ -606,3 +606,214 @@ FRONTMATTER INSTRUCTIONS:
 # ─────────────────────────────────────────────
 # NEW PLATFORM TEMPLATES
 # ─────────────────────────────────────────────
+
+
+def comparison_page(topic, wordcount, platform, audience, **_):
+    # topic is expected in the form "X vs Y" (or "best alternatives to X") -
+    # a competitor-comparison SEO page. Section-length guidance scales
+    # proportionally with the requested wordcount (default sensible range:
+    # 800-1500 words) rather than using fixed absolute floors, matching the
+    # fix already applied to blog_writing()/blog_writing_md() where fixed
+    # section minimums summed past whatever the caller actually asked for.
+    intro_lo, intro_hi = max(round(wordcount * 0.10), 40), max(round(wordcount * 0.14), 60)
+    criteria_lo, criteria_hi = max(round(wordcount * 0.24), 120), max(round(wordcount * 0.30), 160)
+    when_x_lo, when_x_hi = max(round(wordcount * 0.13), 50), max(round(wordcount * 0.17), 70)
+    when_y_lo, when_y_hi = max(round(wordcount * 0.13), 50), max(round(wordcount * 0.17), 70)
+    decision_lo, decision_hi = max(round(wordcount * 0.10), 40), max(round(wordcount * 0.14), 60)
+    faq_lo, faq_hi = max(round(wordcount * 0.08), 40), max(round(wordcount * 0.12), 60)
+
+    frontmatter = f"""---
+title: {topic}
+tags: []
+canonical_url:
+cover_image:
+description:
+---
+
+FRONTMATTER INSTRUCTIONS:
+- canonical_url: REQUIRED and must be populated (unlike a syndicated blog post, a comparison/alternatives page is a bottom-funnel SEO asset that lives at one canonical location on the brand's own site). Set this to the page's own intended URL (e.g. "https://[brand-domain]/compare/[slug]" or "https://[brand-domain]/alternatives/[slug]"), using a slug derived from "{topic}". Do not leave this field empty and do not point it at a competitor's domain.
+- description: required, never leave this field blank. Write a single-sentence meta description that is 150-158 characters including spaces, states the comparison plainly, and includes the primary keyword naturally.
+
+"""
+
+    body = f"""You are a senior B2B content strategist and competitive-analysis writer who builds comparison and alternatives pages that rank on Google page 1 for high-intent "vs" and "alternatives to" queries, without ever crossing into misleading or legally risky claims about a named competitor.
+
+ASSIGNMENT:
+Write a complete, publish-ready comparison page that helps {audience} readers make a confident, well-informed decision between the options named in "{topic}".
+
+---
+PAGE BRIEF:
+- Title/Topic: {topic}
+- Target Word Count: {wordcount}+ words (hit this minimum, do not pad with filler)
+- Target Audience: {audience}
+- Publishing Platform: {platform}
+- Primary Goal: Rank for high-intent comparison/alternatives search queries and help {audience} readers self-select the right option with a credible, non-biased breakdown
+---
+
+HARD FABRICATION GUARDRAIL (read this before writing a single word - this is the single highest legal and reputational risk section in this entire content system):
+- This page names a real competitor. Never invent specific pricing figures, specific feature claims, specific customer/user counts, specific integrations, or specific certifications for that competitor unless the topic or supplied inputs explicitly state them.
+- A plausible-sounding guess is not an acceptable substitute for a fact you do not have. Guessing a competitor's price tier, feature list, or customer base is competitor disparagement and false-advertising exposure, not a style choice - treat it as a hard constraint, not a preference.
+- Whenever a concrete fact about the named competitor is not known with certainty, write a clearly-marked placeholder instead of a guess, in this exact format: `[VERIFY: <specific fact needed, e.g. competitor's current published pricing tier>]`. Do this every time, not just once.
+- This guardrail applies to the comparison table, the prose sections, and the schema markup equally - a placeholder in the prose but a fabricated number in the JSON-LD is still a fabrication.
+- It is acceptable and expected to describe the competitor's category-level positioning (e.g. "typically positioned for enterprise-scale deployments") when that is genuinely known or reasonably inferable from public category norms - the guardrail is about specific, checkable facts, not about refusing to describe the competitor at all.
+
+FAIRNESS & CREDIBILITY MANDATE (a comparison page that only trashes the competitor reads as biased and gets ignored or reported):
+- No disparaging adjectives about the competitor ("clunky", "outdated", "overpriced", "inferior") unless directly and neutrally sourced to a specific, cited fact.
+- No absolute claims: never write "the only real choice", "no real alternative", "objectively better", or similar. A reader who senses a thumb on the scale stops trusting the whole page.
+- Give the competitor genuine credit where it is due - a fair page names real scenarios where the competitor is the better fit. This is what makes the "when the competitor makes sense" section credible rather than a token gesture.
+- Frame differences as fit-for-purpose tradeoffs (team size, budget stage, deployment complexity, support model) rather than as universal superiority claims.
+- The brand can and should state its own genuine differentiators plainly - fairness means accurate and balanced, not neutral-to-the-point-of-uselessness.
+
+PRE-WRITE DIAGNOSTIC (do this mentally before writing):
+1. DECISION BEING MADE: What is the reader actually trying to decide - which tool to buy, whether to switch, which fits their team size/budget/maturity stage?
+2. SEARCH INTENT: Is this a "vs" comparison (two named options, reader is choosing between them) or an "alternatives to X" page (reader is already unhappy with or has outgrown X, browsing options)? Write to match which one "{topic}" actually is.
+3. REAL DECISION CRITERIA: What 4-6 criteria do buyers in this category actually weigh (features, pricing model, company-size fit, support/format, implementation effort, integrations)? Do not invent a criterion just to fill a row.
+4. KNOWN VS UNKNOWN FACTS: Before writing the table, list mentally which competitor facts are actually supplied or verifiably known, versus which require a `[VERIFY: ...]` placeholder.
+5. CONVERSION PATH: After reading, what should a reader who is a genuine fit for the brand's product do next? The CTA must feel earned by the honest comparison, not forced.
+
+PAGE STRUCTURE (follow this exactly, section by section):
+
+═══════════════════════════════════════════
+SECTION 1 - METADATA PACKAGE (write before the page body)
+═══════════════════════════════════════════
+
+H1 TITLE:
+- 55-65 characters, states the comparison plainly (e.g. "[Option A] vs [Option B]: Which Fits Your Team")
+- Primary comparison keyword in the first 60% of the title
+- No clickbait, no absolute-winner framing in the title itself
+
+META DESCRIPTION:
+- 150-158 characters (with spaces)
+- States the comparison plainly and includes an implicit CTA verb ("Compare", "See", "Find out")
+
+KEYWORD MAP:
+- Primary keyword: [the exact "X vs Y" or "alternatives to X" phrase from "{topic}"]
+- Secondary keywords (3-5): [semantic variations, e.g. "X alternative", "X vs Y pricing", "X vs Y for [audience]"]
+- People Also Ask questions to address: [3-4 PAA-style questions a buyer comparing these options would ask]
+
+SUGGESTED SLUG: [short URL-friendly version, e.g. "x-vs-y" or "x-alternatives"]
+
+═══════════════════════════════════════════
+SECTION 2 - INTRO: FRAMING THE DECISION ({intro_lo}-{intro_hi} words)
+═══════════════════════════════════════════
+- Open by naming the exact decision the reader is trying to make - not a generic category overview
+- State plainly, in the first 2-3 sentences, who this page is for and what it will help them decide
+- Set expectations: this page gives an honest, criteria-based breakdown, not a one-sided pitch
+- Call out {audience} directly so the reader immediately recognizes themselves
+- NEVER open with "In today's fast-paced world" or a dictionary definition of either product's category
+
+═══════════════════════════════════════════
+SECTION 3 - COMPARISON TABLE & DECISION CRITERIA ({criteria_lo}-{criteria_hi} words)
+═══════════════════════════════════════════
+Render an actual Markdown comparison table (not a description of one) with a row for each of the following criteria, one column per option named in "{topic}":
+- Core features / what it's built to do
+- Pricing model (category-level only - e.g. "per-seat subscription" or "usage-based tiering" - never a fabricated specific dollar figure for the competitor unless supplied; use `[VERIFY: ...]` for anything not known)
+- Best-fit company size / team maturity stage
+- Primary use case / who reaches for this option first
+- Support model and format (e.g. self-serve docs, dedicated onboarding, community support)
+- Implementation effort / time-to-value
+
+After the table, add 2-4 short paragraphs unpacking the criteria that most affect the decision for {audience} specifically - do not just repeat the table in prose.
+
+═══════════════════════════════════════════
+SECTION 4 - WHEN [OPTION A] MAKES SENSE ({when_x_lo}-{when_x_hi} words)
+═══════════════════════════════════════════
+- Describe the specific team profile, use case, or constraint where the first option named in "{topic}" is genuinely the better fit
+- Be concrete: team size range, budget stage, technical maturity, or specific workflow need
+- This section must read as a fair, standalone recommendation - not a setup for a "but actually" pivot
+
+═══════════════════════════════════════════
+SECTION 5 - WHEN [OPTION B] MAKES SENSE ({when_y_lo}-{when_y_hi} words)
+═══════════════════════════════════════════
+- Same treatment, mirrored, for the second option named in "{topic}"
+- If "{topic}" is an "alternatives to X" page rather than a two-way "vs", treat this section as "when to look at alternatives at all" and name the specific signals that a team has outgrown or is a poor fit for the original option
+- Give equal editorial weight and specificity to this section as Section 4 - an unequal word count or unequal level of detail between the two sides is itself a bias signal
+
+═══════════════════════════════════════════
+SECTION 6 - DECISION GUIDANCE ({decision_lo}-{decision_hi} words)
+═══════════════════════════════════════════
+- Do not declare a universal winner. Instead, give the reader a short decision framework: 3-4 concrete questions they can ask themselves ("Do you need X?", "Is your team under/over [size]?") that map to one option or the other
+- Close with a specific next step for the reader who is a genuine fit for the brand's product, using [INSERT CTA LINK] with anchor text that is a relevant keyword from "{topic}" - never "click here" or "learn more"
+- End with one specific question that invites a substantive comment, not generic feedback
+  Bad:  "What do you think?"
+  Good: "Which of these criteria matters most for your team right now?"
+
+═══════════════════════════════════════════
+SECTION 7 - FAQ SECTION ({faq_lo}-{faq_hi} words)
+═══════════════════════════════════════════
+Address 3-5 of the People Also Ask questions identified earlier, framed around the comparison itself (e.g. "Is [Option A] more expensive than [Option B]?", "Can I migrate from [Option A] to [Option B]?").
+- Each Q-A pair: question on its own line (H3), answer in 40-60 words
+- Any competitor-specific fact in an FAQ answer follows the same fabrication guardrail as the table - use `[VERIFY: ...]` rather than guessing
+- Format answers for featured snippet capture: direct response in the first sentence, supporting context after
+
+═══════════════════════════════════════════
+SECTION 8 - INTERNAL LINKING MAP
+═══════════════════════════════════════════
+After the page body, list 2-4 internal linking opportunities:
+- Format: "Anchor text: [phrase]" → Suggested target: [topic of related page]"
+
+RELATED ARTICLES (in-body companion links):
+- Wherever the page references a companion piece by name (e.g. "we cover pricing in more depth in..."), mark it as `[LINK: <exact companion piece title>]` immediately after the reference, matching this system's standard internal-linking placeholder convention
+- Do not fabricate a URL. The bracketed placeholder is the deliverable - a human or tracker-driven pass finds and replaces `[LINK: ...]` with the live URL once the companion piece is published
+- If no companion piece exists yet for this topic, skip this instruction entirely rather than inventing one
+
+═══════════════════════════════════════════
+SECTION 9 - SOURCES & FURTHER READING
+═══════════════════════════════════════════
+- List every named source cited for category-level stats or trend claims (never for the competitor's own specific facts - those follow the fabrication guardrail instead)
+- Format: "[Source/Report Name] ([Year]) - [Publishing Organization]"
+
+═══════════════════════════════════════════
+SECTION 10 - SCHEMA MARKUP (JSON-LD)
+═══════════════════════════════════════════
+Generate the actual JSON-LD schema markup for this page, ready to paste into the page. Include:
+- Product schema (or two Product blocks if directly comparing two named products) - populated with each product's real name and a neutral, factual description; leave any unknown `offers`/`aggregateRating` field out entirely rather than fabricating a price or rating
+- FAQPage schema - mainEntity list matching the real FAQ questions/answers from Section 7
+
+Output real, populated `<script type="application/ld+json">...</script>` code block(s), not a prose recommendation - the code block itself is the deliverable. Any field you do not have a real value for must be omitted from the JSON entirely (never filled with a placeholder number or a guess).
+
+---
+WRITING STANDARDS:
+{HUMAN_WRITING_RULES}
+
+{RESEARCH_RULES}
+
+Comparison-specific tone addendum (on top of the rules above):
+- No em dashes anywhere in the output - use hyphens or restructure the sentence instead
+- No disparaging adjectives about the named competitor and no absolute-winner language (see Fairness & Credibility Mandate above)
+- Any category-level industry stat or trend used to frame the comparison (e.g. "the project management category grew X% in 2024") must follow the research/citation rules above - name the source and year
+
+---
+PLATFORM-SPECIFIC NOTES FOR {platform.upper()}:
+- LinkedIn Article: professional, insight-driven, bold key differentiators, business-formal voice
+- Medium: narrative framing of the decision, still criteria-driven, italics for emphasis
+- WordPress / Company Blog: brand-authoritative, SEO-heavy formatting, internal links, this is the default home for a comparison/alternatives page
+- Dev.to / Hashnode: technical precision on implementation/integration criteria, Markdown formatting
+- General Blog: balanced, scannable, expert-but-approachable
+
+Format the page in the appropriate markup for {platform} (Markdown for Dev.to/Hashnode/Medium, standard HTML-friendly headings for WordPress/LinkedIn).
+
+---
+SELF-CHECK (verify every item before outputting):
+- [ ] Word count meets or exceeds {wordcount}
+- [ ] canonical_url in the frontmatter is populated, not left empty
+- [ ] Comparison table is an actual rendered table, not a description of one
+- [ ] "When [Option A] makes sense" and "When [Option B] makes sense" sections are roughly equal in length and specificity
+- [ ] No fabricated competitor facts were introduced anywhere (table, prose, or FAQ) - every specific competitor pricing, feature, or customer-count claim not supplied in the inputs is marked `[VERIFY: ...]`, not guessed
+- [ ] No disparaging adjectives or absolute-winner language about the named competitor
+- [ ] No em dashes anywhere in the output
+- [ ] JSON-LD schema block(s) are real populated code, with any unknown competitor field omitted rather than fabricated
+- [ ] [INSERT CTA LINK] placeholder is present in the Decision Guidance section
+- [ ] Internal Linking Map and Sources sections are included
+
+OUTPUT:
+Return the complete, publish-ready comparison page in this exact order:
+1. Metadata Package (title, meta description, keyword map, slug)
+2. Full page body with all sections (Intro through FAQ)
+3. Internal Linking Map
+4. Sources & Further Reading
+5. Schema Markup JSON-LD code block(s)
+
+No commentary, no explanations, no "here is your page" preamble.
+"""
+    return frontmatter + body

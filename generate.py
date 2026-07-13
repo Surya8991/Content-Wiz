@@ -83,6 +83,22 @@ PLATFORM_MAP = {
     "livejournal":      "livejournal_post",
     "lj":               "livejournal_post",
     "tumblr":           "tumblr_post",
+    # New content types
+    "short_form_video": "short_form_video",
+    "shorts":           "short_form_video",
+    "reels":            "short_form_video",
+    "tiktok":           "short_form_video",
+    "landing_page":     "landing_page",
+    "landing":          "landing_page",
+    "lp":               "landing_page",
+    "comparison_page":  "comparison_page",
+    "comparison":       "comparison_page",
+    "vs":               "comparison_page",
+    "alternative":      "comparison_page",
+    "business_case_one_pager": "business_case_one_pager",
+    "business_case":    "business_case_one_pager",
+    "one_pager":        "business_case_one_pager",
+    "internal_pitch":   "business_case_one_pager",
 }
 
 MD_KEYS   = {"blog_writing_md"}
@@ -119,6 +135,10 @@ SUBFOLDER_MAP = {
     "guest_article":     "Guest_Articles",
     "livejournal_post":  "LiveJournal",
     "tumblr_post":       "Tumblr",
+    "short_form_video":  "Short_Form_Video",
+    "landing_page":      "Landing_Pages",
+    "comparison_page":   "Comparison_Pages",
+    "business_case_one_pager": "Business_Case",
 }
 
 

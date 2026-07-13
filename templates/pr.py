@@ -489,6 +489,135 @@ WORD COUNT: [N words]
 """
 
 
+def business_case_one_pager(topic, audience, wordcount=425, **_):
+    # Section-length guidance scales proportionally with the requested wordcount
+    # instead of using fixed absolute floors, so a shorter or longer override
+    # isn't silently overridden by section minimums that sum past the caller's
+    # target (the bug class this repo's audit already fixed in blog_writing).
+    ask_lo, ask_hi = max(round(wordcount * 0.05), 20), max(round(wordcount * 0.08), 35)
+    problem_lo, problem_hi = max(round(wordcount * 0.20), 70), max(round(wordcount * 0.26), 100)
+    solution_lo, solution_hi = max(round(wordcount * 0.20), 70), max(round(wordcount * 0.26), 100)
+    roi_lo, roi_hi = max(round(wordcount * 0.18), 60), max(round(wordcount * 0.24), 90)
+    cost_lo, cost_hi = max(round(wordcount * 0.10), 35), max(round(wordcount * 0.14), 55)
+    close_lo, close_hi = max(round(wordcount * 0.06), 25), max(round(wordcount * 0.09), 40)
+    return f"""You are an L&D/HR manager who has personally written and successfully defended internal budget requests to senior leadership. You know that a business case memo lives or dies on whether the CFO or VP reading it can find the ask, the cost, and the payoff in under two minutes.
+
+TASK:
+Write a one-page internal business case memo requesting budget/approval for training or a learning program related to: "{topic}"
+
+WHO THIS IS FOR: {audience} - the L&D/HR manager who will hand this memo UP to their own leadership or finance stakeholders to justify the spend.
+
+CRITICAL VOICE SHIFT (this is what makes this document different from every other template in this repo):
+Every other document in this library is written TO the L&D/HR buyer, selling something to them. This document is the OPPOSITE: it is written FOR the L&D/HR buyer, as if they wrote it themselves, to send UP to their own CFO, VP, or leadership team.
+- Use first-person-plural internal-stakeholder voice throughout: "our team," "our current onboarding process," "we are requesting," "our attrition data shows"
+- NEVER use third-person brand-marketing voice ("Company X helps organizations...")
+- NEVER promote a specific training vendor, product, or platform by name - this is an honest internal planning document, not a sales pitch smuggled into a memo
+- If a specific vendor or program must be referenced, describe it generically or with a placeholder ("[INSERT: vendor/program name]"), never as an endorsement
+- Read as something a real HR/L&D manager would actually staple to an email and send to their boss - direct, numbers-forward, no fluff, no persuasive marketing language
+
+PRE-WRITE DIAGNOSTIC:
+1. THE ASK: What exactly is being requested (a program, a certification cohort, a platform license, a training budget line) and how much does it cost?
+2. THE COST OF INACTION: What business-quantifiable pain is happening right now because this training gap exists (turnover cost, skill-gap productivity loss, compliance/safety risk, ramp-time drag)?
+3. THE DECISION-MAKER'S LENS: What does the reader (CFO, VP Finance, VP Ops) actually care about - cost avoidance, productivity, retention, revenue-adjacent impact - not "morale" or vague soft benefits?
+4. THE DEADLINE: Is there a real budget cycle, cohort start date, or renewal window that makes a decision-by date genuine and not fabricated urgency?
+
+NO FABRICATED NUMBERS - NON-NEGOTIABLE:
+This is a real document a real person might present to their real leadership. Any company-specific figure (current turnover rate, cost per hire, headcount affected, current program spend, expected productivity lift) that cannot be verified must be a clearly marked placeholder, never an invented plausible-sounding number.
+- Format placeholders exactly like this: [INSERT: current annual turnover rate], [INSERT: estimated cost per hire], [INSERT: number of affected employees], [INSERT: current training budget line]
+- Industry-benchmark statistics ARE allowed as supporting context (e.g. "the average cost of replacing an employee is estimated at X% of salary") but ONLY with a named source and year, and ONLY as context alongside the company's own placeholder figures - never as a substitute for them
+- When in doubt, placeholder it. A confident-sounding fabricated number in a real budget memo is a real-world risk, not a style issue
+
+{RESEARCH_RULES}
+
+BUSINESS CASE ONE-PAGER STRUCTURE (target {wordcount} words total, genuinely one printed page):
+
+═══════════════════════════════════════════
+HEADER
+═══════════════════════════════════════════
+TO: [INSERT: leadership recipient name/title]
+FROM: [INSERT: your name/title]
+DATE: [INSERT: date]
+RE: Budget Request - {topic}
+
+═══════════════════════════════════════════
+SECTION 1 - THE ASK ({ask_lo}-{ask_hi} words)
+═══════════════════════════════════════════
+One sentence, stated plainly, up front, before any justification:
+- What is being requested (program/certification/platform/training budget)
+- The approximate cost or budget range (use a placeholder if the real figure is not yet known: "[INSERT: total program cost]")
+- What decision is needed (approve budget, approve headcount time, approve vendor selection)
+Format: "We are requesting [amount/scope] to [specific training action] for [team/role], addressing [one-line problem statement]."
+
+═══════════════════════════════════════════
+SECTION 2 - PROBLEM: THE COST OF INACTION ({problem_lo}-{problem_hi} words)
+═══════════════════════════════════════════
+Quantify the current-state pain in business terms our own leadership will recognize - pick whichever fit {topic}:
+- Turnover/retention cost: current attrition in the affected group, using a placeholder for the company's actual rate, supported by one named industry benchmark for context
+- Skill-gap productivity loss: time-to-competency, error rates, or output gaps tied to the missing skill
+- Compliance/safety/risk exposure: regulatory, audit, or incident risk tied to the capability gap
+- Ramp-time or capacity drag: how long new hires or existing staff take to reach full productivity without this training
+Each business-facing claim needs either our own placeholder figure or a named, dated industry source - never an unsupported assertion.
+End with one sentence naming what happens if nothing changes over the next [INSERT: timeframe].
+
+═══════════════════════════════════════════
+SECTION 3 - PROPOSED SOLUTION ({solution_lo}-{solution_hi} words)
+═══════════════════════════════════════════
+The specific training/program being requested, described plainly and generically (no vendor-promotional language):
+- What the program covers (specific skills, competencies, or certification outcomes)
+- Who it is for (role, team, headcount - use a placeholder for exact headcount if unconfirmed)
+- Format and duration (cohort-based, self-paced, in-person, hybrid; [INSERT: number of weeks/sessions])
+- Why this approach specifically addresses the problem named in Section 2, not a generic "training is good" argument
+
+═══════════════════════════════════════════
+SECTION 4 - ROI / BUSINESS IMPACT ({roi_lo}-{roi_hi} words)
+═══════════════════════════════════════════
+Framed entirely in terms our own leadership evaluates budget requests by - cost avoidance, productivity, retention, revenue-adjacent metrics. NOT "boosts morale" or "improves engagement" as standalone claims.
+- Projected cost avoidance (e.g. reduced attrition-driven replacement cost) - use our own placeholder baseline plus a named benchmark for the expected improvement range
+- Projected productivity or output gain (time saved, error reduction, faster ramp)
+- Payback period or break-even estimate, stated as a formula the reader can sanity-check: "[INSERT: program cost] recovered in approximately [INSERT: months] months based on [INSERT: assumption]"
+- If a qualitative benefit (team confidence, succession readiness) is included, tie it to a business consequence, not a standalone soft claim
+
+═══════════════════════════════════════════
+SECTION 5 - COST / INVESTMENT SUMMARY ({cost_lo}-{cost_hi} words)
+═══════════════════════════════════════════
+| Line Item | Cost |
+| --------- | ---- |
+| [Program/vendor fee] | [INSERT: $ amount] |
+| [Staff time / backfill cost] | [INSERT: $ amount] |
+| [Materials/platform/licensing] | [INSERT: $ amount] |
+| Total | [INSERT: total] |
+
+One sentence noting the budget source (existing L&D line, new request, cross-department split) - use a placeholder if unconfirmed.
+
+═══════════════════════════════════════════
+SECTION 6 - DECISION REQUESTED BY ({close_lo}-{close_hi} words)
+═══════════════════════════════════════════
+- The specific date a decision is needed by, and why (cohort start date, budget cycle close, vendor rate lock) - use a placeholder if the real date is unconfirmed: "[INSERT: decision deadline]"
+- What happens next if approved (kickoff steps) and what the fallback is if delayed
+- One closing sentence offering to walk through the numbers in person
+
+BUSINESS CASE WRITING RULES:
+- First-person-plural internal-stakeholder voice throughout ("we," "our team," "our current process") - never third-person brand voice, never vendor-promotional
+- No em dashes anywhere - use hyphens or restructure
+- No vague soft-benefit language ("boosts morale," "great culture fit") without a tied business consequence
+- Every company-specific number is either real (if genuinely known) or a clearly marked [INSERT: ...] placeholder - never invented
+- Every industry-benchmark stat used as supporting context names its source organization and year
+- Total length should land close to {wordcount} words - genuinely one printable page, not a sprawling deck
+
+SELF-CHECK BEFORE OUTPUT:
+- Does the memo open with a one-sentence ask before any justification?
+- Is every company-specific figure either real or a marked [INSERT: ...] placeholder - zero fabricated numbers?
+- Does every industry-benchmark stat name a source and year?
+- Does the ROI section speak in cost avoidance/productivity/retention/revenue terms, not vague morale language?
+- Does the voice read as if our own L&D/HR manager wrote this to their own leadership - not as a vendor or brand speaking to the reader?
+- Is there a specific decision-requested-by date (or clearly placeholder-marked)?
+- Are there any em dashes?
+
+OUTPUT FORMAT:
+Return the complete one-page memo with the header block, all six numbered sections in order, section dividers, and the cost table. Plain business-memo formatting - no marketing headlines, no CTA links, no boilerplate. Paste-ready for a real internal email or attached PDF.
+"""
+
+
 # ─────────────────────────────────────────────
 # LINKEDIN CAROUSEL TEMPLATE
 # ─────────────────────────────────────────────
