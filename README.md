@@ -10,8 +10,16 @@ Edstellar Content Creation/
 ├── output/                           ← Generated prompts, auto-routed into per-type subfolders
 ├── data/                             ← Persistent pitch-ready data bank (HARO_DataBank.csv)
 ├── bulk_template.csv
-├── generate.py                       ← CLI prompt generator (single + bulk)
-├── templates.py                      ← Prompt template functions
+├── config.json                       ← Brands + defaults (edit here, not in code)
+├── config.py                         ← Loads config.json with a safe fallback
+├── generate.py                       ← CLI prompt generator (single + bulk + --generate)
+├── templates.py                      ← 25 rich, parameterized prompt builders
+├── textprompts.py                    ← Loader wiring the flat prompts/*.txt into the CLI
+├── llm.py                            ← Optional Anthropic generation (--generate)
+├── lint_content.py                   ← Content-rule linter (no em-dashes, etc.)
+├── pyproject.toml                    ← Packaging + ruff config (content-wiz entry point)
+├── hooks/pre-commit                  ← Lint + tests before every commit
+├── .github/workflows/ci.yml          ← CI: content lint + ruff + tests
 └── test_generate.py                  ← Smoke tests (python -m unittest test_generate)
 ```
 
@@ -159,18 +167,72 @@ for what `generate.py` can produce.
 > **Alias gotcha:** `--platform linkedin`, `wordpress`, and `blog` all resolve to
 > `blog_writing` (long-form blog). For a LinkedIn *post*, use `--platform linkedin_post`.
 
-### Manual only (no CLI route yet)
+### Text prompts (flat prompt files, wired via `textprompts.py`)
 
-These have a `prompts/*.txt` file but **no** `templates.py` function or `PLATFORM_MAP`
-entry - run them by hand until wired in:
+These load their `prompts/*.txt` file directly, substitute topic/audience/CTA/URL,
+and leave brand tokens for the LLM to resolve. Run them exactly like the rich
+templates: `python generate.py --platform <alias> --topic "..."`.
 
-`Backlink_Outreach_Email`, `Buyer_Persona`, `Competitor_Content_Gap`,
-`Course_Training_Description`, `Email_Drip_Sequence`, `Google_Ads`, `Image_Alt_Text`,
-`Interactive_Content`, `Internal_Linking`, `LinkedIn_Ads`, `LinkedIn_Article`,
-`Meta_Facebook_Ads`, `Original_Research_Report`, `Reddit_Post`, `Schema_Markup`,
-`Skills_Gap_Analysis`, `SlideShare_Presentation`, `Testimonial_Review_Request`,
-`Thought_Leadership_OpEd`, `Topic_Cluster`, `Trainer_Speaker_Bio`, `Webinar_Promo`,
-`Whitepaper_eBook`.
+| Prompt file | Aliases | Output subfolder |
+|-------------|---------|------------------|
+| Backlink_Outreach_Email | `backlink`, `backlink_outreach` | Backlink_Outreach |
+| Buyer_Persona | `buyer_persona`, `persona` | Buyer_Personas |
+| Competitor_Content_Gap | `competitor_gap`, `competitor` | Competitor_Gap_Analysis |
+| Course_Training_Description | `course`, `course_description` | Course_Descriptions |
+| Email_Drip_Sequence | `email_drip`, `drip` | Email_Drip |
+| Google_Ads | `google_ads` | Google_Ads |
+| Image_Alt_Text | `alt_text`, `image_alt` | Image_Alt_Text |
+| Interactive_Content | `interactive`, `quiz` | Interactive_Content |
+| Internal_Linking | `internal_linking`, `linking` | Internal_Linking |
+| LinkedIn_Ads | `linkedin_ads` | LinkedIn_Ads |
+| LinkedIn_Article | `linkedin_article` | LinkedIn_Article |
+| Meta_Facebook_Ads | `meta_ads`, `facebook_ads` | Meta_Facebook_Ads |
+| Original_Research_Report | `research_report`, `research` | Research_Reports |
+| Reddit_Post | `reddit` | Reddit |
+| Schema_Markup | `schema`, `schema_markup` | Schema_Markup |
+| Skills_Gap_Analysis | `skills_gap` | Skills_Gap_Analysis |
+| SlideShare_Presentation | `slideshare`, `presentation` | SlideShare |
+| Testimonial_Review_Request | `testimonial`, `review_request` | Testimonial_Request |
+| Thought_Leadership_OpEd | `thought_leadership`, `oped` | Thought_Leadership |
+| Topic_Cluster | `topic_cluster`, `cluster` | Topic_Cluster |
+| Trainer_Speaker_Bio | `trainer_bio`, `bio` | Trainer_Bios |
+| Webinar_Promo | `webinar`, `webinar_promo` | Webinar_Promo |
+| Whitepaper_eBook | `whitepaper`, `ebook` | Whitepaper_eBook |
+
+Run `python generate.py --list` for the live, authoritative list of every alias.
+
+---
+
+## CLI Flags
+
+| Flag | Purpose |
+|------|---------|
+| `--platform`, `--topic` | Required for a single run (or use `--bulk`). |
+| `--wordcount`, `--audience`, `--cta`, `--url` | Optional generation parameters. |
+| `--title` | Medium step 2: the chosen article title. |
+| `--repurpose FILE` | Repurpose an existing file into `--platform`. |
+| `--bulk CSV` | Batch mode: writes a ZIP + run-log CSV. |
+| `--list` | Print all platforms/aliases and exit. |
+| `--dry-run` | Print the assembled prompt without writing a file. |
+| `--generate` | Call the LLM and save finished content (needs `ANTHROPIC_API_KEY` + `pip install anthropic`). |
+| `--model` | Override the LLM model id for `--generate`. |
+
+## Configuration (`config.json`)
+
+Brands, default audience, default word count, and the LLM model/token defaults live
+in `config.json` - edit there, not in code. `config.py` loads it with a safe
+fallback if the file is missing.
+
+## Development
+
+```bash
+python -m unittest test_generate -v   # tests
+python lint_content.py                # content-rule lint (no em-dashes, etc.)
+ruff check .                          # style lint
+git config core.hooksPath hooks       # enable the pre-commit hook (once per clone)
+```
+
+CI runs all three on every push/PR (`.github/workflows/ci.yml`).
 
 ---
 

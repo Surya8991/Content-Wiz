@@ -4,7 +4,18 @@ import os
 import sys
 import zipfile
 from datetime import datetime
+
 import templates
+import textprompts
+from config import DEFAULTS
+
+# Prompts can contain characters outside the Windows console's legacy code page.
+# Force UTF-8 so printing never crashes with UnicodeEncodeError.
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except (AttributeError, ValueError):
+    pass
 
 PLATFORM_MAP = {
     # Existing
@@ -107,13 +118,43 @@ SUBFOLDER_MAP = {
 def subfolder_for(key):
     return SUBFOLDER_MAP.get(key, "Misc")
 
-DEFAULT_AUDIENCE  = "L&Ds, HRs, and Decision makers in the organization"
-DEFAULT_WORDCOUNT = 1000
-AVAILABLE_PLATFORMS = ", ".join(sorted(set(PLATFORM_MAP.keys())))
+DEFAULT_AUDIENCE  = DEFAULTS["audience"]
+DEFAULT_WORDCOUNT = DEFAULTS["wordcount"]
+AVAILABLE_PLATFORMS = ", ".join(
+    sorted(set(PLATFORM_MAP.keys()) | set(textprompts.TEXT_PROMPT_MAP.keys()))
+)
 
 
 def resolve_key(platform_str):
     return PLATFORM_MAP.get(platform_str.lower().strip())
+
+
+def resolve(platform_str):
+    """Return (kind, ref) where kind is 'template' or 'text', or (None, None).
+
+    'template' -> ref is a templates.py key. 'text' -> ref is the normalized alias.
+    """
+    norm = platform_str.lower().strip()
+    if norm in PLATFORM_MAP:
+        return "template", PLATFORM_MAP[norm]
+    if textprompts.is_text_prompt(norm):
+        return "text", norm
+    return None, None
+
+
+def print_platform_list():
+    print("Automated (rich templates):")
+    seen = {}
+    for alias, key in sorted(PLATFORM_MAP.items()):
+        seen.setdefault(key, []).append(alias)
+    for key in sorted(seen):
+        print(f"  {SUBFOLDER_MAP.get(key, 'Misc'):<20} {key:<18} aliases: {', '.join(seen[key])}")
+    print("\nText prompts (flat prompt files):")
+    files = {}
+    for alias, (fname, folder) in sorted(textprompts.TEXT_PROMPT_MAP.items()):
+        files.setdefault((fname, folder), []).append(alias)
+    for (fname, folder), aliases in sorted(files.items()):
+        print(f"  {folder:<24} aliases: {', '.join(aliases)}")
 
 
 def default_output_dir():
@@ -182,55 +223,90 @@ def parse_bulk_row(row, i):
 
 def run_single(args):
     output_dir = args.output_dir or default_output_dir()
-    os.makedirs(output_dir, exist_ok=True)
 
+    kind = None
+    key = None
     source_content = None
+
     if args.repurpose:
         if not os.path.exists(args.repurpose):
             print(f"Error: repurpose file not found: {args.repurpose}")
             sys.exit(1)
         with open(args.repurpose, "r", encoding="utf-8") as f:
             source_content = f.read()
-        key = "repurpose"
+        kind, key = "template", "repurpose"
         normalized = "repurpose"
         # --platform is the TARGET platform when repurposing; treat it as platform_target
         effective_platform_target = args.platform
     else:
         normalized = args.platform.lower().strip()
-        key = resolve_key(normalized)
-        if key is None:
+        kind, key = resolve(normalized)
+        if kind is None:
             print(f"Unknown platform: '{args.platform}'")
             print(f"Available platforms: {AVAILABLE_PLATFORMS}")
             sys.exit(1)
         effective_platform_target = args.platform_target
 
-    prompt = build_prompt(
-        key,
-        topic=args.topic,
-        audience=args.audience,
-        wordcount=args.wordcount,
-        platform_label=normalized,
-        platform_target=effective_platform_target,
-        title=args.title,
-        from_platform=args.from_platform or "blog",
-        source_content=source_content,
-    )
-    prompt = inject_cta(prompt, args.cta)
+    if kind == "text":
+        prompt = textprompts.render(
+            normalized, topic=args.topic, audience=args.audience,
+            wordcount=args.wordcount, cta=args.cta, url=args.url,
+        )
+        folder = textprompts.subfolder_for(normalized)
+        out_key = "text"
+    else:
+        prompt = build_prompt(
+            key,
+            topic=args.topic,
+            audience=args.audience,
+            wordcount=args.wordcount,
+            platform_label=normalized,
+            platform_target=effective_platform_target,
+            title=args.title,
+            from_platform=args.from_platform or "blog",
+            source_content=source_content,
+        )
+        prompt = inject_cta(prompt, args.cta)
+        folder = subfolder_for(key)
+        out_key = key
 
     print("\n" + "=" * 60)
     print(prompt)
     print("=" * 60)
 
-    if key in PRINT_ONLY:
+    if args.dry_run:
+        print("\n[dry-run] Nothing written.")
         return
 
-    filename = make_filename(normalized, key)
-    subdir   = os.path.join(output_dir, subfolder_for(key))
+    content, out_key = _maybe_generate(prompt, out_key, args)
+
+    # PRINT_ONLY only applies to prompt output, not generated content.
+    if out_key in PRINT_ONLY and not args.generate:
+        return
+
+    os.makedirs(output_dir, exist_ok=True)
+    filename = make_filename(normalized, out_key)
+    subdir   = os.path.join(output_dir, folder)
     os.makedirs(subdir, exist_ok=True)
     filepath = os.path.join(subdir, filename)
     with open(filepath, "w", encoding="utf-8") as f:
-        f.write(prompt)
-    print(f"\nPrompt saved to: {os.path.relpath(filepath)}")
+        f.write(content)
+    label = "Content" if args.generate else "Prompt"
+    print(f"\n{label} saved to: {os.path.relpath(filepath)}")
+
+
+def _maybe_generate(prompt, out_key, args):
+    """If --generate, call the LLM and return (content, key); else return the prompt."""
+    if not args.generate:
+        return prompt, out_key
+    import llm
+    print("\nGenerating content via LLM...")
+    try:
+        content = llm.generate_content(prompt, model=args.model)
+    except RuntimeError as e:
+        print(f"Error: {e}")
+        sys.exit(1)
+    return content, out_key
 
 
 def run_bulk(csv_path, output_dir_arg=None, global_cta=None):
@@ -257,7 +333,15 @@ def run_bulk(csv_path, output_dir_arg=None, global_cta=None):
             print(f"  {e}")
         sys.exit(1)
 
-    print(f"\nProcessing {len(jobs)} job(s) from {os.path.basename(csv_path)}...\n")
+    # Up-front validation: surface every unresolved platform before writing anything.
+    unresolved = [(i, job["platform"]) for i, job in jobs if resolve(job["platform"])[0] is None]
+    if unresolved:
+        print("Warning: these rows have unknown platforms and will be skipped:")
+        for i, platform in unresolved:
+            print(f"  Row {i}: '{platform}'")
+        print()
+
+    print(f"Processing {len(jobs)} job(s) from {os.path.basename(csv_path)}...\n")
 
     timestamp     = datetime.now().strftime("%Y%m%d_%H%M%S")
     zip_filename  = f"bulk_{timestamp}.zip"
@@ -267,9 +351,9 @@ def run_bulk(csv_path, output_dir_arg=None, global_cta=None):
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
         for i, job in jobs:
             platform = job["platform"]
-            key = resolve_key(platform)
+            kind, key = resolve(platform)
 
-            if key is None:
+            if kind is None:
                 msg = f"unknown platform '{platform}'"
                 errors.append(f"Row {i}: {msg}")
                 log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
@@ -289,27 +373,37 @@ def run_bulk(csv_path, output_dir_arg=None, global_cta=None):
                     continue
 
             try:
-                prompt = build_prompt(
-                    key,
-                    topic=job["topic"],
-                    audience=job["audience"],
-                    wordcount=job["wordcount"],
-                    platform_label=platform.lower(),
-                    platform_target=job["platform_target"],
-                    title=job["title"],
-                    from_platform=job["from_platform"],
-                    source_content=source_content,
-                )
                 cta = job["cta"] or global_cta
-                prompt = inject_cta(prompt, cta)
+                if kind == "text":
+                    prompt = textprompts.render(
+                        platform.lower(), topic=job["topic"], audience=job["audience"],
+                        wordcount=job["wordcount"], cta=cta,
+                    )
+                    folder = textprompts.subfolder_for(platform.lower())
+                    file_key = "text"
+                else:
+                    prompt = build_prompt(
+                        key,
+                        topic=job["topic"],
+                        audience=job["audience"],
+                        wordcount=job["wordcount"],
+                        platform_label=platform.lower(),
+                        platform_target=job["platform_target"],
+                        title=job["title"],
+                        from_platform=job["from_platform"],
+                        source_content=source_content,
+                    )
+                    prompt = inject_cta(prompt, cta)
+                    folder = subfolder_for(key)
+                    file_key = key
             except Exception as e:
                 errors.append(f"Row {i}: error building prompt - {e}")
                 log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
                                   "filename": "", "status": f"error: {e}"})
                 continue
 
-            filename = make_filename(platform, key, index=i)
-            arcname  = f"{subfolder_for(key)}/{filename}"
+            filename = make_filename(platform, file_key, index=i)
+            arcname  = f"{folder}/{filename}"
             zf.writestr(arcname, prompt)
             log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
                               "filename": arcname, "status": "ok"})
@@ -353,8 +447,22 @@ def main():
                         help="Source platform of the repurposed content (default: blog)")
     parser.add_argument("--bulk",            default=None, metavar="CSV_FILE",
                         help="CSV file for bulk generation. Outputs a ZIP + log CSV.")
+    parser.add_argument("--url",             default=None,
+                        help="Brand URL for auto-detection (passed through to text prompts)")
+    parser.add_argument("--list",            action="store_true", dest="list_platforms",
+                        help="List all platforms/aliases and exit")
+    parser.add_argument("--dry-run",         action="store_true", dest="dry_run",
+                        help="Print the assembled prompt without writing any file")
+    parser.add_argument("--generate",        action="store_true",
+                        help="Call the LLM and save finished content (needs ANTHROPIC_API_KEY)")
+    parser.add_argument("--model",           default=None,
+                        help="Override the LLM model id used by --generate")
 
     args = parser.parse_args()
+
+    if args.list_platforms:
+        print_platform_list()
+        return
 
     if args.bulk:
         run_bulk(args.bulk, output_dir_arg=args.output_dir, global_cta=args.cta)

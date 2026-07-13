@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Content Wiz pre-commit hook: enforce content rules + tests before every commit.
+# Enable once per clone with:  git config core.hooksPath hooks
+set -e
+
+repo_root="$(git rev-parse --show-toplevel)"
+
+echo "[pre-commit] content-rule lint..."
+python "$repo_root/lint_content.py"
+
+echo "[pre-commit] unit tests..."
+python -m unittest discover -s "$repo_root" -p "test_*.py"
+
+echo "[pre-commit] ok"

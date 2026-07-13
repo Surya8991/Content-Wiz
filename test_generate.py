@@ -11,7 +11,6 @@ import unittest
 import generate
 import templates
 
-
 SAMPLE = {
     "topic": "leadership training",
     "audience": generate.DEFAULT_AUDIENCE,
@@ -80,6 +79,132 @@ class CtaInjectionTests(unittest.TestCase):
     def test_cta_none_is_noop(self):
         text = "Visit [INSERT CTA LINK] now"
         self.assertEqual(generate.inject_cta(text, None), text)
+
+
+class ResolveTests(unittest.TestCase):
+    def test_template_alias_resolves_to_template(self):
+        kind, ref = generate.resolve("faq")
+        self.assertEqual(kind, "template")
+        self.assertEqual(ref, "faq")
+
+    def test_text_alias_resolves_to_text(self):
+        kind, ref = generate.resolve("buyer_persona")
+        self.assertEqual(kind, "text")
+        self.assertEqual(ref, "buyer_persona")
+
+    def test_unknown_alias_resolves_to_none(self):
+        self.assertEqual(generate.resolve("definitely_not_a_platform"), (None, None))
+
+    def test_no_alias_collision_between_maps(self):
+        import textprompts
+        overlap = set(generate.PLATFORM_MAP) & set(textprompts.TEXT_PROMPT_MAP)
+        self.assertEqual(overlap, set(), f"aliases in both maps: {overlap}")
+
+
+class TextPromptTests(unittest.TestCase):
+    def setUp(self):
+        import textprompts
+        self.textprompts = textprompts
+
+    def test_every_registered_prompt_file_exists(self):
+        import os
+        for alias, (fname, _folder) in self.textprompts.TEXT_PROMPT_MAP.items():
+            with self.subTest(alias=alias):
+                path = os.path.join(self.textprompts.PROMPTS_DIR, fname)
+                self.assertTrue(os.path.isfile(path), f"missing prompt file: {fname}")
+
+    def test_render_substitutes_topic_and_audience(self):
+        out = self.textprompts.render(
+            "buyer_persona", topic="ZZTOPIC", audience="ZZAUDIENCE",
+        )
+        self.assertIn("ZZTOPIC", out)
+        self.assertIn("ZZAUDIENCE", out)
+
+    def test_render_leaves_brand_tokens_intact(self):
+        # Find any registered text prompt that uses a [BRAND ...] token and
+        # confirm rendering preserves it (brand detection is the LLM's job).
+        import os
+        aliases_with_brand = []
+        for alias, (fname, _f) in self.textprompts.TEXT_PROMPT_MAP.items():
+            path = os.path.join(self.textprompts.PROMPTS_DIR, fname)
+            with open(path, encoding="utf-8") as fh:
+                if "[BRAND" in fh.read():
+                    aliases_with_brand.append(alias)
+                    break
+        if not aliases_with_brand:
+            self.skipTest("no text prompt uses a [BRAND ...] token")
+        out = self.textprompts.render(aliases_with_brand[0], topic="t", audience="a")
+        self.assertIn("[BRAND", out)
+
+    def test_no_em_dash_in_rendered_text_prompts(self):
+        seen = set()
+        for alias, (fname, _f) in self.textprompts.TEXT_PROMPT_MAP.items():
+            if fname in seen:
+                continue
+            seen.add(fname)
+            out = self.textprompts.render(alias, topic="t", audience="a")
+            self.assertNotIn("—", out, f"em-dash in {fname}")
+
+
+class ConfigTests(unittest.TestCase):
+    def test_defaults_present(self):
+        from config import DEFAULTS
+        for key in ("audience", "wordcount", "llm_model", "llm_max_tokens"):
+            self.assertIn(key, DEFAULTS)
+
+    def test_brand_lookup_by_url(self):
+        import config
+        brand = config.brand_for_url("https://www.edstellar.com/blog/x")
+        self.assertIsNotNone(brand)
+        self.assertEqual(brand["name"], "Edstellar")
+
+    def test_brand_lookup_unknown_returns_none(self):
+        import config
+        self.assertIsNone(config.brand_for_url("https://example.com"))
+
+
+class LlmTests(unittest.TestCase):
+    def test_missing_key_raises_runtime_error(self):
+        import os
+
+        import llm
+        saved = os.environ.pop("ANTHROPIC_API_KEY", None)
+        try:
+            with self.assertRaises(RuntimeError):
+                llm.generate_content("hello")
+        finally:
+            if saved is not None:
+                os.environ["ANTHROPIC_API_KEY"] = saved
+
+
+class LintContentTests(unittest.TestCase):
+    def test_detects_em_dash(self):
+        import os
+        import tempfile
+
+        import lint_content
+        fd, path = tempfile.mkstemp(suffix=".txt", text=True)
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8") as f:
+                f.write("clean line\nthis has an em dash — here\n")
+            errors = lint_content.check_file(path)
+            self.assertEqual(len(errors), 1)
+            self.assertEqual(errors[0][0], 2)
+        finally:
+            os.remove(path)
+
+    def test_clean_file_passes(self):
+        import os
+        import tempfile
+
+        import lint_content
+        fd, path = tempfile.mkstemp(suffix=".txt", text=True)
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8") as f:
+                f.write("clean line - with a hyphen\n")
+            self.assertEqual(lint_content.check_file(path), [])
+        finally:
+            os.remove(path)
 
 
 if __name__ == "__main__":

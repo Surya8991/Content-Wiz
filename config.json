@@ -1,0 +1,22 @@
+{
+  "defaults": {
+    "audience": "L&Ds, HRs, and Decision makers in the organization",
+    "wordcount": 1000,
+    "llm_model": "claude-sonnet-5",
+    "llm_max_tokens": 4096
+  },
+  "brands": {
+    "edstellar.com": {
+      "name": "Edstellar",
+      "description": "Global corporate training company that partners with enterprises to deliver high-impact training solutions for modern teams",
+      "audience": "L&Ds, HRs, and decision-makers in the organization",
+      "hashtag": "#Edstellar"
+    },
+    "invensislearning.com": {
+      "name": "Invensis Learning",
+      "description": "Global professional training and certification provider empowering individuals and organizations with in-demand skills across project management, IT service management, agile, cybersecurity, and more",
+      "audience": "L&Ds, HRs, and decision-makers",
+      "hashtag": "#InvensisLearning"
+    }
+  }
+}

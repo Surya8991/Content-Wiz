@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "content-wiz"
+version = "0.2.0"
+description = "Edstellar content-distribution prompt generator (single + bulk, optional LLM generation)"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "Proprietary" }
+authors = [{ name = "Edstellar" }]
+dependencies = []
+
+[project.optional-dependencies]
+# Only needed for `--generate` (live LLM content). Core tool has zero deps.
+llm = ["anthropic>=0.40"]
+dev = ["ruff>=0.6"]
+
+[project.scripts]
+content-wiz = "generate:main"
+
+[tool.setuptools]
+py-modules = ["generate", "templates", "textprompts", "llm", "config", "lint_content"]
+
+[tool.ruff]
+line-length = 120
+# templates.py is generated-style long-string content; skip style noise there.
+extend-exclude = ["templates.py", "output"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
