@@ -232,6 +232,63 @@ class LlmTests(unittest.TestCase):
             if saved is not None:
                 os.environ["ANTHROPIC_API_KEY"] = saved
 
+    def test_missing_key_raises_runtime_error_per_provider(self):
+        import os
+
+        import llm
+        cases = [
+            ("anthropic", "ANTHROPIC_API_KEY"),
+            ("gemini", "GEMINI_API_KEY"),
+            ("openai", "OPENAI_API_KEY"),
+        ]
+        for provider, env_var in cases:
+            with self.subTest(provider=provider):
+                saved = os.environ.pop(env_var, None)
+                saved_fallback = os.environ.pop("GOOGLE_API_KEY", None) if provider == "gemini" else None
+                try:
+                    with self.assertRaises(RuntimeError):
+                        llm.generate_content("hello", provider=provider)
+                finally:
+                    if saved is not None:
+                        os.environ[env_var] = saved
+                    if saved_fallback is not None:
+                        os.environ["GOOGLE_API_KEY"] = saved_fallback
+
+    def test_unknown_provider_raises_runtime_error(self):
+        import llm
+        with self.assertRaises(RuntimeError):
+            llm.generate_content("hello", provider="not-a-real-provider")
+
+    def test_gemini_accepts_google_api_key_fallback(self):
+        import os
+
+        import llm
+        saved_gemini = os.environ.pop("GEMINI_API_KEY", None)
+        os.environ["GOOGLE_API_KEY"] = "test-key"
+        try:
+            self.assertTrue(llm._api_key_for("gemini"))
+        finally:
+            os.environ.pop("GOOGLE_API_KEY", None)
+            if saved_gemini is not None:
+                os.environ["GEMINI_API_KEY"] = saved_gemini
+
+    def test_default_model_per_provider_falls_back_to_builtin(self):
+        import llm
+        for provider in ("anthropic", "gemini", "openai"):
+            with self.subTest(provider=provider):
+                self.assertTrue(llm._default_model_for(provider))
+
+    def test_is_available_false_without_key(self):
+        import os
+
+        import llm
+        saved = os.environ.pop("OPENAI_API_KEY", None)
+        try:
+            self.assertFalse(llm.is_available("openai"))
+        finally:
+            if saved is not None:
+                os.environ["OPENAI_API_KEY"] = saved
+
 
 class LintContentTests(unittest.TestCase):
     def test_detects_em_dash(self):

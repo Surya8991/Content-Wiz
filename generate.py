@@ -321,10 +321,11 @@ def _maybe_generate(prompt, out_key, args):
     """If --generate, call the LLM and return (content, key); else return the prompt."""
     if not args.generate:
         return prompt, out_key
-    import llm  # deferred: avoids a hard dependency on the `anthropic` package unless --generate is used
-    print("\nGenerating content via LLM...")
+    import llm  # deferred: avoids a hard dependency on any provider SDK unless --generate is used
+    provider_label = args.provider or "the configured default provider"
+    print(f"\nGenerating content via {provider_label}...")
     try:
-        content = llm.generate_content(prompt, model=args.model)
+        content = llm.generate_content(prompt, model=args.model, provider=args.provider)
     except RuntimeError as e:
         print(f"Error: {e}")
         sys.exit(1)
@@ -484,9 +485,16 @@ def main():
     parser.add_argument("--dry-run",         action="store_true", dest="dry_run",
                         help="Print the assembled prompt without writing any file")
     parser.add_argument("--generate",        action="store_true",
-                        help="Call the LLM and save finished content (needs ANTHROPIC_API_KEY)")
+                        help="Call an LLM and save finished content (needs that provider's API key; "
+                             "see --provider)")
+    parser.add_argument("--provider",        default=None,
+                        help="LLM provider for --generate: anthropic (Claude, needs ANTHROPIC_API_KEY), "
+                             "gemini (needs GEMINI_API_KEY or GOOGLE_API_KEY), or openai (Codex/GPT, "
+                             "needs OPENAI_API_KEY). Defaults to config.json's defaults.llm_provider "
+                             "('anthropic' if unset).")
     parser.add_argument("--model",           default=None,
-                        help="Override the LLM model id used by --generate")
+                        help="Override the LLM model id used by --generate (defaults to the "
+                             "selected provider's entry in config.json's defaults.llm_models)")
 
     args = parser.parse_args()
 

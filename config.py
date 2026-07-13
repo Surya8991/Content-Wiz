@@ -12,8 +12,14 @@ _FALLBACK = {
     "defaults": {
         "audience": "professionals in your target market",
         "wordcount": 1000,
+        "llm_provider": "anthropic",
         "llm_model": "claude-sonnet-5",
         "llm_max_tokens": 4096,
+        "llm_models": {
+            "anthropic": "claude-sonnet-5",
+            "gemini": "gemini-2.5-pro",
+            "openai": "gpt-5",
+        },
     },
     "brands": {},
 }

@@ -29,7 +29,8 @@ Content Wiz/
 │   ├── _shared.py                    ← HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES
 │   ├── local.py, blog.py, social.py, community.py, video.py, growth.py, pr.py
 ├── textprompts.py                    ← Loader wiring the flat prompts/*.txt into the CLI
-├── llm.py                            ← Optional Anthropic generation (--generate)
+├── llm.py                            ← Optional live generation (--generate); provider-agnostic:
+│                                        Anthropic/Claude, Google/Gemini, or OpenAI/Codex-GPT
 ├── lint_content.py                   ← Content-rule linter (no em-dashes, etc.)
 ├── pyproject.toml                    ← Packaging + ruff config (content-wiz entry point)
 ├── hooks/pre-commit                  ← Lint + tests before every commit
@@ -234,14 +235,45 @@ Run `python generate.py --list` for the live, authoritative list of every alias.
 | `--bulk CSV` | Batch mode: writes a ZIP + run-log CSV. |
 | `--list` | Print all platforms/aliases and exit. |
 | `--dry-run` | Print the assembled prompt without writing a file. |
-| `--generate` | Call the LLM and save finished content (needs `ANTHROPIC_API_KEY` + `pip install anthropic`). |
-| `--model` | Override the LLM model id for `--generate`. |
+| `--generate` | Call an LLM and save finished content instead of just the prompt (needs that provider's API key + SDK - see "LLM Providers" below). |
+| `--provider` | Which LLM to use for `--generate`: `anthropic` (default), `gemini`, or `openai`. |
+| `--model` | Override the LLM model id for `--generate` (defaults to the selected provider's entry in `config.json`). |
+
+## LLM Providers (`--generate`)
+
+`--generate` is provider-agnostic: the same prompt and the same house-style rules
+produce the same kind of output regardless of which model actually writes it. Pick
+one with `--provider`, install only that provider's SDK, and export only that
+provider's key:
+
+| `--provider` | SDK to install | API key env var |
+|---|---|---|
+| `anthropic` (default) | `pip install .[llm-anthropic]` (or `pip install anthropic`) | `ANTHROPIC_API_KEY` |
+| `gemini` | `pip install .[llm-gemini]` (or `pip install google-generativeai`) | `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) |
+| `openai` | `pip install .[llm-openai]` (or `pip install openai`) | `OPENAI_API_KEY` |
+
+```bash
+export ANTHROPIC_API_KEY=sk-ant-...
+python generate.py --platform blog --topic "..." --generate                     # anthropic, default
+
+export GEMINI_API_KEY=...
+python generate.py --platform blog --topic "..." --generate --provider gemini
+
+export OPENAI_API_KEY=sk-...
+python generate.py --platform blog --topic "..." --generate --provider openai --model gpt-5
+```
+
+Change the default provider for every run in `config.json`'s `defaults.llm_provider`
+(see below) instead of passing `--provider` every time.
 
 ## Configuration (`config.json`)
 
-Brands, default audience, default word count, and the LLM model/token defaults live
-in `config.json` - edit there, not in code. `config.py` loads it with a safe
-fallback if the file is missing.
+Brands, default audience, default word count, and the LLM provider/model/token
+defaults live in `config.json` - edit there, not in code. `defaults.llm_provider`
+sets which provider `--generate` uses when `--provider` isn't passed;
+`defaults.llm_models` maps each provider name to its default model id, used when
+`--model` isn't passed. `config.py` loads it with a safe fallback if the file is
+missing.
 
 ## Development
 

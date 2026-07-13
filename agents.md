@@ -8,9 +8,11 @@ generation time auto-fills the audience from the matching entry. Edstellar and
 Invensis Learning ship as example brand configs in `config.json`, not the tool's
 identity - add, edit, or delete brand entries freely. By default the tool assembles
 fully-specified prompts and writes them to `output/` for a human to paste into an AI
-tool. With `--generate` it can also call the Anthropic API and write finished content
-directly. Prompts encode channel strategy, brand voice, and formatting rules so
-output is consistent.
+tool. With `--generate` it can also call an LLM directly and write finished content -
+Anthropic/Claude, Google/Gemini, or OpenAI/Codex-GPT, chosen with `--provider` (see
+`llm.py`) - so the same prompt/rule set produces the same house-style content
+regardless of which model actually writes it. Prompts encode channel strategy, brand
+voice, and formatting rules so output is consistent across platforms and providers.
 
 Two prompt layers, one unified CLI:
 1. **Rich templates** - `templates/`: 27 parameterized prompt builders, split by
@@ -24,7 +26,10 @@ prints the authoritative alias list.
 
 ## Stack
 - Python 3 (standard library only for the core tool). No required deps.
-- Optional: `anthropic` (only for `--generate`), `ruff` (dev lint).
+- Optional, only for `--generate`, install just the provider(s) you use:
+  `anthropic` (`pip install .[llm-anthropic]`), `google-generativeai`
+  (`.[llm-gemini]`), `openai` (`.[llm-openai]`), or `.[llm]` for all three.
+  `ruff` (`.[dev]`) for style lint.
 - `pyproject.toml` defines the `content-wiz` console entry point.
 
 ## Key files & dirs
@@ -38,8 +43,15 @@ prints the authoritative alias list.
   function to whichever domain module fits (or start a new one), then add its
   name to that module's import line in `__init__.py`.
 - `textprompts.py` - `TEXT_PROMPT_MAP` (alias → file + folder) + `render()`.
-- `config.py` / `config.json` - brands + defaults (audience, wordcount, LLM model).
-- `llm.py` - optional Anthropic call; raises a clean RuntimeError if key/SDK missing.
+- `config.py` / `config.json` - brands + defaults (audience, wordcount, LLM
+  provider/model). `defaults.llm_provider` picks the default provider;
+  `defaults.llm_models` maps provider name → default model id for that
+  provider, so switching `--provider` without a `--model` override still
+  gets a sane model.
+- `llm.py` - optional live generation, provider-agnostic (Anthropic/Claude, Google/Gemini,
+  OpenAI/Codex-GPT behind one interface, selected via `--provider` or `config.json`'s
+  `defaults.llm_provider`). Raises a clean RuntimeError if that provider's key/SDK is missing.
+  Every provider's SDK is imported lazily, so picking one never requires installing the others.
 - `lint_content.py` - fails on em-dashes in prompt/strategy/template source.
 - `prompts/` - standalone prompt text; `_Brand_Detection_Rules.txt` is shared by all.
 - `strategies/` - one strategy doc per channel (goal, structure, cadence, failure modes).
@@ -60,14 +72,20 @@ python generate.py --platform blog --topic "..." --dry-run  # print, don't write
 python generate.py --repurpose src.md --platform twitter --topic "..."
 python generate.py --bulk bulk_template.csv                 # ZIP + run-log CSV
 
-# Live content generation (needs a key + SDK)
+# Live content generation (needs that provider's key + SDK installed)
 export ANTHROPIC_API_KEY=sk-ant-...
-python generate.py --platform faq --topic "..." --generate
+python generate.py --platform faq --topic "..." --generate                    # defaults to anthropic
+
+export GEMINI_API_KEY=...       # or GOOGLE_API_KEY
+python generate.py --platform faq --topic "..." --generate --provider gemini
+
+export OPENAI_API_KEY=sk-...
+python generate.py --platform faq --topic "..." --generate --provider openai --model gpt-5
 ```
 
 ## How to test / lint
 ```bash
-python -m unittest test_generate -v   # 21 smoke tests
+python -m unittest test_generate -v   # smoke tests (grows over time - see test output for current count)
 python lint_content.py                # content-rule lint
 ruff check .                          # style lint
 git config core.hooksPath hooks       # enable pre-commit hook (once per clone)
@@ -75,7 +93,10 @@ git config core.hooksPath hooks       # enable pre-commit hook (once per clone)
 CI runs all three (`.github/workflows/ci.yml`).
 
 ## Env vars
-- `ANTHROPIC_API_KEY` - only needed for `--generate`. Never commit it.
+- `ANTHROPIC_API_KEY` - only needed for `--generate --provider anthropic` (the default).
+- `GEMINI_API_KEY` (or `GOOGLE_API_KEY` as a fallback) - only needed for `--generate --provider gemini`.
+- `OPENAI_API_KEY` - only needed for `--generate --provider openai`.
+Never commit any of these.
 
 ## Agent notes / gotchas
 - **`gmb` and `pinterest` are print-only** in single-run mode (`PRINT_ONLY`) unless
