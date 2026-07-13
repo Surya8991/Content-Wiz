@@ -19,7 +19,7 @@ regardless of which model actually writes it. Prompts encode channel strategy, b
 voice, and formatting rules so output is consistent across platforms and providers.
 
 Two prompt layers, one unified CLI:
-1. **Rich templates** - `templates/`: 40 parameterized prompt builders, split by
+1. **Rich templates** - `templates/`: 64 parameterized prompt builders, split by
    domain (`local.py`, `blog.py`, `social.py`, `community.py`, `creator.py`,
    `personal.py`, `video.py`, `growth.py`, `pr.py`), re-exported at the package
    level via `__init__.py` so `templates.<fn>` and `getattr(templates, key)`

@@ -1,4 +1,4 @@
-from ._shared import HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES
+from ._shared import HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES, market_voice
 
 
 def case_study(topic, audience, **_):
@@ -742,4 +742,418 @@ For Mode A: Pitch email text, paste-ready.
 For Mode B: Full article with headline, body sections with H2 labels, practical application section, and author bio.
 
 Save to: output/Guest_Articles/
+"""
+
+
+def crisis_statement(topic, audience, wordcount=None, market=None, **_):
+    # A holding statement is the FIRST thing out the door, not the incident
+    # report. Real-world norm from crisis-comms practice: teams have minutes
+    # to an hour to publish something, so the statement itself stays short.
+    # Default word count reflects that - no fixed floors, every section
+    # scales proportionally off whatever wordcount the caller passes.
+    wordcount = wordcount or 150
+    ack_lo, ack_hi = round(wordcount * 0.20), round(wordcount * 0.26)
+    concern_lo, concern_hi = round(wordcount * 0.12), round(wordcount * 0.18)
+    action_lo, action_hi = round(wordcount * 0.26), round(wordcount * 0.32)
+    timeline_lo, timeline_hi = round(wordcount * 0.14), round(wordcount * 0.20)
+    contact_lo, contact_hi = round(wordcount * 0.08), round(wordcount * 0.12)
+    return f"""You are a crisis communications lead who has drafted holding statements during live incidents - data breaches, service outages, product recalls, public controversies - under real time pressure, knowing the statement goes out before all the facts are in.
+
+TASK:
+Write a crisis/incident HOLDING STATEMENT (not a press release, not an incident report) about: "{topic}"
+
+TARGET AUDIENCE: {audience}
+
+{market_voice(market)}
+
+THIS IS THE FIRST STATEMENT, NOT THE FULL INCIDENT REPORT:
+A holding statement exists to say something true and responsible FAST, while the facts are still being confirmed. It is deliberately incomplete. A full incident report, root-cause analysis, or detailed remediation plan comes later, once it can be written accurately. Do not let this statement pretend to be that later document - if a fact is not yet confirmed, it stays unconfirmed here, not filled in with a plausible guess.
+
+PRE-WRITE DIAGNOSTIC:
+1. WHAT IS ACTUALLY CONFIRMED: What can this organization state as fact right now, without speculating about scope, cause, or blame?
+2. WHO IS AFFECTED: Who needs to hear from the organization first - customers, employees, regulators, the public - and what do they need to know in the next few minutes, not the next few days?
+3. WHAT IS GENUINELY HAPPENING RIGHT NOW: What concrete action has actually been authorized and started (not what the organization hopes to do)?
+4. THE NEXT UPDATE: When, realistically, will more information be available - and is that timeline something the organization can actually hit?
+
+HOLDING STATEMENT TIMING AND TONE CONTEXT:
+- Current crisis-communication practice treats the acknowledge, act, and set-the-next-update sequence as the core structure of a holding statement
+- Organizations that handle incidents well typically get a holding statement out within the first hour of confirming an incident is real, not after the full picture is known
+- The realistic target length for a holding statement is under 200 words - it is a stopgap, not a report, and needs to be scannable in the time a reader spends deciding whether to keep reading
+- Plans for a live incident typically call for the message to be refreshed every two to four hours as new information is confirmed - this statement is one link in that chain, not the end of it
+
+HOLDING STATEMENT STRUCTURE (target {wordcount} words total, follow in order):
+
+═══════════════════════════════════════════
+SECTION 1 - ACKNOWLEDGMENT OF THE ISSUE ({ack_lo}-{ack_hi} words)
+═══════════════════════════════════════════
+- State plainly that the organization is aware of the issue and what kind of issue it is (an incident, an outage, a report, an allegation)
+- State only what is CONFIRMED right now. Use [INSERT: confirmed facts only] for any detail (scope, number of people affected, exact cause) that is not yet verified
+- Do NOT speculate about root cause. If the cause is unknown, say it is under investigation - do not guess or imply a likely cause
+- Do NOT use language that admits fault or legal liability ("we caused", "our failure led to", "we are responsible for the harm") - state what happened, not who is to blame, before that has been established
+
+═══════════════════════════════════════════
+SECTION 2 - CONCERN, WITHOUT ADMITTING LIABILITY ({concern_lo}-{concern_hi} words)
+═══════════════════════════════════════════
+- Express genuine concern for anyone affected, in plain human language, not corporate distance
+- This is empathy, not an apology that concedes fault - "we understand this is concerning" and "we take this seriously" are appropriate; "we are sorry for the harm we caused" is a liability admission and does not belong here unless legal has explicitly cleared it
+- Do not minimize the issue and do not overstate it either
+
+═══════════════════════════════════════════
+SECTION 3 - IMMEDIATE ACTIONS BEING TAKEN ({action_lo}-{action_hi} words)
+═══════════════════════════════════════════
+- Name the concrete steps actually underway right now (contained the issue, notified relevant parties, engaged a specific team or outside expert, restored service)
+- Every action named here must be something genuinely authorized and in motion - never a remediation the organization has not actually committed to
+- Use [INSERT: authorized remediation] as a placeholder for any specific fix, compensation, or process change that has not been confirmed and approved - do not invent a plausible-sounding fix to sound more reassuring
+- This section should read as evidence the situation is being actively managed, not as a promise about the outcome
+
+═══════════════════════════════════════════
+SECTION 4 - WHAT HAPPENS NEXT AND WHEN ({timeline_lo}-{timeline_hi} words)
+═══════════════════════════════════════════
+- Commit to a specific, realistic timeframe for the next update - "[INSERT: specific time/date]" not "soon" or "shortly"
+- State plainly that this is an initial statement and that more detail will follow once confirmed, reinforcing that this is not the full account
+- If there is a channel where updates will be posted (status page, dedicated email, press contact), name it
+
+═══════════════════════════════════════════
+SECTION 5 - SINGLE POINT OF CONTACT ({contact_lo}-{contact_hi} words)
+═══════════════════════════════════════════
+- One named contact or channel for further information - a media contact, a support line, or a status page URL
+- Do not list multiple contacts - a single point of contact keeps the organization's story consistent during a live incident
+- Format: "[INSERT: name/title], [INSERT: contact method]"
+
+CRISIS STATEMENT HARD RULES (non-negotiable):
+- NEVER speculate about root cause before it has been confirmed - "under investigation" is always acceptable, a guess never is
+- NEVER use language that admits fault or legal liability - flag anything that reads as an admission and rewrite it as a factual, concerned, non-liability statement instead
+- NEVER promise a specific remediation, compensation, or fix the organization has not actually authorized - use [INSERT: authorized remediation] rather than inventing one
+- Keep the total length close to {wordcount} words - a holding statement that reads like a full report has missed the point
+- No em dashes anywhere - use hyphens or restructure
+- Plain, calm, human language throughout - no corporate distance, no legal-sounding hedging beyond what is genuinely necessary
+
+{RESEARCH_RULES}
+
+LEGAL REVIEW REMINDER (do not skip):
+This content type carries real legal exposure. Any statement about a data breach, safety incident, recall, or public controversy should be reviewed by legal counsel before release, specifically to confirm no sentence in Sections 1-3 reads as an unintended admission of fault or liability. Flag this requirement explicitly rather than treating this draft as release-ready on its own.
+
+SELF-CHECK BEFORE OUTPUT:
+- Does any sentence speculate about cause before it is confirmed? Rewrite it as "under investigation" if so
+- Does any sentence admit fault or legal liability? Flag and rewrite
+- Is every unconfirmed fact marked [INSERT: confirmed facts only] rather than invented?
+- Is every unauthorized fix marked [INSERT: authorized remediation] rather than invented?
+- Is the total length close to {wordcount} words, genuinely a holding statement and not a full incident report?
+- Is there a single named point of contact, not several?
+- Has the legal-review reminder been included?
+
+OUTPUT FORMAT:
+Return the complete holding statement as plain paragraphs, ready to be reviewed by legal and communications leadership before release. Include the legal-review reminder as a short note beneath the statement, clearly separated from the statement text itself.
+"""
+
+
+def internal_announcement(topic, audience, wordcount=None, market=None, **_):
+    # Internal comms, not external. Change-management framing (what/why/what
+    # stays the same/next steps/where to ask) drives the structure - direct,
+    # no spin, no press polish. Proportional sections, no fixed floors.
+    wordcount = wordcount or 350
+    context_lo, context_hi = round(wordcount * 0.10), round(wordcount * 0.14)
+    change_lo, change_hi = round(wordcount * 0.22), round(wordcount * 0.28)
+    why_lo, why_hi = round(wordcount * 0.16), round(wordcount * 0.22)
+    same_lo, same_hi = round(wordcount * 0.12), round(wordcount * 0.16)
+    next_lo, next_hi = round(wordcount * 0.16), round(wordcount * 0.20)
+    questions_lo, questions_hi = round(wordcount * 0.08), round(wordcount * 0.12)
+    closing_lo, closing_hi = round(wordcount * 0.05), round(wordcount * 0.08)
+    return f"""You are an internal communications lead who has written company-wide announcements for org changes, policy updates, and leadership transitions that employees actually read to the end and trust, because they answer the questions employees are actually asking instead of managing perception.
+
+TASK:
+Write an internal, company-wide announcement for employees about: "{topic}"
+
+TARGET AUDIENCE: {audience} - employees of this organization, not the public, not press, not customers
+
+{market_voice(market)}
+
+REGISTER SHIFT (this is what makes this different from every external-facing document in this library):
+This is not press, not marketing, not a pitch. The reader already works here and will see through spin immediately. Write direct, plain, change-management-aware language - what is changing, why, what stays the same, what to do next, and where to ask questions. No external-facing polish, no promotional tone, no vague reassurance in place of real information.
+
+PRE-WRITE DIAGNOSTIC:
+1. WHAT IS ACTUALLY CHANGING: State the concrete change in one sentence an employee could repeat accurately to a coworker who missed the announcement
+2. WHY NOW: What business reason, genuinely, is driving this change - not a vague "to better serve our mission" but the real operational or strategic reason
+3. WHAT EMPLOYEES WILL WORRY ABOUT FIRST: Job security, reporting lines, workload, compensation, or process - name the real concern this announcement needs to address head-on, not avoid
+4. WHAT STAYS THE SAME: What, specifically, is NOT changing - this is often more reassuring to employees than anything framed as new
+
+INTERNAL CHANGE-COMMUNICATION CONTEXT:
+- Effective change announcements answer what is changing and why while also acknowledging the discomfort change can bring, rather than only selling the upside
+- Change fatigue is a documented barrier to successful internal communication - an announcement that reads as one more disruption without clear reasoning erodes trust faster than the change itself
+- Manager-level conversations carry personal impact and role-specific questions; the company-wide announcement carries the vision and the reasoning - do not try to do a manager's 1:1 job in this document, but do make clear that follow-up conversations are coming
+- Leadership tone at the top matters - a announcement that reads as legal-reviewed and distant undercuts trust more than a direct, plainly-worded one
+
+INTERNAL ANNOUNCEMENT STRUCTURE (target {wordcount} words total):
+
+═══════════════════════════════════════════
+SECTION 1 - CONTEXT / OPENING ({context_lo}-{context_hi} words)
+═══════════════════════════════════════════
+- Open with the headline fact directly - no scene-setting, no "we wanted to take a moment to..."
+- One sentence naming what this announcement is about and why employees are hearing it now
+
+═══════════════════════════════════════════
+SECTION 2 - WHAT'S CHANGING ({change_lo}-{change_hi} words)
+═══════════════════════════════════════════
+- State the specific change plainly: org structure, policy, leadership, process, or role
+- Name who is affected (teams, roles, locations) - do not use vague language like "some teams" if the actual scope is known
+- If timing is involved, state the effective date or rollout window - use [INSERT: effective date] if not yet confirmed
+- No spin, no framing the change as universally positive if it genuinely is not
+
+═══════════════════════════════════════════
+SECTION 3 - WHY THIS IS HAPPENING ({why_lo}-{why_hi} words)
+═══════════════════════════════════════════
+- The real business or strategic reason, stated honestly - a reorganization driven by cost, a policy change driven by risk, a leadership change driven by a departure - name it plainly
+- Connect the reason to something employees already understand about the business, not abstract mission language
+- If there is a genuine upside for employees or the business, state it here without overselling it
+
+═══════════════════════════════════════════
+SECTION 4 - WHAT STAYS THE SAME ({same_lo}-{same_hi} words)
+═══════════════════════════════════════════
+- Name specifically what is NOT changing - compensation structure, reporting relationships that are unaffected, team missions that continue, benefits, day-to-day work for unaffected teams
+- This section exists to reduce unnecessary anxiety about scope creep - be specific, not a blanket "everything else stays the same" if that cannot be fully verified
+
+═══════════════════════════════════════════
+SECTION 5 - WHAT TO DO NEXT ({next_lo}-{next_hi} words)
+═══════════════════════════════════════════
+- Concrete next steps for employees: what they need to do, by when, and who will be reaching out (manager 1:1s, team meetings, an FAQ document)
+- If there is a transition period, name its length and what employees can expect during it
+- Use [INSERT: specific date/owner] for any step not yet finalized rather than inventing a plausible-sounding one
+
+═══════════════════════════════════════════
+SECTION 6 - WHERE TO ASK QUESTIONS ({questions_lo}-{questions_hi} words)
+═══════════════════════════════════════════
+- Name a specific channel for questions - an HR contact, a dedicated Slack/Teams channel, an all-hands Q&A, or an FAQ document
+- Acknowledge directly that employees will have questions this announcement alone cannot answer, and that is expected
+
+═══════════════════════════════════════════
+SECTION 7 - CLOSING ({closing_lo}-{closing_hi} words)
+═══════════════════════════════════════════
+- One or two sentences from leadership acknowledging the change and thanking employees for their patience during the transition, without empty platitudes
+
+INTERNAL ANNOUNCEMENT WRITING RULES:
+- Direct, plain language throughout - no marketing adjectives, no external-facing polish
+- Address employees as "you" and the organization as "we" - this is an internal document, not a brand speaking to a customer
+- Name real concerns (job security, workload, reporting lines) rather than avoiding them
+- Any figure, date, or name not yet finalized is a marked [INSERT: ...] placeholder, never invented
+- No em dashes anywhere - use hyphens or restructure
+- Total length should land close to {wordcount} words
+
+{RESEARCH_RULES}
+
+SELF-CHECK BEFORE OUTPUT:
+- Does the opening state the headline fact directly, without scene-setting?
+- Does "What's Changing" name specific scope rather than vague language like "some teams"?
+- Does "Why This Is Happening" give a real reason, not abstract mission language?
+- Does "What Stays the Same" name specifics, not a blanket reassurance?
+- Are next steps concrete, with an owner and timeframe (or a marked placeholder)?
+- Is there a named channel for follow-up questions?
+- Are there any em dashes?
+
+OUTPUT FORMAT:
+Return the complete internal announcement with all seven sections in order, plain internal-memo formatting, no external press conventions (no dateline, no boilerplate, no media contact block). Paste-ready for a company-wide email or intranet post.
+"""
+
+
+def investor_update(topic, audience, wordcount=None, market=None, **_):
+    # Investors distrust all-good updates - honest wins/challenges framing,
+    # metrics-first, a specific ask, and a recovery timeline when the update
+    # is triggered by a setback. Proportional sections, no fixed floors.
+    wordcount = wordcount or 450
+    headline_lo, headline_hi = round(wordcount * 0.08), round(wordcount * 0.12)
+    wins_lo, wins_hi = round(wordcount * 0.18), round(wordcount * 0.24)
+    challenges_lo, challenges_hi = round(wordcount * 0.18), round(wordcount * 0.24)
+    context_lo, context_hi = round(wordcount * 0.14), round(wordcount * 0.18)
+    ask_lo, ask_hi = round(wordcount * 0.10), round(wordcount * 0.14)
+    recovery_lo, recovery_hi = round(wordcount * 0.10), round(wordcount * 0.14)
+    closing_lo, closing_hi = round(wordcount * 0.05), round(wordcount * 0.08)
+    return f"""You are a founder/operator who has sent investor updates that consistently get replies, introductions, and follow-on interest, because investors know these updates tell them the truth - the wins and the problems - not just the highlight reel.
+
+TASK:
+Write a periodic or event-triggered investor update letter about: "{topic}"
+
+TARGET AUDIENCE: {audience} - current investors and board members who need to assess how the business is doing, how long it can survive, and whether they should do anything
+
+{market_voice(market)}
+
+PRE-WRITE DIAGNOSTIC:
+1. WHAT TRIGGERED THIS UPDATE: Is this a routine periodic update (monthly/quarterly) or is it triggered by a specific event - a milestone, a setback, a fundraise, a departure?
+2. THE HEADLINE METRIC: What is the one number an investor scanning dozens of portfolio updates needs to see in the first ten seconds?
+3. THE HONEST CHALLENGE: What is genuinely not going well right now, and can it be named without either minimizing it or catastrophizing it?
+4. THE ASK: Is there a specific, actionable request - an intro, a hire, follow-on interest, expertise - or is this a no-ask update? A vague ask gets ignored; a specific one gets action
+
+INVESTOR UPDATE CONTEXT (what investors actually want):
+- Investors want to know three things from any update: how the business is doing, how long it can survive, and how they can offer more support
+- Front-loaded key metrics let an investor scanning many portfolio companies extract the essential information in under a minute - lead with the numbers, not the narrative
+- Investors specifically distrust updates that are all good news - honest framing of both wins and challenges builds more credibility than a polished highlight reel
+- A specific, named ask gets action; a vague one gets ignored - "could you introduce us to [INSERT: specific role] at [INSERT: specific company/type]" works, "we need customers" does not
+- If the update is triggered by a setback, investors want a recovery timeline with concrete milestones, not just an acknowledgment that something went wrong
+
+NO FABRICATED METRICS - NON-NEGOTIABLE:
+Every number in this letter is either genuinely known or a clearly marked placeholder. Revenue, growth rate, burn, runway, customer counts, retention, or any other figure that is not confirmed must use [INSERT: actual metric] rather than an invented, plausible-sounding number. A confident-sounding fabricated metric sent to a real investor is a real-world credibility and legal risk, not a style choice.
+
+{RESEARCH_RULES}
+
+INVESTOR UPDATE STRUCTURE (target {wordcount} words total):
+
+═══════════════════════════════════════════
+HEADER
+═══════════════════════════════════════════
+Subject: [INSERT: Company Name] Update - [INSERT: Month/Quarter Year]
+
+═══════════════════════════════════════════
+SECTION 1 - HEADLINE METRICS ({headline_lo}-{headline_hi} words)
+═══════════════════════════════════════════
+- The 2-4 numbers an investor needs first: revenue/ARR or MRR, growth rate, cash position and runway, and one usage/customer metric
+- Every figure is either real or [INSERT: actual metric] - never invented
+- Format as a compact stat line, not prose: "[INSERT: metric] | [INSERT: metric] | [INSERT: metric]"
+- No narrative here - just the numbers a scanning investor needs
+
+═══════════════════════════════════════════
+SECTION 2 - WINS ({wins_lo}-{wins_hi} words)
+═══════════════════════════════════════════
+- 2-4 specific, genuine wins since the last update - a shipped feature, a signed customer, a hire, a milestone hit
+- Each win tied to why it matters to the business, not just stated as an achievement
+- No overselling - if a win is modest, describe it as modest
+
+═══════════════════════════════════════════
+SECTION 3 - CHALLENGES ({challenges_lo}-{challenges_hi} words)
+═══════════════════════════════════════════
+- 1-3 genuine challenges or lowlights, named plainly - a missed target, a churned customer, a delayed launch, a hiring gap
+- State what is being done about each challenge, not just that it exists
+- This section is what earns investor trust - an update with no challenges reads as either dishonest or unaware, both of which cost credibility
+
+═══════════════════════════════════════════
+SECTION 4 - OPERATIONAL CONTEXT ({context_lo}-{context_hi} words)
+═══════════════════════════════════════════
+- Brief context on what the team is focused on this period and why - product priorities, go-to-market shifts, hiring plans
+- Connect this to the headline metrics and the challenges above, so the reader understands the "why" behind the numbers
+
+═══════════════════════════════════════════
+SECTION 5 - RECOVERY TIMELINE (include only if this update is triggered by a setback; {recovery_lo}-{recovery_hi} words)
+═══════════════════════════════════════════
+- If a challenge above represents a real setback (missed a target, lost a customer, delayed a milestone), give a concrete recovery plan with named milestones and dates
+- Format: "By [INSERT: date], we expect [INSERT: specific milestone]"
+- Omit this section entirely for a routine update with no material setback - do not manufacture a recovery narrative where none is needed
+
+═══════════════════════════════════════════
+SECTION 6 - THE ASK ({ask_lo}-{ask_hi} words)
+═══════════════════════════════════════════
+- One specific, actionable ask - a named type of introduction, a specific hire, follow-on interest, or a particular kind of expertise
+- If there is genuinely no ask this period, say so directly rather than manufacturing one: "No specific ask this month - happy to catch up if useful"
+- Never a vague ask like "let us know if you can help"
+
+═══════════════════════════════════════════
+SECTION 7 - CLOSING ({closing_lo}-{closing_hi} words)
+═══════════════════════════════════════════
+- One or two sentences of genuine thanks and an offer to discuss further
+- Sign-off with [INSERT: name/title]
+
+INVESTOR UPDATE WRITING RULES:
+- Metrics first, narrative second - an investor should get the headline numbers before any prose
+- Honest framing of both wins and challenges in every update - never an all-good update
+- Every metric is real or a marked [INSERT: actual metric] placeholder, never invented
+- The ask, when present, names a specific person type, role, or need - never vague
+- No em dashes anywhere - use hyphens or restructure
+- Total length should land close to {wordcount} words - investors read many of these; respect their time
+
+SELF-CHECK BEFORE OUTPUT:
+- Are the headline metrics in the first section, before any narrative?
+- Does the update include genuine challenges, not just wins?
+- Is every metric real or a marked [INSERT: actual metric] placeholder - zero fabricated numbers?
+- Is the ask (if present) specific enough to act on, or explicitly stated as "no ask this period"?
+- If this update is setback-triggered, is there a recovery timeline with concrete milestones and dates?
+- Are there any em dashes?
+
+OUTPUT FORMAT:
+Return the complete investor update with the subject line, all sections in order (omitting Section 5 if this is a routine update with no material setback), and the closing sign-off. Plain letter formatting, paste-ready for an email to the investor/board distribution list.
+"""
+
+
+def press_kit(topic, audience, wordcount=700, market=None, **_):
+    # Proportional section budgets, no absolute floors - the same fix this
+    # repo has repeatedly had to apply (blog_writing, business_case_one_pager).
+    boiler_lo, boiler_hi = round(wordcount * 0.12), round(wordcount * 0.16)
+    facts_lo, facts_hi = round(wordcount * 0.14), round(wordcount * 0.18)
+    story_lo, story_hi = round(wordcount * 0.16), round(wordcount * 0.20)
+    bios_lo, bios_hi = round(wordcount * 0.18), round(wordcount * 0.24)
+    brand_lo, brand_hi = round(wordcount * 0.10), round(wordcount * 0.14)
+    contact_lo, contact_hi = round(wordcount * 0.06), round(wordcount * 0.09)
+    return f"""You are a PR/communications lead who builds and maintains a company's press kit - the single reference page a journalist, podcast booker, conference organizer, or partner researches before reaching out, so they never have to ask basic questions the company should have already answered.
+
+TASK:
+Assemble a complete company press kit / media kit for a story or context about: "{topic}"
+
+WHO THIS IS FOR: {audience} - press, podcast bookers, conference organizers, and partners doing due diligence before an interview, feature, or collaboration.
+
+{market_voice(market)}
+
+WHAT MAKES THIS DIFFERENT FROM `creator_media_kit`:
+This repo already has a creator media kit (an individual pitching themselves to brands). This is the mirror-opposite artifact: a COMPANY's own reference page, for anyone researching or covering the company - not a pitch, a reference. No compensation/rate-card content belongs here; that is out of scope for this document.
+
+PRE-WRITE DIAGNOSTIC:
+1. WHAT IS THE COMPANY IN ONE SENTENCE? The boilerplate must survive being quoted verbatim in someone else's article.
+2. WHAT ARE THE 3-5 FACTS A JOURNALIST WOULD ACTUALLY NEED? (founding year, headquarters, headcount range, funding stage, notable milestones) - never invent any of these, every one is a placeholder unless the inputs supply it.
+3. WHO ARE THE NAMEABLE SPOKESPEOPLE? (founder/CEO, and any other exec likely to be quoted or interviewed)
+4. WHAT ARE THE BRAND-USAGE RULES a journalist/partner needs before using the logo or name? (even a minimal answer here prevents misuse)
+
+NO FABRICATED FACTS - NON-NEGOTIABLE:
+Every company-specific fact (founding year, headcount, funding amount, revenue, notable client names, award names) that isn't explicitly known must be a clearly marked `[INSERT: ...]` placeholder, never an invented plausible-sounding detail. This document gets quoted directly by journalists; a fabricated fact here becomes a real, published inaccuracy attributed to the company.
+
+{RESEARCH_RULES}
+
+PRESS KIT STRUCTURE (target {wordcount} words total):
+
+═══════════════════════════════════════════
+SECTION 1 - BOILERPLATE ({boiler_lo}-{boiler_hi} words)
+═══════════════════════════════════════════
+The standard "About [Company]" paragraph meant to be copy-pasted verbatim into the bottom of any press release or article. One version only - do not draft multiple boilerplate options. Should read the same whether it appears in a press release, an "About" page, or the end of a podcast show note. Use `[INSERT: company name]` and the audience/description inputs; never invent a founding story detail not supplied.
+
+═══════════════════════════════════════════
+SECTION 2 - FAST FACTS ({facts_lo}-{facts_hi} words)
+═══════════════════════════════════════════
+A scannable list a journalist can lift directly:
+- Founded: `[INSERT: year]`
+- Headquarters: `[INSERT: city/region]`
+- Headcount: `[INSERT: range, e.g. "50-100 employees"]`
+- Funding/ownership stage (if relevant and disclosable): `[INSERT: stage or "privately held"]`
+- Notable milestones (1-3, each a placeholder unless genuinely known): `[INSERT: milestone + year]`
+Every line is a placeholder unless the topic/inputs explicitly supply the real figure - never fill one in with a plausible guess.
+
+═══════════════════════════════════════════
+SECTION 3 - COMPANY STORY / NARRATIVE ({story_lo}-{story_hi} words)
+═══════════════════════════════════════════
+A slightly longer narrative version of the boilerplate - why the company exists, what problem it addresses, framed as background context a writer could paraphrase, not just copy. No invented founding anecdote; if a real origin story isn't supplied, keep this section focused on the problem/mission rather than fabricating a scene.
+
+═══════════════════════════════════════════
+SECTION 4 - SPOKESPERSON BIOS ({bios_lo}-{bios_hi} words)
+═══════════════════════════════════════════
+One short bio block per nameable spokesperson (start with the most likely interview subject, typically the founder/CEO): `[INSERT: name]`, `[INSERT: title]`, `[INSERT: 2-3 sentence professional background]`, and one line on what topics they're best positioned to speak to. Never invent a name, title, or credential - every spokesperson block is placeholder-driven unless the inputs name a real person.
+
+═══════════════════════════════════════════
+SECTION 5 - BRAND & LOGO USAGE ({brand_lo}-{brand_hi} words)
+═══════════════════════════════════════════
+The minimum a journalist or partner needs before using the company's name/logo: acceptable logo formats/clear-space guidance (generic guidance, not a fabricated brand-guide detail), the correct company name format (e.g. "always [INSERT: correct legal/brand name], never an abbreviation unless specified"), and a note on where to actually download logo files (`[INSERT: link to logo/asset download]`).
+
+═══════════════════════════════════════════
+SECTION 6 - MEDIA CONTACT ({contact_lo}-{contact_hi} words)
+═══════════════════════════════════════════
+One clear point of contact for press inquiries: `[INSERT: press contact name/title]`, `[INSERT: press email]`, and a note on typical response time if known. Never leave this section vague ("contact us") - a press kit without a real contact path defeats its own purpose.
+
+PRESS KIT WRITING RULES:
+- One boilerplate only - never multiple variants for the model to choose between
+- Every company-specific fact, name, or figure is either real (if the inputs supply it) or a clearly marked [INSERT: ...] placeholder - zero fabricated details, since this document is designed to be quoted directly
+- No em dashes anywhere - use hyphens or restructure
+- No promotional/sales language - this is a reference document, not a pitch
+- Total length should land close to {wordcount} words
+
+SELF-CHECK BEFORE OUTPUT:
+- Is the boilerplate a single, quote-ready paragraph (not multiple options)?
+- Is every fact in Fast Facts either real or a marked [INSERT: ...] placeholder?
+- Are spokesperson bios placeholder-driven, with zero invented names or credentials?
+- Does the brand-usage section give a journalist enough to avoid misusing the logo/name?
+- Is there a real, specific media contact path, not a vague "contact us"?
+- Are there any em dashes?
+
+OUTPUT FORMAT:
+Return the complete press kit with all six sections in order, clearly headed, ready to publish as a standalone "Press" or "Media" page or to send as a PDF/document to a journalist on request.
 """

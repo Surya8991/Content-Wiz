@@ -5,6 +5,34 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0]
+
+### Added
+- 24 new templates closing the gaps found in a systematic full-funnel
+  workflow audit (paid channels, lifecycle marketing, sales enablement,
+  events, PR/comms, employer branding, mobile messaging), each grounded in
+  current 2026 platform/legal research before writing:
+  - Lifecycle email (`templates/lifecycle.py`): onboarding, win-back (covers
+    cart-abandonment as a trigger variant), churn-prevention, upsell/cross-sell.
+  - Sales enablement (`templates/sales_enablement.py`): pitch deck narrative,
+    cold call script, InMail/connection-request template, proposal copy.
+  - Crisis and internal PR (`templates/pr.py`): crisis holding statement,
+    internal company announcement, investor update, company press kit
+    (distinct from the existing creator media kit).
+  - Paid ad formats (`templates/paid_ads.py`): display/banner copy (IAB sizes),
+    native ad copy (with FTC disclosure guidance), a 3-stage retargeting
+    sequence, and :15/:30 CTV/streaming scripts.
+  - Employer branding (`templates/recruitment.py`): job postings (with
+    pay-transparency-law and inclusive-language awareness) and employee
+    spotlights.
+  - Event lifecycle (`templates/events.py`): webinar registration pages, a
+    segmented attended/no-show post-event follow-up, and booth-lead follow-up.
+  - Mobile messaging (`templates/mobile_messaging.py`): SMS (TCPA-aware),
+    push notifications, and in-app messages.
+- All 24 wired into `PLATFORM_MAP`/`SUBFOLDER_MAP` with new aliases and
+  output subfolders; `templates/` grows from 9 to 15 modules, 40 to 64
+  template keys.
+
 ## [0.5.0]
 
 ### Added

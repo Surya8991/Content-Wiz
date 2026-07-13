@@ -13,15 +13,23 @@ delete them, or add your own.
 
 ## What it can do
 
-- **40 rich content-type templates** across blog/SEO (pillar posts, Dev.to/
+- **64 rich content-type templates** across blog/SEO (pillar posts, Dev.to/
   Hashnode, Medium, comparison pages, Substack, SEO glossary pages), social
   (LinkedIn, Twitter/X, Instagram, carousels, profile/bio optimization), video
-  (YouTube, podcasts, Reels/Shorts/TikTok scripts), community (Quora,
-  LiveJournal, Tumblr, Discord announcements), local (Google Business Profile,
-  Pinterest, review responses), growth (newsletters, FAQs, GEO/AI-search,
-  landing pages, repurposing), PR (HARO pitches, press releases, case studies,
-  guest articles, internal business-case one-pagers), and creator marketing
-  (influencer outreach, UGC briefs, personal-brand posts, creator media kits).
+  (YouTube, podcasts, Reels/Shorts/TikTok scripts, CTV/streaming ads), community
+  (Quora, LiveJournal, Tumblr, Discord announcements), local (Google Business
+  Profile, Pinterest, review responses), growth (newsletters, FAQs, GEO/
+  AI-search, landing pages, repurposing), PR (HARO pitches, press releases,
+  case studies, guest articles, business-case one-pagers, crisis statements,
+  internal announcements, investor updates, company press kits), creator
+  marketing (influencer outreach, UGC briefs, personal-brand posts, creator
+  media kits), lifecycle email (onboarding, win-back, churn-prevention,
+  upsell/cross-sell), sales enablement (pitch deck narratives, cold call
+  scripts, InMail templates, proposal copy), paid ads (display/banner, native,
+  retargeting sequences, CTV scripts), employer branding (job postings,
+  employee spotlights), events (webinar registration pages, segmented
+  post-event follow-up, booth follow-up), and mobile messaging (SMS, push
+  notifications, in-app messages).
 - **49 flat prompt files** covering everything from ad copy (Google, Meta,
   LinkedIn ads) to buyer personas, whitepapers, webinar promos, and schema
   markup - all reachable from the same CLI.
@@ -65,10 +73,10 @@ Content Wiz/
 ├── config.json                       ← Brands + defaults (edit here, not in code)
 ├── config.py                         ← Loads config.json with a safe fallback
 ├── generate.py                       ← CLI prompt generator (single + bulk + --generate)
-├── templates/                        ← 40 rich, parameterized prompt builders, split by domain
+├── templates/                        ← 64 rich, parameterized prompt builders, split by domain
 │   ├── __init__.py                   ← Re-exports every function at package level
 │   ├── _shared.py                    ← HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES
-│   ├── local.py, blog.py, social.py, community.py, creator.py, personal.py, video.py, growth.py, pr.py
+│   ├── local.py, blog.py, social.py, community.py, creator.py, personal.py, video.py, growth.py, pr.py, lifecycle.py, sales_enablement.py, paid_ads.py, recruitment.py, events.py, mobile_messaging.py
 ├── textprompts.py                    ← Loader wiring the flat prompts/*.txt into the CLI
 ├── llm.py                            ← Optional live generation (--generate); provider-agnostic:
 │                                        Anthropic/Claude, Google/Gemini, or OpenAI/Codex-GPT
@@ -84,15 +92,18 @@ The subfolders it can produce are:
 
 ```
 Blog/                Blog_Suggestions/    Business_Case/       Case_Study/
-Comparison_Pages/    Content_Brief/       Content_Calendar/    DataBank/
-DevTo_Hashnode/       Discord/             FAQ/                 GEO/
-GMB/                  Glossary_Pages/      Guest_Articles/       HARO/
-Influencer_Outreach/  Instagram/           Landing_Pages/        LinkedIn/
-LinkedIn_Carousel/    LiveJournal/         Media_Kit/            Medium/
-Meta/                 Newsletter/          Personal_Brand/       Pinterest/
-Podcast/              Press_Release/       Profile_Bio/          Quora/
-Review_Response/      Short_Form_Video/    Substack/             Tumblr/
-Twitter/              UGC_Briefs/          Video_Scripts/        YouTube/
+Comparison_Pages/    Content_Brief/       Content_Calendar/    Crisis_Comms/
+DataBank/            DevTo_Hashnode/      Discord/             Events/
+FAQ/                 GEO/                 GMB/                 Glossary_Pages/
+Guest_Articles/       HARO/                Influencer_Outreach/ Instagram/
+Internal_Comms/       Investor_Updates/    Landing_Pages/        Lifecycle_Email/
+LinkedIn/             LinkedIn_Carousel/   LiveJournal/          Media_Kit/
+Medium/               Meta/                Mobile_Messaging/     Newsletter/
+Paid_Ads/             Personal_Brand/      Pinterest/            Podcast/
+Press_Kit/            Press_Release/       Profile_Bio/          Quora/
+Recruitment/          Review_Response/     Sales_Enablement/     Short_Form_Video/
+Substack/             Tumblr/              Twitter/              UGC_Briefs/
+Video_Scripts/        YouTube/
 Misc/  (fallback for any unmapped key)
 ```
 
@@ -247,6 +258,30 @@ for what `generate.py` can produce.
 | `substack_post` | `substack_post`, `substack` | Substack |
 | `glossary_page` | `glossary_page`, `glossary`, `definition_page` | Glossary_Pages |
 | `discord_announcement` | `discord_announcement`, `discord` | Discord |
+| `onboarding_sequence` | `onboarding_sequence`, `onboarding` | Lifecycle_Email |
+| `win_back_sequence` | `win_back_sequence`, `win_back`, `winback` | Lifecycle_Email |
+| `churn_prevention` | `churn_prevention`, `churn` | Lifecycle_Email |
+| `upsell_cross_sell` | `upsell_cross_sell`, `upsell`, `cross_sell` | Lifecycle_Email |
+| `pitch_deck_narrative` | `pitch_deck_narrative`, `pitch_deck` | Sales_Enablement |
+| `cold_call_script` | `cold_call_script`, `cold_call` | Sales_Enablement |
+| `inmail_template` | `inmail_template`, `inmail` | Sales_Enablement |
+| `proposal_copy` | `proposal_copy`, `proposal` | Sales_Enablement |
+| `crisis_statement` | `crisis_statement`, `crisis` | Crisis_Comms |
+| `internal_announcement` | `internal_announcement`, `internal_comms` | Internal_Comms |
+| `investor_update` | `investor_update`, `investor` | Investor_Updates |
+| `press_kit` | `press_kit`, `media_kit_company` | Press_Kit |
+| `display_banner_copy` | `display_banner_copy`, `display_ads`, `banner_ads` | Paid_Ads |
+| `native_ad_copy` | `native_ad_copy`, `native_ads` | Paid_Ads |
+| `retargeting_sequence` | `retargeting_sequence`, `retargeting` | Paid_Ads |
+| `ctv_script` | `ctv_script`, `ctv`, `streaming_ad` | Paid_Ads |
+| `job_posting` | `job_posting`, `job`, `recruitment` | Recruitment |
+| `employee_spotlight` | `employee_spotlight`, `spotlight` | Recruitment |
+| `webinar_registration_page` | `webinar_registration_page`, `webinar_registration`, `event_registration` | Events |
+| `event_followup_sequence` | `event_followup_sequence`, `event_followup` | Events |
+| `booth_followup` | `booth_followup`, `booth` | Events |
+| `sms_blast` | `sms_blast`, `sms` | Mobile_Messaging |
+| `push_notification` | `push_notification`, `push` | Mobile_Messaging |
+| `in_app_message` | `in_app_message`, `in_app` | Mobile_Messaging |
 
 > **Alias gotcha:** `--platform linkedin`, `wordpress`, and `blog` all resolve to
 > `blog_writing` (long-form blog). For a LinkedIn *post*, use `--platform linkedin_post`.
