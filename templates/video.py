@@ -1,4 +1,4 @@
-from ._shared import HUMAN_WRITING_RULES, RANKABILITY_RULES
+from ._shared import HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES
 
 
 def youtube_desc(topic, audience, wordcount, **_):
@@ -97,6 +97,8 @@ DO NOT USE:
 {HUMAN_WRITING_RULES}
 
 {RANKABILITY_RULES}
+
+{RESEARCH_RULES}
 
 SELF-REVIEW:
 - Read line 1 alone - does it work as a Google search snippet that earns the click?
@@ -327,8 +329,3 @@ STATE THE MODE, then output the full content for that mode, followed by the 11-D
 
 Save to: output/Podcast/
 """
-
-
-# ─────────────────────────────────────────────
-# GUEST ARTICLE PITCH + FULL ARTICLE TEMPLATE
-# ─────────────────────────────────────────────

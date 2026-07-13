@@ -66,32 +66,32 @@ Generate the article in exactly these six sections. Label them during drafting. 
 
 SECTION 1: HEADLINE (already selected from Step 1)
 
-SECTION 2: OPENING (80 to 120 words)
+SECTION 2: OPENING (100 to 150 words)
 Open with the specific problem, tension, or observation that motivated this article.
 Do not open with: "In recent years..." / "Many organizations today..." / "As the world of [topic] evolves..."
 Open with: A specific moment, a named contradiction, a counterintuitive data point, or a scenario the reader immediately recognizes.
 The last sentence of the opening must function as a thesis: state the specific claim the article will prove or the specific answer it will deliver.
 
-SECTION 3: THE PROBLEM (150 to 250 words)
+SECTION 3: THE PROBLEM (200 to 320 words)
 Develop why the status quo is failing or why the conventional approach produces the wrong result.
 Name the cost of the problem in concrete terms (time, money, decisions, outcomes).
 Include one named statistic with source and year.
 Do not offer the solution here. The reader should feel the weight of the problem before seeing the answer.
 
-SECTION 4: THE PEAK / FRAMEWORK (200 to 400 words)
+SECTION 4: THE PEAK / FRAMEWORK (350 to 500 words)
 Deliver the central claim in full.
 This is the Shiny Dime section. Name the framework, concept, or insight if it has a name.
 Use subheadings within this section if breaking into steps or components.
 Include one first-party example (client outcome, program result, or named scenario from brand experience) or one well-sourced external case study.
 Each step or component must name: what it is, why it matters, and what it looks like in practice.
 
-SECTION 5: APPLICATION (150 to 300 words)
+SECTION 5: APPLICATION (200 to 320 words)
 Give the reader something to do with the framework.
 A diagnostic question, a 3-step process, a checklist, or a decision tree.
 This section converts a reader from "interested" to "equipped." Trade publication readers and Medium professionals arrive for utility. Deliver it here.
 Name the specific result the reader should expect if they apply the framework correctly.
 
-SECTION 6: CLOSING (50 to 80 words)
+SECTION 6: CLOSING (60 to 100 words)
 Return to the opening. Echo the tension or observation introduced in Section 2 and show how the article's framework resolves it.
 End with one forward-facing sentence: what becomes possible when the reader applies this.
 No summary. No "in conclusion." No "I hope this was helpful."

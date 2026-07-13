@@ -1,4 +1,4 @@
-from ._shared import HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES  # noqa: F401
+from ._shared import HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES
 
 
 def medium_step1(topic, **_):

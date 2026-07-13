@@ -12,7 +12,7 @@ WHAT GEO IS (AND WHY STRUCTURE MATTERS MORE THAN RANKING)
 
 Generative Engine Optimization (GEO) is the practice of structuring content so that AI retrieval systems - Google AI Overviews, ChatGPT, Perplexity, and Google AI Mode - cite it in their generated answers. Unlike traditional SEO, which optimizes for ranking position, GEO optimizes for being retrieved as a source passage inside an AI-generated response.
 
-As of 2026, 76% of AI Overview citations come from pages ranking in the top 10, but 46.5% of cited URLs rank outside the top 50. Structure and authority can overcome lower organic rankings. A well-structured page with clear chunk-level answers and FAQ schema can earn AI citations even without a first-page ranking.
+Industry citation-pattern analyses suggest most AI Overview citations come from pages already ranking well, while a meaningful share of cited URLs rank outside the top 50. Structure and authority can overcome lower organic rankings. A well-structured page with clear chunk-level answers and FAQ schema can earn AI citations even without a first-page ranking. (The figures above are general industry context for prompt design, not a citable statistic: never copy an unattributed precise percentage like this into generated content. Any stat placed in actual output must independently satisfy the source/organization/year rule below.)
 
 The core insight: AI engines retrieve chunks, not pages. They break content into passages and retrieve the most relevant chunk for each part of a synthesized answer. Each section of every article must be independently useful, independently readable, and independently citable - without requiring the AI to read surrounding sections for context.
 
@@ -25,7 +25,7 @@ Brand: [BRAND NAME OR URL]
 Target Query: [The exact question or search phrase this content should be cited for]
 Platform Priority: [Google AIO / Perplexity / ChatGPT / All three - citation patterns differ by platform]
 Content to Optimize (Mode A): [Paste existing content or provide URL]
-Topic (Mode B): [INSERT topic and target keyword]
+Topic (Mode B): [TOPIC] (target keyword: [INSERT])
 Page URL (Mode C): [URL to audit]
 First-Party Data Available: [Any brand program stats, client outcomes, or original data - leave blank if none]
 
@@ -68,7 +68,7 @@ Layer 4: Organizations that conduct skills gap analyses annually spend 23% less 
 FAQ SECTION RULES (MANDATORY FOR ALL GEO-OPTIMIZED CONTENT)
 ------------------------------------------------------------
 
-Q&A format content is 2.8x more likely to be cited by AI search systems than standard prose sections (as of 2026 citation analysis). Add a dedicated FAQ section to every piece of content optimized or written under this prompt.
+Q&A format content is meaningfully more likely to be cited by AI search systems than standard prose sections, per general industry citation-pattern analysis (context only, not a sourced figure to reuse in output). Add a dedicated FAQ section to every piece of content optimized or written under this prompt.
 
 MINIMUM: 5 questions per FAQ section.
 MAXIMUM: 8 questions (beyond this, the page dilutes topical focus).
@@ -115,7 +115,7 @@ GOOGLE AI OVERVIEWS / AI MODE:
 - Prioritize FAQ schema and HowTo schema (highest citation lift)
 - Update content within the last 90 days for time-sensitive queries - add "Last updated: [date]" stamp
 - Direct answer must appear in the first 40 to 60 words of the section
-- Google AI Mode and AI Overviews cite the same URLs only 13.7% of the time - optimize for both with FAQ and structured content
+- Google AI Mode and AI Overviews frequently cite different URLs for the same query (context only, not a sourced figure) - optimize for both with FAQ and structured content
 
 PERPLEXITY:
 - Perplexity favors longer, more comprehensive content
@@ -139,7 +139,7 @@ ALL THREE:
 CITATION FRESHNESS RULE
 ------------------------------------------------------------
 
-Approximately 50% of content cited in AI search responses is less than 13 weeks old. AI systems prioritize recently updated, recently cited, and recently active content. A well-structured article published two years ago and never updated will be deprioritized in favor of newer alternatives.
+A substantial share of content cited in AI search responses is recently published or recently updated (general industry context, not a sourced figure for reuse). AI systems prioritize recently updated, recently cited, and recently active content. A well-structured article published two years ago and never updated will be deprioritized in favor of newer alternatives.
 
 Freshness actions to include in the output:
 1. Add a visible "Last updated: [date]" line at the top or bottom of the page

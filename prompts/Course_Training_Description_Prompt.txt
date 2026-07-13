@@ -10,7 +10,7 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Write a course or training programme description for [BRAND NAME], [BRAND DESCRIPTION], for the programme titled "[COURSE / TRAINING TITLE]". The description should be 150-200 words. Open with a compelling statement about the problem or skill gap the course addresses. Follow with what participants will learn (3-4 key outcomes), who the course is designed for, the format and duration, and close with a CTA linking to [URL]. Write in a professional B2B tone targeting [TARGET AUDIENCE e.g. L&Ds, HRs, and decision-makers]. Do not use em dashes.
+Write a course or training programme description for [BRAND NAME], [BRAND DESCRIPTION], for the programme titled "[COURSE / TRAINING TITLE]". The description should be 150-200 words. Open with a compelling statement about the problem or skill gap the course addresses. Follow with what participants will learn (3-4 key outcomes), who the course is designed for, the format and duration, and close with a CTA linking to [URL]. Write in a professional B2B tone targeting [TARGET AUDIENCE] (e.g. L&Ds, HRs, and decision-makers). Do not use em dashes. Avoid passive voice.
 
 Course URL: [INSERT URL]
 Course Format: [e.g. Instructor-led / Online self-paced / Blended]
@@ -33,6 +33,7 @@ RULES
 - Must include 3-4 learning outcomes
 - Must specify who the course is for
 - No em dashes anywhere
+- No passive voice
 - CTA links to course URL
 - Output saved to output/Course_Descriptions/
 - The identical opening statement or closing CTA sentence reused across multiple course descriptions in the same batch - if you are generating more than one description in a session, no two may share an opening statement or closing CTA sentence

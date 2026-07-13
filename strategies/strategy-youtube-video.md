@@ -140,6 +140,6 @@ The minimum viable cadence for algorithm growth is 1 long-form video per week. B
 
 ---
 
-## Adapting This to Your Brand
+## Adaptation for Your Brand
 
 Some brands have a natural YouTube advantage: course providers and certification trainers, for example, have educational content built into their product. Your brand's own curriculum, client case studies, and internal expertise are all raw material for YouTube content that competitors cannot replicate without the same depth of operational experience. Shorts should lead with a single data point or counterintuitive finding from your brand's own programs - "3 out of 4 employees in our assessments showed skill gaps in this one area" is a more compelling Short hook than a generic productivity tip. Long-form videos should use the same stat-backed, plain paragraph structure as written content, translated into spoken form. No em dashes in on-screen text. The brand voice for video is: expert, direct, practical, and specific - never aspirational, inspirational, or vague.

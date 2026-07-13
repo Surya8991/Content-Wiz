@@ -10,7 +10,7 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Write an original research report for [BRAND NAME], [BRAND DESCRIPTION], titled "[REPORT TITLE]" based on the following data or survey findings: [PASTE DATA / SURVEY RESULTS OR DESCRIBE THE DATASET]. The report should be 1500-2000 words. Structure it with an executive summary, methodology note, 4-5 key findings sections each anchored by a headline stat, analysis and interpretation of each finding, implications for [TARGET AUDIENCE], and a conclusion with recommendations and CTA linking to [URL]. Write in an authoritative, analytical tone. Position [BRAND NAME] as the source of the research naturally. Do not use em dashes. Avoid passive voice.
+Write an original research report for [BRAND NAME], [BRAND DESCRIPTION], titled "[REPORT TITLE]" based on the following data or survey findings: [PASTE DATA / SURVEY RESULTS OR DESCRIBE THE DATASET]. The report should be 1500-2000 words. Structure it with an executive summary, methodology note, 4-5 key findings sections each anchored by a headline stat, analysis and interpretation of each finding, implications for [TARGET AUDIENCE], and a conclusion with recommendations and CTA linking to [URL]. Write in an authoritative, analytical tone. Position [BRAND NAME] as the source of the research naturally. Every headline stat and supporting figure must name its source, organization, and year: if the figure comes from the brand's own survey or program data, cite it as "[BRAND NAME]'s [Year] [survey/program name]"; never present an unverified or first-party number as fact without naming where it came from. Do not use em dashes. Avoid passive voice.
 
 Data or Survey Input: [PASTE FINDINGS OR DESCRIBE DATASET]
 Report URL (if published): [INSERT URL]
@@ -46,6 +46,8 @@ RULES
 
 - Executive summary must include 3-5 headline stats
 - Each finding must include a headline stat, 2-3 sentences of analysis, and 1-2 sentences on implications
+- Every stat in the report names its source, organization, and year, including first-party/brand data (cite it as the brand's own survey or dataset, do not present it as an unattributed fact)
+- Never state a figure as fact if it cannot be traced to the pasted data or a named, real source; flag anything unverifiable rather than inventing a precise-sounding number
 - Methodology section is mandatory even if brief
 - No em dashes anywhere
 - No passive voice

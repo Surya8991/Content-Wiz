@@ -1,6 +1,6 @@
 import html
 
-from ._shared import HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES  # noqa: F401
+from ._shared import HUMAN_WRITING_RULES, RESEARCH_RULES
 
 
 def quora(topic, audience, **_):
@@ -85,6 +85,8 @@ DO NOT USE:
 - More than 1 emoji in the entire answer
 
 {HUMAN_WRITING_RULES}
+
+{RESEARCH_RULES}
 
 SELF-REVIEW:
 - Read sentence 1 alone - does it directly answer the asker's likely question?

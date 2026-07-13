@@ -431,7 +431,7 @@ THE CARE FRAMEWORK (apply to every pitch):
 - RELEVANCY: Every sentence connects directly to what the journalist asked - no padding
 - EXCLUSIVITY: Include at least one insight, data point, or observation the journalist cannot find through a Google search
 
-PITCH STRUCTURE (5 blocks, 150 to 280 words total):
+PITCH STRUCTURE (5 blocks, 110 to 195 words total):
 
 BLOCK 1 - OPENING CLAIM (1 to 2 sentences, 25 to 40 words):
 The single most credible, specific, and counterintuitive claim the spokesperson can make on this topic.
@@ -459,12 +459,12 @@ One supporting statistic or real-world example that backs Block 3.
 - If using a client outcome: describe it without naming the client - "A 1,200-person financial services firm reduced onboarding time by 35% in 90 days using this approach."
 - Do not use the same source as Block 1 if possible
 
-BLOCK 5 - CONTACT / CTA (1 sentence):
+BLOCK 5 - CONTACT / CTA (1 sentence, 10 to 20 words):
 - Offer availability for follow-up: "Available for a 15-minute briefing or additional data - [email placeholder]."
 - No promotional language. No mention of products, services, or sales pages.
 
 GLOBAL PITCH RULES:
-- 150 to 280 words total. Journalists read hundreds of pitches - they stop reading at 300 words.
+- 110 to 195 words total. Journalists read hundreds of pitches - they stop reading at 300 words.
 - No em dashes anywhere. Use a comma, colon, or full stop.
 - No passive voice. Every sentence uses an active subject and verb.
 - No first-person pronouns starting a sentence. Rewrite to lead with the observation.
@@ -475,7 +475,7 @@ GLOBAL PITCH RULES:
 SELF-CHECK BEFORE OUTPUT:
 - Does Block 1 contain a specific claim a journalist would directly quote?
 - Does every stat name its source and year?
-- Is the total word count between 150 and 280?
+- Is the total word count between 110 and 195?
 - Does any sentence start with "I", "We", "Our", or a vague opener?
 - Would a journalist covering this topic find this pitch more credible than a press release?
 
@@ -504,7 +504,7 @@ MODE SELECTION:
 Choose the mode that fits the task:
 
 MODE A - PITCH EMAIL: A cold pitch to a publication editor (under 150 words, 4-block structure).
-MODE B - FULL ARTICLE DRAFT: A complete guest article ready for editor submission (700 to 1,200 words).
+MODE B - FULL ARTICLE DRAFT: A complete guest article ready for editor submission (840 to 1,260 words).
 
 State the selected mode before beginning.
 
@@ -585,7 +585,7 @@ AUTHOR BIO (40 to 60 words):
 - No promotional language. No sales pitch.
 
 ARTICLE WRITING RULES:
-- 700 to 1,200 words total
+- 840 to 1,260 words total
 - Third person for brand references in the body. First person acceptable for personal observations.
 - Every stat names source organization and year.
 - No em dashes anywhere.

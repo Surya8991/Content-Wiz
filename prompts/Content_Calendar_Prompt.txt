@@ -69,7 +69,9 @@ OTHER:
 OUTPUT FORMAT (CSV)
 ------------------------------------------------------------
 
-Week | Day | Platform | Content Type | Topic | Post Angle / Description | Prompt File to Use
+Week | Day | Platform | Content Type | Topic | Post Angle / Description | Prompt File to Use | Status | Reviewed By | Review Date
+
+Status starts as "Draft" for every row. Any row carrying a statistic or written in first-person/confessional voice may not move to "Published" until Reviewed By and Review Date are filled in by a human reviewer.
 
 Save to output/Content_Calendar/
 
@@ -83,4 +85,5 @@ RULES
 - Video content (Reel / YouTube / LinkedIn Video) must appear at least once per week
 - No em dashes anywhere
 - No passive voice
+- Any stat-bearing or first-person/confessional-voice content type requires a reviewer name and date in the tracker before its Status can move to "Published"
 - Output saved to output/Content_Calendar/

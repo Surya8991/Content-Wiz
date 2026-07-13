@@ -35,5 +35,7 @@ RULES
 - Minimum 10 gap opportunities identified
 - Each recommended content idea must be specific and actionable
 - No em dashes anywhere
+- No passive voice
 - Research must be grounded in actual competitor content, not assumptions
+- Any statistic or data point cited to justify why a gap matters must name its source, organization, and year. Never invent a plausible-sounding citation; if a claim cannot be verified, describe the gap qualitatively instead
 - Output saved to output/Competitor_Gap_Analysis/

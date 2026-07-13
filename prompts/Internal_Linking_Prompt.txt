@@ -35,4 +35,5 @@ RULES
 - No two anchor text suggestions in the same output may be identical or near-identical phrasing
 - Reason column must explain the topical relevance
 - No em dashes anywhere
+- No passive voice, active voice throughout
 - Output saved to output/Internal_Linking/

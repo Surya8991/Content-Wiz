@@ -26,10 +26,12 @@ DOCUMENT STRUCTURE
 4. Section 1 - Insight or Theme
 5. Section 2 - Insight or Theme
 6. Section 3 - Insight or Theme
-7. Section 4 - Insight or Theme (optional)
-8. Actionable Recommendations (3-5 bullet points)
-9. Conclusion with CTA
-10. References
+7. Section 4 - Insight or Theme
+8. Section 5 - Insight or Theme (optional)
+9. Section 6 - Insight or Theme (optional)
+10. Actionable Recommendations (3-5 bullet points)
+11. Conclusion with CTA
+12. References
 
 ------------------------------------------------------------
 OUTPUT FORMAT

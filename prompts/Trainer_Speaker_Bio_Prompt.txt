@@ -10,7 +10,7 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Write a professional bio for [TRAINER / SPEAKER NAME], a trainer or speaker associated with [BRAND NAME], [BRAND DESCRIPTION]. Generate two versions: a long bio (150-200 words) and a short bio (50-75 words). Both bios should be written in third person, highlight the trainer's expertise, key credentials or certifications, industries or domains covered, and what makes their delivery style distinctive. Naturally reference [BRAND NAME] as their affiliated organisation. Do not use em dashes.
+Write a professional bio for [TRAINER / SPEAKER NAME], a trainer or speaker associated with [BRAND NAME], [BRAND DESCRIPTION]. Generate two versions: a long bio (150-200 words) and a short bio (50-75 words). Both bios should be written in third person, highlight the trainer's expertise, key credentials or certifications, industries or domains covered, and what makes their delivery style distinctive. Naturally reference [BRAND NAME] as their affiliated organisation. Do not use em dashes. Avoid passive voice.
 
 Trainer / Speaker Details:
 - Name: [INSERT NAME]
@@ -37,5 +37,6 @@ RULES
 - Short bio: 50-75 words
 - Credentials and expertise must be prominent
 - No em dashes anywhere
+- No passive voice
 - Output saved to output/Trainer_Bios/
 - The identical opening sentence or closing line reused across multiple bios in the same batch - if you are generating more than one trainer or speaker bio in a session, no two may share an opening sentence or closing line

@@ -17,9 +17,9 @@ PRE-WRITE DIAGNOSTIC (do this mentally before writing):
 3. What concrete outcome will the reader gain after reading?
 
 STRUCTURE (50 words, distributed as):
-- Sentence 1 (12-15 words): State the value the reader gets, lead with an action verb, embed the primary keyword naturally
-- Sentence 2 (15-20 words): Specify what the resource delivers - frameworks, data, examples, checklists
-- Sentence 3 (12-18 words): Close with a soft CTA tied to the reader's role. Vary the exact phrasing post to post, do not reuse the same closing sentence across a batch. Examples of the pattern (write a new one each time, do not copy these verbatim): "Use it to tighten next quarter's rollout plan.", "Apply this before your next team review.", "Reference this the next time budget gets questioned.", "Bring this into your next planning conversation."
+- Sentence 1 (14-17 words): State the value the reader gets, lead with an action verb, embed the primary keyword naturally
+- Sentence 2 (17-21 words): Specify what the resource delivers - frameworks, data, examples, checklists
+- Sentence 3 (14-17 words): Close with a soft CTA tied to the reader's role. Vary the exact phrasing post to post, do not reuse the same closing sentence across a batch. Examples of the pattern (write a new one each time, do not copy these verbatim): "Use it to tighten next quarter's rollout plan.", "Apply this before your next team review.", "Reference this the next time budget gets questioned.", "Bring this into your next planning conversation."
 
 STRICT REQUIREMENTS:
 - Exactly 45-55 words (count every word, including articles)

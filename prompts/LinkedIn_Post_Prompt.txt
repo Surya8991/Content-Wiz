@@ -170,6 +170,7 @@ RULES SUMMARY
 - CTC (question to comments) required on every Format A post
 - Vary the exact phrasing of the hook and CTC question post to post, do not reuse the same hook opener or CTC question across a batch. Examples of the pattern (write a new one each time, do not copy these verbatim): "Which of these metrics does your team actually track?", "What's the one blocker keeping this off your roadmap?", "Where does your process break down first?"
 - The identical hook or CTC question reused across multiple posts in the same batch - if you are generating more than one LinkedIn post in a session, no two may share a hook or CTC question
+- Source diversity: within a batch of posts published close together on related topics, never anchor more than one post on the exact same single source, name a distinct report/edition for each
 - Output saved to output/LinkedIn/
 
 ------------------------------------------------------------

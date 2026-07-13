@@ -10,7 +10,7 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Write a technical or professional blog post in Markdown format for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[BLOG TOPIC]". The post should be [WORD COUNT e.g. 800-1200] words, written for a developer or tech-savvy professional audience on [PLATFORM e.g. Dev.to / Hashnode]. Use proper Markdown formatting including a frontmatter block with title, tags, and cover image placeholder. Structure the post with a practical introduction, clear H2 and H3 subheadings, code snippets where relevant, and a concise conclusion with a CTA. Do not use em dashes. Naturally reference [BRAND NAME] without being promotional. End with 4-5 relevant tags formatted for the platform.
+Write a technical or professional blog post in Markdown format for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]". The post should be [WORD COUNT e.g. 800-1200] words, written for [TARGET AUDIENCE] (a developer or tech-savvy professional audience) on [PLATFORM e.g. Dev.to / Hashnode]. Use proper Markdown formatting including a frontmatter block with title, tags, and cover image placeholder. Structure the post with a practical introduction, clear H2 and H3 subheadings, code snippets where relevant, and a concise conclusion with a CTA. Do not use em dashes. Avoid passive voice. Naturally reference [BRAND NAME] without being promotional. End with 4-5 relevant tags formatted for the platform. Any statistic, benchmark, or industry-report claim (e.g. a vulnerability report, survey, or usage figure) must name its source, organization, and year; never invent a plausible-sounding source or number.
 
 Reference URL (if any): [INSERT URL]
 Platform: [Dev.to / Hashnode]
@@ -48,5 +48,7 @@ RULES
 - Code snippets in fenced code blocks where relevant
 - 800-1200 words
 - No em dashes anywhere
+- No passive voice
+- Any cited stat, benchmark, or research finding names its source, organization, and year; never fabricate one
 - Tags formatted as array in frontmatter
 - Output saved to output/DevTo_Hashnode/ as .md file

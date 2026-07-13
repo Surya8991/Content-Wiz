@@ -31,7 +31,7 @@ STANDARD SEO FIELDS:
 - Recommended Word Count
 - Content Outline (H1 / H2s / H3s)
 - Key Points to Cover
-- Stats or Research to Include (name source and year for each)
+- Stats or Research to Include (name source, organization, and year for each)
 - Internal Linking Suggestions (page title and URL)
 - CTA Recommendation
 - Competitor Reference URLs
@@ -43,7 +43,7 @@ GEO / AEO FIELDS (NEW):
 - AI Overview Optimisation Note (which claim or stat is most likely to be cited by an AI Overview and why)
 - GEO Readiness Checklist:
     [ ] Does the introduction directly answer the target query in 2-3 sentences?
-    [ ] Are all stats attributed to named sources with year?
+    [ ] Are all stats attributed to a named source, organization, and year?
     [ ] Are all key entities clearly named and defined?
     [ ] Are paragraphs 3-4 sentences or shorter?
     [ ] Is there a FAQ section with 4-6 direct-answer Q&As?
@@ -58,7 +58,8 @@ RULES
 - Primary keyword must appear naturally in title and at least 2 subheadings
 - GEO / AEO fields are mandatory for all blog and pillar page briefs
 - Featured snippet answer must be 40-60 words, direct, and quotable
-- All stats must name the source and year
+- All stats must name the source, organization, and year
+- Never invent a plausible-sounding source or statistic; if a claim cannot be verified, flag it for verification or recommend a qualitative statement instead
 - No em dashes anywhere
 - No passive voice
 - Output saved to output/Content_Brief/

@@ -74,7 +74,7 @@ Hook patterns for Tweet 1:
   PATTERN 4: "[Named framework]: [what it is in one phrase]. It changed how [named outcome] works."
   PATTERN 5: "[Specific outcome] in [timeframe]. The process:"
 
-TWEETS 2 TO (N-1): CONTENT TWEETS
+TWEETS 2 TO (N-2): CONTENT TWEETS
 Each content tweet: one complete idea, standalone.
 
 For Argument threads: each tweet advances one step of the proof. State the evidence, then give its implication in the same tweet.

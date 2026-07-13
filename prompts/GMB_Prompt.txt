@@ -27,7 +27,8 @@ RULES
 - Description is approximately 50 words
 - B2B language only, no consumer-facing tone
 - No em dashes anywhere
-- Do not use: "Don't miss out", "Click on learn more", "Take advantage of", "Discover"
+- No passive voice, active voice throughout
+- Do not use: "Don't miss out", "Click on learn more", "Click here", "Learn more", "Take advantage of", "Discover"
 - CTA is a role-relevant closing line, is the final part of the post, and is not counted in the 50-word description
 - If generating multiple GMB posts in a session, no two may share a closing line
 - Output saved to output/GMB/

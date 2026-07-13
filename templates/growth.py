@@ -53,7 +53,7 @@ NEWSLETTER COMPONENTS (deliver all 7):
    - Structure as 3-4 mini-sections, each with a brief **bold label** (not full headings)
    - Recommended section flow:
      * **Section 1 - The Why Now** (60-80 words): Why this topic matters this week, with 1 named data point or recent event
-     * **Section 2 - The Core Insight** (120-160 words): The main framework, lesson, or analysis - the substance of the email
+     * **Section 2 - The Core Insight** (140-230 words): The main framework, lesson, or analysis - the substance of the email
      * **Section 3 - The Real-World Example** (60-80 words): One named company, named person, or specific case study that proves the insight
      * **Section 4 - One Thing to Try This Week** (40-60 words): A specific micro-action the reader can take in <30 minutes
    - Paragraphs: 1-3 sentences max, blank line between every paragraph
@@ -344,8 +344,8 @@ QUANTITY: Generate exactly 8 question-and-answer pairs.
 QUESTION TYPE DISTRIBUTION (must be spread across these types):
 - 2 DEFINITIONAL: "What is [concept]?" / "What does [term] mean?"
 - 2 HOW-TO: "How do I [specific outcome]?" / "How can [audience] [do thing]?"
-- 1-2 COMPARATIVE: "What's the difference between [X] and [Y]?" / "Is [X] better than [Y]?"
-- 1-2 PROBLEM-SOLVING: "Why is [X] not working?" / "What should I do when [specific scenario]?"
+- 1 COMPARATIVE: "What's the difference between [X] and [Y]?" / "Is [X] better than [Y]?"
+- 1 PROBLEM-SOLVING: "Why is [X] not working?" / "What should I do when [specific scenario]?"
 - 1 BEGINNER / FOUNDATIONAL: A question someone new to the topic would ask
 - 1 EXPERT / ADVANCED: A nuanced question only someone deeper in the topic would search for
 

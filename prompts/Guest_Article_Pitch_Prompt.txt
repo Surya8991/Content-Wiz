@@ -110,7 +110,7 @@ Write a full guest article for [TARGET PUBLICATION] following their editorial fo
 
 ARTICLE RULES FOR TRADE PUBLICATIONS:
 1. The article body must be entirely free of promotional content. No product mentions, no company pitches, no "learn more" links within the body. All brand value comes from the author bio.
-2. Every major claim needs evidence. In order of preference: first-party brand data, named industry study with year, specific case example, expert quote from a named third party.
+2. Every major claim needs evidence. In order of preference: first-party brand data, named industry study with year, specific case example, expert quote from a named third party. When characterizing a named third party's research (e.g. McKinsey, Gallup, HBR), describe only what that source actually found in neutral reporting language ("Gallup's 2024 report found..."), never implying the source endorses, sponsors, or partners with the brand.
 3. "Research shows" without a named source will be flagged by editors and removed.
 4. The last body section must give readers something to do - a framework, a diagnostic question, a decision tree, or a checklist. Trade readers are practitioners who want tools, not just analysis.
 
@@ -131,7 +131,7 @@ No section should restate a previous section in different words.
 Evidence standard: every major claim needs one supporting item from the evidence hierarchy.
 
 Proof hierarchy for article body:
-  TIER 1: First-party data from brand programs with year ("A 2026 analysis of 40 [Your Company] enterprise training programs found that...")
+  TIER 1: First-party data from brand programs with year ("A 2026 analysis of 40 [Your Company] enterprise training programs found that..."). Any first-party/proprietary-sounding stat must trace to a verified row in data/HARO_DataBank.csv, never data/HARO_DataBank_PENDING.csv, which holds unverified placeholders that cannot be cited.
   TIER 2: Named study from a recognized organization with year
   TIER 3: Named expert quote with name, title, and publication
   TIER 4: Specific client scenario with verifiable details
@@ -146,7 +146,7 @@ Name, title, company name with URL, one credential line.
 This is the only place brand promotion is appropriate.
 Example: "[Name] is [Title] at [Brand Name] ([URL]), where [specific credential tied to this article's topic]. [Name] works with enterprise organizations on [relevant program type]."
 
-WORD COUNT TARGET: 700 to 1,000 words for Tier 1 publications; 500 to 800 words for Tier 2.
+WORD COUNT TARGET: 750 to 1,000 words for Tier 1 publications (opening 100-150 + body 500-650 + practical application 150-200); 500 to 800 words for Tier 2 (opening 100-150 + body 250-450 + practical application 150-200).
 
 ------------------------------------------------------------
 RELATIONSHIP MAINTENANCE NOTES
@@ -194,6 +194,7 @@ GLOBAL RULES
 - Pitch: under 150 words, one link, no attachments
 - Article: every major claim backed with named evidence and year
 - Named author with specific quantified credential (not general bio)
+- Source diversity: within a cluster of articles pitched close together on related topics, never anchor more than one article on the exact same single source, name a distinct report/edition for each
 - Output saved to output/Guest_Articles/
 
 ------------------------------------------------------------

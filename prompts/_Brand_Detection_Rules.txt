@@ -74,3 +74,35 @@ These rules apply to every piece of content produced across all prompt files. No
 
 7. NO PROMOTIONAL BRAND TONE
    Brand mentions must feel like credible expert positioning, not advertising.
+
+8. STAT VERIFICATION BEFORE PUBLISH
+   Every statistic must be verified against a real, live source before the content
+   is marked ready to publish. Naming a source, organization, and year (Rule 4)
+   does not by itself guarantee accuracy, a real search pass is required to close
+   that gap. See README.md's Citation Verification section for the step-by-step
+   process.
+
+9. SOURCE-DIVERSITY WITHIN A CLUSTER
+   Within any content cluster (multiple posts published close together on
+   related topics), never reuse the exact same single source as the sole
+   statistical anchor across more than one post in that cluster. A vague
+   reference like "Harvard Business Review has written extensively about..."
+   with no article title or year is never an acceptable citation, always name a
+   specific report/article and year.
+
+10. THIRD-PARTY RESEARCH IS CHARACTERIZED ACCURATELY
+    When citing a named third party's research, report, or data (e.g. Gallup,
+    Gartner, McKinsey, HBR), describe only what that source actually found, in
+    neutral reporting language. Never imply the third party endorses, sponsors,
+    partners with, or recommends the brand or its product.
+
+11. FIRST-PARTY STATS TRACE TO THE DATABANK
+    Any first-party/proprietary-sounding statistic must trace to a row in
+    data/HARO_DataBank.csv, not the model's general knowledge. External
+    academic/industry stats are exempt (they follow Rule 8 instead).
+
+12. HUMAN SIGN-OFF ON STAT-BEARING OR FIRST-PERSON CONTENT
+    Any stat-bearing post, or any post using first-person/confessional voice,
+    requires a human reviewer's sign-off (name + date) before its Status can
+    move to "Published" on the content calendar tracker. This is a process
+    discipline, not code-enforced.

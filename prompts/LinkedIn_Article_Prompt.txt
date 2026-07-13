@@ -69,7 +69,7 @@ Each subsection has:
   No: "The Problem"
   No: "Key Insights"
 
-- BODY (75 to 150 words per subsection):
+- BODY (100 to 150 words per subsection, so 3 to 4 subsections sum to the 300 to 600 word section total):
   - Apply the 4-layer chunk format per subsection: Direct claim, Explanation, Evidence, Application
   - Each subsection must advance the argument - no restatements of the previous subsection
   - At least one subsection contains a named stat with source and year
@@ -141,6 +141,7 @@ GLOBAL RULES
 - No promotional brand tone in the article body - the byline earns the brand reference
 - First-person voice as the named author
 - No AI-signature phrases: "In today's fast-paced world", "Dive into", "Leverage", "Revolutionize", "Transformative", "Groundbreaking"
+- Source diversity: within a cluster of articles published close together on related topics, never anchor more than one article on the exact same single source, name a distinct report/edition for each
 - Output saved to output/LinkedIn/
 
 ------------------------------------------------------------

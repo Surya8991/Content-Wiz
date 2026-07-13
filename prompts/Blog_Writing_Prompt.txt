@@ -34,12 +34,12 @@ REQUIRED INPUTS
 
 Article Type: [A / B / C]
 Brand: [BRAND NAME OR URL]
-Topic or Working Title: [INSERT]
+Topic or Working Title: [TOPIC]
 Primary Keyword: [INSERT - the exact phrase this article is optimized for]
 Search Intent: [Awareness / Research / Decision - choose the stage this query serves]
 Pillar Page (for spoke articles): [URL of the pillar this article supports - required for Type B]
 Spoke Articles to Link To (for pillar pages): [List URLs or topic placeholders - required for Type A]
-Target Audience Role: [e.g., L&D Manager, HR Director, Training Coordinator]
+Target Audience Role: [TARGET AUDIENCE] (e.g., L&D Manager, HR Director, Training Coordinator)
 Reference URL (optional): [existing content to repurpose or expand]
 First-Party Data to Include: [any of your brand's own client stats, program outcomes, or internal data - leave blank if none]
 CTA Destination URL: [URL the conclusion links to]
@@ -147,6 +147,7 @@ TIER 3: Named expert quote with name, title, publication, year
 TIER 4: Specific client scenario with verifiable details and named outcome
 
 Never use: "Studies show..." / "Research suggests..." / "According to experts..." without naming the source.
+Never invent a plausible-sounding source, organization, or statistic. If a real, verifiable source cannot be confirmed, soften the claim to a qualitative statement instead of fabricating a precise-sounding number.
 
 Minimum evidence per article:
 - Type A (Pillar): 6 to 10 named sources or data points

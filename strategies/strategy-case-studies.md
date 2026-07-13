@@ -89,7 +89,7 @@ This version is used by sales teams in proposals and email follow-ups. Keep it t
 
 **Step 4: Draft and share for approval within 1 week.** Send the draft case study to the client contact for approval. Provide a 5-business-day review window. Make the review easy: "Please check the metrics, the quote, and that you are comfortable with the company description." Do not ask them to review the writing quality - that is the brand's job.
 
-**Step 5: Get sign-off in writing.** A brief email confirmation is sufficient. Retain the approval on file.
+**Step 5: Get sign-off in writing.** A brief email confirmation is sufficient. Retain the approval on file. This client sign-off is separate from, and does not substitute for, the internal human reviewer sign-off README's Governance note requires on every stat-bearing post before its `Status` can move to "Published."
 
 **Anonymous case studies:** If a client will not allow naming, keep the industry, company size, and role. Replace company name with "[Leading manufacturing company, 600 employees]." Named cases convert better, but anonymous cases with specific metrics are still valuable.
 
@@ -138,7 +138,7 @@ Buyers should be able to find a case study that mirrors their own situation with
 
 1. **Asking for case studies after the relationship has cooled.** The window for securing client participation is immediately after the program delivers results. Six months later, the client contact may have changed roles, the data may be unavailable, and the enthusiasm for the story has faded.
 
-2. **Publishing without a metric.** "Our client saw improvement across the board" is not a case study - it is a testimonial fragment. Every published case study must contain at least one quantified, before-and-after result. If no metrics are available, do not publish until they are.
+2. **Publishing without a metric.** "Our client saw improvement across the board" is not a case study - it is a testimonial fragment. Every published case study must contain at least one quantified, before-and-after result. If no metrics are available, do not publish until they are. Client-provided metrics count as first-party data: log them in `data/HARO_DataBank.csv` (per agents.md's DataBank-only sourcing rule) so the same figure is not re-derived or restated inconsistently across derivative pieces, and run README's Cluster Citation Diversity Pass before the same client's numbers anchor more than one post in a batch.
 
 3. **Generic framing.** "A large enterprise in the financial services sector" tells the buyer nothing. "A 2,000-person regional bank" tells the buyer enough to self-identify. The more specific the client description, the more the case study resonates with the right buyer.
 

@@ -256,6 +256,7 @@ GLOBAL RULES
 - All stats attributed with source and year
 - LinkedIn: no external URLs in post body
 - HARO data bank updated with every repurposing session
+- CANONICAL / DUPLICATE CONTENT: any cross-posted long-form derivative that supports a canonical or rel-alternate mechanism (Medium republish, WordPress, Dev.to/Hashnode frontmatter canonical_url, an "originally published at" line) must point back to the source's original URL, or a "[CANONICAL: original URL]" placeholder if the URL is not yet known. Channels with no canonical mechanism (LinkedIn, Instagram, GMB, Pinterest, Quora, YouTube description) must carry a substantially rewritten version, never a lightly reworded copy of the source
 - The identical hook line or CTA sentence reused across multiple derivatives in the same repurposing session - each derivative extracts its own fragment and phrases its own hook and CTA; no two derivatives generated from the same source may share a hook sentence or a CTA sentence
 
 ------------------------------------------------------------

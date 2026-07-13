@@ -85,6 +85,8 @@ Ranked by persuasiveness to journalists:
 
 Never use vague qualifiers like "many companies" or "studies show." Name the study or remove the claim.
 
+Any first-party stat used across more than one pitch or post in the same batch is subject to README's Cluster Citation Diversity Pass, do not let multiple HARO responses lean on the exact same anchor stat within one cluster. First-party figures should trace to a row in `data/HARO_DataBank.csv` rather than being generated ad hoc; see agents.md's DataBank-only sourcing rule.
+
 ---
 
 ## Distribution Loop
@@ -94,6 +96,8 @@ Never use vague qualifiers like "many companies" or "studies show." Name the stu
 3. Add the mention to a media page or bio within 48 hours.
 4. Repurpose the published quote in blog content, proposals, or social proof sections on the website.
 5. Reply to the journalist's next query on the same topic, referencing the previous coverage. This builds a recurring source relationship.
+
+Any stat-bearing pitch requires a human reviewer's sign-off before the corresponding tracker entry can move to "Published," per README's Governance note.
 
 ---
 

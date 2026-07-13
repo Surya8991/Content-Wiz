@@ -1,4 +1,4 @@
-from ._shared import HUMAN_WRITING_RULES
+from ._shared import HUMAN_WRITING_RULES, RESEARCH_RULES
 
 
 def linkedin_post(topic, audience, **_):
@@ -75,6 +75,8 @@ DO NOT USE:
 - Self-promotional CTAs like "DM me to learn more" - LinkedIn's algorithm penalizes these
 
 {HUMAN_WRITING_RULES}
+
+{RESEARCH_RULES}
 
 SELF-REVIEW:
 - Read only line 1 - would a {audience} professional stop scrolling? If unsure, rewrite.
@@ -173,6 +175,8 @@ DO NOT USE:
 - "If you found this helpful, follow me for more" - it lowers thread quality perception
 
 {HUMAN_WRITING_RULES}
+
+{RESEARCH_RULES}
 
 SELF-REVIEW:
 - Read tweet 1 alone - would a {audience} professional Bookmark or Reply based on this single tweet?
@@ -275,7 +279,7 @@ TECHNICAL REQUIREMENTS:
 - Use the line-break trick: type a period or invisible character on its own line if Instagram strips empty lines
 - First-person ("I", "we") or direct-second-person ("you") voice - never third person
 
-CARROUSEL-SPECIFIC NOTE (if applicable):
+CAROUSEL-SPECIFIC NOTE (if applicable):
 - Caption should COMPLEMENT the slides, not duplicate them
 - Slide 1 (the cover) does the hook visually - the caption can lead with context instead
 - Add a "Slide [X] is the one to screenshot" call-out if a specific slide deserves emphasis
@@ -292,6 +296,8 @@ DO NOT USE:
 - Em dashes anywhere
 
 {HUMAN_WRITING_RULES}
+
+{RESEARCH_RULES}
 
 SELF-REVIEW:
 - Does the first 125 characters create enough curiosity to force the "more" tap?
@@ -368,12 +374,14 @@ POST CAPTION (generated alongside the carousel):
 - Line 1: Repeat the exact Slide 1 headline for visual continuity in feed.
 - Lines 2 to 3: Two teaser lines naming the two most surprising slides.
 - Line 4: "Swipe to see the full [framework / breakdown / process]." No URL here.
-- Line 5: One specific CTC question inviting comments.
+- Line 5: One specific CTA question inviting comments.
 - Final line: 3 to 5 hashtags, last always the brand hashtag.
 - First comment: "Full [article / guide / case study] here: [INSERT CTA LINK]"
 - Caption body under 300 characters.
 
 {HUMAN_WRITING_RULES}
+
+{RESEARCH_RULES}
 
 SELF-CHECK BEFORE OUTPUT:
 - Does Slide 1 make a claim strong enough to earn the first swipe on its own?

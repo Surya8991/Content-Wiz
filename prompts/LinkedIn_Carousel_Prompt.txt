@@ -20,6 +20,7 @@ REQUIRED INPUTS
 
 Brand: [BRAND NAME OR URL]
 Topic or Source Article: [INSERT TOPIC OR URL]
+Target Audience: [TARGET AUDIENCE - who this carousel is written for and what decision they are making]
 Carousel Type: [Framework / Step-by-Step / Stat Breakdown / Before-and-After / Myth vs Fact]
 Primary Claim: [The single most counterintuitive or specific claim the carousel makes - one sentence]
 Key Data Points: [2 to 5 stats or findings to feature - each with source and year]
@@ -70,7 +71,7 @@ Hook patterns:
 
 SLIDES 2 TO (N-1): CONTENT SLIDES
 Each content slide follows this 3-element format:
-  - HEADLINE (max 8 words): One complete idea. Reads as a standalone claim.
+  - HEADLINE (max 8 words): One complete idea. Reads as a standalone claim relevant to [TARGET AUDIENCE].
   - BODY COPY (max 25 words): One sentence of explanation or evidence. Named stat with source and year if applicable.
   - VISUAL DIRECTION: Specific description of what appears on screen (diagram, icon, before/after split, stat callout, progress indicator).
 
@@ -141,6 +142,7 @@ GLOBAL RULES
 - URL never on the slide - always in the first comment
 - Every stat names source and year
 - Progress indicator recommended on all slides 2 through final
+- Source diversity: within a cluster of carousels published close together on related topics, never anchor more than one carousel on the exact same single source, name a distinct report/edition for each
 - Output saved to output/LinkedIn_Carousel/
 
 ------------------------------------------------------------

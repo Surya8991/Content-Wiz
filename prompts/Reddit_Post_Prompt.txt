@@ -31,4 +31,5 @@ RULES
 - URL positioned as a resource, not a CTA
 - Any stat cited must name its source, organization, and year (e.g. "(ATD, 2025)" or "per WEF 2025 Future of Jobs Report")
 - No em dashes anywhere
+- No passive voice
 - Output saved to output/Reddit/
