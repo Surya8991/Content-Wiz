@@ -75,9 +75,10 @@ check), `ruff check .` → clean.
   `templates/_shared.py`, which propagates to every template that imports it.
 - [x] Per-platform audience override — `config.json`'s
   `platform_audience_overrides` + `config.py`'s `audience_for_platform()`,
-  backward compatible; **not yet wired into `generate.py`'s `resolve_audience()`**
-  (that's outside this pass's file ownership — one-line follow-up, noted for
-  next session).
+  backward compatible, and now wired into `generate.py`'s `resolve_audience()`
+  (both single-run `--platform` and bulk-mode CSV `platform` column pass the
+  key through). Verified end-to-end via `--platform livejournal --url
+  edstellar.com --dry-run`.
 - [x] **Durable rules written down** in `agents.md` and `README.md`: source-diversity
   rule for citation clusters, a named repeatable **"Cluster Citation Diversity
   Pass"** research process (the exact WebSearch-based verification steps for both
