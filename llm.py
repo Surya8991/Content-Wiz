@@ -20,8 +20,8 @@ _PROVIDERS = {
     "gemini": {
         "env_var": "GEMINI_API_KEY",
         "fallback_env_var": "GOOGLE_API_KEY",
-        "package": "google.generativeai",
-        "pip_name": "google-generativeai",
+        "package": "google.genai",
+        "pip_name": "google-genai",
         "default_model": "gemini-2.5-pro",
     },
     "openai": {
@@ -101,6 +101,15 @@ def _missing_sdk(provider):
     )
 
 
+def _empty_response_error(provider, detail=""):
+    suffix = f" ({detail})" if detail else ""
+    return RuntimeError(
+        f"{provider} returned an empty response{suffix} - it may have been blocked by a "
+        f"safety filter, hit a length limit before producing text, or the API call otherwise "
+        f"succeeded without content. Try rephrasing the prompt or raising --model's max tokens."
+    )
+
+
 def _generate_anthropic(prompt, api_key, model, max_tokens):
     try:
         import anthropic
@@ -112,18 +121,32 @@ def _generate_anthropic(prompt, api_key, model, max_tokens):
         max_tokens=max_tokens,
         messages=[{"role": "user", "content": prompt}],
     )
-    return "".join(block.text for block in message.content if block.type == "text")
+    text = "".join(block.text for block in message.content if block.type == "text")
+    if not text:
+        raise _empty_response_error("anthropic", f"stop_reason={getattr(message, 'stop_reason', '?')}")
+    return text
 
 
 def _generate_gemini(prompt, api_key, model, max_tokens):
     try:
-        import google.generativeai as genai
+        from google import genai
+        from google.genai import types
     except ImportError as exc:
         raise _missing_sdk("gemini") from exc
-    genai.configure(api_key=api_key)
-    client = genai.GenerativeModel(model)
-    response = client.generate_content(prompt, generation_config={"max_output_tokens": max_tokens})
-    return response.text
+    client = genai.Client(api_key=api_key)
+    response = client.models.generate_content(
+        model=model,
+        contents=prompt,
+        config=types.GenerateContentConfig(max_output_tokens=max_tokens),
+    )
+    if not response.candidates:
+        feedback = getattr(response, "prompt_feedback", None)
+        raise _empty_response_error("gemini", f"prompt blocked: {feedback}" if feedback else "no candidates")
+    text = response.text
+    if not text:
+        finish_reason = getattr(response.candidates[0], "finish_reason", "?")
+        raise _empty_response_error("gemini", f"finish_reason={finish_reason}")
+    return text
 
 
 def _generate_openai(prompt, api_key, model, max_tokens):
@@ -137,4 +160,10 @@ def _generate_openai(prompt, api_key, model, max_tokens):
         max_tokens=max_tokens,
         messages=[{"role": "user", "content": prompt}],
     )
-    return response.choices[0].message.content
+    if not response.choices:
+        raise _empty_response_error("openai", "no choices returned")
+    text = response.choices[0].message.content
+    if not text:
+        finish_reason = getattr(response.choices[0], "finish_reason", "?")
+        raise _empty_response_error("openai", f"finish_reason={finish_reason}")
+    return text

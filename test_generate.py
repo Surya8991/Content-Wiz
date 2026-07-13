@@ -307,6 +307,117 @@ class LlmTests(unittest.TestCase):
                 os.environ["OPENAI_API_KEY"] = saved
 
 
+class LlmResponseParsingTests(unittest.TestCase):
+    """Mocked-SDK tests for each provider's response-parsing path (happy path
+    and empty/blocked-response guard), since these never run against a real
+    API key in CI."""
+
+    def test_anthropic_happy_path_returns_joined_text(self):
+        import sys
+        import types as _types
+        from unittest.mock import MagicMock, patch
+
+        import llm
+
+        block = MagicMock(type="text", text="hello world")
+        message = MagicMock(content=[block], stop_reason="end_turn")
+        fake_client = MagicMock()
+        fake_client.messages.create.return_value = message
+        fake_anthropic = _types.SimpleNamespace(Anthropic=MagicMock(return_value=fake_client))
+        with patch.dict(sys.modules, {"anthropic": fake_anthropic}):
+            result = llm._generate_anthropic("prompt", "key", "model", 100)
+        self.assertEqual(result, "hello world")
+
+    def test_anthropic_empty_text_raises_runtime_error(self):
+        import sys
+        import types as _types
+        from unittest.mock import MagicMock, patch
+
+        import llm
+
+        block = MagicMock(type="text", text="")
+        message = MagicMock(content=[block], stop_reason="max_tokens")
+        fake_client = MagicMock()
+        fake_client.messages.create.return_value = message
+        fake_anthropic = _types.SimpleNamespace(Anthropic=MagicMock(return_value=fake_client))
+        with patch.dict(sys.modules, {"anthropic": fake_anthropic}):
+            with self.assertRaises(RuntimeError):
+                llm._generate_anthropic("prompt", "key", "model", 100)
+
+    def test_gemini_happy_path_returns_text(self):
+        import sys
+        import types as _types
+        from unittest.mock import MagicMock, patch
+
+        import llm
+
+        response = MagicMock(candidates=[MagicMock()], text="hello gemini")
+        fake_client = MagicMock()
+        fake_client.models.generate_content.return_value = response
+        fake_types = _types.SimpleNamespace(GenerateContentConfig=MagicMock())
+        fake_genai = _types.SimpleNamespace(Client=MagicMock(return_value=fake_client), types=fake_types)
+        fake_google = _types.SimpleNamespace(genai=fake_genai)
+        with patch.dict(sys.modules, {
+            "google": fake_google,
+            "google.genai": fake_genai,
+            "google.genai.types": fake_types,
+        }):
+            result = llm._generate_gemini("prompt", "key", "model", 100)
+        self.assertEqual(result, "hello gemini")
+
+    def test_gemini_no_candidates_raises_runtime_error(self):
+        import sys
+        import types as _types
+        from unittest.mock import MagicMock, patch
+
+        import llm
+
+        response = MagicMock(candidates=[], prompt_feedback="BLOCKED_SAFETY")
+        fake_client = MagicMock()
+        fake_client.models.generate_content.return_value = response
+        fake_types = _types.SimpleNamespace(GenerateContentConfig=MagicMock())
+        fake_genai = _types.SimpleNamespace(Client=MagicMock(return_value=fake_client), types=fake_types)
+        fake_google = _types.SimpleNamespace(genai=fake_genai)
+        with patch.dict(sys.modules, {
+            "google": fake_google,
+            "google.genai": fake_genai,
+            "google.genai.types": fake_types,
+        }):
+            with self.assertRaises(RuntimeError):
+                llm._generate_gemini("prompt", "key", "model", 100)
+
+    def test_openai_happy_path_returns_content(self):
+        import sys
+        import types as _types
+        from unittest.mock import MagicMock, patch
+
+        import llm
+
+        choice = MagicMock(message=MagicMock(content="hello openai"), finish_reason="stop")
+        response = MagicMock(choices=[choice])
+        fake_client = MagicMock()
+        fake_client.chat.completions.create.return_value = response
+        fake_openai = _types.SimpleNamespace(OpenAI=MagicMock(return_value=fake_client))
+        with patch.dict(sys.modules, {"openai": fake_openai}):
+            result = llm._generate_openai("prompt", "key", "model", 100)
+        self.assertEqual(result, "hello openai")
+
+    def test_openai_empty_choices_raises_runtime_error(self):
+        import sys
+        import types as _types
+        from unittest.mock import MagicMock, patch
+
+        import llm
+
+        response = MagicMock(choices=[])
+        fake_client = MagicMock()
+        fake_client.chat.completions.create.return_value = response
+        fake_openai = _types.SimpleNamespace(OpenAI=MagicMock(return_value=fake_client))
+        with patch.dict(sys.modules, {"openai": fake_openai}):
+            with self.assertRaises(RuntimeError):
+                llm._generate_openai("prompt", "key", "model", 100)
+
+
 class LintContentTests(unittest.TestCase):
     def test_detects_em_dash(self):
         import os

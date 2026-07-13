@@ -15,9 +15,9 @@ dependencies = []
 # Only needed for `--generate` (live LLM content). Core tool has zero deps.
 # Install just the provider(s) you use, e.g. `pip install .[llm-anthropic]`.
 llm-anthropic = ["anthropic>=0.40"]
-llm-gemini = ["google-generativeai>=0.8"]
+llm-gemini = ["google-genai>=1.0"]
 llm-openai = ["openai>=1.40"]
-llm = ["anthropic>=0.40", "google-generativeai>=0.8", "openai>=1.40"]
+llm = ["anthropic>=0.40", "google-genai>=1.0", "openai>=1.40"]
 dev = ["ruff>=0.6"]
 
 [project.scripts]
