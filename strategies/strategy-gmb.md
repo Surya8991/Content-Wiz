@@ -19,6 +19,8 @@ Keep a local/enterprise Google Business Profile active enough to influence local
 
 **4. Any statistic in a GMB post must be source-attributable.** Precise-sounding numbers with no named source or year are the highest-risk pattern for this channel - a 300-character post has no room for a footnote, so either name the source inline in one clause or drop the exact figure in favor of a qualitative claim. See README's "Citation Verification" section.
 
+**5. GMB is a stat-bearing channel and is subject to the governance sign-off rule.** Because GMB posts routinely carry a statistic (see Failure Mode #2 below), every GMB post requires a human reviewer's sign-off (name + date) before its `Status` can move to "Published," tracked on `publish_tracker_template.csv` (copy to a dated file per cycle). See `agents.md`'s Governance / review gate note for the full rule.
+
 ---
 
 ## Repeatable Post Structure
@@ -30,7 +32,7 @@ Name a real skill, format, or outcome. No generic openers like "We are excited t
 One concrete idea: a training format, a common workplace problem it solves, or a result. No stacked claims.
 
 **Closing line (1 sentence, varied per post)**
-A specific, non-generic invitation to learn more, phrased differently from every other post in the same batch. Never use a phrase from the banned-CTA list (`templates/_shared.py`'s `BANNED_CTA_PHRASES`): "Don't miss out," "Take advantage of," "Click here," "Click on learn more," "Learn more," "Discover" as a bare imperative.
+A specific, non-generic invitation to learn more, phrased differently from every other post in the same batch. Never use a phrase from the banned-CTA list (`templates/_shared.py`'s `BANNED_CTA_PHRASES`): "Don't miss out," "Take advantage of," "Click here," "Click on learn more," "Learn more," "Discover." The ban on "Discover" is unqualified in `templates/_shared.py`, not scoped to bare-imperative use, treat any use of the word as a phrase, not just its imperative form.
 
 **Optimal length:** 150-300 characters total. GMB truncates longer posts in the default view.
 

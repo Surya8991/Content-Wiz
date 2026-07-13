@@ -57,6 +57,10 @@ prints the authoritative alias list.
 - `strategies/` - one strategy doc per channel (goal, structure, cadence, failure modes).
 - `data/HARO_DataBank.csv` - citable stats. Columns: Claim | Source | URL | Year |
   Context | Quotable Version | Topic Tags. Add a row per new first-party stat.
+- `publish_tracker_template.csv` - the real, reusable governance/publish tracker
+  template (repo root). Copy it to a dated file at the start of each publishing
+  cycle; do not edit the template in place. See the "Governance / review gate"
+  gotcha below for the sign-off rule it enforces.
 - `output/` - generated prompts/content, auto-routed into per-type subfolders.
   `LiveJournal/` (`livejournal_post`, aliases `livejournal`/`lj`) and `Tumblr/`
   (`tumblr_post`, alias `tumblr`) are CLI-routed like every other platform; any
@@ -160,11 +164,16 @@ Never commit any of these.
   not check citation accuracy, brand-safety, or claim validity. Standing
   rule going forward: any stat-bearing post, or any post using first-person/
   confessional voice, requires a human reviewer's sign-off (name + date,
-  tracked on the content calendar tracker, e.g.
-  `jul2026_publish_tracker.csv`'s `Reviewed By`/`Review Date` columns)
-  before its `Status` can move to "Published." This is currently a process
-  discipline enforced by humans following the rule, not something
-  `generate.py`/`lint_content.py` can block on.
+  tracked on the content calendar tracker) before its `Status` can move to
+  "Published." Use `publish_tracker_template.csv` (repo root) for this: it
+  is a generic, reusable tracker template with `Reviewed By`/`Review Date`
+  columns built in, plus `Status`, `Clicks`, `Leads/Conversions`, and
+  `Last Checked` for basic performance follow-up. At the start of each
+  publishing cycle, copy it to a dated working file (e.g.
+  `jul2026_publish_tracker.csv`) and fill it in per batch, do not edit the
+  template in place. This is currently a process discipline enforced by
+  humans following the rule, not something `generate.py`/`lint_content.py`
+  can block on.
 - **Disclosure rule for first-person/confessional voice (standing rule,
   decided).** Any template using first-person "I" voice (e.g. LiveJournal's
   confessional style) must either (a) be clearly disclosed as a branded
@@ -176,6 +185,22 @@ Never commit any of these.
   [Title] at [Brand]") or discloses brand authorship directly ("Posted on
   behalf of [Brand]") when no individual author is used. Never generate or
   approve first-person content with an undisclosed "I" voice and no byline.
+- **Multi-provider output quality caveat.** `--generate` is provider-agnostic
+  in the sense that the same prompt and house-style rules are sent to
+  whichever provider is selected, it is not a guarantee of equal output
+  quality. Providers vary in instruction-following fidelity, reasoning
+  depth, and hallucination rate on long, structured prompts (the kind this
+  repo's templates produce). Give closer editorial review to output from
+  any non-default provider until it has been validated against this repo's
+  specific templates; do not assume Gemini/OpenAI output needs the same
+  degree of scrutiny as the Anthropic/Claude default.
+- **Strategy-doc platform claims are point-in-time, not permanent facts.**
+  Any strategy doc under `strategies/` that names a specific platform
+  feature, filter, or API (e.g. a search console filter, an algorithm
+  change, a named product surface) is describing that platform as of the
+  doc's last-updated date. Platforms change these without notice, treat
+  such claims as needing periodic re-verification against the platform's
+  current documentation, not as durable facts to cite indefinitely.
 - **DataBank-only sourcing rule (standing rule).** Any first-party or
   proprietary-sounding statistic in generated content (e.g. "40% larger
   L&D budgets" attributed to internal program analysis) should be

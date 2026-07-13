@@ -21,6 +21,7 @@ Content Wiz/
 │                                        brand you configured)
 ├── data/                             ← Persistent pitch-ready data bank (HARO_DataBank.csv)
 ├── bulk_template.csv
+├── publish_tracker_template.csv      ← Publish/review governance tracker template (copy per cycle)
 ├── config.json                       ← Brands + defaults (edit here, not in code)
 ├── config.py                         ← Loads config.json with a safe fallback
 ├── generate.py                       ← CLI prompt generator (single + bulk + --generate)
@@ -242,9 +243,13 @@ Run `python generate.py --list` for the live, authoritative list of every alias.
 ## LLM Providers (`--generate`)
 
 `--generate` is provider-agnostic: the same prompt and the same house-style rules
-produce the same kind of output regardless of which model actually writes it. Pick
-one with `--provider`, install only that provider's SDK, and export only that
-provider's key:
+are sent to whichever model actually writes it. This does not mean equal output
+quality: providers differ in instruction-following fidelity, reasoning depth, and
+hallucination rate on long, structured prompts like this repo's templates. Give
+closer editorial review to output from a non-default provider until you have
+validated it against your own templates and audience. Pick a provider with
+`--provider`, install only that provider's SDK, and export only that provider's
+key:
 
 | `--provider` | SDK to install | API key env var |
 |---|---|---|
@@ -265,6 +270,29 @@ python generate.py --platform blog --topic "..." --generate --provider openai --
 
 Change the default provider for every run in `config.json`'s `defaults.llm_provider`
 (see below) instead of passing `--provider` every time.
+
+### Cost reference (added 2026-07-13, check before scaling volume)
+
+This repo does not hardcode per-token prices for any provider; they change too
+often to keep accurate in source control. Before running `--generate` at any
+real volume, check each provider's own current pricing page rather than
+relying on a number from this file or from memory:
+
+| Provider | Pricing page |
+|---|---|
+| Anthropic (Claude) | https://www.anthropic.com/pricing |
+| Google (Gemini) | https://ai.google.dev/gemini-api/docs/pricing |
+| OpenAI (GPT) | https://openai.com/api/pricing/ |
+
+This note is undated-content-agnostic advice, not a one-time check: re-check
+the relevant pricing page before any batch large enough that a per-token rate
+change would matter to your budget. For a rough back-of-envelope estimate of
+a single generated post's cost, a platform's `--wordcount` target (or its
+template default in `config.json`) is a reasonable proxy for output tokens
+(roughly 1.3-1.5 tokens per word in English), plus the prompt's own length
+(typically a few hundred to low thousands of tokens depending on template)
+for input tokens. Multiply each by the provider's current per-token rate from
+the pricing page above to estimate cost per post.
 
 ## Configuration (`config.json`)
 
@@ -327,8 +355,10 @@ All content produced in this system follows these rules (defined in [prompts/_Br
     academic/industry stats are exempt, see Citation Verification below)
 12. Any stat-bearing post, or any post using first-person/confessional voice,
     requires a human reviewer's sign-off (name + date) before its `Status`
-    can move to "Published" on the content calendar tracker, this is a
-    process discipline today, not code-enforced (see Governance note below)
+    can move to "Published" on the content calendar tracker (use
+    `publish_tracker_template.csv`, copied to a dated working file per
+    cycle, see Governance note below), this is a process discipline today,
+    not code-enforced
 
 Rule 4 is enforced by the prompt instructions at generation time; it does not by
 itself guarantee the citation is accurate; a model can name a real organization
@@ -402,6 +432,14 @@ post, or any post written in first-person/confessional voice, requires a
 human reviewer's sign-off (name + date, tracked on the content calendar
 tracker) before its `Status` can move to "Published." This is a process
 discipline today, not something the code blocks on.
+
+Use [publish_tracker_template.csv](publish_tracker_template.csv) as the
+actual tracker artifact: it already has the `Reviewed By`/`Review Date`
+columns this rule requires, plus `Status`, `Clicks`, `Leads/Conversions`,
+and `Last Checked` for lightweight post-publish follow-up. Copy it to a
+dated working file at the start of each publishing cycle (e.g.
+`jul2026_publish_tracker.csv`) rather than editing the template in place,
+so the template stays reusable across cycles.
 
 ---
 
