@@ -10,9 +10,10 @@ venv/
 *.env
 *.key
 
-# Generated bulk artifacts (per-run, not source)
-output/bulk_*.zip
-output/log_*.csv
+# Generated output (prompts/content, not source) - keep the folder itself
+# tracked via output/.gitkeep, ignore everything generated inside it
+output/*
+!output/.gitkeep
 
 # OS / editor cruft
 .DS_Store
