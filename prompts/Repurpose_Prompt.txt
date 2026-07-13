@@ -256,6 +256,7 @@ GLOBAL RULES
 - All stats attributed with source and year
 - LinkedIn: no external URLs in post body
 - HARO data bank updated with every repurposing session
+- The identical hook line or CTA sentence reused across multiple derivatives in the same repurposing session - each derivative extracts its own fragment and phrases its own hook and CTA; no two derivatives generated from the same source may share a hook sentence or a CTA sentence
 
 ------------------------------------------------------------
 FAILURE MODES TO AVOID

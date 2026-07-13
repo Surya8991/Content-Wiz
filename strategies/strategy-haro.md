@@ -5,7 +5,7 @@ _Last updated: May 2026_
 
 ## Goal and Metric
 
-Win expert quote pickups in Tier 1 and Tier 2 publications that generate backlinks, brand mentions, and EEAT authority signals. Target: 15% or higher pickup rate per query responded to (industry average sits at 10%; top operators consistently reach 20%).
+Win expert quote pickups in Tier 1 and Tier 2 publications that generate backlinks, brand mentions, and EEAT authority signals. Target: 15% or higher pickup rate per query responded to. Treat this as a stretch goal calibrated against your own results over time rather than a fixed industry number - pickup rates vary widely by niche, query volume, and response speed.
 
 ---
 

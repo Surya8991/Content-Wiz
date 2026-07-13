@@ -28,5 +28,6 @@ RULES
 - 150-250 words
 - At least one stat or external research reference
 - Brand mention must feel natural, not forced
+- Any stat or research reference cited must name its source, organization, and year (e.g. "(ATD, 2025)" or "per WEF 2025 Future of Jobs Report")
 - No em dashes anywhere
 - Output saved to output/Quora/

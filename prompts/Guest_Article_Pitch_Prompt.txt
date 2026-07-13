@@ -125,7 +125,7 @@ State the problem the article addresses. Name who has it and what it costs them.
 No setup, no context. Earn the read in the first paragraph.
 The editor reads the opening first. If the opening does not immediately establish the stakes and the argument, the pitch gets rejected even after acceptance.
 
-BODY (600 to 900 words total):
+BODY (500 to 650 words total for Tier 1 publications; 250 to 450 words for Tier 2 publications):
 3 to 4 sections with subheadings. Each section advances one argument.
 No section should restate a previous section in different words.
 Evidence standard: every major claim needs one supporting item from the evidence hierarchy.

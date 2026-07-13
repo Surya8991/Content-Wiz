@@ -1,4 +1,4 @@
-from ._shared import HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES  # noqa: F401
+from ._shared import HUMAN_WRITING_RULES
 
 
 def linkedin_post(topic, audience, **_):
@@ -57,7 +57,7 @@ THE CLOSE + CTA (2-3 lines):
 - One specific question that invites named experiences, not generic opinions:
   Bad:  "What do you think?"
   Good: "What's the most counterintuitive {audience} lesson you've learned this year?"
-- If pointing to a resource: "[INSERT CTA LINK] - the full breakdown"
+- Never put a link in the post body - LinkedIn's algorithm suppresses posts with outbound links. If pointing to a resource, end the post with "Link in comments" and note that the actual URL goes in the first comment, not here.
 - 3-5 hashtags on the final line, all lowercase, no spaces (use camelCase like #LeadershipDevelopment)
   Choose: 1 broad pillar tag + 2-3 niche tags + 1 long-tail tag
 
@@ -66,7 +66,7 @@ TECHNICAL REQUIREMENTS:
 - Plain text only - no bullet symbols, no markdown headings, no asterisks for emphasis
 - Em dashes are prohibited - use line breaks or hyphens
 - Present tense preferred for immediacy
-- First-person ("I", "we") throughout - third-person voice tanks engagement on LinkedIn
+- Default to first-person ("I", "we") unless the brand has a documented no-first-person-organizational-voice rule, in which case use second-person ("you", "your team") or declarative statements instead. Never mix first- and third-person in the same post.
 
 DO NOT USE:
 - "Hot take", "Unpopular opinion", "Hear me out" (overused B2B clichés)

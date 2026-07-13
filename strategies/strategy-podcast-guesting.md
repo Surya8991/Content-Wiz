@@ -28,7 +28,7 @@ Build brand authority and reach qualified buyers (for example, corporate trainin
 **Tier 1 (highest listener quality for your brand):**
 
 - **The Learning and Development Podcast** (David James) - L&D strategy, ROI, business alignment. Guest-friendly format, strong practitioner audience.
-- **Chief Learning Officer Magazine Podcast** - Leadership and talent development focus. 280,000+ L&D professional readership crossover.
+- **Chief Learning Officer Magazine Podcast** - Leadership and talent development focus. Draws on the same large L&D professional readership as its parent publication.
 - **The eLearning Coach** (Connie Malamed) - Instructional design, skills development, learning technology. Strong practitioner community.
 - **People Managing People Podcast** - Senior HR and business leaders on team development. Direct access to L&D buyers and people managers.
 - **Mind the Skills Gap** - Neuroscience-informed skills development. Expert-guest format, neuroscience angle aligns with training effectiveness topics.
@@ -43,7 +43,7 @@ Build brand authority and reach qualified buyers (for example, corporate trainin
 - **Masters of Scale** (Reid Hoffman) - Scaling business and teams. Relevant for enterprise training audience.
 - **HBR IdeaCast** - Management and leadership focus. Harvard Business Review audience of senior decision-makers.
 - **The Knowledge Project** (Shane Parrish) - Mental models, learning, decision-making. High trust, intellectual audience.
-- **Drive Thru HR** - HR technology, recruiting, talent management. Celebrating 25 years; established guest format.
+- **Drive Thru HR** - HR technology, recruiting, talent management. One of the longer-running shows in the HR podcast space; established guest format. Verify current run length and episode cadence before pitching, since long-running shows sometimes go on hiatus or change hosts.
 
 ---
 

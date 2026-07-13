@@ -515,15 +515,15 @@ SECTION 10 - SOURCES & FURTHER READING
 - Optional: 2-3 "Further Reading" recommendations the reader might explore
 
 ═══════════════════════════════════════════
-SECTION 11 - SCHEMA MARKUP RECOMMENDATION
+SECTION 11 - SCHEMA MARKUP (JSON-LD)
 ═══════════════════════════════════════════
-Recommend the appropriate schema type(s) for this article:
-- Article schema (always recommended)
-- FAQPage schema (if FAQ section is included)
+Generate the actual JSON-LD schema markup for this article, ready to paste into the page. Pick the schema type(s) that apply:
+- Article schema (always required)
+- FAQPage schema (if an FAQ section is included)
 - HowTo schema (if the article includes step-by-step instructions)
 - Review/Product schema (if comparing products/services)
 
-Briefly note which sections of the article should be wrapped in which schema.
+Output a real, populated `<script type="application/ld+json">...</script>` code block (or one block per schema type if more than one applies), filled in with the article's actual title, description, author/publisher placeholders, and structure (e.g. FAQPage mainEntity list matching the real FAQ questions/answers, HowTo step list matching the real steps). Do not output a prose recommendation instead of code - the code block itself is the deliverable.
 
 ---
 WRITING STANDARDS:
@@ -555,7 +555,7 @@ FINAL QUALITY GATE (verify every item before outputting):
 - [ ] Every paragraph passes the "so what?" test - if it doesn't add value, cut it
 - [ ] Read aloud - rewrite any sentence that sounds robotic
 - [ ] CTA placeholder [INSERT CTA LINK] is present
-- [ ] Sources, internal linking map, and schema recommendation included
+- [ ] Sources, internal linking map, and schema JSON-LD code block included
 - [ ] Featured snippet formatting applied to at least one Q&A-style section
 
 OUTPUT:
@@ -564,7 +564,7 @@ Return the complete, publish-ready article in this exact order:
 2. Full article body with all H2 sections
 3. Internal Linking Map
 4. Sources & Further Reading
-5. Schema Markup Recommendation
+5. Schema Markup JSON-LD code block(s), populated with this article's actual title, description, and structure
 
 No commentary, no explanations, no "here is your article" preamble.
 """
@@ -578,6 +578,9 @@ canonical_url:
 cover_image:
 description:
 ---
+
+FRONTMATTER INSTRUCTIONS:
+- canonical_url: if this article is being cross-posted from another platform (e.g. it originally ran on the company blog, Medium, or another Dev.to/Hashnode account), set this field to that original article's URL. If this is the first and only publication of this piece, leave the field empty - do not fabricate or guess a URL.
 
 """
     return frontmatter + blog_writing(topic, wordcount, platform, audience)

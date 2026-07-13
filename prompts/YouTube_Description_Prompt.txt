@@ -42,6 +42,7 @@ The first 100 to 150 characters appear as the preview text before "Show more" in
 - Include the primary keyword naturally within the first sentence
 - Do not start with: "In this video..." or "Welcome to [channel name]"
 - Yes: "Skills gap analysis takes most L&D teams weeks to complete. This video shows the 3-step process that gets it done in one day." [keyword + specific outcome + time value]
+- The identical hook sentence or pinned-comment CTC question reused across multiple video descriptions in the same batch - if you are generating more than one description in a session (including bulk/CSV output), no two may share a hook line, a CTA sentence, or a pinned-comment question
 
 SECTION 2: WHAT YOU WILL LEARN (3 to 5 bullet points)
 Each bullet: one complete sentence naming a specific takeaway from the video.

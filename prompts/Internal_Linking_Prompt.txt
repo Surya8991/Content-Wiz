@@ -30,8 +30,9 @@ Save to output/Internal_Linking/
 RULES
 ------------------------------------------------------------
 
-- Anchor text must be natural and contextually relevant, not generic ("click here", "read more")
+- Anchor text must be natural and contextually relevant, not generic ("click here", "read more"). Examples of natural anchor text (write new ones based on the actual page content, do not copy verbatim): "our skills gap analysis framework", "how we measure training ROI", "the complete guide to L&D budgeting", "see how enterprise teams onboard faster"
 - Minimum 3 outbound and 3 inbound suggestions
+- No two anchor text suggestions in the same output may be identical or near-identical phrasing
 - Reason column must explain the topical relevance
 - No em dashes anywhere
 - Output saved to output/Internal_Linking/

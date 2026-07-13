@@ -45,6 +45,7 @@ RULES
 
 - Executive summary must stand alone as a readable summary
 - Minimum 4-6 stats or research references
+- Every stat or research reference must name the source, organization, and year - never "studies show" or "research suggests" without attribution
 - Recommendations must be specific and actionable
 - No em dashes anywhere
 - No passive voice

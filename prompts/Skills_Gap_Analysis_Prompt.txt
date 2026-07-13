@@ -46,7 +46,7 @@ RULES
 
 - Minimum 5 skills gaps identified
 - Each gap must include evidence, business impact, and a training recommendation
-- Minimum 5 credible stats with source attribution
+- Minimum 5 credible stats, each naming the source, organization, and year - never "studies show" or "research suggests" without attribution
 - Brand positioned as training solution, not vendor pitch
 - No em dashes anywhere
 - No passive voice

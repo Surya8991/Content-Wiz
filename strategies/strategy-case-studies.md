@@ -7,7 +7,7 @@ _Last updated: May 2026_
 
 Produce client success stories that accelerate B2B purchase decisions by reducing perceived risk and demonstrating measurable outcomes for buyers at the same stage of the funnel. Target: a published case study library of 12 or more stories within 6 months, with each case study page generating a 3% or higher conversion rate to a lead action (demo request, consultation booking, or resource download).
 
-According to the Content Marketing Institute, case studies influence the purchasing process for 73% of B2B decision-makers, yet only 34% of companies use them effectively. The gap between impact and execution is the opportunity.
+Industry research from bodies like the Content Marketing Institute consistently finds that case studies rank among the highest-influence content types on B2B purchasing decisions, and that most companies underuse them relative to that influence. The gap between impact and execution is the opportunity.
 
 ---
 
@@ -21,7 +21,7 @@ According to the Content Marketing Institute, case studies influence the purchas
 
 **4. Publish in multiple formats.** The same case study should exist as a long-form web page (for SEO and deep reading), a one-page PDF (for sales team use in proposals), a LinkedIn story post (for organic reach), and a video testimonial where the client agrees to appear (for highest-trust conversion). Each format reaches a different buyer at a different stage.
 
-**5. Peer-to-peer credibility beats vendor claims.** 44% of B2B buyers trust impartial content more than the vendor's own marketing, and 72% identify more strongly with success stories that focus on the customer perspective. The more the case study sounds like the client telling their own story, the more it converts.
+**5. Peer-to-peer credibility beats vendor claims.** B2B buyers consistently report trusting impartial, customer-told stories more than vendor marketing copy, and they identify more strongly with success stories framed around the customer's perspective than the vendor's. The more the case study sounds like the client telling their own story, the more it converts.
 
 ---
 

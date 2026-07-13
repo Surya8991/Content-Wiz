@@ -1,6 +1,7 @@
 import argparse
 import csv
 import os
+import re
 import sys
 import zipfile
 from datetime import datetime
@@ -180,7 +181,7 @@ def default_output_dir():
 
 
 def make_filename(platform_label, key, index=None):
-    safe      = platform_label.lower().replace(".", "").replace("-", "_")
+    safe      = re.sub(r"[^\w]+", "_", platform_label.lower())
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     suffix    = f"_{index:03d}" if index is not None else ""
     ext       = ".md" if key in MD_KEYS else ".html" if key in HTML_KEYS else ".txt"
@@ -227,10 +228,14 @@ def parse_bulk_row(row, i):
     if not platform or not topic:
         return None, f"Row {i}: skipped - missing platform or topic"
     url = row.get("url", "").strip() or None
+    try:
+        wordcount = int(row.get("wordcount", DEFAULT_WORDCOUNT) or DEFAULT_WORDCOUNT)
+    except ValueError:
+        return None, f"Row {i}: skipped - invalid wordcount"
     return {
         "platform":        platform,
         "topic":           topic,
-        "wordcount":       int(row.get("wordcount", DEFAULT_WORDCOUNT) or DEFAULT_WORDCOUNT),
+        "wordcount":       wordcount,
         "audience":        resolve_audience(row.get("audience", "").strip() or None, url),
         "title":           row.get("title",           "").strip() or None,
         "platform_target": row.get("platform_target", "").strip() or None,

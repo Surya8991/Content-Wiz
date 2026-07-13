@@ -115,6 +115,8 @@ FORMAT (HTML output - do not use markdown):
 
 <h1>{topic}</h1>
 
+<p><em>[byline line: if a named author/persona is available in context, use "Written by [Author Name], [Title] at [Brand]"; otherwise use a generic placeholder like "Written by [Author Name]". If no individual author is being used at all, disclose brand authorship naturally instead, e.g. "Posted on behalf of [Brand]"]</em></p>
+
 <p>[reflective opening paragraph, first-person-adjacent, grounded in a specific moment or observation]</p>
 
 <h2>[Section Header]</h2>
@@ -134,6 +136,7 @@ FORMAT (HTML output - do not use markdown):
 
 STRUCTURE RULES:
 - Reflective/personal essay tone, professional but journal-like, not a corporate listicle
+- Never use an undisclosed "I" voice with zero attribution. Immediately after the `<h1>`, include a one-line byline attributing the first-person voice: either a named individual persona if one is configured in context (e.g. "Written by [Author Name], [Title] at [Brand]"), or, if no individual author is used, a natural one-line disclosure that the post is brand-published (e.g. "Posted on behalf of [Brand]"). Use whatever author/byline info is available in context, or a generic placeholder like "[Author Name]" if none is given
 - 3-4 `<h2>` sections covering the psychological or emotional reality behind the topic that most advice skips
 - Every statistic must name its source, organization, and year. If unsure of an exact figure, describe the trend qualitatively instead of inventing a number
 - Where a CTA link is provided, weave it into the body (not the closer) as a natural inline <a href="URL">anchor text</a> link, using this destination: [INSERT CTA LINK]. If no CTA link is provided, omit it entirely and do not mention the brand
@@ -148,6 +151,7 @@ SELF-CHECK BEFORE OUTPUT:
 - Is there any passive voice?
 - Does every statistic name a source, organization, and year?
 - Does the post end with the italic discussion question after an `<hr>` divider?
+- Does the byline line right after the `<h1>` attribute the first-person voice to a named persona or disclose brand authorship?
 
 OUTPUT FORMAT:
 Return a complete, self-contained HTML file in the format above. No meta-commentary, no explanations, no preamble, no markdown. HTML only.
@@ -177,6 +181,8 @@ FORMAT (HTML output - do not use markdown):
 
 <h1>{topic}</h1>
 
+<p><em>[one-line byline: "Written by [Author Name]" if a persona is configured in context, otherwise "Posted on behalf of [Brand]"]</em></p>
+
 <p>[one short punchy opening line or two]</p>
 
 <p><strong>[bolded short claim].</strong> [1-3 sentence explanation]</p>
@@ -192,6 +198,7 @@ FORMAT (HTML output - do not use markdown):
 
 STRUCTURE RULES:
 - Punchy, aphoristic, short sentences. Scannable. Professional but not corporate-stiff
+- Immediately after the `<h1>`, include a one-line byline: a named persona if one is configured in context (e.g. "Written by [Author Name]"), or, if no individual author is used, a brief disclosure that the post is brand-published (e.g. "Posted on behalf of [Brand]")
 - 4-6 bolded lead-in points, each a specific behavioral observation, not a generic platitude
 - No fabricated statistics. If you cite one, it must name source, organization, and year, and be real
 - Where a CTA link is provided, close with one sentence containing it as an inline <a href="URL">anchor text</a> link, using this destination: [INSERT CTA LINK]. If no CTA link is provided, close with one strong standalone sentence, no link, no brand mention

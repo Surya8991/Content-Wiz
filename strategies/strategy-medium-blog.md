@@ -11,7 +11,7 @@ Earn sustained organic reads, shares, and email conversions on Medium and long-f
 
 ## Core Principles
 
-**1. The headline is half the work.** Top-performing long-form writers consistently report spending 30 to 50 percent of their drafting time on the headline and first paragraph. A weak headline with strong content fails. A strong headline on its own pulls readers in and gives the content a chance to prove itself.
+**1. The headline is half the work.** Top-performing long-form writers consistently report spending a large share of their drafting time, often close to half, on the headline and first paragraph. A weak headline with strong content fails. A strong headline on its own pulls readers in and gives the content a chance to prove itself.
 
 **2. Rate of revelation determines whether readers finish.** Every sentence should deliver new information, a new angle, or a new emotion. Filler sentences that restate what was just said, transition for the sake of transition, or pad toward a word count cause readers to abandon mid-article. Each paragraph should move something forward.
 

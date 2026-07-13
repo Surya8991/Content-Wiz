@@ -5,7 +5,7 @@ _Last updated: May 2026_
 
 ## Goal and Metric
 
-Multiply the reach and lifespan of every content asset without proportionally increasing production time. Target: each primary content asset (article, webinar, report, case study) generates at least 8 derivative pieces across 3 or more channels within 7 days of the original publication. Repurposing reduces content production costs by 60 to 80% compared to creating net-new content for every channel.
+Multiply the reach and lifespan of every content asset without proportionally increasing production time. Target: each primary content asset (article, webinar, report, case study) generates at least 8 derivative pieces across 3 or more channels within 7 days of the original publication. Repurposing costs substantially less than creating net-new content for every channel, since research, framing, and proof points carry over instead of being rebuilt from scratch.
 
 ---
 
@@ -142,7 +142,7 @@ This bank means any team member can respond to a relevant HARO query in 10 minut
 
 3. **Treating repurposing as a task rather than a system.** Repurposing works when it is built into the production workflow, not added as an afterthought after the article is published and attention has moved on. The derivative plan should be drafted at the same time as the original piece.
 
-4. **No resharing cadence.** Teams that repurpose on publish day and never touch the asset again leave 70 to 80% of potential reach uncaptured. Schedule resharing dates at 6 weeks and 12 weeks for the best-performing derivatives.
+4. **No resharing cadence.** Teams that repurpose on publish day and never touch the asset again leave most of the potential reach uncaptured, since the majority of an audience misses any single post. Schedule resharing dates at 6 weeks and 12 weeks for the best-performing derivatives.
 
 5. **Losing the original source in the derivative.** Every derivative piece should link back to the original pillar asset wherever the platform allows. This drives traffic to the brand's owned channel and signals topical authority to search engines through consistent internal reference patterns.
 

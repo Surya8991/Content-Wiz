@@ -91,10 +91,10 @@ Challenge a widely held belief in the L&D or corporate training space with evide
 
 ## Format Guidance
 
-- **Carousels (PDF documents):** Highest organic reach multiplier on the platform (1.45x). Use for step-by-step frameworks, comparison tables, or multi-part guides. Each slide should have one idea and a visual. First slide is the hook; last slide is the CTA.
+- **Carousels (PDF documents):** Tends to earn meaningfully higher organic reach than plain text posts. Use for step-by-step frameworks, comparison tables, or multi-part guides. Each slide should have one idea and a visual. First slide is the hook; last slide is the CTA.
 - **Text posts:** Best for storytelling, observations, and single-insight posts. 800 to 1,000 characters.
-- **Polls:** Highest reach multiplier (1.64x) but low depth engagement. Use sparingly to seed conversation, then follow up with a detailed post on the results.
-- **No external links in the post body.** External links reduce initial reach by approximately 30%. Put links in the first comment instead, and note "Link in comments" at the end of the post.
+- **Polls:** Among the highest reach multipliers of any format but low depth engagement. Use sparingly to seed conversation, then follow up with a detailed post on the results.
+- **No external links in the post body.** LinkedIn's ranking system tends to suppress posts with outbound links, since it favors keeping users on-platform. Put links in the first comment instead, and note "Link in comments" at the end of the post.
 
 ---
 
@@ -124,7 +124,7 @@ Challenge a widely held belief in the L&D or corporate training space with evide
 
 3. **Asking for engagement without earning it.** Ending posts with "Like if you agree" or "Tag someone who needs this" signals that the post does not trust its own content to earn engagement. The CTC should ask a genuine question worth answering.
 
-4. **Posting links in the post body.** External links reduce initial algorithmic distribution by approximately 30%. This is well-documented and consistently confirmed. All links go in the first comment.
+4. **Posting links in the post body.** External links tend to reduce initial algorithmic distribution because LinkedIn favors keeping traffic on-platform. This pattern is widely reported by LinkedIn creators, though LinkedIn does not publish an exact penalty figure. All links go in the first comment.
 
 5. **No follow-through on comments.** A post that generates 20 comments and receives no replies from the author sends a signal that the account is broadcasting, not participating. This reduces comment rates on future posts because commenters learn their engagement is not reciprocated.
 

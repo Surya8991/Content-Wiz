@@ -34,3 +34,4 @@ RULES
 - Ask must be natural, not pushy
 - No em dashes anywhere
 - Output saved to output/Backlink_Outreach/
+- The identical subject line, opening compliment, or closing ask reused across multiple emails in the same batch - if you are generating more than one outreach email in a session, no two may share a subject line, opening line, or closing ask

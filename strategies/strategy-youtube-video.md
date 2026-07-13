@@ -17,9 +17,9 @@ Build a YouTube channel that serves as a discovery, trust-building, and demand-g
 
 **3. The thumbnail and title are the video's first job.** A great video with a weak thumbnail earns zero views because no one clicks. Spend 20% of total video production time on the thumbnail and title. A click-through rate below 4% means the thumbnail or title is not working, regardless of how good the video is.
 
-**4. Shorts drive discovery; long-form builds trust.** YouTube Shorts now generate 200 billion daily views globally as of 2026. For a new channel, Shorts are the fastest path to subscriber growth and algorithm exposure. Long-form content (8 to 20 minutes) converts those subscribers into buyers because depth signals expertise in a way that 60 seconds cannot.
+**4. Shorts drive discovery; long-form builds trust.** YouTube Shorts account for a large and growing share of daily views on the platform, and YouTube's own recommendation system actively pushes Shorts to non-subscribers. For a new channel, Shorts are the fastest path to subscriber growth and algorithm exposure. Long-form content (8 to 20 minutes) converts those subscribers into buyers because depth signals expertise in a way that 60 seconds cannot. Check YouTube's current Analytics documentation for up-to-date platform-wide Shorts numbers rather than relying on a fixed figure here, since this changes quickly.
 
-**5. Playlists multiply watch time without new content.** A playlist of 5 to 10 related videos adds 50% or more to total channel watch time by automatically playing the next video. Organize every video into a playlist from day one.
+**5. Playlists multiply watch time without new content.** A playlist of 5 to 10 related videos meaningfully increases total channel watch time by automatically playing the next video. Organize every video into a playlist from day one.
 
 ---
 
@@ -108,7 +108,7 @@ Every video must be optimized before publishing:
 
 ## Distribution Loop
 
-1. **Cross-post Shorts to LinkedIn.** LinkedIn video is algorithmically favored (1.45x reach multiplier as of 2026). The same 60-90 second Short used for YouTube discovery works natively on LinkedIn without any modification to the content.
+1. **Cross-post Shorts to LinkedIn.** LinkedIn's algorithm tends to favor native video with a meaningfully higher reach multiplier than plain text posts. The same 60-90 second Short used for YouTube discovery works natively on LinkedIn without any modification to the content.
 2. **Embed long-form videos in related blog articles.** A YouTube video embedded in a blog post about the same topic increases the article's dwell time (positive SEO signal) and sends view traffic to the YouTube channel.
 3. **Feature in newsletter.** The weekly newsletter should include one featured video per month - a 1-sentence description and a thumbnail-style image linking to the video. This is a high-conversion traffic source because email subscribers are already warm.
 4. **Reply to every comment within 48 hours.** YouTube's algorithm surfaces videos in "Community" recommendations when the creator engages with comments. A reply also encourages the commenter to return and engage with future videos.

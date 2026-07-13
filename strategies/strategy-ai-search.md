@@ -5,7 +5,7 @@ _Last updated: May 2026_
 
 ## Goal and Metric
 
-Earn citations in AI-generated search responses across Google AI Overviews, ChatGPT, Perplexity, and Google AI Mode for queries where corporate training and professional certification buyers are researching decisions. Target: citations in AI Overviews for 10 or more high-intent keywords within 6 months, measured using a tool like Otterly.ai, BrightEdge, or manual query sampling. As of 2026, 76% of AI Overview citations come from pages ranking in the top 10, but 46.5% of cited URLs rank outside the top 50 - structure and authority can overcome lower organic rankings.
+Earn citations in AI-generated search responses across Google AI Overviews, ChatGPT, Perplexity, and Google AI Mode for queries where corporate training and professional certification buyers are researching decisions. Target: citations in AI Overviews for 10 or more high-intent keywords within 6 months, measured using a tool like Otterly.ai, BrightEdge, or manual query sampling. AI Overview citations skew toward pages that already rank well organically, but a meaningful share of cited URLs rank outside the top organic results entirely - structure and authority can overcome lower organic rankings, so do not treat organic rank as the only lever.
 
 ---
 
@@ -15,11 +15,11 @@ Earn citations in AI-generated search responses across Google AI Overviews, Chat
 
 **2. Direct answer first, depth second.** AI Overviews and Perplexity cite content that answers the query in the first 40 to 60 words of a section. Burying the answer after three paragraphs of context means the content will not be cited, regardless of how useful the full article is. Lead every section with the direct answer, then provide the supporting explanation and evidence below it.
 
-**3. Structured data has moved from optional to essential.** Websites with structured data see a 34% higher AI citation rate (Aleyda Solis, 2025 research). Schema markup for Article, FAQPage, HowTo, and Organization signals to AI retrieval systems exactly what the content is, who produced it, and how it should be categorized. Implement schema on every content page.
+**3. Structured data has moved from optional to essential.** Independent SEO research has repeatedly found that structured data meaningfully lifts AI citation rates. Schema markup for Article, FAQPage, HowTo, and Organization signals to AI retrieval systems exactly what the content is, who produced it, and how it should be categorized. Implement schema on every content page. Treat any specific lift percentage you see quoted from a single study as directional, not a guarantee for your site.
 
-**4. Q&A format material is 2.8x more likely to be cited.** AI engines are trained on conversational question-answer patterns. Content structured as explicit questions followed by direct answers matches the retrieval pattern AI systems use when generating responses. Add an explicit Q&A section to every pillar page and how-to article.
+**4. Q&A format material is disproportionately likely to be cited.** AI engines are trained on conversational question-answer patterns. Content structured as explicit questions followed by direct answers matches the retrieval pattern AI systems use when generating responses. Add an explicit Q&A section to every pillar page and how-to article.
 
-**5. Citation freshness decays rapidly.** Approximately 50% of content cited in AI search responses is less than 13 weeks old. AI systems prioritize recently updated, recently cited, and recently active content. A great article published two years ago and never updated will be deprioritized in favor of newer alternatives. Update content regularly.
+**5. Citation freshness decays rapidly.** A large share of content cited in AI search responses skews recent, generally within the last few months. AI systems prioritize recently updated, recently cited, and recently active content. A great article published two years ago and never updated will be deprioritized in favor of newer alternatives. Update content regularly.
 
 ---
 
@@ -104,7 +104,7 @@ Each AI search platform has distinct citation preferences as of 2026:
 - Prioritizes pages ranking in the top 10 for the query, but structure can compensate for rank
 - FAQ schema and HowTo schema have the highest citation lift
 - Update content within the last 90 days for time-sensitive queries
-- Google AI Mode and AI Overviews cite the same URLs only 13.7% of the time - optimize for both with FAQ and structured content
+- Google AI Mode and AI Overviews frequently cite different URLs for the same query rather than mirroring each other - optimize for both with FAQ and structured content
 
 **Perplexity:**
 - Tends to cite longer, more comprehensive content
@@ -145,7 +145,7 @@ Track AI search visibility using:
 
 1. **Optimizing for traditional SEO only.** A page that ranks well but has no chunk-level structure, no FAQ schema, and no explicit direct answers will not be cited by AI engines even if it holds a top-3 ranking. AI citation requires deliberate structural optimization beyond keyword placement.
 
-2. **No structured data.** The 34% citation lift from structured data is the highest-leverage technical change available at minimal production cost. Skipping schema implementation is the equivalent of not submitting a sitemap.
+2. **No structured data.** The citation lift from structured data is the highest-leverage technical change available at minimal production cost, even without a precise number attached. Skipping schema implementation is the equivalent of not submitting a sitemap.
 
 3. **Content that does not answer the question in the first sentence.** AI retrieval systems read the first 40 to 60 words of a section and decide whether it answers the query. Context-setting introductions, preambles, and background sections all precede the answer and reduce citation probability.
 

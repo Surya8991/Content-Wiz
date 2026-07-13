@@ -35,3 +35,4 @@ RULES
 - No em dashes anywhere
 - CTA links to course URL
 - Output saved to output/Course_Descriptions/
+- The identical opening statement or closing CTA sentence reused across multiple course descriptions in the same batch - if you are generating more than one description in a session, no two may share an opening statement or closing CTA sentence

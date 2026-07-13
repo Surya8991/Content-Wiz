@@ -29,6 +29,7 @@ EPISODE SUMMARY (100 to 150 words):
 Write in third person ("In this episode, [host/guest] explores...").
 Open with the primary insight or counterintuitive claim the episode delivers.
 Do not open with: "In today's episode..." or "Welcome back to..."
+Examples of the pattern (write a new one each time, do not copy these verbatim): "Most L&D teams track completion, not behavior change - this episode explains why that gap costs budget approval.", "A 43% completion rate does not mean a program failed. [Guest] explains what the number actually measures.", "The metric most training leaders report to the board is the wrong one, and [Guest] makes the case for what to track instead."
 Name the specific takeaway a listener will have after finishing the episode.
 
 KEY TAKEAWAYS (4 to 6 bullet points):
@@ -136,6 +137,8 @@ Example: "[Guest Name] oversees L&D program design at [Brand], where the team ha
 SIGN-OFF: Name, title, website, one link to a writing sample or previous podcast appearance.
 
 TOTAL: under 150 words. One link. No attachments.
+
+The identical hook sentence or episode angle reused across pitches to multiple podcasts in the same batch - if you are generating more than one Mode C pitch in a session, no two shows may receive the same hook, working title, or credential sentence.
 
 PRIMARY TAKEAWAY FRAMEWORK (PREPARE BEFORE EVERY RECORDING):
 Before the recording, identify:

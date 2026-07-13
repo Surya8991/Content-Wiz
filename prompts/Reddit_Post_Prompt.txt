@@ -29,5 +29,6 @@ RULES
 - Post body 100-200 words
 - Brand mention only if completely natural
 - URL positioned as a resource, not a CTA
+- Any stat cited must name its source, organization, and year (e.g. "(ATD, 2025)" or "per WEF 2025 Future of Jobs Report")
 - No em dashes anywhere
 - Output saved to output/Reddit/

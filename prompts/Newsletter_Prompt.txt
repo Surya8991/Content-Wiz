@@ -192,6 +192,7 @@ RULES SUMMARY
 - All stats named with source and year
 - Sender name is a person, not the brand
 - Output saved to output/Newsletter/
+- The identical subject line pattern, opening hook, or sign-off observation reused across multiple newsletters in the same batch - if you are generating more than one newsletter in a session, no two may share a subject line pattern, opening hook, or closing observation
 
 ------------------------------------------------------------
 FAILURE MODES TO AVOID

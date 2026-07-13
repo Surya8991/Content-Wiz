@@ -28,4 +28,6 @@ RULES
 - Description is 1-2 sentences max before hashtags
 - 4-5 hashtags, last one is always the brand hashtag
 - No em dashes anywhere
+- Vary the exact phrasing of the description sentence(s) post to post, do not reuse the same description wording across a batch. Examples of the pattern (write new ones each time, do not copy these verbatim): "Built for teams that need results fast.", "A practical resource for the next planning cycle.", "Made for decision makers weighing this exact tradeoff."
+- The identical description sentence reused across multiple pins in the same batch - if you are generating more than one Pinterest post in a session, no two may share the same description wording
 - Output saved to output/Pinterest/

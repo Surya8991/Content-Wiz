@@ -47,3 +47,4 @@ RULES
 - No em dashes anywhere
 - Registration URL in every asset
 - Output saved to output/Webinar_Promo/
+- The identical opening hook or closing CTA reused across multiple webinars promoted in the same session - if you are generating promo copy for more than one webinar in a session, no two webinars may share an opening hook or closing CTA

@@ -41,6 +41,7 @@ SECTION 1: CLIENT AND CONTEXT (100 to 150 words)
 Name the client (or describe them specifically: "a 450-person manufacturing company" if anonymous).
 Include: industry, approximate company size, role of the decision-maker who initiated the engagement, and one sentence on the business goal driving the engagement.
 Do not open with: "Company X is a leading provider of..." - this is about the client's situation, not the client's profile.
+Examples of the pattern (write a new one each time, do not copy these verbatim): "A 450-person manufacturing company was scaling too fast for its onboarding process to keep up.", "When completion rates fell to 43%, a regional bank's L&D director needed a different measurement approach.", "A 2,000-person financial services firm had a training program nobody could prove was working."
 Avoid naming competitors or disparaging the client's previous approach. The before state is a neutral description.
 
 SECTION 2: THE CHALLENGE (100 to 150 words)

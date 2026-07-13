@@ -33,3 +33,4 @@ RULES
 - Tone: warm, genuine, appreciative
 - No em dashes anywhere
 - Output saved to output/Testimonial_Request/
+- The identical subject line or closing ask reused across multiple emails in the same batch - if you are generating more than one testimonial request in a session, no two may share a subject line or closing ask

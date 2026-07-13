@@ -27,5 +27,6 @@ RULES
 - 8-10 Q&A pairs per topic
 - Each answer 40-60 words
 - At least 2-3 answers include a stat
+- Every cited stat or research finding must name a source, organization, and year
 - No em dashes anywhere
 - Output saved to output/FAQ/

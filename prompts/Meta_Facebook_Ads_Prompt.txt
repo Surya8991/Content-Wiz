@@ -35,4 +35,6 @@ RULES
 - First line of primary text must be a hook
 - No em dashes anywhere
 - 3 ad variations per request
+- Vary the exact phrasing of the hook line across variations and across requests, do not reuse the same hook in the same batch. Examples of the pattern (write a new one each time, do not copy these verbatim): "Still tracking completion, not results?", "Your next cohort starts in weeks - is your team ready?", "The training gap nobody budgets for."
+- The identical hook line reused across multiple ad variations or requests in the same batch - if you are generating more than one set of ads in a session, no two variations may share a hook line
 - Output saved to output/Meta_Facebook_Ads/

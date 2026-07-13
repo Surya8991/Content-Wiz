@@ -13,7 +13,7 @@ Earn signed byline placements in Tier 1 and Tier 2 L&D, HR, and business publica
 
 **1. Reader-first, always.** The publication's editorial team exists to serve their readers, not to provide brands with backlink placements. Every pitch and every article must start from the question: what does this publication's reader need to know that they do not know yet? Articles that read as self-promotion get rejected. Articles that read as genuine expertise get published and shared.
 
-**2. Target publications your buyers actually read.** Domain authority matters for SEO, but audience relevance matters more for business outcomes. A byline in Chief Learning Officer (read by 280,000+ L&D leaders globally) does more for your brand's positioning than a high-DA tech blog with no L&D audience. Build the target list from buyer research first, then cross-check domain metrics.
+**2. Target publications your buyers actually read.** Domain authority matters for SEO, but audience relevance matters more for business outcomes. A byline in a large, dedicated L&D publication like Chief Learning Officer does more for your brand's positioning than a high-DA tech blog with no L&D audience. Build the target list from buyer research first, then cross-check domain metrics and current circulation directly with the publication rather than relying on a remembered figure.
 
 **3. The pitch is a sample of the writing quality.** Editors use the pitch to decide whether the author can write. A poorly structured pitch signals a poorly structured article. Treat the pitch email as a piece of writing that demonstrates the same clarity, specificity, and value you promise in the article.
 
@@ -26,11 +26,13 @@ Earn signed byline placements in Tier 1 and Tier 2 L&D, HR, and business publica
 ## Target Publication List (L&D and HR Space)
 
 **Tier 1 (highest reach and authority, most competitive):**
-- Chief Learning Officer Magazine (CLO Media) - 280,000+ L&D and talent leaders
+- Chief Learning Officer Magazine (CLO Media) - large L&D and talent leader readership
 - Training Industry Magazine - L&D professionals, learning technology buyers
 - HR Dive - HR directors and VPs, operational focus
-- SHRM HR Magazine - 300,000+ HR professionals globally
+- SHRM HR Magazine - large, established HR professional readership
 - Harvard Business Review - senior leaders, general management (hardest to place, highest impact)
+
+Check each publication's current media kit or ask their editorial team directly for readership numbers before using them in internal pitches - circulation figures shift and quickly go stale.
 
 **Tier 2 (strong niche authority, more accessible):**
 - ATD (Association for Talent Development) - practitioners in training and instructional design
@@ -104,7 +106,7 @@ Trade publication editors have specific structural expectations. Most top L&D pu
 
 ## Relationship-Building Approach
 
-Cold pitch emails produce a 10 to 15% reply rate. Relationship-first pitches produce 25 to 35%. The difference is whether the editor already knows who is pitching.
+Cold pitch emails typically produce a low reply rate. Relationship-first pitches produce a meaningfully higher one, often several times over. The difference is whether the editor already knows who is pitching.
 
 **Before pitching:**
 - Follow the target editor on LinkedIn. Comment substantively on their posts (not "great article" - a specific addition to their point).

@@ -60,7 +60,7 @@ Rules for the opening:
 - No em dashes anywhere
 - No vague intros that could apply to any article: "Training is important. But many organizations struggle with it."
 
-SECTION 3: THE ARGUMENT BODY (3 to 4 subsections, 300 to 700 words total)
+SECTION 3: THE ARGUMENT BODY (3 to 4 subsections, 300 to 600 words total)
 
 Each subsection has:
 - H2 SUBHEADING: A named claim or named framework component (not a vague label like "The Challenge" or "The Solution")
@@ -69,7 +69,7 @@ Each subsection has:
   No: "The Problem"
   No: "Key Insights"
 
-- BODY (75 to 175 words per subsection):
+- BODY (75 to 150 words per subsection):
   - Apply the 4-layer chunk format per subsection: Direct claim, Explanation, Evidence, Application
   - Each subsection must advance the argument - no restatements of the previous subsection
   - At least one subsection contains a named stat with source and year

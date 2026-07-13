@@ -37,9 +37,10 @@ RULES
 - Must take a clear, defensible stance - not neutral
 - Opens with a personal observation or contrarian claim
 - 600-900 words
-- At least 2 credible stats or research references
+- At least 2 credible stats or research references, each naming its source, organization, and year
 - First-person throughout
 - No pronouns: you, we, our, your
 - No em dashes anywhere
 - No passive voice
+- The identical opening claim or closing CTA reused across multiple op-eds in the same batch - if you are generating more than one row in a session, no two may share an opening observation or a closing statement
 - Output saved to output/Thought_Leadership/

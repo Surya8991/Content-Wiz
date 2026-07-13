@@ -123,6 +123,7 @@ GLOBAL RULES (FROM _BRAND_DETECTION_RULES.TXT)
 - Every stat names its source and year
 - No promotional brand tone in the answer body
 - Brand positioning happens in the credential block and sign-off only
+- The identical hook pattern or subject line format reused across multiple HARO pitches in the same session - if you are responding to more than one query in a session, no two pitches may open Block 3 with the same hook pattern
 
 ------------------------------------------------------------
 FAILURE MODES TO AVOID

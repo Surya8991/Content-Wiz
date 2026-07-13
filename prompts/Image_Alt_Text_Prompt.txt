@@ -10,7 +10,7 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Generate SEO-optimized alt text for images used in the blog post titled "[BLOG TITLE]" at [URL] for [BRAND NAME]. For each image described below, write alt text that is descriptive, includes a relevant keyword naturally, is under 125 characters, and is screen-reader friendly. Do not use em dashes. Do not start alt text with "Image of" or "Picture of".
+Generate SEO-optimized alt text for images used in the blog post titled "[BLOG TITLE]" at [URL] for [BRAND NAME]. For each image described below, write alt text that is descriptive, includes a relevant keyword naturally, is under 125 characters, and is screen-reader friendly. Do not use em dashes. Do not start alt text with "Image of" or "Picture of" - start directly with the descriptive content instead. Examples of the pattern (write a new one each time based on the actual image, do not copy these verbatim): "Bar chart comparing employee engagement scores across five departments", "Dashboard view of quarterly training completion rates", "Team members collaborating during a workshop session".
 
 Blog URL: [INSERT URL]
 Blog Primary Keyword: [INSERT KEYWORD]
@@ -36,5 +36,6 @@ RULES
 - Include primary or secondary keyword naturally where relevant
 - Do not start with "Image of" or "Picture of"
 - Descriptive enough for screen readers
+- If writing alt text for multiple images in the same post, no two alt texts may open with the same sentence structure or reuse the same phrasing
 - No em dashes anywhere
 - Output saved to output/Image_Alt_Text/

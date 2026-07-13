@@ -19,7 +19,7 @@ Build a recurring owned audience that converts at higher rates than any other ch
 
 **4. Consistency matters more than perfection.** The newsletters with the highest long-term retention - Lenny's Newsletter, The Profile, The Saturday Solopreneur - all share one attribute before any other: they have never broken their publishing cadence for years. A slightly rough issue that arrives on schedule builds more trust than a polished issue that arrives three days late.
 
-**5. The subject line is a separate skill from the newsletter itself.** Subject lines are the only part of the newsletter that determines whether the rest gets read. A great issue with a weak subject line earns a 15% open rate. A great subject line on an average issue earns a 45% open rate. Treat subject line writing as a dedicated practice, not an afterthought.
+**5. The subject line is a separate skill from the newsletter itself.** Subject lines are the only part of the newsletter that determines whether the rest gets read. A great issue with a weak subject line can still land a mediocre open rate, while a great subject line on an average issue can significantly outperform it. Treat subject line writing as a dedicated practice, not an afterthought.
 
 ---
 
@@ -41,7 +41,7 @@ Format: 5-email sequence sent over 14 days. Each email shorter than the weekly n
 ## Weekly Newsletter Structure (The 8 Blocks)
 
 **Block 1: Subject line (33 characters or fewer)**
-The subject line should do one of three things: state a specific counterintuitive claim, ask a question the reader genuinely wants answered, or name a problem the reader is currently experiencing. Never use the word "newsletter" in the subject line - it is among the lowest-performing subject line words in 2026 data across all B2B categories. Never use vague teasers like "This week's edition" or "You won't believe this." Be specific.
+The subject line should do one of three things: state a specific counterintuitive claim, ask a question the reader genuinely wants answered, or name a problem the reader is currently experiencing. Avoid the word "newsletter" in the subject line - it consistently tests as a weak performer across B2B categories because it signals a broadcast rather than a message meant for the reader. Never use vague teasers like "This week's edition" or "You won't believe this." Be specific.
 
 Strong subject line patterns:
 - `Why your training budget keeps shrinking` (problem statement)
@@ -110,7 +110,7 @@ Segment the list by entry point and stated role:
 - **Entry point: free tool or assessment** (high intent) → Nurture with outcome data and comparison content → Convert to paid program within 14 days
 - **Entry point: organic article** (awareness stage) → Nurture with related insights → Convert to content download, then re-segment
 
-Segmented sends consistently produce 3 to 5x higher click rates than unsegmented sends. The minimum viable segmentation is two lists: new subscribers (in nurture sequence) and engaged subscribers (receiving the weekly newsletter).
+Segmented sends consistently outperform unsegmented sends on click rate by a wide margin. The minimum viable segmentation is two lists: new subscribers (in nurture sequence) and engaged subscribers (receiving the weekly newsletter).
 
 ---
 
@@ -118,7 +118,7 @@ Segmented sends consistently produce 3 to 5x higher click rates than unsegmented
 
 1. **Social teaser before send:** Post the subject line and first two sentences of the newsletter on LinkedIn the morning before it lands in inboxes. This primes subscribers to open and attracts new subscribers who want the full issue.
 2. **Cross-promote in other brand content:** Every pillar page, every Medium article, and every LinkedIn carousel should include a newsletter signup CTA. The newsletter is the conversion point for all other content channels.
-3. **Referral loop:** Add a "Forward to a colleague" line at the bottom of every issue. Peer referrals are the highest-converting newsletter growth lever - Lenny's Newsletter grew to 900,000 subscribers with 78% from peer recommendations.
+3. **Referral loop:** Add a "Forward to a colleague" line at the bottom of every issue. Peer referrals are among the highest-converting newsletter growth levers - Lenny's Newsletter is a well-known example of a publication that grew to hundreds of thousands of subscribers substantially through peer forwarding and word of mouth rather than paid acquisition.
 4. **Archive and repurpose:** The best-performing newsletter issues (highest open and click rate) become the basis for full Medium articles, LinkedIn carousel posts, and blog content. This extends the value of one issue across multiple channels.
 
 ---

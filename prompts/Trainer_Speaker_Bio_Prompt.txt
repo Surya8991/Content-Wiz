@@ -38,3 +38,4 @@ RULES
 - Credentials and expertise must be prominent
 - No em dashes anywhere
 - Output saved to output/Trainer_Bios/
+- The identical opening sentence or closing line reused across multiple bios in the same batch - if you are generating more than one trainer or speaker bio in a session, no two may share an opening sentence or closing line

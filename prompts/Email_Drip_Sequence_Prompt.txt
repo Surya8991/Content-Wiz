@@ -42,5 +42,7 @@ RULES
 - Each email body 100-150 words
 - Each email has one clear CTA
 - Narrative arc must flow logically across all emails
+- Any stat or data point cited (e.g. in the social proof or case study email) must name a source, organization, and year
+- The identical subject line or CTA phrasing reused across multiple sequences generated in the same session - if you are generating more than one drip sequence in a session, no two sequences may share a subject line or CTA phrasing
 - No em dashes anywhere
 - Output saved to output/Email_Drip/

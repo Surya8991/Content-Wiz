@@ -35,4 +35,6 @@ RULES
 - Clear CTA in at least 1 description per variation
 - No em dashes anywhere
 - 3 ad variations per request
+- Vary the exact phrasing of headlines and descriptions across variations and across requests, do not reuse the same headline or description wording in the same batch. Examples of the pattern (write new ones each time, do not copy these verbatim): "Cut Onboarding Time 40%", "Skills Training That Sticks", "Get Your Team Certified Fast"
+- The identical headline or description reused across multiple ad variations or requests in the same batch - if you are generating more than one set of ads in a session, no two variations may share a headline or description
 - Output saved to output/Google_Ads/

@@ -32,6 +32,9 @@ RULES
 - Headline: max 70 characters
 - CTA must be one of LinkedIn's native options
 - Open with a pain point, stat, or bold statement
+- Any stat cited must name its source, organization, and year (e.g. "(ATD, 2025)" or "per WEF 2025 Future of Jobs Report")
 - No em dashes anywhere
 - 3 ad variations per request
+- Vary the exact phrasing of the hook line and CTA across variations and across requests, do not reuse the same hook or headline in the same batch. Examples of the hook pattern (write a new one each time, do not copy these verbatim): "Most teams still measure the wrong metric.", "Your onboarding timeline is costing you more than you think.", "Budget season is coming - is your data ready?"
+- The identical hook line reused across multiple ad variations or requests in the same batch - if you are generating more than one set of ads in a session, no two variations may share a hook line
 - Output saved to output/LinkedIn_Ads/

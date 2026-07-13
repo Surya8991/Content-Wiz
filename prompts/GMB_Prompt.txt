@@ -10,7 +10,7 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Create a Google My Business post for [BRAND NAME], [BRAND DESCRIPTION], for the blog post titled "[BLOG TITLE]". Write a 50-word summarized description in B2B language targeting [TARGET AUDIENCE]. Do not use em dashes. End the post with: Don't miss out on this essential read! Click on learn more.
+Create a Google My Business post for [BRAND NAME], [BRAND DESCRIPTION], for the blog post titled "[BLOG TITLE]". Write a 50-word summarized description in B2B language targeting [TARGET AUDIENCE]. Do not use em dashes. Close with a soft CTA tied to the reader's role. Vary the exact phrasing post to post, do not reuse the same closing line across a batch. Examples of the pattern (write a new one each time, do not copy these verbatim): "Use it to tighten next quarter's rollout plan.", "Apply this before your next team review.", "Reference this the next time budget gets questioned.", "Bring this into your next planning conversation."
 
 Blog URL: [INSERT BLOG URL]
 
@@ -27,6 +27,7 @@ RULES
 - Description is approximately 50 words
 - B2B language only, no consumer-facing tone
 - No em dashes anywhere
-- CTA line is: Don't miss out on this essential read! Click on learn more.
-- CTA is the final line and is not counted in the 50-word description
+- Do not use: "Don't miss out", "Click on learn more", "Take advantage of", "Discover"
+- CTA is a role-relevant closing line, is the final part of the post, and is not counted in the 50-word description
+- If generating multiple GMB posts in a session, no two may share a closing line
 - Output saved to output/GMB/

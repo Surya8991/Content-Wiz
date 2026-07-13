@@ -70,6 +70,14 @@ class PlatformRoutingTests(unittest.TestCase):
                 self.assertNotIn("—", prompt, f"em-dash leaked into '{key}' output")
 
 
+class CtaPlaceholderPresenceTests(unittest.TestCase):
+    def test_livejournal_post_contains_cta_placeholder(self):
+        self.assertIn("[INSERT CTA LINK]", generate.build_prompt("livejournal_post", **SAMPLE))
+
+    def test_tumblr_post_contains_cta_placeholder(self):
+        self.assertIn("[INSERT CTA LINK]", generate.build_prompt("tumblr_post", **SAMPLE))
+
+
 class CtaInjectionTests(unittest.TestCase):
     def test_cta_replaces_placeholder(self):
         out = generate.inject_cta("Visit [INSERT CTA LINK] now", "https://edstellar.com")

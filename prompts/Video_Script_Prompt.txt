@@ -234,6 +234,7 @@ GLOBAL RULES
 - Primary takeaway named within first 10 minutes (for Types 2 and 3)
 - CTA is one ask, not multiple
 - Every stat names source and year
+- The identical hook line or CTA sentence reused across multiple scripts in the same batch - if you are generating more than one script in a session (e.g. a week's worth of Shorts), no two may share a hook, a transition line, or a CTA sentence
 - Output saved to output/Video_Scripts/
 
 ------------------------------------------------------------

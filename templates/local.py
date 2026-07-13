@@ -1,4 +1,4 @@
-from ._shared import HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES  # noqa: F401
+from ._shared import HUMAN_WRITING_RULES
 
 
 def gmb(topic, audience, **_):
@@ -17,7 +17,7 @@ PRE-WRITE DIAGNOSTIC (do this mentally before writing):
 STRUCTURE (50 words, distributed as):
 - Sentence 1 (12-15 words): State the value the reader gets, lead with an action verb, embed the primary keyword naturally
 - Sentence 2 (15-20 words): Specify what the resource delivers - frameworks, data, examples, checklists
-- Sentence 3 (12-18 words): Close with a soft CTA tied to the reader's role - "Use it to...", "Apply these to...", "Reference this when..."
+- Sentence 3 (12-18 words): Close with a soft CTA tied to the reader's role. Vary the exact phrasing post to post, do not reuse the same closing sentence across a batch. Examples of the pattern (write a new one each time, do not copy these verbatim): "Use it to tighten next quarter's rollout plan.", "Apply this before your next team review.", "Reference this the next time budget gets questioned.", "Bring this into your next planning conversation."
 
 STRICT REQUIREMENTS:
 - Exactly 45-55 words (count every word, including articles)
@@ -31,7 +31,8 @@ STRICT REQUIREMENTS:
 DO NOT USE:
 - Openers like "This blog...", "In this post...", "Learn how..."
 - Generic value words: "comprehensive", "ultimate", "complete", "everything you need"
-- Salesy phrases: "Don't miss out", "Take advantage of", "Discover"
+- Salesy phrases: "Don't miss out", "Take advantage of", "Discover", "Click on learn more", "Don't miss out on this essential read"
+- The identical closing sentence reused across multiple posts in the same batch - if you are generating more than one GMB post in a session, no two may share a closing sentence
 - Em dashes - use hyphens only
 
 {HUMAN_WRITING_RULES}
@@ -41,6 +42,7 @@ SELF-REVIEW (before output):
 - Could a stranger in the role of {audience} restate the value in one sentence after reading this?
 - Is the primary keyword in the first 10 words?
 - Does it sound like a senior peer wrote it, or a marketing intern?
+- If generating multiple posts, does this closing sentence differ from every other post's closing sentence so far?
 
 OUTPUT:
 Return only the final 45-55 word description. No labels, no preamble, no explanations, no word count notation.
