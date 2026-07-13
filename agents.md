@@ -90,3 +90,11 @@ CI runs all three (`.github/workflows/ci.yml`).
   Adding a flat type: drop the `.txt` + one `TEXT_PROMPT_MAP` row. Tests and the
   doc tables will otherwise drift.
 - Templates are large; grep for `def <key>(` across `templates/`, don't read whole files.
+- **Citations are not auto-verified.** Rule 4/8 in README's Global Content Rules
+  requires every statistic to name a real source, org, and year, but nothing in
+  `generate.py`/`lint_content.py` checks that the citation is actually accurate,
+  a model can name a real report and still misstate the finding. Before marking
+  a batch ready to publish, run the citation-verification pass described in
+  README's "Citation Verification" section (per-batch web research against every
+  cited claim, tighten/correct/soften as needed). `data/HARO_DataBank.csv` rows
+  marked `[PLACEHOLDER]` are first-party internal data, not web-researchable.

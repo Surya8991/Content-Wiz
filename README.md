@@ -279,6 +279,42 @@ All content produced in this system follows these rules (defined in [prompts/_Br
 5. No promotional brand tone in content body
 6. Output saves to the appropriate `output/` subfolder
 7. Brand auto-detection from URL before generating any content
+8. Every statistic is verified against a real, live source before publish (see below)
+
+Rule 4 is enforced by the prompt instructions at generation time; it does not by
+itself guarantee the citation is accurate; a model can name a real organization
+and year while still misstating the finding. Rule 8 is the separate verification
+step that closes that gap.
+
+### Citation Verification (pre-publish step, not yet automated)
+
+Before any generated post carrying a statistic is marked ready to publish, run a
+research pass that checks every cited claim against a live source:
+
+1. Read the finished file(s) and list every sentence that names a source,
+   organization, or study.
+2. For each one, search for the real source and confirm the claim matches what
+   it actually says (right figure, right year, right report edition).
+3. If verified: tighten the sentence to name the specific report/edition if it
+   was vague (e.g. "Gallup's research" → "Gallup's 2023 State of the Global
+   Workplace report").
+4. If wrong, outdated, or unverifiable after a real search effort: correct the
+   figure/source, replace it with a verifiable alternative, or soften the claim
+   to a qualitative statement with no fabricated precision. Never invent a
+   fake-precise fix.
+5. Do not touch anything else in the file, this is a citation-only pass.
+
+This applies per content batch, not per platform template, since the same
+underlying claim (e.g. "44% of core job skills will be disrupted within 5
+years") can recur across multiple posts and should be verified once and then
+kept consistent. `data/HARO_DataBank.csv` rows marked `[PLACEHOLDER]` are a
+brand's own first-party program data, not web-researchable, they need to be
+filled from that brand's internal metrics instead.
+
+This step is currently manual (or agent-assisted on request), it is not wired
+into `generate.py` or `lint_content.py`, so nothing blocks a citation-unverified
+file from landing in `output/`. Treat it as a required gate before publish, not
+an optional polish pass.
 
 ---
 
