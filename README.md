@@ -13,14 +13,15 @@ delete them, or add your own.
 
 ## What it can do
 
-- **35 rich content-type templates** across blog/SEO (pillar posts, Dev.to/
-  Hashnode, Medium, comparison pages), social (LinkedIn, Twitter/X, Instagram,
-  carousels), video (YouTube, podcasts, Reels/Shorts/TikTok scripts), community
-  (Quora, LiveJournal, Tumblr), local (Google Business Profile, Pinterest),
-  growth (newsletters, FAQs, GEO/AI-search, landing pages, repurposing), PR
-  (HARO pitches, press releases, case studies, guest articles, internal
-  business-case one-pagers), and creator marketing (influencer outreach, UGC
-  briefs, personal-brand posts, creator media kits).
+- **40 rich content-type templates** across blog/SEO (pillar posts, Dev.to/
+  Hashnode, Medium, comparison pages, Substack, SEO glossary pages), social
+  (LinkedIn, Twitter/X, Instagram, carousels, profile/bio optimization), video
+  (YouTube, podcasts, Reels/Shorts/TikTok scripts), community (Quora,
+  LiveJournal, Tumblr, Discord announcements), local (Google Business Profile,
+  Pinterest, review responses), growth (newsletters, FAQs, GEO/AI-search,
+  landing pages, repurposing), PR (HARO pitches, press releases, case studies,
+  guest articles, internal business-case one-pagers), and creator marketing
+  (influencer outreach, UGC briefs, personal-brand posts, creator media kits).
 - **49 flat prompt files** covering everything from ad copy (Google, Meta,
   LinkedIn ads) to buyer personas, whitepapers, webinar promos, and schema
   markup - all reachable from the same CLI.
@@ -64,7 +65,7 @@ Content Wiz/
 ├── config.json                       ← Brands + defaults (edit here, not in code)
 ├── config.py                         ← Loads config.json with a safe fallback
 ├── generate.py                       ← CLI prompt generator (single + bulk + --generate)
-├── templates/                        ← 35 rich, parameterized prompt builders, split by domain
+├── templates/                        ← 40 rich, parameterized prompt builders, split by domain
 │   ├── __init__.py                   ← Re-exports every function at package level
 │   ├── _shared.py                    ← HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES
 │   ├── local.py, blog.py, social.py, community.py, creator.py, personal.py, video.py, growth.py, pr.py
@@ -84,13 +85,14 @@ The subfolders it can produce are:
 ```
 Blog/                Blog_Suggestions/    Business_Case/       Case_Study/
 Comparison_Pages/    Content_Brief/       Content_Calendar/    DataBank/
-DevTo_Hashnode/       FAQ/                 GEO/                 GMB/
-Guest_Articles/       HARO/                Influencer_Outreach/ Instagram/
-Landing_Pages/        LinkedIn/            LinkedIn_Carousel/   LiveJournal/
-Media_Kit/            Medium/              Meta/                Newsletter/
-Personal_Brand/       Pinterest/           Podcast/             Press_Release/
-Quora/                Short_Form_Video/    Tumblr/              Twitter/
-UGC_Briefs/           Video_Scripts/       YouTube/
+DevTo_Hashnode/       Discord/             FAQ/                 GEO/
+GMB/                  Glossary_Pages/      Guest_Articles/       HARO/
+Influencer_Outreach/  Instagram/           Landing_Pages/        LinkedIn/
+LinkedIn_Carousel/    LiveJournal/         Media_Kit/            Medium/
+Meta/                 Newsletter/          Personal_Brand/       Pinterest/
+Podcast/              Press_Release/       Profile_Bio/          Quora/
+Review_Response/      Short_Form_Video/    Substack/             Tumblr/
+Twitter/              UGC_Briefs/          Video_Scripts/        YouTube/
 Misc/  (fallback for any unmapped key)
 ```
 
@@ -240,6 +242,11 @@ for what `generate.py` can produce.
 | `ugc_brief` | `ugc_brief`, `ugc`, `creator_brief` | UGC_Briefs |
 | `personal_brand_post` | `personal_brand_post`, `personal_brand`, `personal_post` | Personal_Brand |
 | `creator_media_kit` | `creator_media_kit`, `media_kit`, `mediakit` | Media_Kit |
+| `profile_bio` | `profile_bio`, `profile`, `social_bio` | Profile_Bio |
+| `review_response` | `review_response`, `review`, `reviews` | Review_Response |
+| `substack_post` | `substack_post`, `substack` | Substack |
+| `glossary_page` | `glossary_page`, `glossary`, `definition_page` | Glossary_Pages |
+| `discord_announcement` | `discord_announcement`, `discord` | Discord |
 
 > **Alias gotcha:** `--platform linkedin`, `wordpress`, and `blog` all resolve to
 > `blog_writing` (long-form blog). For a LinkedIn *post*, use `--platform linkedin_post`.

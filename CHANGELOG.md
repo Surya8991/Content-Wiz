@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0]
+
+### Added
+- Five new templates, each grounded in current platform research: `profile_bio`
+  (LinkedIn About/X bio/Instagram bio/Substack About, with exact 2026 character
+  limits), `review_response` (Google/Yelp/Trustpilot/G2 review replies, both
+  sentiment branches), `substack_post` (Notes/restack-aware, distinct from the
+  generic newsletter template), `glossary_page` (SEO definition pages with
+  DefinedTerm schema), and `discord_announcement` (native Markdown, ping-usage
+  discipline, reaction-emoji seeding).
+
 ## [0.4.0]
 
 ### Added

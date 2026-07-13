@@ -829,3 +829,246 @@ Return the complete, publish-ready comparison page in this exact order:
 No commentary, no explanations, no "here is your page" preamble.
 """
     return frontmatter + body
+
+
+def substack_post(topic, audience, wordcount=None, market=None, **_):
+    # Substack is not a generic newsletter platform (growth.py's newsletter()
+    # already covers that): its discovery mechanic runs through the Notes
+    # feed and restacks rather than opens/clicks, and its monetization model
+    # is a native free/paid-tier split inside a single post rather than a
+    # separate paid product. Section-length guidance scales proportionally
+    # with the requested wordcount, no fixed floors that ignore {wordcount}.
+    # Default of 900 reflects a typical single-topic Substack post length
+    # when the caller doesn't supply one.
+    wc = wordcount or 900
+    hook_lo, hook_hi = max(round(wc * 0.07), 40), max(round(wc * 0.10), 60)
+    context_lo, context_hi = max(round(wc * 0.08), 50), max(round(wc * 0.12), 70)
+    body_target = max(round(wc * 0.45), 250)
+    paid_lo, paid_hi = max(round(wc * 0.10), 50), max(round(wc * 0.14), 70)
+    closing_lo, closing_hi = max(round(wc * 0.10), 60), max(round(wc * 0.15), 90)
+
+    return f"""You are a senior Substack writer who has grown multiple newsletters into thousands of paid subscribers by treating the Notes feed, restacks, and the free/paid split as distinct growth levers, not just a newsletter delivered by email.
+
+TASK:
+Write a complete, publish-ready Substack post on: "{topic}"
+
+POST BRIEF:
+- Topic: {topic}
+- Target Word Count: {wc}+ words (hit this minimum, do not pad with filler)
+- Target Audience/Readers: {audience}
+- Primary Goal: earn opens from the email preview, earn restacks and replies in the Notes feed, and (if the topic supports it) convert free readers into paid subscribers at a natural split point
+---
+
+{market_voice(market)}
+
+SUBSTACK PLATFORM MECHANICS (bake these into the structure, not just the prose):
+- DISCOVERY IS TWO SURFACES, NOT ONE: readers find this post either in their email inbox (where the subject line and preview text decide the open) or in the Notes feed (Substack's 2026 Notes algorithm surfaces posts mainly through restacks and replies, not just from accounts a reader already follows). Write the hook so it works standing alone in both places.
+- RESTACKS ARE THE GROWTH SIGNAL: a restack is Substack's native repost/share-with-commentary mechanic. A post that earns restacks reaches readers who have never subscribed. The closing must make restacking feel like an obvious, low-friction next action, not an afterthought.
+- PAID TIER IS A SPLIT INSIDE ONE POST, NOT A SEPARATE PRODUCT: if this topic and the supplied inputs indicate the brand runs (or should run) a paid tier, the post can carry a free section followed by a "subscribe to read the rest" teaser above a paywall. Never assume monetization applies by default - only include the paid-tier split if the topic or audience signals paid content is part of this brand's model (e.g. topic mentions a paid offering, premium analysis, or the audience is described as existing subscribers/paying members). If there's no signal either way, write the post as fully free and skip the paid-tier section entirely rather than inventing a paywall.
+- COMMENTS ARE THE ENGAGEMENT SIGNAL SUBSTACK'S ALGORITHM WEIGHTS: a specific, answerable closing question drives replies, and replies (like restacks) feed the same discovery loop.
+
+PRE-WRITE DIAGNOSTIC (do this mentally before writing):
+1. PREVIEW TEST: What is the exact line of text a reader sees in their email inbox preview and in the Notes feed before they click? Does it work with zero other context?
+2. MONETIZATION SIGNAL: Does the topic or audience actually indicate a paid tier exists for this brand? If not, do not build a paywall into this post.
+3. RESTACK HOOK: What single line or idea in this post is quotable enough that someone would restack it with their own one-line reaction attached?
+4. REPLY BAIT: What specific, personal question can this post's readers actually answer from their own experience (not a generic "thoughts?")?
+
+POST STRUCTURE (follow this exactly, section by section):
+
+═══════════════════════════════════════════
+SECTION 1 - METADATA PACKAGE (write before the post body)
+═══════════════════════════════════════════
+POST TITLE: specific, benefit-driven, no clickbait, works as a standalone line in an inbox
+PREVIEW TEXT (the inbox preview snippet, 40-55 characters): a second hook that adds new information beyond the title, not a repeat of it
+SEO TITLE / DESCRIPTION: a short title tag and a 150-158 character meta description for the post's own page and for search/AI-search surfaces
+SUGGESTED TAGS (3-5): topical tags for Substack's own discovery surfaces
+
+═══════════════════════════════════════════
+SECTION 2 - HOOK: THE LINE READERS SEE FIRST ({hook_lo}-{hook_hi} words)
+═══════════════════════════════════════════
+- This is what a reader sees in the email preview AND what could be pulled into a Notes post promoting this piece - write it to survive being read completely out of context
+- Open with a specific scenario, a named stat, or a sharp contrarian line - never "In today's fast-paced world" or a dictionary definition
+- By the end of this section, the reader knows what the post covers and why it's worth their next 3 minutes
+
+═══════════════════════════════════════════
+SECTION 3 - WHY THIS MATTERS RIGHT NOW ({context_lo}-{context_hi} words)
+═══════════════════════════════════════════
+- One real data point or named observation that frames the stakes for {audience}
+- If a stat is used, name the source and year per the research rules below
+- Connect the frame directly to {audience}'s actual situation, not a generic industry statement
+
+═══════════════════════════════════════════
+SECTION 4 - FREE-TIER BODY (target {body_target}+ words)
+═══════════════════════════════════════════
+- Deliver the core substance: the argument, framework, or story the hook promised
+- Use 2-4 subsections with clear subheadings
+- Include at least one specific, named example or first-hand anecdote
+- Include at least one line written to be highlighted or quoted on its own - this is the line most likely to get restacked
+- This section must stand alone as valuable even for a reader who never sees a paid tier
+
+═══════════════════════════════════════════
+SECTION 5 - PAID-TIER SPLIT POINT (conditional, {paid_lo}-{paid_hi} words)
+═══════════════════════════════════════════
+Only include this section if Section "MONETIZATION SIGNAL" above concluded this brand runs a paid tier. If so:
+- Write the free-to-paid transition as a genuine continuation of the argument, not an abrupt cutoff - the last free sentence should create real curiosity about what follows, not just announce a paywall
+- Immediately before the paywall marker, insert this exact placeholder on its own line: [INSERT: paywall placement rationale - explain why this specific point in the argument is where free value ends and paid depth begins]
+- Mark the actual split point with a `---` divider followed by "This next section is for paid subscribers." (or the brand's own equivalent phrasing) rather than fabricating Substack's literal paywall UI
+- Describe the paid section's content by topic and value (e.g. "the full framework," "the specific numbers," "the step-by-step version") rather than writing the paid content itself if the assignment is for the free-tier teaser only
+If there is no monetization signal, skip this section entirely and continue the free-tier body straight into the conclusion.
+
+═══════════════════════════════════════════
+SECTION 6 - CLOSING: RESTACK PROMPT + COMMENT QUESTION ({closing_lo}-{closing_hi} words)
+═══════════════════════════════════════════
+- One sentence that distills the whole post into a single line worth restacking
+- A direct, low-friction ask for readers to restack this post if it was useful to someone in their own network - name the action ("restack this") rather than a vague "share if you liked it," and never use any phrase from this project's canonical banned-CTA list: {_BANNED_CTA_LIST}
+- Close with one specific question that invites a substantive reply, not generic feedback
+  Bad:  "What do you think?"
+  Good: "What's the version of this you've actually run into at work?"
+
+---
+WRITING STANDARDS:
+{HUMAN_WRITING_RULES}
+
+{RESEARCH_RULES}
+
+Substack-specific tone addendum:
+- No em dashes anywhere in the output - use hyphens or restructure the sentence instead
+- Write like one identifiable writer talking to their readers, not a brand broadcasting - even a B2B-market post should read as authored by a person
+- Subheadings inside the free-tier body should read like benefits or specific questions, never "Introduction" or "Body"
+
+---
+SELF-CHECK (verify every item before outputting):
+- [ ] Word count meets or exceeds {wc}
+- [ ] Hook works standalone as both an email preview line and a Notes-feed line
+- [ ] Paid-tier section is present ONLY if the topic/audience genuinely signaled a paid tier - otherwise it is skipped entirely, not invented
+- [ ] If included, the paid-tier section contains the exact `[INSERT: paywall placement rationale ...]` placeholder immediately before the split
+- [ ] At least one line in the free-tier body is written to be quotable/restackable on its own
+- [ ] Closing explicitly asks for a restack (not a generic "share this") and ends with a specific, answerable question
+- [ ] No em dashes anywhere in the output
+- [ ] No phrase from the banned-CTA list appears anywhere in the post
+
+OUTPUT FORMAT:
+Return the complete, publish-ready post in this exact order:
+1. Metadata Package (post title, preview text, SEO title/description, tags)
+2. Full post body (Hook through Closing, including the paid-tier split section only if applicable)
+
+No commentary, no explanations, no "here is your post" preamble.
+"""
+
+
+def glossary_page(topic, audience, wordcount=None, market=None, **_):
+    # A single SEO glossary/definition page for one term ({topic} is the
+    # term itself), the programmatic-SEO play referenced in
+    # strategies/strategy-seo-programmatic.md but not previously built as a
+    # template. This is inherently short-form - a glossary entry, not an
+    # article - so the default wordcount is modest (250) with proportional
+    # scaling and no fixed floors that ignore {wordcount}. The max() floors
+    # below can push the section total slightly past a very small requested
+    # wordcount (e.g. under ~180 words), matching comparison_page's
+    # documented, accepted tradeoff for keeping every section workable.
+    wc = wordcount or 250
+    definition_lo, definition_hi = max(round(wc * 0.08), 15), max(round(wc * 0.14), 25)
+    practice_lo, practice_hi = max(round(wc * 0.35), 70), max(round(wc * 0.45), 100)
+    why_lo, why_hi = max(round(wc * 0.30), 60), max(round(wc * 0.40), 90)
+
+    frontmatter = f"""---
+title: {topic}
+tags: []
+canonical_url:
+cover_image:
+description:
+---
+
+FRONTMATTER INSTRUCTIONS:
+- canonical_url: REQUIRED and must be populated. A glossary/definition page is a permanent programmatic-SEO asset that lives at one canonical location on the brand's own site (e.g. a `/glossary/[slug]` path), not a syndicated piece. Set this to the page's own intended URL using a slug derived from "{topic}". Do not leave this field empty.
+- description: required, never leave this field blank. Write a single-sentence meta description that is 150-158 characters including spaces, states the term's definition plainly, and includes the term itself naturally.
+
+"""
+
+    body = f"""You are a senior SEO content strategist who has built programmatic glossary pages that rank for definition-intent queries, get pulled into featured snippets, and get cited by other sites and by AI search systems as the reference definition for a term.
+
+TASK:
+Write a complete, publish-ready glossary/definition page for the single term: "{topic}"
+
+PAGE BRIEF:
+- Term: {topic}
+- Target Word Count: {wc}+ words (this is a short-form definition page, not an article - hit this target without padding it into a full blog post)
+- Target Audience: {audience}
+- Primary Goal: answer the definition query directly before the reader scrolls, build topical authority for this term within the brand's glossary, and qualify for a DefinedTerm rich result
+---
+
+{market_voice(market)}
+
+PRE-WRITE DIAGNOSTIC (do this mentally before writing):
+1. EXACT QUERY: What is the precise search query this page answers (e.g. "what is {topic}", "{topic} definition", "{topic} meaning")?
+2. ONE-SENTENCE TEST: Can this term be defined correctly in a single sentence that a reader could screenshot and trust on its own?
+3. RELATED-TERM MAP: What 2-4 adjacent or parent/child terms does a reader researching "{topic}" also need to understand, and does this brand's glossary or content already cover any of them?
+4. INTENT DEPTH: Is a reader looking this up purely to understand the word, or are they evaluating whether it applies to their own situation? Write the "in practice" section to match.
+
+PAGE STRUCTURE (follow this exactly, section by section):
+
+═══════════════════════════════════════════
+SECTION 1 - DIRECT DEFINITION ({definition_lo}-{definition_hi} words)
+═══════════════════════════════════════════
+- One sentence, placed as the very first line of body content, that answers the query before the reader scrolls
+- Format: "{topic} is [precise, plain-language definition]."
+- No throat-clearing, no "In this article we'll explore" - the definition itself is the opening line
+- This sentence must be able to stand alone as a featured-snippet answer and as the DefinedTerm schema's description value
+
+═══════════════════════════════════════════
+SECTION 2 - IN PRACTICE ({practice_lo}-{practice_hi} words)
+═══════════════════════════════════════════
+- Expand on the one-sentence definition: what this actually looks like when applied, who uses the term and in what context, and one concrete example
+- Format as 1-2 short paragraphs, plain language over jargon
+- If a specific stat, named framework, or named source is genuinely relevant, include it with attribution per the research rules below - do not force a stat in if none is genuinely relevant to a short definition page
+
+═══════════════════════════════════════════
+SECTION 3 - WHY IT MATTERS / RELATED CONCEPTS ({why_lo}-{why_hi} words)
+═══════════════════════════════════════════
+- One short paragraph on why this term matters to {audience} specifically (a decision it affects, a mistake it prevents, a process it's part of)
+- Followed by 2-4 related or adjacent terms the reader likely needs next, each introduced with its own short phrase of context (not just a bare list of links)
+- Wherever a related term is mentioned, mark it with this project's standard internal-linking placeholder convention: `[LINK: <exact related term or article title>]` immediately after the reference
+- Do not fabricate a URL - the bracketed placeholder is the deliverable; a human or tracker-driven pass finds and replaces `[LINK: ...]` with the live URL once the related page is published
+- If no related glossary entry or article exists yet for a given related term, still name the term but skip the `[LINK: ...]` marker for that one rather than inventing a target
+
+═══════════════════════════════════════════
+SECTION 4 - SCHEMA MARKUP (JSON-LD)
+═══════════════════════════════════════════
+Generate the actual JSON-LD schema markup for this page, ready to paste into the page. Required:
+- A `DefinedTerm` block populated with this term's real name, the Section 1 one-sentence definition as `description`, and (if the page belongs to a broader glossary) an `inDefinedTermSet` reference to the glossary's own DefinedTermSet URL
+- If this term is explicitly part of a named glossary collection the brand maintains, also output a minimal `DefinedTermSet` block for that collection (name + url); if no such collection is indicated, omit the DefinedTermSet block rather than inventing one
+
+Output a real, populated `<script type="application/ld+json">...</script>` code block, not a prose description of the schema - the code block itself is the deliverable. Omit any field you do not have a real value for rather than filling it with a placeholder or a guess.
+
+---
+WRITING STANDARDS:
+{HUMAN_WRITING_RULES}
+
+{RESEARCH_RULES}
+
+Glossary-specific tone addendum:
+- No em dashes anywhere in the output - use hyphens or restructure the sentence instead
+- This is a reference page, not a narrative piece - keep sentences declarative and skimmable
+- Never pad the "in practice" or "why it matters" sections with filler to hit the word count; if the term is genuinely simple, a shorter page that stays accurate outranks a padded one
+
+---
+SELF-CHECK (verify every item before outputting):
+- [ ] The very first line of body content is a single, direct, screenshot-able definition sentence
+- [ ] Word count is close to {wc} without visible padding
+- [ ] canonical_url in the frontmatter is populated, not left empty
+- [ ] At least 2 related concepts are named in Section 3, each with a `[LINK: ...]` placeholder where a target page is indicated
+- [ ] No fabricated URLs anywhere - every internal reference uses the `[LINK: ...]` placeholder convention instead
+- [ ] DefinedTerm JSON-LD block is real, populated code, not a prose recommendation
+- [ ] No em dashes anywhere in the output
+
+OUTPUT FORMAT:
+Return the complete, publish-ready glossary page in this exact order:
+1. Frontmatter block (title, tags, canonical_url, cover_image, description)
+2. Direct Definition
+3. In Practice
+4. Why It Matters / Related Concepts
+5. Schema Markup JSON-LD code block
+
+No commentary, no explanations, no "here is your glossary page" preamble.
+"""
+    return frontmatter + body

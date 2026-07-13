@@ -1,4 +1,4 @@
-from ._shared import HUMAN_WRITING_RULES, RESEARCH_RULES
+from ._shared import HUMAN_WRITING_RULES, RESEARCH_RULES, market_voice
 
 
 def linkedin_post(topic, audience, **_):
@@ -413,6 +413,220 @@ CAPTION: [full caption text, under 300 characters]
 FIRST COMMENT: [INSERT CTA LINK] + one-line CTA description
 
 Save to: output/LinkedIn_Carousel/
+"""
+
+
+# ─────────────────────────────────────────────
+# PROFILE / BIO TEMPLATE
+# ─────────────────────────────────────────────
+
+
+def profile_bio(topic, audience, wordcount=None, market=None, platform=None, **_):
+    plat = (platform or "").strip().lower()
+    if plat in ("twitter", "x"):
+        plat = "twitter"
+    valid_platforms = ("linkedin", "twitter", "instagram", "substack")
+    show_all = plat not in valid_platforms
+    platforms_to_write = list(valid_platforms) if show_all else [plat]
+
+    # Word budgets scale proportionally off the caller's wordcount instead of
+    # a fixed floor, so an override actually shortens/lengthens the long-form
+    # variants (character-capped variants like X and Instagram bios ignore
+    # this - their ceilings are hard platform limits, not style choices).
+    reference_words = 250
+    scale = (wordcount / reference_words) if wordcount else 1.0
+
+    def scaled_range(low, high):
+        lo, hi = round(low * scale), round(high * scale)
+        lo, hi = max(1, lo), max(lo + 1, hi)
+        return lo, hi
+
+    li_low, li_high = scaled_range(120, 180)
+    sub_low, sub_high = scaled_range(250, 400)
+
+    wordcount_note = (
+        f"CALLER OVERRIDE: target roughly {wordcount} words for the long-form body of any variant you write "
+        "(LinkedIn About, Substack About). Scale sentence and paragraph count to hit that target - never pad "
+        "with filler to reach a floor, and never ignore a lower number by writing the default length anyway."
+        if wordcount
+        else "No word count override supplied - use the platform-native defaults below."
+    )
+
+    linkedin_section = f"""
+═══════════════════════════════════════
+VARIANT: LINKEDIN ABOUT SECTION
+═══════════════════════════════════════
+
+LINKEDIN 2026 CHARACTER CONTEXT:
+- Hard cap: 2,600 characters for the About section
+- Only the first ~275 characters show before the "see more" tap (roughly 300 on desktop, closer to 200 on mobile) - that opening is the only part most visitors ever read
+- LinkedIn indexes About-section text for its internal search - the keywords {audience} would actually type into LinkedIn search need to appear naturally, not stuffed
+
+STRUCTURE:
+
+OPENING (the fold - must work as a 275-character standalone pitch):
+- Lead with a specific claim or outcome, not a job title recap: what {topic} means for {audience}, stated as a result
+- First sentence should read like a headline a stranger could repeat, not "I am a [role] with [X] years of experience"
+- No question openers - About sections aren't skimmed for curiosity the way a post hook is, they're read with intent once someone lands on the profile
+
+BODY ({li_low}-{li_high} words, after the fold):
+- Expand the opening claim: what {audience} gets, how it's delivered, and one piece of proof (a named result, a client type, a number)
+- Write in first person - About sections in third person read as written-by-someone-else and lose trust
+- Include the 2-4 keyword phrases {audience} would search LinkedIn for to find someone doing this work, spread naturally across sentences, never as a stacked list
+- One short paragraph naming the specific problem this profile solves, one naming the proof, one naming who it's for
+
+CLOSE (CTA, 1-2 sentences):
+- One specific next step: what happens if someone reaches out, not "let's connect"
+- No links inside the About section body - LinkedIn's About section does not render clickable URLs reliably, direct readers to the Featured section or profile links instead
+
+TECHNICAL REQUIREMENTS:
+- Total length: under 2,600 characters, opening 275 characters must stand alone
+- No em dashes - hyphens only
+- No bullet symbols or markdown - About renders as plain text with line breaks
+"""
+
+    twitter_section = f"""
+═══════════════════════════════════════
+VARIANT: X (TWITTER) BIO
+═══════════════════════════════════════
+
+X 2026 CHARACTER CONTEXT:
+- Hard cap: 160 characters total
+- Emojis count as 2 characters each, and any URL counts as 23 characters regardless of its real length - budget for both before writing
+- Display name (separate field, up to 50 characters) can carry a role or niche tag so the bio itself doesn't have to repeat it
+
+STRUCTURE (one to three short clauses, no wasted words):
+- Lead with who {audience} gets from following, not a job description - what you post about beats what your title is
+- One clause naming the specific value or angle on {topic}
+- Optional: one line of personality or proof (a number, a niche credential, a one-word identity marker) if characters remain
+- Skip filler connectors entirely - this is 160 characters, not a sentence to fill
+
+TECHNICAL REQUIREMENTS:
+- Hard limit: 160 characters including spaces and any emoji (counted at 2 chars each)
+- No hashtags - they read as dated in an X bio and waste characters
+- No em dashes - hyphens only
+"""
+
+    instagram_section = f"""
+═══════════════════════════════════════
+VARIANT: INSTAGRAM BIO
+═══════════════════════════════════════
+
+INSTAGRAM 2026 CHARACTER CONTEXT:
+- Hard cap: 150 characters total, counting every letter, number, space, and emoji
+- Only one clickable link is allowed in the bio - the copy must earn the tap to that single link, it cannot compete with it
+- Stacked short lines outperform one paragraph here - Instagram bios are scanned, not read
+
+STRUCTURE (2-4 short stacked lines, line breaks between each):
+- Line 1: who this is for or what {audience} gets, stated as an identity or outcome, not a title
+- Line 2: the specific angle on {topic} - one concrete detail, not a category
+- Line 3 (optional): a proof marker (a number, a niche fact) or a light personality line
+- Final line: one clear CTA pointing at the link slot - "link below" style, naming what's there ("free guide," "book a call," "latest post"), not a bare "link in bio"
+
+TECHNICAL REQUIREMENTS:
+- Hard limit: 150 characters including emoji and line breaks
+- 1-2 emojis maximum, used as line-start markers or replacements for a word, never as decoration
+- No em dashes - hyphens only
+- Output the link slot as "[LINK]" as a placeholder line, not a live URL
+"""
+
+    substack_section = f"""
+═══════════════════════════════════════
+VARIANT: SUBSTACK ABOUT PAGE
+═══════════════════════════════════════
+
+SUBSTACK 2026 CONVERSION CONTEXT:
+- No hard character cap, but most readers give an About page under 60 seconds - who, what, and why-it-matters-to-you needs to land in the first 200 words
+- Pages that convert are written for the reader's question ("what do I get") not the writer's biography
+- A short list of concrete outcomes, placed before a subscribe CTA, consistently outperforms a straight narrative bio
+- Naming who this is NOT for filters out readers who'd churn anyway and reads as more credible than trying to appeal to everyone
+
+STRUCTURE ({sub_low}-{sub_high} words total):
+
+OPENING (first 1-2 sentences, above the fold):
+- State what the publication is and who {audience} is, in outcome language: what changes for a reader who subscribes to content about {topic}
+- No "Hi, I'm..." opener - lead with the reader's payoff, introduce the writer after
+
+OUTCOMES LIST (3-5 short lines):
+- What a subscriber will learn, be able to do, or stop struggling with after reading consistently
+- Each line concrete enough that two different readers wouldn't describe it the same vague way
+- Place a "Subscribe" CTA line immediately after this list, before the writer bio - readers who are sold don't need the biography first
+
+WRITER BIO (2-4 sentences):
+- Why this person writes about {topic} - one specific piece of lived experience or credential, not a resume list
+- First person, direct - this is the one section allowed to be personal and specific about the writer
+
+WHO THIS IS NOT FOR (1-2 sentences, optional but recommended):
+- Name the reader this publication won't serve well - it reads as confidence, not exclusion
+
+CLOSE (CTA, 1-2 sentences):
+- A second, final subscribe prompt, worded differently from the opening one
+- Optional: a note on frequency (how often {audience} will hear from this publication)
+
+TECHNICAL REQUIREMENTS:
+- Total length: {sub_low}-{sub_high} words
+- No em dashes - hyphens only
+- Plain paragraphs and short lists, no markdown headers in the actual output text
+"""
+
+    section_map = {
+        "linkedin": linkedin_section,
+        "twitter": twitter_section,
+        "instagram": instagram_section,
+        "substack": substack_section,
+    }
+    variants_block = "\n".join(section_map[p] for p in platforms_to_write)
+
+    scope_line = (
+        "Generate all four platform variants below, each clearly labeled under its own heading."
+        if show_all
+        else f"Generate only the {plat} variant below."
+    )
+
+    return f"""You are a profile and bio copywriter who has rewritten LinkedIn About sections, X bios, Instagram bios, and Substack About pages for creators and B2B professionals, consistently lifting profile-to-follow and profile-to-subscribe conversion by leading with reader payoff instead of a resume.
+
+TASK:
+Write optimized profile/bio copy about: "{topic}"
+
+TARGET AUDIENCE: {audience}
+
+{scope_line}
+
+PRE-WRITE DIAGNOSTIC:
+1. What is the single sentence a stranger reading only the first line would need, to decide this profile is relevant to them?
+2. What does {audience} actually get from following or subscribing - not who the person/brand is, but what changes for the reader?
+3. What is the one piece of proof (a number, a named result, a specific credential) that makes the claim credible instead of generic?
+
+{wordcount_note}
+
+{market_voice(market)}
+
+A bio is inherently first-person and personal, even when written on behalf of a brand or company account - write it as one identifiable voice speaking directly to {audience}, not a committee-approved description of the entity.
+{variants_block}
+DO NOT USE (any variant):
+- "Passionate about...", "I am a [role] with X years of experience", "Welcome to my page/profile"
+- Generic CTAs: "Follow for more", "Check out my page", "DM me" with no stated reason
+- Any claim of expertise with no proof attached in the same variant
+
+{HUMAN_WRITING_RULES}
+
+{RESEARCH_RULES}
+
+SELF-CHECK BEFORE OUTPUT:
+- Does the opening line of every variant work as a standalone pitch, with no other line required to make sense of it?
+- Does every variant stay inside its hard character limit (LinkedIn 2,600 / X 160 / Instagram 150), and does the LinkedIn opening fit inside the ~275-character fold?
+- Is there at least one specific, checkable proof point across the variants, not just an unproven claim of skill?
+- Does the writer bio (Substack) or persona voice (all variants) read as one specific human, not an anonymous brand voice?
+- If {wordcount} was supplied, do the long-form variants actually hit that target instead of defaulting to the standard range?
+
+OUTPUT FORMAT:
+For each variant generated, output:
+
+[PLATFORM NAME] BIO
+[character count: X / limit]
+[the finished bio copy, exactly as it should be pasted into that platform's bio field]
+
+Repeat for each requested variant. No extra preamble, no explanation of choices, no markdown formatting inside the bio copy itself.
 """
 
 

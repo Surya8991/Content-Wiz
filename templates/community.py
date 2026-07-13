@@ -1,6 +1,6 @@
 import html
 
-from ._shared import HUMAN_WRITING_RULES, RESEARCH_RULES
+from ._shared import HUMAN_WRITING_RULES, RESEARCH_RULES, market_voice
 
 
 def quora(topic, audience, **_):
@@ -226,4 +226,65 @@ Return a complete, self-contained HTML file in the format above. No meta-comment
 
 File naming convention: tumblr_[YYYY-MM-DD]_[short-slug].html
 Save to: output/Tumblr/
+"""
+
+
+def discord_announcement(topic, audience, wordcount=None, market=None, **_):
+    word_target = wordcount if wordcount else 180
+    low = max(60, int(word_target * 0.8))
+    high = int(word_target * 1.25)
+    return f"""You are the community manager posting in a Discord server's #announcements channel, someone the members already know and trust, not an outside brand voice breaking into their chat.
+
+TASK:
+Write a Discord announcement post for: "{topic}"
+
+TARGET AUDIENCE: {audience} - an existing, engaged community reading in a live, fast-scrolling chat, not a cold audience finding this through search or a feed algorithm
+
+{market_voice(market)}
+
+PRE-WRITE DIAGNOSTIC (answer before drafting, do not include the answers in the output):
+1. Ping decision - does this announcement warrant @everyone, @here, or no ping at all? Default to NO PING unless the update is time-sensitive and affects nearly the whole server (a live event starting now, a security or safety issue, a major policy change everyone must act on). Overusing @everyone is one of the top trust-breaking moves a community can make - members mute or leave servers that ping them for routine updates. @here (only online members) is the middle option for same-day but non-urgent news. Justify the choice in one line as a code comment style note at the very top of the draft, e.g. "[Ping: none - routine update, no action required]"
+2. What is the single most important fact a member needs to walk away with if they only read the first line?
+3. Is there a concrete action or response expected (RSVP, react, click a link, show up at a time), or is this purely informational?
+
+DISCORD-NATIVE FORMATTING RULES:
+- Use Discord's own Markdown dialect, not generic web Markdown: **bold** for key facts, __underline__ sparingly for the single most important line, ~~strikethrough~~ only if crossing out an old detail, ||spoiler|| only for genuine reveal-on-click content (never for hiding real information members need)
+- A single `# Header` or `## Header` on its own line at the very top reads as a title in newer clients - use at most one, plain and short
+- Bullet points (`-`) over paragraphs - Discord is read in a scrolling chat, not a document, so break information into short scannable lines rather than blocks of prose
+- No more than 2-3 sentences ever run together before a line break or bullet
+- A fenced code block (triple backticks) only if sharing an actual command, config snippet, or something that must render in monospace - never for regular prose
+
+STRUCTURE:
+1. PING LINE (only if justified in the diagnostic): "@everyone" or "@here" on its own first line, followed by the one-line reasoning in italics, e.g. "*(pinging everyone - this affects the whole server today)*". Omit this entire line if the diagnostic concluded no ping.
+2. HEADER: one short `##` header naming what's being announced
+3. LEAD LINE: **bold** the single most important fact, stated in one sentence, no throat-clearing
+4. BODY (bullet points, not paragraphs): 3-5 bullets covering the what/why/when, each bullet one line, bold the key term in each bullet
+5. ACTION LINE: what the reader should do next, if anything - react with an emoji, show up at a stated time, reply in a thread, click a link. If purely informational, say so plainly instead of inventing a fake action
+6. REACTION-EMOJI SEED: end with a line suggesting 1-3 emoji reactions to seed engagement, formatted like: "React below: 🎉 hyped | 👀 questions | 🔥 already using it" - pick emoji that actually fit the announcement's content, not generic filler
+
+LENGTH DISCIPLINE:
+- Discord truncates long messages behind a "click to see more" fold in the default view - announcements that require expanding get skipped by scrolling readers
+- Target {word_target} words for this post (roughly {low}-{high} words is acceptable), scaled from the requested word count when one is given
+- Never pad to a fixed floor if the news itself is short - a two-line update honestly written beats a stretched one
+
+DO NOT USE:
+- @everyone or @here without the justification line directly above or beside it
+- Walls of unbroken paragraph text
+- More than one header
+- Corporate press-release phrasing - this is a message from someone in the server, not a PR statement
+
+{HUMAN_WRITING_RULES}
+
+{RESEARCH_RULES}
+
+SELF-CHECK BEFORE OUTPUT:
+- Did the ping decision get made deliberately, with a stated reason, and is it never @everyone by default?
+- Is the most important fact in the first bolded line, readable without scrolling?
+- Is the body bullets, not paragraphs?
+- Does the post stay within the length target so it will not get folded behind "click to see more"?
+- Is there a reaction-emoji seed line with 1-3 emoji that actually match the content?
+- Any em dashes? Replace with hyphens.
+
+OUTPUT FORMAT:
+Return only the Discord message text, formatted in Discord's native Markdown exactly as it should be pasted into the channel. No meta-commentary, no explanations, no preamble, no code fences wrapping the whole message.
 """

@@ -112,6 +112,20 @@ PLATFORM_MAP = {
     "creator_media_kit": "creator_media_kit",
     "media_kit":        "creator_media_kit",
     "mediakit":         "creator_media_kit",
+    # Profile, reputation, and additional platform types
+    "profile_bio":      "profile_bio",
+    "profile":          "profile_bio",
+    "social_bio":       "profile_bio",
+    "review_response":  "review_response",
+    "review":           "review_response",
+    "reviews":          "review_response",
+    "substack_post":    "substack_post",
+    "substack":         "substack_post",
+    "glossary_page":    "glossary_page",
+    "glossary":         "glossary_page",
+    "definition_page":  "glossary_page",
+    "discord_announcement": "discord_announcement",
+    "discord":          "discord_announcement",
 }
 
 MD_KEYS   = {"blog_writing_md"}
@@ -156,6 +170,11 @@ SUBFOLDER_MAP = {
     "ugc_brief":         "UGC_Briefs",
     "personal_brand_post": "Personal_Brand",
     "creator_media_kit": "Media_Kit",
+    "profile_bio":       "Profile_Bio",
+    "review_response":   "Review_Response",
+    "substack_post":     "Substack",
+    "glossary_page":     "Glossary_Pages",
+    "discord_announcement": "Discord",
 }
 
 
