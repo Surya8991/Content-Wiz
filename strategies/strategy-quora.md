@@ -19,6 +19,10 @@ Earn upvotes and "most viewed writer" credibility in relevant topic spaces by an
 
 **4. Every statistic still needs a source, organization, and year** - Quora's format is more forgiving of inline citation than GMB or Tumblr's short formats, so there is no excuse for a bare unsourced number here.
 
+**5. Spaces are a distribution mechanic, not a label.** Naming a "topic space" in a post's targeting is not enough - joining the relevant Space and posting the answer into it (rather than only answering the underlying question) is what actually earns the Space-specific ranking boost, since Quora surfaces Space-native answers to that Space's subscriber base independently of the question's own view count. An answer that ranks well also gets pulled into Quora's Related Questions feature on adjacent questions, compounding reach well past the original question - which is a strong reason to write answers that stand alone rather than assuming the reader has read the question title. Where an Answer Wiki exists on a question, treat it as a collaborative summary other users can edit; contributing a clean, well-sourced entry there gets exposure even to readers who never open individual answers.
+
+**6. Answers that read as AI-generated get suppressed, not just ignored.** Quora's community moderation and its own ranking system actively downvote and hide answers that pattern-match to obviously AI-generated text (generic hedging, no concrete specifics, repetitive sentence rhythm) - this is a visibility problem, not just a quality one. This is the same reason this repo's "sound genuinely human" writing rules exist: an answer that fails that bar here does not just perform worse, it can get algorithmically buried or manually flagged before a real reader sees it at all. Quora+ paywalled content (answers Quora itself gates behind a subscription) competes for the same visibility, but this tool has no way to place content behind that paywall - treat top organic ranking as the only lever available, which makes passing the human-voice bar even more load-bearing here than on channels with other distribution paths.
+
 ---
 
 ## Repeatable Answer Structure

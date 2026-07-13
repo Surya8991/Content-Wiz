@@ -39,7 +39,7 @@ RULES
 - 600-900 words
 - At least 2 credible stats or research references, each naming its source, organization, and year
 - First-person throughout
-- No pronouns: you, we, our, your
+- No pronouns: you, we, our, your - when describing a company-facing anecdote, name the company or team directly instead (e.g. "When [BRAND NAME]'s delivery team ran this experiment..." or "[BRAND NAME] clients who adopted this approach saw..." rather than "When our team ran this experiment..." or "our clients")
 - No em dashes anywhere
 - No passive voice
 - The identical opening claim or closing CTA reused across multiple op-eds in the same batch - if you are generating more than one row in a session, no two may share an opening observation or a closing statement

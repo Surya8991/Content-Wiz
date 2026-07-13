@@ -25,6 +25,7 @@ RULES
 - 10 topic ideas per request
 - Mix of formats: listicles, how-tos, ultimate guides, thought leadership, case studies
 - Each title should be SEO-friendly with a natural keyword
+- Angle / Description must be at least 1 full sentence (not a fragment or keyword string) stating the specific angle the piece would take
 - No em dashes anywhere
 - No passive voice
 - Output saved to output/Blog_Suggestions/

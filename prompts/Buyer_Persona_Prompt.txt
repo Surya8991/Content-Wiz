@@ -40,6 +40,9 @@ RULES
 ------------------------------------------------------------
 
 - All fields must be specific and actionable, not generic
+- Key Pain Points: 2-3 sentences per persona, naming concrete symptoms or triggers, not one-word labels
+- Common Objections: 2-3 sentences covering the top objections and what underlies them
+- Winning Message: 2-3 sentences describing the actual angle/message, not just a theme
 - Pain points and objections must reflect real B2B buying behaviour
 - No em dashes anywhere
 - No passive voice

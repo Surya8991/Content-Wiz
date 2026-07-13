@@ -44,6 +44,7 @@ RULES
 
 - All 4 assets generated in one request
 - Consistent message and tone across all assets
+- Tone conveys urgency (seats limited, date approaching) without tipping into salesy pressure - lead with what the attendee gains, not with manufactured scarcity, and avoid banned CTA phrasing (see templates/_shared.py BANNED_CTA_PHRASES, e.g. "Don't miss out", "Discover")
 - No em dashes anywhere
 - No passive voice
 - Registration URL in every asset
