@@ -10,7 +10,7 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Create a [NUMBER e.g. 5]-email drip sequence for [BRAND NAME], [BRAND DESCRIPTION], for the campaign "[CAMPAIGN GOAL e.g. Nurturing leads who downloaded a guide / Onboarding new users / Post-webinar follow-up]". For each email provide: the send timing (e.g. Day 0, Day 2, Day 5), a subject line, preview text, and email body. Each email should build on the previous one with a clear narrative arc: introduce value, educate, build trust, handle objections, and close with a CTA. Write in a conversational B2B tone targeting [TARGET AUDIENCE]. Do not use em dashes.
+Create a [NUMBER e.g. 5]-email drip sequence for [BRAND NAME], [BRAND DESCRIPTION], for the campaign "[CAMPAIGN GOAL e.g. Nurturing leads who downloaded a guide / Onboarding new users / Post-webinar follow-up]". For each email provide: the send timing (e.g. Day 0, Day 2, Day 5), a subject line, preview text, and email body. Each email should build on the previous one with a clear narrative arc: introduce value, educate, build trust, handle objections, and close with a CTA. Write in a conversational tone matching the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: conversational B2B) targeting [TARGET AUDIENCE]. Do not use em dashes.
 
 Landing Page / Resource URL: [INSERT URL]
 Lead Magnet or Trigger (if any): [e.g. Downloaded the L&D Guide / Attended Webinar]

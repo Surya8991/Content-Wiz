@@ -1,11 +1,23 @@
 from ._shared import (
     BANNED_CTA_PHRASES,
     HUMAN_WRITING_RULES,
-    RESEARCH_RULES,
     market_voice,
 )
 
 _BANNED_CTA_LIST = ", ".join(f'"{p}"' for p in BANNED_CTA_PHRASES)
+
+# Scoped citation rule for short creator documents (outreach messages, creator
+# briefs). The full RESEARCH_RULES block mandates 2-3 statistics per 500 words
+# and a Sources/Further Reading note, which is wrong for these formats: a
+# ~125-word outreach email or a hand-off brief needs zero stats by default.
+# Only the parts of the sourcing policy that still apply are kept here.
+_INLINE_CITATION_RULE = """
+CITATION RULE (scoped for this short-format document):
+- This format needs zero statistics by default; include one only if it genuinely strengthens the message.
+- Any statistic that does appear must name its source organization and year inline; never state a bare number and never fabricate one.
+- Any first-party or proprietary-sounding statistic (e.g. "our customers saw X%") must trace to a real row in data/HARO_DataBank.csv, never be generated from general knowledge.
+- No Sources or Further Reading section; this format does not carry one.
+""".strip()
 
 
 def influencer_outreach(topic, audience, wordcount=None, market=None, **_):
@@ -87,7 +99,7 @@ CTA RULES:
 
 {HUMAN_WRITING_RULES}
 
-{RESEARCH_RULES}
+{_INLINE_CITATION_RULE}
 
 NO EM DASHES anywhere - use hyphens, commas, or restructure the sentence.
 
@@ -229,7 +241,7 @@ NEVER invent legal or commercial terms - every term in this section is a placeho
 
 {HUMAN_WRITING_RULES}
 
-{RESEARCH_RULES}
+{_INLINE_CITATION_RULE}
 
 NO EM DASHES anywhere in the brief - use hyphens, commas, or restructure.
 No fabricated statistics anywhere: any illustrative number that is not a genuine platform spec (like 9:16 or 1080x1920) must be a clearly marked [INSERT: ...] placeholder.

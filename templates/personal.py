@@ -1,4 +1,11 @@
-from ._shared import HUMAN_WRITING_RULES, RESEARCH_RULES, market_voice
+from ._shared import (
+    BANNED_CTA_PHRASES,
+    HUMAN_WRITING_RULES,
+    RESEARCH_RULES,
+    market_voice,
+)
+
+_BANNED_CTA_LIST = ", ".join(f'"{p}"' for p in BANNED_CTA_PHRASES)
 
 
 # ─────────────────────────────────────────────
@@ -15,12 +22,19 @@ def personal_brand_post(topic, audience, wordcount=None, market=None, platform=N
     # overrides the platform default, and all section budgets scale
     # proportionally with it - no fixed absolute floors that could sum past a
     # short override (the bug class this repo's audit already fixed).
-    plat = (platform or "linkedin").lower()
+    plat = (platform or "linkedin").lower().strip()
+    # The CLI passes the routing alias itself as the platform when no
+    # --platform-target is given (generate.py's build_prompt falls back to the
+    # platform label), so self-referential values like "personal_brand" mean
+    # "no platform selected" and get the linkedin default instead of silently
+    # falling through to the GENERAL norms.
+    if plat in ("", "personal_brand", "personal_brand_post", "personal_post"):
+        plat = "linkedin"
     platform_default_words = {"linkedin": 260, "x": 100, "threads": 70}
     wc = wordcount or platform_default_words.get(plat, 220)
-    open_lo, open_hi = max(round(wc * 0.08), 5), max(round(wc * 0.15), 10)
-    body_lo, body_hi = max(round(wc * 0.55), 30), max(round(wc * 0.70), 40)
-    close_lo, close_hi = max(round(wc * 0.10), 6), max(round(wc * 0.18), 12)
+    open_lo, open_hi = round(wc * 0.08), round(wc * 0.15)
+    body_lo, body_hi = round(wc * 0.55), round(wc * 0.70)
+    close_lo, close_hi = round(wc * 0.10), round(wc * 0.18)
 
     platform_norms = {
         "linkedin": """
@@ -106,7 +120,7 @@ PILLAR D - ENGAGEMENT (start a conversation):
 {norms}
 
 LENGTH:
-Target about {wc} words total for the post body (section budgets above already sum to this). Respect the platform's structural norms above; if they conflict with the word target, the platform norms win.
+Target about {wc} words total for the post body (the section ranges above bracket this target approximately; land the total near {wc}). Respect the platform's structural norms above; if they conflict with the word target, the platform norms win.
 
 CITATION RULE:
 If the post cites any statistic or research finding, name the source organization and year inline (e.g. "Gallup's 2025 workplace report found..."). Never state a bare number with no attribution. Most posts in this format need zero stats - lived experience is the evidence.
@@ -129,7 +143,7 @@ SELF-CHECK BEFORE OUTPUT:
 OUTPUT FORMAT:
 Return, in this order:
 1. PILLAR: [which pillar and one line on why]
-2. POST: the complete, paste-ready post text formatted for {plat} (line breaks as they should appear)
+2. POST: the complete, paste-ready post text formatted for {plat} (line breaks as they should appear; the platform norms above follow this platform - pass --platform-target x / threads / linkedin to select a different platform's norms)
 3. POSTING NOTES: 2-3 bullets covering first-comment link placement (if any link), image suggestion (if the platform rewards one), and the reply-window plan for early comments
 """
 
@@ -141,15 +155,15 @@ Return, in this order:
 
 def creator_media_kit(topic, audience, wordcount=None, market=None, **_):
     # One printable page: ~350-500 words, defaulting to the midpoint. Section
-    # budgets scale proportionally with the requested wordcount instead of
-    # using fixed absolute floors (matching business_case_one_pager's fix for
-    # the section-minimums-exceed-target bug class).
+    # budgets are purely proportional to the requested wordcount - no absolute
+    # floors, so a short override (e.g. 150) still yields section ranges that
+    # sum to roughly the target instead of a 210-word structural minimum.
     wc = wordcount or 425
-    pos_lo, pos_hi = max(round(wc * 0.15), 40), max(round(wc * 0.20), 60)
-    aud_lo, aud_hi = max(round(wc * 0.18), 50), max(round(wc * 0.24), 70)
-    fmt_lo, fmt_hi = max(round(wc * 0.18), 50), max(round(wc * 0.24), 70)
-    rate_lo, rate_hi = max(round(wc * 0.18), 50), max(round(wc * 0.24), 70)
-    close_lo, close_hi = max(round(wc * 0.07), 20), max(round(wc * 0.10), 30)
+    pos_lo, pos_hi = round(wc * 0.15), round(wc * 0.20)
+    aud_lo, aud_hi = round(wc * 0.18), round(wc * 0.24)
+    fmt_lo, fmt_hi = round(wc * 0.18), round(wc * 0.24)
+    rate_lo, rate_hi = round(wc * 0.18), round(wc * 0.24)
+    close_lo, close_hi = round(wc * 0.07), round(wc * 0.10)
 
     return f"""You are an independent creator who has closed real brand sponsorships by sending a tight one-page media kit, and you know exactly what a brand's partnerships manager scans for in the first 60 seconds: who you are, who your audience is, verified numbers, deliverables, and a rate structure they can budget against.
 
@@ -237,6 +251,7 @@ One closing sentence noting rates are starting points and scoped per brief.
 SECTION 5 - NEXT STEP ({close_lo}-{close_hi} words)
 ═══════════════════════════════════════════
 - One specific, low-friction ask: reply to this email, or book a 15-minute call at [INSERT: scheduling link]
+- Banned CTA phrases (do not use anywhere in the kit, especially in this ask): {_BANNED_CTA_LIST}
 - One sentence on turnaround ("I typically respond within [INSERT: timeframe] and can share a tailored proposal after a short brief")
 - Sign-off with name and handle
 

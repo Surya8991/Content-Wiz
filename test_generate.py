@@ -249,6 +249,12 @@ class MarketRegisterTests(unittest.TestCase):
         self.assertEqual(config.market_for_brand({}), "b2b")
         self.assertEqual(config.market_for_brand({"market": ""}), "b2b")
 
+    def test_market_for_brand_strips_whitespace(self):
+        import config
+        self.assertEqual(config.market_for_brand({"market": " b2c "}), "b2c")
+        self.assertEqual(config.market_for_brand({"market": "  CREATOR"}), "creator")
+        self.assertEqual(config.market_for_brand({"market": "   "}), "b2b")
+
     def test_configured_markets_resolve(self):
         import config
         self.assertEqual(config.market_for_brand(config.BRANDS["edstellar.com"]), "b2b")
@@ -264,6 +270,112 @@ class MarketRegisterTests(unittest.TestCase):
     def test_build_prompt_accepts_market_kwarg(self):
         prompt = generate.build_prompt("personal_brand_post", market="creator", **SAMPLE)
         self.assertIn("CREATOR", prompt)
+
+
+class ParseBulkRowMarketTests(unittest.TestCase):
+    """The bulk CSV path must resolve the market register from the row's url
+    the same way the single-run path does."""
+
+    def _row(self, **extra):
+        row = {"platform": "blog", "topic": "leadership training"}
+        row.update(extra)
+        return row
+
+    def test_b2b_brand_url_resolves_b2b(self):
+        job, err = generate.parse_bulk_row(self._row(url="https://www.edstellar.com/blog/x"), 1)
+        self.assertIsNone(err)
+        self.assertEqual(job["market"], "b2b")
+
+    def test_creator_brand_url_resolves_creator(self):
+        job, err = generate.parse_bulk_row(self._row(url="https://example-creator.com/about"), 1)
+        self.assertIsNone(err)
+        self.assertEqual(job["market"], "creator")
+
+    def test_no_url_defaults_to_b2b(self):
+        job, err = generate.parse_bulk_row(self._row(), 1)
+        self.assertIsNone(err)
+        self.assertEqual(job["market"], "b2b")
+
+
+class CreatorTemplateContentTests(unittest.TestCase):
+    """Content-specific assertions for the creator/influencer/personal-brand
+    templates, beyond the generic routing/rendering smoke tests."""
+
+    def test_ugc_brief_contains_disclosure_section(self):
+        prompt = generate.build_prompt("ugc_brief", **SAMPLE)
+        self.assertIn("DISCLOSURE AND COMPLIANCE", prompt)
+        self.assertIn("FTC", prompt)
+
+    def test_creator_media_kit_bans_fabricated_numbers(self):
+        prompt = generate.build_prompt("creator_media_kit", **SAMPLE)
+        self.assertIn("NO FABRICATED AUDIENCE NUMBERS", prompt)
+
+    def test_influencer_outreach_bans_generic_flattery(self):
+        prompt = generate.build_prompt("influencer_outreach", **SAMPLE)
+        self.assertIn("BANNED OPENERS", prompt)
+        self.assertIn("I love your content!", prompt)
+
+    def test_personal_brand_post_mentions_four_pillars(self):
+        prompt = generate.build_prompt("personal_brand_post", **SAMPLE)
+        for pillar in ("PILLAR A", "PILLAR B", "PILLAR C", "PILLAR D"):
+            self.assertIn(pillar, prompt)
+
+    def test_short_creator_formats_drop_full_research_block(self):
+        # The full RESEARCH_RULES block (2-3 stats per 500 words + a Sources
+        # note) is wrong for a ~125-word outreach email or a hand-off brief.
+        for key in ("influencer_outreach", "ugc_brief"):
+            with self.subTest(key=key):
+                prompt = generate.build_prompt(key, **SAMPLE)
+                self.assertNotIn("RESEARCH & AUTHORITY RULES", prompt)
+                self.assertIn("CITATION RULE", prompt)
+                self.assertIn("HARO_DataBank.csv", prompt)
+
+    def test_personal_brand_post_platform_defaults_to_linkedin(self):
+        # The CLI passes the routing alias as the platform label, so the
+        # self-referential values must resolve to the linkedin norms.
+        kwargs = dict(SAMPLE)
+        kwargs["platform_label"] = "personal_brand"
+        kwargs["wordcount"] = None
+        prompt = generate.build_prompt("personal_brand_post", **kwargs)
+        self.assertIn("PLATFORM NORMS - LINKEDIN", prompt)
+
+    def test_personal_brand_post_platform_target_selects_norms(self):
+        kwargs = dict(SAMPLE)
+        kwargs["platform_label"] = "personal_brand"
+        kwargs["platform_target"] = "threads"
+        kwargs["wordcount"] = None
+        prompt = generate.build_prompt("personal_brand_post", **kwargs)
+        self.assertIn("PLATFORM NORMS - THREADS", prompt)
+
+    def test_creator_media_kit_ask_bans_cta_phrases(self):
+        from templates._shared import BANNED_CTA_PHRASES
+        prompt = generate.build_prompt("creator_media_kit", **SAMPLE)
+        self.assertIn("Banned CTA phrases", prompt)
+        self.assertIn(BANNED_CTA_PHRASES[0], prompt)
+
+    def test_proportional_budgets_stay_sane_at_any_wordcount(self):
+        # Section lower bounds must never sum past the requested target
+        # (the fixed-absolute-floors bug class).
+        import re as _re
+        for key in ("creator_media_kit", "personal_brand_post", "business_case_one_pager"):
+            for wc in (150, 300, 425, 900):
+                with self.subTest(key=key, wordcount=wc):
+                    kwargs = dict(SAMPLE)
+                    kwargs["wordcount"] = wc
+                    prompt = generate.build_prompt(key, **kwargs)
+                    ranges = [(int(lo), int(hi)) for lo, hi in
+                              _re.findall(r"\((\d+)[ ]?(?:to|-)[ ]?(\d+) words\)", prompt)]
+                    self.assertTrue(ranges, f"no section word ranges found in '{key}'")
+                    if key == "personal_brand_post":
+                        # The four content pillars are alternative structures
+                        # repeating the same opening/body/close ranges; count
+                        # one pillar's worth, not all four.
+                        ranges = list(dict.fromkeys(ranges))
+                    lo_sum = sum(lo for lo, _ in ranges)
+                    self.assertLessEqual(lo_sum, wc,
+                                         f"'{key}' section minimums sum to {lo_sum} > target {wc}")
+                    for lo, hi in ranges:
+                        self.assertLessEqual(lo, hi)
 
 
 class LlmTests(unittest.TestCase):

@@ -10,7 +10,7 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Create a topic cluster and pillar content strategy for [BRAND NAME], [BRAND DESCRIPTION], around the core topic "[PILLAR TOPIC]". Identify 1 pillar page topic with a recommended title and target keyword. Then generate 8-10 cluster content ideas that support the pillar, each with a suggested title, target keyword, content type (blog / FAQ / guide / listicle), and a one-line description of the angle. Map how each cluster piece links back to the pillar. Target audience is [TARGET AUDIENCE]. Write in a clear, professional B2B tone that favors analytical, structured clarity over conversational voice - this is a research and strategy-planning artifact, not reader-facing copy, so precision matters more than personality. Do not use em dashes. Avoid passive voice.
+Create a topic cluster and pillar content strategy for [BRAND NAME], [BRAND DESCRIPTION], around the core topic "[PILLAR TOPIC]". Identify 1 pillar page topic with a recommended title and target keyword. Then generate 8-10 cluster content ideas that support the pillar, each with a suggested title, target keyword, content type (blog / FAQ / guide / listicle), and a one-line description of the angle. Map how each cluster piece links back to the pillar. Target audience is [TARGET AUDIENCE]. Match the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: clear, professional B2B tone), favoring analytical, structured clarity over conversational voice - this is a research and strategy-planning artifact, not reader-facing copy, so precision matters more than personality. Do not use em dashes. Avoid passive voice.
 
 Reference URL (if any): [INSERT URL]
 

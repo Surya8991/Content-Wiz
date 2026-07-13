@@ -10,7 +10,7 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Write a [CONTENT TYPE: Whitepaper / eBook] for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]". The document should be [WORD COUNT e.g. 1500-2500 words for whitepaper / 2000-3500 words for eBook]. Write in an authoritative, research-backed B2B tone targeting [TARGET AUDIENCE]. Structure the document with an executive summary, a clearly defined problem statement, data-backed insights across 4-6 sections with subheadings, actionable recommendations, and a conclusion with a CTA linking to [URL]. Include at least 4-6 credible statistics or research references. Naturally position [BRAND NAME] as a thought leader without being promotional. Do not use em dashes. Avoid passive voice.
+Write a [CONTENT TYPE: Whitepaper / eBook] for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]". The document should be [WORD COUNT e.g. 1500-2500 words for whitepaper / 2000-3500 words for eBook]. Write in an authoritative, research-backed tone matching the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: professional B2B) targeting [TARGET AUDIENCE]. Structure the document with an executive summary, a clearly defined problem statement, data-backed insights across 4-6 sections with subheadings, actionable recommendations, and a conclusion with a CTA linking to [URL]. Include at least 4-6 credible statistics or research references. Naturally position [BRAND NAME] as a thought leader without being promotional. Do not use em dashes. Avoid passive voice.
 
 Reference URL (if any): [INSERT URL]
 Content Type: [Whitepaper / eBook]

@@ -490,16 +490,16 @@ WORD COUNT: [N words]
 
 
 def business_case_one_pager(topic, audience, wordcount=425, **_):
-    # Section-length guidance scales proportionally with the requested wordcount
-    # instead of using fixed absolute floors, so a shorter or longer override
-    # isn't silently overridden by section minimums that sum past the caller's
-    # target (the bug class this repo's audit already fixed in blog_writing).
-    ask_lo, ask_hi = max(round(wordcount * 0.05), 20), max(round(wordcount * 0.08), 35)
-    problem_lo, problem_hi = max(round(wordcount * 0.20), 70), max(round(wordcount * 0.26), 100)
-    solution_lo, solution_hi = max(round(wordcount * 0.20), 70), max(round(wordcount * 0.26), 100)
-    roi_lo, roi_hi = max(round(wordcount * 0.18), 60), max(round(wordcount * 0.24), 90)
-    cost_lo, cost_hi = max(round(wordcount * 0.10), 35), max(round(wordcount * 0.14), 55)
-    close_lo, close_hi = max(round(wordcount * 0.06), 25), max(round(wordcount * 0.09), 40)
+    # Section-length guidance is purely proportional to the requested wordcount.
+    # No absolute floors: with floors, a short override (e.g. 300) produced
+    # section minimums/maximums summing well past the caller's target (the bug
+    # class this repo's audit already fixed in blog_writing).
+    ask_lo, ask_hi = round(wordcount * 0.05), round(wordcount * 0.08)
+    problem_lo, problem_hi = round(wordcount * 0.20), round(wordcount * 0.26)
+    solution_lo, solution_hi = round(wordcount * 0.20), round(wordcount * 0.26)
+    roi_lo, roi_hi = round(wordcount * 0.18), round(wordcount * 0.24)
+    cost_lo, cost_hi = round(wordcount * 0.10), round(wordcount * 0.14)
+    close_lo, close_hi = round(wordcount * 0.06), round(wordcount * 0.09)
     return f"""You are an L&D/HR manager who has personally written and successfully defended internal budget requests to senior leadership. You know that a business case memo lives or dies on whether the CFO or VP reading it can find the ask, the cost, and the payoff in under two minutes.
 
 TASK:

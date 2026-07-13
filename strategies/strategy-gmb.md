@@ -15,7 +15,7 @@ Keep a local/enterprise Google Business Profile active enough to influence local
 
 **2. Every post must sound like a different person wrote it.** GMB posts sit in a public feed where a prospect can scroll through the last 10-20 posts in under a minute. Identical or near-identical closing lines across posts are the single fastest way to signal "this account is automated" - which undercuts the exact trust signal the channel exists to build. See `templates/local.py`'s `gmb()` function for the enforced rule: no repeated closing sentence within the same batch, and no phrase from the banned-CTA list in `templates/_shared.py`.
 
-**3. Specificity beats promotion.** A post naming a real training format, a real skill area, or a real outcome metric reads as informational. A post using generic urgency language ("don't miss out," "act now") reads as an ad and gets skipped, per Rule 5 in README's Global Content Rules (no promotional brand tone in content body).
+**3. Specificity beats promotion.** A post naming a real training format, a real skill area, or a real outcome metric reads as informational. A post using generic urgency language ("don't miss out," "act now") reads as an ad and gets skipped, per Rule 7 in README's Global Content Rules (no promotional brand tone in content body).
 
 **4. Any statistic in a GMB post must be source-attributable.** Precise-sounding numbers with no named source or year are the highest-risk pattern for this channel - a 300-character post has no room for a footnote, so either name the source inline in one clause or drop the exact figure in favor of a qualitative claim. See README's "Citation Verification" section.
 

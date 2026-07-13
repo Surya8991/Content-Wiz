@@ -10,7 +10,7 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Create a Pinterest post for [BRAND NAME], [BRAND DESCRIPTION], for the blog post titled "[BLOG TITLE]". Generate a Title and Description. The title should be concise and descriptive with a subtitle. The description should be 1-2 sentences in B2B language targeting [TARGET AUDIENCE], followed by 4-5 relevant hashtags with the last hashtag always being [BRAND HASHTAG]. Even though the topic is B2B, write in Pinterest's native register: visual and aspirational rather than corporate, favoring sensory or outcome-framed language ("picture your team...", "the resource your next planning cycle needs") over dry feature statements. Do not use em dashes.
+Create a Pinterest post for [BRAND NAME], [BRAND DESCRIPTION], for the blog post titled "[BLOG TITLE]". Generate a Title and Description. The title should be concise and descriptive with a subtitle. The description should be 1-2 sentences matching the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: B2B language) targeting [TARGET AUDIENCE], followed by 4-5 relevant hashtags with the last hashtag always being [BRAND HASHTAG]. Whatever the brand's market register, write in Pinterest's native register: visual and aspirational rather than corporate, favoring sensory or outcome-framed language ("picture your team...", "the resource your next planning cycle needs") over dry feature statements. Do not use em dashes.
 
 Blog URL: [INSERT BLOG URL]
 

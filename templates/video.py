@@ -3,6 +3,7 @@ from ._shared import (
     HUMAN_WRITING_RULES,
     RANKABILITY_RULES,
     RESEARCH_RULES,
+    market_voice,
 )
 
 _BANNED_CTA_LIST = ", ".join(f'"{p}"' for p in BANNED_CTA_PHRASES)
@@ -212,13 +213,15 @@ Save to: output/Video_Scripts/
 """
 
 
-def short_form_video(topic, audience, wordcount=None, **_):
+def short_form_video(topic, audience, wordcount=None, market=None, **_):
     return f"""You are a short-form vertical video scriptwriter who has produced Reels, Shorts, and TikToks for B2B brands that hold above 50% average view duration on a 15 to 60 second runtime by applying the 3-second scroll-stop rule and a single-idea discipline.
 
 TASK:
 Write a complete short-form vertical video script (Instagram Reels, YouTube Shorts, TikTok) on: "{topic}"
 
 TARGET AUDIENCE: {audience}
+
+{market_voice(market)}
 
 PRE-WRITE DIAGNOSTIC:
 1. What is the ONE idea this video proves? Not three ideas - one. If the topic has three angles, pick the sharpest and cut the rest.
@@ -232,18 +235,20 @@ MODE A - QUICK HIT (15 to 30 seconds, approximately 45 to 90 spoken words): One 
 MODE B - FULL BEAT (45 to 60 seconds, approximately 130 to 170 spoken words): One idea with a short framework or 2 to 3 supporting points. Best for a named framework, a mini case study, or a "3 things" list capped at 3.
 
 MODE A STRUCTURE - QUICK HIT (15 to 30 seconds):
-[0:00 - 0:03] HOOK: The scroll-stopping claim or question, spoken and on-screen, before any branding.
-[0:03 - 0:20] BODY: The single idea, stated plainly, with one concrete proof point (stat, example, or named result).
-[0:20 - 0:26] PATTERN INTERRUPT: One visual or delivery beat that breaks the frame - a cut, a prop, a text-slam, or a direct-to-camera lean-in - timed to land right before typical drop-off.
-[0:26 - 0:30] CLOSE: The takeaway in one sentence, plus one CTA if relevant.
+First pick the exact runtime within the 15 to 30 second range, then convert the proportional beats below into concrete timestamps for that runtime. As reference points: at 30 seconds the pattern interrupt lands around 0:20 - 0:26; at 15 seconds it lands around 0:10 - 0:13.
+[0:00 - 0:03] HOOK (fixed at any runtime - the 3-second scroll-stop rule does not scale): The scroll-stopping claim or question, spoken and on-screen, before any branding.
+[0:03 to ~65% of runtime] BODY: The single idea, stated plainly, with one concrete proof point (stat, example, or named result).
+[~65% to ~85% of runtime] PATTERN INTERRUPT: One visual or delivery beat that breaks the frame - a cut, a prop, a text-slam, or a direct-to-camera lean-in - timed to land right before typical drop-off.
+[final ~15% of runtime] CLOSE: The takeaway in one sentence, plus one CTA if relevant.
 
 MODE B STRUCTURE - FULL BEAT (45 to 60 seconds):
-[0:00 - 0:03] HOOK: The scroll-stopping claim or question, spoken and on-screen, before any branding.
-[0:03 - 0:10] SET-UP: Why this matters to {audience} right now - the cost of not knowing this, in one or two sentences.
-[0:10 - 0:40] BODY: The single core idea, broken into 2 to 3 supporting points or framework steps. Each point gets one sentence of explanation and, where relevant, one named example.
-[0:40 - 0:48] PATTERN INTERRUPT: One visual or delivery beat that breaks the frame - a cut, a prop, a text-slam, an on-screen list reveal, or a direct-to-camera lean-in - placed to fight the mid-video drop-off window.
-[0:48 - 0:55] SYNTHESIS: Restate the single idea in one sentence. What the viewer does with it.
-[0:55 - 1:00] CLOSE + CTA: One ask, spoken and reinforced in the caption.
+First pick the exact runtime within the 45 to 60 second range, then convert the proportional beats below into concrete timestamps for that runtime. As reference points: at 60 seconds the pattern interrupt lands around 0:40 - 0:48; at 45 seconds it lands around 0:30 - 0:36.
+[0:00 - 0:03] HOOK (fixed at any runtime - the 3-second scroll-stop rule does not scale): The scroll-stopping claim or question, spoken and on-screen, before any branding.
+[0:03 to ~17% of runtime] SET-UP: Why this matters to {audience} right now - the cost of not knowing this, in one or two sentences.
+[~17% to ~67% of runtime] BODY: The single core idea, broken into 2 to 3 supporting points or framework steps. Each point gets one sentence of explanation and, where relevant, one named example.
+[~67% to ~80% of runtime] PATTERN INTERRUPT: One visual or delivery beat that breaks the frame - a cut, a prop, a text-slam, an on-screen list reveal, or a direct-to-camera lean-in - placed to fight the mid-video drop-off window.
+[~80% to ~92% of runtime] SYNTHESIS: Restate the single idea in one sentence. What the viewer does with it.
+[final ~8% of runtime] CLOSE + CTA: One ask, spoken and reinforced in the caption.
 
 SCRIPT FORMAT - THREE-COLUMN PRODUCTION BLOCK:
 Write every beat as a labeled three-part block so a human or a text-to-video tool can shoot directly from it. Never merge these into a paragraph:

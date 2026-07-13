@@ -1,6 +1,6 @@
 ﻿# AI Search Optimization Strategy (GEO / AEO)
 
-_Last updated: May 2026_
+_Last updated: 2026-05-01_
 
 
 ## Goal and Metric

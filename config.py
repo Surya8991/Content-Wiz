@@ -59,12 +59,15 @@ def brand_for_url(url):
 def market_for_brand(brand):
     """Return the brand's market register ("b2b", "b2c", or "creator").
 
-    Defaults to "b2b" for a missing/empty field or a falsy brand, so every
-    pre-existing brand entry keeps its original voice unchanged.
+    Defaults to "b2b" for a missing/empty/whitespace-only field or a falsy
+    brand, so every pre-existing brand entry keeps its original voice
+    unchanged. Whitespace is stripped so " b2c " resolves to "b2c" instead of
+    silently falling back to the b2b voice.
     """
     if not brand:
         return "b2b"
-    return (brand.get("market") or "b2b").lower()
+    market = (brand.get("market") or "").strip().lower()
+    return market or "b2b"
 
 
 def audience_for_platform(brand, platform_key=None):

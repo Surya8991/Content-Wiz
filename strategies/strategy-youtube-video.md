@@ -1,6 +1,6 @@
 ﻿# YouTube and Video Content Strategy
 
-_Last updated: May 2026_
+_Last updated: 2026-05-01_
 
 
 ## Goal and Metric

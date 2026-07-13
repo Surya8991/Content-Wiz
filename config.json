@@ -35,11 +35,11 @@
       "market": "b2b"
     },
     "example-creator.com": {
-      "_comment": "Example creator/personal-brand entry. `market: creator` switches templates that consume the market register to an individual first-person voice. Replace with a real creator's domain/name or delete.",
-      "name": "Alex Rivera",
-      "description": "Independent L&D consultant and content creator sharing practical workplace-skills advice from a decade of corporate training delivery",
+      "_comment": "Example creator/personal-brand entry. `market: creator` switches templates that consume the market register to an individual first-person voice. The placeholder name below is deliberately unusable as a real byline, replace every [BRACKETED] field with a real creator's details (or delete this entry) before generating anything you intend to publish.",
+      "name": "[YOUR NAME - Example Creator]",
+      "description": "Independent consultant and content creator sharing practical advice from real client work (replace with the creator's actual positioning)",
       "audience": "early-to-mid-career professionals working on their own skills growth",
-      "hashtag": "#AlexRiveraLearns",
+      "hashtag": "#[YourHashtag]",
       "market": "creator"
     }
   }

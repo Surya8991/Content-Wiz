@@ -270,7 +270,7 @@ key:
 | `--provider` | SDK to install | API key env var |
 |---|---|---|
 | `anthropic` (default) | `pip install .[llm-anthropic]` (or `pip install anthropic`) | `ANTHROPIC_API_KEY` |
-| `gemini` | `pip install .[llm-gemini]` (or `pip install google-generativeai`) | `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) |
+| `gemini` | `pip install .[llm-gemini]` (or `pip install google-genai`) | `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) |
 | `openai` | `pip install .[llm-openai]` (or `pip install openai`) | `OPENAI_API_KEY` |
 
 ```bash
@@ -353,9 +353,9 @@ All content produced in this system follows these rules (defined in [prompts/_Br
 2. No passive voice
 3. Match the brand's configured market register (`market` field in `config.json`: `b2b` default, `b2c`, or `creator`) - B2B professional language unless the brand is explicitly configured otherwise
 4. Every statistic names its source, organization, and year
-5. No promotional brand tone in content body
-6. Output saves to the appropriate `output/` subfolder
-7. Brand auto-detection from URL before generating any content
+5. Output saves to the appropriate `output/` subfolder
+6. Bulk content types (GMB, Pinterest, multi-post batches) output as CSV
+7. No promotional brand tone in content body
 8. Every statistic is verified against a real, live source before publish (see below)
 9. Source-diversity: within any content cluster (multiple posts published close
    together on related topics), never reuse the exact same single source as the

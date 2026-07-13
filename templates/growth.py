@@ -3,6 +3,7 @@ from ._shared import (
     HUMAN_WRITING_RULES,
     RANKABILITY_RULES,
     RESEARCH_RULES,
+    market_voice,
 )
 
 _BANNED_CTA_LIST = ", ".join(f'"{p}"' for p in BANNED_CTA_PHRASES)
@@ -1145,29 +1146,47 @@ If any source content was missing critical context (no source content provided),
 # ─────────────────────────────────────────────
 
 
-def landing_page(topic, audience, wordcount=700, **_):
-    # Section-length guidance scales proportionally with the requested wordcount
-    # (see blog_writing's precedent in templates/blog.py). Percentages sum to
-    # exactly 100% at the target wordcount; the final CTA block absorbs any
-    # rounding remainder so the sections always add back up to {wordcount}
-    # exactly, rather than drifting the way a set of independently-floored
-    # ranges can.
+def landing_page(topic, audience, wordcount=700, market=None, **_):
+    # Section-length guidance scales with the requested wordcount, but the
+    # max() calls below impose per-section floors so tiny wordcounts still get
+    # workable sections. When those floors sum past the target (roughly under
+    # 400 words), the sections are rescaled proportionally to fit, and the
+    # final CTA block absorbs the rounding remainder while never dropping
+    # below a small positive minimum. The stated recount total in the
+    # self-check is always the achievable sum, so the numbers never go
+    # negative or contradict each other at any wordcount.
     hero_words = max(round(wordcount * 0.10), 40)
     who_words = max(round(wordcount * 0.12), 50)
     benefits_words = max(round(wordcount * 0.28), 120)
     proof_words = max(round(wordcount * 0.12), 50)
     mid_cta_words = max(round(wordcount * 0.05), 20)
     faq_words = max(round(wordcount * 0.23), 100)
-    final_cta_words = wordcount - (
+    min_final_cta = 20
+    fixed_total = (
         hero_words + who_words + benefits_words + proof_words + mid_cta_words + faq_words
     )
+    if fixed_total + min_final_cta > wordcount:
+        scale = max(wordcount - min_final_cta, 1) / fixed_total
+        hero_words = max(round(hero_words * scale), 1)
+        who_words = max(round(who_words * scale), 1)
+        benefits_words = max(round(benefits_words * scale), 1)
+        proof_words = max(round(proof_words * scale), 1)
+        mid_cta_words = max(round(mid_cta_words * scale), 1)
+        faq_words = max(round(faq_words * scale), 1)
+        fixed_total = (
+            hero_words + who_words + benefits_words + proof_words + mid_cta_words + faq_words
+        )
+    final_cta_words = max(wordcount - fixed_total, min_final_cta)
+    total_words = fixed_total + final_cta_words
     return f"""You are a senior conversion copywriter who has built and A/B tested 200+ B2B landing pages for training, webinar, and course signups, with a specialization in pages that convert cold and warm traffic into completed registrations without relying on consumer-style hype.
 
 TASK:
 Write a complete, publish-ready landing page for the offer: "{topic}"
 
 TARGET AUDIENCE: {audience}
-TARGET LENGTH: {wordcount} words total (this is a scannable conversion page, not an article - hit this target, do not pad)
+TARGET LENGTH: {total_words} words total (this is a scannable conversion page, not an article - hit this target, do not pad)
+
+{market_voice(market)}
 
 PRE-WRITE DIAGNOSTIC (do this mentally before writing):
 1. What is the single decision this page exists to drive - registration, enrollment, demo request, waitlist signup? (Every section must point toward this one action, not several competing ones.)
@@ -1250,7 +1269,7 @@ CTA DISCIPLINE (applies to all three CTA placements above):
 {HUMAN_WRITING_RULES}
 
 SELF-CHECK BEFORE OUTPUT:
-- Does the section word count add up to {wordcount} total? (Recount: hero {hero_words} + who {who_words} + benefits {benefits_words} + proof {proof_words} + mid-CTA {mid_cta_words} + FAQ {faq_words} + final CTA {final_cta_words}.)
+- Does the section word count add up to {total_words} total? (Recount: hero {hero_words} + who {who_words} + benefits {benefits_words} + proof {proof_words} + mid-CTA {mid_cta_words} + FAQ {faq_words} + final CTA {final_cta_words}.)
 - Are all three CTA button labels different from each other, and none of them a banned phrase?
 - Does every testimonial, logo, and aggregate stat in the social proof section use an explicit placeholder bracket instead of an invented name or number?
 - Does every benefit read as an outcome for the learner or organization, not a feature list?

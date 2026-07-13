@@ -21,6 +21,77 @@ before this pass to start clean.
 
 ---
 
+## Verification Audit v3 (2026-07-13, post market-register + creator expansion) — all findings fixed
+
+A second full audit ran after the two feature waves that followed the v2
+remediation (4 content-type templates; then market registers + 4
+creator/influencer templates + 2 strategy docs). 6 parallel read-only
+specialist agents: engineering/market-wiring, new-template quality, rules
+consistency/compliance, docs/wiring integrity, strategy-doc accuracy, and a
+regression re-test of every v2 fix.
+
+**Regression result: all 11 v2 fixes hold** (Gemini SDK, provider hardening,
+bulk dry-run, path containment, CTA lint scope, governance tracker, CI,
+hook mode, HARO quarantine, word-count fixes, full suite) — no code
+regression from either feature wave.
+
+**New findings, all fixed the same day** (4 fix agents + direct fixes,
+verified together: 74/74 tests, lint 80 files + 9-template CTA regression
+scan, ruff clean):
+
+- [x] **High — `landing_page` negative word budget** at short wordcounts
+  (section floors exceeded the target and the remainder block went
+  negative). Now rescales proportionally with a clamped positive minimum;
+  stated total always equals the achievable sum.
+- [x] **High — CHANGELOG/version silent on both feature waves.** CHANGELOG
+  gained a full 0.4.0 section; `pyproject.toml` bumped 0.3.0 → 0.4.0.
+- [x] **High — weak vendor-blog sourcing** in the 2 new strategy docs.
+  Cluster Citation Diversity Pass run: precise figures re-anchored to
+  primary sources (Richard van der Blom's LinkedIn algorithm research,
+  TikTok for Business's own Spark Ads data, Meta via eMarketer, Meltwater,
+  Captiv8, Impact.com, FTC Endorsement Guides directly) or softened to
+  qualitative claims where no strong source confirmed them.
+- [x] **Medium — 8 prompt files still hard-coded unconditional B2B tone**
+  after the market-register migration; all now carry the GMB-style
+  rule-3 conditional (B2B stays the stated default).
+- [x] **Medium — README's Global Content Rules 5-7 had drifted** from the
+  canonical `_Brand_Detection_Rules.txt` ordering; realigned, and the one
+  stale "Rule 5" cross-reference in `strategy-gmb.md` updated to Rule 7.
+- [x] **Medium — floor/comment mismatches** in `creator_media_kit`,
+  `personal_brand_post`, `business_case_one_pager` (comments claimed "no
+  fixed floors" while `max()` floors bound at low wordcounts) — floors
+  removed, pure proportional scaling, comments now honest.
+- [x] **Medium — full `RESEARCH_RULES` block in short-form outreach/brief**
+  (mandating "2-3 stats per 500 words" + a Sources appendix in a ~125-word
+  email) replaced with a scoped inline citation rule.
+- [x] **Medium — market register not threaded** through `short_form_video`,
+  `landing_page`, `comparison_page`; all three now interpolate
+  `market_voice(market)`.
+- [x] **Medium — FTC platform-label contradiction** between
+  `strategy-influencer-collabs.md` and `ugc_brief`; harmonized on the
+  stricter (FTC-accurate) position, cited to the FTC Endorsement Guides
+  (16 CFR Part 255) directly.
+- [x] **Low** — stale `pip install google-generativeai` line in README
+  (user-breaking if followed) fixed to `google-genai`; `comparison_page`'s
+  hardcoded CTA snippet replaced with the canonical `BANNED_CTA_PHRASES`;
+  `short_form_video` Mode A/B fixed-timestamp contradictions made
+  proportional; `personal_brand_post`'s unreachable LinkedIn default made
+  reachable (self-referential platform labels resolve to linkedin, and
+  `--platform-target` documented as the norm selector);
+  `market_for_brand` now strips whitespace; the example creator brand's
+  realistic fake persona ("Alex Rivera") replaced with unmistakably
+  placeholder `[BRACKETED]` fields; measurement-window and heading/date
+  format inconsistencies across strategy docs standardized;
+  `creator_media_kit` gained the canonical banned-CTA guard; 13 new tests
+  (bulk-row market resolution + per-template content assertions), suite
+  61 → 74.
+
+Deliberately left open, same as v2: BC7 (stat-pattern lint stopgap — no
+false-positive-safe heuristic exists) and D7 (dependency lockfile —
+acceptable at current scope).
+
+---
+
 ## Remediation Status (updated 2026-07-13) — all findings addressed
 
 Every finding in this document (both Critical, all 6 High, and all 14

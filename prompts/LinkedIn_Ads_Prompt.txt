@@ -10,7 +10,7 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Create LinkedIn Sponsored Content ad copy for [BRAND NAME], [BRAND DESCRIPTION], for the campaign targeting "[CAMPAIGN TOPIC / OFFER]". Generate 3 ad variations. For each variation provide: an introductory text (max 150 characters for the hook line), ad body copy (max 600 characters), a headline (max 70 characters), and a CTA button label from LinkedIn's options (Learn More / Register / Download / Sign Up / Apply Now / Request Demo). Copy should be written in a professional B2B tone targeting [TARGET AUDIENCE]. Lead with a pain point or stat. Do not use em dashes.
+Create LinkedIn Sponsored Content ad copy for [BRAND NAME], [BRAND DESCRIPTION], for the campaign targeting "[CAMPAIGN TOPIC / OFFER]". Generate 3 ad variations. For each variation provide: an introductory text (max 150 characters for the hook line), ad body copy (max 600 characters), a headline (max 70 characters), and a CTA button label from LinkedIn's options (Learn More / Register / Download / Sign Up / Apply Now / Request Demo). Copy should match the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: professional B2B tone) targeting [TARGET AUDIENCE]. Lead with a pain point or stat. Do not use em dashes.
 
 Landing Page URL: [INSERT URL]
 Campaign Goal: [e.g. Webinar sign-up / Lead gen / Course promotion / Content download]

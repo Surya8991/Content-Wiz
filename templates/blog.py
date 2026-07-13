@@ -1,4 +1,12 @@
-from ._shared import HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES
+from ._shared import (
+    BANNED_CTA_PHRASES,
+    HUMAN_WRITING_RULES,
+    RANKABILITY_RULES,
+    RESEARCH_RULES,
+    market_voice,
+)
+
+_BANNED_CTA_LIST = ", ".join(f'"{p}"' for p in BANNED_CTA_PHRASES)
 
 
 def medium_step1(topic, **_):
@@ -608,13 +616,15 @@ FRONTMATTER INSTRUCTIONS:
 # ─────────────────────────────────────────────
 
 
-def comparison_page(topic, wordcount, platform, audience, **_):
+def comparison_page(topic, wordcount, platform, audience, market=None, **_):
     # topic is expected in the form "X vs Y" (or "best alternatives to X") -
     # a competitor-comparison SEO page. Section-length guidance scales
     # proportionally with the requested wordcount (default sensible range:
-    # 800-1500 words) rather than using fixed absolute floors, matching the
-    # fix already applied to blog_writing()/blog_writing_md() where fixed
-    # section minimums summed past whatever the caller actually asked for.
+    # 800-1500 words), with small max() floors per section so very low
+    # wordcounts still get workable sections. The floors can push the section
+    # ranges past a very small requested wordcount, which is acceptable here
+    # because the page brief states {wordcount}+ as a minimum, not an exact
+    # target.
     intro_lo, intro_hi = max(round(wordcount * 0.10), 40), max(round(wordcount * 0.14), 60)
     criteria_lo, criteria_hi = max(round(wordcount * 0.24), 120), max(round(wordcount * 0.30), 160)
     when_x_lo, when_x_hi = max(round(wordcount * 0.13), 50), max(round(wordcount * 0.17), 70)
@@ -649,6 +659,8 @@ PAGE BRIEF:
 - Publishing Platform: {platform}
 - Primary Goal: Rank for high-intent comparison/alternatives search queries and help {audience} readers self-select the right option with a credible, non-biased breakdown
 ---
+
+{market_voice(market)}
 
 HARD FABRICATION GUARDRAIL (read this before writing a single word - this is the single highest legal and reputational risk section in this entire content system):
 - This page names a real competitor. Never invent specific pricing figures, specific feature claims, specific customer/user counts, specific integrations, or specific certifications for that competitor unless the topic or supplied inputs explicitly state them.
@@ -733,7 +745,7 @@ SECTION 5 - WHEN [OPTION B] MAKES SENSE ({when_y_lo}-{when_y_hi} words)
 SECTION 6 - DECISION GUIDANCE ({decision_lo}-{decision_hi} words)
 ═══════════════════════════════════════════
 - Do not declare a universal winner. Instead, give the reader a short decision framework: 3-4 concrete questions they can ask themselves ("Do you need X?", "Is your team under/over [size]?") that map to one option or the other
-- Close with a specific next step for the reader who is a genuine fit for the brand's product, using [INSERT CTA LINK] with anchor text that is a relevant keyword from "{topic}" - never "click here" or "learn more"
+- Close with a specific next step for the reader who is a genuine fit for the brand's product, using [INSERT CTA LINK] with anchor text that is a relevant keyword from "{topic}" - never any phrase from this project's canonical banned-CTA list: {_BANNED_CTA_LIST}
 - End with one specific question that invites a substantive comment, not generic feedback
   Bad:  "What do you think?"
   Good: "Which of these criteria matters most for your team right now?"

@@ -43,7 +43,7 @@ RULES
 - Key Pain Points: 2-3 sentences per persona, naming concrete symptoms or triggers, not one-word labels
 - Common Objections: 2-3 sentences covering the top objections and what underlies them
 - Winning Message: 2-3 sentences describing the actual angle/message, not just a theme
-- Pain points and objections must reflect real B2B buying behaviour
+- Pain points and objections must reflect real buying behaviour for the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: B2B buying behaviour)
 - No em dashes anywhere
 - No passive voice
 - Output saved to output/Buyer_Personas/

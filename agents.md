@@ -41,7 +41,9 @@ prints the authoritative alias list.
 - `generate.py` - CLI entry point. `PLATFORM_MAP` (alias → template key),
   `SUBFOLDER_MAP` (key → folder), `resolve()`/`build_prompt()`, single + `--bulk` modes.
   Reconfigures stdout to UTF-8 so prompt printing never crashes on Windows consoles.
-- `templates/` - one function per template key; each returns a prompt string.
+- `templates/` - one function per template key (except `medium`, a 2-step
+  builder dispatching to `medium_step1`/`medium_step2`); each returns a
+  prompt string.
   All take `**_` so extra kwargs never raise. `_shared.py` holds the
   cross-cutting rule blocks (`HUMAN_WRITING_RULES`, `RANKABILITY_RULES`,
   `RESEARCH_RULES`, `BANNED_CTA_PHRASES`, `MARKET_VOICE_RULES` +
