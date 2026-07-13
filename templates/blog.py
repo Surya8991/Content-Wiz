@@ -341,6 +341,17 @@ After the Top 3, identify any 2-3 ideas from the list that could form a content 
 
 
 def blog_writing(topic, wordcount, platform, audience, **_):
+    # Section-length guidance scales proportionally with the requested wordcount
+    # instead of using fixed absolute floors, so a shorter request (e.g. 800
+    # words) isn't silently forced past its target by section minimums that
+    # summed to 1,290+ words regardless of what was asked for.
+    opening_lo, opening_hi = max(round(wordcount * 0.13), 60), max(round(wordcount * 0.18), 90)
+    context_lo, context_hi = max(round(wordcount * 0.10), 50), max(round(wordcount * 0.14), 80)
+    body_target = max(round(wordcount * 0.40), 300)
+    case_lo, case_hi = max(round(wordcount * 0.09), 50), max(round(wordcount * 0.13), 80)
+    takeaways_lo, takeaways_hi = max(round(wordcount * 0.09), 50), max(round(wordcount * 0.13), 80)
+    faq_lo, faq_hi = max(round(wordcount * 0.08), 50), max(round(wordcount * 0.12), 80)
+    conclusion_lo, conclusion_hi = max(round(wordcount * 0.06), 40), max(round(wordcount * 0.09), 60)
     return f"""You are a senior B2B writer and SEO strategist whose articles regularly rank in Google's top 3 positions for high-intent commercial queries. You write content that satisfies both Google's E-E-A-T quality signals and the human reader's need for substance over fluff.
 
 ASSIGNMENT:
@@ -381,7 +392,7 @@ H1 TITLE (the article's main heading):
 - Front-load the most important word or number
 
 META DESCRIPTION:
-- 150-158 characters (with spaces)
+- 150-158 characters (with spaces) - the tighter bound protects against search-result truncation
 - Includes primary keyword naturally
 - Contains one implicit or explicit CTA verb ("Learn", "See", "Get", "Find out")
 - Reads as a standalone summary - someone seeing only this should understand the article's value
@@ -395,7 +406,7 @@ KEYWORD MAP:
 SUGGESTED SLUG: [Short URL-friendly version, e.g. "factors-affecting-business-credit"]
 
 ═══════════════════════════════════════════
-SECTION 2 - OPENING HOOK (150-200 words)
+SECTION 2 - OPENING HOOK ({opening_lo}-{opening_hi} words)
 ═══════════════════════════════════════════
 Open with one of these proven patterns (NEVER open with a question or "In today's fast-paced world"):
 
@@ -416,7 +427,7 @@ Within the first paragraph (3-4 sentences), explicitly state:
 This section must make a {audience} professional think: "This is exactly what I needed."
 
 ═══════════════════════════════════════════
-SECTION 3 - WHY THIS MATTERS / CONTEXT (150-200 words)
+SECTION 3 - WHY THIS MATTERS / CONTEXT ({context_lo}-{context_hi} words)
 ═══════════════════════════════════════════
 - Establish the current landscape or problem with 1-2 real data points
 - Format: "According to [Named Organization]'s [Specific Report Name] (Year), [specific finding]."
@@ -425,7 +436,7 @@ SECTION 3 - WHY THIS MATTERS / CONTEXT (150-200 words)
 - This section earns the trust of the reader - no fluff, every sentence must add information
 
 ═══════════════════════════════════════════
-SECTION 4 - MAIN BODY (target {max(wordcount - 700, 500)}+ words)
+SECTION 4 - MAIN BODY (target {body_target}+ words)
 ═══════════════════════════════════════════
 The substance of the article. Break into 4-6 H2 subsections.
 
@@ -454,7 +465,7 @@ Each subsection should include at least ONE of:
 - A direct quote from a credible expert with attribution
 
 ═══════════════════════════════════════════
-SECTION 5 - REAL-WORLD EXAMPLE / CASE STUDY (120-180 words)
+SECTION 5 - REAL-WORLD EXAMPLE / CASE STUDY ({case_lo}-{case_hi} words)
 ═══════════════════════════════════════════
 - Use a real, publicly known company, team, or individual where possible
 - Format:
@@ -465,7 +476,7 @@ SECTION 5 - REAL-WORLD EXAMPLE / CASE STUDY (120-180 words)
 - This section adds Experience and Trust signals to the article's E-E-A-T profile
 
 ═══════════════════════════════════════════
-SECTION 6 - ACTIONABLE TAKEAWAYS (120-180 words)
+SECTION 6 - ACTIONABLE TAKEAWAYS ({takeaways_lo}-{takeaways_hi} words)
 ═══════════════════════════════════════════
 - 4-6 specific, concrete next steps the reader can take this week (not generic advice)
 - Format as a numbered list
@@ -481,7 +492,7 @@ Example of a bad takeaway:
 "1. Improve communication with your team."
 
 ═══════════════════════════════════════════
-SECTION 7 - FAQ SECTION (optional but recommended for SEO, 150-250 words)
+SECTION 7 - FAQ SECTION (optional but recommended for SEO, {faq_lo}-{faq_hi} words)
 ═══════════════════════════════════════════
 If the topic supports it, add an FAQ section addressing 3-5 of the "People Also Ask" questions identified earlier.
 - Each Q-A pair: question on its own line (H3), answer in 40-60 words
@@ -489,7 +500,7 @@ If the topic supports it, add an FAQ section addressing 3-5 of the "People Also 
 - Note: this section can be wrapped in FAQPage schema for rich snippets
 
 ═══════════════════════════════════════════
-SECTION 8 - CONCLUSION + CTA (100-150 words)
+SECTION 8 - CONCLUSION + CTA ({conclusion_lo}-{conclusion_hi} words)
 ═══════════════════════════════════════════
 - Open with a one-paragraph summary that reinforces the single most important idea (not a recap of every section)
 - NEVER open the conclusion with: "In conclusion", "To summarize", "Wrapping up", "In summary"
@@ -586,7 +597,7 @@ description:
 
 FRONTMATTER INSTRUCTIONS:
 - canonical_url: if this article is being cross-posted from another platform (e.g. it originally ran on the company blog, Medium, or another Dev.to/Hashnode account), set this field to that original article's URL. If this is the first and only publication of this piece, leave the field empty - do not fabricate or guess a URL.
-- description: required, never leave this field blank. Write a single-sentence meta description that is 150-160 characters including spaces, includes the primary keyword naturally, and reads as a standalone summary of the article's value.
+- description: required, never leave this field blank. Write a single-sentence meta description that is 150-158 characters including spaces, includes the primary keyword naturally, and reads as a standalone summary of the article's value.
 
 """
     return frontmatter + blog_writing(topic, wordcount, platform, audience)

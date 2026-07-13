@@ -97,6 +97,8 @@ DELIVERABILITY CHECKLIST:
 
 {HUMAN_WRITING_RULES}
 
+{RESEARCH_RULES}
+
 SELF-REVIEW:
 - Subject + preview together: read as one sentence - does it create a clear value contract?
 - Body opening: is the first sentence specific enough that a {audience} reader thinks "this is for me"?
@@ -405,6 +407,8 @@ DO NOT USE in answers:
 
 {HUMAN_WRITING_RULES}
 
+{RESEARCH_RULES}
+
 OUTPUT FORMAT (return exactly this structure):
 
 ═══════════════════════════════════════════
@@ -522,7 +526,7 @@ Reasoning: [1 sentence explaining why this option best matches the search intent
 For both options:
 - Length: 150-158 characters (with spaces)
 - Includes primary keyword naturally (not forced)
-- Includes one implicit or explicit CTA verb: "Learn", "See", "Get", "Find", "Discover"
+- Includes one implicit or explicit CTA verb: "Learn", "See", "Get", "Find", "Explore"
 - Answers the searcher's "what will I get?" question
 - Differs in wording from the title (it's a second selling line, not a repeat)
 - No quotation marks, no special characters that may break in SERP display
@@ -891,7 +895,7 @@ CHATGPT / BING AI:
 - Tables and structured comparisons are cited more often than paragraph-form explanations
 
 STRUCTURED DATA IMPLEMENTATION CHECKLIST:
-For each schema type, implement if applicable:
+For each schema type that applies, always output the actual `<script type="application/ld+json">` code block for it - never just a prose recommendation:
 - FAQPage: for FAQ sections (use even though Google limits rich results to select sites - schema aids semantic understanding)
 - HowTo: for step-by-step process sections with discrete steps
 - Article / BlogPosting: for editorial content with author and date
@@ -911,6 +915,8 @@ Every page targeting AI citation must include an author block below the article 
 {RANKABILITY_RULES}
 
 {HUMAN_WRITING_RULES}
+
+{RESEARCH_RULES}
 
 SELF-CHECK BEFORE OUTPUT:
 - Does every H2 section open with a Direct Answer sentence of 30 to 50 words?

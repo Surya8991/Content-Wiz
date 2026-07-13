@@ -472,6 +472,8 @@ GLOBAL PITCH RULES:
 - No promotional brand tone. The pitch earns pickup through credibility, not marketing.
 - Plain paragraph format. No bullet lists. No headers. Journalists do not read formatted pitches.
 
+{RESEARCH_RULES}
+
 SELF-CHECK BEFORE OUTPUT:
 - Does Block 1 contain a specific claim a journalist would directly quote?
 - Does every stat name its source and year?

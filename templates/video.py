@@ -178,6 +178,8 @@ SCRIPT FORMATTING RULES:
 
 {HUMAN_WRITING_RULES}
 
+{RESEARCH_RULES}
+
 SELF-CHECK BEFORE OUTPUT:
 - Is the specific outcome or finding stated in the first 20 seconds?
 - Does the primary takeaway appear three times in three forms?
@@ -316,6 +318,8 @@ After every episode, these derivatives extend reach across platforms:
 11. Podcast directory optimization: update show notes with keywords from this episode's topic
 
 {HUMAN_WRITING_RULES}
+
+{RESEARCH_RULES}
 
 SELF-CHECK BEFORE OUTPUT:
 - Does the title or pitch subject line contain a specific claim, not just a topic label?

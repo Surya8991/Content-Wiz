@@ -1,4 +1,4 @@
-from ._shared import BANNED_CTA_PHRASES, HUMAN_WRITING_RULES
+from ._shared import BANNED_CTA_PHRASES, HUMAN_WRITING_RULES, RESEARCH_RULES
 
 _BANNED_CTA_LIST = ", ".join(f'"{p}"' for p in BANNED_CTA_PHRASES)
 
@@ -38,6 +38,8 @@ DO NOT USE:
 - Em dashes - use hyphens only
 
 {HUMAN_WRITING_RULES}
+
+{RESEARCH_RULES}
 
 SELF-REVIEW (before output):
 - Word count exactly between 45 and 55? (Count again.)

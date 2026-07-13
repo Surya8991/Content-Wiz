@@ -11,6 +11,7 @@ Usage:
 Exit code 1 if any error is found.
 """
 import os
+import re
 import sys
 
 from templates._shared import BANNED_CTA_PHRASES
@@ -35,22 +36,50 @@ BANNED_PHRASES = BANNED_CTA_PHRASES
 
 BANNED_PHRASE_EXTS = {".md", ".html", ".csv"}
 
-# Template-source regression guard (runs by default, unlike the opt-in
-# output/ scan above): confirms a banned CTA phrase never sneaks into a
-# template's own example/scaffold text (the exact bug that let gmb()'s
-# real output land on "Click on learn more" verbatim). Scoped to files that
-# have been reviewed and use the "DO NOT USE" / negation convention this
-# checker understands; expand this list as other templates are brought
-# into that same convention.
-BANNED_CTA_REGRESSION_TARGETS = ["templates/local.py"]
+# Template-source regression guard (runs by default): confirms a banned CTA
+# phrase never sneaks into a template's own example/scaffold text (the exact
+# bug that let gmb()'s real output land on "Click on learn more" verbatim,
+# and the later bug that let growth.py suggest "Discover" as a CTA verb
+# unguarded). Scans every template module by default - not just the one
+# file that happened to use the "DO NOT USE" convention - because each of
+# the six CTA-bearing templates writes its own hand-rolled "bad example"
+# prose (Bad:/NOT/Avoid:/etc.) and any of them can regress the same way.
+# _shared.py is excluded: it *defines* BANNED_CTA_PHRASES, so every phrase
+# appears there verbatim as a list literal, not as unguarded scaffold text.
+BANNED_CTA_REGRESSION_EXCLUDE = {"_shared.py", "__init__.py"}
 
-# Lines containing one of these markers, on the same line as a banned
-# phrase, mean the phrase is being named as forbidden (or as a "bad"
-# example), not actually used as scaffold/example text - skip flagging it.
+
+def _iter_banned_cta_regression_targets(root):
+    tdir = os.path.join(root, "templates")
+    if not os.path.isdir(tdir):
+        return
+    for name in sorted(os.listdir(tdir)):
+        if os.path.splitext(name)[1] != ".py":
+            continue
+        if name in BANNED_CTA_REGRESSION_EXCLUDE:
+            continue
+        yield os.path.join("templates", name)
+
+
+# Lines containing one of these markers anywhere on the line as a banned
+# phrase mean the phrase is being named as forbidden (or as a "bad"
+# example / spam-word list / algorithm-penalized example), not actually
+# used as scaffold/example text the model is meant to copy - skip flagging
+# it. Checked across the *whole line* rather than a fixed character
+# lookbehind: these are short, single-concept instructional bullets (one
+# CTA rule per line), not multi-topic paragraphs, so an earlier or later
+# marker on the same line reliably describes the same example - a fixed-
+# width window was proven too narrow in practice (e.g. growth.py's
+# `* Bad:  "Click here" / "Read more" / "Learn more"` puts "Bad:" more than
+# 25 characters before "Learn more", and `Self-promotional CTAs like "DM me
+# to learn more" - LinkedIn's algorithm penalizes these` puts the negation
+# signal *after* the phrase entirely).
 # ("n't" deliberately excluded here: "Don't miss out" contains it inherently,
 # which would make that phrase un-flaggable everywhere; it's instead handled
 # by the heading-based block detection below.)
-_NEGATION_MARKERS = ("not ", "avoid", "never", "banned", "bad:")
+_NEGATION_MARKERS = (
+    "not ", "avoid", "never", "banned", "bad:", "spam", "penalize",
+)
 
 # A heading line matching one of these (case-insensitive) opens a block
 # where subsequent bullet lines enumerating banned phrases are expected
@@ -113,24 +142,31 @@ def check_file_for_banned_phrases(path, phrases=None):
     return errors
 
 
-_NEGATION_PROXIMITY = 25  # chars of lookbehind considered "attached" to a match
-
-
 def check_file_for_banned_cta_regression(path, phrases=None):
     """Return a list of (lineno, message) tuples flagging a banned CTA phrase
     that appears in a template's own example/scaffold text rather than being
     named as forbidden. Two ways a hit is treated as a legitimate mention
     (skipped, not flagged) instead of a regression:
 
-    1. Inline negation immediately before the match (e.g. `NOT "click
-       here"`) - checked in a short lookbehind window, not the whole line,
-       so an unrelated "do not copy" earlier in a long line can't blanket-
-       immunize a real violation later in that same line.
+    1. A negation marker (see `_NEGATION_MARKERS`) appears anywhere on the
+       same line as the match - the line is a single CTA-rule bullet, so a
+       marker anywhere on it (before or after the phrase) describes that
+       same example, not just the ones within a fixed distance.
     2. Inside a "DO NOT USE" style block: a heading line opens the block,
        every following bullet line (`-`/`*`) stays inside it, and the block
        closes at the first blank line or first non-bullet line.
+
+    Matching uses word boundaries (`\\b`), not a raw substring test, so a
+    single-word phrase like "Discover" does not false-positive on unrelated
+    words that merely contain it as a substring, e.g. "discovery" or
+    "discoverability" (both appear as legitimate SEO/hashtag terminology in
+    these templates).
     """
     phrases = phrases if phrases is not None else BANNED_CTA_PHRASES
+    patterns = [
+        (phrase, re.compile(r"\b" + re.escape(phrase.lower()) + r"\b"))
+        for phrase in phrases
+    ]
     errors = []
     try:
         with open(path, "r", encoding="utf-8") as f:
@@ -156,28 +192,23 @@ def check_file_for_banned_cta_regression(path, phrases=None):
                 continue
             in_banned_block = False
 
-        for phrase in phrases:
-            phrase_lower = phrase.lower()
-            start = 0
-            while True:
-                idx = lowered.find(phrase_lower, start)
-                if idx == -1:
-                    break
-                window = lowered[max(0, idx - _NEGATION_PROXIMITY):idx]
-                if not any(marker in window for marker in _NEGATION_MARKERS):
-                    errors.append((
-                        lineno,
-                        f"banned CTA phrase '{phrase}' used outside a "
-                        "DO-NOT-USE list (possible template regression)",
-                    ))
-                start = idx + len(phrase_lower)
+        if any(marker in lowered for marker in _NEGATION_MARKERS):
+            continue
+
+        for phrase, pattern in patterns:
+            if pattern.search(lowered):
+                errors.append((
+                    lineno,
+                    f"banned CTA phrase '{phrase}' used outside a "
+                    "DO-NOT-USE list (possible template regression)",
+                ))
     return errors
 
 
 def run_banned_cta_regression_check(root):
     total = 0
     checked = 0
-    for rel in BANNED_CTA_REGRESSION_TARGETS:
+    for rel in _iter_banned_cta_regression_targets(root):
         path = os.path.join(root, rel)
         if not os.path.isfile(path):
             print(f"error: not a file: {rel}")

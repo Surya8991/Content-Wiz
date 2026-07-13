@@ -295,6 +295,14 @@ DO NOT USE:
 - Multiple exclamation points or excessive emojis
 - Em dashes anywhere
 
+VOICE - HOW THIS DIFFERS FROM A LINKEDIN POST (not just shorter, genuinely different register):
+- Instagram is visual-first and conversational - write like a caption under a photo a friend would send, not a professional post that happens to be cropped down
+- Favor sensory, concrete language over analytical framing: describe what something looked like, felt like, or sounded like before naming the lesson - LinkedIn leads with the insight, Instagram leads with the moment
+- Sentences run shorter and punchier here than on LinkedIn - default to fragments and one-clause lines over the 15-20 word sentences LinkedIn rewards
+- Register is peer-to-peer and a little more informal: contractions, casual asides, and a warmer tone than LinkedIn's "senior professional sharing an insight" voice
+- Emoji-as-visual-punctuation is allowed and expected here (unlike LinkedIn's zero-on-the-hook rule) - use 1-3 emojis total as replacements for connector words or bullet markers ("->" or a checkmark), never as decoration or to end every line
+- If a sentence would read identically well as a LinkedIn post, rewrite it - swap the analytical opener for a scene, a specific visual detail, or a first-person aside
+
 {HUMAN_WRITING_RULES}
 
 {RESEARCH_RULES}
