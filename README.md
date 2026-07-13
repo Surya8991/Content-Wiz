@@ -260,11 +260,12 @@ CI runs all three on every push/PR (`.github/workflows/ci.yml`).
 
 | File | Contents |
 |------|----------|
-| [HARO_DataBank.csv](data/HARO_DataBank.csv) | Pitch-ready statistics and findings for HARO responses, guest articles, and podcast appearances |
+| [HARO_DataBank.csv](data/HARO_DataBank.csv) | Pitch-ready, verified statistics and findings for HARO responses, guest articles, and podcast appearances |
+| [HARO_DataBank_PENDING.csv](data/HARO_DataBank_PENDING.csv) | Unfilled `[PLACEHOLDER]` claims quarantined out of the main bank so they can never be cited by accident |
 
 **DataBank CSV columns:** Claim | Source | URL | Year | Context | Quotable Version | Topic Tags
 
-Add a new row to HARO_DataBank.csv every time a new first-party statistic, client outcome metric, or citable finding is available.
+Add a new row to HARO_DataBank.csv every time a new first-party statistic, client outcome metric, or citable finding is available and verified. If the figure isn't confirmed yet, add the row to HARO_DataBank_PENDING.csv instead, fill it in from real internal data, then move it into HARO_DataBank.csv and delete it from the pending file. Never cite a row directly from the pending file.
 
 ---
 

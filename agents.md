@@ -97,4 +97,10 @@ CI runs all three (`.github/workflows/ci.yml`).
   a batch ready to publish, run the citation-verification pass described in
   README's "Citation Verification" section (per-batch web research against every
   cited claim, tighten/correct/soften as needed). `data/HARO_DataBank.csv` rows
-  marked `[PLACEHOLDER]` are first-party internal data, not web-researchable.
+  marked `[PLACEHOLDER]` are first-party internal data, not web-researchable;
+  they live in `data/HARO_DataBank_PENDING.csv` until filled in and moved over.
+- **"Companion piece" cross-links can't be added before publish.** A post can
+  reference a related piece by topic in plain text, but never link to a
+  fabricated URL, Dev.to/Hashnode/etc. assign the real URL at publish time.
+  Once the companion piece's `Published URL` is filled in on the content
+  calendar tracker, go back and turn the plain-text reference into a real link.
