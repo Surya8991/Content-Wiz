@@ -218,6 +218,23 @@ class AudienceResolutionTests(unittest.TestCase):
         result = generate.resolve_audience(None, None)
         self.assertEqual(result, generate.DEFAULT_AUDIENCE)
 
+    def test_platform_override_wins_over_brand_default_audience(self):
+        import config
+        expected = config.BRANDS["edstellar.com"]["platform_audience_overrides"]["livejournal"]
+        result = generate.resolve_audience(None, "https://www.edstellar.com", "livejournal")
+        self.assertEqual(result, expected)
+        self.assertNotEqual(result, config.BRANDS["edstellar.com"]["audience"])
+
+    def test_platform_without_override_falls_back_to_brand_default(self):
+        import config
+        expected = config.BRANDS["edstellar.com"]["audience"]
+        result = generate.resolve_audience(None, "https://www.edstellar.com", "gmb")
+        self.assertEqual(result, expected)
+
+    def test_explicit_audience_wins_over_platform_override(self):
+        result = generate.resolve_audience("custom audience", "https://www.edstellar.com", "livejournal")
+        self.assertEqual(result, "custom audience")
+
 
 class LlmTests(unittest.TestCase):
     def test_missing_key_raises_runtime_error(self):

@@ -8,7 +8,7 @@ from datetime import datetime
 
 import templates
 import textprompts
-from config import DEFAULTS, brand_for_url
+from config import DEFAULTS, audience_for_platform, brand_for_url
 
 # Prompts can contain characters outside the Windows console's legacy code page.
 # Force UTF-8 so printing never crashes with UnicodeEncodeError.
@@ -125,16 +125,16 @@ def subfolder_for(key):
     return SUBFOLDER_MAP.get(key, "Misc")
 
 
-def resolve_audience(explicit_audience, url):
+def resolve_audience(explicit_audience, url, platform_key=None):
     """Pick the effective audience: an explicit --audience wins, otherwise a
-    brand configured for `url` in config.json's `brands` map, otherwise the
-    generic DEFAULTS["audience"] fallback."""
+    brand configured for `url` in config.json's `brands` map (honoring that
+    brand's `platform_audience_overrides` for `platform_key`, if any), otherwise
+    the generic DEFAULTS["audience"] fallback."""
     if explicit_audience:
         return explicit_audience
     brand = brand_for_url(url) if url else None
-    if brand and brand.get("audience"):
-        return brand["audience"]
-    return DEFAULT_AUDIENCE
+    audience = audience_for_platform(brand, platform_key)
+    return audience or DEFAULT_AUDIENCE
 
 
 DEFAULT_AUDIENCE  = DEFAULTS["audience"]
@@ -233,7 +233,7 @@ def parse_bulk_row(row, i):
         "platform":        platform,
         "topic":           topic,
         "wordcount":       wordcount,
-        "audience":        resolve_audience(row.get("audience", "").strip() or None, url),
+        "audience":        resolve_audience(row.get("audience", "").strip() or None, url, platform.lower()),
         "title":           row.get("title",           "").strip() or None,
         "platform_target": row.get("platform_target", "").strip() or None,
         "cta":             row.get("cta",             "").strip() or None,
@@ -244,7 +244,7 @@ def parse_bulk_row(row, i):
 
 def run_single(args):
     output_dir = args.output_dir or default_output_dir()
-    effective_audience = resolve_audience(args.audience, args.url)
+    effective_audience = resolve_audience(args.audience, args.url, (args.platform or "").lower().strip())
 
     kind = None
     key = None

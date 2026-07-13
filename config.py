@@ -69,11 +69,9 @@ def audience_for_platform(brand, platform_key=None):
     "livejournal", "devto") - match it against whatever keys you add under
     a brand's `platform_audience_overrides` map in config.json.
 
-    Not yet wired into generate.py's `resolve_audience()` - that function
-    currently calls `brand.get("audience")` directly. Wiring it in is a
-    one-line change: replace that call with
-    `audience_for_platform(brand, platform_key)` once `resolve_audience`
-    also receives the platform key/alias being generated.
+    Wired into generate.py's `resolve_audience()`, which passes the
+    lowercased `--platform` string (single-run) or CSV `platform` value
+    (bulk mode) through as `platform_key`.
     """
     if not brand:
         return None
