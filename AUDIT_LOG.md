@@ -21,6 +21,74 @@ before this pass to start clean.
 
 ---
 
+## Remediation Status (updated 2026-07-13) — all findings addressed
+
+Every finding in this document (both Critical, all 6 High, and all 14
+Medium, plus the Low-severity items called out explicitly in each
+section) was fixed via 9 parallel/sequential agents (one handled directly
+given the risk of the SDK migration, 8 dispatched with exclusive file
+ownership), verified together afterward: `python -m unittest test_generate
+-v` → 55/55 pass, `python lint_content.py` → clean (76 files + banned-CTA
+regression now checking 7 template files, up from 1), `python -m ruff
+check .` → clean. Committed as a sequence of 6 commits (engineering, DevOps/
+CI, templates/lint, governance docs, prompts/strategies content, plus the
+earlier standalone Gemini SDK migration commit).
+
+- [x] **D1 (Critical)** — Gemini migrated off the EOL `google-generativeai`
+  SDK to `google-genai`, verified against the actual installed SDK's
+  signatures. Handled directly rather than delegated, given the API
+  surface risk.
+- [x] **BC2/BC3 (Critical)** — banned-CTA-phrase regression check widened
+  from 1 file (`templates/local.py`) to all 7 `templates/*.py` files, using
+  word-boundary regex to avoid false positives (`"Discover"` vs.
+  `"discoverability"`); `growth.py`'s active "Discover" CTA-verb
+  instruction removed.
+- [x] **E2/E3 (High)** — all three providers' response parsing now guards
+  against empty/blocked responses with a clean `RuntimeError` instead of a
+  raw traceback or silent empty-success; 6 new mocked-SDK tests cover it.
+- [x] **BC5/B5 (High)** — the nonexistent governance tracker file is now a
+  real, committed `publish_tracker_template.csv`, with every doc reference
+  repointed to it.
+- [x] **S4 (Medium→fixed as part of this pass)** — `--repurpose`/bulk CSV
+  `source_file` paths are now containment-checked against escaping the
+  project directory.
+- [x] **DI3** — `--bulk --dry-run` now actually dry-runs.
+- [x] **E1** — `--provider` validated before any generation attempt, even
+  under `--dry-run`.
+- [x] **C1/BC6, C2, C6, SEO2, SEO5** — `RESEARCH_RULES` wired into every
+  stat-heavy function that lacked it; `blog_writing()`'s word-count
+  override bug fixed (section lengths now scale with `--wordcount`);
+  Instagram's voice de-converged from LinkedIn Post's; `geo()`'s schema
+  checklist made uniform; meta-description ranges aligned.
+- [x] **B7, B3, SEO4, BC8, BC9** — cost-reference docs added (real,
+  dated pricing-page links, no fabricated numbers); a provider-quality
+  caveat added; a documentation-hygiene note on point-in-time platform
+  claims added; `strategy-gmb.md` wording aligned to the actual
+  unqualified "Discover" ban plus a governance-rule pointer.
+- [x] **D2-D8, S6, S8** — CI now installs and imports all 3 LLM extras
+  (so a future SDK deprecation can't go unnoticed again) plus a
+  post-install smoke check and explicit `permissions:` block; Python floor
+  bumped 3.8→3.9 (3.8 is EOL); dependency ceilings added; `hooks/
+  pre-commit`'s executable bit fixed and a `ruff` step added to match CI;
+  version bumped to 0.3.0 with a new `CHANGELOG.md`; `.ruff_cache/` added
+  to `.gitignore`.
+- [x] **C3, C4, C7, C8, C5** — a recurring copy-paste artifact removed
+  from 3 prompt files; thin/generic tone guidance deepened in 5 prompts;
+  an internal pronoun-ban tension in the op-ed prompt clarified; length
+  bands added to 2 under-specified prompts; 3 strategy docs (Tumblr,
+  LiveJournal, Quora) deepened with real platform-mechanic specifics.
+- **BC7** (stat-pattern lint stopgap) — deliberately left open. The audit
+  itself judged this "out of reach for pure static lint," and the
+  responsible agent found no genuinely low-false-positive way to detect
+  it without semantic understanding of nearby citation context. Revisit
+  only if a concrete false-positive-safe heuristic is found.
+- **D7** (dependency lockfile) — deliberately left as a Low/acceptable
+  finding per the audit's own verdict, given the project's current
+  zero-required-dependency core and small optional surface. Revisit if
+  the `llm` extras grow.
+
+---
+
 ## Executive Summary
 
 | Severity | Count |
