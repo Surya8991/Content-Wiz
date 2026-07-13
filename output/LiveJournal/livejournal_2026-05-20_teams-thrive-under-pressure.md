@@ -1,0 +1,59 @@
+# Why Some Teams Thrive Under Pressure While Others Fall Apart
+
+Pressure reveals what is already true about a team. It does not create problems so much as it removes the conditions that allowed teams to function despite having problems.
+
+This is an important distinction. Organizations that are surprised by how their teams perform during a crisis tend to assume the crisis changed something. In most cases, the crisis only made visible what was already present: latent communication breakdowns, unclear decision authority, trust deficits, and the absence of shared mental models about what matters most.
+
+Understanding why some teams thrive under pressure requires looking at what those teams are doing differently during the ordinary periods before the pressure arrives.
+
+## The Psychological Safety Variable
+
+Google's Project Aristotle studied 180 of their own teams over two years to understand what distinguished high-performing teams from low-performing ones. The single factor most predictive of team performance was psychological safety: the belief among team members that they can speak up, raise concerns, admit mistakes, and ask questions without fear of punishment or humiliation.
+
+This finding runs counter to the intuition that high-performing teams are held together by high standards, competitive pressure, and accountability. Those qualities matter, but they only produce good outcomes when team members feel safe enough to surface problems before they compound. A team that surfaces problems quickly is a team that can solve them quickly. A team where members hide problems to protect themselves is a team that discovers them late, at maximum cost.
+
+Under pressure, psychological safety becomes more valuable, not less. The teams that fall apart under pressure are usually the ones where members escalate when it is too late, withhold information because they fear the reaction, or wait for someone with authority to tell them what to do. The teams that thrive are the ones where the same people act earlier, communicate more, and make decisions within their scope without waiting for permission.
+
+## Role Clarity Under Ambiguity
+
+A second differentiator is role clarity, specifically how well team members understand their own decision authority when the normal rules of the situation are suspended.
+
+Routine operations do not require role clarity to function. When everything is working normally, implicit authority and established process carry most decisions automatically. Pressure disrupts the normal flow and forces explicit choices about who decides, who executes, and who communicates.
+
+Teams that have not had explicit conversations about decision authority during routine times enter a crisis with competing assumptions. The lead engineer assumes they will direct the technical response. The product manager assumes the customer impact decision is theirs to make. The team lead assumes they will coordinate both. Nobody is wrong given their role description. But the absence of a shared understanding of how those roles interact under pressure produces coordination failures at the worst possible moment.
+
+Teams that perform well under pressure have typically worked out these overlaps in advance: not by writing extensive RACI matrices, but through the less formal process of talking through past incidents and near-misses in retrospectives, and noticing where authority gaps or overlaps created friction.
+
+## Shared Mental Models About What Matters Most
+
+A third factor is harder to describe but consistently appears in research on high-performing teams in high-stakes environments: a shared mental model of priorities.
+
+In a normal workweek, teams can operate with different individual theories about what matters most because the organizational environment provides guardrails that prevent those differences from causing damage. Under pressure, those guardrails disappear. Individuals revert to their own prioritization frameworks, and teams that have never explicitly aligned on what they optimize for in a crisis can pull in several directions simultaneously.
+
+Shared mental models are built through two mechanisms. The first is explicit alignment conversations: discussing what the team would prioritize if it had to choose between shipping speed, quality, and cost at a moment of real constraint. The second is shared experience: teams that have navigated past challenges together build tacit alignment through the experience of having made those trade-offs in real conditions.
+
+This is one of the reasons team tenure matters. Research from Harvard Business School's Kathleen Eisenhardt on decision-making in fast-moving environments found that executive teams with longer shared history made better decisions under time pressure than recently assembled teams with equivalent individual talent. Shared context and tacit alignment built over time cannot be replicated quickly.
+
+## What Leaders Do Differently in High-Performing Teams
+
+Managers in teams that thrive under pressure behave differently from managers in teams that collapse, and the difference is not what most people expect.
+
+They do not demonstrate control. They demonstrate calm. The emotional tone a leader sets in the first moments of a crisis shapes how the team processes the situation. A leader who visibly panics or who immediately starts assigning blame signals that the situation is worse than manageable. A leader who acknowledges the severity clearly and communicates what they know, what they do not know, and what the first concrete steps are signals that the situation is serious but navigable.
+
+They do not solve the problem themselves. They create the conditions for the team to solve it. That means clearing blockers, making escalation decisions that individual contributors cannot make themselves, and communicating status to stakeholders so the team can focus on resolution rather than managing upward.
+
+They debrief honestly afterward. The teams that thrive across multiple pressure events are the ones that conduct genuine retrospectives: examining not just what happened technically but how the team functioned, where communication broke down, and what would have changed the outcome. This loop converts each difficult experience into an input that makes the team more capable.
+
+Investing in [building high-performing teams](https://www.edstellar.com/course/leading-high-performing-teams-training) before the next crisis arrives is not a luxury. It is the preparation that determines whether pressure reveals a functional team or exposes the gaps that normal conditions were concealing.
+
+## The Variable That Explains Most of the Difference
+
+If there is one variable that explains more variance in team performance under pressure than any other, the research consistently points to the same one: the quality of relationships built during ordinary times.
+
+Teams that trust each other, know each other's communication styles, have experience navigating disagreement constructively, and have built a shared record of handling difficult situations well, perform significantly better when things go wrong than teams with equivalent technical skill and less relational history.
+
+This means that the time invested in team-building, psychological safety, and clear communication norms during calm periods is not soft investment in comfort. It is direct investment in the resilience that only becomes visible when everything is not calm.
+
+---
+
+*What has your experience been with team performance under pressure? The role clarity gap is the one I see most often cause damage in real incidents. What would you add to this list from your own observations?*

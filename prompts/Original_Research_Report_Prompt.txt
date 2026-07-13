@@ -1,0 +1,53 @@
+============================================================
+ORIGINAL RESEARCH / SURVEY REPORT PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Write an original research report for [BRAND NAME], [BRAND DESCRIPTION], titled "[REPORT TITLE]" based on the following data or survey findings: [PASTE DATA / SURVEY RESULTS OR DESCRIBE THE DATASET]. The report should be 1500-2000 words. Structure it with an executive summary, methodology note, 4-5 key findings sections each anchored by a headline stat, analysis and interpretation of each finding, implications for [TARGET AUDIENCE], and a conclusion with recommendations and CTA linking to [URL]. Write in an authoritative, analytical tone. Position [BRAND NAME] as the source of the research naturally. Do not use em dashes. Avoid passive voice.
+
+Data or Survey Input: [PASTE FINDINGS OR DESCRIBE DATASET]
+Report URL (if published): [INSERT URL]
+Research Focus Area: [e.g. L&D investment trends / Workforce skills gaps / HR priorities]
+
+------------------------------------------------------------
+REPORT STRUCTURE
+------------------------------------------------------------
+
+1. Report Title and Subtitle
+2. Executive Summary (150-200 words, 3-5 headline stats)
+3. Methodology (sample size, data source, date range)
+4. Key Finding 1 (headline stat + analysis + implication)
+5. Key Finding 2 (headline stat + analysis + implication)
+6. Key Finding 3 (headline stat + analysis + implication)
+7. Key Finding 4 (headline stat + analysis + implication)
+8. Key Finding 5 (optional)
+9. Recommendations for [TARGET AUDIENCE]
+10. Conclusion with CTA
+11. About [BRAND NAME]
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Full report in plain text with clearly labelled sections.
+
+Save to output/Research_Reports/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Executive summary must include 3-5 headline stats
+- Each finding must include a headline stat, 2-3 sentences of analysis, and 1-2 sentences on implications
+- Methodology section is mandatory even if brief
+- No em dashes anywhere
+- No passive voice
+- Brand positioned as research source, not as vendor
+- Output saved to output/Research_Reports/

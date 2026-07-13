@@ -1,0 +1,41 @@
+============================================================
+PRESS RELEASE PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Write a press release for [BRAND NAME], [BRAND DESCRIPTION], announcing "[ANNOUNCEMENT/NEWS TOPIC]". Follow standard press release format: headline, dateline, lead paragraph (who, what, when, where, why), body paragraphs with supporting detail, one executive quote attributed to the CEO of [BRAND NAME], and a boilerplate about [BRAND NAME] at the end. Target audience is [TARGET AUDIENCE]. Write in a formal, journalistic tone. Do not use em dashes. Keep the total length to 400-500 words.
+
+URL: [INSERT URL IF APPLICABLE]
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Full press release in plain text with:
+- FOR IMMEDIATE RELEASE header
+- Headline
+- Dateline and lead paragraph
+- Body (2-3 paragraphs)
+- CEO quote
+- Boilerplate
+- Contact details placeholder
+
+Save to output/Press_Release/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Standard inverted pyramid structure
+- CEO quote must feel authentic, not corporate
+- Boilerplate is 3-4 sentences about the brand
+- No em dashes anywhere
+- 400-500 words total
+- Output saved to output/Press_Release/

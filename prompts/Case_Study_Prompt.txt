@@ -1,0 +1,181 @@
+============================================================
+CASE STUDY PROMPT (BAB-PLUS FRAMEWORK)
+============================================================
+
+TWO OUTPUT MODES: Full Web Case Study / One-Page PDF Summary
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, provide the inputs below and select the output mode.
+
+------------------------------------------------------------
+REQUIRED INPUTS
+------------------------------------------------------------
+
+Brand: [BRAND NAME OR URL]
+Client Description: [Industry, approximate company size, role of the decision-maker who led the engagement]
+Business Goal: [What the client was trying to achieve before engaging the brand]
+The Challenge: [Specific problem that made the status quo unsustainable - include numbers where available, e.g., "completion rates had dropped to 43%"]
+Approach Used: [What the brand did - methodology, timeline, who was involved on the client side]
+Results: [Specific before-and-after metrics - at least 3 data points with timeframe, e.g., "onboarding time: 21 days reduced to 6, within 4 months"]
+Client Quote: [Direct quote from a named client contact - include full name, title, company]
+CTA Destination URL: [URL the case study closes with]
+Output Mode: [A = Full Web Case Study / B = One-Page PDF Summary / Both]
+
+------------------------------------------------------------
+THE BAB-PLUS FRAMEWORK
+------------------------------------------------------------
+
+The Before-After-Bridge framework structures each case study around how buyers evaluate risk. The "Plus" layer is the metrics section that gives buyers the evidence they need to make an internal case to a CFO or operations leader.
+
+The buyer reading a case study is asking one question: "Did this work for a company like mine, in a situation like mine?" Every structural decision should make the answer as fast and clear as possible. The brand is the enabling factor in the story, not the hero. The client is the hero.
+
+------------------------------------------------------------
+OUTPUT MODE A: FULL WEB CASE STUDY (6 SECTIONS)
+------------------------------------------------------------
+
+Target length: 700 to 1,000 words total.
+Tone: Narrative, professional, client-centered. Written so the buyer identifies with the client, not the brand.
+
+SECTION 1: CLIENT AND CONTEXT (100 to 150 words)
+Name the client (or describe them specifically: "a 450-person manufacturing company" if anonymous).
+Include: industry, approximate company size, role of the decision-maker who initiated the engagement, and one sentence on the business goal driving the engagement.
+Do not open with: "Company X is a leading provider of..." - this is about the client's situation, not the client's profile.
+Avoid naming competitors or disparaging the client's previous approach. The before state is a neutral description.
+
+SECTION 2: THE CHALLENGE (100 to 150 words)
+Name the specific problem that made the status quo unsustainable.
+Be concrete: "completion rates for mandatory compliance training had dropped to 43%" is a challenge. "Training wasn't working" is not.
+The reader should recognize their own situation in this section. Specificity earns identification.
+End with one sentence that frames what was at stake if the problem continued.
+
+SECTION 3: THE APPROACH (150 to 200 words)
+Describe what the brand did in terms of methodology, not product features.
+Buyers care about what was done for this client, not what the platform can do in general.
+Include: timeline, who was involved on the client side, what made this engagement different from a standard rollout.
+Use named methodology or framework names where they exist (e.g., "behavior-change measurement framework," "3-stage skills assessment process").
+
+SECTION 4: THE RESULTS (100 to 150 words)
+Quantified outcomes with context. This section is mandatory and non-negotiable.
+Three to five specific metrics, each with a before-and-after comparison and a timeframe.
+Format for scannability: use a short list or a callout-style block. A metric buried in a paragraph is a missed conversion opportunity.
+
+Required format for each metric:
+[Metric name]: [Before value] reduced/increased to [After value] ([timeframe])
+
+Example:
+- Onboarding time: 21 days reduced to 6 days (within 3 months)
+- Course completion rate: 43% increased to 89% (within 60 days)
+- Internal promotion rate: 12% increase year-over-year
+
+If no before value is available, state the absolute result and the timeframe: "89% completion rate achieved within 60 days of program launch."
+
+SECTION 5: CLIENT VOICE (1 to 2 quotes)
+A direct quote from a named client contact. Required fields: full name, title, company name.
+This is the highest-trust element in the case study. Named quotes from real people with real titles convert more buyers than any other section.
+Do not paraphrase or smooth out the client's language. Authentic voice is more credible than polished corporate language.
+If the client will not allow naming, keep industry, company size, and role: "[Operations Director, 600-person manufacturing firm]"
+
+SECTION 6: CTA (1 sentence + 1 URL)
+One sentence, one link. Do not offer multiple options.
+Frame it as an action the reader can take to get a similar outcome, not as a general invitation to browse the website.
+Example: "See how the skills assessment framework works for [industry] organizations: [URL]"
+
+------------------------------------------------------------
+OUTPUT MODE B: ONE-PAGE PDF SUMMARY
+------------------------------------------------------------
+
+Use when: Sales team needs a leave-behind for proposals, email follow-ups, or sales conversations.
+This version is designed to be readable in under 90 seconds. Keep to one page, no exceptions.
+
+Structure:
+
+CLIENT HEADER: Client name (or industry description) + logo placeholder at top
+
+CHALLENGE (3 bullet points, one sentence each):
+- What the client was trying to achieve
+- The specific obstacle preventing that outcome
+- What was at stake if nothing changed
+
+APPROACH (2 to 3 sentences):
+One paragraph on the methodology used. No feature language.
+
+KEY METRICS (3 to 5 metrics in large, scannable format):
+Display as a visual grid or callout block:
+[NUMBER/PERCENTAGE] - [what it measures]
+Example: 71% - reduction in onboarding time
+
+CLIENT QUOTE:
+Full name, title, company. One direct quote, 1 to 2 sentences maximum.
+
+BRAND CTA (bottom of page):
+Brand name, URL, and one-sentence description of the relevant service.
+
+------------------------------------------------------------
+METRICS ENFORCEMENT RULES
+------------------------------------------------------------
+
+A case study without quantified results is a testimonial, not a case study. Apply these rules:
+
+1. Every published case study must contain at least one before-and-after metric with a timeframe.
+2. Percentage changes must include the absolute values, not just the percentage: "increased from 43% to 89%" not "doubled."
+3. Timeframes must be named: "within 6 months" or "in Q1 2026" - not "after implementation."
+4. If a client provides only qualitative feedback, go back and ask for the specific number. "Improvement" without a number does not give buyers the evidence they need.
+5. Anonymous cases are acceptable. Metrics-free cases are not.
+
+------------------------------------------------------------
+SEO TITLE FORMAT (FOR WEB CASE STUDY PAGE)
+------------------------------------------------------------
+
+Use this title format for the web page H1 and meta title:
+"How [Client Description] [Achieved Specific Result] With [Program Type]"
+Example: "How a 600-Person Manufacturing Team Reduced Onboarding Time by 71%"
+
+Primary keyword to target: "[industry] corporate training case study" or "[program type] training outcomes"
+
+------------------------------------------------------------
+DISTRIBUTION SEQUENCE
+------------------------------------------------------------
+
+Note in the output which derivative content this case study should feed:
+
+Day 0 (publish): Add to website case study library. LinkedIn narrative post (situation/challenge/outcome, 200-250 words, link in first comment).
+Day 2: Extract 3 metrics for LinkedIn carousel.
+Day 5 to 7: Newsletter feature - 150-word summary with 3 key metrics and link.
+Day 14: Add data points to HARO pitch data bank.
+Ongoing: One-page PDF added to sales proposal template. Reference in related blog articles.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Mode A: Full case study in markdown with labeled sections.
+Mode B: One-page PDF structure in plain text, formatted for easy copy into a design tool.
+Both modes: Output saved to output/Case_Study/
+File name: CaseStudy_[Client-Slug]_[Mode].md
+
+------------------------------------------------------------
+GLOBAL RULES
+------------------------------------------------------------
+
+- No em dashes anywhere
+- No passive voice
+- Client is the hero; brand is the enabler
+- At least 3 before-and-after metrics with timeframes (Mode A mandatory)
+- Named client quote with full name and title (or approved anonymous format)
+- No promotional brand language in section body
+- Output saved to output/Case_Study/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. NO METRIC IN THE RESULTS SECTION: "The client saw significant improvement" fails the buyer who needs evidence to justify budget approval to a CFO. If no metric exists, do not publish. Go back and get the number.
+
+2. GENERIC CLIENT DESCRIPTION: "A large enterprise in the financial services sector" tells the reader nothing they can map to their own situation. "A 2,000-person regional bank" gives the reader enough to self-identify. The more specific the client description, the higher the case study's conversion rate.
+
+3. BRAND AS HERO: A case study written about how impressive the brand's methodology is reads as a sales brochure. The client achieved something difficult. The brand helped. Keep the narrative in that order.
+
+4. METRICS BURIED IN PARAGRAPHS: A result like "onboarding time was reduced from 21 days to 6 days within 3 months" has far more impact as a standalone callout than embedded in a paragraph. Format for the skimmer first, the reader second.
+
+5. ASKING FOR CASE STUDY APPROVAL MONTHS AFTER PROGRAM CLOSE: The window to secure client participation is immediately after the program delivers its first measurable results. Six months later, the contact may have changed roles, the data may be unavailable, and the enthusiasm for the story has faded.

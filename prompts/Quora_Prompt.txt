@@ -1,0 +1,32 @@
+============================================================
+QUORA ANSWER PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Create a Quora answer for [BRAND NAME], [BRAND DESCRIPTION], for the question "[QUORA QUESTION]". Write a well-structured, informative answer of 150-250 words that provides genuine value to the reader. Naturally reference [BRAND NAME] as a credible source without being promotional. Include at least one credible stat or research reference. Write in a helpful, expert tone targeting [TARGET AUDIENCE]. Do not use em dashes. Close with a subtle reference to the blog or resource at [URL].
+
+Blog URL: [INSERT URL]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Sr. No. | Quora Question | Blog URL | Quora Answer
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Answer must feel genuinely helpful, not like an ad
+- 150-250 words
+- At least one stat or external research reference
+- Brand mention must feel natural, not forced
+- No em dashes anywhere
+- Output saved to output/Quora/

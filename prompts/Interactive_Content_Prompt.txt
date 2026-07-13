@@ -1,0 +1,50 @@
+============================================================
+INTERACTIVE CONTENT PROMPT
+============================================================
+
+Covers: Quiz / Self-Assessment / Calculator / Poll / Survey
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, select the mode below.
+
+------------------------------------------------------------
+MODE A - QUIZ / SELF-ASSESSMENT
+------------------------------------------------------------
+
+Create a [QUIZ / SELF-ASSESSMENT] for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]". Generate 8-10 questions targeting [TARGET AUDIENCE]. For each question provide: the question text, 3-4 answer options, the correct answer or scoring weight, and a brief explanation of what the answer reveals about the respondent. End with 3 result profiles based on score ranges (e.g. Beginner / Intermediate / Advanced), each with a 2-3 sentence description and a CTA linking to [URL]. Do not use em dashes. Avoid passive voice.
+
+Example use cases: Skills gap assessment / Leadership readiness quiz / L&D maturity assessment
+
+------------------------------------------------------------
+MODE B - CALCULATOR SCRIPT
+------------------------------------------------------------
+
+Create a calculator concept and copy for [BRAND NAME], [BRAND DESCRIPTION], that helps [TARGET AUDIENCE] calculate "[WHAT IT CALCULATES e.g. Training ROI / Cost of Employee Turnover / Skills Gap Score]". Define the input fields (what the user enters), the calculation logic, and the output message shown based on the result. Write the UI copy for all labels, input descriptions, and result messages. Include a CTA on the results screen linking to [URL]. Do not use em dashes. Avoid passive voice.
+
+------------------------------------------------------------
+MODE C - POLL
+------------------------------------------------------------
+
+Create 5 LinkedIn or social media poll ideas for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]" targeting [TARGET AUDIENCE]. For each poll provide: the poll question, 4 answer options, and a 1-line rationale for why this poll will drive engagement. Do not use em dashes. Avoid passive voice.
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Mode A: Q No. | Question | Option A | Option B | Option C | Option D | Correct / Weight | Explanation
+Mode B: Field | Label | Description | Calculation Logic | Result Message
+Mode C: Poll No. | Question | Option A | Option B | Option C | Option D | Rationale
+
+Save to output/Interactive_Content/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Mode A: 8-10 questions, 3 result profiles with CTAs
+- Mode B: Input fields, calculation logic, and result copy all required
+- Mode C: 5 poll ideas, 4 options each
+- No em dashes anywhere
+- No passive voice
+- Output saved to output/Interactive_Content/

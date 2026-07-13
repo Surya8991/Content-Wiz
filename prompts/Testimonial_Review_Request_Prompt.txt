@@ -1,0 +1,35 @@
+============================================================
+TESTIMONIAL / REVIEW REQUEST EMAIL PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Write a testimonial or review request email for [BRAND NAME], [BRAND DESCRIPTION], to be sent to [RECIPIENT TYPE e.g. past training participants / corporate clients / course completers]. The email should thank the recipient for their engagement, briefly reinforce the value they received, and make a warm, low-friction ask for either a written testimonial or a review on [PLATFORM e.g. Google / LinkedIn / Trustpilot / G2]. Include a direct link to the review page at [REVIEW URL]. Keep the tone genuine, appreciative, and conversational. Do not use em dashes. Keep the email under 150 words.
+
+Review Platform URL: [INSERT URL]
+Recipient Type: [e.g. Corporate HR client / Individual course completer]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Sr. No. | Recipient Type | Review Platform | Subject Line | Email Body
+
+Save to output/Testimonial_Request/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Subject line must feel personal, not automated
+- Email under 150 words
+- Ask must feel low-friction (one click to leave a review)
+- Tone: warm, genuine, appreciative
+- No em dashes anywhere
+- Output saved to output/Testimonial_Request/

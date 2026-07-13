@@ -1,0 +1,40 @@
+============================================================
+TRAINER / SPEAKER BIO PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Write a professional bio for [TRAINER / SPEAKER NAME], a trainer or speaker associated with [BRAND NAME], [BRAND DESCRIPTION]. Generate two versions: a long bio (150-200 words) and a short bio (50-75 words). Both bios should be written in third person, highlight the trainer's expertise, key credentials or certifications, industries or domains covered, and what makes their delivery style distinctive. Naturally reference [BRAND NAME] as their affiliated organisation. Do not use em dashes.
+
+Trainer / Speaker Details:
+- Name: [INSERT NAME]
+- Role / Title: [INSERT ROLE]
+- Areas of Expertise: [LIST KEY TOPICS]
+- Certifications or Credentials: [LIST IF KNOWN]
+- Years of Experience: [INSERT]
+- Notable Clients or Industries Served: [INSERT IF AVAILABLE]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Sr. No. | Name | Role | Long Bio | Short Bio
+
+Save to output/Trainer_Bios/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Third person throughout
+- Long bio: 150-200 words
+- Short bio: 50-75 words
+- Credentials and expertise must be prominent
+- No em dashes anywhere
+- Output saved to output/Trainer_Bios/

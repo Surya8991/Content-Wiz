@@ -1,0 +1,40 @@
+============================================================
+IMAGE ALT TEXT GENERATOR PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Generate SEO-optimized alt text for images used in the blog post titled "[BLOG TITLE]" at [URL] for [BRAND NAME]. For each image described below, write alt text that is descriptive, includes a relevant keyword naturally, is under 125 characters, and is screen-reader friendly. Do not use em dashes. Do not start alt text with "Image of" or "Picture of".
+
+Blog URL: [INSERT URL]
+Blog Primary Keyword: [INSERT KEYWORD]
+Images to write alt text for:
+1. [DESCRIBE IMAGE 1 e.g. A bar chart showing employee engagement statistics]
+2. [DESCRIBE IMAGE 2]
+3. [DESCRIBE IMAGE 3]
+(Add as many as needed)
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Sr. No. | Image Description | Alt Text | Character Count
+
+Save to output/Image_Alt_Text/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Alt text under 125 characters per image
+- Include primary or secondary keyword naturally where relevant
+- Do not start with "Image of" or "Picture of"
+- Descriptive enough for screen readers
+- No em dashes anywhere
+- Output saved to output/Image_Alt_Text/

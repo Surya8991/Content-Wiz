@@ -1,0 +1,33 @@
+============================================================
+REDDIT POST PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Write a Reddit post for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]" suitable for the subreddit "[TARGET SUBREDDIT e.g. r/humanresources / r/learnprogramming / r/projectmanagement]". The post should feel like a genuine community contribution, not a brand promotion. Write in a conversational, peer-to-peer tone. Share a real insight, observation, or discussion starter based on [TOPIC]. Include 1-2 relevant stats to add credibility. Do not mention [BRAND NAME] in the body unless it feels completely natural. If a URL is included, present it as a helpful resource, not an advertisement. Do not use em dashes. Target audience is [TARGET AUDIENCE].
+
+Reference URL (if any): [INSERT URL]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Sr. No. | Subreddit | Topic | Post Title | Post Body
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Must read as authentic community contribution, not brand marketing
+- Post title should be a discussion starter or question
+- Post body 100-200 words
+- Brand mention only if completely natural
+- URL positioned as a resource, not a CTA
+- No em dashes anywhere
+- Output saved to output/Reddit/

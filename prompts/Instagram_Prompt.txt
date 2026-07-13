@@ -1,0 +1,32 @@
+============================================================
+INSTAGRAM POST PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Create an Instagram post caption for [BRAND NAME], [BRAND DESCRIPTION], based on the blog post titled "[BLOG TITLE]". Open with a bold, attention-grabbing first line. Follow with 3-4 lines of value-driven insight targeting [TARGET AUDIENCE]. Close with a call to action directing readers to the blog link in bio. Do not use em dashes. Add a line break followed by 8-10 relevant hashtags with the last hashtag always being [BRAND HASHTAG].
+
+Blog URL: [INSERT BLOG URL]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Sr. No. | Blog Title | Blog URL | Instagram Caption
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- First line must be a hook (bold statement, stat, or question)
+- 3-4 insight lines after the hook
+- CTA references "link in bio"
+- 8-10 hashtags after a line break, last one is always the brand hashtag
+- No em dashes anywhere
+- Output saved to output/Instagram/

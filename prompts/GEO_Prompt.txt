@@ -1,0 +1,234 @@
+============================================================
+GEO PROMPT - GENERATIVE ENGINE OPTIMIZATION (AI SEARCH CITATION)
+============================================================
+
+THREE MODES: Optimize Existing Content / Write GEO Block From Scratch / Full Page Audit
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+------------------------------------------------------------
+WHAT GEO IS (AND WHY STRUCTURE MATTERS MORE THAN RANKING)
+------------------------------------------------------------
+
+Generative Engine Optimization (GEO) is the practice of structuring content so that AI retrieval systems - Google AI Overviews, ChatGPT, Perplexity, and Google AI Mode - cite it in their generated answers. Unlike traditional SEO, which optimizes for ranking position, GEO optimizes for being retrieved as a source passage inside an AI-generated response.
+
+As of 2026, 76% of AI Overview citations come from pages ranking in the top 10, but 46.5% of cited URLs rank outside the top 50. Structure and authority can overcome lower organic rankings. A well-structured page with clear chunk-level answers and FAQ schema can earn AI citations even without a first-page ranking.
+
+The core insight: AI engines retrieve chunks, not pages. They break content into passages and retrieve the most relevant chunk for each part of a synthesized answer. Each section of every article must be independently useful, independently readable, and independently citable - without requiring the AI to read surrounding sections for context.
+
+------------------------------------------------------------
+REQUIRED INPUTS (ALL MODES)
+------------------------------------------------------------
+
+Mode: [A = Optimize existing / B = Write from scratch / C = Full page audit]
+Brand: [BRAND NAME OR URL]
+Target Query: [The exact question or search phrase this content should be cited for]
+Platform Priority: [Google AIO / Perplexity / ChatGPT / All three - citation patterns differ by platform]
+Content to Optimize (Mode A): [Paste existing content or provide URL]
+Topic (Mode B): [INSERT topic and target keyword]
+Page URL (Mode C): [URL to audit]
+First-Party Data Available: [Any brand program stats, client outcomes, or original data - leave blank if none]
+
+------------------------------------------------------------
+THE CHUNK-OPTIMIZED SECTION FORMAT (CORE STRUCTURE)
+------------------------------------------------------------
+
+This 4-layer format applies to every H2 and H3 section in GEO-optimized content. Apply it when optimizing (Mode A), when writing from scratch (Mode B), and when auditing (Mode C, to identify sections that do not conform).
+
+LAYER 1: DIRECT ANSWER SENTENCE
+The answer to the implicit question raised by the section heading, in one sentence.
+This sentence must be complete and citable without any surrounding context.
+If an AI engine retrieves only this sentence, the reader still gets a useful answer.
+
+LAYER 2: EXPLANATION (2 to 3 sentences)
+Expand the direct answer. Add the mechanism, the nuance, or the process.
+
+LAYER 3: EVIDENCE (1 item)
+One named statistic with source, organization, and year.
+OR one specific scenario with verifiable outcome details.
+Hierarchy: first-party brand data > named third-party study > named expert quote > specific named scenario.
+Never: "research shows" / "studies suggest" without naming the source.
+
+LAYER 4: APPLICATION (1 sentence)
+What this means practically for the reader - one action, one implication, or one decision criterion.
+
+Example (the full 4-layer structure applied):
+
+Section heading: What is a skills gap analysis?
+
+Layer 1: A skills gap analysis identifies the difference between the competencies employees currently have and the competencies the organization needs to achieve its goals.
+
+Layer 2: It is conducted by comparing role-specific skill requirements against current employee performance data, assessment results, or manager evaluations. The output is a prioritized list of development needs by role, team, or function.
+
+Layer 3: According to the World Economic Forum's 2025 Future of Jobs Report, 44% of core job skills will be disrupted within 5 years, making skills gap analysis a recurring strategic requirement rather than a one-time exercise.
+
+Layer 4: Organizations that conduct skills gap analyses annually spend 23% less on reactive hiring and 19% more efficiently on training budgets, according to 2026 Edstellar program data.
+
+------------------------------------------------------------
+FAQ SECTION RULES (MANDATORY FOR ALL GEO-OPTIMIZED CONTENT)
+------------------------------------------------------------
+
+Q&A format content is 2.8x more likely to be cited by AI search systems than standard prose sections (as of 2026 citation analysis). Add a dedicated FAQ section to every piece of content optimized or written under this prompt.
+
+MINIMUM: 5 questions per FAQ section.
+MAXIMUM: 8 questions (beyond this, the page dilutes topical focus).
+
+Question format rules:
+- Use the exact phrasing a person would type into Google or a chatbot: "How long does a skills gap analysis take?" not "Skills gap analysis duration"
+- Each question is written as an H3 tag (for FAQ schema eligibility)
+- Never rephrase the section headings as FAQ questions - ask new, distinct questions
+
+Answer format rules:
+- 40 to 80 words per answer
+- Complete without reading the rest of the article
+- Answer the question in the first sentence (Layer 1 of the chunk format applies here too)
+- Include one piece of evidence per answer if available
+
+FAQ questions to generate: Use Google's "People Also Ask" boxes for the target keyword, Perplexity auto-suggest, and any Reddit or Quora threads where the target audience asks questions. These are the exact phrasings AI engines retrieve for.
+
+------------------------------------------------------------
+STRUCTURED DATA REQUIREMENTS
+------------------------------------------------------------
+
+Note in the output which schema types should be implemented on this page:
+
+| Schema Type | When to Apply |
+|-------------|---------------|
+| Article | All blog posts and pillar pages |
+| FAQPage | All pages with an FAQ section - this is the highest-priority schema for AI citation |
+| HowTo | All step-by-step how-to articles |
+| BreadcrumbList | All content pages |
+| Organization | Homepage and About page |
+| Person | All author profile pages |
+| Course | All course and certification pages |
+| Review | Case study pages with client quotes |
+
+For Mode B (writing from scratch) and Mode A (optimizing): note at the end of the output which schema types apply and what fields each schema should include for this specific page.
+
+------------------------------------------------------------
+PLATFORM-SPECIFIC CITATION OPTIMIZATION
+------------------------------------------------------------
+
+Apply different emphasis based on which platform is the priority target:
+
+GOOGLE AI OVERVIEWS / AI MODE:
+- Prioritize FAQ schema and HowTo schema (highest citation lift)
+- Update content within the last 90 days for time-sensitive queries - add "Last updated: [date]" stamp
+- Direct answer must appear in the first 40 to 60 words of the section
+- Google AI Mode and AI Overviews cite the same URLs only 13.7% of the time - optimize for both with FAQ and structured content
+
+PERPLEXITY:
+- Perplexity favors longer, more comprehensive content
+- Prioritize clear author credentials and EEAT signals (author bio with named title and organization)
+- Citations from YouTube and Wikipedia increase indirect Perplexity citation probability - note if the topic has a YouTube video or Wikipedia entry to link
+- Each section should be more detailed than what Google AIO requires
+
+CHATGPT / BING AI:
+- Reddit, Wikipedia, and Forbes are top cited domains for ChatGPT - HARO pickups in business publications and digital PR placements directly improve ChatGPT citation probability
+- "Definitive guide" style content matches ChatGPT's retrieval patterns better than short FAQ-style pages
+- Named statistics from recognizable organizations (McKinsey, WEF, Deloitte, Gallup) increase retrieval probability in this platform
+
+ALL THREE:
+- Apply the 4-layer chunk format to every section
+- Include FAQPage schema
+- Name all authors with credentials
+- Add the "Last updated" timestamp
+- Ensure every stat is sourced with organization and year
+
+------------------------------------------------------------
+CITATION FRESHNESS RULE
+------------------------------------------------------------
+
+Approximately 50% of content cited in AI search responses is less than 13 weeks old. AI systems prioritize recently updated, recently cited, and recently active content. A well-structured article published two years ago and never updated will be deprioritized in favor of newer alternatives.
+
+Freshness actions to include in the output:
+1. Add a visible "Last updated: [date]" line at the top or bottom of the page
+2. Note which sections should be reviewed and updated quarterly
+3. Identify which statistics have a year older than 2024 - flag for replacement with more recent data
+4. Recommend whether this page qualifies as high-priority (quarterly updates) or medium-priority (6-month updates)
+
+------------------------------------------------------------
+MODE A: OPTIMIZE EXISTING CONTENT
+------------------------------------------------------------
+
+Apply the following in sequence to the pasted content or URL:
+
+STEP 1: Rewrite the opening paragraph so the direct answer to the target query appears in the first 40 words.
+STEP 2: Restructure each section to follow the 4-layer chunk format (direct answer, explanation, evidence, application).
+STEP 3: Add or rewrite definition blocks for each major concept (format: "[Concept]: [one-sentence definition that stands alone]").
+STEP 4: Add or rewrite the FAQ section (minimum 5 questions in search-phrasing format, 40-80 word answers).
+STEP 5: Add author attribution block if missing (name, title, credential for this topic, brand URL).
+STEP 6: Note all stats that lack source attribution and either add the source or flag for replacement.
+STEP 7: Add "Last updated: [date]" line.
+STEP 8: Output schema type recommendations.
+
+Output: Side-by-side original vs optimized version for the introduction and first 3 sections. Full optimized version below.
+
+------------------------------------------------------------
+MODE B: WRITE GEO CONTENT BLOCK FROM SCRATCH
+------------------------------------------------------------
+
+Write a GEO-optimized content block on the target topic.
+Target length: 400 to 700 words for a standalone block; full pillar or spoke page length if a full article is requested.
+Structure: Introduction (40 words with direct answer) + 3 to 5 sections in 4-layer chunk format + FAQ section (5 questions) + author attribution.
+Apply platform-specific optimization based on the priority target provided.
+
+------------------------------------------------------------
+MODE C: FULL PAGE GEO AUDIT
+------------------------------------------------------------
+
+Audit the provided URL against all GEO criteria. Output a scored checklist:
+
+GEO AUDIT CHECKLIST:
+
+[ ] Direct answer appears in the first 40 words of the introduction
+[ ] Every H2/H3 section opens with a direct answer sentence (Layer 1)
+[ ] Every section includes at least one piece of evidence (Layer 3)
+[ ] FAQ section present with minimum 5 questions in search-phrasing format
+[ ] FAQ answers are 40 to 80 words and standalone
+[ ] Every stat is attributed to a named source with year
+[ ] Author attribution block present with name, title, and credential
+[ ] "Last updated" timestamp present
+[ ] Definition blocks present for all major concepts
+[ ] FAQPage schema implemented (or noted as missing)
+[ ] No paragraphs longer than 4 sentences
+[ ] Page qualifies for: Article / HowTo / FAQPage / Course schema (check all that apply)
+
+Score: X of 12 criteria met. Flag all failed criteria for remediation.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Mode A: Original vs optimized comparison + full optimized version
+Mode B: Full GEO-optimized content block in markdown
+Mode C: Scored audit checklist with specific remediation notes per failed item
+
+Save to: output/GEO/
+File name: GEO_[Mode]_[Short-Slug].md
+
+------------------------------------------------------------
+GLOBAL RULES
+------------------------------------------------------------
+
+- No em dashes anywhere
+- No passive voice
+- Direct answer in first 40 words of every section
+- All stats named with source, organization, and year
+- FAQ section mandatory on all optimized or new content
+- Author attribution block mandatory
+- Output saved to output/GEO/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. OPTIMIZING FOR TRADITIONAL SEO ONLY: A page that ranks in the top 3 but has no chunk-level structure, no FAQ schema, and no explicit direct answers will not be cited by AI engines. AI citation requires deliberate structural optimization beyond keyword placement.
+
+2. FAQ SECTION AS SUMMARY: FAQ answers that restate what the sections above already said do not earn AI citations. Each FAQ answer must be independently useful and completable without reading the article.
+
+3. MISSING AUTHOR CREDENTIALS: Pages without a named author, a named title, and a relevant credential have a weaker EEAT profile. Perplexity and Google both prioritize sourced, credentialed content. The author block is a citation signal, not a formality.
+
+4. STALE CONTENT WITHOUT A FRESHNESS SIGNAL: Publishing great GEO content and never updating it means it loses citation priority within 13 weeks as fresher content appears. Add the "Last updated" timestamp and schedule quarterly reviews for high-priority pages.
+
+5. VAGUE STATISTICS: "Research shows that training improves retention" is not citable. "A 2025 ATD Industry Report found that organizations with formal skills development programs see 218% higher income per employee than those without" is citable. Every stat needs: who found it, when, and the specific number.

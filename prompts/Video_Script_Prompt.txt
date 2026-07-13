@@ -1,0 +1,264 @@
+============================================================
+VIDEO SCRIPT PROMPT (YOUTUBE RETENTION STRUCTURE)
+============================================================
+
+THREE CONTENT TYPES: Short (60-90 sec) / How-to or Framework (8-15 min) / Case Study or Results (10-20 min)
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, select the content type and provide all required inputs.
+
+------------------------------------------------------------
+ALGORITHM RULE: RETENTION OVER VIEWS
+------------------------------------------------------------
+
+YouTube does not promote the most-viewed videos. It promotes the videos people actually watch through to the end. A video with 70% average view duration on 500 views earns more algorithmic recommendation than a video with 10% view duration on 10,000 views. Every structural decision in the script - the hook, the pacing, the proof placement, the CTA - is made to maximize retention, not to sound polished.
+
+The 30-second threshold is critical: if a viewer is not committed to watching by the 0:30 mark, they leave. The algorithm tracks this departure and suppresses the video. The hook section must earn the watch before the 0:30 mark.
+
+------------------------------------------------------------
+REQUIRED INPUTS
+------------------------------------------------------------
+
+Content Type: [Short / How-to Framework / Case Study]
+Brand: [BRAND NAME OR URL]
+Topic: [INSERT]
+Primary Keyword: [exact phrase this video is optimized for - appears in title and description]
+Target Audience Role: [e.g., L&D Manager, HR Director, Training Coordinator]
+Primary Takeaway: [the one specific claim, framework, or insight the viewer should remember - state it as a single sentence]
+Key Data Points: [2 to 5 specific statistics or case examples to cite during the video - include source and year for each]
+CTA Destination: [URL, resource name, or action the viewer should take]
+Duration Target: [Short: 60-90 sec / How-to: 8-15 min / Case Study: 10-20 min]
+
+------------------------------------------------------------
+TYPE 1: SHORT (60 to 90 seconds)
+------------------------------------------------------------
+
+Use when: Driving subscriber growth and discovery on YouTube Shorts or LinkedIn video.
+Purpose: Deliver one complete idea. Not a teaser for a longer video. The viewer gets full value from the Short alone.
+Cadence: 3 to 5 per week.
+Cross-post directly to LinkedIn without modification (LinkedIn video earns 1.45x reach multiplier vs text posts).
+
+Spoken word count: 60 sec = 130-150 words, 90 sec = 195-225 words.
+
+STRUCTURE:
+
+[0-3 sec] HOOK:
+Open with the single most surprising, counterintuitive, or specific claim in the entire Short.
+Do not introduce yourself. Do not say "in this video." State the finding immediately.
+Example: "3 out of 4 employees in our training assessments showed skill gaps in one specific area - and it wasn't technical skills."
+[VISUAL: Speaker on camera, bold on-screen text restating the hook in 5 words or fewer]
+
+[3-30 sec] CONTEXT + TENSION:
+Name who has this problem and what the cost is.
+Do not explain the background of the topic. Get to the implication immediately.
+[VISUAL: On-screen text or B-roll supporting the problem statement]
+
+[30-75 sec] THE ONE IDEA:
+Deliver the single actionable insight, named framework, or counterintuitive finding.
+Name it if it has a name. "The Completion-to-Behavior Gap" is more memorable than "the problem with measuring training."
+If using data: state the source and year on screen.
+[VISUAL: On-screen text displaying the named idea or key statistic]
+
+[75-90 sec] CTA:
+One ask. For Shorts: subscribe and watch the related long-form video.
+Never ask for three things at once.
+[VISUAL: End card with channel name or next video preview]
+
+Short-specific rule for Edstellar and Invensis Learning: Shorts should lead with a single data point or counterintuitive finding from the brand's own programs. "3 out of 4 employees in our assessments showed skill gaps in this one area" is a stronger hook than a generic productivity tip.
+
+------------------------------------------------------------
+TYPE 2: HOW-TO OR FRAMEWORK VIDEO (8 to 15 minutes)
+------------------------------------------------------------
+
+Use when: Serving buyers in the consideration stage who are researching solutions and evaluating expertise.
+Purpose: Demonstrate deep expertise and build the trust required before a purchase decision.
+Cadence: 1 per week.
+
+Spoken word count: 8 min = 1,040-1,200 words, 12 min = 1,560-1,800 words, 15 min = 1,950-2,250 words.
+
+STRUCTURE:
+
+[0:00-0:30] HOOK (mandatory - 30-second retention checkpoint):
+State the specific outcome the viewer gets by watching this video.
+Not: "In this video we'll talk about..."
+Yes: "By the end of this video, you'll have a 3-step framework for identifying which employees to prioritize for skills training - and a single metric that predicts whether your next training budget request will be approved."
+[VISUAL: Speaker directly to camera, bold on-screen title card with the promised outcome]
+[TEXT: "[Promised outcome] - [Video title]"]
+
+This 30-second window is the single most important part of the script. If the viewer is not committed to watching by 0:30, YouTube's algorithm treats this as an exit signal and reduces distribution.
+
+[0:30-1:30] CONTEXT (60 to 90 seconds):
+Name who this is for and why the problem matters now.
+One specific scenario that makes the viewer say "that's me."
+Keep brief. Viewers who came for the framework do not want two minutes of backstory.
+[VISUAL: B-roll or scenario graphic]
+
+[1:30-10:00+] MAIN CONTENT (6 to 12 minutes):
+The framework, process, or how-to broken into 3 to 5 named steps or sections.
+For each step:
+  - Announce the step before delivering it: "Step 2 is the diagnostic - here is how it works."
+  - Name the step
+  - Explain it in 1 sentence
+  - Give a specific example or illustration
+  - Show a visual aid on screen (diagram, slide, or B-roll)
+[VISUAL: Section title cards for each step; numbered on-screen progression indicator]
+[TEXT: "Step [N]: [Step Name]"]
+
+PRIMARY TAKEAWAY RULE: State the primary takeaway (the one named framework or claim the viewer should remember) within the first 10 minutes. Return to it at least twice more using different language or a different example. Named concepts that are stated three times in three ways are the ones viewers quote and share.
+
+[Proof placement - within 10-minute mark]:
+One specific example of the framework working in practice.
+Brand client outcome, named scenario, or documented result.
+[VISUAL: Case example graphic or client outcome callout]
+
+[Final 30-60 sec] CTA:
+One call to action.
+For educational videos: subscribe and link to the next related video.
+For decision-stage videos: resource download, assessment, or consultation link.
+Never ask for three different things.
+[VISUAL: End screen with related video and subscribe prompt]
+
+------------------------------------------------------------
+TYPE 3: CASE STUDY OR RESULTS VIDEO (10 to 20 minutes)
+------------------------------------------------------------
+
+Use when: Targeting buyers at the decision stage who need proof of outcomes before committing.
+Purpose: The YouTube equivalent of a sales call - demonstrating real results for real clients.
+Cadence: 2 per month.
+
+STRUCTURE:
+
+[0:00-0:30] HOOK:
+State the specific outcome the case study will demonstrate - in numbers.
+Example: "A 450-person manufacturing company reduced onboarding from 21 days to 6 using a process I'm going to walk through today."
+[VISUAL: On-screen text with the key metric - large, bold, high contrast]
+
+[0:30-2:00] CLIENT CONTEXT:
+Describe the client's situation without naming them (unless they gave permission).
+Industry, company size, the role of the person who initiated the project, and the business goal.
+[VISUAL: Industry graphic or anonymized company profile card]
+
+[2:00-5:00] THE CHALLENGE:
+Name the specific problem. Use the same before numbers that will pay off in the results section.
+"Completion rates had fallen to 43%. Budget approval for the following year was at risk."
+[VISUAL: Problem stat displayed on screen before the solution is introduced]
+
+[5:00-13:00] THE APPROACH:
+Walk through the methodology step by step. Name each stage of the process.
+This is not a feature demo. Show how the work was done, not what the software does.
+[VISUAL: Process diagram; timeline if relevant]
+
+[13:00-16:00] THE RESULTS:
+Before and after metrics with timeframes. Display each metric on screen individually.
+At least 3 metrics. Each with a before value, an after value, and a timeframe.
+[VISUAL: Metric callout cards - one per metric, on screen for 5+ seconds each]
+
+[16:00-18:00] THE LESSON:
+Extract the transferable principle. What can viewers apply from this case study to their own situation?
+[VISUAL: Named principle or framework card]
+
+[18:00-end] CTA:
+One ask. For case study videos: link to a full case study page or a consultation booking.
+[VISUAL: End screen with link and subscribe]
+
+------------------------------------------------------------
+THUMBNAIL GUIDANCE (INCLUDE WITH EVERY SCRIPT)
+------------------------------------------------------------
+
+After the script, output thumbnail creative direction:
+
+THUMBNAIL ELEMENTS (required for 6%+ CTR in B2B educational content):
+- Element 1: Human face (if applicable) with relevant expression - confidence for "how-to," concern or surprise for "problem" topics
+- Element 2: Bold text, 3 to 5 words maximum, largest readable font
+- Element 3: High contrast colors - text readable on both dark and light mobile backgrounds
+- Element 4: A visual tension element - a before-and-after, a chart with a surprising result, or a diagram with a gap
+
+What to avoid: generic stock photography, company logo as the dominant image, text that restates the title verbatim.
+
+Output format for thumbnail direction:
+THUMBNAIL COPY (3-5 words): [suggested text]
+THUMBNAIL VISUAL: [description of the visual element]
+CONTRAST COLORS: [background / text color combination]
+
+------------------------------------------------------------
+TITLE OPTIONS (GENERATE 3 PER SCRIPT)
+------------------------------------------------------------
+
+After the thumbnail direction, generate 3 title options:
+
+OPTION 1 - SEARCH-INTENT (keyword first, under 60 characters):
+Format: "[Keyword]: [how to or what to do]"
+
+OPTION 2 - ALGORITHM-DISCOVERY (outcome or problem first):
+Format: "Why [Problem] (And How to Fix It)" or "What [Audience] Get Wrong About [Topic]"
+
+OPTION 3 - HYBRID (keyword + curiosity trigger):
+Format: "[Keyword]: The [Adjective] [Noun] [Audience] [Verb]"
+
+------------------------------------------------------------
+VISUAL DIRECTION NOTATION
+------------------------------------------------------------
+
+Throughout the script, mark directions using brackets:
+
+[VISUAL: description of what appears on screen]
+[TEXT: exact on-screen text - use this sparingly, only for key claims and stats]
+[B-ROLL: description of supporting footage]
+[GRAPHIC: description of diagram, chart, or illustrated concept]
+[PAUSE: 2-second beat before proceeding - used for emphasis after a key claim]
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Full formatted script with:
+- Time-coded sections
+- Spoken dialogue (clean, no stage directions in the spoken text)
+- Visual direction notes in brackets throughout
+- Thumbnail creative direction (after script)
+- 3 title options (after thumbnail)
+- Spoken word count and estimated duration
+
+Save to: output/Video_Scripts/
+File name: VideoScript_[Type]_[Short-Slug].txt
+
+------------------------------------------------------------
+GLOBAL RULES
+------------------------------------------------------------
+
+- No em dashes anywhere
+- No passive voice
+- No "in this video we will..." openings
+- Hook must state the outcome or the finding before the 0:30 mark
+- Primary takeaway named within first 10 minutes (for Types 2 and 3)
+- CTA is one ask, not multiple
+- Every stat names source and year
+- Output saved to output/Video_Scripts/
+
+------------------------------------------------------------
+SPOKEN WORD COUNT REFERENCE
+------------------------------------------------------------
+
+60 sec = 130-150 words
+90 sec = 195-225 words
+5 min = 650-750 words
+8 min = 1,040-1,200 words
+10 min = 1,300-1,500 words
+12 min = 1,560-1,800 words
+15 min = 1,950-2,250 words
+20 min = 2,600-3,000 words
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. GENERIC OPENING: "Hey everyone, welcome back to the channel, today we're going to be talking about..." burns 20 to 30 seconds before any value is delivered. Start with the value, the claim, or the result. Immediately.
+
+2. WEAK 30-SECOND HOOK: The hook section is not an introduction. It is a contract with the viewer - here is exactly what you will get by watching this. Be specific about the outcome, the framework, or the number. Vague promises produce early exits.
+
+3. PRIMARY TAKEAWAY DELIVERED TOO LATE: Saving the best insight for the end means most viewers never get it. The algorithm tracks the point at which viewers stop watching. State the primary takeaway within the first 10 minutes and return to it twice more.
+
+4. NO PROOF BEFORE MINUTE 10: A video that discusses a framework for 8 minutes without a single real-world example loses the trust of the decision-stage buyer. Drop one specific client outcome or named scenario before the 10-minute mark.
+
+5. THREE ASKS IN THE CTA: "Like, subscribe, comment, and visit our website to download the guide" ensures none of those actions happen. One ask per video, matched to the viewer's stage.

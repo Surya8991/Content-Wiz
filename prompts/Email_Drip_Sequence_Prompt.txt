@@ -1,0 +1,46 @@
+============================================================
+EMAIL DRIP SEQUENCE PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Create a [NUMBER e.g. 5]-email drip sequence for [BRAND NAME], [BRAND DESCRIPTION], for the campaign "[CAMPAIGN GOAL e.g. Nurturing leads who downloaded a guide / Onboarding new users / Post-webinar follow-up]". For each email provide: the send timing (e.g. Day 0, Day 2, Day 5), a subject line, preview text, and email body. Each email should build on the previous one with a clear narrative arc: introduce value, educate, build trust, handle objections, and close with a CTA. Write in a conversational B2B tone targeting [TARGET AUDIENCE]. Do not use em dashes.
+
+Landing Page / Resource URL: [INSERT URL]
+Lead Magnet or Trigger (if any): [e.g. Downloaded the L&D Guide / Attended Webinar]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Email No. | Send Timing | Subject Line | Preview Text | Email Body
+
+Save to output/Email_Drip/
+
+------------------------------------------------------------
+SEQUENCE STRUCTURE (DEFAULT 5-EMAIL ARC)
+------------------------------------------------------------
+
+Email 1 (Day 0)   - Welcome and deliver immediate value
+Email 2 (Day 2)   - Educate with a key insight or resource
+Email 3 (Day 5)   - Social proof or case study
+Email 4 (Day 8)   - Handle a common objection
+Email 5 (Day 12)  - Final CTA with urgency or clear next step
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Subject line under 60 characters
+- Preview text under 100 characters
+- Each email body 100-150 words
+- Each email has one clear CTA
+- Narrative arc must flow logically across all emails
+- No em dashes anywhere
+- Output saved to output/Email_Drip/

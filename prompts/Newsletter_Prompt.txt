@@ -1,0 +1,210 @@
+============================================================
+NEWSLETTER / EMAIL PROMPT
+============================================================
+
+TWO MODES AVAILABLE: Weekly Value Newsletter / Nurture Sequence Email
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, select the mode below.
+
+------------------------------------------------------------
+CORE RULES (APPLY TO BOTH MODES)
+------------------------------------------------------------
+
+SENDER NAME RULE:
+Send from a person's name, not the brand name. "[Name] from Edstellar" or just "[First Name]" outperforms "Edstellar Newsletter" in open rates across B2B lists. Never send from a no-reply address.
+
+4:1 VALUE RATIO:
+For every 4 emails that deliver pure insight or utility, one email may make a direct commercial ask (demo, trial, consultation). Violating this ratio accelerates unsubscribes and trains the audience to ignore CTAs.
+
+SUBJECT LINE CONSTRAINTS:
+- Maximum 33 characters (this is the visible limit on most mobile email clients)
+- Never use the word "newsletter" in the subject line
+- Never use: "Check out our...", "We're excited to share...", "Don't miss..."
+- A/B test subject lines on every send for lists over 500 contacts
+
+PREVIEW TEXT:
+- 40 to 70 characters
+- Must add new information not already in the subject line
+- Functions as the second hook, not a restatement of the subject
+
+------------------------------------------------------------
+MODE A: WEEKLY VALUE NEWSLETTER (8-BLOCK STRUCTURE)
+------------------------------------------------------------
+
+Use when: Publishing a recurring weekly or bi-weekly email to the full subscriber list.
+Optimal send time: Tuesday or Wednesday, 8am to 10am recipient local time.
+
+Required inputs:
+- Topic or article this email features
+- Reference URL
+- One key insight or data point to anchor the main body
+- CTA destination URL
+- Sender first name
+
+Generate each of the 8 blocks below in order.
+
+BLOCK 1: SUBJECT LINE (under 33 characters)
+Write 3 options using different patterns. User selects one.
+
+Subject line patterns:
+
+PATTERN 1 - STAT-LED: "[Specific number or percentage] - [what it means in 3 words]"
+Example: "43% complete. 8% apply."
+
+PATTERN 2 - NAMED MISTAKE: "The [adjective] [training/L&D/HR] mistake"
+Example: "The expensive onboarding mistake"
+
+PATTERN 3 - CURIOSITY QUESTION (under 33 chars): "[Short question that implies a counterintuitive answer]"
+Example: "Is more training costing you?"
+
+PATTERN 4 - SPECIFIC RESULT: "[Outcome] in [timeframe]"
+Example: "21 days to 6. Here's how."
+
+PATTERN 5 - NAMED FRAMEWORK: "The [framework name]"
+Example: "The Behavior Gap framework"
+
+PATTERN 6 - DIRECT UTILITY: "[Number] ways to [outcome]"
+Example: "3 ways to prove training ROI"
+
+BLOCK 2: PREVIEW TEXT (40 to 70 characters)
+Complement the chosen subject line with new information.
+Do not repeat the subject line. Add a detail, a name, or a provocative qualifier.
+
+BLOCK 3: OPENING HOOK (1 to 2 sentences, 20 to 40 words)
+Start with the specific tension, finding, or scenario this email is built around.
+Not: "Hope you're having a great week" or "Happy [day of week]"
+Yes: A specific problem, a surprising number, or a named moment.
+This line decides whether the reader continues or archives. It must reward the click from the subject line.
+
+BLOCK 4: MAIN INSIGHT (150 to 250 words)
+One named idea, framework, or counterintuitive finding.
+Apply the same Shiny Dime principle used in Medium articles: one focused claim, developed with evidence.
+Include one named statistic (source + year).
+Use short paragraphs (2 to 3 sentences each). White space is engagement.
+Do not summarize the linked article - give enough value that reading this email alone is worth the open, then give the reader a reason to go deeper.
+
+BLOCK 5: PROOF / SOCIAL VALIDATION (100 to 150 words)
+Back the main insight with one piece of evidence:
+TIER 1: First-party brand data from client programs
+TIER 2: Named third-party study with year
+TIER 3: Specific named client scenario with outcome metrics
+
+BLOCK 6: APPLICATION (50 to 100 words)
+Tell the reader what to do with the insight right now.
+One actionable step, framed as: "This week, try..." or "The next time [trigger situation], do [specific action]."
+Low friction. Executable without buying anything.
+
+BLOCK 7: SINGLE CTA (1 sentence + 1 URL)
+One call to action. Never two.
+Use natural language, not imperative command: "The full breakdown is here: [URL]" outperforms "CLICK HERE TO READ MORE."
+Link text should describe what is at the destination, not just say "read more."
+For value emails: CTA goes to a blog post, case study, or resource.
+For conversion emails (1 in 5): CTA goes to a demo booking, consultation, or assessment page.
+
+BLOCK 8: HUMAN SIGN-OFF (2 to 3 lines)
+Sender first name (not brand name)
+Title and company name on a second line
+Optional: one personal, brand-relevant closing observation (1 sentence) - something the sender noticed, read, or is thinking about. This is what separates a newsletter from a broadcast.
+
+------------------------------------------------------------
+MODE B: NURTURE SEQUENCE (5-EMAIL ONBOARDING FLOW)
+------------------------------------------------------------
+
+Use when: Setting up an automated nurture sequence for new subscribers, trial users, or event registrants.
+Delivery schedule: Email 1 immediately, Email 2 on Day 2, Email 3 on Day 5, Email 4 on Day 9, Email 5 on Day 14.
+
+Required inputs:
+- Entry point (what triggered the subscription: resource download, event sign-up, demo request, etc.)
+- Brand
+- Primary goal of the sequence (trial conversion, consultation booking, or content engagement)
+- List of 3 to 5 brand resources, case studies, or articles to feature across the sequence
+
+Generate all 5 emails. Each email uses Mode A's 8-block structure. The sequence follows this arc:
+
+EMAIL 1 (Immediate) - WELCOME + MOST VALUABLE RESOURCE
+Goal: Deliver the resource they signed up for, plus one additional insight they did not expect.
+Subject pattern: "Your [resource name] + one thing we didn't include"
+
+EMAIL 2 (Day 2) - THE PROBLEM REFRAMED
+Goal: Name the core problem the brand solves, from the subscriber's perspective.
+Subject pattern: "The [specific problem] most [audience] don't name"
+
+EMAIL 3 (Day 5) - PROOF (CASE STUDY OR DATA)
+Goal: Show a specific result achieved by a client similar to the subscriber.
+Subject pattern: "[Outcome] in [timeframe]: [client type]"
+
+EMAIL 4 (Day 9) - THE FRAMEWORK
+Goal: Deliver the brand's primary methodology or framework as a standalone piece of value.
+Subject pattern: "The [Framework Name]"
+
+EMAIL 5 (Day 14) - SOFT CTA
+Goal: Invite a low-friction next step (consultation, assessment, demo).
+Subject pattern: "One question before [threshold, e.g., the quarter ends / your next program]"
+
+------------------------------------------------------------
+SEGMENTATION GUIDANCE
+------------------------------------------------------------
+
+The same newsletter should not go to all subscribers with identical content. Segment by entry point:
+
+SEGMENT: Downloaded a skills assessment resource
+Insight emphasis: operational frameworks, measurement, ROI language
+CTA type: assessment tool or consultation
+
+SEGMENT: Attended a webinar
+Insight emphasis: depth on the webinar topic, Q&A follow-up content
+CTA type: related case study or next event
+
+SEGMENT: Cold list / purchased contact
+Insight emphasis: awareness-stage content, problem naming, no hard sells
+CTA type: free resource, not a demo
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single newsletter (Mode A):
+Output all 8 blocks labeled, with 3 subject line options and a recommended choice.
+Format: plain text suitable for pasting into any email platform (Mailchimp, HubSpot, Klaviyo, ConvertKit).
+No HTML required unless user requests it.
+
+For nurture sequence (Mode B):
+Output all 5 emails in sequence, each with labeled blocks.
+
+For bulk/CSV output:
+Sr. No. | Mode | Topic | URL | Subject Line | Preview Text | Email Body
+
+Save to: output/Newsletter/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- Subject line: 33 characters maximum
+- Never use "newsletter" in subject line
+- Preview text: 40 to 70 characters, adds new information
+- 4:1 value-to-conversion ratio across the send schedule
+- No em dashes anywhere
+- No passive voice
+- One CTA per email
+- All stats named with source and year
+- Sender name is a person, not the brand
+- Output saved to output/Newsletter/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. SUBJECT LINE OVER 33 CHARACTERS: Most mobile clients truncate at 33 characters. A subject line that reads well at 50 characters is invisible to 60% of the audience.
+
+2. "NEWSLETTER" IN THE SUBJECT LINE: The word "newsletter" trains subscribers to treat the email as a publication to read later rather than a message to open now. It suppresses open rates across all B2B audiences.
+
+3. SUMMARIZING THE ARTICLE IN THE EMAIL: An email that fully summarizes the linked article removes the reason to click through. The email should deliver one specific insight and leave the reader wanting the full context, which lives at the destination URL.
+
+4. TWO OR MORE CTAS: Every additional call to action after the first reduces the probability that the primary action gets taken. One email, one goal.
+
+5. SENDING FROM THE BRAND NAME: Emails from "Edstellar" are perceived as broadcasts. Emails from "Ravi at Edstellar" are perceived as correspondence. The sender name is the highest-leverage open rate variable available.
+
+6. MISSING PROOF IN THE MAIN INSIGHT: A newsletter insight without a named data point is an opinion. B2B audiences are skeptical of unsubstantiated claims. Every insight needs one named stat or one specific client example to earn credibility.

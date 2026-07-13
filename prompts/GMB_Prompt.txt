@@ -1,0 +1,32 @@
+============================================================
+GMB POST PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Create a Google My Business post for [BRAND NAME], [BRAND DESCRIPTION], for the blog post titled "[BLOG TITLE]". Write a 50-word summarized description in B2B language targeting [TARGET AUDIENCE]. Do not use em dashes. End the post with: Don't miss out on this essential read! Click on learn more.
+
+Blog URL: [INSERT BLOG URL]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Sr. No. | Blog Title | Blog URL | GMB Post Content
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Description is approximately 50 words
+- B2B language only, no consumer-facing tone
+- No em dashes anywhere
+- CTA line is: Don't miss out on this essential read! Click on learn more.
+- CTA is the final line and is not counted in the 50-word description
+- Output saved to output/GMB/

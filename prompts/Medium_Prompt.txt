@@ -1,0 +1,180 @@
+============================================================
+MEDIUM ARTICLE PROMPT (2-STEP PROCESS)
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use Step 1 first, then Step 2.
+
+OUTPUT FORMAT RULE: The final article (Step 2) must be saved as an HTML file, not markdown.
+File naming: Article_[Number]_[Slug].html
+Save to: output/Medium/
+After saving, open the file in a browser, press Ctrl+A to select all, copy, and paste directly into Medium's editor. This preserves title formatting, subheadings, and links.
+
+------------------------------------------------------------
+STEP 1: GENERATE HEADLINE OPTIONS
+------------------------------------------------------------
+
+Generate 5 Medium article headline options for [BRAND NAME] on the topic "[TOPIC]".
+
+The headline is the most important sentence in the article. Spend time here. A great article with a weak headline earns no readers. A strong headline with a mediocre article still earns clicks.
+
+HEADLINE RULES:
+- Each headline must make a specific, testable claim or pose a question with a surprising implied answer
+- Avoid generic structure: "The Ultimate Guide to X" / "Everything You Need to Know About X"
+- Titles should feel editorial (written by a journalist) not corporate (written by a marketing team)
+- No em dashes in any headline
+- Do not use "we" or "our" in any headline
+- Each option should use a different headline pattern (see below)
+
+HEADLINE PATTERNS (use one per option):
+
+PATTERN 1 - COUNTERINTUITIVE CLAIM: "[Widely held belief] Is Wrong. Here Is What Actually [Drives / Works / Matters]."
+PATTERN 2 - SPECIFIC NUMBER + NAMED AUDIENCE: "[Number] Things [Named Role] Get Wrong About [Topic]"
+PATTERN 3 - THE UNCOMFORTABLE TRUTH: "Why [Common Practice] Is Making [Bad Outcome] Worse"
+PATTERN 4 - NAMED FRAMEWORK REVEAL: "The [Named Framework]: How [Outcome] Actually Works in [Context]"
+PATTERN 5 - QUESTION WITH HIGH STAKES: "What Happens to [Audience] When [Specific Condition]? The Answer Changes How [Domain] Works."
+
+After reviewing the 5 options, the user selects one and proceeds to Step 2.
+
+------------------------------------------------------------
+STEP 2: WRITE THE FULL ARTICLE
+------------------------------------------------------------
+
+Write a full Medium article for [BRAND NAME] titled "[SELECTED TITLE FROM STEP 1]".
+
+Inputs required:
+- Selected headline from Step 1
+- Topic or reference URL
+- Word count target (default: 900 to 1,400 words)
+- Expert name and title to byline the article (or "brand voice" if no named author)
+- Any first-party data or client examples to include
+
+SHINY DIME PRINCIPLE:
+Every article must have one central idea - specific, arguable, and fully developed. Not three loosely connected ideas. Not a broad survey of a topic. One focused claim, developed rigorously from opening to close.
+
+Before writing, identify the Shiny Dime: what is the single most interesting, specific, counterintuitive, or useful claim in this piece? Every section must advance, prove, or apply that claim.
+
+RATE OF REVELATION:
+The reader must receive a new insight or piece of useful information at least every 100 words. Sections that explain context, add background, or repeat earlier ideas slow the Rate of Revelation and cause readers to abandon the article. Every paragraph must either introduce new information, deepen the current claim, or give the reader something they can act on.
+
+------------------------------------------------------------
+6-SECTION ARTICLE STRUCTURE
+------------------------------------------------------------
+
+Generate the article in exactly these six sections. Label them during drafting. Remove section labels before final output.
+
+SECTION 1: HEADLINE (already selected from Step 1)
+
+SECTION 2: OPENING (80 to 120 words)
+Open with the specific problem, tension, or observation that motivated this article.
+Do not open with: "In recent years..." / "Many organizations today..." / "As the world of [topic] evolves..."
+Open with: A specific moment, a named contradiction, a counterintuitive data point, or a scenario the reader immediately recognizes.
+The last sentence of the opening must function as a thesis: state the specific claim the article will prove or the specific answer it will deliver.
+
+SECTION 3: THE PROBLEM (150 to 250 words)
+Develop why the status quo is failing or why the conventional approach produces the wrong result.
+Name the cost of the problem in concrete terms (time, money, decisions, outcomes).
+Include one named statistic with source and year.
+Do not offer the solution here. The reader should feel the weight of the problem before seeing the answer.
+
+SECTION 4: THE PEAK / FRAMEWORK (200 to 400 words)
+Deliver the central claim in full.
+This is the Shiny Dime section. Name the framework, concept, or insight if it has a name.
+Use subheadings within this section if breaking into steps or components.
+Include one first-party example (client outcome, program result, or named scenario from brand experience) or one well-sourced external case study.
+Each step or component must name: what it is, why it matters, and what it looks like in practice.
+
+SECTION 5: APPLICATION (150 to 300 words)
+Give the reader something to do with the framework.
+A diagnostic question, a 3-step process, a checklist, or a decision tree.
+This section converts a reader from "interested" to "equipped." Trade publication readers and Medium professionals arrive for utility. Deliver it here.
+Name the specific result the reader should expect if they apply the framework correctly.
+
+SECTION 6: CLOSING (50 to 80 words)
+Return to the opening. Echo the tension or observation introduced in Section 2 and show how the article's framework resolves it.
+End with one forward-facing sentence: what becomes possible when the reader applies this.
+No summary. No "in conclusion." No "I hope this was helpful."
+Optional: one sentence naturally positioning the brand as the team doing this work at scale, without a promotional link in the body.
+
+------------------------------------------------------------
+PROOF STANDARD (APPLIES TO ALL SECTIONS)
+------------------------------------------------------------
+
+Evidence hierarchy for all claims in the article:
+
+TIER 1: First-party data from brand programs - "A 2026 analysis of 40 Edstellar enterprise programs found that..."
+TIER 2: Named study with organization and year - "The World Economic Forum's 2025 Future of Jobs Report found..."
+TIER 3: Named expert with direct attribution - "According to [Name], [Title/Organization], writing in [Publication/Year]..."
+TIER 4: Specific scenario with verifiable details - "A 600-person manufacturing firm reduced onboarding from 21 days to 6 after..."
+
+Never: "Research shows..." / "Studies suggest..." / "Experts agree..." without naming the source.
+
+------------------------------------------------------------
+AUTHOR VOICE RULES
+------------------------------------------------------------
+
+- Write in third-person organizational voice if no named author is provided ("Organizations that measure behavior rather than completion...")
+- Write in first-person expert voice if a named author is provided ("The pattern I see most consistently across enterprise training programs...")
+- Never use "we" or "our" for brand references in third-person organizational voice
+- Never write from the CEO's perspective unless the CEO is the named expert author
+- No em dashes anywhere in the article
+- Active voice throughout
+
+------------------------------------------------------------
+MEDIUM TAGS AND METADATA
+------------------------------------------------------------
+
+After the article, output:
+
+MEDIUM TAGS (5): [list 5 tags relevant to the article topic and audience]
+ESTIMATED READ TIME: [calculate at 200 words per minute]
+SUGGESTED SUBTITLE: [one sentence expanding the headline, under 120 characters, displayed under the title on Medium]
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Step 1: Plain numbered list of 5 headline options
+
+Step 2: Full HTML file structured as follows:
+- <title> tag with the article headline
+- <h1> for the article headline
+- <h2> for each major section subheading
+- <p> for all body paragraphs
+- <strong> for any bolded key phrases
+- <a href="..."> for any links (include the brand URL once, in the author bio section at the end)
+- Author bio at the end: name, title, company with link, one credential sentence
+
+File name: Article_[Number]_[Short-Slug].html
+Save to: output/Medium/
+
+Do not output markdown for the article. HTML only.
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- Headline step must run before article step
+- One Shiny Dime: one central claim, developed fully throughout
+- Rate of Revelation: new information every 100 words
+- 900 to 1,400 words for the full article
+- No em dashes anywhere
+- No passive voice
+- All stats named with source and year
+- No external URL in article body (author bio link only)
+- HTML output format; save to output/Medium/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. MULTIPLE IDEAS COMPETING FOR ATTENTION: An article that tries to make three separate arguments makes none of them well. Identify the Shiny Dime before drafting. Every paragraph either develops that idea or cuts.
+
+2. SLOW OPENING: Starting with context, background, or industry history before the thesis. Readers decide in the first three sentences whether to continue. Start with the specific tension or claim.
+
+3. VAGUE PROOF: "Many organizations struggle with this" is an observation, not evidence. Name the source, the year, the percentage. Unsourced claims weaken authority.
+
+4. NO APPLICATION SECTION: An article that describes a problem and presents a framework without telling the reader what to do with it leaves them informed but not equipped. The Application section is the difference between a good article and a useful one.
+
+5. MARKDOWN OUTPUT FOR MEDIUM: Pasting markdown into Medium breaks formatting. Always output as HTML, open in browser, Ctrl+A, copy, paste into Medium editor. This preserves all formatting without manual correction.

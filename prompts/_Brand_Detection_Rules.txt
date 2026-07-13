@@ -1,0 +1,74 @@
+============================================================
+BRAND AUTO-DETECTION RULES (APPLIES TO ALL PROMPT FILES)
+============================================================
+
+When a URL is provided, automatically detect the brand using the following logic:
+
+STEP 1 - EXTRACT DOMAIN FROM URL
+Extract the root domain from any URL provided.
+Examples:
+  https://www.edstellar.com/blog/xyz     -> edstellar.com
+  https://www.invensislearning.com/xyz   -> invensislearning.com
+  https://www.unknownbrand.com/xyz       -> unknownbrand.com
+
+STEP 2 - MATCH TO KNOWN BRANDS
+edstellar.com         -> Edstellar | Global corporate training company that partners with enterprises to deliver high-impact training solutions for modern teams | Audience: L&Ds, HRs, and decision-makers in the organization | Hashtag: #Edstellar
+invensislearning.com  -> Invensis Learning | Global professional training and certification provider empowering individuals and organizations with in-demand skills across project management, IT service management, agile, cybersecurity, and more | Audience: L&Ds, HRs, and decision-makers | Hashtag: #InvensisLearning
+
+STEP 3 - IF DOMAIN IS NOT IN THE KNOWN LIST
+Research the brand using the domain/website to determine:
+  - Brand name
+  - One-line brand description (what they do and who they serve)
+  - Primary target audience
+  - Brand hashtag (typically #BrandName)
+
+STEP 4 - IF BRAND CANNOT BE DETERMINED FROM URL OR RESEARCH
+Ask the user:
+  "Could not determine the brand from the URL provided. Please share:
+   1. Brand name
+   2. One-line description of what the brand does
+   3. Target audience
+   4. Brand hashtag (optional)"
+
+STEP 5 - IF NO URL IS PROVIDED
+Check if the user has mentioned a brand name in their message.
+  - If yes and it matches a known brand, use that brand's details.
+  - If yes but unknown, research the brand online.
+  - If no brand is mentioned at all, ask the user for brand details before proceeding.
+
+============================================================
+PRIORITY ORDER
+============================================================
+
+1. URL provided          -> Extract domain -> Match or research
+2. Brand name mentioned  -> Match known list or research
+3. Neither provided      -> Ask user
+
+============================================================
+GLOBAL CONTENT RULES (APPLY TO ALL CONTENT GENERATED)
+============================================================
+
+These rules apply to every piece of content produced across all prompt files. No exceptions.
+
+1. NO EM DASHES
+   Never use em dashes (-) in any content. Replace with a comma, semicolon, colon, or full stop.
+
+2. NO PASSIVE VOICE
+   Write in active voice throughout. Passive voice weakens authority and reduces AI citability.
+   Wrong:  "Training programmes are delivered by Edstellar."
+   Right:  "Edstellar delivers training programmes."
+
+3. B2B LANGUAGE ONLY
+   All content targets professional B2B audiences. No consumer tone, no casual phrasing unless the platform explicitly requires it (e.g. Instagram, Reddit).
+
+4. STAT ATTRIBUTION IS MANDATORY
+   Every statistic must name its source. Never write "studies show" or "research suggests" without naming the study and year.
+
+5. OUTPUT LOCATION
+   All outputs save to output/{ContentType}/ subfolder. Never save to root.
+
+6. CSV FOR BULK CONTENT
+   Any content type producing multiple items (GMB, Pinterest, LinkedIn posts, etc.) outputs as a CSV file.
+
+7. NO PROMOTIONAL BRAND TONE
+   Brand mentions must feel like credible expert positioning, not advertising.

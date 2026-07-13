@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Secrets
+.env
+*.env
+*.key
+
+# Generated bulk artifacts (per-run, not source)
+output/bulk_*.zip
+output/log_*.csv
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db

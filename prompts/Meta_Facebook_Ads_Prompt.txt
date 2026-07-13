@@ -1,0 +1,38 @@
+============================================================
+META / FACEBOOK ADS COPY PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Create Meta (Facebook/Instagram) ad copy for [BRAND NAME], [BRAND DESCRIPTION], for the campaign targeting "[CAMPAIGN TOPIC / OFFER]". Generate 3 ad variations. For each variation provide: primary text (max 125 characters for feed preview, up to 300 for full), a headline (max 40 characters), a description (max 30 characters), and a CTA button label from Meta's options (Learn More / Sign Up / Download / Get Quote / Contact Us / Apply Now). Copy should be written in a direct, benefit-led tone targeting [TARGET AUDIENCE]. Open with a hook. Do not use em dashes.
+
+Landing Page URL: [INSERT URL]
+Ad Placement: [e.g. Facebook Feed / Instagram Feed / Stories / Reels]
+Campaign Goal: [e.g. Awareness / Lead gen / Traffic / Conversions]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Ad Variation | Primary Text | Headline | Description | CTA Button | Placement
+
+Save to output/Meta_Facebook_Ads/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Primary text: max 125 characters for preview (up to 300 full)
+- Headline: max 40 characters
+- Description: max 30 characters
+- CTA must be one of Meta's native options
+- First line of primary text must be a hook
+- No em dashes anywhere
+- 3 ad variations per request
+- Output saved to output/Meta_Facebook_Ads/

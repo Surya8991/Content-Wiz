@@ -1,0 +1,38 @@
+============================================================
+GOOGLE ADS COPY PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Create Google Search Ad copy for [BRAND NAME], [BRAND DESCRIPTION], for the campaign targeting the keyword "[TARGET KEYWORD]". Generate 3 ad variations. For each variation provide: 3 headlines (max 30 characters each), 2 descriptions (max 90 characters each), and a display URL path (max 15 characters each path). The copy should be benefit-driven, include the target keyword naturally in at least one headline, and have a clear call to action. Target audience is [TARGET AUDIENCE]. Do not use em dashes.
+
+Landing Page URL: [INSERT URL]
+Target Keyword: [INSERT KEYWORD]
+Campaign Goal: [e.g. Lead generation / Course sign-up / Blog traffic]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Ad Variation | Headline 1 | Headline 2 | Headline 3 | Description 1 | Description 2 | Display URL Path 1 | Display URL Path 2
+
+Save to output/Google_Ads/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Headline: max 30 characters each
+- Description: max 90 characters each
+- Display URL path: max 15 characters each
+- Target keyword in at least 1 headline per variation
+- Clear CTA in at least 1 description per variation
+- No em dashes anywhere
+- 3 ad variations per request
+- Output saved to output/Google_Ads/

@@ -1,0 +1,37 @@
+============================================================
+INTERNAL LINKING SUGGESTIONS PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Generate internal linking suggestions for [BRAND NAME] for the blog post titled "[BLOG TITLE]" at [TARGET URL]. Given the list of existing blog URLs provided below, identify the most relevant pages to link to from the target post and the most relevant pages that should link back to the target post. For each suggestion provide: the source page, the anchor text recommendation, the destination URL, and the reason for the link. Do not use em dashes.
+
+Target Blog URL: [INSERT TARGET URL]
+Existing Blog URLs to consider:
+[PASTE LIST OF EXISTING BLOG URLS]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Link Direction | Source Page Title | Source URL | Anchor Text | Destination URL | Reason
+
+Link Direction options: Outbound (from target post) / Inbound (to target post)
+
+Save to output/Internal_Linking/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Anchor text must be natural and contextually relevant, not generic ("click here", "read more")
+- Minimum 3 outbound and 3 inbound suggestions
+- Reason column must explain the topical relevance
+- No em dashes anywhere
+- Output saved to output/Internal_Linking/

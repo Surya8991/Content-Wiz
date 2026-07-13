@@ -1,0 +1,39 @@
+============================================================
+COMPETITOR CONTENT GAP ANALYSIS PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Conduct a content gap analysis for [BRAND NAME], [BRAND DESCRIPTION], against the following competitor(s): [COMPETITOR NAMES / URLS]. Research the content topics, formats, and keywords the competitors are covering that [BRAND NAME] is not. Identify gaps across blog content, FAQs, guides, and resource pages. For each gap identified, provide: the topic area, the competitor covering it, why it matters for [TARGET AUDIENCE], and a recommended content idea for [BRAND NAME] to fill the gap. Do not use em dashes.
+
+Brand Website: [INSERT BRAND URL]
+Competitor URLs:
+1. [INSERT COMPETITOR 1 URL]
+2. [INSERT COMPETITOR 2 URL]
+3. [INSERT COMPETITOR 3 URL - OPTIONAL]
+
+Focus Area (if any): [e.g. Leadership training / Agile certifications / HR topics]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Sr. No. | Topic Area | Competitor Covering It | Why It Matters | Recommended Content Idea for Brand | Suggested Format
+
+Save to output/Competitor_Gap_Analysis/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Minimum 10 gap opportunities identified
+- Each recommended content idea must be specific and actionable
+- No em dashes anywhere
+- Research must be grounded in actual competitor content, not assumptions
+- Output saved to output/Competitor_Gap_Analysis/

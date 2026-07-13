@@ -1,0 +1,54 @@
+============================================================
+SCHEMA MARKUP / STRUCTURED DATA PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Generate schema markup in JSON-LD format for [BRAND NAME] for the following page: "[PAGE TITLE]" at [URL]. Use the most appropriate schema type for the content (e.g. Article, FAQPage, Course, Organization, BreadcrumbList, HowTo). Include all recommended properties for the chosen schema type. Ensure the output is valid JSON-LD ready to paste into the page head tag. Do not use em dashes.
+
+Page URL: [INSERT URL]
+Page Type: [e.g. Blog Article / FAQ Page / Course Page / Homepage]
+Primary Topic: [INSERT TOPIC]
+
+------------------------------------------------------------
+SCHEMA TYPES REFERENCE
+------------------------------------------------------------
+
+- Blog post             -> Article or BlogPosting
+- FAQ section           -> FAQPage
+- Course or training    -> Course
+- How-to guide          -> HowTo
+- Organisation page     -> Organization
+- Event / webinar       -> Event
+- Review or rating      -> Review / AggregateRating
+- Breadcrumb            -> BreadcrumbList
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Valid JSON-LD block:
+
+<script type="application/ld+json">
+{
+  ...
+}
+</script>
+
+Save to output/Schema_Markup/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Output must be valid JSON-LD
+- Use the most specific schema type available
+- Include all recommended properties, not just required ones
+- No em dashes anywhere
+- Output saved to output/Schema_Markup/

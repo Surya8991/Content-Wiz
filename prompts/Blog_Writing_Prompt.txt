@@ -1,0 +1,197 @@
+============================================================
+BLOG WRITING PROMPT (PILLAR / SPOKE + GEO OPTIMIZATION)
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, select the article type below and provide all required inputs.
+
+------------------------------------------------------------
+ARTICLE TYPE: SELECT ONE BEFORE GENERATING
+------------------------------------------------------------
+
+TYPE A - PILLAR PAGE (2,000 to 3,500 words)
+Use when: Building the authoritative hub page for an entire topic cluster.
+Purpose: Rank for a broad, high-volume keyword AND serve as the internal link hub for all spoke articles in the cluster.
+A pillar page covers a topic comprehensively, links out to all spoke articles, and is updated quarterly.
+Example: "Corporate Training: The Complete Guide for L&D Leaders"
+
+TYPE B - SPOKE ARTICLE (1,000 to 1,800 words)
+Use when: Writing a specific, narrowly focused subtopic that supports a pillar page.
+Purpose: Rank for a long-tail keyword with clear intent; internally link back to the pillar.
+A spoke article answers one specific question completely. It does not try to cover the whole topic.
+Example: "How to Measure Behavior Change After Corporate Training (3-Step Framework)"
+
+TYPE C - DECISION-STAGE ARTICLE (800 to 1,400 words)
+Use when: Targeting buyers comparing options or evaluating a solution.
+Purpose: Convert a reader who is actively researching a vendor or method decision.
+Uses comparison structure, specific outcomes, and CTA to a demo or consultation.
+Example: "Skills Gap Analysis Software vs Manual Assessment: What Actually Works for Enterprise Teams"
+
+------------------------------------------------------------
+REQUIRED INPUTS
+------------------------------------------------------------
+
+Article Type: [A / B / C]
+Brand: [BRAND NAME OR URL]
+Topic or Working Title: [INSERT]
+Primary Keyword: [INSERT - the exact phrase this article is optimized for]
+Search Intent: [Awareness / Research / Decision - choose the stage this query serves]
+Pillar Page (for spoke articles): [URL of the pillar this article supports - required for Type B]
+Spoke Articles to Link To (for pillar pages): [List URLs or topic placeholders - required for Type A]
+Target Audience Role: [e.g., L&D Manager, HR Director, Training Coordinator]
+Reference URL (optional): [existing content to repurpose or expand]
+First-Party Data to Include: [any Edstellar/Invensis client stats, program outcomes, or internal data - leave blank if none]
+CTA Destination URL: [URL the conclusion links to]
+Word Count Target: [leave blank to use type default]
+
+------------------------------------------------------------
+ARTICLE STRUCTURE (BY TYPE)
+------------------------------------------------------------
+
+ALL TYPES follow this base structure, with length varying by type:
+
+H1 TITLE:
+Format for search intent + click appeal. Include the primary keyword within the first 60 characters.
+For awareness stage: Lead with the named problem or the named framework ("The Completion-to-Behavior Gap: Why Most Corporate Training Fails the Measurement Test")
+For research stage: Lead with the number or the process ("How to Build a Skills Gap Analysis in 5 Steps")
+For decision stage: Lead with comparison or outcome ("Skills Assessment Platforms vs Manual Analysis: What Enterprise L&D Teams Actually Need")
+
+INTRODUCTION (100 to 200 words):
+Open with the direct answer to the primary keyword query in the first 40 words. Do not open with context, background, or a rhetorical question.
+Follow the direct answer with one named statistic that contextualizes the scale or urgency of the topic.
+End the introduction with a one-sentence thesis stating exactly what this article delivers.
+Do not bury the answer. AI retrieval systems read the first 40 to 60 words and decide whether to cite the page based on whether those words directly answer the query.
+
+BODY SECTIONS (H2 structure):
+Each H2 section follows the 4-layer chunk format:
+  Layer 1: DIRECT ANSWER - one sentence answering the implicit question raised by the heading
+  Layer 2: EXPLANATION - 2 to 3 sentences expanding the direct answer
+  Layer 3: EVIDENCE - one named stat (source + year) or a specific case example
+  Layer 4: APPLICATION - one sentence on what this means practically for the reader
+
+This four-layer structure means an AI engine retrieving only the first sentence of any section still gets a complete answer. This is the most important structural rule for AI citation.
+
+DEFINITION BLOCKS:
+For each major concept, framework, or methodology introduced, include a standalone 1 to 2 sentence definition written to be pulled verbatim by AI engines.
+Format: "[Concept]: [Definition in one clear sentence that would stand alone in an AI answer.]"
+Example: "Skills gap analysis: A skills gap analysis identifies the difference between the competencies employees currently have and the competencies the organization needs to achieve its goals."
+
+EEAT AUTHOR BLOCK (required on all articles):
+At the end of the article, after the FAQ section, include an author attribution block:
+- Author name and title (or "Edstellar L&D Team" if no named author)
+- One sentence of relevant credential for this specific topic
+- Brand URL
+This signals Experience, Expertise, Authoritativeness, and Trustworthiness (EEAT) to both Google and AI retrieval systems. Pages without author attribution are deprioritized in 2026 search and AI citation.
+
+FAQ SECTION (mandatory on all articles):
+Minimum 5 questions. Maximum 8.
+Each question must use the exact phrasing a person would type into Google or a chatbot (not a rephrasing of the section heading).
+Use Google's "People Also Ask" format as the model: "How long does a skills gap analysis take?" not "Skills gap analysis duration."
+Each answer: 40 to 80 words, complete without reading the rest of the article.
+FAQ section will use FAQPage schema markup when implemented - write answers so they stand alone.
+
+CONCLUSION (100 to 150 words):
+Return to the core claim from the introduction. State what the reader should now understand or be able to do.
+One natural brand mention (not promotional - positioned as the team that executes this at scale).
+One CTA sentence with the destination URL.
+
+INTERNAL LINKS:
+Type A (Pillar): Link to each spoke article in the cluster from the relevant section. Note: "[INTERNAL LINK: spoke article on X]" as placeholders if URLs are not yet live.
+Type B (Spoke): Link back to the parent pillar page once, naturally, within the body.
+Type C (Decision): Link to one relevant case study and one product/service page.
+
+------------------------------------------------------------
+INTENT MAPPING: WHAT TO EMPHASIZE BY STAGE
+------------------------------------------------------------
+
+AWARENESS STAGE (reader does not yet know there is a solution):
+Emphasize: naming the problem precisely, showing the cost of the status quo, introducing the framework or concept that reframes the problem.
+Avoid: vendor comparisons, product mentions, demo CTAs.
+CTA: link to a related research article or pillar page.
+
+RESEARCH STAGE (reader is evaluating approaches):
+Emphasize: step-by-step processes, named frameworks with before-and-after examples, comparison of approaches with evidence for why one works better.
+Avoid: aggressive CTAs, exaggerated outcome claims.
+CTA: link to a case study or a free assessment tool.
+
+DECISION STAGE (reader is comparing vendors or making a purchase decision):
+Emphasize: specific client outcomes with metrics, comparison tables, named differentiators, risk-reduction language.
+Avoid: generic thought leadership without proof.
+CTA: link directly to a demo booking, consultation, or pricing page.
+
+------------------------------------------------------------
+GEO OPTIMIZATION CHECKLIST (APPLY TO ALL ARTICLES)
+------------------------------------------------------------
+
+Verify all items before finalizing:
+
+[ ] Primary keyword appears in H1 within the first 60 characters
+[ ] Direct answer appears in the first 40 words of the introduction
+[ ] Every H2 section opens with a direct answer sentence (Layer 1 of the chunk format)
+[ ] Every major concept has a standalone definition block
+[ ] FAQ section present with minimum 5 questions in natural search phrasing
+[ ] Every stat names source, organization, and year - no "research shows" without attribution
+[ ] Author attribution block present at the end
+[ ] No paragraphs longer than 4 sentences
+[ ] Internal links added (or placeholders noted)
+[ ] "Last updated: [date]" line present at top or bottom of article
+
+------------------------------------------------------------
+PROOF STANDARD
+------------------------------------------------------------
+
+TIER 1 (strongest): First-party data from brand programs with year
+TIER 2: Named study from a recognized organization with year (World Economic Forum, McKinsey, Deloitte, Gallup, LinkedIn Learning, ATD)
+TIER 3: Named expert quote with name, title, publication, year
+TIER 4: Specific client scenario with verifiable details and named outcome
+
+Never use: "Studies show..." / "Research suggests..." / "According to experts..." without naming the source.
+
+Minimum evidence per article:
+- Type A (Pillar): 6 to 10 named sources or data points
+- Type B (Spoke): 3 to 5 named sources or data points
+- Type C (Decision): 3 to 5 named sources, with at least 1 being first-party brand data
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Full article in markdown with:
+- H1 title
+- Introduction
+- Body (H2 sections with H3 subsections where needed, definition blocks, stat anchors)
+- FAQ Section
+- Conclusion with CTA
+- Author Block
+- "Last updated: [date]" line
+
+Save to: output/Blog/
+File name: Blog_[Type]_[Short-Slug].md
+
+------------------------------------------------------------
+GLOBAL RULES
+------------------------------------------------------------
+
+- No em dashes anywhere
+- No passive voice
+- Active voice throughout
+- All stats named with source, organization, and year
+- No promotional brand tone in article body
+- Brand mention natural: positioned as practitioner, not advertiser
+- Paragraphs maximum 4 sentences
+- Output saved to output/Blog/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. WRITING A SPOKE AS A PILLAR: A 1,200-word article trying to cover an entire topic cluster produces a shallow pillar and a weak spoke. Choose the type before writing. Pillars are comprehensive hubs; spokes are deep dives on one specific subtopic.
+
+2. BURYING THE DIRECT ANSWER: AI retrieval systems and impatient human readers both need the answer in the first 40 words. Context, background, and industry history come after the answer, not before it.
+
+3. MISSING EEAT SIGNALS: Articles without author attribution, without named evidence sources, and without brand credentialing are treated as lower-authority content by both Google and AI citation systems. The author block and evidence tier are not optional.
+
+4. FAQ SECTION AS AN AFTERTHOUGHT: FAQ answers written as summaries of sections already in the article do not earn AI citations. Each FAQ answer must be independently useful, independently readable, and completable without the rest of the article.
+
+5. NO INTERNAL LINKING PLAN: A blog article published without internal links to the pillar or from the pillar is an orphaned piece of content. Plan the cluster structure before writing individual articles and note internal link placeholders in the draft.

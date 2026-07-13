@@ -1,0 +1,52 @@
+============================================================
+WHITEPAPER / eBOOK PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Write a [CONTENT TYPE: Whitepaper / eBook] for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]". The document should be [WORD COUNT e.g. 1500-2500 words for whitepaper / 2000-3500 words for eBook]. Write in an authoritative, research-backed B2B tone targeting [TARGET AUDIENCE]. Structure the document with an executive summary, a clearly defined problem statement, data-backed insights across 4-6 sections with subheadings, actionable recommendations, and a conclusion with a CTA linking to [URL]. Include at least 4-6 credible statistics or research references. Naturally position [BRAND NAME] as a thought leader without being promotional. Do not use em dashes. Avoid passive voice.
+
+Reference URL (if any): [INSERT URL]
+Content Type: [Whitepaper / eBook]
+Intended Gate: [Gated lead magnet / Ungated thought leadership]
+
+------------------------------------------------------------
+DOCUMENT STRUCTURE
+------------------------------------------------------------
+
+1. Cover / Title
+2. Executive Summary (150-200 words)
+3. The Problem / Challenge (with data)
+4. Section 1 - Insight or Theme
+5. Section 2 - Insight or Theme
+6. Section 3 - Insight or Theme
+7. Section 4 - Insight or Theme (optional)
+8. Actionable Recommendations (3-5 bullet points)
+9. Conclusion with CTA
+10. References
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Full document in plain text or markdown with clearly labelled sections.
+
+Save to output/Whitepaper_eBook/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Executive summary must stand alone as a readable summary
+- Minimum 4-6 stats or research references
+- Recommendations must be specific and actionable
+- No em dashes anywhere
+- No passive voice
+- Brand positioning is subtle, not promotional
+- Output saved to output/Whitepaper_eBook/

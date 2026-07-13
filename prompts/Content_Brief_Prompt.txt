@@ -1,0 +1,64 @@
+============================================================
+CONTENT BRIEF PROMPT (WITH GEO / AEO FIELDS)
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Create a detailed content brief for [BRAND NAME], [BRAND DESCRIPTION], for a [CONTENT TYPE e.g. blog post / pillar page / landing page] on the topic "[TOPIC]". The brief must be detailed enough for a writer to execute without any additional briefing. Target audience is [TARGET AUDIENCE]. Do not use em dashes. Avoid passive voice.
+
+Reference URL (if any): [INSERT URL]
+Target Platform: [e.g. WordPress / Medium / Dev.to]
+Primary Target Keyword: [INSERT OR LEAVE BLANK]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Field | Detail
+
+STANDARD SEO FIELDS:
+- Content Goal
+- Target Audience
+- Primary Keyword
+- Secondary Keywords (comma separated)
+- Suggested Titles (3 options)
+- Recommended Word Count
+- Content Outline (H1 / H2s / H3s)
+- Key Points to Cover
+- Stats or Research to Include (name source and year for each)
+- Internal Linking Suggestions (page title and URL)
+- CTA Recommendation
+- Competitor Reference URLs
+
+GEO / AEO FIELDS (NEW):
+- Primary Target Query (the exact question this content should answer for AI tools and featured snippets)
+- Featured Snippet Answer (40-60 word direct answer to the target query, written to be pulled verbatim)
+- People Also Ask Questions (4 related questions this content should also answer)
+- AI Overview Optimisation Note (which claim or stat is most likely to be cited by an AI Overview and why)
+- GEO Readiness Checklist:
+    [ ] Does the introduction directly answer the target query in 2-3 sentences?
+    [ ] Are all stats attributed to named sources with year?
+    [ ] Are all key entities clearly named and defined?
+    [ ] Are paragraphs 3-4 sentences or shorter?
+    [ ] Is there a FAQ section with 4-6 direct-answer Q&As?
+
+Save to output/Content_Brief/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Brief must be detailed enough for a writer to execute without additional briefing
+- Primary keyword must appear naturally in title and at least 2 subheadings
+- GEO / AEO fields are mandatory for all blog and pillar page briefs
+- Featured snippet answer must be 40-60 words, direct, and quotable
+- All stats must name the source and year
+- No em dashes anywhere
+- No passive voice
+- Output saved to output/Content_Brief/

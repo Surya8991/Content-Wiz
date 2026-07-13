@@ -1,0 +1,272 @@
+============================================================
+CONTENT REPURPOSE PROMPT (FULL PRODUCTION MAP)
+============================================================
+
+FOUR SOURCE TYPES: Long-Form Article / Webinar or Recording / Case Study / Original Research Report
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, select the source type and provide the inputs below.
+
+------------------------------------------------------------
+THE REPURPOSING PRINCIPLE
+------------------------------------------------------------
+
+One piece of content is not one piece of content. A 1,500-word article, a 60-minute webinar, a case study, and a research report each contain enough material for 9 to 35 derivative pieces across different channels and audiences. The original piece reaches one audience once. The derivative pieces reach multiple audiences across weeks.
+
+The goal is not to copy content across platforms. It is to extract the highest-leverage fragments from the source - a stat, a framework name, a quote, a before-and-after metric, a counterintuitive claim - and adapt each fragment into the native format of the target channel.
+
+Remix, do not repaste. Content that works on LinkedIn fails as a newsletter section because the channel, the reader state, and the format are different. Every derivative must be rebuilt for its channel, not pasted in with platform-specific hashtags added.
+
+------------------------------------------------------------
+REQUIRED INPUTS
+------------------------------------------------------------
+
+Source Type: [Long-Form Article / Webinar / Case Study / Original Research Report]
+Brand: [BRAND NAME OR URL]
+Source Content: [Paste full text, paste transcript, or provide URL]
+Target Channel(s): [List the channels to generate derivatives for - or type ALL to use the full map for this source type]
+Priority Derivative: [If generating one piece at a time, name the single target derivative]
+
+------------------------------------------------------------
+SOURCE TYPE A: LONG-FORM ARTICLE (9 TO 12 DERIVATIVES)
+------------------------------------------------------------
+
+Estimated additional production time: 3 to 4 hours.
+
+From a single long-form article, generate:
+
+DERIVATIVE 1: LINKEDIN NARRATIVE POST
+Extract the primary counterintuitive claim or named framework from the article.
+Build a Hook-Tension-Peak-CTC post (800-1,000 chars).
+URL goes in first comment, not in post body.
+Refer to LinkedIn_Post_Prompt.txt for Format A rules.
+
+DERIVATIVE 2: LINKEDIN CAROUSEL (5 to 7 slides)
+Extract the 3 to 5 numbered steps, framework components, or named insights.
+Each slide: one point, one sentence of explanation, relevant visual direction.
+Slide 1: the headline claim. Final slide: CTA.
+Refer to LinkedIn_Carousel_Prompt.txt for slide structure.
+
+DERIVATIVE 3: TWITTER/X THREAD (5 to 8 tweets)
+Tweet 1: the most counterintuitive or specific claim in the article (the hook).
+Tweets 2 to 6: one insight per tweet, each with a stat or named example.
+Tweet 7: the application - what to do with this.
+Tweet 8: CTA with link.
+Each tweet under 280 characters.
+
+DERIVATIVE 4: SHORT-FORM VIDEO SCRIPT (60 to 90 seconds)
+Extract the single most surprising finding or the primary named framework.
+Use Type 1 (Short) structure from Video_Script_Prompt.txt.
+Open with the finding, not with context. Hook in the first 3 seconds.
+
+DERIVATIVE 5: EMAIL NEWSLETTER FEATURE (150 to 250 words)
+Extract the primary insight and one supporting stat.
+Use Mode A blocks 3 through 7 from Newsletter_Prompt.txt.
+One CTA linking to the full article. URL in the body for newsletters (unlike LinkedIn).
+
+DERIVATIVE 6: LONG-FORM YOUTUBE VIDEO BRIEF
+If the article topic is evergreen and has search volume, extract it into a video brief for a how-to or framework video (Type 2 from Video_Script_Prompt.txt).
+Output: video angle, hook sentence, 3 to 5 section outline, CTA.
+
+DERIVATIVE 7: HARO DATA POINT ENTRY
+Extract 1 to 3 specific statistics or findings from the article that can be used as quotable claims in HARO responses.
+Format each entry for the pitch-ready data bank:
+  Claim: [specific finding or stat]
+  Source: [article URL and publication date]
+  Context: [one sentence on what program or analysis this comes from]
+  Quotable version: [the 1 to 2 sentence version ready to paste into a HARO answer]
+
+DERIVATIVE 8: GEO CONTENT BLOCK (FAQ FORMAT)
+Extract 3 to 5 questions the article implicitly answers.
+Rewrite each as an explicit FAQ entry (40 to 80 words, standalone answer).
+Output as an FAQ block formatted for FAQPage schema markup.
+
+DERIVATIVE 9: GUEST ARTICLE PITCH ANGLE
+Extract the most original or data-backed claim in the article.
+Use it as the basis for a guest article pitch for one target publication from strategy-guest-articles.md.
+Output: working title, 2-3 headline options, 3 talking point bullets.
+
+------------------------------------------------------------
+SOURCE TYPE B: WEBINAR OR RECORDED SESSION (12 TO 18 DERIVATIVES)
+------------------------------------------------------------
+
+Estimated additional production time: 6 to 7 hours (including transcript processing).
+
+From a single 45 to 60-minute webinar, generate:
+
+DERIVATIVES 1 TO 5: SHORT CLIPS (60 to 90 seconds each)
+Extract 3 to 5 discrete moments from the transcript where a standalone claim, framework, or finding was stated.
+For each clip:
+  - Timestamp range (from transcript)
+  - Hook line (the strongest sentence from the clip - becomes the video caption)
+  - Platform: LinkedIn video, YouTube Shorts, Instagram Reels
+  - Visual direction: on-screen text displaying the hook line
+
+DERIVATIVE 6: FULL REPLAY POST (with chapter markers)
+YouTube long-form upload of the full webinar.
+Extract 5 to 8 named chapter topics with timestamps for YouTube chapters.
+Write the YouTube description using YouTube_Description_Prompt.txt.
+
+DERIVATIVE 7: LINKEDIN NARRATIVE POST (summary of the key claim)
+Same as Article Derivative 1.
+
+DERIVATIVE 8: LINKEDIN CAROUSEL (key takeaways)
+Same as Article Derivative 2, built from the webinar's main framework or top 5 takeaways.
+
+DERIVATIVE 9: EMAIL NEWSLETTER FEATURE
+"In case you missed it" format - 150-word summary, 3 key insights, replay link.
+
+DERIVATIVE 10: BLOG POST (1,000 to 1,500 words)
+Use the webinar transcript as the source material for a Type B spoke article (Blog_Writing_Prompt.txt).
+The blog expands the primary framework, adds written evidence and FAQ section, and earns organic search traffic on the topic.
+
+DERIVATIVE 11: TWITTER/X THREAD
+Same structure as Article Derivative 3, built from the webinar's top 5 to 7 insights.
+
+DERIVATIVE 12 ONWARD: HARO DATA POINTS + FAQ BLOCK + GUEST PITCH
+Same as Article Derivatives 7, 8, and 9 - applied to webinar content.
+
+------------------------------------------------------------
+SOURCE TYPE C: CASE STUDY (5 TO 7 DERIVATIVES)
+------------------------------------------------------------
+
+Estimated additional production time: 3 hours.
+
+From a single published case study, generate:
+
+DERIVATIVE 1: LINKEDIN SCENARIO POST
+Hook: the client's before state (the specific problem with numbers).
+Tension: what was at risk.
+Peak: the 3 key metrics from the results section.
+CTC: question inviting readers to share similar challenges.
+URL in first comment.
+
+DERIVATIVE 2: LINKEDIN METRICS CAROUSEL (3 to 5 slides)
+Each slide: one metric, before value, after value, timeframe, client industry context.
+Slide 1: the most dramatic metric (hook).
+Final slide: brand CTA.
+
+DERIVATIVE 3: EMAIL NEWSLETTER FEATURE
+150-word summary - challenge, approach, 3 key metrics, link to full case study.
+
+DERIVATIVE 4: HARO DATA POINT ENTRIES (2 to 3 entries)
+Extract the 2 to 3 most specific, quotable metrics from the results section.
+Format each as a pitch-ready data bank entry (same 4-field format as Article Derivative 7).
+
+DERIVATIVE 5: SALES EMAIL SNIPPET
+2 to 3 sentences drawing on one metric.
+Written for sales team use in proposal follow-ups or outreach emails.
+Format: "[Client type] in [industry] [achieved specific result] in [timeframe] using [methodology name]. [One sentence on how this applies to the prospect's situation]."
+
+DERIVATIVE 6: BLOG SECTION ("SEE IT IN PRACTICE")
+A 100 to 150-word case reference block to embed in related blog articles under a "See It in Practice" subheading.
+
+DERIVATIVE 7: ONE-PAGE PDF SUMMARY
+Use Mode B from Case_Study_Prompt.txt.
+
+------------------------------------------------------------
+SOURCE TYPE D: ORIGINAL RESEARCH REPORT (20 TO 35 DERIVATIVES)
+------------------------------------------------------------
+
+Estimated additional production time: 4 to 6 weeks of scheduled derivative publishing.
+
+A research report is the highest-yield repurposing source because it contains original data that cannot be found elsewhere - the strongest AI citation signal available.
+
+WEEK 1 (Launch):
+- Press release or announcement blog post
+- LinkedIn "key findings" post (top 3 stats, one per post spread across 3 days)
+- Twitter/X thread with top 10 findings
+- Email newsletter feature: "We just published new data on [topic]"
+- Short-form video: lead finding as a 60-second Short
+
+WEEK 2 TO 3 (Deep Dives):
+- 3 to 5 spoke blog articles, each based on one chapter or finding cluster
+- LinkedIn carousels (one per major finding)
+- Webinar: "Unpacking the [Report Name] - what it means for [audience]"
+- Podcast episode pitch angle: "We just published research on [finding] - here is what it means for [show audience]"
+
+WEEK 4 TO 6 (Long-Tail):
+- Guest article pitches to Tier 1 and Tier 2 publications using the report's findings as the proof layer
+- HARO data point bank: extract 10 to 20 individual stats formatted as pitch-ready entries
+- GEO FAQ block: build a 5 to 8-question FAQ using the report's key questions and answers
+- YouTube long-form video: full walkthrough of the report's methodology and findings
+
+------------------------------------------------------------
+PITCH-READY DATA BANK (MAINTAIN ACROSS ALL REPURPOSING)
+------------------------------------------------------------
+
+Every time a piece of content is repurposed, extract any citable statistics or findings into the pitch-ready data bank. This bank feeds HARO responses, guest article proof sections, and podcast preparation.
+
+Data bank entry format:
+  CLAIM: [specific stat or finding, written as a complete sentence]
+  SOURCE: [article/report title, brand or third-party, URL, year]
+  CONTEXT: [one sentence explaining what program or analysis this data comes from]
+  QUOTABLE: [the 1 to 2 sentence version ready to paste into a HARO pitch or article proof block]
+
+Save data bank entries to: data/HARO_DataBank.csv
+File columns: Claim | Source | URL | Year | Context | Quotable Version | Topic Tags
+
+------------------------------------------------------------
+CHANNEL ADAPTATION RULES
+------------------------------------------------------------
+
+When generating any derivative, apply these channel-specific constraints:
+
+LinkedIn (post body): 800-1,000 chars, no external URL in body, CTC question at end
+LinkedIn (carousel): one idea per slide, text readable without captions
+Twitter/X: each tweet self-contained, no reliance on thread context to make sense
+YouTube Shorts: full value in 90 seconds, no teaser for longer video
+Email newsletter: URL allowed in body, one CTA only, 150 to 250 words for feature section
+Blog: full GEO structure (4-layer sections, FAQ, author block)
+HARO: 150 to 280 words, 5-block structure from HARO_Prompts.txt
+
+------------------------------------------------------------
+PRODUCTION SEQUENCE BY DAY
+------------------------------------------------------------
+
+When repurposing a long-form article or case study, follow this schedule:
+
+Day 0 (publish): LinkedIn narrative post (Derivative 1). Blog live.
+Day 1-2: Short-form video clip. Cross-post to LinkedIn and YouTube Shorts.
+Day 2-3: LinkedIn carousel (Derivative 2).
+Day 3-5: Twitter/X thread (Derivative 3).
+Week 1: Newsletter feature (Derivative 5). Add data points to HARO data bank (Derivative 7).
+Week 2: FAQ GEO block (Derivative 8). YouTube long-form brief (Derivative 6).
+Week 3-4: Guest article pitch using the article's core claim (Derivative 9).
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single derivative: Full formatted output for the target channel, following that channel's prompt rules.
+For full source map: Output all derivatives in sequence, clearly labeled by derivative number.
+Reference the relevant prompt file for channel-specific formatting rules.
+
+Save to: output/[Channel Name]/
+HARO data bank entries save to: data/HARO_DataBank.csv
+
+------------------------------------------------------------
+GLOBAL RULES
+------------------------------------------------------------
+
+- Remix, do not repaste: every derivative rebuilt for its channel
+- No em dashes anywhere
+- No passive voice
+- All stats attributed with source and year
+- LinkedIn: no external URLs in post body
+- HARO data bank updated with every repurposing session
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. COPY-PASTE WITH HASHTAGS ADDED: Pasting the same text across platforms and adding platform-appropriate hashtags is not repurposing. Each channel has different reader expectations, optimal lengths, and engagement mechanics. Rebuild each derivative from the source insight, not from the previous derivative.
+
+2. REPURPOSING WITHOUT EXTRACTING TO THE DATA BANK: Every repurposing session should add at least 1 to 3 entries to the HARO pitch-ready data bank. Failing to do this means the data points from the original source are only used once.
+
+3. IGNORING THE PRODUCTION SEQUENCE: Publishing all derivatives on Day 0 means the content reaches one audience once, with no sustained amplification. The production sequence deliberately spaces out derivatives to extend the reach window and reach different audience segments at different times.
+
+4. TREATING ALL CHANNELS AS EQUAL: A 1,500-word blog article and a 60-second LinkedIn short have fundamentally different jobs. The blog earns search traffic over months. The short earns immediate reach and discovery. Neither is a substitute for the other; both serve different stages of the buyer journey.
+
+5. SKIPPING THE LONG-FORM VIDEO BRIEF: For evergreen topics, converting an article into a YouTube how-to or framework video is the highest-leverage derivative because it creates a compounding asset (YouTube search + algorithm recommendations over time). This derivative is consistently under-prioritized in favor of faster social posts.

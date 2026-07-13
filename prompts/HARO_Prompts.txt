@@ -1,0 +1,141 @@
+============================================================
+HARO / FEATURED / CONNECTIVELY RESPONSE PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, proceed with the structure below.
+
+------------------------------------------------------------
+TIMING RULE
+------------------------------------------------------------
+
+HARO queries expire fast. The highest pickup rates come from responses submitted within 30 to 60 minutes of the query alert. Respond immediately or not at all. A late response that arrives after the journalist has what they need earns nothing.
+
+------------------------------------------------------------
+WHAT THIS PROMPT PRODUCES
+------------------------------------------------------------
+
+A fully structured HARO pitch ready to paste into the Connectively / Featured / HARO submission form. The pitch is written to earn a media citation and backlink for [BRAND NAME] by making the journalist's job easier than any other response in their inbox.
+
+Provide the following inputs:
+1. The HARO / Featured query (paste in full)
+2. The journalist's name and publication (if visible)
+3. The expert's name, title, and specific credential relevant to this query
+4. Any first-party data or client program stats the brand can cite
+
+------------------------------------------------------------
+5-BLOCK PITCH STRUCTURE
+------------------------------------------------------------
+
+Generate each of the five blocks below in order. Do not merge or skip blocks.
+
+BLOCK 1: SUBJECT LINE
+Format: [Credential] on [Query Topic]
+Rules:
+- Under 10 words
+- Name the specific credential that qualifies the expert, not the brand
+- Never use: "Re:", "Response:", "Expert:", "Source:", "Newsletter"
+- Example: "L&D Director on Measuring Behavior Change After Training"
+- Example: "PMP-Certified Instructor on Why Agile Certifications Fail in Enterprise"
+
+BLOCK 2: CREDENTIAL BLOCK (25-40 words)
+Open with the expert's name, title, and company. In the same block, state the one specific quantified credential that makes this source credible for this exact query. No general bio. No company description.
+- Format: "[Name] is [Title] at [Brand], where [specific quantified credential relevant to query]."
+- Example: "Ravi Mehta is L&D Director at Edstellar, where he has overseen skills measurement programs for more than 60 enterprise organizations across manufacturing, financial services, and healthcare."
+- Never write: "a leading company" / "a pioneer in" / "passionate about"
+
+BLOCK 3: DIRECT ANSWER (40-70 words)
+This is the quotable core. Write it so the journalist can publish it verbatim.
+Rules:
+- Open with the direct answer to the query, not with context or setup
+- Bold the single most quotable sentence (the one sentence most likely to appear in the article)
+- No em dashes anywhere
+- No pronouns: you, we, our, your
+- Active voice only
+- One data point maximum in this block (save additional proof for Block 4)
+
+Hook patterns for opening Block 3 (choose the most accurate for the query):
+  PATTERN 1 (Counterintuitive finding): "Most [audience] measure [X]. The metric that actually predicts [outcome] is [Y]."
+  PATTERN 2 (Named gap): "The gap between [common belief] and [actual outcome] costs organizations [specific consequence]."
+  PATTERN 3 (Precise stat): "In [year], [source] found that [specific percentage] of [audience] [specific finding]. The cause is [named factor]."
+  PATTERN 4 (Named framework): "The [Framework Name] distinguishes between [A] and [B]. Most organizations optimize for [A] and never measure [B]."
+  PATTERN 5 (Threshold claim): "[Specific threshold or condition] is the point at which [named outcome] changes. Below that threshold, [consequence]. Above it, [result]."
+
+BLOCK 4: PROOF BLOCK (30-60 words)
+Back the direct answer with one specific data point or case reference. Do not repeat the stat already used in Block 3.
+Proof hierarchy (use the highest tier available):
+  TIER 1: First-party data from brand programs ("In a 2026 Edstellar analysis of 40 enterprise training programs...")
+  TIER 2: Named third-party study with year ("A 2025 McKinsey study found..." / "World Economic Forum's 2025 Future of Jobs Report states...")
+  TIER 3: Named industry report with year
+  TIER 4: Verifiable scenario with named outcome ("A 600-person manufacturing client reduced onboarding from 21 days to 6 after...")
+  Never use: "Research shows..." / "Studies suggest..." / "Experts agree..." without a named source and year.
+
+BLOCK 5: SIGN-OFF (2 lines)
+Line 1: Expert name, title, brand name, brand URL
+Line 2: "Happy to provide additional data points or expand on any part of this if useful for the article."
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Output the five blocks in sequence, clearly labeled:
+
+SUBJECT LINE:
+[subject line here]
+
+CREDENTIAL:
+[credential block here]
+
+ANSWER:
+[direct answer with one bolded sentence here]
+
+PROOF:
+[proof block here]
+
+SIGN-OFF:
+[sign-off here]
+
+WORD COUNT: [total word count of blocks 2 through 5]
+
+Total pitch length must be 150 to 280 words (blocks 2 through 5 combined). If over 280, cut from the proof block first, then the credential block. Never cut the direct answer.
+
+------------------------------------------------------------
+CARE FRAMEWORK CHECKLIST (VERIFY BEFORE FINALIZING)
+------------------------------------------------------------
+
+Before outputting the final pitch, verify all four criteria:
+
+C - CREDIBILITY: Does Block 2 name a specific, quantified credential (not a general bio)?
+A - ACCURACY: Is every statistic named with source and year? No vague "research shows"?
+R - RELEVANCE: Does the answer address the journalist's exact question directly in the first sentence?
+E - EXCLUSIVITY: Does the pitch contain at least one data point or insight the journalist cannot find from a quick search?
+
+If any criterion fails, revise before outputting.
+
+------------------------------------------------------------
+GLOBAL RULES (FROM _BRAND_DETECTION_RULES.TXT)
+------------------------------------------------------------
+
+- No em dashes anywhere in the output
+- No pronouns: you, we, our, your
+- Active voice throughout
+- Every stat names its source and year
+- No promotional brand tone in the answer body
+- Brand positioning happens in the credential block and sign-off only
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. GENERIC OPENING: Starting with "Great question" or restating the query before answering. Journalists delete these without reading further.
+
+2. MISSING CREDENTIAL SPECIFICITY: Writing "a thought leader in L&D" instead of a quantified credential. Vague credentials get skipped in favor of sources the journalist can verify.
+
+3. STAT WITHOUT SOURCE: Any statistic without a named study, organization, and year will either be cut or used without attribution, making the citation less likely.
+
+4. ANSWER BURIED AFTER CONTEXT: Putting three sentences of setup before the actual answer means the journalist has to work to find the quotable sentence. Put the answer in sentence one.
+
+5. OVER-LENGTH: Pitches over 280 words signal that the source cannot self-edit. Journalists working on deadline favor short, dense, citable responses over thorough essays.
+
+6. NO SIGN-OFF OFFER: Omitting the promotion offer in Block 5 leaves a relationship signal on the table. Journalists who know a source will share the article are more likely to include that source.

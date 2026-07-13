@@ -1,0 +1,37 @@
+============================================================
+COURSE / TRAINING PROGRAMME DESCRIPTION PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Write a course or training programme description for [BRAND NAME], [BRAND DESCRIPTION], for the programme titled "[COURSE / TRAINING TITLE]". The description should be 150-200 words. Open with a compelling statement about the problem or skill gap the course addresses. Follow with what participants will learn (3-4 key outcomes), who the course is designed for, the format and duration, and close with a CTA linking to [URL]. Write in a professional B2B tone targeting [TARGET AUDIENCE e.g. L&Ds, HRs, and decision-makers]. Do not use em dashes.
+
+Course URL: [INSERT URL]
+Course Format: [e.g. Instructor-led / Online self-paced / Blended]
+Duration: [e.g. 2 days / 16 hours / 6 weeks]
+Key Topics Covered: [LIST 3-5 KEY TOPICS]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Sr. No. | Course Title | Course URL | Short Description (150-200 words)
+
+Save to output/Course_Descriptions/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- 150-200 words
+- Must include 3-4 learning outcomes
+- Must specify who the course is for
+- No em dashes anywhere
+- CTA links to course URL
+- Output saved to output/Course_Descriptions/

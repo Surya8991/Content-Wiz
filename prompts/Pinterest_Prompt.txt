@@ -1,0 +1,31 @@
+============================================================
+PINTEREST POST PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Create a Pinterest post for [BRAND NAME], [BRAND DESCRIPTION], for the blog post titled "[BLOG TITLE]". Generate a Title and Description. The title should be concise and descriptive with a subtitle. The description should be 1-2 sentences in B2B language targeting [TARGET AUDIENCE], followed by 4-5 relevant hashtags with the last hashtag always being [BRAND HASHTAG]. Do not use em dashes.
+
+Blog URL: [INSERT BLOG URL]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Sr. No. | Blog URL | Title | Description
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Title format: Main Topic: Descriptive Subtitle (e.g. Skills in Demand in Germany: Workforce Priorities)
+- Description is 1-2 sentences max before hashtags
+- 4-5 hashtags, last one is always the brand hashtag
+- No em dashes anywhere
+- Output saved to output/Pinterest/

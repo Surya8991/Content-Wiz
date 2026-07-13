@@ -1,0 +1,211 @@
+============================================================
+GUEST ARTICLE PITCH PROMPT
+============================================================
+
+TWO MODES: Pitch Email / Full Article Draft
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, select the mode below.
+
+------------------------------------------------------------
+WHAT THIS PROMPT IS FOR
+------------------------------------------------------------
+
+This prompt generates outreach pitches for signed byline placements in Tier 1 and Tier 2 L&D, HR, and business publications. A guest article byline in the right publication builds EEAT authority, earns high-quality backlinks, and reaches audiences that do not yet follow the brand directly.
+
+The target is 2 confirmed placements per month in publications with 20,000 or more monthly readers. At a 15 to 20% pitch-to-placement rate, this requires pitching 10 to 13 publications per month.
+
+------------------------------------------------------------
+TARGET PUBLICATION TIERS (L&D AND HR SPACE)
+------------------------------------------------------------
+
+Refer to strategy-guest-articles.md for the full publication list.
+
+TIER 1 (highest reach, most competitive):
+- Chief Learning Officer Magazine (CLO Media) - 280,000+ L&D and talent leaders. Highest priority for Edstellar.
+- Training Industry Magazine - L&D professionals and learning technology buyers.
+- HR Dive - HR directors and VPs.
+- SHRM HR Magazine - 300,000+ HR professionals globally.
+- Harvard Business Review - Senior leaders and general management. Hardest to place, highest impact.
+
+TIER 2 (strong niche authority, more accessible):
+- ATD (Association for Talent Development) - Practitioners in training and instructional design.
+- HR.com (Learning & Development Excellence) - Regular contributor model.
+- Talent Management - Talent acquisition and development leaders.
+- eLearning Industry - Learning technology and instructional design community.
+- People Managing People - First-line and mid-level managers.
+
+FOR INVENSIS LEARNING SPECIFICALLY:
+- Project Management.com - PMP and project management community. Highest priority for Invensis.
+- PMI (Project Management Institute) blog - Direct audience alignment.
+- CertificationPoint.com - Professional certification audience.
+
+------------------------------------------------------------
+REQUIRED INPUTS (BOTH MODES)
+------------------------------------------------------------
+
+Mode: [A = Pitch Email / B = Full Article Draft / Both]
+Brand: [BRAND NAME OR URL]
+Author Name and Title: [The expert who will be bylined - name, title, company]
+Author Credential for This Topic: [One specific quantified credential: "led skills architecture projects for over 60 organizations across 15 industries"]
+Target Publication: [From the tier list above or a specific publication the user provides]
+Article Angle: [The specific problem the article solves for the publication's readers]
+Proposed Working Title(s): [1 to 3 specific headline options]
+Writing Sample URL: [Best published example of the author's writing - not a company blog if possible]
+Reference URL (if any): [Existing brand content to draw from]
+
+------------------------------------------------------------
+MODE A: PITCH EMAIL
+------------------------------------------------------------
+
+TIMING RULE: Pitch one publication at a time per article angle. Mass-pitching the same angle to multiple publications simultaneously damages credibility when editors in overlapping communities compare notes. If rejected, adjust the angle before pitching the next publication.
+
+FOLLOW-UP RULE: One follow-up only, 10 to 14 days after the initial email. One sentence: "Checking if the pitch from [date] arrived - happy to adjust the angle if it is not the right fit right now." No third follow-up.
+
+PITCH STRUCTURE (under 150 words total):
+
+SUBJECT LINE:
+Format: "Article pitch: [Specific Headline] for [Publication Name]"
+Name the publication in the subject line. This signals the pitch is targeted, not a mass send.
+Generic subject lines like "Guest post opportunity" or "Content collaboration" go to spam.
+
+BLOCK 1: HOOK AND ANGLE (2 to 3 sentences)
+State the specific problem the article solves for the publication's readers.
+Lead with what is surprising, counterintuitive, or newly relevant about this topic.
+If the publication recently covered a related topic, reference it and explain how this angle extends or challenges it.
+Do not open with: "I've been a fan of your podcast/magazine for years" or "I'd love to contribute to [Publication]."
+
+BLOCK 2: HEADLINE OPTIONS (2 to 3 options)
+Provide 2 or 3 specific, editorial-quality headline options.
+Headlines signal that the author thinks like an editor, not a marketer.
+Examples of editorial headlines:
+  "Why Compliance Training Is Making Your Workforce Less Safe"
+  "The Skills Gap Most L&D Teams Create Themselves"
+  "What 400 Training Programs Revealed About Why Employees Don't Apply Learning"
+Examples of headlines to avoid:
+  "How Edstellar Helps Organizations Train Better"
+  "The Importance of Corporate Training in Today's Business Environment"
+
+BLOCK 3: WHY THIS AUTHOR (2 sentences maximum)
+State the specific credential that qualifies the author to write this piece.
+Quantified experience, named client types, or verifiable outcomes.
+Not: "an experienced L&D professional with a passion for workforce development."
+Yes: "[Name] oversees L&D program design for enterprise clients at [Brand], having led skills architecture projects for over 60 organizations across 15 industries."
+
+BLOCK 4: WRITING SAMPLE (1 link)
+One link to the best published example of the author's writing closest in style to the target publication.
+Not a company blog post that reads as marketing.
+An analytical, bylined piece published on a credible third-party site.
+
+SIGN-OFF: Name, title, email, company URL.
+
+TOTAL: under 150 words. One link. No attachments.
+
+------------------------------------------------------------
+MODE B: FULL ARTICLE DRAFT
+------------------------------------------------------------
+
+Write a full guest article for [TARGET PUBLICATION] following their editorial format.
+
+ARTICLE RULES FOR TRADE PUBLICATIONS:
+1. The article body must be entirely free of promotional content. No product mentions, no company pitches, no "learn more" links within the body. All brand value comes from the author bio.
+2. Every major claim needs evidence. In order of preference: first-party brand data, named industry study with year, specific case example, expert quote from a named third party.
+3. "Research shows" without a named source will be flagged by editors and removed.
+4. The last body section must give readers something to do - a framework, a diagnostic question, a decision tree, or a checklist. Trade readers are practitioners who want tools, not just analysis.
+
+ARTICLE STRUCTURE:
+
+HEADLINE (under 12 words):
+Statement or question. Specific to the argument. Uses the audience's exact language.
+Write 3 headline options and mark the recommended choice.
+
+OPENING (100 to 150 words):
+State the problem the article addresses. Name who has it and what it costs them.
+No setup, no context. Earn the read in the first paragraph.
+The editor reads the opening first. If the opening does not immediately establish the stakes and the argument, the pitch gets rejected even after acceptance.
+
+BODY (600 to 900 words total):
+3 to 4 sections with subheadings. Each section advances one argument.
+No section should restate a previous section in different words.
+Evidence standard: every major claim needs one supporting item from the evidence hierarchy.
+
+Proof hierarchy for article body:
+  TIER 1: First-party data from brand programs with year ("A 2026 analysis of 40 Edstellar enterprise training programs found that...")
+  TIER 2: Named study from a recognized organization with year
+  TIER 3: Named expert quote with name, title, and publication
+  TIER 4: Specific client scenario with verifiable details
+
+PRACTICAL APPLICATION SECTION (final body section, 150 to 200 words):
+Give readers something they can act on today.
+A framework, a diagnostic question, a 3-step process, or a decision checklist.
+This section is what trade publication editors look for before accepting a piece. Thought without application is commentary, not a contribution.
+
+AUTHOR BIO (2 sentences):
+Name, title, company name with URL, one credential line.
+This is the only place brand promotion is appropriate.
+Example: "[Name] is [Title] at [Brand Name] ([URL]), where [specific credential tied to this article's topic]. [Name] works with enterprise organizations on [relevant program type]."
+
+WORD COUNT TARGET: 700 to 1,000 words for Tier 1 publications; 500 to 800 words for Tier 2.
+
+------------------------------------------------------------
+RELATIONSHIP MAINTENANCE NOTES
+------------------------------------------------------------
+
+After a pitch is sent, log the following:
+- Publication name
+- Editor name (if known)
+- Pitch date
+- Article angle pitched
+- Follow-up due date (10 to 14 days from pitch)
+- Status (pitched / follow-up sent / accepted / rejected / archived)
+
+After a placement is published:
+- Share the article on LinkedIn, tag the editor and publication account
+- Send the editor a brief note when the article generates strong engagement
+- Pitch the next article within 60 days. Editors prefer known contributors over new pitches.
+
+------------------------------------------------------------
+OUTREACH SEQUENCE
+------------------------------------------------------------
+
+Day 0: Send pitch email. Under 150 words, 2 to 3 headlines, 1 writing sample link.
+Day 10 to 14 (if no response): Send one follow-up. One sentence only.
+After second no-response: Archive and move to the next publication. No third follow-up.
+Ongoing: Review each publication's editorial calendar quarterly. Pitches aligned with stated editorial themes have a higher acceptance rate.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Mode A: Full pitch email formatted for copy-paste, with subject line and all 4 blocks labeled.
+Mode B: Full article draft in markdown with labeled sections (headline, opening, body sections, application, author bio).
+
+Save to: output/Guest_Articles/
+File name: GuestPitch_[Publication-Slug]_[Date].txt (Mode A) or GuestArticle_[Publication-Slug]_[Slug].md (Mode B)
+
+------------------------------------------------------------
+GLOBAL RULES
+------------------------------------------------------------
+
+- No em dashes anywhere
+- No passive voice
+- No promotional content in article body (author bio only)
+- Pitch: under 150 words, one link, no attachments
+- Article: every major claim backed with named evidence and year
+- Named author with specific quantified credential (not general bio)
+- Output saved to output/Guest_Articles/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. PITCHING THE SAME ANGLE TO MULTIPLE PUBLICATIONS SIMULTANEOUSLY: Editors in overlapping communities know each other. Mass-pitching the same idea reads as spam and damages credibility with every editor on the list. Pitch one publication per angle. Adjust the angle if rejected, then pitch the next.
+
+2. PROMOTIONAL CONTENT IN THE ARTICLE BODY: Any product mention, service description, or "contact us" language in the article body triggers immediate editorial rejection. The article serves the reader. The author bio serves the brand. Keep these separated without exception.
+
+3. PITCHING WITHOUT READING THE PUBLICATION: Editors instantly recognize pitches from people who have not read their publication. The clearest signal: pitching a topic covered in the last 60 days, or using language that does not match the publication's tone and readership. Read at least 3 recent articles before pitching.
+
+4. NO WRITING SAMPLE: A pitch without a writing sample forces the editor to take the author's word for quality. Most editors will not. A strong, previously published analytical piece on a credible third-party site converts pitches that would otherwise be ignored.
+
+5. LONG PITCH EMAILS: An email over 200 words signals the author cannot decide what is important. Editors are time-poor. The pitch is the first test of whether working with this author will be easy or burdensome. Under 150 words is not a guideline; it is a quality signal.

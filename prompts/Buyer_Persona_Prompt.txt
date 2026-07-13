@@ -1,0 +1,45 @@
+============================================================
+BUYER PERSONA BRIEF PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Create a detailed buyer persona for [BRAND NAME], [BRAND DESCRIPTION], for the target audience segment "[PERSONA NAME / SEGMENT e.g. L&D Manager at a mid-size enterprise]". The persona should cover: demographic profile, job title and seniority, industry and company size, primary goals and KPIs, key pain points and challenges, decision-making role (influencer / decision-maker / end user), preferred content formats, preferred channels, common objections to purchasing, and what a winning message looks like for this persona. Do not use em dashes.
+
+Segment to profile: [INSERT SEGMENT e.g. HR Director / L&D Manager / CEO of SME]
+Industry focus (if any): [INSERT OR LEAVE BLANK]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Field | Detail
+
+Rows:
+- Persona Name
+- Job Title and Seniority
+- Industry and Company Size
+- Primary Goals and KPIs
+- Key Pain Points
+- Decision-Making Role
+- Preferred Content Formats
+- Preferred Channels
+- Common Objections
+- Winning Message
+
+Save to output/Buyer_Personas/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- All fields must be specific and actionable, not generic
+- Pain points and objections must reflect real B2B buying behaviour
+- No em dashes anywhere
+- Output saved to output/Buyer_Personas/

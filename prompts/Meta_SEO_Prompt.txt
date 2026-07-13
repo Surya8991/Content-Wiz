@@ -1,0 +1,55 @@
+============================================================
+META / SEO + AEO PROMPT
+============================================================
+
+Covers: Meta Title, Meta Description, AEO (Answer Engine Optimisation),
+and AI Overview Snippet optimisation.
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+SECTION 1 - META TAGS (Traditional SEO)
+------------------------------------------------------------
+
+Create SEO meta tags for [BRAND NAME], [BRAND DESCRIPTION], for the blog post titled "[BLOG TITLE]" at [URL]. Generate a meta title and meta description. The meta title should be under 60 characters, include the primary keyword, and be compelling enough to earn a click. The meta description should be 140-160 characters, summarise the page value clearly, and include a subtle call to action. Do not use em dashes. Avoid passive voice.
+
+Blog URL: [INSERT BLOG URL]
+Primary Keyword (if known): [INSERT KEYWORD OR LEAVE BLANK]
+
+------------------------------------------------------------
+SECTION 2 - AEO (Answer Engine Optimisation)
+------------------------------------------------------------
+
+AEO optimises content to appear in featured snippets, People Also Ask boxes, and AI-generated answer panels (Google AI Overview, Bing Copilot, Perplexity). The goal is to make content the direct answer to a specific question.
+
+For the same blog post, generate:
+
+1. TARGET QUESTION: The single most likely question a user would type into Google or an AI tool that this blog post should answer.
+
+2. FEATURED SNIPPET ANSWER: A direct, concise answer to that question in 40-60 words. Written to be pulled verbatim by Google or an AI tool. No fluff, no preamble, just the answer.
+
+3. PEOPLE ALSO ASK (PAA) BLOCK: Generate 4 related questions a user might ask after the primary question, each with a 30-40 word direct answer.
+
+4. AI OVERVIEW OPTIMISATION NOTE: One sentence explaining what claim or stat in this content is most likely to be cited by an AI Overview, and why.
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Sr. No. | Blog Title | Blog URL | Meta Title | Meta Description | Target Question | Featured Snippet Answer | PAA Q1 | PAA A1 | PAA Q2 | PAA A2 | PAA Q3 | PAA A3 | PAA Q4 | PAA A4 | AI Overview Note
+
+Save to output/Meta/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Meta title: under 60 characters, includes primary keyword
+- Meta description: 140-160 characters, includes CTA
+- Featured snippet answer: 40-60 words, direct and quotable
+- PAA answers: 30-40 words each, direct
+- No em dashes anywhere
+- No passive voice
+- Output saved to output/Meta/

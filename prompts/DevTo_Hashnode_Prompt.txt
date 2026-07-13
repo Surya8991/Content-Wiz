@@ -1,0 +1,52 @@
+============================================================
+DEV.TO / HASHNODE BLOG PROMPT (MARKDOWN FORMAT)
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Write a technical or professional blog post in Markdown format for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[BLOG TOPIC]". The post should be [WORD COUNT e.g. 800-1200] words, written for a developer or tech-savvy professional audience on [PLATFORM e.g. Dev.to / Hashnode]. Use proper Markdown formatting including a frontmatter block with title, tags, and cover image placeholder. Structure the post with a practical introduction, clear H2 and H3 subheadings, code snippets where relevant, and a concise conclusion with a CTA. Do not use em dashes. Naturally reference [BRAND NAME] without being promotional. End with 4-5 relevant tags formatted for the platform.
+
+Reference URL (if any): [INSERT URL]
+Platform: [Dev.to / Hashnode]
+
+------------------------------------------------------------
+OUTPUT FORMAT (MARKDOWN)
+------------------------------------------------------------
+
+---
+title: "Post Title"
+tags: [tag1, tag2, tag3, tag4]
+cover_image: ""
+canonical_url: "[INSERT URL IF APPLICABLE]"
+---
+
+## Introduction
+...
+
+## Section 1 (H2)
+...
+
+## Section 2 (H2)
+...
+
+## Conclusion
+...
+
+Save to output/DevTo_Hashnode/ as a .md file
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Output must be valid Markdown with frontmatter
+- Code snippets in fenced code blocks where relevant
+- 800-1200 words
+- No em dashes anywhere
+- Tags formatted as array in frontmatter
+- Output saved to output/DevTo_Hashnode/ as .md file

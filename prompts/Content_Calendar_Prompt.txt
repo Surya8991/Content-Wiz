@@ -1,0 +1,86 @@
+============================================================
+CONTENT CALENDAR PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Create a [DURATION e.g. 4-week / monthly] content calendar for [BRAND NAME], [BRAND DESCRIPTION], targeting [TARGET AUDIENCE] across the following platforms: [PLATFORMS e.g. LinkedIn, GMB, Pinterest, Instagram, Twitter/X, YouTube]. Base the calendar on the topic/niche "[TOPIC/NICHE]". For each slot, provide the platform, content type, topic idea, post angle description, and the prompt file to use for generation. Do not use em dashes. Avoid passive voice. Ensure content variety across platforms with no repeated angles within the same week.
+
+Reference URLs (if any): [INSERT URLS]
+
+------------------------------------------------------------
+AVAILABLE CONTENT TYPES (use these exactly in the Content Type column)
+------------------------------------------------------------
+
+SOCIAL POSTS:
+- LinkedIn Post
+- LinkedIn Article
+- LinkedIn Carousel
+- Twitter/X Thread
+- Instagram Caption
+- Pinterest Post
+- GMB Post
+- Reddit Post
+
+VIDEO:
+- YouTube Video (Short)
+- YouTube Video (Long)
+- Instagram Reel Script
+- LinkedIn Video Script
+
+LONG-FORM:
+- Blog Post
+- Whitepaper
+- eBook
+- Case Study
+- Original Research Report
+- Skills Gap Analysis Report
+
+LEAD GENERATION:
+- Quiz / Self-Assessment
+- Calculator
+- Webinar Promo
+- Newsletter
+
+SEO / GEO:
+- GEO Content Block
+- FAQ Page
+- Meta + AEO Tags
+
+EMAIL:
+- Newsletter Issue
+- Drip Email
+- Outreach Email
+
+OTHER:
+- Podcast Episode
+- SlideShare / Presentation
+- Press Release
+- HARO Response
+- Thought Leadership Op-Ed
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Week | Day | Platform | Content Type | Topic | Post Angle / Description | Prompt File to Use
+
+Save to output/Content_Calendar/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- No two posts in the same week should have the same angle
+- Each platform gets content suited to its format and audience behaviour
+- LinkedIn Carousel must appear at least once per 2-week period
+- Video content (Reel / YouTube / LinkedIn Video) must appear at least once per week
+- No em dashes anywhere
+- No passive voice
+- Output saved to output/Content_Calendar/

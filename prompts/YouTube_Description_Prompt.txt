@@ -1,0 +1,157 @@
+============================================================
+YOUTUBE DESCRIPTION PROMPT
+============================================================
+
+TWO MODES: Standard Video Description / Shorts Description
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, select the mode and provide all required inputs.
+
+------------------------------------------------------------
+WHY THE DESCRIPTION MATTERS BEYOND SEO
+------------------------------------------------------------
+
+The YouTube description serves three jobs simultaneously: (1) it tells the algorithm what the video is about through keyword signals, (2) it gives the viewer who just watched a clear next step, and (3) it provides a scannable chapter guide that increases average view duration by helping viewers navigate to the sections they care about most.
+
+A description written as a wall of keywords serves none of these jobs. A description structured for the viewer first earns both the algorithmic benefit and the engagement behavior.
+
+------------------------------------------------------------
+REQUIRED INPUTS
+------------------------------------------------------------
+
+Mode: [A = Standard Video (8+ min) / B = Shorts (under 90 sec)]
+Brand: [BRAND NAME OR URL]
+Video Title: [Exact title as it appears on YouTube]
+Video Topic: [Primary subject - one sentence]
+Primary Keyword: [The exact search phrase this video targets]
+3 to 5 Key Takeaways: [What the viewer learns - bullet form]
+Chapters: [List of chapter topics with approximate timestamps - required for Mode A on videos over 5 min]
+CTA Destination: [URL, resource name, or next video to recommend]
+Related Videos: [1 to 2 other channel videos to link in the description - optional]
+
+------------------------------------------------------------
+MODE A: STANDARD VIDEO DESCRIPTION (8+ MINUTES)
+------------------------------------------------------------
+
+Structure the description in 5 sections, in this exact order:
+
+SECTION 1: HOOK PARAGRAPH (2 to 3 sentences, 100 to 150 characters)
+The first 100 to 150 characters appear as the preview text before "Show more" in YouTube search results. These characters must contain the primary keyword and state the specific outcome or finding the video delivers.
+- Lead with what the viewer will gain, not with the brand name or a greeting
+- Include the primary keyword naturally within the first sentence
+- Do not start with: "In this video..." or "Welcome to [channel name]"
+- Yes: "Skills gap analysis takes most L&D teams weeks to complete. This video shows the 3-step process that gets it done in one day." [keyword + specific outcome + time value]
+
+SECTION 2: WHAT YOU WILL LEARN (3 to 5 bullet points)
+Each bullet: one complete sentence naming a specific takeaway from the video.
+- Use action verbs: "How to identify...", "The framework for...", "Why [common practice] fails and what to do instead"
+- Match these bullets to the actual chapter content in the video
+- These bullets are indexed by YouTube's search algorithm - include secondary keywords naturally
+
+SECTION 3: CHAPTERS (mandatory for all videos over 5 minutes)
+Format exactly as shown - YouTube auto-generates clickable chapter markers from this format:
+0:00 Introduction
+[MM:SS] [Chapter name - 3 to 6 words, matches the spoken section header in the video]
+[MM:SS] [Chapter name]
+...
+
+Rules:
+- First chapter must start at 0:00
+- Minimum 3 chapters for YouTube to activate the chapter feature
+- Chapter names should match the words used on screen during that section
+- Chapters increase average view duration by letting viewers jump to relevant sections
+
+SECTION 4: LINKS AND RESOURCES
+- Primary CTA link (first link listed - most visible): [URL + one-sentence description of what is there]
+- Related video 1: [URL + title] (if applicable)
+- Related video 2: [URL + title] (if applicable)
+- Brand website: [URL]
+- Social links: LinkedIn, Twitter/X (if the brand actively maintains these)
+
+Format: use descriptive anchor text, not bare URLs where possible. YouTube does not support hyperlinks in descriptions - list the full URL.
+
+SECTION 5: HASHTAGS (3 to 5, final line)
+3 to 5 hashtags, separated by spaces, placed on the final line.
+Last hashtag always [BRAND HASHTAG].
+YouTube displays the first 3 hashtags above the video title - make these the 3 most relevant.
+Do not use more than 5 - YouTube ignores all hashtags on descriptions with more than 15.
+
+------------------------------------------------------------
+MODE B: SHORTS DESCRIPTION (UNDER 90 SECONDS)
+------------------------------------------------------------
+
+YouTube Shorts descriptions are secondary to the video itself. Keep them short and functional.
+
+Structure (50 to 100 words total):
+
+LINE 1: State the single finding or takeaway the Short delivers - one sentence with the primary keyword.
+LINE 2: "Full video: [URL]" or "Full framework: [URL]" - link to the related long-form video if one exists.
+LINE 3 (optional): One resource link if a downloadable or article is directly relevant.
+FINAL LINE: 3 hashtags maximum, last always [BRAND HASHTAG].
+
+Do not write a multi-paragraph description for a Short. Viewers of Shorts rarely expand the description.
+
+------------------------------------------------------------
+PINNED FIRST COMMENT (GENERATE ALONGSIDE DESCRIPTION)
+------------------------------------------------------------
+
+The pinned comment under the video is the second-most-read text after the description. Generate this alongside every description.
+
+Format:
+- One sentence summarizing the primary takeaway from the video
+- One resource link (the same as the primary CTA in the description)
+- One CTC question inviting viewers to comment: "Which of these steps does your team currently skip?"
+
+This comment earns engagement signals that the algorithm weighs in the first 48 hours after publish.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Output three sections:
+
+SECTION A: FULL DESCRIPTION
+[Complete formatted description, ready to paste into YouTube Studio]
+
+SECTION B: PINNED FIRST COMMENT
+[Ready to paste as the first comment immediately after publishing]
+
+SECTION C: METADATA NOTES
+Primary keyword: [confirm keyword used in description]
+Secondary keywords used: [list]
+Chapter count: [N chapters - confirms YouTube chapter feature will activate if N >= 3]
+Hashtag count: [N - confirms within 1-5 range]
+
+For bulk/CSV output:
+Sr. No. | Video Title | Primary Keyword | Description | Pinned Comment | Hashtags
+
+Save to: output/YouTube/
+File name: YT_Desc_[Short-Slug].txt
+
+------------------------------------------------------------
+GLOBAL RULES
+------------------------------------------------------------
+
+- Primary keyword in the first 150 characters of the description
+- No em dashes anywhere
+- No passive voice
+- First 150 characters must hook without reading more
+- Chapters required for all videos over 5 minutes
+- 3 to 5 hashtags maximum
+- Pinned comment generated alongside every description
+- Output saved to output/YouTube/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. BRAND NAME AS THE FIRST WORD: "Edstellar presents a video on skills gap analysis..." wastes the first 150 characters on the brand rather than the keyword and hook. YouTube search shows the first 150 characters. Lead with the topic and the outcome.
+
+2. MISSING CHAPTERS: A video over 5 minutes without chapter markers has lower average view duration than one with chapters. Viewers who cannot navigate to the section they want abandon the video. Chapters are the highest-leverage addition to any long-form video description.
+
+3. KEYWORD STUFFING IN THE DESCRIPTION: A description that lists 20 keywords without forming sentences does not help YouTube's algorithm and actively confuses viewers. Write for the viewer first - natural keyword placement earns algorithmic benefit without the penalty risk.
+
+4. NO PINNED COMMENT: The pinned comment is free engagement real estate in the first 48 hours after publish. A video published without a pinned comment misses the early engagement window that feeds algorithmic distribution.
+
+5. MORE THAN 5 HASHTAGS: YouTube ignores all hashtags on descriptions containing more than 15 hashtags, and descriptions with 6 to 15 hashtags show reduced tag visibility. Stay at 3 to 5.

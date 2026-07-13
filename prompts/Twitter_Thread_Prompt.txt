@@ -1,0 +1,157 @@
+============================================================
+TWITTER / X THREAD PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, provide all required inputs and generate the thread.
+
+------------------------------------------------------------
+HOW TWITTER/X THREADS WORK IN 2026
+------------------------------------------------------------
+
+A thread lives or dies on Tweet 1. If Tweet 1 does not earn a click to expand the thread, no one reads Tweets 2 through 10. The algorithm surfaces threads based on engagement on the first tweet - likes, retweets, replies, and bookmarks on Tweet 1 determine whether the thread gets distributed to non-followers.
+
+The second constraint: every tweet in the thread must stand alone. A reader who enters the thread at Tweet 4 (via a quote-tweet or reply notification) must be able to understand and benefit from that tweet without reading Tweets 1 through 3. Threads that rely on sequential context lose readers at every entry point.
+
+------------------------------------------------------------
+REQUIRED INPUTS
+------------------------------------------------------------
+
+Brand: [BRAND NAME OR URL]
+Source Content: [Article URL, topic, or key insight to thread from]
+Thread Type: [Argument / How-To / Stat List / Counterintuitive Claim / Case Study]
+Primary Claim: [The single most counterintuitive or specific claim the thread makes - one sentence]
+Key Data Points: [2 to 5 stats to cite - each with source and year]
+CTA Destination URL: [URL the final tweet links to]
+Thread Length: [5 to 10 tweets recommended]
+
+------------------------------------------------------------
+THREAD TYPES - CHOOSE ONE
+------------------------------------------------------------
+
+TYPE 1: ARGUMENT THREAD
+Makes a single specific claim in Tweet 1 and spends the rest of the thread proving it.
+Structure: Claim → Why the opposite is widely believed → Evidence 1 → Evidence 2 → Evidence 3 → The implication → CTA
+Best for: Counterintuitive takes, challenging conventional wisdom, positioning against a named misconception.
+
+TYPE 2: HOW-TO THREAD
+Delivers a step-by-step process. Each numbered step gets one tweet.
+Structure: Outcome (Tweet 1) → Why most people fail at this → Step 1 → Step 2 → ... → Step N → The result when done right → CTA
+Best for: Practical frameworks, processes, and operational guides.
+
+TYPE 3: STAT LIST THREAD
+Opens with the most surprising statistic and uses subsequent tweets to contextualize related stats.
+Structure: Most surprising stat (Tweet 1) → Stat 2 + implication → Stat 3 + implication → ... → What these stats mean together → CTA
+Best for: Research findings, original data, industry report summaries.
+
+TYPE 4: COUNTERINTUITIVE CLAIM THREAD
+Opens with a claim that contradicts what the audience currently believes, then dismantles the conventional view.
+Structure: The counterintuitive claim (Tweet 1) → What most people believe instead → Why that belief exists → Why it is wrong → The evidence → The correct model → CTA
+Best for: Thought leadership positioning, establishing a distinct point of view.
+
+TYPE 5: CASE STUDY THREAD
+Tells the story of a specific outcome in tweet-sized chunks.
+Structure: The result (Tweet 1, lead with the metric) → The starting point → The challenge → What changed → Step 1 → Step 2 → The outcome in numbers → The transferable lesson → CTA
+Best for: Client outcomes, before-and-after stories, proof-of-concept narratives.
+
+------------------------------------------------------------
+TWEET-BY-TWEET STRUCTURE
+------------------------------------------------------------
+
+TWEET 1: THE HOOK
+This tweet determines thread performance. Must earn a click to read more.
+- Lead with the primary claim, the most surprising stat, or the specific outcome
+- Under 240 characters (leave room for engagement)
+- "A thread:" or a thread emoji at the end is acceptable as a signal but comes after the hook, not before it
+- Do not open with: "I've been thinking about..." or "Hot take:" or "Unpopular opinion:"
+- Yes: The specific claim, stated directly, with enough precision to create curiosity about the proof
+
+Hook patterns for Tweet 1:
+  PATTERN 1: "[Specific percentage or number] of [audience] [surprising finding]. Here is why."
+  PATTERN 2: "[Common practice] produces [negative outcome]. [Alternative] produces [specific better result]."
+  PATTERN 3: "Most [audience] focus on [X]. The ones getting [desired outcome] focus on [Y]."
+  PATTERN 4: "[Named framework]: [what it is in one phrase]. It changed how [named outcome] works."
+  PATTERN 5: "[Specific outcome] in [timeframe]. The process:"
+
+TWEETS 2 TO (N-1): CONTENT TWEETS
+Each content tweet: one complete idea, standalone.
+
+For Argument threads: each tweet advances one step of the proof. State the evidence, then give its implication in the same tweet.
+For How-To threads: state the step number and name, then the one-sentence action.
+Example: "Step 3: Run the behavior gap audit. Compare what employees do post-training against what the program said they would do. Most L&D teams skip this step entirely."
+For Stat threads: state the stat with source and year, then one sentence on why it matters. Never a stat without an implication.
+
+Rules for content tweets:
+- Under 280 characters each
+- Named stats include source and year: "(ATD, 2025)" or "per WEF 2025 Future of Jobs Report"
+- Each tweet ends with a micro-payoff: a fact, a named concept, or a specific number
+- No cliffhangers that require the next tweet to complete the thought - each tweet must stand alone
+
+SECOND-TO-LAST TWEET: THE SYNTHESIS
+Bring the thread together in one tweet.
+- What does following this process or believing these facts produce as an outcome?
+- State it as a specific, named result: not "improved training outcomes" but "Organizations that do this approved 40% larger L&D budgets the following year. (Edstellar, 2026)"
+
+FINAL TWEET: CTA
+One link. One ask.
+- Format: "[What is at the destination URL]. [Link]."
+- Example: "The full 3-step behavior measurement framework is here: [URL]"
+- End with [BRAND HASHTAG] + 1 to 2 topically relevant hashtags (3 hashtags maximum on the CTA tweet)
+- Never ask for likes, follows, and a link click in the same tweet - one ask only
+
+------------------------------------------------------------
+THREAD FORMATTING RULES
+------------------------------------------------------------
+
+- Number tweets if it is a how-to or stat list: "3/" at the start of Tweet 3 helps readers track position
+- Use line breaks within tweets for readability
+- Bold is not available on X - use ALL CAPS sparingly for emphasis (one word maximum per tweet)
+- Emojis: acceptable as visual anchors (one per tweet maximum) but never as substitutes for words
+- No em dashes anywhere - use a comma, colon, or full stop instead
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Output each tweet on a new line, numbered. Note character count after each tweet.
+
+TWEET 1: [text] [XXX chars]
+TWEET 2: [text] [XXX chars]
+...
+TWEET N: [text + URL + hashtags] [XXX chars]
+
+Also output:
+THREAD HOOK SUMMARY: [The single sentence from Tweet 1 most likely to be quoted or shared]
+
+For bulk/CSV output:
+Sr. No. | Topic | Source URL | Tweet 1 | Tweet 2 | ... | Tweet N | CTA URL
+
+Save to: output/Twitter/
+File name: Thread_[Short-Slug].txt
+
+------------------------------------------------------------
+GLOBAL RULES
+------------------------------------------------------------
+
+- No em dashes anywhere
+- No passive voice
+- Every stat names source and year
+- Each tweet standalone and complete
+- No URL in any tweet except the final CTA tweet
+- Maximum 3 hashtags on the final tweet only, last always [BRAND HASHTAG]
+- Output saved to output/Twitter/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. WEAK TWEET 1: "A thread on why corporate training fails." is a topic announcement, not a hook. The hook must make a specific claim or state a surprising number. Restate: "43% of corporate training produces no measurable behavior change. The cause is not the content. It is the measurement system."
+
+2. TWEETS THAT REQUIRE PREVIOUS CONTEXT: "This is why Step 2 matters so much." means nothing to a reader who enters at Tweet 5. Every tweet must stand alone. Replace contextual references with specific restatements.
+
+3. STAT WITHOUT IMPLICATION: A tweet that says "44% of job skills will be disrupted in 5 years (WEF, 2025)" delivers a fact but not a thought. Add the one-sentence implication: "That means the skills audit your team ran in 2023 is already partly outdated."
+
+4. CLIFFHANGER ENDINGS: "And here is the surprising part... [next tweet]" trades engagement signal for reader trust. Readers who get value from every tweet return and share. Readers who feel teased unfollow.
+
+5. THREE ASKS IN THE CTA: "Like this thread, follow for more, and read the full article here." ensures none of the three actions happen at full rate. One ask in the final tweet only.

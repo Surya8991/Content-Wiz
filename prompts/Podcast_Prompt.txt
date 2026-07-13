@@ -1,0 +1,203 @@
+============================================================
+PODCAST PROMPT
+============================================================
+
+THREE MODES: Show Notes / Episode Script / Podcast Guesting Pitch
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, select the mode below and provide all required inputs.
+
+------------------------------------------------------------
+MODE A: SHOW NOTES (for a published or planned episode)
+------------------------------------------------------------
+
+Use when: Writing show notes for the brand's own podcast episode or a guesting appearance.
+
+Required inputs:
+- Episode title
+- Topic
+- Guest name and title (if applicable)
+- Episode duration (approximate)
+- 3 to 5 key insights or findings from the episode
+- Any statistics cited during the episode (with source and year)
+- CTA destination URL
+
+Generate the following:
+
+EPISODE SUMMARY (100 to 150 words):
+Write in third person ("In this episode, [host/guest] explores...").
+Open with the primary insight or counterintuitive claim the episode delivers.
+Do not open with: "In today's episode..." or "Welcome back to..."
+Name the specific takeaway a listener will have after finishing the episode.
+
+KEY TAKEAWAYS (4 to 6 bullet points):
+Each takeaway: one sentence, standalone, written to be copy-pasted into a social post.
+Include any named frameworks or statistics cited during the episode.
+
+TIMESTAMPS (placeholder format if episode not yet recorded):
+[00:00] Introduction and episode framing
+[XX:XX] [Named topic or question - one phrase]
+Use placeholders like [05:00] if actual timestamps are unknown.
+
+EPISODE RESOURCES (if applicable):
+List any frameworks, reports, or tools mentioned during the episode with URLs.
+
+CTA:
+One sentence and one URL. Match the CTA to the episode topic: a relevant consultation, a free resource, or a case study.
+
+------------------------------------------------------------
+MODE B: EPISODE SCRIPT (for recording)
+------------------------------------------------------------
+
+Use when: Writing a full or outline script for the brand's own podcast episode.
+
+Required inputs:
+- Topic
+- Guest name and title (if applicable)
+- Target duration
+- 3 to 5 discussion points or questions to cover
+- Primary takeaway for the episode (the one named insight the audience should leave with)
+- CTA destination URL
+
+EPISODE STRUCTURE:
+
+[INTRO HOOK - 45 to 60 seconds]
+Open with the single most surprising or specific claim the episode will make.
+Not: "Welcome back, everyone. Today we're talking about..."
+Yes: "Most L&D managers can measure training completion. Almost none can measure whether completion changed behavior - and that gap is costing organizations budget approval every quarter. That's what today's episode is about."
+[Spoken word count: 90-120 words]
+
+[HOST INTRO + FRAMING - 60 to 90 seconds]
+Brief host introduction (1 sentence only).
+Name the guest and their specific credential for this topic (quantified, not general).
+State the episode's primary takeaway as a named framework or claim: "By the end of this episode, you'll have [Framework Name] - a [number]-step process for [outcome]."
+[Spoken word count: 120-180 words]
+
+[DISCUSSION SEGMENTS - 3 to 5 segments]
+For each segment:
+  - Opening question (the question the host asks)
+  - Talking points (3 to 4 bullet points of key ideas to cover - not scripted, but prompted)
+  - Transition line (how the host moves from this segment to the next)
+  - Approximate duration: 4 to 8 minutes per segment
+
+PRIMARY TAKEAWAY REINFORCEMENT:
+The primary takeaway (the named framework or central claim) must be stated or referenced at least 3 times during the episode:
+  - Once in the intro hook
+  - Once during the main content segments (in full, with all components named)
+  - Once in the closing summary
+
+[CLOSING + CTA - 45 to 60 seconds]
+Return to the primary takeaway in a summary form.
+One CTA. Match to episode topic.
+Host sign-off: natural, not scripted corporate language.
+
+SPOKEN WORD COUNT GUIDE:
+20 min = 2,600-3,000 words | 30 min = 3,900-4,500 words | 45 min = 5,850-6,750 words
+
+------------------------------------------------------------
+MODE C: PODCAST GUESTING PITCH
+------------------------------------------------------------
+
+Use when: Pitching the brand's leadership as a guest on a third-party podcast.
+
+Required inputs:
+- Guest name, title, and company
+- Target podcast name (and any recent episode titles the guest has listened to)
+- Target audience of the podcast (e.g., L&D managers, HR directors, operations leaders)
+- Proposed episode angle (the specific problem the episode would address)
+- Guest's quantified credential for this specific topic
+- Writing sample URL or previous podcast appearance URL (if available)
+
+TIMING RULE: Pitch responses must arrive within 48 hours of identifying the show. Hosts plan episodes in advance; late pitches land in a backlog that rarely gets revisited.
+
+PITCH STRUCTURE (under 150 words total):
+
+BLOCK 1: SUBJECT LINE
+Format: "Guest pitch: [Specific Episode Angle] for [Podcast Name]"
+Name the podcast in the subject line. Generic subject lines get deleted.
+Example: "Guest pitch: Measuring Behavior Change After Training for The L&D Podcast"
+
+BLOCK 2: HOOK (2 sentences)
+Name the specific problem the host's audience is currently experiencing.
+Do not open with the guest's credentials. Open with the listener's problem.
+Example: "Most L&D managers can measure training completion. Almost none can measure whether completion changed employee behavior - and that gap is costing organizations budget approval every quarter."
+
+BLOCK 3: EPISODE ANGLE (2 to 3 sentences)
+Describe the specific, titled angle the episode would take. Give it a working title.
+Provide 2 to 3 specific points the conversation would cover.
+Example: "Episode angle: 'From Completion to Behavior Change: The 3-Step Measurement Framework' - covering (1) why completion metrics mislead budget committees, (2) the specific behavior indicators L&D should measure instead, and (3) how to present training ROI in language that CFOs can act on."
+
+BLOCK 4: CREDENTIAL (2 sentences)
+State the specific reason this guest can credibly speak to this topic.
+A quantified credential, not a general bio.
+Example: "[Guest Name] oversees L&D program design at [Brand], where the team has run skills measurement programs for over 60 enterprise organizations. Direct data on what behavior metrics move budget decisions and what does not."
+
+SIGN-OFF: Name, title, website, one link to a writing sample or previous podcast appearance.
+
+TOTAL: under 150 words. One link. No attachments.
+
+PRIMARY TAKEAWAY FRAMEWORK (PREPARE BEFORE EVERY RECORDING):
+Before the recording, identify:
+1. THE PRIMARY TAKEAWAY: the single counterintuitive claim or named framework the audience should remember. State it three ways:
+   - HEADLINE VERSION (10 words or fewer)
+   - CONVERSATIONAL VERSION (3 to 4 sentences)
+   - EXAMPLE VERSION (brief scenario + outcome)
+2. 3 TO 5 DATA POINTS: statistics or case references to drop naturally into conversation. Each with source and year.
+3. BACKGROUND RESPONSE (45 seconds maximum): a prepared answer to "Tell us about your background" that ends with the specific lens through which the episode's topic will be explored.
+
+------------------------------------------------------------
+DISTRIBUTION LOOP (AFTER EVERY GUESTING APPEARANCE)
+------------------------------------------------------------
+
+A 40-minute podcast appearance generates 11 derivative content pieces. Generate these on the schedule below:
+
+| Derivative | Channel | Timeline |
+|------------|---------|----------|
+| 3 to 5 short audio/video clips (60-90 sec key moments) | LinkedIn video, YouTube Shorts | Within 48 hours of episode publish |
+| LinkedIn narrative post (primary takeaway, story format) | LinkedIn | Day of episode publish |
+| Newsletter feature (key insights + link to episode) | Email | Within 1 week |
+| Long-form article (expand the episode's primary framework) | Blog / Medium | Within 2 weeks |
+| Episode added to website media/press page | Website | Same day as publish |
+| Data points extracted for HARO pitch bank | output/DataBank/ | Within 1 week |
+| Twitter/X thread (episode's key argument) | Twitter/X | Within 3 days |
+
+TAG THE HOST AND SHOW on every derivative piece. This generates goodwill, increases the probability of the host sharing the content, and signals ongoing engagement with the relationship.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Mode A: Plain text show notes (copyable into podcast platform show notes field)
+Mode B: Segmented script with [SEGMENT NAME], spoken dialogue, talking point bullets, and duration estimates
+Mode C: Full pitch email (all 4 blocks labeled), subject line, sign-off, plus primary takeaway framework
+
+Save to: output/Podcast/
+File name: Podcast_[Mode]_[Short-Slug].txt
+
+------------------------------------------------------------
+GLOBAL RULES
+------------------------------------------------------------
+
+- No em dashes anywhere
+- No passive voice
+- Spoken language in Modes A and B: natural, contractions allowed, conversational cadence
+- Written pitch language in Mode C: formal B2B, no contractions
+- Mode C pitch: under 150 words total, one link, no attachments
+- Primary takeaway must appear 3 times in any Mode B script
+- All stats named with source and year
+- Output saved to output/Podcast/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. GENERIC PITCH: A Mode C pitch that says "I would love to discuss leadership and organizational growth" could be sent to any podcast. It gets deleted. Name the specific episode angle, working title, and 3 talking points.
+
+2. CREDENTIALS BEFORE LISTENER VALUE IN THE PITCH: The hook in Block 2 must name the listener's problem, not the guest's background. Hosts receive dozens of pitches from qualified people. The ones that get responses are the ones that prove the guest already understands the host's audience.
+
+3. NO PRIMARY TAKEAWAY PREPARED: Guests who try to say everything they know about L&D leave listeners with nothing specific. One named framework, stated three ways and returned to throughout the episode, is what listeners quote and share.
+
+4. NO DISTRIBUTION AFTER THE EPISODE AIRS: Recording a guesting appearance and waiting for the host's audience to find it passively leaves most of the value on the table. Execute the 11-derivative distribution sequence within 48 hours of the episode publish date.
+
+5. ONE-TIME RELATIONSHIP WITH THE HOST: Treating the host purely as a booking to complete - sending a post-episode message only to ask for another appearance - signals transactional intent. Genuine engagement after the episode (sharing their other content, commenting on their posts) builds the relationship that generates referrals to other podcast hosts.

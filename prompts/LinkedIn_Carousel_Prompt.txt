@@ -1,0 +1,158 @@
+============================================================
+LINKEDIN CAROUSEL PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, provide all required inputs and generate the carousel.
+
+------------------------------------------------------------
+WHY CAROUSELS OUTPERFORM OTHER FORMATS
+------------------------------------------------------------
+
+LinkedIn carousels generate 1.45x average reach compared to standard text posts as of 2026. The swipe interaction signals active engagement to the algorithm, which treats each swipe as a positive engagement signal. A carousel that earns 8 swipes on 500 impressions outperforms a text post that earns 80 likes on 5,000 impressions for algorithmic distribution.
+
+The rule: each slide must be worth swiping to. A viewer who stops swiping mid-carousel sends a negative signal. Every slide must either answer the implicit question raised by the previous slide or reward the viewer with a new, concrete piece of information.
+
+------------------------------------------------------------
+REQUIRED INPUTS
+------------------------------------------------------------
+
+Brand: [BRAND NAME OR URL]
+Topic or Source Article: [INSERT TOPIC OR URL]
+Carousel Type: [Framework / Step-by-Step / Stat Breakdown / Before-and-After / Myth vs Fact]
+Primary Claim: [The single most counterintuitive or specific claim the carousel makes - one sentence]
+Key Data Points: [2 to 5 stats or findings to feature - each with source and year]
+CTA Destination URL: [URL the final slide points to - goes in caption first comment, not on the slide itself]
+Slide Count: [7 to 10 recommended; 5 minimum, 12 maximum]
+
+------------------------------------------------------------
+CAROUSEL TYPES - CHOOSE ONE
+------------------------------------------------------------
+
+TYPE 1: FRAMEWORK CAROUSEL
+Structure: Slide 1 (hook claim) → Slide 2 (why it matters) → Slides 3-8 (one framework component per slide) → Slide 9 (how it connects) → Slide 10 (CTA)
+Best for: Named frameworks with 3 to 7 components. Each component gets one slide.
+
+TYPE 2: STEP-BY-STEP PROCESS
+Structure: Slide 1 (the outcome the process achieves) → Slide 2 (what most people do wrong) → Slides 3-8 (one numbered step per slide) → Slide 9 (the result when done correctly) → Slide 10 (CTA)
+Best for: How-to content with a clear sequence. Number the steps visibly on each slide.
+
+TYPE 3: STAT BREAKDOWN
+Structure: Slide 1 (the most surprising stat) → Slides 2-8 (one stat per slide with context) → Slide 9 (what these stats mean combined) → Slide 10 (CTA)
+Best for: Research findings, original data, industry reports. Each slide: stat + source + one-sentence implication.
+
+TYPE 4: BEFORE AND AFTER
+Structure: Slide 1 (the gap between before and after) → Slides 2-7 (alternating before/after pairs on a specific dimension) → Slide 8 (the principle that explains the gap) → Slide 9 (CTA)
+Best for: Case study highlights, methodology comparisons, transformation stories.
+
+TYPE 5: MYTH VS FACT
+Structure: Slide 1 (the most widely believed myth) → Slides 2-8 (one myth/fact pair per slide) → Slide 9 (the underlying principle) → Slide 10 (CTA)
+Best for: Challenging conventional wisdom with evidence. Each myth must be one the target audience genuinely holds.
+
+------------------------------------------------------------
+SLIDE-BY-SLIDE STRUCTURE (UNIVERSAL)
+------------------------------------------------------------
+
+SLIDE 1: HOOK
+This slide determines whether anyone swipes. It must work as a complete standalone claim.
+- Headline: 5 to 8 words. The most counterintuitive or specific claim in the carousel.
+- Subtext (optional): 10 to 15 words adding one specific detail that sharpens the hook.
+- Visual: High contrast. Bold text dominant. A human face or a sharp visual tension element (chart gap, split comparison).
+- Do not use: "X things you need to know about Y" as the hook. Lead with the claim, not the count.
+
+Hook patterns:
+  PATTERN 1: "[Specific number] [audience] [surprising finding]."
+  PATTERN 2: "The [named problem] most [audience] never name."
+  PATTERN 3: "[Common belief]. [Contradicting fact]."
+  PATTERN 4: "[Outcome] in [timeframe]. Here is how."
+  PATTERN 5: "Stop [common action]. Do [specific alternative] instead."
+
+SLIDES 2 TO (N-1): CONTENT SLIDES
+Each content slide follows this 3-element format:
+  - HEADLINE (max 8 words): One complete idea. Reads as a standalone claim.
+  - BODY COPY (max 25 words): One sentence of explanation or evidence. Named stat with source and year if applicable.
+  - VISUAL DIRECTION: Specific description of what appears on screen (diagram, icon, before/after split, stat callout, progress indicator).
+
+Rules for content slides:
+  - One idea per slide. Never two.
+  - Each slide must be readable in under 5 seconds.
+  - Number framework steps or myth/fact pairs visibly (e.g., "Step 3" or "Myth 4").
+  - If using a stat: state the source and year on the slide itself, not just in the caption.
+  - Progress indicator (e.g., "4 of 9") in a corner of each slide improves swipe-through rate.
+
+SECOND-TO-LAST SLIDE: THE SYNTHESIS
+Before the CTA, include one slide that pulls the carousel together:
+  - What does following this framework / believing these facts / completing these steps actually produce?
+  - State the result as a specific outcome, not a vague benefit.
+  - Example: "Organizations that complete these 5 steps reduce onboarding time by an average of 60%, according to 2026 Edstellar program data."
+
+FINAL SLIDE: CTA
+One ask only. Match to the carousel topic.
+  - Headline: "Want the full [framework / guide / data]?" or "[Specific next step] is here."
+  - Body: One sentence. The resource or next action at the destination URL.
+  - Do not put the URL on the slide. URL goes in the post caption's first comment.
+  - Visual: Brand colors, brand name, clean layout. Optional: QR code linking to the destination URL.
+
+------------------------------------------------------------
+POST CAPTION (GENERATED ALONGSIDE THE CAROUSEL)
+------------------------------------------------------------
+
+The carousel caption is short. The carousel does the heavy lifting.
+
+Structure (follow Format B from LinkedIn_Post_Prompt.txt):
+- Line 1: Repeat the exact Slide 1 headline (visual continuity when the image loads in feed)
+- Lines 2 to 3: Two teaser lines - name two of the carousel's most surprising slides in one phrase each
+- Line 4: "Swipe to see the full [framework / breakdown / process]." - no URL here
+- Line 5: CTC question (one specific question inviting comments)
+- Final line: 3 to 5 hashtags, last always [BRAND HASHTAG]
+- First comment: URL + "Full [article / guide / case study] here: [URL]"
+
+Character target: under 300 characters for the caption body (carousel earns the engagement, not the caption length).
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Output two sections:
+
+SECTION 1: SLIDE SCRIPT
+For each slide:
+  SLIDE [N] - [TYPE: Hook / Framework Step X / Stat X / Myth X / Synthesis / CTA]
+  HEADLINE: [max 8 words]
+  BODY: [max 25 words]
+  VISUAL: [specific visual direction]
+
+SECTION 2: POST CAPTION
+  CAPTION: [full caption text]
+  FIRST COMMENT: [URL + CTA line]
+
+Save to: output/LinkedIn_Carousel/
+File name: Carousel_[Short-Slug].csv (slide data) + Carousel_[Short-Slug]_Caption.txt
+
+------------------------------------------------------------
+GLOBAL RULES
+------------------------------------------------------------
+
+- No em dashes anywhere
+- No passive voice
+- Headline max 8 words per slide
+- Body copy max 25 words per slide
+- URL never on the slide - always in the first comment
+- Every stat names source and year
+- Progress indicator recommended on all slides 2 through final
+- Output saved to output/LinkedIn_Carousel/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. SLIDE 1 AS A TITLE CARD: A first slide that just names the topic ("5 Ways to Improve Corporate Training") earns no swipes. The hook slide must make a claim strong enough to earn the first swipe on its own merit.
+
+2. MORE THAN ONE IDEA PER SLIDE: A slide with two insights competes with itself. Viewers read the first idea and swipe before finishing the second. One idea, fully expressed, per slide.
+
+3. STATS WITHOUT SOURCES ON THE SLIDE: A stat cited in the caption but not on the slide loses credibility - the viewer sees the claim without the evidence. Put source and year on the slide itself, even in small text.
+
+4. CTA SLIDE WITH A URL IN THE BODY: LinkedIn suppresses reach when posts contain external URLs. The CTA slide should name the destination without a live link. The URL goes in the first comment of the caption.
+
+5. NO SYNTHESIS SLIDE BEFORE THE CTA: A carousel that ends abruptly with a CTA without connecting the content leaves the viewer without a takeaway. The synthesis slide converts a sequence of facts into a single memorable conclusion.

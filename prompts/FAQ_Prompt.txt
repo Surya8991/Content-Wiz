@@ -1,0 +1,31 @@
+============================================================
+FAQ PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Create a FAQ section for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]". Generate 8-10 frequently asked questions with concise, authoritative answers targeting [TARGET AUDIENCE]. Each answer should be 40-60 words, informative, and naturally aligned with [BRAND NAME]'s expertise. Include at least 2-3 answers that reference a credible stat or research finding. Do not use em dashes.
+
+Blog URL (for reference): [INSERT URL IF APPLICABLE]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Sr. No. | Topic | Blog URL | Question | Answer
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- 8-10 Q&A pairs per topic
+- Each answer 40-60 words
+- At least 2-3 answers include a stat
+- No em dashes anywhere
+- Output saved to output/FAQ/

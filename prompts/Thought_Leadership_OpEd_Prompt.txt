@@ -1,0 +1,45 @@
+============================================================
+THOUGHT LEADERSHIP OP-ED PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+WHAT IS A THOUGHT LEADERSHIP OP-ED
+------------------------------------------------------------
+
+A thought leadership op-ed is a 600-900 word opinion piece written from the perspective of a senior executive (CEO, Founder, VP) sharing a strong, evidence-backed point of view on an industry topic. Unlike a blog post, it takes a clear stance, challenges conventional thinking, and positions the author as a credible voice in the industry. It is designed for owned channels (company blog, LinkedIn Article) and earned media (industry publications, guest posts).
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Write a thought leadership op-ed for [AUTHOR NAME], [AUTHOR TITLE] at [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]". The op-ed should take a clear, opinionated stance on "[POINT OF VIEW e.g. Why most L&D programmes fail / The real reason managers do not become leaders]". Open with a personal observation or bold contrarian claim. Build the argument with 2-3 evidence-backed paragraphs referencing credible research or real-world examples. Include one personal insight or anecdote that only this executive could offer. Close with a forward-looking statement and a CTA referencing [URL]. Write in first-person, conversational but authoritative tone. Do not use em dashes. Avoid passive voice. Do not use pronouns: you, we, our, your.
+
+Point of View / Stance: [INSERT THE ARGUMENT OR OPINION]
+Reference URL (if any): [INSERT URL]
+Target Publication: [e.g. Company Blog / LinkedIn Article / Forbes / HR Magazine]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Sr. No. | Author | Topic | Point of View | Target Publication | Op-Ed Content
+
+Save to output/Thought_Leadership/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Must take a clear, defensible stance - not neutral
+- Opens with a personal observation or contrarian claim
+- 600-900 words
+- At least 2 credible stats or research references
+- First-person throughout
+- No pronouns: you, we, our, your
+- No em dashes anywhere
+- No passive voice
+- Output saved to output/Thought_Leadership/

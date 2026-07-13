@@ -1,0 +1,187 @@
+============================================================
+LINKEDIN POST PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: Standard Post / Carousel Caption / Poll Post
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, select the format below.
+
+------------------------------------------------------------
+ALGORITHM RULES (2026) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+These constraints apply to all LinkedIn content. Violating them reduces distribution.
+
+1. NO EXTERNAL LINKS IN THE POST BODY
+   Posting a URL inside the post text reduces reach by approximately 30%. Always place URLs in the first comment, never in the post itself. The CTA line should say "Link in the first comment" or "Full article in the comments."
+
+2. OPTIMAL LENGTH: 800 to 1,000 characters
+   Posts in this range consistently outperform shorter and longer posts for engagement rate. Count characters, not words.
+
+3. LINE BREAKS ARE MANDATORY
+   Every 1 to 2 sentences must have a line break. Dense paragraph posts lose readers before the hook payoff. The first line must stand alone above the "see more" cutoff.
+
+4. FIRST HOUR MATTERS
+   The LinkedIn algorithm amplifies posts based on engagement in the first 60 minutes. Posts that receive 5+ comments in the first hour get significantly broader distribution. Do not schedule for off-peak hours (before 7am or after 9pm local time).
+
+5. CTC, NOT CTA
+   The closing line should invite a "Call to Comment" (CTC), not just a link click. Ask a specific question that prompts debate or a quick opinion. Comments carry more algorithmic weight than likes.
+
+------------------------------------------------------------
+FORMAT A: STANDARD TEXT POST (EDUCATIONAL FRAMEWORK OR INSIGHT)
+------------------------------------------------------------
+
+Use when: Sharing a framework, counterintuitive claim, or original observation.
+Best cadence: 2x per week.
+Target character count: 800 to 1,000.
+
+Structure - follow these 4 sections exactly:
+
+HOOK (Line 1, standalone):
+The first line must work as a complete thought that creates curiosity or tension without giving the answer.
+The reader must feel compelled to click "see more."
+Never start with: "In today's world..." / "I'm excited to share..." / "We are proud to announce..."
+
+[blank line]
+
+TENSION (Lines 2-4):
+Name the gap, the mistake, the paradox, or the problem in concrete terms.
+Make the reader feel the pain of the problem before introducing any solution.
+Use specific numbers where possible ("43% of training programs...", "Most L&D teams spend 80% of budget on...").
+
+[blank line]
+
+PEAK (Lines 5-12):
+Deliver the insight, framework, or named concept.
+Use numbered lists or short single-sentence lines for readability.
+Name the framework if it has one ("The Completion-to-Behavior Gap", "The 3-Metric ROI Stack").
+Include one stat with source and year.
+
+[blank line]
+
+CTC (Final 1-2 lines):
+Ask one specific question that the target audience has a direct opinion on.
+The question must be answerable in one sentence (low friction to comment).
+Example: "Which of these metrics does your L&D team actually track?" or "What's the one thing stopping your training from getting budget approval?"
+
+[blank line]
+
+HASHTAGS (3-5, final line):
+3 to 5 hashtags, last always [BRAND HASHTAG]. No more than 5 or reach drops.
+
+HOOK PATTERNS (choose the most accurate for the content):
+
+PATTERN 1 - NUMBER OPENER:
+"[Number] out of [total] [audience] [specific finding]."
+Example: "3 out of 4 L&D managers measure training completion. Almost none measure whether it changed behavior."
+
+PATTERN 2 - NAMED MISTAKE:
+"The biggest mistake [audience] make with [topic] is not [expected answer]. It's [counterintuitive answer]."
+
+PATTERN 3 - STORY OPENER (specific, dated, named):
+"[Name or role] spent [time/resource] on [X]. The result was [surprising outcome]."
+Note: For brand accounts, frame around a client scenario or a named industry pattern, not personal anecdote.
+
+PATTERN 4 - FRAMEWORK TEASE:
+"There are [number] types of [thing]. Most [audience] only use [lower number]."
+
+PATTERN 5 - REFRAME:
+"Everyone says [common belief]. The data says something different."
+
+------------------------------------------------------------
+FORMAT B: CAROUSEL CAPTION
+------------------------------------------------------------
+
+Use when: Posting a LinkedIn Carousel (use alongside LinkedIn_Carousel_Prompt.txt).
+Algorithmic advantage: Carousels generate 1.45x average reach vs standard posts in 2026.
+Best cadence: 1x per week.
+Target: under 150 characters for the hook line, full caption under 300 characters total (carousel does the heavy lifting).
+
+Structure:
+
+Line 1: Repeat the exact Slide 1 headline from the carousel (creates visual continuity when the image loads)
+Lines 2-3: Tease 2 to 3 key insights from the carousel in one phrase each
+Line 4: "Swipe to see the full framework" or equivalent - do not include a URL here
+Line 5: CTC question
+Final line: 3 to 5 hashtags, last always [BRAND HASHTAG]
+
+Note: URL goes in the first comment, not in the caption body.
+
+------------------------------------------------------------
+FORMAT C: POLL POST
+------------------------------------------------------------
+
+Use when: Researching audience opinion, generating easy engagement, or launching a content series.
+Algorithmic advantage: Polls generate 1.64x average reach vs standard posts in 2026.
+Best cadence: 1x per month maximum (overuse dilutes the engagement signal).
+Target length: 100 to 200 characters for the post text. The poll options do the work.
+
+Structure:
+
+Line 1: State the question or tension the poll is addressing (1 sentence)
+Line 2: One sentence explaining why the answer matters for the audience
+[blank line]
+Poll options: 2 to 4 options. Keep each option under 30 characters.
+Final line: "Results in [timeframe]. Sharing findings with everyone who votes."
+Hashtags: 3 maximum for polls.
+
+------------------------------------------------------------
+THREE CONTENT PILLAR GUIDANCE
+------------------------------------------------------------
+
+For a balanced LinkedIn presence, rotate across these three pillar types:
+
+PILLAR 1 - EDUCATIONAL FRAMEWORK (Format A, 2x/week):
+Share a named system, process, or framework the audience can apply.
+Example topics: "How to build a skills assessment," "The 3-stage training ROI model," "Why behavior metrics beat completion metrics."
+
+PILLAR 2 - SCENARIO-BASED (Format A or B, 2x/week):
+A specific real-world situation the audience recognizes, with a named insight drawn from it.
+Example topics: "What happened when a manufacturer measured behavior instead of completion," "The training budget conversation that changed after adding one metric."
+
+PILLAR 3 - COUNTERINTUITIVE CLAIM (Format A, 1x/week):
+One claim that challenges a commonly held belief in the audience's space.
+Example topics: "More training hours do not produce better outcomes," "The fastest way to improve completion rates is to shorten the course."
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single post requests:
+Output labeled sections: HOOK | TENSION | PEAK | CTC | HASHTAGS | FIRST COMMENT (URL + brief CTA)
+
+For bulk requests (CSV):
+Sr. No. | Format | Topic | URL (for first comment) | Post Content | First Comment Content
+
+Save to output/LinkedIn/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- No external URLs in post body; URLs go in the first comment only
+- No em dashes anywhere
+- No passive voice
+- 800 to 1,000 characters for Format A; under 300 for Format B caption
+- 3 to 5 hashtags, last always [BRAND HASHTAG]
+- Every stat names its source and year
+- CTC (question to comments) required on every Format A post
+- Output saved to output/LinkedIn/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. WEAK HOOK: Starting with context instead of tension. The first line must work without the rest of the post. If reading the first line does not make the reader want to see more, rewrite it.
+
+2. URL IN POST BODY: Any URL inside the post text costs approximately 30% reach. Always move to the first comment.
+
+3. NO LINE BREAKS: A post written as a paragraph looks like a wall of text in the feed. Every 1 to 2 sentences needs a break.
+
+4. VANITY CTA: "Check out our latest blog post" generates clicks, not comments. Comments amplify reach more than link clicks. Always close with a question.
+
+5. OVER-HASHTAGGING: More than 5 hashtags reduces reach. 3 to 5 is the documented optimal range as of 2026.
+
+6. MISSING PROOF: Frameworks without data are opinions. Every educational post should contain at least one named statistic to separate it from generic industry commentary.

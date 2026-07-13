@@ -1,0 +1,36 @@
+============================================================
+BACKLINK OUTREACH EMAIL PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Write a backlink outreach email for [BRAND NAME], [BRAND DESCRIPTION], to request a link from the target website "[TARGET WEBSITE NAME / URL]". The email should be addressed to the website editor or content team. Open with a genuine, specific compliment about their content. Introduce [BRAND NAME]'s resource at [RESOURCE URL] and explain clearly why it adds value to their existing content. Keep the ask natural and low-pressure. Write in a professional but personable tone. Do not use em dashes. Keep the email under 150 words.
+
+Resource URL to promote: [INSERT URL]
+Target Website / Page to get a link from: [INSERT TARGET URL]
+Specific page on target site that relates to the resource (if known): [INSERT OR LEAVE BLANK]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Sr. No. | Target Website | Resource URL | Subject Line | Email Body
+
+Save to output/Backlink_Outreach/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Subject line must not sound like mass outreach
+- Email under 150 words
+- Must include a genuine specific reference to their content
+- Ask must be natural, not pushy
+- No em dashes anywhere
+- Output saved to output/Backlink_Outreach/

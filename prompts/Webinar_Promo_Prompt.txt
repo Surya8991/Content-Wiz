@@ -1,0 +1,49 @@
+============================================================
+WEBINAR PROMO COPY PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Create promotional copy for a webinar hosted by [BRAND NAME], [BRAND DESCRIPTION], titled "[WEBINAR TITLE]". Generate the following assets:
+
+1. Landing Page Description (150-200 words): What the webinar covers, key takeaways (3-4 bullet points), speaker name and title, date/time, and registration CTA linking to [REGISTRATION URL].
+
+2. Email Invitation (subject line + 100-150 word body): Sent to [TARGET AUDIENCE]. Opens with a pain point, builds urgency around the webinar topic, and closes with a registration CTA.
+
+3. LinkedIn Post (100-150 words): Announcement post for organic reach targeting [TARGET AUDIENCE]. Ends with 3-4 relevant hashtags including [BRAND HASHTAG].
+
+4. Short Social Blurb (under 50 words): For Instagram or Twitter use.
+
+Do not use em dashes in any asset.
+
+Webinar Details:
+- Title: [INSERT TITLE]
+- Speaker: [INSERT SPEAKER NAME AND TITLE]
+- Date and Time: [INSERT DATE AND TIME]
+- Registration URL: [INSERT URL]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Asset Type | Content
+
+Rows: Landing Page Description | Email Subject | Email Body | LinkedIn Post | Social Blurb
+
+Save to output/Webinar_Promo/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- All 4 assets generated in one request
+- Consistent message and tone across all assets
+- No em dashes anywhere
+- Registration URL in every asset
+- Output saved to output/Webinar_Promo/

@@ -1,0 +1,36 @@
+============================================================
+TOPIC CLUSTER / PILLAR CONTENT STRATEGY PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Create a topic cluster and pillar content strategy for [BRAND NAME], [BRAND DESCRIPTION], around the core topic "[PILLAR TOPIC]". Identify 1 pillar page topic with a recommended title and target keyword. Then generate 8-10 cluster content ideas that support the pillar, each with a suggested title, target keyword, content type (blog / FAQ / guide / listicle), and a one-line description of the angle. Map how each cluster piece links back to the pillar. Target audience is [TARGET AUDIENCE]. Do not use em dashes.
+
+Reference URL (if any): [INSERT URL]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Content Type | Title | Target Keyword | Content Format | Angle Description | Links to Pillar (Yes/No)
+
+First row should always be the Pillar Page.
+Remaining rows are cluster content pieces.
+
+Save to output/Topic_Cluster/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- 1 pillar page + 8-10 cluster pieces
+- Every cluster piece must link back to the pillar
+- No two cluster pieces should target the same keyword
+- No em dashes anywhere
+- Output saved to output/Topic_Cluster/

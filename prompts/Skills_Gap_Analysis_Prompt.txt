@@ -1,0 +1,53 @@
+============================================================
+SKILLS GAP ANALYSIS REPORT PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Write a skills gap analysis report for [BRAND NAME], [BRAND DESCRIPTION], for the industry or role "[INDUSTRY / ROLE / FUNCTION e.g. HR professionals in financial services / Project managers in tech companies]". The report should be 1200-1800 words and structured as follows: an executive summary, a market context section on why this skill gap matters now, identification of the top 5-8 skills gaps with evidence, the business impact of each gap, recommended training interventions for each gap, and a conclusion with a CTA linking to [URL]. Include at least 5 credible statistics or research references. Write in an authoritative, data-led tone targeting [TARGET AUDIENCE e.g. L&Ds, HRs, and decision-makers]. Do not use em dashes. Avoid passive voice. Naturally position [BRAND NAME] as the training partner that closes these gaps without being promotional.
+
+Industry / Role Focus: [INSERT e.g. HR professionals / Sales teams / Project managers]
+Reference URL: [INSERT URL]
+Training Solutions to Reference (optional): [INSERT COURSE NAMES OR LEAVE BLANK]
+
+------------------------------------------------------------
+REPORT STRUCTURE
+------------------------------------------------------------
+
+1. Report Title
+2. Executive Summary (100-150 words)
+3. Why This Skills Gap Matters Now (market context with data)
+4. Skills Gap 1: Name | Evidence | Business Impact | Recommended Intervention
+5. Skills Gap 2: Name | Evidence | Business Impact | Recommended Intervention
+6. Skills Gap 3: Name | Evidence | Business Impact | Recommended Intervention
+7. Skills Gap 4: Name | Evidence | Business Impact | Recommended Intervention
+8. Skills Gap 5: Name | Evidence | Business Impact | Recommended Intervention
+9. (Optional gaps 6-8)
+10. Conclusion with CTA
+11. About [BRAND NAME]
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Skills Gap No. | Skill Name | Evidence / Stat | Business Impact | Recommended Training Intervention
+
+Full report saved as plain text to output/Skills_Gap_Reports/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Minimum 5 skills gaps identified
+- Each gap must include evidence, business impact, and a training recommendation
+- Minimum 5 credible stats with source attribution
+- Brand positioned as training solution, not vendor pitch
+- No em dashes anywhere
+- No passive voice
+- Output saved to output/Skills_Gap_Reports/

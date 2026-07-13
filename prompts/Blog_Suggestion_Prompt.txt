@@ -1,0 +1,29 @@
+============================================================
+BLOG SUGGESTION PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Generate 10 blog topic ideas for [BRAND NAME], [BRAND DESCRIPTION], targeting [TARGET AUDIENCE]. The topics should be SEO-friendly, relevant to the niche "[NICHE/TOPIC AREA]", and suitable for publication on [PLATFORM e.g. Medium / WordPress / brand blog]. For each idea, provide a suggested title, a one-line description of the angle, and the primary target keyword. Do not use em dashes. Topics should range in difficulty and format (listicles, how-tos, guides, thought leadership).
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV)
+------------------------------------------------------------
+
+Sr. No. | Suggested Title | Angle / Description | Primary Keyword | Format Type
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- 10 topic ideas per request
+- Mix of formats: listicles, how-tos, ultimate guides, thought leadership, case studies
+- Each title should be SEO-friendly with a natural keyword
+- No em dashes anywhere
+- Output saved to output/Blog_Suggestions/

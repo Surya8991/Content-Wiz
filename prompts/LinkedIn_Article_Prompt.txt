@@ -1,0 +1,158 @@
+============================================================
+LINKEDIN ARTICLE PROMPT (LONG-FORM)
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, provide all required inputs and generate the article.
+
+------------------------------------------------------------
+WHY LINKEDIN ARTICLES WORK DIFFERENTLY FROM LINKEDIN POSTS
+------------------------------------------------------------
+
+LinkedIn articles (published via the Newsletter or Article feature) reach a fundamentally different reader state than posts. A post reader is scrolling. An article reader has clicked, which means they made a conscious decision to read. The article gets to do what a post cannot: build a complete argument, reveal a framework in full, and position the author as the canonical source on a topic rather than just another voice in the feed.
+
+The algorithm treats articles differently from posts in 2026: articles index on LinkedIn search, get surfaced to followers of the author weeks and months after publication, and earn the "Thought Leadership" tagging signal that short posts do not. The primary metric for articles is dwell time and scroll depth, not likes.
+
+The implication: articles written like extended posts (choppy, hook-heavy, shallow) underperform. Articles that build a genuine intellectual case, reveal a named framework, or show a specific before-and-after with real data outperform everything else.
+
+------------------------------------------------------------
+REQUIRED INPUTS
+------------------------------------------------------------
+
+Brand: [BRAND NAME OR URL]
+Author: [Name and title of the person this article is authored by]
+Topic: [Primary subject - one sentence]
+Primary Claim: [The single most counterintuitive or specific argument the article makes]
+Key Evidence: [2 to 4 stats or findings with source and year]
+Target Audience: [Who reads this article and what decision are they making]
+CTA Destination: [URL the article links to at the end]
+Article Length: [600 to 900 words standard / 900 to 1,400 words deep-form]
+
+------------------------------------------------------------
+ARTICLE STRUCTURE (6 sections in exact order)
+------------------------------------------------------------
+
+SECTION 1: HEADLINE (under 65 characters)
+- Specific, outcome-forward, or counterintuitive claim
+- Do not start with: "Why", "How To", the brand name, or a question
+- No colons used as decoration - only if the structure requires it
+- Do not use an em dash in the headline
+- Examples:
+  YES: "The Metric Most L&D Teams Track Is the Wrong One"
+  YES: "Onboarding Takes Three Times Longer Than It Should. Here Is Why."
+  NO: "Why Corporate Training Matters More Than Ever in 2026"
+  NO: "How to Improve Your L&D Strategy"
+
+SECTION 2: OPENING HOOK (first 150 words, 2 to 3 paragraphs)
+This section determines whether the reader continues past the fold. It must create enough intellectual tension that stopping feels wrong.
+
+Opening patterns:
+  PATTERN 1 - THE SPECIFIC OBSERVATION: A named scenario, recent event, or client interaction that surfaces the article's central tension. Written in first person.
+  PATTERN 2 - THE UNCOMFORTABLE FACT: A specific statistic or finding that contradicts what most readers currently believe. Stated plainly, without hedging.
+  PATTERN 3 - THE NAMED FAILURE: A common practice named and described, followed by the specific harm it causes. The article's argument is the alternative.
+  PATTERN 4 - THE PROVOCATION: A single declarative sentence that makes the reader either nod vigorously or disagree immediately. Both reactions earn the continued read.
+
+Rules for the opening:
+- First sentence under 20 words
+- The primary claim of the article must be clear within the first 150 words
+- Do not start with: "In today's world", "As a leader", "It is well known", or a company introduction
+- No em dashes anywhere
+- No vague intros that could apply to any article: "Training is important. But many organizations struggle with it."
+
+SECTION 3: THE ARGUMENT BODY (3 to 4 subsections, 300 to 700 words total)
+
+Each subsection has:
+- H2 SUBHEADING: A named claim or named framework component (not a vague label like "The Challenge" or "The Solution")
+  Yes: "The Completion Rate Trap"
+  Yes: "Step 2: Map Behavior Gaps Before Writing Content"
+  No: "The Problem"
+  No: "Key Insights"
+
+- BODY (75 to 175 words per subsection):
+  - Apply the 4-layer chunk format per subsection: Direct claim, Explanation, Evidence, Application
+  - Each subsection must advance the argument - no restatements of the previous subsection
+  - At least one subsection contains a named stat with source and year
+  - At least one subsection contains a specific named example (real or anonymized with context: "a 1,200-person financial services firm")
+
+Evidence tiers (use in order of strength):
+  1. First-party brand data (named program or client outcome, attributed to the brand without naming client)
+  2. Named third-party study (organization, report title, year)
+  3. Named expert or practitioner quote
+  4. Specific scenario illustrating the principle
+
+SECTION 4: THE NAMED FRAMEWORK OR PRINCIPLE (optional but high-performing)
+If the article argues for a specific approach or system, name it. Named frameworks earn bookmarks and direct references in comments. The name should be:
+- 2 to 4 words
+- Descriptive of the mechanism, not the outcome: "The Behavior Gap Audit" not "The Training Success Formula"
+- Consistent throughout the article once introduced
+
+SECTION 5: CLOSE AND REFLECTION (50 to 100 words)
+The close earns the CTA click. Do not close with a summary of what you just wrote. Close with:
+- The implication of the argument: what changes if the reader acts on this
+- A specific future state or outcome
+- Or a direct challenge to the reader's current practice
+- One sentence inviting the reader to share their experience in comments (this is the engagement signal equivalent of a post's CTC question)
+
+SECTION 6: CTA (1 to 2 sentences)
+- State what is at the destination URL and who it is for
+- Format: "[Resource name] for [specific audience role]: [URL]"
+- Do not use: "Click here", "Learn more", "Find out more"
+- URL goes directly in the article body (unlike LinkedIn posts where it goes in the first comment - articles support inline links)
+
+------------------------------------------------------------
+LINKEDIN ARTICLE ALGORITHM RULES (2026)
+------------------------------------------------------------
+
+- Articles index in LinkedIn search: include the primary keyword in the headline and naturally in the first 150 words
+- Articles earn follower notifications on publish: the headline is the notification text - make it specific enough to earn the open
+- Dwell time is the primary engagement signal: an article that takes 4 to 6 minutes to read earns more algorithmic weight than one that takes 90 seconds
+- Comments on articles get higher visibility than comments on posts: the CTC question at the close earns high-quality engagement signals
+- Newsletter vs. Article: if the brand runs a LinkedIn Newsletter, publish as a newsletter edition - it sends email notifications to subscribers and earns a dedicated subscriber count separate from followers
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Output three sections:
+
+SECTION A: FULL ARTICLE
+[Complete article with headline, opening, body subsections with H2 labels, close, and CTA]
+
+SECTION B: POST TEASER (for the LinkedIn post that promotes the article)
+150 to 280 characters. Repeat the article headline as line 1. Add one teaser sentence. End with "Full article:" - the URL goes in the first comment of the promotion post.
+
+SECTION C: METADATA
+Primary keyword: [confirm]
+Estimated read time: [N minutes based on word count at 200 words/min]
+Suggested publication time: Tuesday or Wednesday, 7 to 9am audience timezone
+Newsletter vs. Article: [recommendation based on whether the brand has a LinkedIn Newsletter]
+
+Save to: output/LinkedIn/
+File name: LI_Article_[Short-Slug].txt
+
+------------------------------------------------------------
+GLOBAL RULES
+------------------------------------------------------------
+
+- No em dashes anywhere - use a comma, colon, or full stop
+- No passive voice
+- Every stat names source, organization, and year
+- No promotional brand tone in the article body - the byline earns the brand reference
+- First-person voice as the named author
+- No AI-signature phrases: "In today's fast-paced world", "Dive into", "Leverage", "Revolutionize", "Transformative", "Groundbreaking"
+- Output saved to output/LinkedIn/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. HEADLINE AS A TOPIC LABEL: "Corporate Training in 2026" is a topic, not a claim. The headline must make an argument. Restate: "Corporate Training Spends $1,111 Per Employee and Gets 10% Back. Here Is the Fix."
+
+2. OPENING AS CONTEXT SETTING: An opening that spends 150 words explaining why the topic is important before making a single claim loses readers before the fold. Lead with the tension.
+
+3. SUBHEADINGS AS GENERIC LABELS: "The Problem" and "The Solution" are placeholders, not subheadings. Every H2 must name the specific thing being discussed: "The Completion Rate Trap" or "The Three-Day Behavior Audit That Changes Budget Conversations."
+
+4. EVIDENCE WITHOUT IMPLICATION: Citing a statistic without following it with "which means..." or "the implication is..." turns data into decoration. Every stat earns its place by advancing the argument.
+
+5. CLOSE AS SUMMARY: Re-summarizing the article in the final paragraph is the weakest close. The close earns the CTA click by stating what changes for the reader specifically - not what the article covered.
