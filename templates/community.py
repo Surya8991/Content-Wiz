@@ -103,31 +103,42 @@ Write a LiveJournal-style reflective essay on: "{topic}"
 
 TARGET AUDIENCE: {audience}
 
-FORMAT (plain markdown, no YAML frontmatter):
-# {topic}
+FORMAT (HTML output - do not use markdown):
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{topic}</title>
+<meta name="description" content="[one sentence summarizing the post's angle, for the person who eventually publishes it]">
+</head>
+<body>
 
-<!-- meta-description: one sentence summarizing the post's angle, for the person who eventually publishes it -->
+<h1>{topic}</h1>
 
-[reflective opening paragraph, first-person-adjacent, grounded in a specific moment or observation]
+<p>[reflective opening paragraph, first-person-adjacent, grounded in a specific moment or observation]</p>
 
-## [Section Header]
-[2-4 paragraphs per section]
+<h2>[Section Header]</h2>
+<p>[2-4 paragraphs per section]</p>
 
-## [Section Header]
-[repeat for 3-4 sections total]
+<h2>[Section Header]</h2>
+<p>[repeat for 3-4 sections total]</p>
 
-[short closing paragraph]
+<p>[short closing paragraph]</p>
 
----
+<hr>
 
-*[one italic first-person discussion question inviting reader comments]*
+<p><em>[one italic first-person discussion question inviting reader comments]</em></p>
+
+</body>
+</html>
 
 STRUCTURE RULES:
 - Reflective/personal essay tone, professional but journal-like, not a corporate listicle
-- 3-4 `##` sections covering the psychological or emotional reality behind the topic that most advice skips
+- 3-4 `<h2>` sections covering the psychological or emotional reality behind the topic that most advice skips
 - Every statistic must name its source, organization, and year. If unsure of an exact figure, describe the trend qualitatively instead of inventing a number
-- Where a CTA link is provided, weave it into the body (not the closer) as a natural inline markdown link, formatted as [descriptive anchor text](url), using this destination: [INSERT CTA LINK]. If no CTA link is provided, omit it entirely and do not mention the brand
+- Where a CTA link is provided, weave it into the body (not the closer) as a natural inline <a href="URL">anchor text</a> link, using this destination: [INSERT CTA LINK]. If no CTA link is provided, omit it entirely and do not mention the brand
 - Body word count: strictly under 800 words (aim 600-750)
+- Escape `&` as `&amp;` inside any href attribute
 
 {HUMAN_WRITING_RULES}
 
@@ -136,11 +147,12 @@ SELF-CHECK BEFORE OUTPUT:
 - Are there any em dashes?
 - Is there any passive voice?
 - Does every statistic name a source, organization, and year?
-- Does the post end with the italic discussion question after a `---` divider?
+- Does the post end with the italic discussion question after an `<hr>` divider?
 
 OUTPUT FORMAT:
-Return only the finished post in the format above. No meta-commentary, no explanations, no preamble.
+Return a complete, self-contained HTML file in the format above. No meta-commentary, no explanations, no preamble, no markdown. HTML only.
 
+File naming convention: livejournal_[YYYY-MM-DD]_[short-slug].html
 Save to: output/LiveJournal/
 """
 
@@ -153,25 +165,38 @@ Write a Tumblr-style listicle post on: "{topic}"
 
 TARGET AUDIENCE: {audience}
 
-FORMAT (plain markdown):
-# {topic}
+FORMAT (HTML output - do not use markdown):
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{topic}</title>
+<meta name="description" content="[one sentence summarizing the post's angle, for the person who eventually publishes it]">
+</head>
+<body>
 
-[one short punchy opening line or two]
+<h1>{topic}</h1>
 
-**[bolded short claim].** [1-3 sentence explanation]
+<p>[one short punchy opening line or two]</p>
 
-**[bolded short claim].** [1-3 sentence explanation]
+<p><strong>[bolded short claim].</strong> [1-3 sentence explanation]</p>
 
-[repeat for 4-6 bolded points total]
+<p><strong>[bolded short claim].</strong> [1-3 sentence explanation]</p>
 
-[closing line]
+[repeat as <p><strong>...</strong> ...</p> for 4-6 bolded points total]
+
+<p>[closing line]</p>
+
+</body>
+</html>
 
 STRUCTURE RULES:
 - Punchy, aphoristic, short sentences. Scannable. Professional but not corporate-stiff
 - 4-6 bolded lead-in points, each a specific behavioral observation, not a generic platitude
 - No fabricated statistics. If you cite one, it must name source, organization, and year, and be real
-- Where a CTA link is provided, close with one sentence containing it as an inline markdown link, formatted as [descriptive anchor text](url), using this destination: [INSERT CTA LINK]. If no CTA link is provided, close with one strong standalone sentence, no link, no brand mention
+- Where a CTA link is provided, close with one sentence containing it as an inline <a href="URL">anchor text</a> link, using this destination: [INSERT CTA LINK]. If no CTA link is provided, close with one strong standalone sentence, no link, no brand mention
 - Body word count: strictly under 300 words (aim 220-280)
+- Escape `&` as `&amp;` inside any href attribute
 
 {HUMAN_WRITING_RULES}
 
@@ -182,7 +207,8 @@ SELF-CHECK BEFORE OUTPUT:
 - Does every bolded point say something specific enough that two readers could not disagree about what action it implies?
 
 OUTPUT FORMAT:
-Return only the finished post in the format above. No meta-commentary, no explanations, no preamble.
+Return a complete, self-contained HTML file in the format above. No meta-commentary, no explanations, no preamble, no markdown. HTML only.
 
+File naming convention: tumblr_[YYYY-MM-DD]_[short-slug].html
 Save to: output/Tumblr/
 """

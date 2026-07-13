@@ -83,8 +83,8 @@ PLATFORM_MAP = {
     "tumblr":           "tumblr_post",
 }
 
-MD_KEYS   = {"blog_writing_md", "livejournal_post", "tumblr_post"}
-HTML_KEYS = {"medium"}
+MD_KEYS   = {"blog_writing_md"}
+HTML_KEYS = {"medium", "livejournal_post", "tumblr_post"}
 
 PRINT_ONLY = {"gmb", "pinterest"}
 
