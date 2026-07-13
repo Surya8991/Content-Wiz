@@ -1,13 +1,52 @@
-# Content Wiz - Multi-Brand Content Distribution Prompt Generator
+# Content Wiz - Multi-Brand, Multi-Market Content Generation Toolkit
 
-Content Wiz assembles fully-specified, channel-ready content prompts for any brand.
-It is not tied to one company: `config.json` holds a `brands` map keyed by domain,
-where each entry defines a brand's name, description, audience, and hashtag. Pass
-`--url yourdomain.com` when generating and the audience auto-fills from the matching
-brand entry; without a matching entry (or without `--url`), it falls back to a
-neutral default audience. `--audience` always overrides both. Edstellar and Invensis
-Learning ship as two working example brands in `config.json` - edit them, delete
-them, or add your own.
+Content Wiz assembles fully-specified, channel-ready content prompts - or, with
+`--generate`, finished content - for any brand across B2B, B2C, and
+creator/personal-brand markets. It is not tied to one company: `config.json`
+holds a `brands` map keyed by domain, where each entry defines a brand's name,
+description, audience, hashtag, and market register. Pass `--url yourdomain.com`
+when generating and the audience and voice auto-fill from the matching brand
+entry; without a matching entry (or without `--url`), it falls back to neutral
+defaults. `--audience` always overrides. Edstellar and Invensis Learning ship as
+working example brands, plus a placeholder creator-brand entry - edit them,
+delete them, or add your own.
+
+## What it can do
+
+- **35 rich content-type templates** across blog/SEO (pillar posts, Dev.to/
+  Hashnode, Medium, comparison pages), social (LinkedIn, Twitter/X, Instagram,
+  carousels), video (YouTube, podcasts, Reels/Shorts/TikTok scripts), community
+  (Quora, LiveJournal, Tumblr), local (Google Business Profile, Pinterest),
+  growth (newsletters, FAQs, GEO/AI-search, landing pages, repurposing), PR
+  (HARO pitches, press releases, case studies, guest articles, internal
+  business-case one-pagers), and creator marketing (influencer outreach, UGC
+  briefs, personal-brand posts, creator media kits).
+- **49 flat prompt files** covering everything from ad copy (Google, Meta,
+  LinkedIn ads) to buyer personas, whitepapers, webinar promos, and schema
+  markup - all reachable from the same CLI.
+- **Market registers**: each brand declares `b2b` (default), `b2c`, or
+  `creator`, and templates adapt their voice accordingly - professional
+  business register, consumer register, or first-person personal-brand
+  register - without touching any template code.
+- **Provider-agnostic live generation**: `--generate` writes finished content
+  via Claude (Anthropic), Gemini (Google), or OpenAI - same prompts, same
+  house-style rules, whichever model you have a key for.
+- **Single, bulk, and repurposing modes**: one post at a time, a CSV-driven
+  batch (ZIP + run log), or transforming an existing piece into another
+  platform's format with canonical/duplicate-content guidance built in.
+- **Editorial guardrails encoded in every prompt**: human-writing rules (no
+  AI-signature phrases, no em dashes, active voice), mandatory stat
+  attribution (source + organization + year), banned-CTA-phrase enforcement
+  (linted, not just requested), fabrication guardrails on competitor claims
+  and first-party numbers, FTC disclosure requirements on sponsored/UGC
+  content, and a first-person disclosure rule.
+- **17 channel strategy docs** (goal, principles, structure, cadence, failure
+  modes per channel), grounded in cited platform research.
+- **Governance built in**: a publish/review tracker template, a documented
+  citation-verification process, and a human sign-off rule for stat-bearing
+  or first-person content.
+- **Zero required dependencies** for the core tool (Python 3.9+ stdlib);
+  provider SDKs install per-choice via extras.
 
 ## Directory Structure
 
@@ -319,6 +358,17 @@ sets which provider `--generate` uses when `--provider` isn't passed;
 `--model` isn't passed. `config.py` loads it with a safe fallback if the file is
 missing.
 
+Each brand entry can also declare:
+
+- **`market`** - `"b2b"` (default), `"b2c"`, or `"creator"`. Selects the voice
+  register (`MARKET_VOICE_RULES` in `templates/_shared.py`) that flows into
+  templates: professional business language, consumer language, or a
+  first-person personal-brand voice. Brands with no `market` field behave
+  exactly as before (B2B).
+- **`platform_audience_overrides`** - an optional map of platform alias →
+  audience string, so e.g. a LiveJournal post can target a community audience
+  while the brand's default stays B2B decision-makers.
+
 ## Development
 
 ```bash
@@ -463,9 +513,10 @@ so the template stays reusable across cycles.
 
 These ship as working examples in `config.json`'s `brands` map. Edit their fields,
 delete them, or add a new domain entry with your own brand's name, description,
-audience, and hashtag.
+audience, hashtag, and market register.
 
-| Domain | Brand | Description |
-|--------|-------|-------------|
-| edstellar.com | Edstellar | Global corporate training company delivering high-impact training solutions for enterprise teams |
-| invensislearning.com | Invensis Learning | Global professional training and certification provider across project management, IT service management, agile, and cybersecurity |
+| Domain | Brand | Market | Description |
+|--------|-------|--------|-------------|
+| edstellar.com | Edstellar | b2b | Global corporate training company delivering high-impact training solutions for enterprise teams |
+| invensislearning.com | Invensis Learning | b2b | Global professional training and certification provider across project management, IT service management, agile, and cybersecurity |
+| example-creator.com | `[YOUR NAME]` placeholder | creator | A deliberately unusable placeholder entry showing the creator/personal-brand register - replace every `[BRACKETED]` field with a real creator's details (or delete) before publishing anything generated from it |
