@@ -1102,6 +1102,11 @@ DO NOT:
 - Lose specificity in the rewrite - if the source had "34% reduction over 6 months", the new version must keep that exact data point
 - Add new claims, stats, or examples not present in the source (this is repurposing, not new writing)
 
+DUPLICATE CONTENT / CANONICAL GUIDANCE (applies to every target platform, not just Medium):
+- The native-feel rewrite above already guards against near-duplicate content for most platforms - if {platform} publishes long-form text that closely tracks the source's structure (Medium, WordPress, Dev.to, Hashnode, LinkedIn Article), that is not enough on its own
+- For any target platform that supports a canonical or rel-alternate mechanism (frontmatter canonical_url, a rel="canonical" tag, or an explicit "originally published at" line), include a pointer back to {from_platform}'s original URL if one is available, or a placeholder note "[CANONICAL: original {from_platform} URL]" if it isn't yet known
+- For target platforms with no canonical mechanism (Instagram, GMB, Pinterest, Quora, YouTube description), the rewrite itself must be substantially different in structure, length, and phrasing from the source - never a lightly reworded copy
+
 {HUMAN_WRITING_RULES}
 
 {RANKABILITY_RULES}

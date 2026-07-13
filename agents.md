@@ -104,3 +104,61 @@ CI runs all three (`.github/workflows/ci.yml`).
   fabricated URL, Dev.to/Hashnode/etc. assign the real URL at publish time.
   Once the companion piece's `Published URL` is filled in on the content
   calendar tracker, go back and turn the plain-text reference into a real link.
+- **Source-diversity rule (standing rule).** Within any content cluster
+  (multiple posts published close together on related topics), never reuse
+  the exact same single source (e.g. "Gallup's State of the Global
+  Workplace") as the sole statistical anchor across more than one post in
+  that cluster. A vague reference like "Harvard Business Review has written
+  extensively about..." with no article title or year is never acceptable;
+  a citation must name a specific report/article and year every time.
+- **Cluster Citation Diversity Pass (standing process, run before publish
+  on any batch/cluster flagged for this).** Two variants depending on the
+  problem:
+  - (a) Repeated generic promotional stats in one batch (e.g. the GMB
+    batch's unsourced "$438 billion annually" claims): list every
+    stat-bearing sentence in the batch, WebSearch for the real source for
+    each one, then either cite it with exact org + year + figure if found,
+    or remove the stat / replace it with a qualitative claim if it cannot
+    be confirmed after a real search effort. Never fabricate a
+    precise-sounding replacement number.
+  - (b) One cluster leaning on a single repeated source (e.g. the
+    LiveJournal Gallup/HBR reuse): identify which posts in the cluster
+    share a source, WebSearch for distinct, verifiable alternative reports
+    covering the same underlying claim for all but one of the posts,
+    confirm each alternative source actually supports the specific claim
+    being made (not just the general topic), then replace and re-run
+    `lint_content.py` to confirm no em-dash/passive-voice violations were
+    introduced by the edit.
+  This is the same research process described in README's "Citation
+  Verification" section, this is just the name to refer to it by
+  ("run a Cluster Citation Diversity Pass on X") when scoping the work.
+- **Governance / review gate (standing rule, not yet code-enforced).** No
+  content in this pipeline has an enforced human sign-off gate before
+  landing in `output/`. The only automated enforcement anywhere in the
+  pipeline is the em-dash/passive-voice linter (`lint_content.py`); it does
+  not check citation accuracy, brand-safety, or claim validity. Standing
+  rule going forward: any stat-bearing post, or any post using first-person/
+  confessional voice, requires a human reviewer's sign-off (name + date,
+  tracked on the content calendar tracker, e.g.
+  `jul2026_publish_tracker.csv`'s `Reviewed By`/`Review Date` columns)
+  before its `Status` can move to "Published." This is currently a process
+  discipline enforced by humans following the rule, not something
+  `generate.py`/`lint_content.py` can block on.
+- **Disclosure rule for first-person/confessional voice (standing rule,
+  decided).** Any template using first-person "I" voice (e.g. LiveJournal's
+  confessional style) must either (a) be clearly disclosed as a branded
+  persona/sponsored content, or (b) not claim specific personal
+  biographical detail that isn't true of any real author. This repo's
+  templates already implement (a): `templates/community.py`'s
+  `livejournal_post` requires a byline line immediately after the `<h1>`
+  that either names a real configured persona ("Written by [Author Name],
+  [Title] at [Brand]") or discloses brand authorship directly ("Posted on
+  behalf of [Brand]") when no individual author is used. Never generate or
+  approve first-person content with an undisclosed "I" voice and no byline.
+- **DataBank-only sourcing rule (standing rule).** Any first-party or
+  proprietary-sounding statistic in generated content (e.g. "40% larger
+  L&D budgets" attributed to internal program analysis) should be
+  traceable to a row in `data/HARO_DataBank.csv`, not generated ad hoc by
+  the model from general knowledge. External academic/industry stats
+  (Gartner, Verizon DBIR, Gallup, etc.) are exempt from this rule; they
+  instead fall under the Citation Verification research process above.

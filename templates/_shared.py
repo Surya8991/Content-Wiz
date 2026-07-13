@@ -33,7 +33,23 @@ RESEARCH & AUTHORITY RULES:
 - Reference real companies, real case studies, or real named experts where relevant
 - If quoting a stat you are not 100% certain of, flag it with a note to verify before publishing
 - Add a "Sources" or "Further Reading" note at the end listing key references used
+- Third-party research disclaimer: when characterizing a named third party's research, report, or data (e.g. OWASP, Verizon, Gallup, Gartner, HBR), describe only what that source actually found, in neutral reporting language ("Gallup's 2024 report found..." not "Gallup agrees with us that..."). Never imply the third party endorses, partners with, sponsors, or recommends the brand or its product. If a specific report/edition/year cannot be confirmed, soften to a qualitative statement rather than naming a source you cannot pin down
 """.strip()
+
+# Canonical list of banned CTA/promotional phrases. Any template with a
+# call-to-action should ban these explicitly rather than re-deriving its own
+# list, so a phrase banned in one template (e.g. blog_writing's "click here"
+# ban) doesn't silently miss a sibling template (e.g. gmb()). lint_content.py
+# also scans template source against this same list to catch a banned phrase
+# regressing into a template's own example/scaffold text.
+BANNED_CTA_PHRASES = [
+    "Don't miss out",
+    "Take advantage of",
+    "Click here",
+    "Click on learn more",
+    "Learn more",
+    "Discover",
+]
 
 
 # ─────────────────────────────────────────────

@@ -1,3 +1,5 @@
+import html
+
 from ._shared import HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES  # noqa: F401
 
 
@@ -96,6 +98,7 @@ Return the complete Quora answer formatted in Markdown, ready to paste directly 
 
 
 def livejournal_post(topic, audience, **_):
+    safe_topic = html.escape(topic)
     return f"""You are a thoughtful practitioner who journals about work on LiveJournal, the kind of writer whose posts get reblogged because they sound like a real person thinking out loud, not a company blog.
 
 TASK:
@@ -108,12 +111,12 @@ FORMAT (HTML output - do not use markdown):
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>{topic}</title>
+<title>{safe_topic}</title>
 <meta name="description" content="[one sentence summarizing the post's angle, for the person who eventually publishes it]">
 </head>
 <body>
 
-<h1>{topic}</h1>
+<h1>{safe_topic}</h1>
 
 <p><em>[byline line: if a named author/persona is available in context, use "Written by [Author Name], [Title] at [Brand]"; otherwise use a generic placeholder like "Written by [Author Name]". If no individual author is being used at all, disclose brand authorship naturally instead, e.g. "Posted on behalf of [Brand]"]</em></p>
 
@@ -140,6 +143,7 @@ STRUCTURE RULES:
 - 3-4 `<h2>` sections covering the psychological or emotional reality behind the topic that most advice skips
 - Every statistic must name its source, organization, and year. If unsure of an exact figure, describe the trend qualitatively instead of inventing a number
 - Where a CTA link is provided, weave it into the body (not the closer) as a natural inline <a href="URL">anchor text</a> link, using this destination: [INSERT CTA LINK]. If no CTA link is provided, omit it entirely and do not mention the brand
+- If the essay references a companion piece by name (e.g. "a companion piece on..."), do not leave it as plain text - mark it as `[LINK: <exact companion piece title>]` right after the reference. Do not fabricate a URL; the placeholder gets replaced with the live URL once that piece is published
 - Body word count: strictly under 800 words (aim 600-750)
 - Escape `&` as `&amp;` inside any href attribute
 
@@ -162,6 +166,7 @@ Save to: output/LiveJournal/
 
 
 def tumblr_post(topic, audience, **_):
+    safe_topic = html.escape(topic)
     return f"""You are a Tumblr writer whose short-form posts on work and behavior regularly get thousands of reblogs because they are punchy, aphoristic, and instantly screenshot-able.
 
 TASK:
@@ -174,12 +179,12 @@ FORMAT (HTML output - do not use markdown):
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>{topic}</title>
+<title>{safe_topic}</title>
 <meta name="description" content="[one sentence summarizing the post's angle, for the person who eventually publishes it]">
 </head>
 <body>
 
-<h1>{topic}</h1>
+<h1>{safe_topic}</h1>
 
 <p><em>[one-line byline: "Written by [Author Name]" if a persona is configured in context, otherwise "Posted on behalf of [Brand]"]</em></p>
 
@@ -202,6 +207,7 @@ STRUCTURE RULES:
 - 4-6 bolded lead-in points, each a specific behavioral observation, not a generic platitude
 - No fabricated statistics. If you cite one, it must name source, organization, and year, and be real
 - Where a CTA link is provided, close with one sentence containing it as an inline <a href="URL">anchor text</a> link, using this destination: [INSERT CTA LINK]. If no CTA link is provided, close with one strong standalone sentence, no link, no brand mention
+- If a companion piece is referenced by name, mark it as `[LINK: <exact companion piece title>]` instead of leaving it as plain text - do not fabricate a URL
 - Body word count: strictly under 300 words (aim 220-280)
 - Escape `&` as `&amp;` inside any href attribute
 

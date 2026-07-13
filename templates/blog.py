@@ -506,6 +506,11 @@ After the article body, list 3-5 internal linking opportunities:
 - Format: "Anchor text: [phrase]" → Suggested target: [topic of related article]"
 - These help Google understand topical clusters and pass authority
 
+RELATED ARTICLES (in-body companion links):
+- Wherever the article body references a companion piece by name (e.g. "a companion piece on...", "we covered this in..."), do not leave it as plain text - mark it as `[LINK: <exact companion piece title>]` immediately after the reference
+- Do not fabricate a URL. Real published URLs don't exist until publish time, so the bracketed placeholder is the deliverable - a human or tracker-driven pass finds and replaces `[LINK: ...]` with the live URL once the companion piece is published
+- If no companion piece exists yet for this topic, skip this instruction entirely rather than inventing one
+
 ═══════════════════════════════════════════
 SECTION 10 - SOURCES & FURTHER READING
 ═══════════════════════════════════════════
@@ -581,6 +586,7 @@ description:
 
 FRONTMATTER INSTRUCTIONS:
 - canonical_url: if this article is being cross-posted from another platform (e.g. it originally ran on the company blog, Medium, or another Dev.to/Hashnode account), set this field to that original article's URL. If this is the first and only publication of this piece, leave the field empty - do not fabricate or guess a URL.
+- description: required, never leave this field blank. Write a single-sentence meta description that is 150-160 characters including spaces, includes the primary keyword naturally, and reads as a standalone summary of the article's value.
 
 """
     return frontmatter + blog_writing(topic, wordcount, platform, audience)

@@ -170,6 +170,27 @@ class ConfigTests(unittest.TestCase):
         import config
         self.assertIsNone(config.brand_for_url("https://example.com"))
 
+    def test_platform_override_wins_when_present(self):
+        import config
+        brand = config.BRANDS["edstellar.com"]
+        result = config.audience_for_platform(brand, "livejournal")
+        self.assertEqual(result, brand["platform_audience_overrides"]["livejournal"])
+
+    def test_platform_override_falls_back_to_brand_audience(self):
+        import config
+        brand = config.BRANDS["edstellar.com"]
+        result = config.audience_for_platform(brand, "some_platform_with_no_override")
+        self.assertEqual(result, brand["audience"])
+
+    def test_platform_override_no_platform_key_falls_back(self):
+        import config
+        brand = config.BRANDS["edstellar.com"]
+        self.assertEqual(config.audience_for_platform(brand), brand["audience"])
+
+    def test_platform_override_no_brand_returns_none(self):
+        import config
+        self.assertIsNone(config.audience_for_platform(None, "livejournal"))
+
     def test_default_audience_is_brand_neutral(self):
         # The generic fallback must not assume any specific brand's audience
         # (e.g. the L&D/HR phrasing that config.json's example brands use),

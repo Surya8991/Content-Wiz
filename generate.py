@@ -139,9 +139,6 @@ def resolve_audience(explicit_audience, url):
 
 DEFAULT_AUDIENCE  = DEFAULTS["audience"]
 DEFAULT_WORDCOUNT = DEFAULTS["wordcount"]
-AVAILABLE_PLATFORMS = ", ".join(
-    sorted(set(PLATFORM_MAP.keys()) | set(textprompts.TEXT_PROMPT_MAP.keys()))
-)
 
 
 def resolve_key(platform_str):
@@ -267,8 +264,8 @@ def run_single(args):
         normalized = args.platform.lower().strip()
         kind, key = resolve(normalized)
         if kind is None:
-            print(f"Unknown platform: '{args.platform}'")
-            print(f"Available platforms: {AVAILABLE_PLATFORMS}")
+            print(f"Unknown platform: '{args.platform}'\n")
+            print_platform_list()
             sys.exit(1)
         effective_platform_target = args.platform_target
 
@@ -324,7 +321,7 @@ def _maybe_generate(prompt, out_key, args):
     """If --generate, call the LLM and return (content, key); else return the prompt."""
     if not args.generate:
         return prompt, out_key
-    import llm
+    import llm  # deferred: avoids a hard dependency on the `anthropic` package unless --generate is used
     print("\nGenerating content via LLM...")
     try:
         content = llm.generate_content(prompt, model=args.model)
@@ -371,80 +368,84 @@ def run_bulk(csv_path, output_dir_arg=None, global_cta=None):
     timestamp     = datetime.now().strftime("%Y%m%d_%H%M%S")
     zip_filename  = f"bulk_{timestamp}.zip"
     zip_path      = os.path.join(output_dir, zip_filename)
+    log_filename  = f"log_{timestamp}.csv"
+    log_path      = os.path.join(output_dir, log_filename)
     log_rows      = []
 
-    with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
-        for i, job in jobs:
-            platform = job["platform"]
-            kind, key = resolve(platform)
+    try:
+        with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
+            for i, job in jobs:
+                platform = job["platform"]
+                kind, key = resolve(platform)
 
-            if kind is None:
-                msg = f"unknown platform '{platform}'"
-                errors.append(f"Row {i}: {msg}")
-                log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
-                                  "filename": "", "status": f"error: {msg}"})
-                continue
-
-            source_content = None
-            if job["source_file"]:
-                if os.path.exists(job["source_file"]):
-                    with open(job["source_file"], "r", encoding="utf-8") as sf:
-                        source_content = sf.read()
-                else:
-                    msg = f"source_file not found: {job['source_file']}"
+                if kind is None:
+                    msg = f"unknown platform '{platform}'"
                     errors.append(f"Row {i}: {msg}")
                     log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
                                       "filename": "", "status": f"error: {msg}"})
                     continue
 
-            try:
-                cta = job["cta"] or global_cta
-                if kind == "text":
-                    prompt = textprompts.render(
-                        platform.lower(), topic=job["topic"], audience=job["audience"],
-                        wordcount=job["wordcount"], cta=cta,
-                    )
-                    folder = textprompts.subfolder_for(platform.lower())
-                    file_key = "text"
-                else:
-                    prompt = build_prompt(
-                        key,
-                        topic=job["topic"],
-                        audience=job["audience"],
-                        wordcount=job["wordcount"],
-                        platform_label=platform.lower(),
-                        platform_target=job["platform_target"],
-                        title=job["title"],
-                        from_platform=job["from_platform"],
-                        source_content=source_content,
-                    )
-                    prompt = inject_cta(prompt, cta)
-                    folder = subfolder_for(key)
-                    file_key = key
-            except Exception as e:
-                errors.append(f"Row {i}: error building prompt - {e}")
-                log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
-                                  "filename": "", "status": f"error: {e}"})
-                continue
+                source_content = None
+                if job["source_file"]:
+                    if os.path.exists(job["source_file"]):
+                        with open(job["source_file"], "r", encoding="utf-8") as sf:
+                            source_content = sf.read()
+                    else:
+                        msg = f"source_file not found: {job['source_file']}"
+                        errors.append(f"Row {i}: {msg}")
+                        log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
+                                          "filename": "", "status": f"error: {msg}"})
+                        continue
 
-            filename = make_filename(platform, file_key, index=i)
-            arcname  = f"{folder}/{filename}"
-            zf.writestr(arcname, prompt)
-            log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
-                              "filename": arcname, "status": "ok"})
-            print(f"  [{i:03d}] {arcname}")
+                try:
+                    cta = job["cta"] or global_cta
+                    if kind == "text":
+                        prompt = textprompts.render(
+                            platform.lower(), topic=job["topic"], audience=job["audience"],
+                            wordcount=job["wordcount"], cta=cta,
+                        )
+                        folder = textprompts.subfolder_for(platform.lower())
+                        file_key = "text"
+                    else:
+                        prompt = build_prompt(
+                            key,
+                            topic=job["topic"],
+                            audience=job["audience"],
+                            wordcount=job["wordcount"],
+                            platform_label=platform.lower(),
+                            platform_target=job["platform_target"],
+                            title=job["title"],
+                            from_platform=job["from_platform"],
+                            source_content=source_content,
+                        )
+                        prompt = inject_cta(prompt, cta)
+                        folder = subfolder_for(key)
+                        file_key = key
+                except Exception as e:
+                    errors.append(f"Row {i}: error building prompt - {e}")
+                    log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
+                                      "filename": "", "status": f"error: {e}"})
+                    continue
+
+                filename = make_filename(platform, file_key, index=i)
+                arcname  = f"{folder}/{filename}"
+                zf.writestr(arcname, prompt)
+                log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
+                                  "filename": arcname, "status": "ok"})
+                print(f"  [{i:03d}] {arcname}")
+    finally:
+        # Flush whatever log rows were produced so far, even if the loop above
+        # crashed partway through - a truncated zip should never ship with no log.
+        write_bulk_log(log_rows, log_path)
 
     if errors:
         print("\nIssues:")
         for e in errors:
             print(f"  {e}")
 
-    log_filename = f"log_{timestamp}.csv"
-    write_bulk_log(log_rows, os.path.join(output_dir, log_filename))
-
     ok_count = sum(1 for r in log_rows if r["status"] == "ok")
     print(f"\n{ok_count} prompt(s) packaged into: {os.path.relpath(zip_path)}")
-    print(f"Run log saved to:           {os.path.relpath(os.path.join(output_dir, log_filename))}")
+    print(f"Run log saved to:           {os.path.relpath(log_path)}")
 
 
 def main():

@@ -30,3 +30,6 @@ jobs:
 
       - name: Unit tests
         run: python -m unittest discover -p "test_*.py" -v
+
+      - name: Verify package builds and installs
+        run: pip install .

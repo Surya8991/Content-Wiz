@@ -281,6 +281,22 @@ All content produced in this system follows these rules (defined in [prompts/_Br
 6. Output saves to the appropriate `output/` subfolder
 7. Brand auto-detection from URL before generating any content
 8. Every statistic is verified against a real, live source before publish (see below)
+9. Source-diversity: within any content cluster (multiple posts published close
+   together on related topics), never reuse the exact same single source as the
+   sole statistical anchor across more than one post in that cluster. A vague
+   reference like "Harvard Business Review has written extensively about..."
+   with no article title or year is never an acceptable citation, name a
+   specific report/article and year every time
+10. Third-party research is characterized accurately and never implied to
+    endorse, sponsor, or partner with the brand (see `RESEARCH_RULES` in
+    `templates/_shared.py`)
+11. Any first-party/proprietary-sounding statistic traces to a row in
+    `data/HARO_DataBank.csv`, not the model's general knowledge (external
+    academic/industry stats are exempt, see Citation Verification below)
+12. Any stat-bearing post, or any post using first-person/confessional voice,
+    requires a human reviewer's sign-off (name + date) before its `Status`
+    can move to "Published" on the content calendar tracker, this is a
+    process discipline today, not code-enforced (see Governance note below)
 
 Rule 4 is enforced by the prompt instructions at generation time; it does not by
 itself guarantee the citation is accurate; a model can name a real organization
@@ -316,6 +332,44 @@ This step is currently manual (or agent-assisted on request), it is not wired
 into `generate.py` or `lint_content.py`, so nothing blocks a citation-unverified
 file from landing in `output/`. Treat it as a required gate before publish, not
 an optional polish pass.
+
+### Cluster Citation Diversity Pass
+
+A named, repeatable process for the specific failure mode where a batch or
+cluster over-relies on the same stat(s)/source(s) across multiple posts. Run
+it whenever a batch is flagged for this (referenceable by name: "run a
+Cluster Citation Diversity Pass on X"). Two variants:
+
+**(a) Repeated generic promotional stats within one batch** (e.g. a GMB batch
+where multiple rows carry the same kind of unsourced headline number, "$438
+billion annually"):
+1. List every stat-bearing sentence in the batch.
+2. WebSearch for the real source behind each one.
+3. If found: cite it inline with exact organization + year + figure.
+4. If not confirmable after a real search effort: remove the stat, or replace
+   it with a qualitative claim. Never fabricate a precise-sounding number to
+   fill the gap.
+
+**(b) One cluster leaning on a single repeated source** (e.g. four LiveJournal
+posts all anchored on "Gallup's State of the Global Workplace"):
+1. Identify which posts in the cluster share a source.
+2. WebSearch for distinct, verifiable alternative reports covering the same
+   underlying claim, for all but one of the posts in the cluster.
+3. Confirm each alternative source actually supports the specific claim being
+   made, not just the general topic area.
+4. Replace and re-run `lint_content.py` to confirm no em-dash/passive-voice
+   violations were introduced by the edit.
+
+### Governance note
+
+No content in this pipeline has an enforced human sign-off gate before it
+lands in `output/`. The only automated enforcement anywhere in this pipeline
+is `lint_content.py`'s em-dash/passive-voice check, it does not check citation
+accuracy, brand-safety, or claim validity. Standing rule: any stat-bearing
+post, or any post written in first-person/confessional voice, requires a
+human reviewer's sign-off (name + date, tracked on the content calendar
+tracker) before its `Status` can move to "Published." This is a process
+discipline today, not something the code blocks on.
 
 ---
 

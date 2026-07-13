@@ -48,3 +48,30 @@ def brand_for_url(url):
         if domain in u:
             return brand
     return None
+
+
+def audience_for_platform(brand, platform_key=None):
+    """Return the effective audience for a brand, honoring an optional
+    per-platform override.
+
+    Precedence: `brand["platform_audience_overrides"][platform_key]` (if
+    both `platform_key` and a matching override exist) > `brand["audience"]`
+    > None (if `brand` is falsy). Backward compatible: a brand entry with no
+    `platform_audience_overrides` key behaves exactly as before.
+
+    `platform_key` should be the resolved template key or CLI alias (e.g.
+    "livejournal", "devto") - match it against whatever keys you add under
+    a brand's `platform_audience_overrides` map in config.json.
+
+    Not yet wired into generate.py's `resolve_audience()` - that function
+    currently calls `brand.get("audience")` directly. Wiring it in is a
+    one-line change: replace that call with
+    `audience_for_platform(brand, platform_key)` once `resolve_audience`
+    also receives the platform key/alias being generated.
+    """
+    if not brand:
+        return None
+    overrides = brand.get("platform_audience_overrides") or {}
+    if platform_key and platform_key in overrides:
+        return overrides[platform_key]
+    return brand.get("audience")

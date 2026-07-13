@@ -1,4 +1,6 @@
-from ._shared import HUMAN_WRITING_RULES
+from ._shared import BANNED_CTA_PHRASES, HUMAN_WRITING_RULES
+
+_BANNED_CTA_LIST = ", ".join(f'"{p}"' for p in BANNED_CTA_PHRASES)
 
 
 def gmb(topic, audience, **_):
@@ -31,7 +33,7 @@ STRICT REQUIREMENTS:
 DO NOT USE:
 - Openers like "This blog...", "In this post...", "Learn how..."
 - Generic value words: "comprehensive", "ultimate", "complete", "everything you need"
-- Salesy phrases: "Don't miss out", "Take advantage of", "Discover", "Click on learn more", "Don't miss out on this essential read"
+- Salesy phrases (the canonical banned-CTA list this project enforces everywhere, not just here): {_BANNED_CTA_LIST}, and "Don't miss out on this essential read"
 - The identical closing sentence reused across multiple posts in the same batch - if you are generating more than one GMB post in a session, no two may share a closing sentence
 - Em dashes - use hyphens only
 

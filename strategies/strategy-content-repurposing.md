@@ -112,6 +112,8 @@ Each derivative must feel native. These are the key adaptations per channel:
 
 **Medium republish (from blog):** Publish identically or with minor edits. Add a canonical link pointing to the original URL to protect SEO. Wait 2 weeks minimum after the original to allow the source version to index first.
 
+**Canonical/duplicate-content rule for every cross-posted channel, not just Medium:** Any channel that supports a canonical or rel-alternate mechanism (Dev.to/Hashnode frontmatter `canonical_url`, a WordPress `rel="canonical"` tag, an "originally published at" line) must point back to the original piece's URL. Any channel with no such mechanism (Instagram, GMB, Pinterest, Quora, YouTube description) must carry a substantially rewritten version instead - never a lightly reworded copy of the source.
+
 **HARO pitch (from article):** Extract any original statistics, named case study outcomes, or counterintuitive claims. These become the proof blocks in HARO responses when relevant journalist queries arrive. Maintain a running list of the brand's "pitch-ready data points" updated with each new article.
 
 **Twitter/X thread (from article):** Hook tweet = the single strongest claim from the article. Subsequent tweets = each major section compressed to 1-2 sentences. Final tweet = link to full article. Threads should read as self-contained; the article is optional depth, not required context.
