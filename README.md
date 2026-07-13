@@ -25,10 +25,10 @@ Content Wiz/
 ├── config.json                       ← Brands + defaults (edit here, not in code)
 ├── config.py                         ← Loads config.json with a safe fallback
 ├── generate.py                       ← CLI prompt generator (single + bulk + --generate)
-├── templates/                        ← 31 rich, parameterized prompt builders, split by domain
+├── templates/                        ← 35 rich, parameterized prompt builders, split by domain
 │   ├── __init__.py                   ← Re-exports every function at package level
 │   ├── _shared.py                    ← HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES
-│   ├── local.py, blog.py, social.py, community.py, video.py, growth.py, pr.py
+│   ├── local.py, blog.py, social.py, community.py, creator.py, personal.py, video.py, growth.py, pr.py
 ├── textprompts.py                    ← Loader wiring the flat prompts/*.txt into the CLI
 ├── llm.py                            ← Optional live generation (--generate); provider-agnostic:
 │                                        Anthropic/Claude, Google/Gemini, or OpenAI/Codex-GPT
@@ -46,11 +46,12 @@ The subfolders it can produce are:
 Blog/                Blog_Suggestions/    Business_Case/       Case_Study/
 Comparison_Pages/    Content_Brief/       Content_Calendar/    DataBank/
 DevTo_Hashnode/       FAQ/                 GEO/                 GMB/
-Guest_Articles/       HARO/                Instagram/           Landing_Pages/
-LinkedIn/             LinkedIn_Carousel/   LiveJournal/          Medium/
-Meta/                 Newsletter/          Pinterest/            Podcast/
-Press_Release/        Quora/               Short_Form_Video/     Tumblr/
-Twitter/              Video_Scripts/       YouTube/
+Guest_Articles/       HARO/                Influencer_Outreach/ Instagram/
+Landing_Pages/        LinkedIn/            LinkedIn_Carousel/   LiveJournal/
+Media_Kit/            Medium/              Meta/                Newsletter/
+Personal_Brand/       Pinterest/           Podcast/             Press_Release/
+Quora/                Short_Form_Video/    Tumblr/              Twitter/
+UGC_Briefs/           Video_Scripts/       YouTube/
 Misc/  (fallback for any unmapped key)
 ```
 
@@ -80,6 +81,12 @@ One document per channel. Each doc contains: goal and metric, core principles, r
 | [strategy-case-studies.md](strategies/strategy-case-studies.md) | Case studies | Conversion rate on case study pages |
 | [strategy-ai-search.md](strategies/strategy-ai-search.md) | AI search (GEO/AEO) | AI Overview citations for target keywords |
 | [strategy-podcast-guesting.md](strategies/strategy-podcast-guesting.md) | Podcast guesting | Confirmed bookings per month |
+| [strategy-gmb.md](strategies/strategy-gmb.md) | Google Business Profile posts | Learn-more CTR on profile views |
+| [strategy-livejournal.md](strategies/strategy-livejournal.md) | LiveJournal personal-voice blog | Read-to-completion and return readers |
+| [strategy-tumblr.md](strategies/strategy-tumblr.md) | Tumblr aphoristic posts | Reblog rate over raw views |
+| [strategy-quora.md](strategies/strategy-quora.md) | Quora answers | Upvote-to-view ratio per answer |
+| [strategy-influencer-collabs.md](strategies/strategy-influencer-collabs.md) | Influencer / UGC collaborations | Attributable CPA/ROAS per collaboration |
+| [strategy-personal-brand.md](strategies/strategy-personal-brand.md) | Personal brand (individual creator) | Follower-to-engaged-reply ratio and owned-audience growth |
 
 ---
 
@@ -190,6 +197,10 @@ for what `generate.py` can produce.
 | `landing_page` | `landing_page`, `landing`, `lp` | Landing_Pages |
 | `comparison_page` | `comparison_page`, `comparison`, `vs`, `alternative` | Comparison_Pages |
 | `business_case_one_pager` | `business_case_one_pager`, `business_case`, `one_pager`, `internal_pitch` | Business_Case |
+| `influencer_outreach` | `influencer_outreach`, `outreach`, `influencer` | Influencer_Outreach |
+| `ugc_brief` | `ugc_brief`, `ugc`, `creator_brief` | UGC_Briefs |
+| `personal_brand_post` | `personal_brand_post`, `personal_brand`, `personal_post` | Personal_Brand |
+| `creator_media_kit` | `creator_media_kit`, `media_kit`, `mediakit` | Media_Kit |
 
 > **Alias gotcha:** `--platform linkedin`, `wordpress`, and `blog` all resolve to
 > `blog_writing` (long-form blog). For a LinkedIn *post*, use `--platform linkedin_post`.
@@ -340,7 +351,7 @@ All content produced in this system follows these rules (defined in [prompts/_Br
 
 1. No em dashes anywhere
 2. No passive voice
-3. B2B language only
+3. Match the brand's configured market register (`market` field in `config.json`: `b2b` default, `b2c`, or `creator`) - B2B professional language unless the brand is explicitly configured otherwise
 4. Every statistic names its source, organization, and year
 5. No promotional brand tone in content body
 6. Output saves to the appropriate `output/` subfolder

@@ -60,8 +60,13 @@ These rules apply to every piece of content produced across all prompt files. No
    Wrong:  "Training programmes are delivered by Edstellar."
    Right:  "Edstellar delivers training programmes."
 
-3. B2B LANGUAGE ONLY
-   All content targets professional B2B audiences. No consumer tone, no casual phrasing unless the platform explicitly requires it (e.g. Instagram, Reddit).
+3. MATCH THE BRAND'S MARKET REGISTER
+   Each brand in config.json declares a market: "b2b" (default), "b2c", or "creator".
+   B2B brands get professional business language, no consumer tone. B2C brands speak
+   to an individual spending their own money, in everyday language. Creator brands
+   speak as one identifiable person with a point of view, first person, personality
+   forward. When no market is configured, default to B2B. Platform norms still apply
+   on top (e.g. Instagram and Reddit allow casual phrasing regardless of market).
 
 4. STAT ATTRIBUTION IS MANDATORY
    Every statistic must name its source. Never write "studies show" or "research suggests" without naming the study and year.

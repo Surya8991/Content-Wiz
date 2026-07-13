@@ -19,6 +19,7 @@
       "description": "Global corporate training company that partners with enterprises to deliver high-impact training solutions for modern teams",
       "audience": "L&Ds, HRs, and decision-makers in the organization",
       "hashtag": "#Edstellar",
+      "market": "b2b",
       "_platform_audience_overrides_comment": "Optional. Keyed by CLI --platform alias or template key. Falls back to 'audience' above for any platform not listed here. Entirely optional, delete this whole map if you don't need per-platform overrides.",
       "platform_audience_overrides": {
         "livejournal": "community members and personal-development readers browsing a personal blog, not a corporate audience",
@@ -30,7 +31,16 @@
       "name": "Invensis Learning",
       "description": "Global professional training and certification provider empowering individuals and organizations with in-demand skills across project management, IT service management, agile, cybersecurity, and more",
       "audience": "L&Ds, HRs, and decision-makers",
-      "hashtag": "#InvensisLearning"
+      "hashtag": "#InvensisLearning",
+      "market": "b2b"
+    },
+    "example-creator.com": {
+      "_comment": "Example creator/personal-brand entry. `market: creator` switches templates that consume the market register to an individual first-person voice. Replace with a real creator's domain/name or delete.",
+      "name": "Alex Rivera",
+      "description": "Independent L&D consultant and content creator sharing practical workplace-skills advice from a decade of corporate training delivery",
+      "audience": "early-to-mid-career professionals working on their own skills growth",
+      "hashtag": "#AlexRiveraLearns",
+      "market": "creator"
     }
   }
 }

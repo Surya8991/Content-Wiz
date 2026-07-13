@@ -56,6 +56,43 @@ BANNED_CTA_PHRASES = [
 ]
 
 
+# Per-market voice registers. A brand's `market` field in config.json selects
+# one of these ("b2b" is the default and matches this repo's original voice).
+# Templates receive `market` as a kwarg from generate.build_prompt and can
+# interpolate `market_voice(market)`; templates that ignore it stay B2B-toned.
+MARKET_VOICE_RULES = {
+    "b2b": """
+MARKET REGISTER - B2B:
+- Write for a professional evaluating a business decision, not a casual browser
+- Frame outcomes in business terms: productivity, retention, risk, cost, revenue
+- Credible-expert tone: confident, specific, zero hype
+- Role-aware: a CFO, a CTO, and an HR lead care about different proof - match the stated audience's actual concerns
+- No consumer-style urgency or emotional selling
+""".strip(),
+    "b2c": """
+MARKET REGISTER - B2C / CONSUMER:
+- Write for an individual spending their own money and time - lead with what changes in THEIR life, not organizational outcomes
+- Everyday language over industry vocabulary: say "get better at" not "upskill", "figure out" not "assess"
+- Emotional resonance is legitimate here: relief, confidence, pride, curiosity - but earned through specifics, never manufactured urgency
+- Short sentences, direct address ("you"), concrete before abstract
+- Price/effort transparency builds trust: acknowledge what it costs (time or money) instead of hiding it
+""".strip(),
+    "creator": """
+MARKET REGISTER - CREATOR / PERSONAL BRAND:
+- Write as one identifiable human with a point of view, not an organization - first person, personality-forward, opinions allowed and expected
+- Platform-native informality: contractions, fragments, asides - the register of someone talking, not publishing
+- The reader follows a PERSON: consistency of voice across posts matters more than polish within any single post
+- Share process and specifics from lived experience ("here's what I actually did") over general advice ("here's what one should do")
+- Never voice-of-god corporate neutrality: hedged, committee-approved language reads as fake on a personal account
+""".strip(),
+}
+
+
+def market_voice(market=None):
+    """Return the voice-register block for `market`, defaulting to b2b."""
+    return MARKET_VOICE_RULES.get((market or "b2b").lower(), MARKET_VOICE_RULES["b2b"])
+
+
 # ─────────────────────────────────────────────
 # EXISTING TEMPLATES
 # ─────────────────────────────────────────────

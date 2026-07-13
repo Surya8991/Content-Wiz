@@ -25,7 +25,7 @@ RULES
 ------------------------------------------------------------
 
 - Description is approximately 50 words
-- B2B language only, no consumer-facing tone
+- Match the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: B2B professional language, no consumer-facing tone)
 - No em dashes anywhere
 - No passive voice, active voice throughout
 - Do not use: "Don't miss out", "Click on learn more", "Click here", "Learn more", "Take advantage of", "Discover"

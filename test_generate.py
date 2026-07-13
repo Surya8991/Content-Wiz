@@ -242,6 +242,30 @@ class AudienceResolutionTests(unittest.TestCase):
         self.assertEqual(result, "custom audience")
 
 
+class MarketRegisterTests(unittest.TestCase):
+    def test_market_for_brand_defaults_to_b2b(self):
+        import config
+        self.assertEqual(config.market_for_brand(None), "b2b")
+        self.assertEqual(config.market_for_brand({}), "b2b")
+        self.assertEqual(config.market_for_brand({"market": ""}), "b2b")
+
+    def test_configured_markets_resolve(self):
+        import config
+        self.assertEqual(config.market_for_brand(config.BRANDS["edstellar.com"]), "b2b")
+        self.assertEqual(config.market_for_brand(config.BRANDS["example-creator.com"]), "creator")
+
+    def test_market_voice_falls_back_to_b2b(self):
+        from templates._shared import market_voice
+        self.assertIn("B2B", market_voice(None))
+        self.assertIn("B2B", market_voice("not-a-market"))
+        self.assertIn("CREATOR", market_voice("creator"))
+        self.assertIn("B2C", market_voice("b2c"))
+
+    def test_build_prompt_accepts_market_kwarg(self):
+        prompt = generate.build_prompt("personal_brand_post", market="creator", **SAMPLE)
+        self.assertIn("CREATOR", prompt)
+
+
 class LlmTests(unittest.TestCase):
     def test_missing_key_raises_runtime_error(self):
         import os

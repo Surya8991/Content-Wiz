@@ -1,10 +1,14 @@
 # agents.md - Content Wiz
 
 ## Project overview
-A generic, multi-brand B2B content-distribution **prompt generator**. It is not
-built for one company: `config.json`'s `brands` map (keyed by domain) holds each
-brand's name, description, audience, and hashtag, and `--url yourdomain.com` at
-generation time auto-fills the audience from the matching entry. Edstellar and
+A generic, multi-brand content-distribution **prompt generator** covering B2B,
+B2C, and creator/personal-brand markets. It is not built for one company:
+`config.json`'s `brands` map (keyed by domain) holds each brand's name,
+description, audience, hashtag, and `market` register (`b2b` default, `b2c`,
+or `creator` - selects the voice block from `templates/_shared.py`'s
+`MARKET_VOICE_RULES` that flows into templates via `build_prompt`'s `market`
+kwarg), and `--url yourdomain.com` at generation time auto-fills the audience
+and market from the matching entry. Edstellar and
 Invensis Learning ship as example brand configs in `config.json`, not the tool's
 identity - add, edit, or delete brand entries freely. By default the tool assembles
 fully-specified prompts and writes them to `output/` for a human to paste into an AI
@@ -15,10 +19,11 @@ regardless of which model actually writes it. Prompts encode channel strategy, b
 voice, and formatting rules so output is consistent across platforms and providers.
 
 Two prompt layers, one unified CLI:
-1. **Rich templates** - `templates/`: 31 parameterized prompt builders, split by
-   domain (`local.py`, `blog.py`, `social.py`, `community.py`, `video.py`,
-   `growth.py`, `pr.py`), re-exported at the package level via `__init__.py` so
-   `templates.<fn>` and `getattr(templates, key)` work exactly as before.
+1. **Rich templates** - `templates/`: 35 parameterized prompt builders, split by
+   domain (`local.py`, `blog.py`, `social.py`, `community.py`, `creator.py`,
+   `personal.py`, `video.py`, `growth.py`, `pr.py`), re-exported at the package
+   level via `__init__.py` so `templates.<fn>` and `getattr(templates, key)`
+   work exactly as before.
 2. **Text prompts** - `textprompts.py`: loads the flat `prompts/*.txt` files and
    substitutes tokens. Every prompt file is now reachable from the CLI.
 `generate.resolve(alias)` dispatches to the right layer. `python generate.py --list`
@@ -27,7 +32,7 @@ prints the authoritative alias list.
 ## Stack
 - Python 3 (standard library only for the core tool). No required deps.
 - Optional, only for `--generate`, install just the provider(s) you use:
-  `anthropic` (`pip install .[llm-anthropic]`), `google-generativeai`
+  `anthropic` (`pip install .[llm-anthropic]`), `google-genai`
   (`.[llm-gemini]`), `openai` (`.[llm-openai]`), or `.[llm]` for all three.
   `ruff` (`.[dev]`) for style lint.
 - `pyproject.toml` defines the `content-wiz` console entry point.
@@ -37,9 +42,10 @@ prints the authoritative alias list.
   `SUBFOLDER_MAP` (key → folder), `resolve()`/`build_prompt()`, single + `--bulk` modes.
   Reconfigures stdout to UTF-8 so prompt printing never crashes on Windows consoles.
 - `templates/` - one function per template key; each returns a prompt string.
-  All take `**_` so extra kwargs never raise. `_shared.py` holds the three
+  All take `**_` so extra kwargs never raise. `_shared.py` holds the
   cross-cutting rule blocks (`HUMAN_WRITING_RULES`, `RANKABILITY_RULES`,
-  `RESEARCH_RULES`); every other file imports from it. New template: add the
+  `RESEARCH_RULES`, `BANNED_CTA_PHRASES`, `MARKET_VOICE_RULES` +
+  `market_voice()`); every other file imports from it. New template: add the
   function to whichever domain module fits (or start a new one), then add its
   name to that module's import line in `__init__.py`.
 - `textprompts.py` - `TEXT_PROMPT_MAP` (alias → file + folder) + `render()`.

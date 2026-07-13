@@ -9,7 +9,7 @@ from pathlib import Path
 
 import templates
 import textprompts
-from config import DEFAULTS, audience_for_platform, brand_for_url
+from config import DEFAULTS, audience_for_platform, brand_for_url, market_for_brand
 
 # Prompts can contain characters outside the Windows console's legacy code page.
 # Force UTF-8 so printing never crashes with UnicodeEncodeError.
@@ -99,6 +99,19 @@ PLATFORM_MAP = {
     "business_case":    "business_case_one_pager",
     "one_pager":        "business_case_one_pager",
     "internal_pitch":   "business_case_one_pager",
+    # Creator / influencer / personal-brand types
+    "influencer_outreach": "influencer_outreach",
+    "outreach":         "influencer_outreach",
+    "influencer":       "influencer_outreach",
+    "ugc_brief":        "ugc_brief",
+    "ugc":              "ugc_brief",
+    "creator_brief":    "ugc_brief",
+    "personal_brand_post": "personal_brand_post",
+    "personal_brand":   "personal_brand_post",
+    "personal_post":    "personal_brand_post",
+    "creator_media_kit": "creator_media_kit",
+    "media_kit":        "creator_media_kit",
+    "mediakit":         "creator_media_kit",
 }
 
 MD_KEYS   = {"blog_writing_md"}
@@ -139,6 +152,10 @@ SUBFOLDER_MAP = {
     "landing_page":      "Landing_Pages",
     "comparison_page":   "Comparison_Pages",
     "business_case_one_pager": "Business_Case",
+    "influencer_outreach": "Influencer_Outreach",
+    "ugc_brief":         "UGC_Briefs",
+    "personal_brand_post": "Personal_Brand",
+    "creator_media_kit": "Media_Kit",
 }
 
 
@@ -207,7 +224,7 @@ def make_filename(platform_label, key, index=None):
 
 
 def build_prompt(key, topic, audience, wordcount, platform_label, platform_target,
-                 title=None, from_platform="blog", source_content=None):
+                 title=None, from_platform="blog", source_content=None, market=None):
     kwargs = {
         "topic":          topic,
         "audience":       audience,
@@ -216,6 +233,9 @@ def build_prompt(key, topic, audience, wordcount, platform_label, platform_targe
         "title":          title,
         "from_platform":  from_platform,
         "source_content": source_content or "",
+        # Brand's market register (b2b/b2c/creator). Every template takes **_,
+        # so templates that don't consume it are unaffected.
+        "market":         market or "b2b",
     }
 
     if key == "medium":
@@ -284,6 +304,7 @@ def parse_bulk_row(row, i):
         "topic":           topic,
         "wordcount":       wordcount,
         "audience":        resolve_audience(row.get("audience", "").strip() or None, url, platform.lower()),
+        "market":          market_for_brand(brand_for_url(url) if url else None),
         "title":           row.get("title",           "").strip() or None,
         "platform_target": row.get("platform_target", "").strip() or None,
         "cta":             row.get("cta",             "").strip() or None,
@@ -344,6 +365,7 @@ def run_single(args):
             title=args.title,
             from_platform=args.from_platform or "blog",
             source_content=source_content,
+            market=market_for_brand(brand_for_url(args.url) if args.url else None),
         )
         prompt = inject_cta(prompt, args.cta)
         folder = subfolder_for(key)
@@ -484,6 +506,7 @@ def run_bulk(csv_path, output_dir_arg=None, global_cta=None, dry_run=False):
                     title=job["title"],
                     from_platform=job["from_platform"],
                     source_content=source_content,
+                    market=job["market"],
                 )
                 prompt = inject_cta(prompt, cta)
                 folder = subfolder_for(key)

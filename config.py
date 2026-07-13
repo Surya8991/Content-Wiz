@@ -56,6 +56,17 @@ def brand_for_url(url):
     return None
 
 
+def market_for_brand(brand):
+    """Return the brand's market register ("b2b", "b2c", or "creator").
+
+    Defaults to "b2b" for a missing/empty field or a falsy brand, so every
+    pre-existing brand entry keeps its original voice unchanged.
+    """
+    if not brand:
+        return "b2b"
+    return (brand.get("market") or "b2b").lower()
+
+
 def audience_for_platform(brand, platform_key=None):
     """Return the effective audience for a brand, honoring an optional
     per-platform override.
