@@ -1,53 +1,53 @@
 # Content-Wiz Improvement Plan
 **Created:** 2026-07-13  
-**Updated:** 2026-07-14 (v2 — full audit findings added)  
+**Updated:** 2026-07-14 (v2 - full audit findings added)  
 **Source for new content:** D:\Coding\marketing-academy (406 lessons, 16 disciplines)  
 **Status tracking:** See CHANGELOG.md after each phase completes
 
 ---
 
-## Phase 1 — New Prompt Files (11 files) ✅ COMPLETE
+## Phase 1 - New Prompt Files (11 files) ✅ COMPLETE
 All 11 new prompts written and follow gold standard. See CHANGELOG v0.7.0.
 
 ---
 
-## Phase 2 — New Strategy Files (8 files) ✅ COMPLETE
+## Phase 2 - New Strategy Files (8 files) ✅ COMPLETE
 All 8 new strategy docs written. See CHANGELOG v0.7.0.
 
 ---
 
-## Phase 3 — Enrich 6 Existing Prompts ✅ COMPLETE
+## Phase 3 - Enrich 6 Existing Prompts ✅ COMPLETE
 See CHANGELOG v0.7.0.
 
 ---
 
-## Phase 4 — New Python Templates (3 files) ✅ COMPLETE
-cro.py, product.py, ugc.py written. **Note: not yet wired into CLI — see Phase 8.**
+## Phase 4 - New Python Templates (3 files) ✅ COMPLETE
+cro.py, product.py, ugc.py written. **Note: not yet wired into CLI - see Phase 8.**
 
 ---
 
-## Phase 5 — Resources File ✅ COMPLETE
+## Phase 5 - Resources File ✅ COMPLETE
 RESOURCES.md created with 90+ curated links.
 
 ---
 
-## Phase 6 — Documentation Updates ✅ COMPLETE
+## Phase 6 - Documentation Updates ✅ COMPLETE
 README, CHANGELOG, GLOSSARY.md all updated and pushed.
 
 ---
 
-## Phase 7 — CLI Wiring Fixes (from audit) ✅ COMPLETE
+## Phase 7 - CLI Wiring Fixes (from audit) ✅ COMPLETE
 
 5 prompt files existed with zero CLI path. 3 template modules were written but never imported.
 
-### 7A — Wire unwired prompt files into textprompts.py
+### 7A - Wire unwired prompt files into textprompts.py
 - [x] Threads_Post_Prompt.txt → aliases `threads`, `threads_post`
 - [x] TikTok_Ads_Prompt.txt → alias `tiktok_ads`
 - [x] Product_Launch_Prompt.txt → aliases `product_launch`, `launch_copy`
 - [x] Referral_Program_Copy_Prompt.txt → aliases `referral_copy`, `referral_program`
 - [x] Sales_Email_Prompt.txt → aliases `sales_email`, `cold_email`, `outreach_email`
 
-### 7B — Import and wire new template modules
+### 7B - Import and wire new template modules
 - [x] cro.py → `__init__.py` + PLATFORM_MAP: `cro_lead_gen`, `cro_sales_page`, `cta_variants`, `trust_signals`, `hero_headline`
 - [x] product.py → `__init__.py` + PLATFORM_MAP: `positioning_statement`, `launch_announcement`, `pre_launch_teaser`, `messaging_hierarchy`, `launch_email_sequence`
 - [x] ugc.py → `__init__.py` + PLATFORM_MAP: `ugc_video_brief`, `testimonial_request`, `creator_brief`, `photo_brief`
@@ -55,7 +55,7 @@ README, CHANGELOG, GLOSSARY.md all updated and pushed.
       `creator_brief_ugc`, which were never the actual PLATFORM_MAP keys - see
       generate.py's PLATFORM_MAP for the real aliases)
 
-### 7C — Duplicate file cleanup ✅ COMPLETE (2026-07-14)
+### 7C - Duplicate file cleanup ✅ COMPLETE (2026-07-14)
 - [x] Merge Instagram_Content_Prompt.txt and Instagram_Prompt.txt → keep better one, wire it.
       Deleted Instagram_Prompt.txt (single-caption legacy version), wired
       Instagram_Content_Prompt.txt (3-format, 2026-research version) into
@@ -64,7 +64,7 @@ README, CHANGELOG, GLOSSARY.md all updated and pushed.
 
 ---
 
-## Phase 8 — New Prompt Files (17 gaps from audit)
+## Phase 8 - New Prompt Files (17 gaps from audit)
 
 | # | File | Priority | Status |
 |---|------|----------|--------|
@@ -88,7 +88,7 @@ README, CHANGELOG, GLOSSARY.md all updated and pushed.
 
 ---
 
-## Phase 9 — New Strategy Files (21 gaps from audit)
+## Phase 9 - New Strategy Files (21 gaps from audit)
 
 | # | File | Priority | Status |
 |---|------|----------|--------|
@@ -116,26 +116,47 @@ README, CHANGELOG, GLOSSARY.md all updated and pushed.
 
 ---
 
-## Phase 10 — Tooling Improvements
+## Phase 10 - Tooling Improvements
 
 | # | Feature | Priority | Status |
 |---|---------|----------|--------|
-| 1 | `--variants N` flag — A/B copy generator | High | ✅ |
-| 2 | `--keywords FILE` flag — keyword injection | High | ✅ |
+| 1 | `--variants N` flag - A/B copy generator | High | ✅ |
+| 2 | `--keywords FILE` flag - keyword injection | High | ✅ |
 | 3 | Citation auto-verification in lint_content.py | High | ✅ (`--check-urls`) |
 | 4 | `--tone` override flag (formal/conversational/urgent/educational/playful) | High | ✅ |
 | 5 | Social scheduler CSV export (Buffer/Later format) | Medium | ✅ (`--export-scheduler buffer`) |
 | 6 | `--language` / locale flag | Medium | ✅ |
 | 7 | `--log-publish` tracker integration | Medium | ✅ |
+
+---
+
+## Phase 11 - Content-Strategy Gap Closure ✅ COMPLETE (2026-07-14)
+
+Repomix + codereview audit of the full strategy/prompt library found 3 strategy
+docs with zero matching CLI prompt, and 5 wired prompts with no companion
+strategy doc.
+
+| # | File | Gap Type | Status |
+|---|------|----------|--------|
+| 1 | `Programmatic_SEO_Prompt.txt` | strategy-seo-programmatic.md had no prompt | ✅ |
+| 2 | `Technical_SEO_Audit_Prompt.txt` | strategy-technical-seo.md had no prompt | ✅ |
+| 3 | `Lead_Magnet_Prompt.txt` | strategy-gated-content.md had no short-form prompt | ✅ |
+| 4 | `strategy-newsletter-sponsorship.md` | Newsletter_Sponsorship_Pitch_Prompt.txt had no strategy | ✅ |
+| 5 | `strategy-abm.md` | ABM_Content_Prompt.txt had no strategy | ✅ |
+| 6 | `strategy-chatbot.md` | Chatbot_Flow_Prompt.txt had no strategy | ✅ |
+| 7 | `strategy-partnerships.md` | Partnership_Comarketing_Prompt.txt had no strategy | ✅ |
+| 8 | `strategy-bing-ads.md` | Bing_Ads_Prompt.txt had no strategy | ✅ |
+
+See CHANGELOG v0.10.0.
 | 8 | HARO DataBank builder prompt | Medium | ✅ |
 | 9 | `--format` CMS output (gutenberg/hubspot/contentful) | Medium | ✅ |
 | 10 | `--with-image-brief` visual direction flag | Medium | ✅ |
 | 11 | Content performance feedback CSV | Low | ⬜ |
-| 12 | HARO DataBank population (currently 15 rows — needs 50+) | Low | ⬜ |
+| 12 | HARO DataBank population (currently 15 rows - needs 50+) | Low | ⬜ |
 
 ---
 
-## Definition of Done (v1 — complete ✅)
+## Definition of Done (v1 - complete ✅)
 - [x] All 11 new prompt files written and follow gold standard
 - [x] All 8 new strategy files written and follow gold standard
 - [x] 6 existing prompts enriched
@@ -147,7 +168,7 @@ README, CHANGELOG, GLOSSARY.md all updated and pushed.
 - [x] 4-hour timer set
 - [x] GLOSSARY.md created (146 terms, 13 disciplines)
 
-## Definition of Done (v2 — in progress)
+## Definition of Done (v2 - in progress)
 - [x] All 5 unwired prompts wired into CLI
 - [x] cro.py / product.py / ugc.py imported and reachable
 - [ ] Duplicate Instagram prompt resolved

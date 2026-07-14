@@ -5,6 +5,46 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.0] - 2026-07-14
+
+### Added
+
+**Content-strategy gap closure (repomix + codereview-driven audit found 3 strategy
+docs with zero matching CLI prompt, and 5 wired prompts with no companion
+strategy doc):**
+
+- `prompts/Programmatic_SEO_Prompt.txt` - bulk template-page generator for
+  variable combinations (e.g. "[Certification] + [Industry]", "[Service] +
+  [City]"), closing `strategy-seo-programmatic.md`'s gap. Wired as
+  `programmatic_seo`/`programmatic`, output subfolder `Programmatic_SEO`.
+  Requires a combination-specific data point per page and flags rows with
+  none rather than fabricating one, per the strategy doc's deindexation
+  warning against template-only pages.
+- `prompts/Technical_SEO_Audit_Prompt.txt` - structured audit report
+  (crawlability, indexation, Core Web Vitals, canonical, internal linking)
+  closing `strategy-technical-seo.md`'s gap. Wired as
+  `technical_seo`/`technical_seo_audit`/`seo_audit`, output subfolder
+  `Technical_SEO`. Never fabricates a CWV score or crawl error count not
+  supplied as input.
+- `prompts/Lead_Magnet_Prompt.txt` - short single-session lead magnets
+  (checklist / calculator copy / fill-in template), distinct from
+  `Whitepaper_eBook_Prompt.txt`'s long-form assets, closing
+  `strategy-gated-content.md`'s short-form gap. Wired as
+  `lead_magnet`/`checklist`/`calculator_copy`, output subfolder
+  `Lead_Magnets`.
+- 5 new strategy docs for prompts that existed with no companion strategy:
+  `strategy-newsletter-sponsorship.md`, `strategy-abm.md`,
+  `strategy-chatbot.md`, `strategy-partnerships.md`, `strategy-bing-ads.md`.
+- `README.md`: added all 3 new prompts to the text-prompt alias table and
+  all 5 new strategy docs to the strategy table; bumped the "channel
+  strategy docs" count to 51 and "flat prompt files" count to 79.
+
+### Verification
+
+- `python -m unittest test_generate -v` - 74/74 tests pass.
+- `python lint_content.py` - passes clean (153 files checked, up from 145).
+- Manually resolved all 3 new CLI aliases via `--dry-run` to confirm wiring.
+
 ## [0.9.1] - 2026-07-14
 
 ### Fixed

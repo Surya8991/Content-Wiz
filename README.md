@@ -62,9 +62,9 @@ delete them, or add your own.
   (linted, not just requested), fabrication guardrails on competitor claims
   and first-party numbers, FTC disclosure requirements on sponsored/UGC
   content, and a first-person disclosure rule.
-- **46 channel strategy docs** (goal, principles, structure, cadence, failure
+- **51 channel strategy docs** (goal, principles, structure, cadence, failure
   modes per channel), grounded in cited platform research.
-- **76 flat prompt files** covering every major channel and content type - from ASO copy and competitive battlecards to chatbot flows, ABM content, podcast ad reads, brand voice guides, and the HARO DataBank Builder (internal research tool).
+- **79 flat prompt files** covering every major channel and content type - from ASO copy and competitive battlecards to chatbot flows, ABM content, podcast ad reads, brand voice guides, programmatic SEO pages, technical SEO audits, lead magnets, and the HARO DataBank Builder (internal research tool).
 - **146-term marketing glossary** ([GLOSSARY.md](GLOSSARY.md)) covering 13 disciplines - Analytics, Brand, CRO, Email, Growth, Paid Ads, SEO, Social Media, and more - sourced from Marketing Academy.
 - **90+ curated marketing resources** ([RESOURCES.md](RESOURCES.md)) across SEO, paid media, social, email, analytics, copywriting, AI, and learning communities.
 - **Governance built in**: a publish/review tracker template, a documented
@@ -189,6 +189,11 @@ One document per channel. Each doc contains: goal and metric, core principles, r
 | [strategy-technical-seo.md](strategies/strategy-technical-seo.md) | Technical SEO | Core Web Vitals scores and crawl coverage |
 | [strategy-pr.md](strategies/strategy-pr.md) | PR and media relations | Media placements per month and domain authority of placements |
 | [strategy-investor-comms.md](strategies/strategy-investor-comms.md) | Investor relations | Update open rate and investor response rate |
+| [strategy-newsletter-sponsorship.md](strategies/strategy-newsletter-sponsorship.md) | Newsletter sponsorship sales | Ad slot fill rate and sponsor renewal rate |
+| [strategy-abm.md](strategies/strategy-abm.md) | Account-based marketing | Named-account engagement rate and ABM-sourced sales cycle length |
+| [strategy-chatbot.md](strategies/strategy-chatbot.md) | Chatbot and conversational marketing | Conversation-to-conversion rate and flow abandonment rate |
+| [strategy-partnerships.md](strategies/strategy-partnerships.md) | Partnership and co-marketing | Combined campaign reach and net-new qualified contacts per partner |
+| [strategy-bing-ads.md](strategies/strategy-bing-ads.md) | Bing Ads (Microsoft Advertising) | CPC efficiency vs. Google Ads and Quality Score |
 
 ---
 
@@ -408,6 +413,9 @@ templates: `python generate.py --platform <alias> --topic "..."`.
 | Webinar_Promo | `webinar`, `webinar_promo` | Webinar_Promo |
 | Whitepaper_eBook | `whitepaper`, `ebook` | Whitepaper_eBook |
 | Instagram_Content_Prompt | `instagram_content`, `ig_content`, `instagram_reel` | Instagram |
+| Programmatic_SEO_Prompt | `programmatic_seo`, `programmatic` | Programmatic_SEO |
+| Technical_SEO_Audit_Prompt | `technical_seo`, `technical_seo_audit`, `seo_audit` | Technical_SEO |
+| Lead_Magnet_Prompt | `lead_magnet`, `checklist`, `calculator_copy` | Lead_Magnets |
 
 Run `python generate.py --list` for the live, authoritative list of every alias.
 
