@@ -1,0 +1,64 @@
+============================================================
+PROGRAMMATIC SEO PAGE PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Write a programmatic SEO page for [BRAND NAME], [BRAND DESCRIPTION], for the variable combination "[VARIABLE 1] + [VARIABLE 2]" (e.g. "[Certification] + [Industry]", "[Service] + [City]", "[Course Type] + [Role]"). The page should be 600-900 words, target the search intent of someone who searched this specific combination (not the generic parent topic), and read as if written specifically for this combination, not a template with two words swapped. Include at least one data point, statistic, or fact that is unique to this specific combination (not shared across every page in the batch). Structure: an H1 naming the exact combination, a direct-answer opening paragraph (40-60 words) matching the likely search intent, 2-3 body sections covering combination-specific details, a comparison or "who this is for" section, and a CTA linking to [URL]. Write in the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: professional B2B) targeting [TARGET AUDIENCE]. Do not use em dashes. Avoid passive voice.
+
+Variable 1: [INSERT e.g. Certification / Service / Course Type]
+Variable 2: [INSERT e.g. Industry / City / Role]
+Reference URL: [INSERT URL]
+Unique Data Source (if any): [INSERT internal data point, local stat, or industry-specific fact for this combination, or leave blank]
+Voice/Tone: [formal B2B / conversational B2B / brand account - default: professional B2B]
+
+------------------------------------------------------------
+PAGE STRUCTURE
+------------------------------------------------------------
+
+1. H1: [Variable 1] for [Variable 2] (exact-match or near-exact-match the target query)
+2. Direct-Answer Opening (40-60 words, standalone meta-description-ready)
+3. Section 1 - Combination-Specific Detail (not shared with other pages in the batch)
+4. Section 2 - Combination-Specific Detail
+5. Optional Section 3 - Comparison or "Who This Is For"
+6. CTA
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV, for a batch of combinations)
+------------------------------------------------------------
+
+Row No. | Variable 1 | Variable 2 | Page Title | Meta Description | Page Body | Unique Data Point Used
+
+Field encoding: wrap multi-line cells in double quotes.
+Each row is one page for one combination. Do not repeat the same unique data point across two rows in the same batch.
+
+Full batch saved as CSV to output/Programmatic_SEO/. A single-page dry run prints the page body directly instead of a CSV row.
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Every page must contain at least one fact, stat, or detail unique to its specific variable combination - a page that only swaps the variable names into an otherwise identical template is a deindexation risk, per strategy-seo-programmatic.md principle 4
+- If no genuine combination-specific data exists for a row, flag it in the output rather than fabricating a fact: "[NEEDS UNIQUE DATA: no combination-specific detail available for this row - do not publish until added]"
+- Direct-answer opening must stand alone as a 40-60 word meta-description-ready summary
+- No em dashes anywhere
+- No passive voice
+- Every named statistic states its source, organization, and year
+- SELF-CHECK: After drafting each page, confirm it could not be produced by find-and-replacing the same two variables into any other page in the batch - if the body would read identically except for the variable names, add a combination-specific detail before finalizing.
+- BATCH DEDUPLICATION: Across a batch, no two pages may share the same unique data point, the same opening sentence structure, or the same CTA wording. Vary the angle per combination.
+- Output saved to output/Programmatic_SEO/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. Template page with only the variable names swapped and no combination-specific content - this is the exact pattern that gets programmatic pages deindexed at scale per strategy-seo-programmatic.md.
+2. Fabricated statistic invented to fill the "unique data point" requirement - flag missing data instead of inventing it.
+3. Direct-answer opening that describes the parent topic instead of the specific combination - "[Service]" alone is not the same query as "[Service] in [City]"; answer the combination, not the category.
+4. Batch where multiple rows share the identical CTA sentence - vary CTA wording per row even when the destination URL is the same.

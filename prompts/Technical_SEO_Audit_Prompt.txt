@@ -1,0 +1,67 @@
+============================================================
+TECHNICAL SEO AUDIT REPORT PROMPT
+============================================================
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+TEMPLATE
+------------------------------------------------------------
+
+Write a technical SEO audit report for [BRAND NAME], [BRAND DESCRIPTION], covering the site or section "[SITE / SECTION e.g. the full domain / the blog subdirectory / the course catalog pages]". The report should be 900-1400 words and structured around the five audit areas in strategy-technical-seo.md: crawlability, indexation, Core Web Vitals, canonical configuration, and internal linking. For each area, state the finding, the severity (Critical / High / Medium / Low), the business impact if left unaddressed, and the specific fix. Use the raw findings supplied below; do not invent crawl data, Core Web Vitals scores, or indexation numbers that were not provided. If a finding was not supplied for an audit area, state "[NO FINDING SUPPLIED: run this check before publishing the audit]" instead of fabricating one. Write in a direct, technical, non-alarmist tone targeting [TARGET AUDIENCE e.g. in-house SEO lead / marketing director / dev team]. Do not use em dashes. Avoid passive voice.
+
+Site / Section: [INSERT URL or section]
+Raw Findings Supplied (paste crawl/CWV/GSC data here, or leave blank per area to flag as not yet audited):
+- Crawlability: [INSERT findings or leave blank]
+- Indexation: [INSERT findings or leave blank]
+- Core Web Vitals (LCP / INP / CLS): [INSERT findings or leave blank]
+- Canonical configuration: [INSERT findings or leave blank]
+- Internal linking: [INSERT findings or leave blank]
+Voice/Tone: [direct technical / executive summary style - default: direct technical]
+
+------------------------------------------------------------
+REPORT STRUCTURE
+------------------------------------------------------------
+
+1. Report Title + Audit Date + Scope
+2. Executive Summary (100-150 words: total findings, count by severity, single highest-priority fix)
+3. Crawlability Findings
+4. Indexation Findings
+5. Core Web Vitals Findings (LCP / INP / CLS against the 2026 thresholds: 2.5s / 200ms / 0.1)
+6. Canonical Configuration Findings
+7. Internal Linking Findings
+8. Prioritized Fix List (ordered Critical to Low)
+9. Recommended Re-Audit Date
+
+------------------------------------------------------------
+OUTPUT FORMAT (CSV, for the prioritized fix list)
+------------------------------------------------------------
+
+Finding No. | Audit Area | Severity | Finding | Business Impact | Specific Fix | Owner (Dev / Content / SEO)
+
+Field encoding: wrap multi-line cells in double quotes.
+Full narrative report saved as plain text/markdown to output/Technical_SEO/. The fix-list CSV accompanies it when generated in bulk mode.
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- Every finding must state severity, business impact, and a specific fix - "improve page speed" fails; "compress the LCP hero image and serve WebP with a JPEG fallback to bring LCP under 2.5s" passes
+- Never fabricate a crawl error, Core Web Vitals score, or indexation count that was not supplied in the raw findings - use the "[NO FINDING SUPPLIED]" flag instead
+- Core Web Vitals findings must reference the actual 2026 thresholds (LCP < 2.5s, INP < 200ms, CLS < 0.1), never a generic "improve speed" statement
+- No em dashes anywhere
+- No passive voice
+- SELF-CHECK: After drafting, confirm every finding in the Prioritized Fix List traces back to a finding stated in one of the five audit-area sections - no fix should appear that wasn't first identified as a finding.
+- BATCH DEDUPLICATION: When auditing multiple sites/sections in one session, no two reports may share an identical executive summary opening or an identical top-priority fix unless the underlying finding is genuinely the same issue.
+- Output saved to output/Technical_SEO/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. Fabricated Core Web Vitals numbers or crawl error counts when no raw data was supplied - flag the gap, never invent the number.
+2. Finding stated without a specific fix - "fix the canonical issues" fails; name the exact canonical rule to add and which URL pattern it applies to.
+3. Severity assigned inconsistently - a finding that blocks indexation of primary revenue pages is Critical; a finding on a single orphaned blog post is Low. Calibrate severity to business impact, not to how many findings exist in that category.
+4. Report that reads as a generic technical SEO checklist instead of findings specific to the supplied site data - every finding must reference the actual site or section named in the input, not a hypothetical example.

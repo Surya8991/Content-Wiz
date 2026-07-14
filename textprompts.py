@@ -122,6 +122,18 @@ TEXT_PROMPT_MAP = {
     "instagram_content":   ("Instagram_Content_Prompt.txt",       "Instagram"),
     "ig_content":          ("Instagram_Content_Prompt.txt",       "Instagram"),
     "instagram_reel":      ("Instagram_Content_Prompt.txt",       "Instagram"),
+    # Content-strategy gap fixes (added 2026-07-14): strategy docs that existed
+    # with zero matching CLI prompt (strategy-seo-programmatic.md,
+    # strategy-technical-seo.md, strategy-gated-content.md's short-form
+    # lead magnets, distinct from the long-form Whitepaper_eBook prompt).
+    "programmatic_seo":    ("Programmatic_SEO_Prompt.txt",        "Programmatic_SEO"),
+    "programmatic":        ("Programmatic_SEO_Prompt.txt",        "Programmatic_SEO"),
+    "technical_seo":       ("Technical_SEO_Audit_Prompt.txt",     "Technical_SEO"),
+    "technical_seo_audit": ("Technical_SEO_Audit_Prompt.txt",     "Technical_SEO"),
+    "seo_audit":           ("Technical_SEO_Audit_Prompt.txt",     "Technical_SEO"),
+    "lead_magnet":         ("Lead_Magnet_Prompt.txt",             "Lead_Magnets"),
+    "checklist":           ("Lead_Magnet_Prompt.txt",             "Lead_Magnets"),
+    "calculator_copy":     ("Lead_Magnet_Prompt.txt",             "Lead_Magnets"),
 }
 
 

@@ -1,0 +1,97 @@
+============================================================
+LEAD MAGNET PROMPT (CHECKLIST / CALCULATOR / TEMPLATE)
+============================================================
+
+THREE FORMATS AVAILABLE: Checklist / Calculator Copy / Fill-In Template
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, select the format below. This prompt is for short, single-session lead magnets, distinct from Whitepaper_eBook_Prompt.txt's long-form gated assets - use this prompt when the asset is something a prospect uses in one sitting (a checklist to run through, a calculator to plug numbers into, a template to fill in), not something they read start to finish.
+
+------------------------------------------------------------
+GATING DECISION (apply strategy-gated-content.md's framework first)
+------------------------------------------------------------
+
+Gate this lead magnet only if it is specific enough that only a real buyer would want it (industry-specific, role-specific, or backed by proprietary benchmarks). If the topic is broad, introductory, or freely available from competitors, recommend leaving it ungated instead of generating a gated asset for it.
+
+------------------------------------------------------------
+FORMAT A: CHECKLIST
+------------------------------------------------------------
+
+Use when: The topic is a repeatable process with a clear sequence of discrete steps (an audit, an evaluation, a launch process).
+
+Structure:
+- Title naming the specific outcome (e.g. "The 12-Point Vendor Evaluation Checklist," not "Things to Consider")
+- 1-sentence framing: who this is for and what completing it delivers
+- 8-20 checklist items grouped into 3-5 labeled sections
+- Each item is a single, specific, verifiable action - not a vague reminder
+- A "You're ready when..." closing statement defining what completion looks like
+
+------------------------------------------------------------
+FORMAT B: CALCULATOR COPY
+------------------------------------------------------------
+
+Use when: The topic has a quantifiable input-to-output relationship the audience wants to model (ROI, cost savings, time-to-payback, headcount planning).
+
+Structure:
+- Calculator name and one-sentence value proposition
+- Required inputs (name each field, its unit, and a realistic example value)
+- The calculation logic in plain language (what formula or relationship converts inputs to outputs, described precisely enough for a developer to implement it, without literal code)
+- Output fields the calculator returns (name each, with unit)
+- A benchmark or comparison point to contextualize the result (e.g. "the average [BRAND NAME] customer sees X")
+- A results-page CTA that reads as a natural next step, not "click here"
+
+------------------------------------------------------------
+FORMAT C: FILL-IN TEMPLATE
+------------------------------------------------------------
+
+Use when: The topic is a recurring document or plan the audience needs to produce themselves (a project brief, a meeting agenda, a policy document).
+
+Structure:
+- Template title and intended use case (1 sentence)
+- Section-by-section outline with a bracketed placeholder and a one-line instruction per section (e.g. "[GOAL STATEMENT]: State the single measurable outcome this initiative must hit")
+- 5-10 sections typical; more only if the underlying document genuinely requires it
+- A "how to use this template" note (60-90 words) positioned before the template itself
+
+------------------------------------------------------------
+TEMPLATE (shared fields across all formats)
+------------------------------------------------------------
+
+Create a [Checklist / Calculator Copy / Fill-In Template] for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]" for [TARGET AUDIENCE]. Write in the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: professional B2B). Do not use em dashes. Avoid passive voice.
+
+Format: [Checklist / Calculator Copy / Fill-In Template]
+Topic: [INSERT TOPIC]
+Gating Recommendation: [Gated / Ungated - state which and why, per the Gating Decision above]
+Reference URL: [INSERT URL]
+Voice/Tone: [formal B2B / conversational B2B / brand account - default: professional B2B]
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Plain text or markdown, formatted per the structure for the chosen format above.
+
+Save to output/Lead_Magnets/
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+- State the gating recommendation explicitly (gated or ungated) and the one-sentence reason, before the asset content
+- Checklist items must be specific and verifiable, not vague reminders - "Confirm the vendor's data retention policy meets your compliance requirement" passes; "Think about compliance" fails
+- Calculator copy must state the calculation logic precisely enough to implement, not just describe the concept
+- Template placeholders must each carry a one-line instruction - a bracketed field with no guidance is not usable by the reader
+- No em dashes anywhere
+- No passive voice
+- SELF-CHECK: After drafting, confirm the asset could be used in a single sitting (10-20 minutes) - if it would take longer, it belongs in Whitepaper_eBook_Prompt.txt instead, not this prompt.
+- BATCH DEDUPLICATION: When generating multiple lead magnets in one session, no two may share the same title pattern, the same opening framing sentence, or the same CTA. Vary the angle per asset.
+- Output saved to output/Lead_Magnets/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. Generating a long-form asset under this prompt instead of routing it to Whitepaper_eBook_Prompt.txt - if the topic needs narrative explanation and citations across multiple pages, this is the wrong prompt.
+2. Checklist items that are outcomes instead of actions - "Vendor is compliant" is an outcome; "Request the vendor's SOC 2 report and confirm the audit date is within 12 months" is an action.
+3. Calculator copy with no stated formula logic, leaving the output fields disconnected from the input fields.
+4. Gating a broad, freely-available topic - apply the Gating Decision framework before generating, not after.
