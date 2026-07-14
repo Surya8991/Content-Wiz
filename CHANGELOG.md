@@ -5,6 +5,53 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.0] — 2026-07-14
+
+### Added
+
+**Prompt files (11 new channels):**
+- `prompts/TikTok_Ads_Prompt.txt` — TikTok Ads (Spark Ads, TopView, In-Feed) with hook + CTA structure and 2026 algorithm rules
+- `prompts/Instagram_Content_Prompt.txt` — Instagram captions, Reels hooks, and Stories across 3 formats
+- `prompts/TikTok_Content_Prompt.txt` — TikTok organic scripts with hook + body + CTA + trending-sound guidance
+- `prompts/Threads_Post_Prompt.txt` — Threads posts optimised for replies and reshares
+- `prompts/Landing_Page_Copy_Prompt.txt` — Landing page copy (lead-gen and sales page variants) with CRO framework
+- `prompts/Product_Launch_Prompt.txt` — Product launch copy across pre-launch, launch-day, and post-launch phases
+- `prompts/UGC_Brief_Prompt.txt` — UGC video and photo briefs for creators with platform-specific guidance
+- `prompts/Substack_Post_Prompt.txt` — Substack essays, Notes, and restacks with paid-subscriber conversion hooks
+- `prompts/Referral_Program_Copy_Prompt.txt` — Referral invite and incentive copy with viral-loop mechanics
+- `prompts/Sales_Email_Prompt.txt` — Cold outreach and follow-up sales email sequences
+- `prompts/Meta_Facebook_Ads_Prompt.txt` — Meta/Facebook Ads copy across awareness, consideration, and conversion objectives
+
+**Strategy documents (8 new channels):**
+- `strategies/strategy-instagram.md` — Instagram organic + Reels: goal, content pillars, cadence, failure modes
+- `strategies/strategy-tiktok.md` — TikTok organic + TikTok Ads: watch-through rate focus, creator-native formats
+- `strategies/strategy-threads.md` — Threads: reply-first strategy, cross-post cadence from Instagram
+- `strategies/strategy-community-building.md` — Community-led growth: member retention, value loops, moderation
+- `strategies/strategy-referral.md` — Referral programs: viral coefficient, incentive design, attribution
+- `strategies/strategy-product-launch.md` — Product launches: pre-launch, launch week, post-launch nurture
+- `strategies/strategy-paid-social.md` — Paid social (Meta + TikTok): ROAS benchmarks, creative testing, budget allocation
+- `strategies/strategy-substack.md` — Substack: paid subscriber conversion, editorial cadence, growth loops
+
+**Python template modules (3 new files):**
+- `templates/cro.py` — `landing_page_lead_gen`, `landing_page_sales`, `cta_variants`, `trust_signals_block`, `hero_headline_formula`
+- `templates/product.py` — `positioning_statement`, `launch_announcement`, `pre_launch_teaser`, `messaging_hierarchy`, `launch_email_sequence`
+- `templates/ugc.py` — `ugc_video_brief` (platform-aware), `testimonial_request`, `creator_brief`, `photo_brief`
+
+**Reference files:**
+- `RESOURCES.md` — 90+ curated resources across SEO, paid media, social, email, analytics, copywriting, AI marketing, and learning communities
+- `GLOSSARY.md` — 146-term marketing glossary across 13 disciplines, sourced from Marketing Academy
+
+**Prompt enrichments (6 existing files):**
+- `Blog_Writing_Prompt.txt` — added AIDA / PAS / StoryBrand framework selector
+- `LinkedIn_Post_Prompt.txt` — added psychology hook patterns (social proof, loss aversion, curiosity gap)
+- `Email_Drip_Sequence_Prompt.txt` — added lifecycle stage mapping (welcome / activation / retention / win-back)
+- `Video_Script_Prompt.txt` — added short-form algorithm rules for Reels/Shorts/TikTok
+- `GEO_Prompt.txt` — added AI search ranking factors (citation signals, entity coverage)
+- `Google_Ads_Prompt.txt` — added Quality Score optimisation guidance
+
+**Systematic gap audit (all 39 existing prompt files):**
+- Every existing prompt reviewed and patched against 6 gap categories: VOICE (missing tone/register field), LENGTH-CHECK (no self-check rule), THIN-FORMAT (insufficient output structure), VAGUE-OUTPUT (no concrete spec), NO-FAILURE (no failure modes section), NO-DEDUP (no batch deduplication rule)
+
 ## [0.6.0]
 
 ### Added

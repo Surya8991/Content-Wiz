@@ -49,8 +49,10 @@ delete them, or add your own.
   (linted, not just requested), fabrication guardrails on competitor claims
   and first-party numbers, FTC disclosure requirements on sponsored/UGC
   content, and a first-person disclosure rule.
-- **17 channel strategy docs** (goal, principles, structure, cadence, failure
+- **25 channel strategy docs** (goal, principles, structure, cadence, failure
   modes per channel), grounded in cited platform research.
+- **146-term marketing glossary** ([GLOSSARY.md](GLOSSARY.md)) covering 13 disciplines — Analytics, Brand, CRO, Email, Growth, Paid Ads, SEO, Social Media, and more — sourced from Marketing Academy.
+- **90+ curated marketing resources** ([RESOURCES.md](RESOURCES.md)) across SEO, paid media, social, email, analytics, copywriting, AI, and learning communities.
 - **Governance built in**: a publish/review tracker template, a documented
   citation-verification process, and a human sign-off rule for stat-bearing
   or first-person content.
@@ -62,6 +64,8 @@ delete them, or add your own.
 ```
 Content Wiz/
 ├── README.md                         ← This file
+├── RESOURCES.md                      ← 90+ curated marketing resources across 10 disciplines
+├── GLOSSARY.md                       ← 146-term marketing glossary across 13 disciplines
 ├── strategies/                       ← Channel strategy documents (one per channel)
 ├── prompts/                          ← AI prompt files (one per content type)
 ├── output/                           ← Generated prompts, auto-routed into per-type subfolders
@@ -77,6 +81,9 @@ Content Wiz/
 │   ├── __init__.py                   ← Re-exports every function at package level
 │   ├── _shared.py                    ← HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES
 │   ├── local.py, blog.py, social.py, community.py, creator.py, personal.py, video.py, growth.py, pr.py, lifecycle.py, sales_enablement.py, paid_ads.py, recruitment.py, events.py, mobile_messaging.py
+│   ├── cro.py                        ← Landing page copy, CTA variants, hero formula, trust signals
+│   ├── product.py                    ← Product launch copy, positioning statements, messaging hierarchy
+│   └── ugc.py                        ← UGC briefs, creator briefs, testimonial requests, photo briefs
 ├── textprompts.py                    ← Loader wiring the flat prompts/*.txt into the CLI
 ├── llm.py                            ← Optional live generation (--generate); provider-agnostic:
 │                                        Anthropic/Claude, Google/Gemini, or OpenAI/Codex-GPT
@@ -139,6 +146,14 @@ One document per channel. Each doc contains: goal and metric, core principles, r
 | [strategy-quora.md](strategies/strategy-quora.md) | Quora answers | Upvote-to-view ratio per answer |
 | [strategy-influencer-collabs.md](strategies/strategy-influencer-collabs.md) | Influencer / UGC collaborations | Attributable CPA/ROAS per collaboration |
 | [strategy-personal-brand.md](strategies/strategy-personal-brand.md) | Personal brand (individual creator) | Follower-to-engaged-reply ratio and owned-audience growth |
+| [strategy-instagram.md](strategies/strategy-instagram.md) | Instagram organic and Reels | Reach, saves, and profile link clicks |
+| [strategy-tiktok.md](strategies/strategy-tiktok.md) | TikTok organic and TikTok Ads | Watch-through rate, follower growth, and ROAS |
+| [strategy-threads.md](strategies/strategy-threads.md) | Threads (Meta) | Replies and reshares per post |
+| [strategy-community-building.md](strategies/strategy-community-building.md) | Community-led growth | Active member retention and community-sourced revenue |
+| [strategy-referral.md](strategies/strategy-referral.md) | Referral programs | Referral conversion rate and viral coefficient |
+| [strategy-product-launch.md](strategies/strategy-product-launch.md) | Product launch campaigns | Launch-week revenue and activation rate |
+| [strategy-paid-social.md](strategies/strategy-paid-social.md) | Paid social (Meta + TikTok) | ROAS, CPL, and thumb-stop rate |
+| [strategy-substack.md](strategies/strategy-substack.md) | Substack newsletter | Paid subscriber conversion and open rate |
 
 ---
 
@@ -205,6 +220,28 @@ defined in `config.json`'s `brands` map (keyed by domain); `edstellar.com` and
 | [Interactive_Content_Prompt.txt](prompts/Interactive_Content_Prompt.txt) | Interactive content (quizzes, assessments) |
 | [Skills_Gap_Analysis_Prompt.txt](prompts/Skills_Gap_Analysis_Prompt.txt) | Skills gap analysis documents |
 | [Trainer_Speaker_Bio_Prompt.txt](prompts/Trainer_Speaker_Bio_Prompt.txt) | Trainer and speaker bios |
+| [TikTok_Ads_Prompt.txt](prompts/TikTok_Ads_Prompt.txt) | TikTok Ads copy (Spark Ads, TopView, In-Feed) |
+| [Instagram_Content_Prompt.txt](prompts/Instagram_Content_Prompt.txt) | Instagram captions, Reels hooks, and Stories (3 formats) |
+| [TikTok_Content_Prompt.txt](prompts/TikTok_Content_Prompt.txt) | TikTok organic scripts with hook + CTA structure |
+| [Threads_Post_Prompt.txt](prompts/Threads_Post_Prompt.txt) | Threads posts optimised for replies and reshares |
+| [Landing_Page_Copy_Prompt.txt](prompts/Landing_Page_Copy_Prompt.txt) | Landing page copy (lead-gen and sales variants) |
+| [Product_Launch_Prompt.txt](prompts/Product_Launch_Prompt.txt) | Product launch copy across pre-launch, launch, and post-launch |
+| [UGC_Brief_Prompt.txt](prompts/UGC_Brief_Prompt.txt) | UGC video and photo briefs for creators |
+| [Substack_Post_Prompt.txt](prompts/Substack_Post_Prompt.txt) | Substack essays, Notes, and restacks |
+| [Referral_Program_Copy_Prompt.txt](prompts/Referral_Program_Copy_Prompt.txt) | Referral program invite and incentive copy |
+| [Sales_Email_Prompt.txt](prompts/Sales_Email_Prompt.txt) | Cold outreach and follow-up sales email sequences |
+
+---
+
+## Resources (`RESOURCES.md`)
+
+[RESOURCES.md](RESOURCES.md) is a curated directory of 90+ high-signal marketing resources across 10 disciplines: SEO & GEO, Paid Media, Social Media, Content Marketing, Email & Lifecycle, Analytics & Attribution, Copywriting & CRO, Brand Strategy, AI Marketing Tools, and Learning & Communities. Each entry includes the resource name, type (tool / course / community / newsletter), and a one-line description.
+
+---
+
+## Glossary (`GLOSSARY.md`)
+
+[GLOSSARY.md](GLOSSARY.md) contains 146 marketing terms across 13 disciplines — Analytics, Brand, Business Metrics, Content, Copywriting, CRO, Email, Growth, Paid Ads, Psychology, SEO, Social Media, and Strategy — each with a plain-English definition and related terms. Cross-reference with `prompts/` files when generating content (e.g. check CRO terms before using `Landing_Page_Copy_Prompt.txt`). Sourced from [Marketing Academy](https://marketing-academy-roan.vercel.app/glossary).
 
 ---
 
