@@ -115,6 +115,13 @@ TEXT_PROMPT_MAP = {
     "haro_databank":       ("HARO_DataBank_Builder_Prompt.txt",   "HARO_DataBank"),
     "databank":            ("HARO_DataBank_Builder_Prompt.txt",   "HARO_DataBank"),
     "stat_mining":         ("HARO_DataBank_Builder_Prompt.txt",   "HARO_DataBank"),
+    # Phase 7C cleanup: Instagram_Prompt.txt (single-caption legacy version) was
+    # never wired and is superseded by this richer 3-format prompt; deleted rather
+    # than kept alongside it. Distinct aliases from "instagram"/"ig" (PLATFORM_MAP,
+    # rich Python template) since those already resolve first in generate.resolve().
+    "instagram_content":   ("Instagram_Content_Prompt.txt",       "Instagram"),
+    "ig_content":          ("Instagram_Content_Prompt.txt",       "Instagram"),
+    "instagram_reel":      ("Instagram_Content_Prompt.txt",       "Instagram"),
 }
 
 
