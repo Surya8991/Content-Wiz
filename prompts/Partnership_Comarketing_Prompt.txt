@@ -1,0 +1,178 @@
+============================================================
+PARTNERSHIP CO-MARKETING PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: Co-Authored Content / Joint Announcement / Co-Branded Campaign Copy
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating. Apply detection for BOTH partner brands before generating any content.
+
+Voice/Tone: [balanced, professional, audience-serving -- neither brand dominates; default: professional B2B unless one or both brands operate in B2C or creator markets, in which case calibrate to the more casual of the two registered voices]
+
+Once both brands are confirmed, select the format below.
+
+------------------------------------------------------------
+CO-MARKETING RULES (2026) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+These constraints apply to all co-branded and partner marketing content. Failing any of these rules privileges one partner over the other and damages the co-marketing relationship.
+
+1. BOTH BRANDS MUST BE CONFIRMED FIRST
+   Before generating any co-marketing content, identify and confirm both brands (Brand A and Brand B). Use _Brand_Detection_Rules.txt to detect each brand independently. If either brand cannot be confirmed, ask the user for the unconfirmed brand's name, description, audience, and hashtag before proceeding.
+
+2. BALANCE RULE: 50/50 PRESENCE
+   Each partner brand receives equal presence measured by: (a) mentions per 500 words of body copy, (b) visual prominence in headlines and subject lines (alternate which brand appears first in at least two of the three main headlines), (c) CTA benefit -- the CTA must serve both brands' audiences, not redirect exclusively to one brand's domain.
+
+3. AUDIENCE INTERSECTION TEST
+   Before writing, identify the audience segment that both brands share. Write to that intersection only. Do not write content that serves Brand A's audience and ignores Brand B's, or vice versa.
+   Example: If Brand A serves L&D managers and Brand B serves HR technology buyers, write to the overlap: "HR and L&D leaders evaluating learning technology."
+
+4. TONE COMPATIBILITY
+   When one brand operates in formal B2B and the other operates in conversational B2C, default to the more formal register. Never go below the more formal partner's floor. Note the tone calibration at the top of the output.
+
+5. NO PRESS-RELEASE TONE IN CREATIVE CONTENT
+   A co-authored blog post, joint social campaign, or co-branded landing page must not read like a press release. Press-release language belongs only in Format B (Joint Announcement). In all other formats, write as if two experts are collaborating on solving a shared audience problem, not celebrating their own agreement.
+
+6. CO-AUTHOR ATTRIBUTION
+   All Format A content (co-authored articles, guest posts, joint webinar scripts) must carry dual attribution. Specify the format: "By [Author Name A], [Title], [Brand A] and [Author Name B], [Title], [Brand B]." If author names are not provided, use: "By the teams at [Brand A] and [Brand B]."
+
+7. HASHTAGS IN SOCIAL CONTENT
+   Every social post in a co-marketing campaign includes both brands' hashtags as the final two tags in the hashtag block.
+
+------------------------------------------------------------
+FORMAT A: CO-AUTHORED CONTENT (BLOG POST OR WEBINAR SCRIPT)
+------------------------------------------------------------
+
+Use when: Creating a joint article, research summary, or webinar script that both brands will publish or co-host.
+Target length: Blog post 800 to 1,200 words. Webinar script 1,500 to 2,500 words (30 to 45 minutes at 125 words per minute including pauses).
+
+CO-AUTHORED BLOG POST structure:
+
+HEADLINE: Names the shared audience challenge or opportunity -- not either brand name
+SUBHEADLINE: Names the core insight or framework the post delivers
+ATTRIBUTION LINE: "By [Author A], [Brand A] and [Author B], [Brand B]"
+
+PARAGRAPH 1 -- SHARED CONTEXT (100 to 150 words):
+State the industry challenge or trend that both brands' audiences face. Use one sourced statistic (source and year required). Neither brand appears by name in this paragraph.
+
+PARAGRAPH 2 -- BRAND A PERSPECTIVE (150 to 200 words):
+Brand A's expert contributes their view of the challenge from their functional lens. Written in first person with [BRAND A AUTHOR] placeholder. Introduces one concept or framework from Brand A's area of expertise.
+
+PARAGRAPH 3 -- BRAND B PERSPECTIVE (150 to 200 words):
+Brand B's expert contributes their complementary view. Written in first person with [BRAND B AUTHOR] placeholder. Introduces one concept or framework from Brand B's area of expertise. Must explicitly connect to the Brand A perspective in the previous paragraph.
+
+PARAGRAPH 4 -- COMBINED FRAMEWORK (200 to 250 words):
+Present the joint solution or approach that emerges from combining both perspectives. Attribute each component to its originating brand. Name the framework if possible ("The [Brand A + Brand B] [descriptive name] Approach").
+
+PARAGRAPH 5 -- SHARED CALL TO ACTION (100 words):
+Direct the reader to a shared resource (co-branded report, joint webinar, combined tool) or to both brands' individual resources in equal measure. Alternate which brand's link or resource appears first.
+
+WEBINAR SCRIPT structure:
+
+INTRO (BRAND A HOST): Welcome + introduce both brands equally (Brand B introduced first to signal equal status)
+INTRO (BRAND B HOST): Confirm co-host role + preview the session agenda
+SEGMENT 1 (BRAND A LEAD): 8 to 10 minutes on Brand A's core topic area
+TRANSITION (BRAND B HOST): Bridge statement connecting Segment 1 to Segment 2
+SEGMENT 2 (BRAND B LEAD): 8 to 10 minutes on Brand B's core topic area
+JOINT SEGMENT: 8 to 10 minutes of Q&A or collaborative discussion between both hosts
+CLOSE (BOTH): Alternate closing lines. Brand B delivers the final CTA for the session recording or next step.
+
+------------------------------------------------------------
+FORMAT B: JOINT ANNOUNCEMENT (PARTNER ANNOUNCEMENT EMAIL AND PRESS RELEASE)
+------------------------------------------------------------
+
+Use when: Announcing a new partnership, integration, or co-branded product to both brands' audiences.
+Target length: Email 250 to 400 words. Press release 400 to 600 words.
+
+PARTNER ANNOUNCEMENT EMAIL structure:
+
+Subject line: Names the partnership outcome for the audience, not the brands ("How [Brand A] and [Brand B] are simplifying [audience pain point]")
+Line 1: State what the partnership means for the reader in one sentence
+Body paragraph 1: Describe what Brand A brings to the partnership
+Body paragraph 2: Describe what Brand B brings to the partnership
+Body paragraph 3: Describe the combined outcome the reader gains
+Quote block 1: Quote from Brand A's spokesperson (role + name placeholder)
+Quote block 2: Quote from Brand B's spokesperson (role + name placeholder) -- place the Brand B quote second in Brand A's send and first in Brand B's send
+CTA: One link to the joint landing page or co-branded resource
+Sign-off: Both brand names and one hashtag each
+
+PRESS RELEASE structure:
+
+HEADLINE: "Brand A and Brand B [action verb] to [audience benefit]" (active voice, specific outcome)
+DATELINE: [City, Date]
+OPENING PARAGRAPH (who, what, when, where, why -- 75 words maximum)
+BRAND A OVERVIEW (2 sentences, equal length to Brand B overview)
+BRAND B OVERVIEW (2 sentences, equal length to Brand A overview)
+QUOTE FROM BRAND A EXEC
+QUOTE FROM BRAND B EXEC
+PARTNERSHIP DETAILS (what the partnership includes, what the audience receives)
+BOILERPLATE -- BRAND A
+BOILERPLATE -- BRAND B
+CONTACT: [Media contact for Brand A] and [Media contact for Brand B]
+
+------------------------------------------------------------
+FORMAT C: CO-BRANDED CAMPAIGN COPY (LANDING PAGE AND SOCIAL CAMPAIGN)
+------------------------------------------------------------
+
+Use when: Running a joint campaign across paid social, email, or organic channels that requires landing page copy and social post copy.
+Target length: Landing page 400 to 600 words. Social posts 2 to 4 posts per platform, following platform character rules.
+
+CO-BRANDED LANDING PAGE structure:
+
+HERO HEADLINE: Audience benefit first, brand names in subheadline or below the fold
+SUBHEADLINE: "A joint initiative by [Brand A] and [Brand B]"
+HERO BODY (2 sentences): What the audience gains by engaging with this campaign
+LOGOS: [Brand A logo placement] + [Brand B logo placement] -- note equal sizing requirement
+BODY SECTION 1: The challenge the campaign addresses (sourced stat required)
+BODY SECTION 2: What Brand A contributes
+BODY SECTION 3: What Brand B contributes
+BODY SECTION 4: What the visitor receives by taking the CTA action
+CTA BUTTON: Single action (download / register / book) -- not two separate CTAs for each brand
+TRUST SIGNALS: Customer logos or stats from both brands in equal measure
+
+JOINT SOCIAL CAMPAIGN (per platform):
+Post 1: Brand A publishes, tags Brand B, uses both brand hashtags
+Post 2: Brand B publishes, tags Brand A, uses both brand hashtags
+Posts 3 and 4 (optional): Co-posted variations using shared campaign creative
+All posts follow the platform rules in the relevant platform-specific prompt file (LinkedIn_Post_Prompt.txt for LinkedIn, etc.)
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single co-marketing content requests:
+Label outputs clearly: BRAND A | BRAND B | FORMAT | CONTENT TYPE | OUTPUT TEXT. Note which brand publishes or distributes each piece.
+
+For full campaign packages (landing page + email + social):
+Output as separate labeled sections in sequence: LANDING PAGE | EMAIL (BRAND A SEND) | EMAIL (BRAND B SEND) | SOCIAL POST 1 (BRAND A) | SOCIAL POST 2 (BRAND B)
+
+Save to output/CoMarketing/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- Both brands must be confirmed via _Brand_Detection_Rules.txt before generating
+- 50/50 balance rule: equal mentions, alternating headline prominence, shared CTA benefit
+- Audience intersection test required before writing -- write to the shared audience only
+- No press-release tone in Format A creative content
+- Co-author attribution required on all Format A pieces
+- Both brand hashtags appear at the end of every social post in the campaign
+- No em dashes anywhere
+- Active voice throughout
+- Every statistic names its source and year
+- SELF-CHECK: Before outputting, count Brand A mentions and Brand B mentions. If one brand appears more than 1.5x the other, revise the body copy for balance before outputting. Verify both brand hashtags appear in social posts.
+- BATCH DEDUP: When generating multiple social posts for the same campaign, no two posts may share the same opening line or CTA phrasing. Alternate which brand's perspective anchors each post.
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. ONE PARTNER DOMINATES: Writing content that feels like Brand A's blog post with Brand B mentioned as a footnote. Run the mention-count check (SELF-CHECK rule above) before finalizing any co-authored content.
+
+2. PRESS-RELEASE VOICE IN CREATIVE COPY: Opening a co-authored article with "We are excited to announce our partnership with..." defeats the purpose of co-authored thought leadership. Save that phrasing for Format B announcements only.
+
+3. WRONG AUDIENCE INTERSECTION: Writing for Brand A's entire audience without checking whether Brand B's audience overlaps. A co-marketing piece targeting an audience only one brand serves is a one-sided sponsored post, not co-marketing.
+
+4. DUPLICATE CTAs FOR EACH BRAND: Placing two separate CTAs (one per brand) at the bottom of a co-branded landing page splits the conversion and halves the result for both partners. One shared CTA serves both brands.
+
+5. MISSING CO-AUTHOR ATTRIBUTION: Publishing a co-authored article without dual attribution removes the credibility signal that makes co-authored content more trusted than single-brand content. Attribution is a feature, not a courtesy.

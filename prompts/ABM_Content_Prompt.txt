@@ -1,0 +1,164 @@
+============================================================
+ABM CONTENT PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: 1:1 Enterprise Content / 1:Few Named Account Content / 1:Many Segment Content
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [executive-credible, specific, account-aware -- default: professional B2B, calibrated to the seniority of the named contact]
+
+Once the brand is confirmed and the ABM tier is selected, choose the format below.
+
+------------------------------------------------------------
+ABM RULES (2026) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+These constraints apply to all ABM content. Content that fails these rules delivers fake personalization, which is worse than no personalization.
+
+1. REAL PERSONALIZATION REQUIRES FOUR INPUTS
+   Before generating any ABM content, the following four data points must be provided or researched:
+   (a) Account name and industry vertical
+   (b) Approximate company size (headcount or revenue tier)
+   (c) The specific stated pain point or strategic initiative (sourced from news, earnings calls, job postings, or account intel -- not assumed)
+   (d) The target contact's seniority and function (e.g. VP of People, CTO, CFO)
+   If any of these four inputs are missing, ask the user before generating. Generic filler is a failure mode, not a fallback.
+
+2. INDUSTRY ASSUMPTION IS FORBIDDEN
+   Never assume an industry pain point without sourcing it. "Manufacturing companies always care about supply chain" is not ABM; it is a stereotype. Reference the account's actual stated challenge.
+
+3. EXECUTIVE TONE CALIBRATION
+   C-suite contacts (CEO, CFO, COO, CHRO) receive content that leads with business outcomes (revenue, risk, cost). VP-level contacts receive content that leads with functional outcomes (team efficiency, program results, headcount ROI). Director-level contacts receive content that leads with tactical implementation (timeline, integration, vendor comparison). Never send C-suite content to a Director and call it personalized.
+
+4. BRAND MENTION IS SECONDARY
+   In ABM content, the account's pain point comes first. The brand solution enters at the midpoint, framed as a resolution to the stated pain. The brand name should not appear in the first two sentences of any ABM piece.
+
+5. ABM TIERS DETERMINE CONTENT DEPTH
+   1:1 (Enterprise, typically 500+ employees): Fully custom content. Reference the account by name throughout. Mention specific news, initiatives, or publicly stated goals.
+   1:Few (Named accounts, typically 50 to 500 employees): Semi-custom content. Reference the industry vertical and a shared pain point across the account cluster. Personalize by company name in the opening and closing only.
+   1:Many (Segment, typically under 50 employees or high-volume pipeline): Segment-specific content. Personalize by industry and company size tier only. No individual account naming.
+
+------------------------------------------------------------
+FORMAT A: 1:1 ENTERPRISE (PERSONALIZED EXECUTIVE BRIEF)
+------------------------------------------------------------
+
+Use when: Targeting a named executive at a strategic enterprise account.
+Content types: Personalized exec brief / Custom case study angle / Direct outreach email to named contact.
+Target length: Exec brief 400 to 600 words. Outreach email 150 to 250 words.
+
+EXEC BRIEF structure (one document per named account):
+
+SECTION 1 -- THE ACCOUNT'S CURRENT SITUATION (50 to 100 words):
+State the named account's publicly known strategic context. Cite a specific news item, earnings call mention, hiring trend, or press release (include source and date).
+Example framing: "[Company] announced [initiative] in [month year], signaling a shift toward [strategic direction]. Teams responsible for [function] face [specific downstream challenge] as a result."
+
+SECTION 2 -- THE SPECIFIC CHALLENGE (50 to 100 words):
+Name the functional consequence of the strategic context. Do not generalize. Do not use industry boilerplate.
+Example framing: "[Function] teams at organizations in this transition typically [encounter specific operational problem]. For [Company], this translates to [specific measurable risk or cost] if [challenge] goes unaddressed."
+
+SECTION 3 -- THE RELEVANT CAPABILITY (100 to 150 words):
+Introduce the brand's relevant solution framed as a direct response to the named challenge. Name specific features or outcomes that address the stated pain. Include one relevant customer result (with customer permission or anonymized by industry and size).
+
+SECTION 4 -- PROPOSED NEXT STEP (50 words):
+One specific, low-friction ask. Not "schedule a demo." Instead: "A 20-minute call with our [vertical] specialist to walk through how [specific feature] has worked for [comparable customer type]."
+
+OUTREACH EMAIL structure (paired with the exec brief):
+
+Subject line: Personalized to named initiative or news item -- not generic ("Re: [Company]'s [initiative]")
+Opening line: Reference the specific news item or initiative -- no brand name in line 1
+Body: 2 to 3 sentences connecting the initiative to a concrete pain and offering the exec brief as a resource
+CTA: One link to the exec brief or one calendar link -- not both
+Sign-off: Rep name, title, direct phone number
+
+------------------------------------------------------------
+FORMAT B: 1:FEW NAMED ACCOUNT (ACCOUNT-SPECIFIC LANDING PAGE)
+------------------------------------------------------------
+
+Use when: Running a campaign across a cluster of 5 to 30 named accounts in the same vertical.
+Content types: Account-specific landing page copy / Personalized LinkedIn outreach sequence (3 messages) / Co-branded one-pager by industry.
+Target length: Landing page 300 to 500 words. LinkedIn message 1: 50 to 80 words. Messages 2 and 3: 30 to 50 words each.
+
+LANDING PAGE structure:
+
+HEADLINE: References the industry vertical and a named challenge (not the brand name)
+Example: "How [Industry] Teams Cut [Metric] by [X%] Without Adding Headcount"
+
+SUBHEADLINE: Names the specific pain point cluster shared by accounts in this tier
+
+BODY (3 paragraphs):
+Paragraph 1: Describe the shared industry challenge using one data point (source and year required)
+Paragraph 2: Describe the outcome these accounts need to achieve (framed as a business goal, not a product feature)
+Paragraph 3: Introduce the brand's approach as the bridge between the current state and the desired outcome
+
+SOCIAL PROOF: One customer story from the same industry vertical (anonymized by revenue tier if named customer consent not obtained)
+
+CTA: Primary button ("Book a 20-minute call") + Secondary link ("Download the [Industry] Benchmark Report")
+
+LINKEDIN OUTREACH SEQUENCE (3 messages, same account cluster):
+
+Message 1 (Connection request or InMail): Reference a specific industry event, report, or trend. No brand pitch. End with a question relevant to their function.
+Message 2 (Follow-up, 5 to 7 days later): Share one insight or data point relevant to their stated challenge. Soft CTA ("Worth a quick conversation?").
+Message 3 (Final follow-up, 7 to 10 days after Message 2): Direct and brief. One sentence of context, one specific ask, one way out ("No worries if the timing is not right").
+
+------------------------------------------------------------
+FORMAT C: 1:MANY SEGMENT (SEGMENT-SPECIFIC EMAIL CAMPAIGN)
+------------------------------------------------------------
+
+Use when: Running ABM at scale across a large segment sharing an industry and company size tier.
+Content types: Segment email (3-email nurture sequence) / Industry-specific ad copy / Segment-targeted social post.
+Target length: Segment email 200 to 300 words per email. Ad headline under 60 characters. Ad body under 90 characters.
+
+SEGMENT EMAIL structure (3-email sequence):
+
+Email 1 -- PROBLEM FRAME:
+Subject: Names the industry segment and a measurable challenge
+Body: 3 short paragraphs. Paragraph 1: industry-specific problem context (one stat, sourced and dated). Paragraph 2: the cost of the problem. Paragraph 3: one-sentence brand bridge.
+CTA: Link to a segment-specific resource (benchmark report, checklist, or webinar).
+
+Email 2 -- SOCIAL PROOF (sent 4 to 6 days after Email 1):
+Subject: References a customer outcome relevant to this segment
+Body: One customer story (same industry, similar size). Outcome-first format ("Company in [industry] reduced [metric] by [X%] in [timeframe] using [approach]"). Three bullet points naming the specific capabilities used. CTA: "See how [brand] approaches this for [industry] teams."
+
+Email 3 -- DIRECT ASK (sent 5 to 7 days after Email 2):
+Subject: Direct and specific ("15 minutes to discuss [segment] pain point?")
+Body: Two sentences of context, one calendar link, one "no pressure" out. No product features. No case study. Just the ask.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single account content requests:
+Label each section clearly: ACCOUNT | TIER | CONTENT TYPE | OUTPUT TEXT
+
+For bulk ABM campaigns (multiple accounts or segments):
+Output as CSV: Account Name | Industry | Tier | Content Type | Personalization Variables Used | Output Text | Recommended Send Date
+
+Save to output/ABM/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- Four personalization inputs required before generating: account name, industry, company size, stated pain point
+- Never assume an industry pain point -- source it from real account intelligence
+- Executive tone calibration: C-suite gets business outcomes, VP gets functional outcomes, Director gets tactical implementation
+- Brand name does not appear in the first two sentences of any ABM piece
+- Every stat names its source and year
+- No em dashes anywhere
+- Active voice throughout
+- SELF-CHECK: Before outputting, verify: (a) the account name or industry appears in the first paragraph, (b) the stated pain point is specific and sourced, (c) the CTA is a single low-friction ask, (d) no stat appears without a named source and year
+- BATCH DEDUP: When generating content for multiple accounts in the same tier and industry, each piece must vary its opening framing, pain point angle, and CTA. Do not reuse the same opening sentence across accounts in the same batch
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. FAKE PERSONALIZATION: Inserting the account name into a generic template and calling it ABM. True personalization references a specific news item, initiative, or stated pain point unique to that account.
+
+2. WRONG INDUSTRY ASSUMPTION: Writing "as a manufacturing company, you face supply chain challenges" when the account is a software company with 40% of revenue from manufacturing clients. Research before assuming.
+
+3. EXECUTIVE-TONE MISMATCH: Sending a Director-level comparison checklist to a CHRO. C-suite content leads with board-level risk and revenue; Director content leads with implementation and vendor evaluation.
+
+4. BRAND-FIRST OPENING: Starting with "At [Brand], we help companies like yours..." loses executive attention in the first sentence. The account's world comes first.
+
+5. STACKED CTAs: Offering a demo link, a content download, a webinar registration, and a calendar link in the same message forces the contact to make a decision instead of taking an action. Every ABM piece carries one primary CTA.

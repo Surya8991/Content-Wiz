@@ -1,0 +1,160 @@
+============================================================
+CHATBOT FLOW PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: Lead Capture Flow / Support Triage Flow / Demo Booking Flow
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [human-adjacent, warm, and conversational -- default: brand voice, never robotic or form-filling]
+
+Once the brand is confirmed, select the flow type below.
+
+------------------------------------------------------------
+PLATFORM RULES (2026) - READ BEFORE GENERATING ANY FLOW
+------------------------------------------------------------
+
+These constraints apply to all chatbot and messaging content. Violating them creates dead ends, drop-offs, or policy flags.
+
+1. CHARACTER LIMITS PER PLATFORM
+   Intercom: 1,000 characters per bot message. Recommended: under 300 for first message.
+   Drift: 500 characters per bot message.
+   HubSpot Chat: 1,000 characters per bot message.
+   WhatsApp Business (via Cloud API): 1,024 characters per text message. WhatsApp template messages for outbound require Meta pre-approval -- write template content in a separate APPROVED TEMPLATE block.
+
+2. HUMAN HANDOFF IS NON-NEGOTIABLE
+   Every flow must include a human handoff node. The handoff must trigger on: (a) user frustration signal (e.g. "talk to a person", "speak to someone", "this is not helpful"), (b) unrecognized input after two fallback attempts, (c) high-intent signals (e.g. pricing, contract, enterprise plan). Never loop a user through fallbacks more than twice without offering a human.
+
+3. QUICK REPLIES OVER FREE TEXT
+   Wherever possible, present the user with 2 to 4 labeled quick-reply buttons rather than asking for open-ended typed input. Free text increases fallback rates. Reserve free text nodes for name, email, and company name capture only.
+
+4. FIRST MESSAGE SETS THE TRUST TONE
+   The opening bot message must not sound like a form. It must greet the user, name the bot (or "our team"), and give one clear next-step option. Never open with "Please select from the following options."
+
+5. NO DEAD ENDS
+   Every leaf node must route somewhere: another question, human handoff, or a confirmation message. A node that says "Thanks, we will get back to you" with no follow-up path is a dead end and will drop the conversation.
+
+6. WHATSAPP BUSINESS COMPLIANCE (2026)
+   WhatsApp Business outbound messages must use pre-approved templates with variable placeholders. Session messages (inbound-triggered) allow free text replies within 24 hours of last user message. Do not attempt outbound free-text messaging outside the 24-hour window; Meta flags it.
+
+------------------------------------------------------------
+FORMAT A: LEAD CAPTURE FLOW
+------------------------------------------------------------
+
+Use when: Capturing contact details, qualifying a prospect's intent, or routing to a sales rep.
+Best for: Intercom, Drift, HubSpot Chat (website widget).
+Target: 4 to 7 nodes maximum. More nodes increase abandonment.
+
+Node structure for each step:
+
+NODE ID: [L1, L2, L3...]
+TYPE: [Trigger / Bot Message / User Input / Quick Reply / Condition / Human Handoff / End]
+TRIGGER CONDITION: [What causes this node to activate]
+BOT MESSAGE: [Exact message text, under platform character limit]
+RESPONSE OPTIONS: [List of quick-reply labels, or INPUT if free text required]
+NEXT NODE IF [Option A]: [Node ID]
+NEXT NODE IF [Option B]: [Node ID]
+FALLBACK (unrecognized input): [Node ID or human handoff]
+
+Required flow structure:
+
+L1 -- TRIGGER: User opens chat widget or lands on page
+L2 -- GREETING: Bot introduces itself by name (or "our team"), asks a single qualifying question
+L3 -- QUICK REPLY: 2 to 4 options matching user intent (browsing / specific product / pricing / support)
+L4 -- CAPTURE: Collect name, then email, then company (one field per node, not a form dump)
+L5 -- QUALIFICATION: Ask one intent-qualifying question (team size, use case, timeline)
+L6 -- ROUTING CONDITION: Route to human handoff (high intent) or to nurture sequence (low intent)
+L7 -- CONFIRMATION: Confirm next step with specific expectation ("Our team will contact you within 1 business day")
+
+Handoff message template:
+"Connecting you with a specialist now. While you wait (usually under 2 minutes), feel free to ask anything."
+
+------------------------------------------------------------
+FORMAT B: SUPPORT TRIAGE FLOW
+------------------------------------------------------------
+
+Use when: Deflecting common support queries to self-serve, triaging ticket priority, or routing to the right team.
+Best for: Intercom, HubSpot Chat, WhatsApp Business (support line).
+Target: 5 to 8 nodes. Priority-routing must happen by node 3.
+
+Node structure: Same as Format A.
+
+Required flow structure:
+
+S1 -- TRIGGER: User opens chat on support page or sends a message containing a support-related keyword
+S2 -- GREETING + TRIAGE QUESTION: "Hi [Name if known], what can I help you with today?" + 3 to 4 quick replies:
+     [Billing / Account Access / Technical Issue / Something Else]
+S3 -- TOPIC BRANCH: Each quick reply routes to its own sub-branch
+S4 -- SELF-SERVE ATTEMPT: Offer the most-used help article for this topic with a direct link and ask "Did this help?"
+S5 -- RESOLUTION CHECK: If YES, route to satisfaction prompt. If NO, escalate to human or create ticket.
+S6 -- TICKET CREATION (if no human available): Confirm ticket number and expected response time
+S7 -- HUMAN HANDOFF (if available): Transfer with context summary pre-populated for agent
+
+Priority escalation triggers (must appear in every support flow):
+- User types "urgent", "broken", "cannot access", "lost data", "billing error"
+- User selects "Something Else" and fallback triggers twice
+- Response time exceeds SLA threshold (configure in platform settings)
+
+------------------------------------------------------------
+FORMAT C: DEMO BOOKING FLOW
+------------------------------------------------------------
+
+Use when: Scheduling product demos, discovery calls, or onboarding sessions directly in chat.
+Best for: Drift (Drift Meetings integration), HubSpot Chat (Meetings link embed), WhatsApp Business (manual booking confirmation).
+Target: 4 to 6 nodes. Speed matters here -- this user is hot. Do not over-qualify.
+
+Node structure: Same as Format A.
+
+Required flow structure:
+
+D1 -- TRIGGER: User clicks "Book a Demo" CTA, visits pricing page, or types demo-intent keyword
+D2 -- FAST QUALIFY: One question only ("Which team would be using this?") -- do not stack qualification questions
+D3 -- CALENDAR EMBED OR LINK: Present the booking widget or link immediately. Message: "Great. Pick a time that works for you:" [CALENDAR LINK or EMBED]
+D4 -- CONFIRMATION: Confirm booking details (date, time, rep name if available) and send a calendar invite
+D5 -- PRE-DEMO PREP: Ask one optional question to personalize the demo ("Any specific area you would like us to focus on?")
+D6 -- CLOSE: "You are all set. [Rep name or 'Our team'] will meet you at [time]. See you then."
+
+WhatsApp variation note:
+Because WhatsApp does not support embedded calendars, D3 becomes: "Here is our booking link: [URL]. Reply with your preferred time slot and we will confirm within 1 hour."
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single flow requests:
+Output labeled node blocks in the structure defined above. Include a FLOW OVERVIEW diagram as a plain-text tree at the top (e.g. L1 -> L2 -> L3a / L3b -> ...).
+
+For bulk flow requests (multiple flows in one session):
+Output as separate labeled sections: FLOW NAME | PLATFORM | FORMAT TYPE | NODE TREE
+
+Save to output/ChatbotFlows/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- Every flow must include a human handoff node -- no exceptions
+- Quick replies preferred over free text for all nodes except name, email, company name
+- First bot message must not open with "Please select from the following options"
+- WhatsApp Business outbound messages must use pre-approved template format
+- Character limits: Drift 500 / Intercom and HubSpot 1,000 / WhatsApp 1,024
+- No more than two consecutive fallback attempts before human handoff
+- Every leaf node must route somewhere
+- No em dashes anywhere in bot message text
+- Active voice in all bot messages ("Our team will contact you" not "You will be contacted by our team")
+- SELF-CHECK: Before outputting, verify: (a) every node has a NEXT NODE or END designation, (b) human handoff appears at least once, (c) no bot message exceeds the platform character limit for the chosen platform
+- BATCH DEDUP: If generating multiple flows in one session, each flow must use a distinct opening question. Do not reuse the same greeting or triage question across flows in the same batch
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. ROBOTIC OPENER: Starting with "Please select from the following options:" destroys trust. The first message must read as a greeting from a person, not a menu system.
+
+2. OVER-BRANCHING: A flow with more than 8 nodes loses users before the handoff. Every node that does not directly advance the user toward their goal is a node to cut.
+
+3. DEAD END: A confirmation message with no follow-up path leaves users in limbo. Every node routes somewhere, including thank-you messages.
+
+4. NO HUMAN HANDOFF: Any flow without a handoff option traps frustrated users and damages brand trust. Handoff must be reachable within two fallback attempts from any point in the flow.
+
+5. FORM-DUMPING: Asking for name, email, company, team size, use case, and timeline in the same node reads as a form, not a conversation. Capture one field per node, in natural conversational sequence.

@@ -1,0 +1,159 @@
+============================================================
+PODCAST AD READ PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: Pre-Roll (15 to 30 sec) / Mid-Roll (30 to 60 sec) / Host-Endorsed Long-Form (60 to 90 sec)
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [host-native, conversational, first person -- write as the host speaking, not as a copywriter writing for the host; default: warm and direct, never corporate or scripted-sounding]
+
+Once the brand is confirmed and the ad read format is selected, use the format below.
+
+------------------------------------------------------------
+PLATFORM AND FORMAT RULES (2026) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+These constraints apply to all podcast sponsorship copy. Violating them produces ads that sound scripted, lose host credibility, and underperform on conversion.
+
+1. WRITE IN FIRST PERSON WITH [HOST] PLACEHOLDER
+   All podcast ad reads must be written in first person as if the host is speaking. Use [HOST] as a placeholder where the host would naturally reference themselves. The advertiser does not speak; the host does. Never write in third person ("the brand offers...") in a host-read ad.
+
+2. PERSONAL ANECDOTE BEATS FEATURE LIST (2026 BEST PRACTICE)
+   Mid-roll and host-endorsed formats must include a personal anecdote hook. The anecdote should be brief (2 to 3 sentences) and connect the host's experience to the product. A feature list with no personal frame converts at approximately half the rate of an anecdote-led read, based on 2026 podcast advertising data from the Interactive Advertising Bureau (IAB Podcast Advertising Revenue Report, 2026).
+
+3. DISCOUNT CODE IS REQUIRED IN MID-ROLL AND HOST-ENDORSED FORMATS
+   Every mid-roll and host-endorsed ad must include a unique discount code for tracking. Format: [DISCOUNT CODE] placeholder. The code doubles as a conversion tracking mechanism for the advertiser. Without it, the advertiser cannot attribute revenue to this specific podcast.
+
+4. FTC DISCLOSURE REQUIREMENT (2026)
+   All host-read podcast ads must include a verbal FTC disclosure at the start or end of the ad read. Standard disclosure: "This episode is brought to you by [Brand]." or "A word from our sponsor, [Brand]." Do not bury the disclosure mid-read. As of 2026, the FTC requires clear and conspicuous disclosure of material connections, including paid sponsorships, in podcast content (FTC Guides Concerning Endorsements and Testimonials, updated 2023, enforced continuously).
+
+5. CHARACTER AND TIMING ESTIMATES
+   Spoken word delivery averages 125 to 150 words per minute at a conversational pace.
+   Pre-Roll (15 to 30 sec): 30 to 75 words
+   Mid-Roll (30 to 60 sec): 75 to 150 words
+   Host-Endorsed (60 to 90 sec): 150 to 225 words
+   Include a WORD COUNT and ESTIMATED READING TIME note at the bottom of every ad read.
+
+6. ONE CTA ONLY
+   Every ad read delivers one call to action. Do not stack a website URL, a discount code mention, AND a social follow in the same read. The CTA hierarchy: (1) discount code + URL if budget is the barrier, (2) URL only if the product is free or trial-based. The host repeats the CTA once only -- the second mention is in the outro line, not the body.
+
+7. NO CORPORATE LANGUAGE IN HOST-READ COPY
+   Phrases like "industry-leading", "best-in-class", "cutting-edge solution", and "seamless experience" destroy host credibility. The host speaks in their own register. Replace every corporate phrase with what the product actually does for the listener.
+
+------------------------------------------------------------
+FORMAT A: PRE-ROLL (15 TO 30 SECONDS)
+------------------------------------------------------------
+
+Use when: Opening a podcast episode with a short brand mention before the content begins.
+Word target: 30 to 75 words.
+Structure: FTC disclosure + Brand name + One-sentence value proposition + CTA (URL or discount code)
+
+Template:
+
+[FTC DISCLOSURE] -- "This episode is brought to you by [BRAND]."
+[BRAND INTRO] -- One sentence stating what [BRAND] does and who it is for. No feature list. One clear outcome.
+[CTA] -- "Check them out at [URL]" or "Use code [DISCOUNT CODE] for [OFFER] at [URL]."
+
+DO: "This episode is brought to you by Edstellar. Edstellar helps corporate L&D teams build and deploy custom training programs in days, not months. Visit edstellar.com to see what your team could learn next."
+
+AVOID: "This episode is sponsored by Edstellar, the industry-leading corporate training platform with a seamless LMS experience and best-in-class content library."
+
+------------------------------------------------------------
+FORMAT B: MID-ROLL (30 TO 60 SECONDS)
+------------------------------------------------------------
+
+Use when: Placing an ad break in the middle of an episode at a natural content transition point.
+Word target: 75 to 150 words.
+Structure: FTC disclosure + Personal anecdote hook + Brand bridge + Offer + CTA (with discount code)
+
+Template:
+
+[FTC DISCLOSURE] "Before we continue, a quick word from [BRAND]."
+
+[ANECDOTE HOOK -- 2 to 3 sentences]:
+[HOST] shares a specific personal situation (real or illustrative) that connects to the product's use case. Specificity is required: name a time, a problem, or a context. Vague anecdotes ("I used to struggle with this too") carry no conversion advantage.
+Example placeholder: "[HOST] I used to [SPECIFIC PROBLEM] every [FREQUENCY], until [BRAND] changed how I [ACTIVITY]."
+
+[BRAND BRIDGE -- 1 to 2 sentences]:
+Connect the anecdote to what [BRAND] actually does. Name one specific feature or outcome, not a category.
+
+[OFFER -- 1 sentence]:
+State the listener offer clearly: "[OFFER DETAILS] when you use code [DISCOUNT CODE] at checkout."
+
+[CTA -- 1 sentence]:
+"Go to [URL] and use code [DISCOUNT CODE]. That's [DISCOUNT CODE] at [URL]."
+Note: Repeat the URL and code once. Do not repeat more than twice.
+
+------------------------------------------------------------
+FORMAT C: HOST-ENDORSED LONG-FORM (60 TO 90 SECONDS)
+------------------------------------------------------------
+
+Use when: The host has genuinely used the product, or the advertiser wants the highest-trust, highest-conversion format.
+Word target: 150 to 225 words.
+Structure: FTC disclosure + Anecdote (deeper) + Problem/solution frame + Specific feature or result + Offer + Repeated CTA
+
+Template:
+
+[FTC DISCLOSURE] "This episode is sponsored by [BRAND] -- and [HOST] I want to talk about this one because [genuine reason it is relevant to this audience]."
+
+[ANECDOTE -- 3 to 5 sentences]:
+[HOST] narrates a specific experience using the product. Must include: the situation before the product, the specific action taken with the product, and the concrete result. Avoid vague results ("it was great") -- name the outcome ("I finished the [task] in [timeframe] instead of [previous timeframe]").
+
+[PRODUCT BRIDGE -- 2 to 3 sentences]:
+Connect the personal story to the listener's situation. Use "If you [LISTENER SITUATION], then [BRAND] is worth checking out" structure.
+
+[ONE KEY FEATURE OR DIFFERENTIATOR -- 1 to 2 sentences]:
+Name one thing that makes [BRAND] different from the category default. Not a feature list -- one specific differentiator.
+
+[OFFER -- 1 sentence]:
+"[HOST] listeners get [OFFER] with code [DISCOUNT CODE] at [URL]."
+
+[OUTRO CTA -- 1 sentence]:
+"Again, that's [URL], code [DISCOUNT CODE]."
+
+WORD COUNT: [X words]
+ESTIMATED READING TIME: [X seconds at 130 words per minute]
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single ad read requests:
+Output the full script with labeled sections (FTC DISCLOSURE / ANECDOTE / BRIDGE / OFFER / CTA). Include WORD COUNT and ESTIMATED READING TIME at the bottom.
+
+For bulk ad read requests (multiple formats or multiple brands):
+Output as separate labeled blocks: BRAND | FORMAT | WORD COUNT | ESTIMATED TIME | SCRIPT
+
+Save to output/PodcastAds/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- Write in first person with [HOST] placeholder -- never third person for host-read formats
+- FTC disclosure required at start or end of every ad read
+- Mid-roll and host-endorsed formats require a personal anecdote hook
+- Discount code [DISCOUNT CODE] required in mid-roll and host-endorsed formats
+- One CTA only -- no stacked calls to action
+- No corporate language ("industry-leading", "best-in-class", "seamless", "cutting-edge")
+- CTA URL repeated maximum once (twice total including outro)
+- Include WORD COUNT and ESTIMATED READING TIME in every output
+- No em dashes anywhere in the script
+- Active voice throughout
+- SELF-CHECK: Before outputting, verify: (a) FTC disclosure appears, (b) a personal anecdote is present in Format B and C, (c) discount code placeholder appears in Format B and C, (d) word count falls within the format's target range, (e) no corporate language appears in the host's lines
+- BATCH DEDUP: When generating multiple ad reads for the same brand in one session, each anecdote must use a distinct scenario. Do not reuse the same personal situation across ad reads in the same batch
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. SCRIPTED SOUND: Writing lines that sound like a corporate copywriter, not a human host. Test each line by asking: "Would a real person say this in a conversation?" If the answer is no, rewrite it in plainer language.
+
+2. NO PERSONAL HOOK: Opening a mid-roll or host-endorsed read with a product description instead of an anecdote. Feature-first reads convert at lower rates than story-first reads. The anecdote is the conversion mechanism, not an optional warm-up.
+
+3. MISSING DISCOUNT CODE: Delivering a mid-roll or host-endorsed read without a tracking code removes the advertiser's ability to measure ROI. Every read at these formats must include a code placeholder.
+
+4. STACKED CTAS: Asking the listener to visit a website, use a discount code, follow on Instagram, AND leave a review in one 60-second read. One action per read. Stacked CTAs split listener attention and reduce all conversion rates.
+
+5. BURIED FTC DISCLOSURE: Inserting the sponsorship disclosure in the middle of the anecdote where the listener has already formed an opinion of the read as organic content. Disclosure goes at the start ("This episode is brought to you by...") or immediately before the brand bridge.

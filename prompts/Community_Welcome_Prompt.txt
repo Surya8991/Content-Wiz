@@ -1,0 +1,254 @@
+============================================================
+COMMUNITY WELCOME AND MODERATION PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: New Member Onboarding Copy / Community Guidelines and Channel Descriptions / Moderation and Re-Engagement Messages
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [warm but structured, community-specific -- default: the community's own established voice; if no voice is established, use the brand's registered voice at its most conversational setting; never clinical, never corporate, never cold]
+
+Once the brand is confirmed and the platform is identified (Slack / Discord / Circle), select the format below.
+
+------------------------------------------------------------
+PLATFORM RULES (2026) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+These constraints apply to all community copy. Platform-specific formatting affects readability and member experience.
+
+1. DISCORD MARKDOWN (2026)
+   Discord renders: **bold**, *italic*, __underline__, ~~strikethrough~~, `inline code`, > blockquotes, and # / ## / ### headers in channel topics and pinned posts only (not in DMs). Use markdown intentionally for structure, not decoration. Excessive formatting in welcome DMs reads as automated and impersonal. Limit markdown to 2 to 3 uses per DM message. Discord character limit for messages: 2,000 characters. Channel description: 1,024 characters.
+
+2. SLACK FORMATTING (2026)
+   Slack renders: *bold* (asterisks), _italic_ (underscores), ~strikethrough~, `inline code`, ```code blocks```, and > blockquotes. Slack also renders emoji reactions and supports Block Kit formatting in automated messages. Recommended: use bold sparingly (1 to 2 instances per message) for scannability. Slack DM character limit: 40,000 characters (in practice, keep welcome DMs under 300 words). Channel description: 250 characters.
+
+3. CIRCLE RICH TEXT (2026)
+   Circle supports full rich text in posts and pinned posts: bold, italic, headings (H1 to H3), bullet lists, numbered lists, and inline links. Circle does not render markdown syntax in DMs or notification messages -- write those in plain text. Post body character limit: no hard limit, but 300 to 500 words is the recommended maximum for community posts before engagement drops. Space description: 500 characters.
+
+4. WELCOME DM MUST NOT SOUND AUTOMATED
+   The welcome DM is the single highest-impact community touchpoint. A generic "Welcome to [Community]! Here are our rules:" DM signals that the member is in a managed list, not a real community. The welcome DM must: (a) address the member by first name, (b) reference something specific about the community that makes it worth their time, (c) include a clear and easy first action that costs less than 60 seconds.
+
+5. CLEAR NEXT STEP IN EVERY WELCOME MESSAGE
+   Every welcome message (DM, channel welcome post, or pinned intro post) must end with one specific, low-friction action the new member can take immediately. Examples: "Introduce yourself in #introductions", "React to this message if you want to join our next live session", "Check out the pinned post in #start-here". Do not give three next steps; give one.
+
+6. COMMUNITY GUIDELINES MUST NAME ENFORCEMENT
+   Community guidelines that list rules without stating consequences train members to treat the rules as suggestions. Every guidelines document must include: what behavior triggers a warning, what behavior triggers removal, and who to contact to report a violation. Vague guidelines ("be respectful") are not enforceable.
+
+7. RE-ENGAGEMENT MESSAGES REQUIRE A GENUINE HOOK
+   A re-engagement message that says "We haven't seen you in a while. Come back!" is the community equivalent of a generic NPS email. Re-engagement copy must reference something specific that happened in the community since the member was last active (a recent discussion topic, a new resource, an upcoming event).
+
+------------------------------------------------------------
+FORMAT A: NEW MEMBER ONBOARDING COPY
+------------------------------------------------------------
+
+Use when: Setting up automated or manual welcome messages for new members joining a Slack, Discord, or Circle community.
+
+WELCOME DM -- SLACK:
+[Member First Name], welcome to [COMMUNITY NAME]. You joined a group of [AUDIENCE DESCRIPTION] who [WHAT THE COMMUNITY DOES OR DISCUSSES].
+
+Two things worth doing right now:
+1. Head to #[INTRO CHANNEL] and share [SPECIFIC PROMPT -- e.g. "what you're working on this quarter" or "your role and one goal for this year"].
+2. Check the pinned message in #[RESOURCE CHANNEL] -- it has [SPECIFIC VALUE ITEM -- e.g. "the three posts every new member reads first"].
+
+Questions? Reply here or tag @[COMMUNITY MANAGER NAME/ROLE] in any channel.
+
+[Sign-off: Community Manager name or Community name]
+
+Word count target: 80 to 120 words. No asterisks or markdown in the DM -- plain text only for warmth.
+
+WELCOME DM -- DISCORD:
+[Member First Name], glad you joined **[COMMUNITY NAME]**.
+
+This is a community for [AUDIENCE DESCRIPTION]. Here is where to start:
+
+> Head to #[INTRO CHANNEL] and tell us [SPECIFIC PROMPT].
+> Check the pinned message in #start-here for [SPECIFIC VALUE ITEM].
+
+If you have questions, ping @[COMMUNITY MANAGER ROLE].
+
+See you in the channels.
+[Sign-off]
+
+Word count target: 60 to 90 words. Use blockquotes for the two actions to create visual separation. Use bold for the community name once. No further markdown.
+
+WELCOME DM -- CIRCLE:
+Hi [Member First Name],
+
+Welcome to [COMMUNITY NAME]. You are now part of [AUDIENCE DESCRIPTION -- 1 sentence describing the community identity].
+
+One thing to do first: [SINGLE SPECIFIC ACTION with hyperlink if applicable].
+
+[Optional: One sentence about an upcoming event, live session, or pinned resource they should know about.]
+
+Looking forward to seeing you in the conversation.
+[Community Manager Name], [Title or Role]
+
+Word count target: 75 to 110 words. Plain text -- Circle DMs do not render markdown.
+
+CHANNEL #START-HERE PINNED POST (applies to all three platforms):
+
+**Welcome to [COMMUNITY NAME]** [Discord / Circle format]
+*Welcome to [COMMUNITY NAME]* [Slack format]
+
+[COMMUNITY NAME] is [one-sentence description of the community's purpose and audience].
+
+**What to do first:**
+1. Read the [COMMUNITY GUIDELINES LINK or CHANNEL REFERENCE]
+2. Introduce yourself in [INTRO CHANNEL]
+3. [ONE OPTIONAL THIRD ACTION -- e.g. join the next live session, subscribe to the weekly digest]
+
+**Channels to know:**
+[CHANNEL NAME]: [One-sentence description of what this channel is for]
+[CHANNEL NAME]: [One-sentence description]
+[CHANNEL NAME]: [One-sentence description]
+List 3 to 5 channels maximum. More than 5 overwhelms new members.
+
+**Questions?** Contact [COMMUNITY MANAGER NAME] via DM or post in [HELP CHANNEL].
+
+------------------------------------------------------------
+FORMAT B: COMMUNITY GUIDELINES AND CHANNEL DESCRIPTIONS
+------------------------------------------------------------
+
+Use when: Writing or updating the community's rules document and individual channel descriptions.
+
+COMMUNITY GUIDELINES document structure:
+
+OPENING (2 to 3 sentences):
+State the community's purpose and who it is for. Set the tone: "This is a community for [AUDIENCE]. We keep it [tone descriptor: e.g. 'practical', 'honest', 'high-signal'] because [reason that matters to the member]."
+
+COMMUNITY RULES (5 to 8 rules maximum, numbered list):
+
+Each rule must follow this structure:
+RULE NAME (bolded or capitalized): One-sentence description of the behavior required or prohibited.
+ENFORCEMENT: One sentence stating the consequence for violating this rule.
+
+Required rules for all communities:
+1. STAY ON TOPIC: [Custom to community's focus]
+2. NO SELF-PROMOTION WITHOUT PERMISSION: [Define what counts as self-promotion and when it is permitted]
+3. RESPECT FOR MEMBERS: [Define what "respectful" means specifically for this community, not just "be kind"]
+4. NO SPAM OR MASS OUTREACH: [Define spam -- unsolicited DMs, repetitive posts, external link flooding]
+5. CONTENT ACCURACY: [Standard if the community discusses data, research, or advice]
+
+Optional rules (include if relevant to the community type):
+6. CONFIDENTIALITY: [If the community is a closed group where members share private business information]
+7. ATTRIBUTION: [If members share resources and should credit original sources]
+8. LANGUAGE AND REGIONAL NORMS: [If the community is multilingual or cross-cultural]
+
+ENFORCEMENT LADDER:
+State clearly:
+Warning: Issued for [BEHAVIOR]. Delivered via DM from the community manager.
+Temporary suspension: Issued for [BEHAVIOR] or repeat offenses after [NUMBER] warnings.
+Permanent removal: Issued for [BEHAVIOR -- e.g. harassment, hate speech, deliberate spam campaign].
+Appeals: Members removed permanently may contact [EMAIL OR PROCESS].
+
+REPORTING:
+"To report a violation, DM [COMMUNITY MANAGER NAME or ROLE] or use [REPORTING MECHANISM if available]."
+
+CHANNEL DESCRIPTIONS (one per channel, under platform character limits):
+
+Format per channel:
+CHANNEL NAME: [What this channel is for] | Who posts here: [Members / Community team only] | Post format: [Text only / Links welcome / Image permitted]
+
+Slack channel description character limit: 250 characters.
+Discord channel description: 1,024 characters.
+Circle Space description: 500 characters.
+
+------------------------------------------------------------
+FORMAT C: MODERATION AND RE-ENGAGEMENT MESSAGES
+------------------------------------------------------------
+
+Use when: Drafting moderation messages for rule violations, or re-engagement messages for inactive members.
+
+MODERATION MESSAGE -- FIRST WARNING (DM, all platforms):
+
+Subject / Message header: Not required in DMs -- open directly.
+"Hi [Member First Name], thanks for being part of [COMMUNITY NAME]. I wanted to reach out about a recent post in [CHANNEL NAME] on [DATE].
+
+[Specific behavior that triggered the warning -- describe it neutrally, do not accuse. Example: 'The post included a promotional link to [PRODUCT]. Our guidelines ask members to share promotional content only in #[PROMO CHANNEL] or after getting a thumbs-up from the mod team.']
+
+No action needed from you right now -- just flagging it so we are on the same page. If you have questions about what is and is not OK to share, the guidelines are here: [LINK].
+
+[COMMUNITY MANAGER NAME]"
+
+Tone: Specific, non-threatening, outcome-focused. The message must state the behavior and the rule it conflicts with, not a character judgment about the member.
+
+MODERATION MESSAGE -- REMOVAL (DM, all platforms):
+
+"Hi [Member First Name], I need to let you know that your account has been removed from [COMMUNITY NAME] as of [DATE].
+
+This decision followed [BEHAVIOR -- described neutrally] after [PRIOR WARNING NOTE if applicable].
+
+Our full community guidelines are available at [LINK] for reference.
+
+If you believe this was a mistake, you can reach us at [CONTACT EMAIL]. We will review removal appeals within [TIMEFRAME].
+
+[COMMUNITY MANAGER NAME]"
+
+Tone: Firm and factual. No apology language that dilutes the decision. No emotional or accusatory language.
+
+RE-ENGAGEMENT MESSAGE -- INACTIVE MEMBER (DM, all platforms):
+
+"Hi [Member First Name], it's been a while since we've seen you in [COMMUNITY NAME]. Since you last visited, [SPECIFIC THING THAT HAPPENED -- e.g. 'we launched a weekly live session every Thursday', 'the #[CHANNEL] channel has become one of the most active spots for [TOPIC]', 'we published a resource on [TOPIC] that [NUMBER] members have found useful'].
+
+[ONE SPECIFIC INVITATION -- e.g. 'Our next live session is on [DATE]. Worth joining if [SPECIFIC REASON relevant to this member's likely interest]?']
+
+No pressure -- just wanted to make sure you knew what was happening.
+
+[COMMUNITY MANAGER NAME]"
+
+Tone: Personal, specific, no guilt trip. The member must feel invited, not chased.
+
+EVENT ANNOUNCEMENT (post to community, all platforms):
+
+[EVENT NAME]
+[DATE and TIME with timezone]
+[PLATFORM or LOCATION]
+
+[One sentence on what the event covers and why it matters to this community's audience]
+
+[Who is speaking or facilitating -- name and one-line bio]
+
+[HOW TO JOIN or RSVP -- one link or one action]
+
+[OPTIONAL: One thing attendees will leave with -- a framework, a resource, a recording]
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single community copy requests:
+Output each message or document section labeled by type: PLATFORM | CONTENT TYPE | COPY. Include character count at the end of each piece.
+
+For full community setup packages:
+Output in sequence: WELCOME DM | #START-HERE POST | COMMUNITY GUIDELINES | CHANNEL DESCRIPTIONS (list) | MODERATION MESSAGES | RE-ENGAGEMENT MESSAGE
+
+Save to output/Community/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- Welcome DM must address the member by first name and include one specific next action
+- Markdown usage: Discord (2 to 3 uses per DM), Slack (bold only, sparingly), Circle DMs (plain text only)
+- Community guidelines must name enforcement consequences for each rule
+- Moderation messages describe behavior neutrally -- no character judgments
+- Re-engagement messages reference something specific that happened in the community since the member was last active
+- No em dashes anywhere in community copy
+- Active voice throughout ("The community manager will review" not "Appeals will be reviewed")
+- Channel descriptions must stay within platform character limits: Slack 250 / Discord 1,024 / Circle 500
+- SELF-CHECK: Before outputting, verify: (a) welcome DM is under platform word target, (b) every community guideline names a consequence, (c) no channel description exceeds the platform character limit, (d) the re-engagement message contains a specific community event or content reference, not a generic "we miss you"
+- BATCH DEDUP: When generating welcome DMs for multiple communities or platforms in one session, each DM must use a distinct opening line and a distinct first-action prompt. Do not reuse the same phrasing across communities in the same batch
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. COLD AUTOMATED WELCOME DM: Opening with "Welcome to [Community]! Please read our community guidelines and introduce yourself." This reads as an automated confirmation email, not a community welcome. The first DM must feel personal, even when it is templated.
+
+2. VAGUE COMMUNITY GUIDELINES: Writing "Be respectful and kind to all members" without defining what behavior triggers a warning or removal. Vague guidelines are unenforced guidelines. Every rule must have a named consequence.
+
+3. NO CLEAR NEXT STEP IN WELCOME: Ending the welcome message with "Feel free to explore!" leaves the new member with no direction. Every welcome message ends with one specific, timed, low-friction action.
+
+4. GENERIC RE-ENGAGEMENT MESSAGE: Sending "We miss you! Come back to [Community]!" with no reference to what the member is missing. Re-engagement copy without a specific hook gives the inactive member no reason to return.
+
+5. MARKDOWN OVERUSE IN DMS: Using bold, italics, blockquotes, and headers in a Discord or Slack welcome DM. Heavy formatting signals automation and removes warmth. Reserve markdown for pinned posts and channel descriptions where structure serves the reader.

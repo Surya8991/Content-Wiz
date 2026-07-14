@@ -1,0 +1,173 @@
+============================================================
+ANNUAL REPORT PROMPT
+============================================================
+
+TWO FORMATS AVAILABLE: Corporate Annual Report / Nonprofit Impact Report
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [confident, data-anchored, forward-looking -- default: formal but human, never boastful or passive; corporate reports lean authoritative, nonprofit reports lean warm and mission-focused]
+
+Once the brand is confirmed and the report type is selected, use the format below.
+
+------------------------------------------------------------
+ANNUAL REPORT RULES (2026) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+These constraints apply to all annual and impact report copy. Violating them produces reports that lose stakeholder trust or bury the brand's actual achievements.
+
+1. DATA BEFORE NARRATIVE
+   Every section that makes a performance claim must open with a data point or measurable outcome before expanding with narrative context. Do not open a section with a quote, anecdote, or aspirational statement when data is available. Data anchors the reader; narrative explains it.
+
+2. FORWARD-LOOKING STATEMENTS REQUIRE HEDGING LANGUAGE
+   Any statement about future plans, targets, or projections must include standard forward-looking hedge language: "The organization expects...", "Management anticipates...", "Subject to market conditions...". Do not write future projections as certainties.
+
+3. IMPACT OVER ACTIVITY
+   Report outcomes, not outputs. Activity language ("We delivered 200 training sessions") is weaker than impact language ("Teams that completed the training improved [metric] by [X%] within [timeframe], based on [measurement method]"). Push every activity claim to its downstream impact.
+
+4. LEADERSHIP LETTER TONE
+   The letter from leadership must not read as a self-congratulatory summary of the report. It must: (a) open with the broader context (industry, economy, or mission environment the organization operated in), (b) acknowledge at least one challenge or area of improvement, (c) close with a specific commitment for the coming year, not a generic aspiration.
+
+5. NARRATIVE THREAD REQUIRED
+   Each section must connect to the one before it with a bridging sentence. A report that reads as isolated data blocks fails the "story of the year" test. The reader must feel the year as a connected sequence, not a collection of metrics.
+
+6. NO FOOTNOTE BURIAL
+   Critical impact data must appear in the section body, not in footnotes. Footnotes are for attribution and methodology notes, not for the results the organization most wants stakeholders to notice.
+
+7. FINANCIAL SUMMARY NARRATIVE
+   The financial summary section writes the story behind the numbers. It does not reproduce the financial statements (those belong in the appendix). The narrative explains: what drove revenue or funding changes, what the organization invested in, and what the financial position means for the next year's work.
+
+------------------------------------------------------------
+FORMAT A: CORPORATE ANNUAL REPORT
+------------------------------------------------------------
+
+Use when: Producing the annual report narrative copy for a for-profit company (public, private, or PE-backed).
+Audience: Shareholders, board members, employees, customers, and media.
+Target total copy length: 2,500 to 4,000 words (narrative copy only, excluding financial tables).
+
+REQUIRED SECTIONS:
+
+SECTION 1 -- LETTER FROM LEADERSHIP (300 to 500 words):
+STRUCTURE:
+Paragraph 1: The year's operating context (market conditions, industry shifts, key challenges the company faced)
+Paragraph 2: The headline achievement of the year -- one specific metric or milestone
+Paragraph 3: A candid acknowledgment of one area where the company fell short and what it learned
+Paragraph 4: The strategic priorities for the next year (2 to 3 priorities, each named specifically)
+Paragraph 5: A direct message to one key stakeholder group (employees, shareholders, or customers -- choose based on the company's audience)
+TONE: Confident, direct, first person singular from the named leader. No corporate "we" in the leadership letter -- the leader speaks for themselves.
+ATTRIBUTION: [Name], [Title], [Date]
+
+SECTION 2 -- YEAR IN NUMBERS (100 to 200 words):
+A curated set of 6 to 10 headline metrics. Each metric must:
+- Name the metric
+- State the number (with unit: %, $, headcount, etc.)
+- State the year-over-year change (up X%, down X%, new record, first year measured)
+Format: Scannable, one metric per line or card. Do not embed metrics in paragraphs in this section.
+Example: "Revenue: $42M | +18% year-over-year"
+
+SECTION 3 -- KEY MILESTONES (200 to 300 words):
+A timeline or bulleted list of 5 to 8 major events from the year (product launches, expansions, acquisitions, certifications, partnerships). For each milestone, state: what happened, when it happened (quarter or month), and why it mattered to the business.
+
+SECTION 4 -- PRODUCT OR SERVICE HIGHLIGHTS (400 to 600 words):
+Spotlight 2 to 3 products, services, or business units that drove the most growth or strategic value during the year. For each highlight:
+SUBHEADLINE: [Product or unit name]
+PERFORMANCE: One key metric (revenue, customer growth, units, or retention rate)
+STORY: Two to three paragraphs describing what drove the result and what it means for the customer or market
+CUSTOMER VOICE (optional): A short quote from one customer (with permission) or an anonymized outcome statement
+
+SECTION 5 -- FINANCIAL SUMMARY NARRATIVE (300 to 400 words):
+Cover: Revenue performance, gross margin movement (if applicable), key investment areas, and year-end financial position. Write in narrative paragraphs. Do not reproduce financial tables. Close with one sentence about the financial outlook for the next year (with required forward-looking hedge language per Rule 2).
+
+SECTION 6 -- SOCIAL AND COMMUNITY IMPACT (200 to 300 words):
+Cover: ESG or CSR activities, community programs, employee giving or volunteering, and any third-party recognitions or certifications received (e.g. B-Corp, Great Place to Work). Quantify wherever possible.
+
+SECTION 7 -- LOOKING AHEAD (200 to 300 words):
+Name 3 to 5 priorities for the next year. Each priority gets: a one-sentence description, the intended outcome, and one success metric the company will use to measure it. Include required forward-looking hedge language.
+
+SECTION 8 -- CALL TO ACTION FOR STAKEHOLDERS (100 words):
+Different CTA per stakeholder group:
+Investors: Where to access full financial statements and investor relations contact
+Customers: Where to learn about new offerings or speak to a representative
+Employees: How to engage with internal resources or feedback channels
+Media: Press contact and media kit location
+
+------------------------------------------------------------
+FORMAT B: NONPROFIT IMPACT REPORT
+------------------------------------------------------------
+
+Use when: Producing the annual impact report narrative for a nonprofit, NGO, foundation, or social enterprise.
+Audience: Donors, grant-makers, program beneficiaries, volunteers, partner organizations, and board members.
+Target total copy length: 2,000 to 3,500 words (narrative copy, excluding financial schedules).
+
+REQUIRED SECTIONS:
+
+SECTION 1 -- LETTER FROM LEADERSHIP (300 to 400 words):
+Open with the mission context (what changed in the communities or causes the organization serves during the year). Name the specific challenge or opportunity the year presented. Acknowledge at least one program that did not achieve its intended outcome and what the organization learned. Close with the mission commitment for the next year and a direct thank-you to donors and volunteers by name of group (not "our supporters" -- use "our 2025 donors" or "our volunteer corps" specifically).
+
+SECTION 2 -- YEAR IN NUMBERS (100 to 150 words):
+6 to 8 mission-critical metrics. Must include: people served, programs delivered, funds raised, funds disbursed, and at least one outcome metric (not an output metric). Format: scannable, one metric per line.
+
+SECTION 3 -- KEY MILESTONES (150 to 200 words):
+5 to 7 program or organizational milestones from the year, each with a date and a one-sentence impact statement.
+
+SECTION 4 -- PROGRAM HIGHLIGHTS (400 to 600 words):
+Spotlight 2 to 3 programs with the highest impact during the year. For each program:
+PROGRAM NAME AND GOAL
+REACH: Number of people or communities served
+OUTCOME: Specific measurable result (not "participants reported feeling better" -- use a measured metric)
+BENEFICIARY VOICE: A direct quote from one program participant (with permission). Use their real first name and general location unless they have requested anonymity.
+WHAT MADE IT WORK: One specific factor that drove the outcome
+
+SECTION 5 -- FINANCIAL SUMMARY (200 to 300 words):
+Revenue sources (grants, donations, earned income -- each as a percentage of total). Program vs. administrative expense ratio. Year-end reserve position. Close with one sentence on financial sustainability goals for the next year.
+
+SECTION 6 -- COMMUNITY AND STAKEHOLDER ACKNOWLEDGMENT (200 to 300 words):
+Name key partner organizations, major donors (with permission), and volunteer groups that made the year's work possible. Quantify volunteer hours and partner contributions where available.
+
+SECTION 7 -- LOOKING AHEAD (200 to 250 words):
+Name 3 priorities for the next year. Each priority states the intended impact on the communities served, the planned approach, and the target outcome metric.
+
+SECTION 8 -- CALL TO ACTION FOR DONORS AND VOLUNTEERS (100 words):
+Donation link or contact. Volunteer sign-up. Social media follow. Event invitation. Make one CTA primary and list others as secondary options.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single report requests:
+Output each section labeled and in sequence. Use section headers as written above. Include a WORD COUNT note at the end of each section.
+
+For bulk requests (multiple sections or multiple report types in one session):
+Output as separate labeled blocks: REPORT TYPE | SECTION NAME | WORD COUNT | CONTENT
+
+Save to output/AnnualReport/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- Every performance claim opens with a data point before narrative context
+- Forward-looking statements require hedge language ("expects", "anticipates", "subject to")
+- Impact language required: outcomes over outputs throughout
+- Leadership letter must acknowledge at least one challenge or shortfall
+- Narrative thread connects every section to the next
+- No metric buried in a footnote that belongs in the section body
+- No em dashes anywhere
+- Active voice throughout (never "results were achieved" -- always "the team achieved")
+- Every statistic names its source and year
+- SELF-CHECK: Before outputting, verify: (a) every section opens with data before narrative, (b) the leadership letter contains one candid acknowledgment of a shortfall, (c) all future projections carry hedge language, (d) no section uses passive voice in its first two sentences
+- BATCH DEDUP: When generating multiple sections in one session, each section must open with a distinct framing sentence. Do not reuse the same sentence structure for the opening of multiple sections
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. PASSIVE VOICE THROUGHOUT: Writing "200 programs were delivered" instead of "The team delivered 200 programs" strips agency and accountability from the report. Active voice anchors results to people and decisions.
+
+2. BURYING IMPACT IN FOOTNOTES: Placing the most important outcome data in a footnote or appendix reference signals the organization does not trust its own results enough to lead with them. Impact data belongs in the section body.
+
+3. NO NARRATIVE THREAD: Producing a report that reads as disconnected data blocks. Each section must bridge to the next, creating the feeling of a year with a coherent arc.
+
+4. SELF-CONGRATULATORY LEADERSHIP LETTER: A letter that lists achievements without acknowledging challenges reads as a press release, not a leadership statement. Stakeholders trust leaders who name what did not go well.
+
+5. OUTPUT METRICS MASQUERADING AS IMPACT: Reporting "we delivered 500 workshops" without stating what those workshops produced for participants. Every output metric must connect to an outcome metric, even if the outcome is directional rather than precise.

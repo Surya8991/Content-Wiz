@@ -1,0 +1,186 @@
+============================================================
+BRAND VOICE AND STYLE GUIDE PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: Full Brand Voice Guide / Channel-Specific Voice Extension / Voice Audit Report
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [calibrated to the brand being documented -- this prompt produces a guide for others, so the guide itself must be written in clear, instructional prose, not in the brand's own voice]
+
+Once the brand is confirmed, select the format below.
+
+------------------------------------------------------------
+BRIEFING RULES - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+A brand voice guide generated without real input produces vague adjectives instead of useful rules. These briefing requirements apply to all three formats.
+
+1. REQUIRED INPUTS BEFORE GENERATION
+   At minimum, the user must provide ONE of the following before the guide generates:
+   (a) The brand's URL (for automatic research and sample copy extraction)
+   (b) Three to five sample sentences or paragraphs written in the brand's voice
+   (c) A completed Brand Voice Brief (see BRIEF TEMPLATE below)
+   If none of these are provided, ask the user for them before proceeding.
+
+2. BRIEF TEMPLATE (use when no URL or samples are available):
+
+   BRAND NAME: [Full brand name]
+   WHAT THE BRAND DOES: [One sentence]
+   PRIMARY AUDIENCE: [Who reads and buys]
+   THREE WORDS THAT DESCRIBE THE BRAND'S IDEAL VOICE: [not "professional" or "friendly" -- push for specifics like "direct", "wry", "data-first"]
+   THREE WORDS THE BRAND MUST NEVER SOUND LIKE: [e.g. "corporate", "salesy", "vague"]
+   ONE BRAND THE VOICE FEELS CLOSEST TO (competitor or adjacent): [Optional comparison brand]
+   SAMPLE COPY (at least one real headline or paragraph): [Paste here]
+
+3. CONCRETE RULES OVER ADJECTIVES
+   A voice guide that says "We sound professional and approachable" is useless to a writer. Every attribute in the guide must translate to a concrete behavioral rule. "Approachable" becomes: "Use contractions. Open with the reader's situation, not the brand's. Average sentence length: 14 words or fewer." Produce rules, not descriptors.
+
+4. BAD EXAMPLES ARE AS IMPORTANT AS GOOD EXAMPLES
+   Every rule section must include at least one AVOID example alongside the DO example. Without bad examples, writers fall back on their own defaults.
+
+5. CHANNEL-SPECIFIC VOICE NOTES
+   Brand voice is not uniform across channels. The guide must specify how the voice shifts by channel: website homepage vs. social media vs. customer support email vs. sales outreach vs. press release.
+
+------------------------------------------------------------
+FORMAT A: FULL BRAND VOICE GUIDE
+------------------------------------------------------------
+
+Use when: Creating a comprehensive voice document to share with internal teams, freelancers, or agencies.
+Target length: 1,200 to 2,000 words (full guide). Structured document with headers, DO/AVOID pairs, and example sentences.
+
+REQUIRED SECTIONS:
+
+SECTION 1 -- BRAND PERSONALITY (150 to 200 words):
+Open with 3 to 5 personality attributes, each defined with a one-sentence behavioral rule.
+Format per attribute:
+[ATTRIBUTE] -- [What this means in practice]
+DO: "[Example sentence]"
+AVOID: "[Counter-example sentence]"
+
+Example:
+DIRECT -- We state conclusions first, then evidence. We do not build to a reveal.
+DO: "Most training programs fail at behavior change, not content delivery."
+AVOID: "When we look at the landscape of corporate learning, it becomes clear that there are many challenges to consider."
+
+SECTION 2 -- TONE SPECTRUM (100 to 150 words):
+Define the range of tone across contexts. Use a 5-point dial:
+[Most Formal] --- [Default] --- [Most Casual]
+Label each point with a use case and a sample phrase.
+Example: "Customer support emails sit at point 2 (slightly warmer than default). Social media posts sit at point 4 (casual, but never slang)."
+
+SECTION 3 -- VOCABULARY CHOICES (100 to 150 words):
+Three subsections:
+PREFERRED WORDS AND PHRASES: Terms the brand uses and owns (e.g. "teams", not "employees"; "capability", not "skills")
+BANNED WORDS AND PHRASES: Specific words the brand never uses (e.g. "synergy", "leverage as a verb", "cutting-edge", "seamless")
+COMPETITOR LANGUAGE TO AVOID: Phrases strongly associated with named competitors that would confuse positioning
+
+SECTION 4 -- SENTENCE STRUCTURE PREFERENCES (100 words):
+State the preferred sentence length (word count), paragraph length (sentence count), and structural conventions (e.g. "Lead with the verb. Avoid starting sentences with 'There is' or 'It is important to'").
+
+SECTION 5 -- CHANNEL-BY-CHANNEL VOICE NOTES (200 to 300 words):
+For each relevant channel, provide:
+- One-sentence voice shift note
+- One DO example (actual sentence or headline)
+- One AVOID example
+
+Channels to cover: Website homepage / Blog / LinkedIn / Email (marketing) / Email (customer support) / Sales outreach / Press release
+
+SECTION 6 -- WHAT WE SOUND LIKE VS. WHAT WE AVOID (100 words):
+Two-column format (or plaintext equivalent):
+WE SOUND LIKE: [3 to 5 specific comparisons -- a named brand, a publication, a public figure's writing style]
+WE DO NOT SOUND LIKE: [3 to 5 specific counters]
+
+SECTION 7 -- QUICK REFERENCE CARD (50 to 75 words):
+A cheat sheet version of the full guide. Bulleted list of 8 to 12 rules a writer can scan in 30 seconds before writing anything.
+
+------------------------------------------------------------
+FORMAT B: CHANNEL-SPECIFIC VOICE EXTENSION
+------------------------------------------------------------
+
+Use when: The brand already has a core voice guide but needs to extend it to a specific new channel (e.g. adding a TikTok voice to an existing LinkedIn-focused guide).
+
+Target length: 400 to 600 words per channel extension.
+
+Structure:
+
+CHANNEL NAME AND CONTEXT:
+State the channel, the audience on that channel, and how it differs from the brand's existing core voice channels.
+
+VOICE SHIFT NOTE:
+One paragraph describing how the voice adjusts for this channel. Name exactly what changes (formality, sentence length, use of humor, use of emoji, use of first person) and what stays constant.
+
+DO / AVOID EXAMPLES (5 pairs minimum):
+Each pair shows the same underlying message written in the correct channel voice (DO) and in a version that fails (AVOID).
+
+PLATFORM RULES (2026):
+List the platform's current content rules that affect voice: character limits, algorithm preferences, content policy flags, formatting constraints.
+
+------------------------------------------------------------
+FORMAT C: VOICE AUDIT REPORT
+------------------------------------------------------------
+
+Use when: Auditing existing brand content for voice consistency before a rebrand, content refresh, or new writer onboarding.
+
+Target length: 600 to 900 words. Output as a structured report with findings and recommendations.
+
+Structure:
+
+AUDIT INPUT: [URL, document, or pasted copy samples provided by user]
+
+CONSISTENCY SCORE (qualitative, not a false numeric score):
+Rate voice consistency as: Consistent / Partially Consistent / Inconsistent
+Support the rating with 3 specific examples from the input copy.
+
+TONE DRIFT FINDINGS:
+Name specific instances where the voice shifts unexpectedly. Quote the exact text and explain the drift.
+
+VOCABULARY VIOLATIONS:
+List any banned-category language found (jargon, passive voice, competitor phrases, vague adjectives).
+
+RECOMMENDATIONS (5 to 7 bullet points):
+Specific, actionable changes the brand should make. Each recommendation cites the specific copy example that prompted it.
+
+QUICK WIN LIST:
+3 changes the brand can make immediately (single-word swaps, sentence restructures) to improve voice consistency.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single guide requests:
+Output the full structured document with all sections labeled. Use clear section headers (SECTION 1, SECTION 2, etc.). Include DO/AVOID pairs formatted as labeled blocks.
+
+For bulk guide requests (multiple brands or multiple channels):
+Output as separate labeled documents per brand or channel, each following the full Format A structure.
+
+Save to output/BrandVoice/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- Do not generate a guide without at least one of: brand URL, sample copy, or completed Brief Template
+- Every personality attribute must include both a DO and an AVOID example sentence
+- No vague adjectives without a behavioral rule attached ("approachable" must become a concrete instruction)
+- Banned words list must name specific words, not categories
+- Channel-by-channel section required in every full guide (Format A)
+- No em dashes anywhere in the guide itself or in example sentences
+- Active voice throughout the guide document
+- Every stat cited in the guide (e.g. "average sentence length in X industry") names its source and year
+- SELF-CHECK: Before outputting, verify: (a) every personality attribute has a DO and AVOID example, (b) the vocabulary section names at least 5 specific banned words, (c) the quick reference card contains 8 to 12 rules, (d) the channel section covers at least 4 channels
+- BATCH DEDUP: When generating voice guides for multiple brands in one session, each guide must use distinct attribute labels and example sentences. Do not recycle DO/AVOID examples across guides
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. ADJECTIVE GUIDE: Producing a list of brand personality traits ("bold, friendly, expert") with no behavioral rules attached. Every adjective must translate into a rule a writer can follow without asking a follow-up question.
+
+2. MISSING BAD EXAMPLES: Providing DO examples without AVOID counterparts. Writers learn the boundary only when they see both sides. A guide with only positive examples produces on-brand content 50% of the time.
+
+3. NO CHANNEL DIFFERENTIATION: Writing one voice prescription for all channels. A LinkedIn post, a customer support email, and a press release carry the same brand but speak differently. A guide that ignores channel context fails the moment a writer opens a support ticket.
+
+4. VAGUE BANNED-WORDS LIST: Listing "avoid corporate jargon" instead of specific banned terms. Writers cannot filter "jargon" without a definition. Name the words: "leverage (as a verb)", "synergy", "cutting-edge", "best-in-class", "seamless".
+
+5. COMPETITOR BLIND SPOT: Failing to include a "we do not sound like [X]" section. Without this, writers default to mimicking the most recognizable voice in the industry, which is usually a direct competitor.

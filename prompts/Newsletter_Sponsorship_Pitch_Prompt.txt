@@ -1,0 +1,178 @@
+============================================================
+NEWSLETTER SPONSORSHIP PITCH PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: Media Kit One-Pager / Sponsor Acquisition Cold Email / Sponsor Follow-Up Sequence
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating. The brand in this prompt is the NEWSLETTER OPERATOR (the seller), not an advertiser. Confirm the newsletter operator's brand before generating.
+
+Voice/Tone: [confident, data-led, audience-specific -- the newsletter operator speaks as a media business, not as a fan base; default: professional, direct, metrics-first without being transactional]
+
+Once the newsletter operator's brand is confirmed, select the format below.
+
+------------------------------------------------------------
+NEWSLETTER SPONSOR SALES RULES (2026) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+These constraints apply to all newsletter sponsorship sales copy. Violating them produces generic rate cards that sponsors ignore.
+
+1. LEAD WITH ENGAGEMENT, NOT LIST SIZE
+   The first metric in any sponsor-facing document must be open rate or click rate, not list size. A 10,000-subscriber newsletter at 45% open rate reaches more engaged readers per send than a 100,000-subscriber newsletter at 4% open rate. Sponsors evaluating newsletters in 2026 prioritize engagement rate as the primary signal (Inbox Commerce Report, beehiiv, 2025).
+
+2. AUDIENCE SPECIFICITY IS THE PRODUCT
+   Generic audience descriptions ("professionals interested in business") have no sales value. The media kit and pitch must name: industry or function, seniority level, company size range, and at least one specific behavioral trait of the readership (e.g. "78% of subscribers have evaluated at least one SaaS tool in the past 90 days" or "Readers manage an average annual L&D budget of $250,000"). If the operator does not have this data, recommend they run a subscriber survey before generating sponsor sales copy.
+
+3. CPM VS. FLAT-RATE FRAMING
+   CPM pricing (cost per thousand impressions) suits sponsors with performance marketing backgrounds. Flat-rate pricing suits brand awareness sponsors. The media kit should present flat-rate pricing as the primary option and offer CPM as a secondary equivalent for reference. Frame: "Our [AD SLOT NAME] is $[FLAT RATE] per send, reaching [OPEN RATE * SUBSCRIBERS] opened inboxes. That equates to approximately $[CPM] CPM on opens."
+
+4. RATE CARD ANCHORING
+   Always present the highest-priced slot first. Anchoring on the premium slot makes mid-tier slots appear accessible. Rate cards that list cheapest-first train sponsors to buy only the lowest tier.
+
+5. NO SPEC AD IN THE COLD EMAIL
+   Cold sponsor acquisition emails must not include a sample ad, a rate card, or a media kit attachment in the first email. The goal of the first email is to establish relevance and earn a reply. The rate card and media kit follow in the second touchpoint after the prospect expresses interest.
+
+6. AD SLOT CONFIRMATION EMAIL
+   Every booked sponsorship requires a confirmation email with: the specific issue date(s), the ad slot purchased, the creative specifications (character limits, image specs, CTA format), the copy deadline, and the payment terms. Omitting any of these creates fulfillment disputes.
+
+------------------------------------------------------------
+FORMAT A: MEDIA KIT ONE-PAGER
+------------------------------------------------------------
+
+Use when: Creating the primary sales document the newsletter operator shares with interested sponsors.
+Target length: 400 to 600 words of body copy (the full media kit also includes data tables, audience stats, and rate card -- this prompt generates the copy sections).
+
+REQUIRED SECTIONS:
+
+NEWSLETTER OVERVIEW (75 to 100 words):
+One paragraph covering: newsletter name, topic focus, publishing frequency, total subscribers (current, with date), and the core value proposition for the reader. Write from the newsletter operator's perspective in second person for the sponsor ("Your ad reaches...").
+
+AUDIENCE PROFILE (100 to 150 words):
+Lead with the three most valuable audience attributes for a sponsor:
+1. Open rate (with industry benchmark for comparison -- name the benchmark source and year)
+2. Audience function and seniority (e.g. "62% of subscribers are HR and L&D decision-makers at companies with 200+ employees")
+3. Behavioral signal (e.g. "43% of subscribers have clicked a sponsor link in the past 30 days")
+Then add: industry breakdown (top 3 industries), geography (top 3 regions), and average company size if available.
+
+SPONSOR METRICS (50 to 75 words):
+List the key engagement metrics in a scannable format:
+- List size: [NUMBER] (as of [MONTH YEAR])
+- Average open rate: [X%] (industry average: [X%], source: [NAME, YEAR])
+- Average click rate: [X%]
+- Confirmed deliverability rate: [X%]
+- Average revenue generated per newsletter send (if the operator shares this): [$X]
+
+AD SLOTS AND PRICING (100 to 150 words):
+List slots from highest to lowest price:
+SLOT 1 -- [SLOT NAME, e.g. "Exclusive Sponsor"]: One sponsor per issue. Includes [placement details]. $[PRICE] per send. CPM equivalent: $[CALCULATED CPM] on opens.
+SLOT 2 -- [SLOT NAME, e.g. "Primary Placement"]: [Placement details]. $[PRICE] per send. CPM equivalent: $[CALCULATED CPM] on opens.
+SLOT 3 -- [SLOT NAME, e.g. "Classifieds" or "Community Sponsor"]: [Placement details]. $[PRICE] per send.
+Minimum booking: [X issues] at [X% discount for multi-issue bookings if applicable].
+
+WHAT SPONSORS RECEIVE (50 to 75 words):
+A brief list of deliverables per sponsorship:
+- [Ad placement details]
+- [Link tracking report per issue]
+- [Click breakdown by day if available]
+- [Option for dedicated send or content collaboration if offered]
+
+PAST SPONSORS OR SOCIAL PROOF (50 to 75 words):
+Name 3 to 5 past or current sponsors (with permission). If naming sponsors is not permitted, use a category reference: "Our sponsors include SaaS tools in the HR and L&D category, professional training providers, and B2B analytics platforms."
+
+CTA (25 words):
+"To reserve an ad slot or request a sample issue, contact [NAME] at [EMAIL] or book a 15-minute call at [CALENDAR LINK]."
+
+------------------------------------------------------------
+FORMAT B: SPONSOR ACQUISITION COLD EMAIL
+------------------------------------------------------------
+
+Use when: Sending the first outreach email to a potential sponsor who has not previously engaged with the newsletter.
+Target length: 150 to 200 words. No attachments on the first send.
+
+Structure:
+
+SUBJECT LINE: Names the audience overlap, not the newsletter name
+Example: "Reaching [SUBSCRIBER COUNT] [AUDIENCE DESCRIPTION] readers -- [SPONSOR BRAND]?"
+Example: "Your next [FUNCTION] audience: [NEWSLETTER NAME] readers"
+
+LINE 1 (Relevance hook, 1 sentence):
+Name a specific product, campaign, or content piece from the sponsor's brand that signals they target the same audience as the newsletter. This proves the email is not a template blast.
+Example: "I noticed [SPONSOR BRAND] just launched [PRODUCT/CAMPAIGN] -- a fit for [AUDIENCE DESCRIPTION] who make up [X%] of [NEWSLETTER NAME] subscribers."
+
+PARAGRAPH 1 (Newsletter credentials, 2 to 3 sentences):
+Lead with engagement, not list size. State open rate, then subscriber count, then one audience specificity stat.
+
+PARAGRAPH 2 (Sponsor outcome, 2 sentences):
+Name a result a recent sponsor achieved (with permission) or frame the typical outcome: "Sponsors in the [INDUSTRY/CATEGORY] category average [CLICK RATE] per send with our readers."
+
+CTA (1 sentence):
+One specific, low-friction ask. Not "let me know if you are interested." Instead: "Would a one-pager on our [AUDIENCE SEGMENT] be useful to share with your team?"
+
+SIGN-OFF: Name, newsletter name, key metric reminder ("Open rate: [X%]")
+
+------------------------------------------------------------
+FORMAT C: SPONSOR FOLLOW-UP SEQUENCE (3 EMAILS)
+------------------------------------------------------------
+
+Use when: Following up after an initial outreach email that received no reply or a soft "maybe."
+Target length: Email 2 -- 100 to 150 words. Email 3 -- 75 to 100 words. Email 4 (final) -- 50 to 75 words.
+
+EMAIL 2 (sent 4 to 5 days after Email 1 -- NO REPLY):
+Subject: "One thing I forgot to mention about [NEWSLETTER NAME]"
+Add a piece of new information not included in Email 1: a recent sponsor result, a new audience data point, a seasonal timing angle, or an upcoming issue topic relevant to the sponsor's product.
+CTA: Forward the media kit or offer a 10-minute call.
+
+EMAIL 3 (sent 5 to 6 days after Email 2 -- SOFT INTEREST or NO REPLY):
+Subject: "[NEWSLETTER NAME] -- [MONTH] dates are filling"
+Reference available dates for the upcoming month. Create genuine scarcity if applicable ("We have 2 of 4 [MONTH] slots remaining"). Ask a binary yes/no question: "Worth a quick look at the media kit?"
+
+EMAIL 4 -- FINAL (sent 5 to 7 days after Email 3):
+Subject: "Closing the loop on [NEWSLETTER NAME]"
+One paragraph. Acknowledge that the timing may not be right. Leave the door open with a specific re-engagement trigger: "If you run a campaign targeting [AUDIENCE] later this year, we would love to be part of it. I will leave our media kit here: [LINK]."
+No CTA beyond the media kit link. Do not ask for a call or a reply.
+
+AD SLOT CONFIRMATION EMAIL structure (send upon booking):
+Subject: "[NEWSLETTER NAME] Sponsorship Confirmed -- [ISSUE DATE]"
+Body: Issue date | Ad slot purchased | Total investment | Copy deadline | Creative specifications (character limits, image dimensions, link requirements) | Payment terms and invoice attachment note | Contact for questions
+Sign-off: "We are looking forward to the partnership. Your readers will see your brand in their inbox on [DATE]."
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single document requests:
+Output each section labeled and in sequence. Include a DATA PLACEHOLDER note at the bottom listing every [BRACKET] item that needs real data from the newsletter operator before sending.
+
+For full sponsor sales package requests:
+Output as separate labeled documents: MEDIA KIT | COLD EMAIL | FOLLOW-UP EMAIL 2 | FOLLOW-UP EMAIL 3 | FINAL EMAIL | AD SLOT CONFIRMATION
+
+Save to output/NewsletterSponsorship/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- Lead with engagement rate (open rate) before list size in all sponsor-facing documents
+- Audience specificity required: name industry, seniority, company size, and a behavioral signal
+- Rate card anchors on the highest-priced slot first
+- Cold email (Email 1) carries no attachment -- media kit follows only after expressed interest
+- CPM equivalent calculation required alongside flat-rate pricing
+- Ad slot confirmation email must include: issue date, slot, creative specs, copy deadline, and payment terms
+- No em dashes anywhere
+- Active voice throughout
+- Every benchmark cited names its source and year
+- SELF-CHECK: Before outputting, verify: (a) open rate appears before list size in the media kit overview, (b) rate card lists highest slot first, (c) cold email contains no attachment and stays under 200 words, (d) a DATA PLACEHOLDER list appears at the bottom of every document
+- BATCH DEDUP: When generating cold emails for multiple potential sponsors in one session, each email must use a distinct relevance hook in Line 1 that references the specific sponsor's product or recent campaign. Do not reuse the same opening line across emails in the same batch
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. LIST SIZE AS LEAD METRIC: Opening the media kit with "We have 50,000 subscribers" before mentioning engagement. Sophisticated sponsors evaluate cost per engaged reader, not raw list size. Open rate leads every document.
+
+2. NO AUDIENCE SPECIFICITY: Describing the audience as "business professionals interested in learning and development" with no data on seniority, company size, or behavioral signals. Specificity is the differentiator between newsletters that fill their ad calendar and those that do not.
+
+3. GENERIC RATE CARD: Presenting a rate card with slot names like "Tier 1" and "Tier 2" without describing what the sponsor actually receives in each slot. Every slot in the rate card names its placement position, expected visibility, and any exclusivity terms.
+
+4. ATTACHMENT ON THE COLD EMAIL: Including a media kit PDF or rate card in the first outreach email reduces reply rates because it answers every question before the prospect has expressed curiosity. The first email earns the conversation; the media kit closes it.
+
+5. NO CONFIRMATION DOCUMENT: Treating a verbal or email agreement as sufficient without a formal ad slot confirmation email. Missing creative specs or unclear copy deadlines produce missed placements and damaged sponsor relationships.

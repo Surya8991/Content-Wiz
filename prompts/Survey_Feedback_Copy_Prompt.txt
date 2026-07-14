@@ -1,0 +1,174 @@
+============================================================
+SURVEY AND FEEDBACK COPY PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: NPS Survey / Post-Purchase Survey / Customer Interview Invitation
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [clear, respectful, low-friction -- default: brand voice applied at its most approachable register; never clinical or bureaucratic; the copy must make participation feel easy and valued]
+
+Once the brand is confirmed and the survey type is selected, use the format below.
+
+------------------------------------------------------------
+SURVEY COPY RULES (2026) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+These constraints apply to all survey and feedback copy. Violating them reduces response rates, introduces bias, or produces data the brand cannot act on.
+
+1. SHORTER SURVEYS PRODUCE HIGHER RESPONSE RATES
+   The optimal survey length for unincentivized responses is 3 to 5 questions (Qualtrics XM Institute Survey Experience Research, 2025). Every question added beyond 5 reduces the completion rate. If the brief requests more than 5 questions, flag this to the user and ask which questions to prioritize.
+
+2. NPS QUESTION WORDING IS STANDARDIZED
+   The Net Promoter Score question has one approved phrasing: "On a scale of 0 to 10, how likely are you to recommend [Brand/Product/Service] to a friend or colleague?" Do not paraphrase, shorten, or reframe this question. Changing the wording invalidates the NPS benchmark comparison.
+
+3. ONE QUESTION PER SCREEN (FOR DIGITAL SURVEYS)
+   Digital survey copy must assume one question per screen or per page break. Do not write copy that groups multiple questions on one line. Each question gets its own introduction, its own response format note, and its own transition.
+
+4. NO LEADING QUESTIONS
+   A leading question pushes the respondent toward a preferred answer. These are forbidden.
+   LEADING: "How much did our excellent support team help you today?"
+   NEUTRAL: "How would you rate your experience with our support team today?"
+   Review every question for directional language before outputting.
+
+5. PROGRESS INDICATORS INCREASE COMPLETION RATES
+   Survey invitation copy must mention the number of questions or the estimated time to complete. Responses to surveys with estimated completion times are 19% higher than to those without (SurveyMonkey Benchmark Report, 2024). Always include one of: "This takes [X] minutes" / "Just [X] questions" / "You are [X] minutes away from helping us improve."
+
+6. THANK-YOU MESSAGE MUST BE PERSONALIZED
+   The post-submission thank-you message must name something specific (the product the customer purchased, the event they attended, or the program they completed). A generic "Thank you for your feedback!" is the brand equivalent of an auto-reply. At minimum, include [PRODUCT/EVENT NAME] as a variable placeholder.
+
+7. CLEAR PURPOSE STATEMENT IN THE INVITATION
+   Every survey invitation must include one sentence explaining why the brand is collecting this feedback and what it will do with the results. Respondents who understand the purpose of a survey complete it at higher rates and provide more thoughtful answers.
+
+------------------------------------------------------------
+FORMAT A: NPS SURVEY
+------------------------------------------------------------
+
+Use when: Measuring customer loyalty and likelihood to recommend after a product interaction, course completion, event, or service milestone.
+
+INVITATION EMAIL structure:
+
+SUBJECT LINE: "Quick question for you, [First Name]" or "[Brand] would love your feedback" (A/B test recommended)
+Note: Subject lines under 50 characters achieve higher open rates on mobile (Mailchimp Email Marketing Benchmarks, 2025).
+
+BODY -- 3 short paragraphs:
+Paragraph 1 (Purpose): "[First Name], we want to hear from you. Your experience with [PRODUCT/SERVICE/EVENT NAME] matters to us, and your feedback shapes what we build next."
+Paragraph 2 (What + Time): "This is one question. It takes less than 60 seconds."
+Paragraph 3 (Impact): "Every response we receive goes directly to our [team/leadership/product team] and informs our [monthly/quarterly] improvements."
+
+CTA BUTTON: "Share your feedback" (not "Submit Survey" -- action language that feels like a contribution, not a form)
+
+NPS QUESTION (mandatory standard wording):
+"On a scale of 0 to 10, how likely are you to recommend [BRAND / PRODUCT / SERVICE] to a friend or colleague?"
+Scale labels: 0 = Not at all likely | 10 = Extremely likely
+
+FOLLOW-UP OPEN TEXT (one question only, triggered after score submission):
+For Detractors (0 to 6): "We are sorry to hear that. What could we do better?"
+For Passives (7 to 8): "Thank you. What would make your experience even better?"
+For Promoters (9 to 10): "That's great to hear. What did you enjoy most about [PRODUCT/SERVICE]?"
+
+THANK-YOU MESSAGE:
+"Thank you for taking the time to share your experience with [PRODUCT/SERVICE NAME]. We read every response and use it to improve. We appreciate your honesty."
+
+------------------------------------------------------------
+FORMAT B: POST-PURCHASE SURVEY
+------------------------------------------------------------
+
+Use when: Collecting satisfaction data and improvement signals immediately after a purchase, course enrollment, or subscription activation.
+Timing: Send within 24 to 48 hours of the purchase event (not at the 30-day mark -- that is too late for immediate purchase experience feedback).
+
+INVITATION EMAIL structure:
+
+SUBJECT LINE: "How was your [PRODUCT NAME] experience?" or "We want to know how [PRODUCT NAME] landed"
+BODY -- 2 short paragraphs:
+Paragraph 1: "You recently [purchased / enrolled in / activated] [PRODUCT NAME]. We want to know how the experience felt from your side."
+Paragraph 2: "[X] short questions. About [X] minutes."
+
+SURVEY QUESTIONS (3 to 5 maximum):
+
+Question 1 (Overall satisfaction): "Overall, how satisfied are you with your [purchase experience / onboarding / first session]?" Scale: 1 (Very dissatisfied) to 5 (Very satisfied).
+
+Question 2 (Specific aspect -- customize per product): "How easy was it to [complete checkout / access your course / set up your account]?" Scale: 1 (Very difficult) to 5 (Very easy).
+
+Question 3 (Expectation match): "Did [PRODUCT NAME] meet your expectations?" Options: Exceeded / Met / Did not meet.
+
+Question 4 (Optional open text): "Is there anything we could have done better?" Text field.
+
+Question 5 (Optional demographics if needed): "[CUSTOM QUESTION]" -- label as optional.
+
+THANK-YOU MESSAGE:
+"Thank you. Your feedback on [PRODUCT NAME] goes directly to our [product / content / support] team. We review responses every [week / month] and act on what we hear."
+
+------------------------------------------------------------
+FORMAT C: CUSTOMER INTERVIEW INVITATION
+------------------------------------------------------------
+
+Use when: Recruiting customers for a qualitative research interview (30 to 60 minutes, conducted live by a researcher or customer success team member).
+Note: This format produces the invitation copy only. Interview question scripts are a separate deliverable.
+
+INVITATION EMAIL structure:
+
+SUBJECT LINE: "Would you share 30 minutes with us, [First Name]?" or "An invitation to shape [BRAND]'s next chapter"
+
+BODY -- 4 short paragraphs:
+
+Paragraph 1 (Personal opener):
+"[First Name], you have been a [BRAND] [customer / member / participant] since [DATE OR TIMEFRAME]. We would love to hear directly from you about your experience."
+
+Paragraph 2 (What the interview is):
+"We are inviting [NUMBER] customers to a [LENGTH]-minute conversation with [INTERVIEWER NAME OR ROLE]. This is not a sales call. We want to understand how [PRODUCT/SERVICE] fits into your work, what is working well, and where we can improve."
+
+Paragraph 3 (Incentive if applicable):
+"As a thank-you for your time, we will [provide incentive details -- gift card amount, discount, or donation to charity of choice]."
+If no incentive: "We understand your time is valuable, so we have kept the conversation focused. You will receive a summary of our findings after we complete all interviews."
+
+Paragraph 4 (Next step):
+"If you are open to it, please book a time using the link below. Sessions run [LENGTH] minutes and take place [IN PERSON / VIA VIDEO CALL on Zoom or Google Meet]."
+
+CTA: "Choose your time: [CALENDAR LINK]"
+Note: A direct calendar link produces more bookings than asking the respondent to reply with availability.
+
+FOOTER:
+"If this timing does not work, we would still love to hear from you in our [SURVEY LINK]. [NAME, TITLE] at [BRAND]."
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single survey requests:
+Output all copy elements in labeled sections: INVITATION EMAIL | SURVEY QUESTIONS | THANK-YOU MESSAGE. Include question numbering, scale labels, and response type (scale / multiple choice / open text) for each question.
+
+For bulk survey requests (multiple survey types in one session):
+Output as separate labeled blocks: SURVEY TYPE | TRIGGER EVENT | QUESTIONS | COPY ELEMENTS
+
+Save to output/SurveyFeedback/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- Maximum 5 questions for unincentivized surveys -- flag and ask user to prioritize if more are requested
+- NPS question wording is fixed: never paraphrase or reframe it
+- No leading questions -- review every question for directional language before outputting
+- Every invitation includes a purpose statement and an estimated completion time
+- Thank-you message must include a variable placeholder for the product or event name
+- One question per screen for digital survey copy
+- No em dashes anywhere
+- Active voice throughout ("We want to hear from you" not "Your feedback is requested by our team")
+- Every stat cited in the prompt guidance names its source and year
+- SELF-CHECK: Before outputting, verify: (a) question count does not exceed 5 for unincentivized surveys, (b) NPS question uses the exact standardized wording, (c) no question contains directional language, (d) the invitation includes an estimated completion time, (e) the thank-you message includes a product or event name placeholder
+- BATCH DEDUP: When generating survey copy for multiple products or events in one session, each invitation email must use a distinct subject line and a distinct purpose statement. Do not reuse the same body paragraph across invitation emails in the same batch
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. LEADING QUESTIONS: Writing questions that push the respondent toward a preferred answer invalidates the data. Every question must be neutral. If a question contains words like "excellent", "great", or "our helpful team", rewrite it in neutral language before outputting.
+
+2. TOO MANY QUESTIONS: Requesting 12 questions in a 3-minute survey. Survey length directly predicts completion rates. Flag over-length surveys to the user rather than writing all questions and hoping for the best.
+
+3. MISSING PURPOSE STATEMENT: Sending a survey invitation with no explanation of why the brand is collecting this feedback. Respondents who do not understand the purpose complete surveys at significantly lower rates and provide lower-quality answers.
+
+4. GENERIC THANK-YOU: Ending with "Thank you for your feedback" with no reference to what the respondent just shared. A thank-you that names the product, session, or event tells the respondent their specific input was received, not just absorbed by a data pipeline.
+
+5. WRONG TIMING: Sending a post-purchase survey 30 days after the purchase, when the customer's memory of the checkout experience has faded. Survey copy must specify the intended send trigger (immediately post-purchase, 7 days post-event, 30 days post-onboarding) so the automation sends at the right moment.

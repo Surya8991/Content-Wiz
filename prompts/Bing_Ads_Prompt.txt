@@ -1,0 +1,188 @@
+============================================================
+BING ADS (MICROSOFT ADVERTISING) PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: Responsive Search Ads / Expanded Text Ads / Audience Ads
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [direct, benefit-first, search-intent matched -- default: professional B2B; Microsoft Advertising's audience skews older and more enterprise-oriented than Google Search; adjust vocabulary register accordingly]
+
+Once the brand is confirmed and the ad format is selected, use the format below.
+
+------------------------------------------------------------
+PLATFORM RULES (2026) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+These constraints apply to all Microsoft Advertising (Bing Ads) copy. Violating character limits causes ads to be truncated or rejected. Ignoring audience differences wastes budget on copy optimized for the wrong platform.
+
+1. CHARACTER LIMITS BY FORMAT (2026, current as of Microsoft Advertising policy)
+   Responsive Search Ads (RSA):
+   - Headlines: Up to 15 headlines, each 30 characters maximum (including spaces)
+   - Descriptions: Up to 4 descriptions, each 90 characters maximum (including spaces)
+   - Display URL path fields: 15 characters each, 2 path fields
+   - Final URL: Required. Must match the domain in the display URL.
+
+   Expanded Text Ads (ETA) -- note: Microsoft still accepts ETAs in 2026 while continuing to push RSA as the primary format:
+   - Headline 1: 30 characters
+   - Headline 2: 30 characters
+   - Headline 3: 30 characters (optional)
+   - Description 1: 90 characters
+   - Description 2: 90 characters (optional)
+   - Path 1 and Path 2: 15 characters each
+
+   Audience Ads (Microsoft Audience Network -- native format):
+   - Headline: 25 characters
+   - Description: 90 characters
+   - Image: Required (provide image spec note, not the image itself)
+
+   Shopping Ads (Product Ads):
+   - Product title: Pulled from the product feed (up to 150 characters in the feed)
+   - Custom label: Controlled in the feed, not in ad copy
+   - Promotional text: 45 characters
+
+2. MICROSOFT ADVERTISING AUDIENCE DIFFERENCES FROM GOOGLE ADS (2026)
+   (a) OLDER DEMOGRAPHIC: The average Bing search user is 35 to 54 years old, compared to 25 to 44 for Google Search (Statista, 2025). Copy must resonate with decision-makers who value credibility, credentials, and proven outcomes over innovation framing.
+   (b) LINKEDIN PROFILE TARGETING: Microsoft Advertising uniquely allows targeting by LinkedIn job title, company name, and industry -- available only on Microsoft Advertising. Every campaign brief must note whether LinkedIn audience targeting is activated. If yes, tailor headline variants to the specific job title or industry segment.
+   (c) LOWER CPCCOMPETITION: Average CPCs on Microsoft Advertising are 20 to 30% lower than equivalent Google Ads campaigns in most B2B categories (WordStream Microsoft Ads Benchmarks, 2025). This means the audience is less competed for -- but also less primed by repeated ad exposure. Copy must do more work to establish credibility quickly.
+   (d) ENTERPRISE AND GOVERNMENT SKEW: Microsoft devices dominate enterprise and government environments. B2B ads on Microsoft Advertising reach a higher proportion of enterprise-scale decision-makers than the same budget on Google Ads.
+
+3. DO NOT COPY-PASTE GOOGLE ADS WITHOUT ADAPTATION
+   Google Ads copy is optimized for a younger, more consumer-oriented, mobile-first audience. Using the same copy on Microsoft Advertising wastes the platform's demographic and targeting advantages. At minimum, adapt: vocabulary register (more formal), social proof framing (credentials and certifications over peer reviews), and CTA language (enterprise CTAs over consumer CTAs).
+
+4. RSA HEADLINE DIVERSITY RULE
+   In an RSA, Microsoft's algorithm selects from the headline and description pool to build the highest-performing combination. Write headlines that work in any combination. Do not write headlines that assume a specific adjacent headline. Each headline must stand alone as a complete, compelling unit.
+
+5. LINKEDIN TARGETING INTEGRATION NOTE (2026)
+   When LinkedIn audience targeting is active, add at least 3 headline variants that address the targeted job title or industry directly. Example (for HR Directors): "Training Programs for HR Directors" / "L&D Solutions Built for HR Leaders" / "Trusted by 500+ HR Teams". These job-title-specific headlines outperform generic brand headlines when LinkedIn targeting is active.
+
+6. MICROSOFT ADVERTISING POLICY COMPLIANCE (2026)
+   Prohibited: Superlatives without substantiation ("best", "#1", "world's leading") unless the advertiser can substantiate the claim with a third-party source. Do not write unsubstantiated superlatives. Use: "Top-Rated by [SOURCE]" or remove the superlative and substitute a specific outcome claim.
+
+------------------------------------------------------------
+FORMAT A: RESPONSIVE SEARCH ADS (RSA)
+------------------------------------------------------------
+
+Use when: Creating the primary ad format for Microsoft Advertising search campaigns. RSA is the recommended format as of 2026.
+
+Output structure per RSA:
+
+CAMPAIGN / AD GROUP: [Name for organizational reference]
+FINAL URL: [Landing page URL]
+DISPLAY URL PATH: [/path1/path2 -- 15 characters each]
+
+HEADLINES (write 10 to 15 -- Microsoft requires a minimum of 3 to serve; more headlines give the algorithm more combinations to test):
+
+Organize headlines into three categories:
+
+CATEGORY 1 -- BRAND / CREDIBILITY HEADLINES (3 to 4):
+Include the brand name and a credibility signal. Example: "Edstellar Corporate Training" / "Certified Training Programs" / "Trusted by 1,000+ Companies"
+
+CATEGORY 2 -- BENEFIT / OUTCOME HEADLINES (4 to 5):
+Lead with the result the searcher wants. Example: "Upskill Your Team in 30 Days" / "Improve Workforce Performance" / "Custom Training, Fast Results"
+
+CATEGORY 3 -- KEYWORD / INTENT HEADLINES (3 to 5):
+Mirror the search query language. Example: "Corporate Training Programs" / "Online L&D Solutions" / "Employee Skill Development"
+
+DESCRIPTIONS (write 3 to 4):
+
+Description 1: Lead benefit + CTA. Example: "Edstellar partners with enterprises to design, deploy, and measure training programs that build real capability. Explore programs today."
+Description 2: Social proof + outcome. Example: "Rated 4.8/5 by L&D managers across 40+ industries. See why teams choose Edstellar for workforce development."
+Description 3: LinkedIn-targeting variant (if LinkedIn audience targeting is active): Address the job title or industry segment directly in the first clause.
+Description 4: Urgency or offer variant (if an offer exists): "Get a free training needs assessment for your team. Book a call with an Edstellar specialist this week."
+
+PINNED ELEMENTS NOTE: If one headline must always appear in Position 1 (brand name, for example), note it as [PIN TO POSITION 1]. Use pinning sparingly -- over-pinning reduces the RSA's optimization capability.
+
+------------------------------------------------------------
+FORMAT B: EXPANDED TEXT ADS (ETA)
+------------------------------------------------------------
+
+Use when: The campaign requires manually controlled ad copy (specific headline and description combinations must be fixed), or for legacy campaign management alongside RSA testing.
+
+Output structure per ETA (write 3 to 5 ETA variations per ad group):
+
+ETA VARIATION 1 -- [LABEL: e.g., "Benefit-First"]:
+Headline 1 (30 chars): [Keyword or category match]
+Headline 2 (30 chars): [Primary benefit]
+Headline 3 (30 chars): [CTA or social proof -- optional]
+Description 1 (90 chars): [Lead benefit with specificity -- avoid generic claims]
+Description 2 (90 chars): [Social proof, offer, or secondary benefit -- optional]
+Display URL Path 1 (15 chars): [Relevant category]
+Display URL Path 2 (15 chars): [Sub-category or offer]
+
+ETA VARIATION 2 -- [LABEL: e.g., "Social Proof"]:
+[Same structure, different angle]
+
+ETA VARIATION 3 -- [LABEL: e.g., "LinkedIn Targeting Variant"]:
+[Job title or industry-specific language in Headline 1]
+
+Include a CHARACTER COUNT note after each field. All fields must be verified against limits before output.
+
+------------------------------------------------------------
+FORMAT C: AUDIENCE ADS (MICROSOFT AUDIENCE NETWORK)
+------------------------------------------------------------
+
+Use when: Running native display ads across Microsoft properties (MSN, Microsoft Edge, Outlook, and partner sites) through the Microsoft Audience Network.
+
+Note: Audience Ads use a shorter headline (25 characters vs RSA's 30). The audience is browsing content, not searching with intent. The tone shifts from query-response to interrupt-and-engage.
+
+Output structure per Audience Ad set (write 3 to 5 variations):
+
+AUDIENCE AD VARIATION 1 -- [LABEL]:
+Headline (25 chars): [Curiosity or benefit hook appropriate for browsing context]
+Description (90 chars): [Expand on the headline with a specific outcome or offer]
+Image spec note: [1200x628px for landscape / 628x628px for square -- editorial-style photography or clean product visual; no text overlays on more than 20% of image area per Microsoft policy]
+Final URL: [Landing page]
+
+AUDIENCE AD VARIATION 2 -- [LABEL]:
+[Different hook angle]
+
+LINKEDIN AUDIENCE LAYER NOTE (if active):
+State the targeted LinkedIn attribute: Job Title / Company / Industry.
+Write one description variant that addresses that attribute in the first 10 words.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single campaign requests:
+Output labeled ad sets in the structure above. Include a CHARACTER COUNT verification table at the end showing each field, its character count, and its limit.
+
+For bulk campaign requests (multiple ad groups or multiple campaigns):
+Output as separate labeled blocks: CAMPAIGN | AD GROUP | FORMAT | VARIATIONS | CHARACTER COUNT TABLE
+
+For CSV bulk output:
+Sr. No. | Campaign | Ad Group | Format | Headline 1 | Headline 2 | Headline 3 | Description 1 | Description 2 | Path 1 | Path 2 | Final URL | Character Counts | LinkedIn Targeting Note
+
+Save to output/BingAds/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- RSA: 30 characters per headline (max 15 headlines), 90 characters per description (max 4 descriptions)
+- ETA: Headline 1-3 each 30 characters, Description 1-2 each 90 characters
+- Audience Ads: Headline 25 characters, Description 90 characters
+- Do not copy-paste Google Ads copy -- adapt for Microsoft's older, enterprise demographic
+- No unsubstantiated superlatives ("best", "#1") -- use sourced superlatives or substitute outcome claims
+- LinkedIn targeting variants required when LinkedIn audience targeting is active
+- RSA headlines must work independently in any combination -- no headline assumes a specific adjacent headline
+- No em dashes anywhere
+- Active voice throughout
+- CHARACTER COUNT VERIFICATION TABLE required in every output
+- SELF-CHECK: Before outputting, verify: (a) every field is within character limit, (b) at least 10 RSA headlines are written across the three categories, (c) LinkedIn-targeting variants are included if the brief mentions LinkedIn audience targeting, (d) no headline uses an unsubstantiated superlative
+- BATCH DEDUP: When generating ad copy for multiple campaigns in one session, each ad group must use a distinct primary benefit angle in its headline set. Do not reuse the same Headline 2 benefit across ad groups in the same batch
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. GOOGLE ADS COPY-PASTE: Using the same copy as a Google Ads campaign without adapting for Microsoft's older, more enterprise-oriented audience. Copy that works on Google for a 28-year-old SaaS buyer often underperforms on Microsoft for a 45-year-old IT director making the same purchase decision.
+
+2. IGNORING LINKEDIN AUDIENCE TARGETING: Running Microsoft Advertising search campaigns without evaluating LinkedIn profile targeting as an additional layer. LinkedIn job title and company targeting is exclusive to Microsoft Advertising and provides a precision advantage unavailable on Google Ads.
+
+3. OVER-PINNING IN RSA: Pinning 5 of 6 headline positions in an RSA eliminates the algorithm's ability to test combinations and optimize. Pin only the one element that must always appear (usually the brand name in Position 1). Leave all other positions unpinned.
+
+4. UNSUBSTANTIATED SUPERLATIVES: Writing "#1 Training Platform" or "Industry-Leading L&D Solution" without a sourced citation. Microsoft Advertising policy requires substantiation for superlative claims. Replace with a specific outcome claim or add the source: "Top-Rated by G2, 2025."
+
+5. CHARACTER COUNT VIOLATIONS: Submitting ad copy that exceeds field character limits. Microsoft Advertising will truncate or reject over-limit ads. Every field requires a character count verification before submission. Include the CHARACTER COUNT VERIFICATION TABLE in every output to prevent this.
