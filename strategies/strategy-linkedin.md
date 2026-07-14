@@ -1,4 +1,4 @@
-﻿# LinkedIn Organic Post Strategy
+# LinkedIn Organic Post Strategy
 
 _Last updated: 2026-05-01_
 
@@ -132,11 +132,11 @@ Challenge a widely held belief in the L&D or corporate training space with evide
 
 ## Recommended Tools
 
-1. **Shield Analytics** — LinkedIn-native analytics tool for tracking post reach, engagement rate, and follower growth beyond LinkedIn's native dashboard.
-2. **Taplio** — LinkedIn content scheduling, post inspiration, and engagement automation.
-3. **Buffer** — multi-channel scheduling including LinkedIn with a unified content calendar view.
-4. **Canva** — design LinkedIn carousel slides, banner images, and infographic posts at scale.
-5. **LinkedIn Sales Navigator** — identify and engage target audience segments for relationship-led content distribution.
+1. **Shield Analytics** - LinkedIn-native analytics tool for tracking post reach, engagement rate, and follower growth beyond LinkedIn's native dashboard.
+2. **Taplio** - LinkedIn content scheduling, post inspiration, and engagement automation.
+3. **Buffer** - multi-channel scheduling including LinkedIn with a unified content calendar view.
+4. **Canva** - design LinkedIn carousel slides, banner images, and infographic posts at scale.
+5. **LinkedIn Sales Navigator** - identify and engage target audience segments for relationship-led content distribution.
 
 ---
 

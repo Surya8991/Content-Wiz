@@ -1,4 +1,4 @@
-﻿# Content Repurposing System
+# Content Repurposing System
 
 _Last updated: 2026-05-01_
 
@@ -152,11 +152,11 @@ This bank means any team member can respond to a relevant HARO query in 10 minut
 
 ## Recommended Tools
 
-1. **Descript** — transcribe long-form video/audio content and extract pull quotes for text repurposing.
-2. **Canva** — convert text frameworks and stats into carousel slides, infographics, and social visuals.
-3. **Buffer or Hootsuite** — schedule repurposed social posts across platforms from a single queue.
-4. **Airtable or Notion** — maintain a repurposing tracker mapping source content to all derivative outputs and their publish status.
-5. **CapCut or Adobe Premiere** — edit long-form video into short-form clips for LinkedIn and YouTube Shorts.
+1. **Descript** - transcribe long-form video/audio content and extract pull quotes for text repurposing.
+2. **Canva** - convert text frameworks and stats into carousel slides, infographics, and social visuals.
+3. **Buffer or Hootsuite** - schedule repurposed social posts across platforms from a single queue.
+4. **Airtable or Notion** - maintain a repurposing tracker mapping source content to all derivative outputs and their publish status.
+5. **CapCut or Adobe Premiere** - edit long-form video into short-form clips for LinkedIn and YouTube Shorts.
 
 ---
 

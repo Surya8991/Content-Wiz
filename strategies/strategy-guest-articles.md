@@ -1,4 +1,4 @@
-﻿# Guest Article and Contributed Byline Strategy
+# Guest Article and Contributed Byline Strategy
 
 _Last updated: 2026-05-01_
 
@@ -25,11 +25,11 @@ Earn signed byline placements in Tier 1 and Tier 2 L&D, HR, and business publica
 
 ## Content Pillars
 
-1. **Data-Led Analysis** — original research or reanalysis of industry data with a brand-specific POV.
-2. **Framework & Process** — a named system or step-by-step method the brand has developed.
-3. **Counterintuitive Claim** — one widely-held belief challenged with evidence.
-4. **Case-Based Insight** — anonymised client scenario illustrating a specific outcome.
-5. **Trend Response** — a timely take on a major industry shift or new research.
+1. **Data-Led Analysis** - original research or reanalysis of industry data with a brand-specific POV.
+2. **Framework & Process** - a named system or step-by-step method the brand has developed.
+3. **Counterintuitive Claim** - one widely-held belief challenged with evidence.
+4. **Case-Based Insight** - anonymised client scenario illustrating a specific outcome.
+5. **Trend Response** - a timely take on a major industry shift or new research.
 
 ---
 
@@ -132,7 +132,7 @@ Andy Crestodina's most effective guest post placements came from meeting editors
 - Pitch the next article within 60 days of a successful placement. Editors prefer known contributors over new pitches.
 - Add the published article URL to the brand's "Earned Media" tracker for backlink monitoring in Ahrefs or Semrush.
 - Email the editor 48 hours after publishing to share early engagement signals and open the door for a follow-up pitch.
-- Repurpose the article's core argument as a LinkedIn Article within 2 weeks of publication — reference the original without duplicating it.
+- Repurpose the article's core argument as a LinkedIn Article within 2 weeks of publication - reference the original without duplicating it.
 
 ---
 
@@ -175,11 +175,11 @@ Plan 2 pitches per week during the outreach ramp phase (first 8 weeks). At a 15 
 
 ## Recommended Tools
 
-1. **Ahrefs or Semrush** — identify high-DA target publications and monitor backlinks from published articles.
-2. **Hunter.io** — find verified editor email addresses for cold outreach.
-3. **Pitchbox or BuzzStream** — manage the pitch pipeline and follow-up sequences.
-4. **Google Alerts** — monitor brand name mentions and identify publications already covering adjacent topics.
-5. **Notion or Airtable** — track pitch status, editor contacts, and publication timelines per article.
+1. **Ahrefs or Semrush** - identify high-DA target publications and monitor backlinks from published articles.
+2. **Hunter.io** - find verified editor email addresses for cold outreach.
+3. **Pitchbox or BuzzStream** - manage the pitch pipeline and follow-up sequences.
+4. **Google Alerts** - monitor brand name mentions and identify publications already covering adjacent topics.
+5. **Notion or Airtable** - track pitch status, editor contacts, and publication timelines per article.
 
 ---
 

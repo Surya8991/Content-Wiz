@@ -1,4 +1,4 @@
-﻿# AI Search Optimization Strategy (GEO / AEO)
+# AI Search Optimization Strategy (GEO / AEO)
 
 _Last updated: 2026-05-01_
 
@@ -52,11 +52,11 @@ Application: `Organizations that conduct skills gap analyses annually spend 23% 
 
 ## Content Pillars
 
-1. **Definitional Content** — "What is X" and "how does X work" pages targeting AI direct-answer slots.
-2. **Comparison & Decision Content** — "X vs Y" and "best X for Y" pages capturing consideration-stage queries.
-3. **Proof & Validation Content** — Case studies and data pages that AI engines cite as evidence.
-4. **Process & How-To Content** — Step-by-step frameworks that AI summarises as instructional answers.
-5. **Thought Leadership Content** — Original research and opinion that positions the brand as a primary source.
+1. **Definitional Content** - "What is X" and "how does X work" pages targeting AI direct-answer slots.
+2. **Comparison & Decision Content** - "X vs Y" and "best X for Y" pages capturing consideration-stage queries.
+3. **Proof & Validation Content** - Case studies and data pages that AI engines cite as evidence.
+4. **Process & How-To Content** - Step-by-step frameworks that AI summarises as instructional answers.
+5. **Thought Leadership Content** - Original research and opinion that positions the brand as a primary source.
 
 ---
 
@@ -159,7 +159,7 @@ Track AI search visibility using:
 
 1. After publishing, submit the URL to Google Search Console for indexing.
 2. Share on LinkedIn with a direct-answer excerpt (not a link dump) to generate early engagement signals.
-3. Add the page to the internal link network — update 3 existing related pages to link to the new one.
+3. Add the page to the internal link network - update 3 existing related pages to link to the new one.
 4. Include the page in the next newsletter issue as a featured resource.
 5. Monitor AI citation appearance in ChatGPT, Perplexity, and Google AI Overviews within 30 days of publish.
 

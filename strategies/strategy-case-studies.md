@@ -1,4 +1,4 @@
-﻿# Case Study Content Strategy
+# Case Study Content Strategy
 
 _Last updated: 2026-05-01_
 
@@ -154,11 +154,11 @@ Buyers should be able to find a case study that mirrors their own situation with
 
 ## Recommended Tools
 
-1. **Notion or Google Docs** — collaborative drafting and approval workflow with the client.
-2. **Loom** — async video testimonial capture from clients who can't do a live interview.
-3. **Canva** — PDF layout and visual case study design for website and download versions.
-4. **HubSpot or Salesforce** — tag published case studies to CRM contacts for sales enablement tracking.
-5. **Google Analytics 4** — track case study page sessions, time-on-page, and conversion-to-contact-form rate.
+1. **Notion or Google Docs** - collaborative drafting and approval workflow with the client.
+2. **Loom** - async video testimonial capture from clients who can't do a live interview.
+3. **Canva** - PDF layout and visual case study design for website and download versions.
+4. **HubSpot or Salesforce** - tag published case studies to CRM contacts for sales enablement tracking.
+5. **Google Analytics 4** - track case study page sessions, time-on-page, and conversion-to-contact-form rate.
 
 ---
 

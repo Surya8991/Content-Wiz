@@ -1,4 +1,4 @@
-﻿# Podcast Guesting Strategy
+# Podcast Guesting Strategy
 
 _Last updated: 2026-05-01_
 
@@ -146,11 +146,11 @@ The episode itself is one of eleven content pieces it should generate:
 
 ## Recommended Tools
 
-1. **Podmatch or Rephonic** — podcast discovery and matching platforms that surface shows aligned to your expertise and audience size.
-2. **Riverside.fm or Zencastr** — high-quality remote recording for podcast interviews, ensuring audio quality regardless of host setup.
-3. **Descript** — edit your own audio clips from recorded interviews for repurposing into social content.
-4. **Notion or Airtable** — track pitch pipeline: podcast name, host, DA/audience size, pitch sent date, response status, and episode publish date.
-5. **SparkToro** — research where your target audience actually listens, to prioritise which podcasts are worth pitching.
+1. **Podmatch or Rephonic** - podcast discovery and matching platforms that surface shows aligned to your expertise and audience size.
+2. **Riverside.fm or Zencastr** - high-quality remote recording for podcast interviews, ensuring audio quality regardless of host setup.
+3. **Descript** - edit your own audio clips from recorded interviews for repurposing into social content.
+4. **Notion or Airtable** - track pitch pipeline: podcast name, host, DA/audience size, pitch sent date, response status, and episode publish date.
+5. **SparkToro** - research where your target audience actually listens, to prioritise which podcasts are worth pitching.
 
 ---
 

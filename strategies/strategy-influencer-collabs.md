@@ -27,11 +27,11 @@ Build a creator program that produces attributable pipeline and a reusable libra
 
 ## Content Pillars
 
-1. **Skills Demonstration Content** — influencer-led content showing a learning outcome, skill application, or before/after from using the brand's training.
-2. **Industry POV Content** — influencer shares a take on a trend or challenge in their professional niche, naturally crediting the brand's framework.
-3. **Behind-the-Scenes Content** — influencer documents their experience with the brand's programme or event.
-4. **Community Challenge Content** — influencer launches a challenge tied to a skill the brand teaches, driving audience participation.
-5. **Review & Recommendation Content** — influencer gives an honest structured review of a specific course or training format.
+1. **Skills Demonstration Content** - influencer-led content showing a learning outcome, skill application, or before/after from using the brand's training.
+2. **Industry POV Content** - influencer shares a take on a trend or challenge in their professional niche, naturally crediting the brand's framework.
+3. **Behind-the-Scenes Content** - influencer documents their experience with the brand's programme or event.
+4. **Community Challenge Content** - influencer launches a challenge tied to a skill the brand teaches, driving audience participation.
+5. **Review & Recommendation Content** - influencer gives an honest structured review of a specific course or training format.
 
 ---
 
@@ -101,11 +101,11 @@ Industry measurement expectations have moved with the money: brands shifting bud
 
 ## Recommended Tools
 
-1. **Collabstr or AspireIQ** — influencer discovery and campaign management for B2B and professional-development niches.
-2. **LinkedIn Creator Mode analytics** — track influencer post performance for LinkedIn-based collaborations.
-3. **GRIN or Meltwater** — relationship management and contract/payment tracking for influencer programmes.
-4. **UTM parameters via Google Analytics 4** — track referral traffic and conversions from each influencer's content.
-5. **Notion or Airtable** — maintain an influencer roster with contact details, niche, audience size, past results, and contract status.
+1. **Collabstr or AspireIQ** - influencer discovery and campaign management for B2B and professional-development niches.
+2. **LinkedIn Creator Mode analytics** - track influencer post performance for LinkedIn-based collaborations.
+3. **GRIN or Meltwater** - relationship management and contract/payment tracking for influencer programmes.
+4. **UTM parameters via Google Analytics 4** - track referral traffic and conversions from each influencer's content.
+5. **Notion or Airtable** - maintain an influencer roster with contact details, niche, audience size, past results, and contract status.
 
 ---
 

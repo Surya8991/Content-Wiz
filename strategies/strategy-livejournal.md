@@ -39,7 +39,7 @@ Build a small, loyal readership on a genuinely niche, declining-but-real platfor
 
 - 1 post per week per topic cluster is sustainable without exhausting a single source pool. Clusters of more than 3-4 posts in a short window should span multiple distinct source bases per the diversity rule above.
 - Do not increase cadence to chase reach. Given the platform's small, declining, nostalgia-driven active base (see Goal and Metric), posting more often will not meaningfully grow an audience that is not there to be grown in the way LinkedIn's or Tumblr's is - a slower, consistent cadence that respects a small returning readership is the realistic ceiling, not a temporary phase before scale.
-- Batch-write posts on a weekly basis — draft 2 in one sitting rather than writing reactively.
+- Batch-write posts on a weekly basis - draft 2 in one sitting rather than writing reactively.
 - Aim for one post per active community journal you participate in, per month.
 - Review post performance monthly: posts with 5+ comments should be repurposed into a blog or LinkedIn article.
 
@@ -47,11 +47,11 @@ Build a small, loyal readership on a genuinely niche, declining-but-real platfor
 
 ## Content Pillars
 
-1. **Long-Form Reflection** — in-depth personal or professional narrative connecting an experience to a reader-relevant insight.
-2. **Industry Commentary** — a take on a trend, news item, or community debate, written in the community's register.
-3. **Resource Round-Up** — a curated list of useful reads, tools, or frameworks with a brief personal annotation for each.
-4. **Question-Led Post** — an open question to the community that invites structured responses and discussion.
-5. **Behind-the-Scenes** — a candid look at how a project, course, or initiative was built, including what didn't work.
+1. **Long-Form Reflection** - in-depth personal or professional narrative connecting an experience to a reader-relevant insight.
+2. **Industry Commentary** - a take on a trend, news item, or community debate, written in the community's register.
+3. **Resource Round-Up** - a curated list of useful reads, tools, or frameworks with a brief personal annotation for each.
+4. **Question-Led Post** - an open question to the community that invites structured responses and discussion.
+5. **Behind-the-Scenes** - a candid look at how a project, course, or initiative was built, including what didn't work.
 
 ---
 
@@ -76,11 +76,11 @@ Build a small, loyal readership on a genuinely niche, declining-but-real platfor
 
 ## Recommended Tools
 
-1. **LiveJournal Community Finder** — identify active communities aligned to your topic niche for cross-posting.
-2. **Google Docs** — draft and store posts with collaborative editing before publishing to LiveJournal.
-3. **Buffer** — schedule cross-platform share of LiveJournal post links on LinkedIn and Twitter.
-4. **Google Analytics 4** — track referral traffic from LiveJournal posts to your main website if posts include links.
-5. **Grammarly** — proofread long-form posts before publishing to maintain editorial quality.
+1. **LiveJournal Community Finder** - identify active communities aligned to your topic niche for cross-posting.
+2. **Google Docs** - draft and store posts with collaborative editing before publishing to LiveJournal.
+3. **Buffer** - schedule cross-platform share of LiveJournal post links on LinkedIn and Twitter.
+4. **Google Analytics 4** - track referral traffic from LiveJournal posts to your main website if posts include links.
+5. **Grammarly** - proofread long-form posts before publishing to maintain editorial quality.
 
 ---
 

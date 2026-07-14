@@ -1,4 +1,4 @@
-﻿# YouTube and Video Content Strategy
+# YouTube and Video Content Strategy
 
 _Last updated: 2026-05-01_
 
@@ -142,12 +142,12 @@ The minimum viable cadence for algorithm growth is 1 long-form video per week. B
 
 ## Recommended Tools
 
-1. **TubeBuddy** — keyword research, tag suggestions, A/B thumbnail testing, and bulk SEO optimisation for YouTube.
-2. **VidIQ** — competitor channel analysis, trending topic discovery, and video score optimisation.
-3. **Descript** — AI-powered video editing, auto-transcription, and clip extraction for repurposing long videos into Shorts.
-4. **Canva** — design YouTube thumbnails at the correct dimensions (1280×720px) with brand-consistent visual templates.
-5. **TubeBuddy or Hootsuite** — schedule video publications in advance across YouTube and notify subscribers at peak engagement times.
-6. **Google Search Console** — monitor organic search impressions and clicks from Google Video results alongside YouTube Studio analytics.
+1. **TubeBuddy** - keyword research, tag suggestions, A/B thumbnail testing, and bulk SEO optimisation for YouTube.
+2. **VidIQ** - competitor channel analysis, trending topic discovery, and video score optimisation.
+3. **Descript** - AI-powered video editing, auto-transcription, and clip extraction for repurposing long videos into Shorts.
+4. **Canva** - design YouTube thumbnails at the correct dimensions (1280×720px) with brand-consistent visual templates.
+5. **TubeBuddy or Hootsuite** - schedule video publications in advance across YouTube and notify subscribers at peak engagement times.
+6. **Google Search Console** - monitor organic search impressions and clicks from Google Video results alongside YouTube Studio analytics.
 
 ---
 

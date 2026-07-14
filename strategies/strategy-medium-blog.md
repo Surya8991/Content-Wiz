@@ -1,4 +1,4 @@
-﻿# Medium / Long-Form Blog Article Strategy
+# Medium / Long-Form Blog Article Strategy
 
 _Last updated: 2026-05-01_
 
@@ -52,11 +52,11 @@ Land on a single sentence that reframes the opening problem in light of the solu
 
 ## Content Pillars
 
-1. **How-To & Practical Framework** — step-by-step guides and named systems a practitioner can apply immediately.
-2. **Data-Driven Analysis** — articles anchored by a named stat or research finding with a brand-specific POV.
-3. **Counterintuitive Take** — one commonly-held belief challenged with evidence and a concrete alternative.
-4. **Career & Professional Development** — articles addressing the reader's career trajectory, skills growth, or professional identity — high-distribution category on Medium.
-5. **Industry Trend Response** — a timely take on a major shift published within 48 hours of the trigger event.
+1. **How-To & Practical Framework** - step-by-step guides and named systems a practitioner can apply immediately.
+2. **Data-Driven Analysis** - articles anchored by a named stat or research finding with a brand-specific POV.
+3. **Counterintuitive Take** - one commonly-held belief challenged with evidence and a concrete alternative.
+4. **Career & Professional Development** - articles addressing the reader's career trajectory, skills growth, or professional identity - high-distribution category on Medium.
+5. **Industry Trend Response** - a timely take on a major shift published within 48 hours of the trigger event.
 
 ---
 
@@ -128,11 +128,11 @@ Avoid statistics without sources, vague "research shows" attributions, and round
 
 ## Recommended Tools
 
-1. **Medium Partner Program dashboard** — track earnings, read ratio, and story performance to identify what resonates with the platform's distribution algorithm.
-2. **Medium Publications** — submit articles to relevant publications (e.g., Better Programming, The Startup, Towards Data Science equivalents in your niche) for extended reach.
-3. **Hemingway Editor** — check readability score before publishing; Medium's algorithm favours articles with a reading grade level of 8–10.
-4. **Canva** — create header images sized for Medium (1400×787px) that meet the platform's display requirements.
-5. **Google Analytics 4 with UTM links** — track traffic from Medium to your main website using UTM-tagged links in the article CTA.
+1. **Medium Partner Program dashboard** - track earnings, read ratio, and story performance to identify what resonates with the platform's distribution algorithm.
+2. **Medium Publications** - submit articles to relevant publications (e.g., Better Programming, The Startup, Towards Data Science equivalents in your niche) for extended reach.
+3. **Hemingway Editor** - check readability score before publishing; Medium's algorithm favours articles with a reading grade level of 8–10.
+4. **Canva** - create header images sized for Medium (1400×787px) that meet the platform's display requirements.
+5. **Google Analytics 4 with UTM links** - track traffic from Medium to your main website using UTM-tagged links in the article CTA.
 
 ---
 

@@ -49,7 +49,7 @@ delete them, or add your own.
   buffer` (generate a Buffer import CSV from a bulk run).
 - **Dead-link linter**: `lint_content.py --check-urls DIR` crawls all `.md`
   and `.txt` files in a directory, deduplicates URLs, and HEAD-checks each
-  with an 8-second timeout — reports dead links with file and line number.
+  with an 8-second timeout - reports dead links with file and line number.
 - **HARO DataBank Builder**: internal research tool (Format A: mine a report,
   Format B: verify pending rows, Format C: generate research targets) for
   populating `data/HARO_DataBank.csv` with verified, citable statistics.
@@ -64,8 +64,8 @@ delete them, or add your own.
   content, and a first-person disclosure rule.
 - **46 channel strategy docs** (goal, principles, structure, cadence, failure
   modes per channel), grounded in cited platform research.
-- **76 flat prompt files** covering every major channel and content type — from ASO copy and competitive battlecards to chatbot flows, ABM content, podcast ad reads, brand voice guides, and the HARO DataBank Builder (internal research tool).
-- **146-term marketing glossary** ([GLOSSARY.md](GLOSSARY.md)) covering 13 disciplines — Analytics, Brand, CRO, Email, Growth, Paid Ads, SEO, Social Media, and more — sourced from Marketing Academy.
+- **76 flat prompt files** covering every major channel and content type - from ASO copy and competitive battlecards to chatbot flows, ABM content, podcast ad reads, brand voice guides, and the HARO DataBank Builder (internal research tool).
+- **146-term marketing glossary** ([GLOSSARY.md](GLOSSARY.md)) covering 13 disciplines - Analytics, Brand, CRO, Email, Growth, Paid Ads, SEO, Social Media, and more - sourced from Marketing Academy.
 - **90+ curated marketing resources** ([RESOURCES.md](RESOURCES.md)) across SEO, paid media, social, email, analytics, copywriting, AI, and learning communities.
 - **Governance built in**: a publish/review tracker template, a documented
   citation-verification process, and a human sign-off rule for stat-bearing
@@ -236,7 +236,6 @@ defined in `config.json`'s `brands` map (keyed by domain); `edstellar.com` and
 | [Google_Ads_Prompt.txt](prompts/Google_Ads_Prompt.txt) | Google Ads copy |
 | [LinkedIn_Ads_Prompt.txt](prompts/LinkedIn_Ads_Prompt.txt) | LinkedIn Ads copy |
 | [Meta_Facebook_Ads_Prompt.txt](prompts/Meta_Facebook_Ads_Prompt.txt) | Meta/Facebook Ads copy |
-| [Instagram_Prompt.txt](prompts/Instagram_Prompt.txt) | Instagram captions |
 | [Pinterest_Prompt.txt](prompts/Pinterest_Prompt.txt) | Pinterest posts |
 | [Webinar_Promo_Prompt.txt](prompts/Webinar_Promo_Prompt.txt) | Webinar promotional content |
 | [Course_Training_Description_Prompt.txt](prompts/Course_Training_Description_Prompt.txt) | Course and training descriptions |
@@ -256,7 +255,6 @@ defined in `config.json`'s `brands` map (keyed by domain); `edstellar.com` and
 | [Skills_Gap_Analysis_Prompt.txt](prompts/Skills_Gap_Analysis_Prompt.txt) | Skills gap analysis documents |
 | [Trainer_Speaker_Bio_Prompt.txt](prompts/Trainer_Speaker_Bio_Prompt.txt) | Trainer and speaker bios |
 | [TikTok_Ads_Prompt.txt](prompts/TikTok_Ads_Prompt.txt) | TikTok Ads copy (Spark Ads, TopView, In-Feed) |
-| [Instagram_Content_Prompt.txt](prompts/Instagram_Content_Prompt.txt) | Instagram captions, Reels hooks, and Stories (3 formats) |
 | [TikTok_Content_Prompt.txt](prompts/TikTok_Content_Prompt.txt) | TikTok organic scripts with hook + CTA structure |
 | [Threads_Post_Prompt.txt](prompts/Threads_Post_Prompt.txt) | Threads posts optimised for replies and reshares |
 | [Landing_Page_Copy_Prompt.txt](prompts/Landing_Page_Copy_Prompt.txt) | Landing page copy (lead-gen and sales variants) |
@@ -293,7 +291,7 @@ defined in `config.json`'s `brands` map (keyed by domain); `edstellar.com` and
 
 ## Glossary (`GLOSSARY.md`)
 
-[GLOSSARY.md](GLOSSARY.md) contains 146 marketing terms across 13 disciplines — Analytics, Brand, Business Metrics, Content, Copywriting, CRO, Email, Growth, Paid Ads, Psychology, SEO, Social Media, and Strategy — each with a plain-English definition and related terms. Cross-reference with `prompts/` files when generating content (e.g. check CRO terms before using `Landing_Page_Copy_Prompt.txt`). Sourced from [Marketing Academy](https://marketing-academy-roan.vercel.app/glossary).
+[GLOSSARY.md](GLOSSARY.md) contains 146 marketing terms across 13 disciplines - Analytics, Brand, Business Metrics, Content, Copywriting, CRO, Email, Growth, Paid Ads, Psychology, SEO, Social Media, and Strategy - each with a plain-English definition and related terms. Cross-reference with `prompts/` files when generating content (e.g. check CRO terms before using `Landing_Page_Copy_Prompt.txt`). Sourced from [Marketing Academy](https://marketing-academy-roan.vercel.app/glossary).
 
 ---
 
@@ -374,6 +372,9 @@ for what `generate.py` can produce.
 
 > **Alias gotcha:** `--platform linkedin`, `wordpress`, and `blog` all resolve to
 > `blog_writing` (long-form blog). For a LinkedIn *post*, use `--platform linkedin_post`.
+> Likewise, `--platform instagram`/`ig` resolves to the rich Python caption template
+> (`templates/social.py`); for the Reel/Carousel/Story prompt with 2026 algorithm
+> research, use `--platform instagram_content` instead.
 
 ### Text prompts (flat prompt files, wired via `textprompts.py`)
 
@@ -406,6 +407,7 @@ templates: `python generate.py --platform <alias> --topic "..."`.
 | Trainer_Speaker_Bio | `trainer_bio`, `bio` | Trainer_Bios |
 | Webinar_Promo | `webinar`, `webinar_promo` | Webinar_Promo |
 | Whitepaper_eBook | `whitepaper`, `ebook` | Whitepaper_eBook |
+| Instagram_Content_Prompt | `instagram_content`, `ig_content`, `instagram_reel` | Instagram |
 
 Run `python generate.py --list` for the live, authoritative list of every alias.
 

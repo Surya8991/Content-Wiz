@@ -40,11 +40,11 @@ A specific, non-generic invitation to learn more, phrased differently from every
 
 ## Content Pillars
 
-1. **Training Outcome Posts** — share a specific learner result, metric, or transformation from a recent programme.
-2. **Industry Insight Posts** — extract one stat or trend from a published blog and frame it as a local business insight.
-3. **Product/Service Spotlight Posts** — feature one course, workshop, or service with an outcome-focused description.
-4. **Social Proof Posts** — pull a testimonial or review excerpt and pair it with the result the client achieved.
-5. **Event & Webinar Posts** — promote upcoming online or in-person events with a registration CTA.
+1. **Training Outcome Posts** - share a specific learner result, metric, or transformation from a recent programme.
+2. **Industry Insight Posts** - extract one stat or trend from a published blog and frame it as a local business insight.
+3. **Product/Service Spotlight Posts** - feature one course, workshop, or service with an outcome-focused description.
+4. **Social Proof Posts** - pull a testimonial or review excerpt and pair it with the result the client achieved.
+5. **Event & Webinar Posts** - promote upcoming online or in-person events with a registration CTA.
 
 ---
 
@@ -54,26 +54,26 @@ A specific, non-generic invitation to learn more, phrased differently from every
 - Never publish more than one post per day; it reads as spam in the profile feed.
 - Batch-write 4 posts at the start of each month and schedule them 7 days apart.
 - Use the Google Business Profile app for scheduled posting or a third-party tool.
-- Review post performance monthly — posts with over 50 views in 7 days should be repurposed immediately to LinkedIn.
+- Review post performance monthly - posts with over 50 views in 7 days should be repurposed immediately to LinkedIn.
 
 ---
 
 ## Distribution & Amplification
 
-1. Repurpose every GMB post as a LinkedIn status update — same insight, different format (remove the word limit constraint).
+1. Repurpose every GMB post as a LinkedIn status update - same insight, different format (remove the word limit constraint).
 2. Add GMB post topics to the monthly content calendar to ensure cross-platform angle variety.
-3. Respond to every GMB review within 48 hours — responses index as fresh content signals.
+3. Respond to every GMB review within 48 hours - responses index as fresh content signals.
 4. Link every GMB post to the corresponding blog page to drive website traffic and support the blog's internal link equity.
 
 ---
 
 ## Recommended Tools
 
-1. **Google Business Profile Manager** — native post scheduler and performance dashboard.
-2. **Canva** — create branded image assets sized for GMB (1200x900px recommended).
-3. **Buffer** — schedule GMB posts in advance alongside other social channels.
-4. **Google Search Console** — monitor branded and local search queries driving clicks to the profile.
-5. **ReviewTrackers or Birdeye** — track and respond to GMB reviews at scale.
+1. **Google Business Profile Manager** - native post scheduler and performance dashboard.
+2. **Canva** - create branded image assets sized for GMB (1200x900px recommended).
+3. **Buffer** - schedule GMB posts in advance alongside other social channels.
+4. **Google Search Console** - monitor branded and local search queries driving clicks to the profile.
+5. **ReviewTrackers or Birdeye** - track and respond to GMB reviews at scale.
 
 ---
 

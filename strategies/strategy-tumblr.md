@@ -41,11 +41,11 @@ Build a following among Tumblr's actual core audience for this content - not a g
 
 ## Content Pillars
 
-1. **Aphoristic Claim Posts** — a single bold, quotable statement on a professional or industry topic, formatted for reblogging.
-2. **Visual Frameworks** — an infographic or diagram-style image summarising a model or system, with a short explanatory caption.
-3. **Curated Thread Responses** — reblog a relevant post from a community member and add a substantive 2–3 sentence POV.
-4. **Behind-the-Scenes Snapshots** — candid glimpses into the brand's process, team, or work with a conversational caption.
-5. **Question Posts** — open-ended prompts inviting the community to reblog with their answer, driving cascading engagement.
+1. **Aphoristic Claim Posts** - a single bold, quotable statement on a professional or industry topic, formatted for reblogging.
+2. **Visual Frameworks** - an infographic or diagram-style image summarising a model or system, with a short explanatory caption.
+3. **Curated Thread Responses** - reblog a relevant post from a community member and add a substantive 2–3 sentence POV.
+4. **Behind-the-Scenes Snapshots** - candid glimpses into the brand's process, team, or work with a conversational caption.
+5. **Question Posts** - open-ended prompts inviting the community to reblog with their answer, driving cascading engagement.
 
 ---
 
@@ -60,7 +60,7 @@ Build a following among Tumblr's actual core audience for this content - not a g
 
 ## Distribution & Amplification
 
-1. Cross-tag every Tumblr post with 5–10 relevant tags — Tumblr's primary discovery mechanism is tag search.
+1. Cross-tag every Tumblr post with 5–10 relevant tags - Tumblr's primary discovery mechanism is tag search.
 2. Reblog your own post 12–24 hours after publishing to give it a second appearance in your followers' dashboards.
 3. Identify 3–5 active Tumblr accounts in your niche and engage with their posts weekly to build reciprocal visibility.
 4. Repurpose high-reblog Tumblr posts into Twitter/X quote-tweet-style LinkedIn posts.
@@ -70,11 +70,11 @@ Build a following among Tumblr's actual core audience for this content - not a g
 
 ## Recommended Tools
 
-1. **Tumblr Queue** — native scheduling feature allowing up to 300 posts to be batched and published at set intervals.
-2. **Canva** — create visually distinct header images and infographic posts optimised for Tumblr's image-forward format.
-3. **Later** — third-party social scheduler with Tumblr support for cross-platform content batching.
-4. **Tumblr Tag search** — native discovery tool to monitor trending tags in your niche and identify reblog opportunities.
-5. **Google Analytics 4** — track Tumblr referral traffic to your main website via UTM-tagged post links.
+1. **Tumblr Queue** - native scheduling feature allowing up to 300 posts to be batched and published at set intervals.
+2. **Canva** - create visually distinct header images and infographic posts optimised for Tumblr's image-forward format.
+3. **Later** - third-party social scheduler with Tumblr support for cross-platform content batching.
+4. **Tumblr Tag search** - native discovery tool to monitor trending tags in your niche and identify reblog opportunities.
+5. **Google Analytics 4** - track Tumblr referral traffic to your main website via UTM-tagged post links.
 
 ---
 
