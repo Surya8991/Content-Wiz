@@ -303,6 +303,16 @@ SUBFOLDER_MAP = {
 }
 
 
+def safe_relpath(path):
+    """os.path.relpath, falling back to the absolute path if `path` is on a
+    different drive than the CWD (Windows raises ValueError in that case,
+    e.g. an --output-dir on another drive)."""
+    try:
+        return os.path.relpath(path)
+    except ValueError:
+        return os.path.abspath(path)
+
+
 def subfolder_for(key):
     return SUBFOLDER_MAP.get(key, "Misc")
 
@@ -505,9 +515,9 @@ IMAGE / VISUAL DIRECTION BRIEF
 For the content above, produce a visual direction brief:
 
 Visual Style: [Photography / illustration / graphic? Mood? Color palette?]
-Key Visual: [Primary image concept in 20 words — specific enough to use as an AI image prompt]
+Key Visual: [Primary image concept in 20 words - specific enough to use as an AI image prompt]
 DALL-E / Midjourney Prompt: [Ready-to-paste AI image generation prompt for the key visual]
-Supporting Visuals: [2-3 secondary image ideas — charts, icons, screenshots, lifestyle shots]
+Supporting Visuals: [2-3 secondary image ideas - charts, icons, screenshots, lifestyle shots]
 What to Avoid: [Colors, imagery styles, or stock-photo clichés to steer clear of]
 """.strip()
 
@@ -556,7 +566,7 @@ def inject_extras(prompt, tone=None, keywords=None, language=None, image_brief=F
         kw_lines = "\n".join(f"  - {kw}" for kw in keywords)
         parts.append(
             "\n------------------------------------------------------------\n"
-            "TARGET KEYWORDS (weave in naturally — never stuff)\n"
+            "TARGET KEYWORDS (weave in naturally - never stuff)\n"
             "------------------------------------------------------------\n"
             + kw_lines
         )
@@ -565,8 +575,8 @@ def inject_extras(prompt, tone=None, keywords=None, language=None, image_brief=F
             "\n------------------------------------------------------------\n"
             f"LANGUAGE / LOCALE: {language}\n"
             "------------------------------------------------------------\n"
-            f"Write ALL output in {language}. Every section — headings, body copy, CTAs, "
-            "hashtags, placeholder text, and examples — must be in this language. "
+            f"Write ALL output in {language}. Every section - headings, body copy, CTAs, "
+            "hashtags, placeholder text, and examples - must be in this language. "
             "Do not revert to English at any point."
         )
     if image_brief:
@@ -628,7 +638,7 @@ def log_publish_row(platform, topic, filepath, output_dir):
             "Date": datetime.now().date().isoformat(),
             "Platform": platform,
             "Topic": topic,
-            "File": os.path.relpath(filepath) if filepath else "",
+            "File": safe_relpath(filepath) if filepath else "",
             "Status": "Draft",
             "Reviewed By": "",
             "Review Date": "",
@@ -650,7 +660,7 @@ def export_buffer_csv(log_rows, output_dir, zip_path):
         for row in log_rows:
             if row.get("status") == "ok":
                 writer.writerow({
-                    "Text": f"[{row['platform']}] {row['topic']} — see attached prompt",
+                    "Text": f"[{row['platform']}] {row['topic']} - see attached prompt",
                     "Media URLs": "",
                     "Scheduled at": "",
                     "Profile": "",
@@ -803,11 +813,11 @@ def run_single(args):
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(content)
         label = "Content" if args.generate else "Prompt"
-        print(f"\n{label} saved to: {os.path.relpath(filepath)}")
+        print(f"\n{label} saved to: {safe_relpath(filepath)}")
 
         if getattr(args, "log_publish", False):
             tracker = log_publish_row(args.platform, args.topic, filepath, output_dir)
-            print(f"Logged to tracker: {os.path.relpath(tracker)}")
+            print(f"Logged to tracker: {safe_relpath(tracker)}")
 
 
 def _maybe_generate(prompt, out_key, args):
@@ -969,11 +979,11 @@ def run_bulk(csv_path, output_dir_arg=None, global_cta=None, dry_run=False,
     if dry_run:
         print(f"\n[dry-run] {ok_count} prompt(s) would be packaged. Nothing written.")
     else:
-        print(f"\n{ok_count} prompt(s) packaged into: {os.path.relpath(zip_path)}")
-        print(f"Run log saved to:           {os.path.relpath(log_path)}")
+        print(f"\n{ok_count} prompt(s) packaged into: {safe_relpath(zip_path)}")
+        print(f"Run log saved to:           {safe_relpath(log_path)}")
         if scheduler_format == "buffer":
             buf_path = export_buffer_csv(log_rows, output_dir, zip_path)
-            print(f"Buffer import CSV:          {os.path.relpath(buf_path)}")
+            print(f"Buffer import CSV:          {safe_relpath(buf_path)}")
 
 
 def main():

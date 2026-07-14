@@ -106,6 +106,16 @@ def _iter_default_targets(root):
             yield fpath
 
 
+def safe_relpath(path, start):
+    """os.path.relpath, falling back to the absolute path if `path` is on a
+    different drive than `start` (Windows raises ValueError in that case,
+    e.g. --check-urls/--check-banned-phrases pointed at another drive)."""
+    try:
+        return os.path.relpath(path, start)
+    except ValueError:
+        return os.path.abspath(path)
+
+
 def check_file(path):
     """Return a list of (lineno, message) error tuples for one file."""
     if os.path.basename(path) in SELF_REFERENTIAL:
@@ -237,7 +247,7 @@ def run_banned_phrases_check(target_dir, root):
         return 1
     for path in _iter_files_under(dpath, BANNED_PHRASE_EXTS):
         for lineno, msg in check_file_for_banned_phrases(path):
-            rel = os.path.relpath(path, root)
+            rel = safe_relpath(path, root)
             print(f"{rel}:{lineno}: error: {msg}")
             total += 1
     if total:
@@ -288,7 +298,7 @@ def run_url_check(target_dir, root):
 
     all_urls = {}  # url -> [(rel_path, lineno)]
     for path in _iter_files_under(dpath, {".md", ".txt"}):
-        rel = os.path.relpath(path, root)
+        rel = safe_relpath(path, root)
         for lineno, url in extract_urls(path):
             all_urls.setdefault(url, []).append((rel, lineno))
 
@@ -343,7 +353,7 @@ def main(argv=None):
     total = 0
     for path in targets:
         for lineno, msg in check_file(path):
-            rel = os.path.relpath(path, root)
+            rel = safe_relpath(path, root)
             print(f"{rel}:{lineno}: error: {msg}")
             total += 1
 
