@@ -187,6 +187,29 @@ PLATFORM_MAP = {
     "push":             "push_notification",
     "in_app_message":   "in_app_message",
     "in_app":           "in_app_message",
+    # CRO templates
+    "cro_lead_gen":     "landing_page_lead_gen",
+    "landing_page_lead_gen": "landing_page_lead_gen",
+    "cro_sales_page":   "landing_page_sales",
+    "landing_page_sales": "landing_page_sales",
+    "cta_variants":     "cta_variants",
+    "trust_signals":    "trust_signals_block",
+    "trust_signals_block": "trust_signals_block",
+    "hero_headline":    "hero_headline_formula",
+    "hero_headline_formula": "hero_headline_formula",
+    # Product marketing templates
+    "positioning_statement": "positioning_statement",
+    "positioning":      "positioning_statement",
+    "launch_announcement": "launch_announcement",
+    "pre_launch_teaser": "pre_launch_teaser",
+    "teaser":           "pre_launch_teaser",
+    "messaging_hierarchy": "messaging_hierarchy",
+    "launch_email_sequence": "launch_email_sequence",
+    # UGC granular templates
+    "ugc_video_brief":  "ugc_video_brief",
+    "testimonial_request": "testimonial_request",
+    "creator_brief":    "creator_brief",
+    "photo_brief":      "photo_brief",
 }
 
 MD_KEYS   = {"blog_writing_md"}
@@ -260,6 +283,23 @@ SUBFOLDER_MAP = {
     "sms_blast":         "Mobile_Messaging",
     "push_notification": "Mobile_Messaging",
     "in_app_message":    "Mobile_Messaging",
+    # CRO
+    "landing_page_lead_gen": "CRO",
+    "landing_page_sales":    "CRO",
+    "cta_variants":          "CRO",
+    "trust_signals_block":   "CRO",
+    "hero_headline_formula": "CRO",
+    # Product marketing
+    "positioning_statement": "Product_Marketing",
+    "launch_announcement":   "Product_Marketing",
+    "pre_launch_teaser":     "Product_Marketing",
+    "messaging_hierarchy":   "Product_Marketing",
+    "launch_email_sequence": "Product_Marketing",
+    # UGC granular
+    "ugc_video_brief":       "UGC_Briefs",
+    "testimonial_request":   "Testimonial_Request",
+    "creator_brief":         "UGC_Briefs",
+    "photo_brief":           "UGC_Briefs",
 }
 
 

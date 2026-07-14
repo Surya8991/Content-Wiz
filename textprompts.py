@@ -56,6 +56,17 @@ TEXT_PROMPT_MAP = {
     "webinar_promo":       ("Webinar_Promo_Prompt.txt",           "Webinar_Promo"),
     "whitepaper":          ("Whitepaper_eBook_Prompt.txt",        "Whitepaper_eBook"),
     "ebook":               ("Whitepaper_eBook_Prompt.txt",        "Whitepaper_eBook"),
+    # New channels (added 2026-07-14)
+    "threads":             ("Threads_Post_Prompt.txt",            "Threads"),
+    "threads_post":        ("Threads_Post_Prompt.txt",            "Threads"),
+    "tiktok_ads":          ("TikTok_Ads_Prompt.txt",              "TikTok_Ads"),
+    "product_launch":      ("Product_Launch_Prompt.txt",          "Product_Launch"),
+    "launch_copy":         ("Product_Launch_Prompt.txt",          "Product_Launch"),
+    "referral_copy":       ("Referral_Program_Copy_Prompt.txt",   "Referral"),
+    "referral_program":    ("Referral_Program_Copy_Prompt.txt",   "Referral"),
+    "sales_email":         ("Sales_Email_Prompt.txt",             "Sales_Email"),
+    "cold_email":          ("Sales_Email_Prompt.txt",             "Sales_Email"),
+    "outreach_email":      ("Sales_Email_Prompt.txt",             "Sales_Email"),
 }
 
 
