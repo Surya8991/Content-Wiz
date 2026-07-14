@@ -5,14 +5,18 @@ Currently enforced (error): no em-dash (U+2014) anywhere in prompt/strategy/
 template source. Warnings are advisory and never fail the build.
 
 Usage:
-    python lint_content.py            # lint the default fileset
-    python lint_content.py path ...   # lint specific files
+    python lint_content.py                   # lint the default fileset
+    python lint_content.py path ...          # lint specific files
+    python lint_content.py --check-urls DIR  # check all URLs in DIR for dead links
+    python lint_content.py --check-banned-phrases DIR
 
 Exit code 1 if any error is found.
 """
 import os
 import re
 import sys
+import urllib.request
+import urllib.error
 
 from templates._shared import BANNED_CTA_PHRASES
 
@@ -243,9 +247,89 @@ def run_banned_phrases_check(target_dir, root):
     return 0
 
 
+_URL_RE = re.compile(r'https?://[^\s\)"\'>\]]+')
+_URL_CHECK_TIMEOUT = 8  # seconds
+
+
+def extract_urls(path):
+    """Return a list of (lineno, url) tuples from markdown links and bare URLs in a file."""
+    found = []
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            for lineno, line in enumerate(f, start=1):
+                for url in _URL_RE.findall(line):
+                    # Strip trailing punctuation that's not part of the URL
+                    url = url.rstrip(".,;:!?)")
+                    found.append((lineno, url))
+    except (OSError, UnicodeDecodeError):
+        pass
+    return found
+
+
+def check_url(url):
+    """Return (status_code, error_str). status_code is None on network error."""
+    try:
+        req = urllib.request.Request(url, method="HEAD",
+                                     headers={"User-Agent": "Mozilla/5.0 (content-wiz linter)"})
+        with urllib.request.urlopen(req, timeout=_URL_CHECK_TIMEOUT) as resp:
+            return resp.status, None
+    except urllib.error.HTTPError as e:
+        return e.code, None
+    except Exception as e:
+        return None, str(e)
+
+
+def run_url_check(target_dir, root):
+    """Check all URLs found in .md and .txt files under target_dir. Report dead links."""
+    dpath = target_dir if os.path.isabs(target_dir) else os.path.join(root, target_dir)
+    if not os.path.isdir(dpath):
+        print(f"error: not a directory: {target_dir}")
+        return 1
+
+    all_urls = {}  # url -> [(rel_path, lineno)]
+    for path in _iter_files_under(dpath, {".md", ".txt"}):
+        rel = os.path.relpath(path, root)
+        for lineno, url in extract_urls(path):
+            all_urls.setdefault(url, []).append((rel, lineno))
+
+    if not all_urls:
+        print("No URLs found.")
+        return 0
+
+    print(f"Checking {len(all_urls)} unique URL(s)...")
+    dead = []
+    for url, locations in sorted(all_urls.items()):
+        status, err = check_url(url)
+        if status is None:
+            tag = f"TIMEOUT/ERROR ({err})"
+            dead.append((url, locations, tag))
+        elif status >= 400:
+            tag = f"HTTP {status}"
+            dead.append((url, locations, tag))
+        else:
+            print(f"  OK  {status}  {url}")
+
+    if dead:
+        print(f"\n{len(dead)} dead link(s) found:")
+        for url, locations, tag in dead:
+            for rel, lineno in locations:
+                print(f"  {rel}:{lineno}: {tag}  {url}")
+        return 1
+
+    print(f"\nAll {len(all_urls)} URL(s) returned 2xx/3xx.")
+    return 0
+
+
 def main(argv=None):
     argv = argv if argv is not None else sys.argv[1:]
     root = os.path.dirname(os.path.abspath(__file__))
+
+    if argv and argv[0] == "--check-urls":
+        rest = argv[1:]
+        if not rest:
+            print("error: --check-urls requires a directory argument (e.g. output/)")
+            return 1
+        return run_url_check(rest[0], root)
 
     if argv and argv[0] == "--check-banned-phrases":
         rest = argv[1:]

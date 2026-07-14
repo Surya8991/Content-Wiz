@@ -1,4 +1,4 @@
-from ._shared import HUMAN_WRITING_RULES, MARKET_VOICE_RULES, RANKABILITY_RULES, RESEARCH_RULES, market_voice  # noqa: F401
+from ._shared import HUMAN_WRITING_RULES, MARKET_VOICE_RULES, RANKABILITY_RULES, RESEARCH_RULES, TONE_RULES, market_voice, tone_modifier  # noqa: F401
 from .blog import (  # noqa: F401
     blog_suggestion, blog_writing, blog_writing_md, comparison_page,
     glossary_page, medium_step1, medium_step2, substack_post,

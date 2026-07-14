@@ -93,6 +93,42 @@ def market_voice(market=None):
     return MARKET_VOICE_RULES.get((market or "b2b").lower(), MARKET_VOICE_RULES["b2b"])
 
 
+TONE_RULES = {
+    "formal": (
+        "TONE OVERRIDE - FORMAL: Use precise vocabulary, complete sentences, and a "
+        "professional register throughout. Avoid contractions, colloquialisms, and casual phrasing. "
+        "Authoritative but not cold."
+    ),
+    "conversational": (
+        "TONE OVERRIDE - CONVERSATIONAL: Write as if speaking directly to one person. "
+        "Use contractions, short sentences, and plain everyday language. Avoid jargon. "
+        "Approachable but still credible."
+    ),
+    "urgent": (
+        "TONE OVERRIDE - URGENT: Every sentence drives momentum toward the action. "
+        "Short punchy sentences. Active verbs. Loss-frame hooks. No filler language. "
+        "The reader should feel that delay has a cost."
+    ),
+    "educational": (
+        "TONE OVERRIDE - EDUCATIONAL: Prioritize clarity over cleverness. Define terms "
+        "on first use. Use analogies to explain complex ideas. Structure content to build "
+        "understanding step by step. Patient and thorough."
+    ),
+    "playful": (
+        "TONE OVERRIDE - PLAYFUL: Use wordplay and light humor where appropriate. "
+        "Enthusiasm shows in word choice and sentence rhythm. Keep it professional "
+        "enough for the brand's context but let personality come through."
+    ),
+}
+
+
+def tone_modifier(tone=None):
+    """Return the tone-override block for `tone`, or empty string if unset."""
+    if not tone:
+        return ""
+    return TONE_RULES.get(tone.lower().strip(), "")
+
+
 # ─────────────────────────────────────────────
 # EXISTING TEMPLATES
 # ─────────────────────────────────────────────

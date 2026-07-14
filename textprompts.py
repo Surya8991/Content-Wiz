@@ -111,6 +111,10 @@ TEXT_PROMPT_MAP = {
     "sales_email":         ("Sales_Email_Prompt.txt",             "Sales_Email"),
     "cold_email":          ("Sales_Email_Prompt.txt",             "Sales_Email"),
     "outreach_email":      ("Sales_Email_Prompt.txt",             "Sales_Email"),
+    # Phase 10 internal tools
+    "haro_databank":       ("HARO_DataBank_Builder_Prompt.txt",   "HARO_DataBank"),
+    "databank":            ("HARO_DataBank_Builder_Prompt.txt",   "HARO_DataBank"),
+    "stat_mining":         ("HARO_DataBank_Builder_Prompt.txt",   "HARO_DataBank"),
 }
 
 

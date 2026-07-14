@@ -40,6 +40,19 @@ delete them, or add your own.
 - **Provider-agnostic live generation**: `--generate` writes finished content
   via Claude (Anthropic), Gemini (Google), or OpenAI - same prompts, same
   house-style rules, whichever model you have a key for.
+- **Phase 10 production tooling**: `--variants N` (generate N differentiated
+  versions in one run), `--keywords FILE` (inject a keyword list), `--tone`
+  (formal/conversational/urgent/educational/playful), `--language` (any
+  target language), `--log-publish` (append to a monthly tracker CSV),
+  `--format` (reformat output for Gutenberg/HubSpot/Contentful/Markdown),
+  `--with-image-brief` (attach a 3-field visual brief), `--export-scheduler
+  buffer` (generate a Buffer import CSV from a bulk run).
+- **Dead-link linter**: `lint_content.py --check-urls DIR` crawls all `.md`
+  and `.txt` files in a directory, deduplicates URLs, and HEAD-checks each
+  with an 8-second timeout — reports dead links with file and line number.
+- **HARO DataBank Builder**: internal research tool (Format A: mine a report,
+  Format B: verify pending rows, Format C: generate research targets) for
+  populating `data/HARO_DataBank.csv` with verified, citable statistics.
 - **Single, bulk, and repurposing modes**: one post at a time, a CSV-driven
   batch (ZIP + run log), or transforming an existing piece into another
   platform's format with canonical/duplicate-content guidance built in.
@@ -51,7 +64,7 @@ delete them, or add your own.
   content, and a first-person disclosure rule.
 - **46 channel strategy docs** (goal, principles, structure, cadence, failure
   modes per channel), grounded in cited platform research.
-- **75 flat prompt files** covering every major channel and content type — from ASO copy and competitive battlecards to chatbot flows, ABM content, podcast ad reads, and brand voice guides.
+- **76 flat prompt files** covering every major channel and content type — from ASO copy and competitive battlecards to chatbot flows, ABM content, podcast ad reads, brand voice guides, and the HARO DataBank Builder (internal research tool).
 - **146-term marketing glossary** ([GLOSSARY.md](GLOSSARY.md)) covering 13 disciplines — Analytics, Brand, CRO, Email, Growth, Paid Ads, SEO, Social Media, and more — sourced from Marketing Academy.
 - **90+ curated marketing resources** ([RESOURCES.md](RESOURCES.md)) across SEO, paid media, social, email, analytics, copywriting, AI, and learning communities.
 - **Governance built in**: a publish/review tracker template, a documented

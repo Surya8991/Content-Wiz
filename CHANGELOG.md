@@ -5,6 +5,36 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.0] — 2026-07-14
+
+### Added
+
+**Phase 10 — CLI Tooling Layer:**
+
+**New `generate.py` flags (8):**
+- `--variants N` — generate N independently-differentiated versions of the same prompt in one run; each saved with an index suffix (`_v1`, `_v2`, …)
+- `--keywords FILE` — inject a keyword list (CSV first-column or plain one-per-line) into the prompt as a mandatory incorporation block
+- `--tone {formal,conversational,urgent,educational,playful}` — append a named tone-override block (sourced from `TONE_RULES` in `_shared.py`) after the main prompt
+- `--language LANG` — instruct the model to output in a specific language (e.g. `--language French`)
+- `--log-publish` — append a Draft row to a monthly tracker CSV (`output/publish_tracker_YYYY-MM.csv`) for every piece generated
+- `--format {markdown,gutenberg,hubspot,contentful}` — reformat `--generate` output for a target CMS after generation
+- `--with-image-brief` — append a 3-field image/visual brief block (concept, style, alt text) to every prompt
+- `--export-scheduler {buffer}` — after a bulk run, export a Buffer-compatible import CSV (`bulk_buffer_YYYY-MM-DD.csv`) from the run log
+
+**New `lint_content.py` flag:**
+- `--check-urls DIR` — crawl all `.md` and `.txt` files under DIR, extract every `https?://` URL, HEAD-check each (deduplicated, 8s timeout), and report dead links (4xx/5xx/timeout) with file and line number
+
+**New `_shared.py` exports:**
+- `TONE_RULES` — dict of 5 named tone presets (formal, conversational, urgent, educational, playful)
+- `tone_modifier(tone)` — returns the tone-override string for a given tone name, or empty string if unset
+
+**New prompt file:**
+- `prompts/HARO_DataBank_Builder_Prompt.txt` — internal research tool for mining reports and building the stat DataBank; 3 formats: Format A (mine a document), Format B (verify pending rows), Format C (generate research targets). Wired as `haro_databank`, `databank`, `stat_mining` aliases.
+
+**`templates/__init__.py`:** Updated `_shared` import to expose `TONE_RULES` and `tone_modifier` at package level.
+
+---
+
 ## [0.8.0] — 2026-07-14
 
 ### Added

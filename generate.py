@@ -426,6 +426,169 @@ def inject_cta(prompt, cta):
     return prompt
 
 
+# ─── Phase 10 tooling helpers ─────────────────────────────────────────────────
+
+_IMAGE_BRIEF_BLOCK = """
+------------------------------------------------------------
+IMAGE / VISUAL DIRECTION BRIEF
+------------------------------------------------------------
+
+For the content above, produce a visual direction brief:
+
+Visual Style: [Photography / illustration / graphic? Mood? Color palette?]
+Key Visual: [Primary image concept in 20 words — specific enough to use as an AI image prompt]
+DALL-E / Midjourney Prompt: [Ready-to-paste AI image generation prompt for the key visual]
+Supporting Visuals: [2-3 secondary image ideas — charts, icons, screenshots, lifestyle shots]
+What to Avoid: [Colors, imagery styles, or stock-photo clichés to steer clear of]
+""".strip()
+
+TONE_OPTIONS = ("formal", "conversational", "urgent", "educational", "playful")
+
+
+def load_keywords(filepath):
+    """Load target keywords from a CSV (header: keyword/term/query) or plain text file."""
+    keywords = []
+    try:
+        with open(filepath, "r", encoding="utf-8") as f:
+            content = f.read()
+        lines = content.strip().splitlines()
+        if not lines:
+            return keywords
+        first = lines[0].strip().lower().strip(",")
+        # Detect CSV with a keyword-column header
+        if first in ("keyword", "keywords", "term", "terms", "query", "queries"):
+            import io
+            reader = csv.DictReader(io.StringIO(content))
+            key_col = next((c for c in (reader.fieldnames or [])
+                            if c.lower().strip() in ("keyword", "keywords", "term", "terms", "query", "queries")), None)
+            if key_col is None and reader.fieldnames:
+                key_col = reader.fieldnames[0]
+            for row in reader:
+                val = row.get(key_col, "").strip()
+                if val:
+                    keywords.append(val)
+        else:
+            # Plain text: one keyword per line
+            keywords = [l.strip() for l in lines if l.strip()]
+    except (OSError, UnicodeDecodeError) as exc:
+        print(f"Warning: could not read keywords file '{filepath}': {exc}")
+    return keywords
+
+
+def inject_extras(prompt, tone=None, keywords=None, language=None, image_brief=False):
+    """Append tone override, keyword list, locale instruction, and/or image brief to a prompt."""
+    parts = [prompt]
+    if tone:
+        from templates._shared import tone_modifier
+        mod = tone_modifier(tone)
+        if mod:
+            parts.append(f"\n{mod}")
+    if keywords:
+        kw_lines = "\n".join(f"  - {kw}" for kw in keywords)
+        parts.append(
+            "\n------------------------------------------------------------\n"
+            "TARGET KEYWORDS (weave in naturally — never stuff)\n"
+            "------------------------------------------------------------\n"
+            + kw_lines
+        )
+    if language:
+        parts.append(
+            "\n------------------------------------------------------------\n"
+            f"LANGUAGE / LOCALE: {language}\n"
+            "------------------------------------------------------------\n"
+            f"Write ALL output in {language}. Every section — headings, body copy, CTAs, "
+            "hashtags, placeholder text, and examples — must be in this language. "
+            "Do not revert to English at any point."
+        )
+    if image_brief:
+        parts.append(f"\n{_IMAGE_BRIEF_BLOCK}")
+    return "\n".join(parts) if len(parts) > 1 else prompt
+
+
+def format_output(content, fmt):
+    """Reformat LLM-generated content for CMS import."""
+    if fmt in (None, "markdown"):
+        return content
+    if fmt == "gutenberg":
+        import json
+        blocks = []
+        for line in content.split("\n"):
+            s = line.strip()
+            if not s:
+                continue
+            if s.startswith("### "):
+                blocks.append({"blockName": "core/heading", "attrs": {"level": 3},
+                                "innerHTML": f"<h3>{s[4:]}</h3>"})
+            elif s.startswith("## "):
+                blocks.append({"blockName": "core/heading", "attrs": {"level": 2},
+                                "innerHTML": f"<h2>{s[3:]}</h2>"})
+            elif s.startswith("# "):
+                blocks.append({"blockName": "core/heading", "attrs": {"level": 1},
+                                "innerHTML": f"<h1>{s[2:]}</h1>"})
+            else:
+                blocks.append({"blockName": "core/paragraph", "attrs": {},
+                                "innerHTML": f"<p>{s}</p>"})
+        return json.dumps({"blocks": blocks}, indent=2)
+    if fmt == "hubspot":
+        import json
+        return json.dumps({"post_body": content, "state": "DRAFT",
+                           "content_group_id": ""}, indent=2)
+    if fmt == "contentful":
+        import json
+        return json.dumps({
+            "fields": {"body": {"en-US": content}},
+            "sys": {"contentType": {"sys": {"id": "blogPost"}}},
+        }, indent=2)
+    return content
+
+
+def log_publish_row(platform, topic, filepath, output_dir):
+    """Append a Draft row to the current month's publish tracker CSV."""
+    month_str = datetime.now().strftime("%Y%m")
+    tracker_path = os.path.join(output_dir, f"publish_tracker_{month_str}.csv")
+    fieldnames = [
+        "Date", "Platform", "Topic", "File", "Status",
+        "Reviewed By", "Review Date", "Clicks", "Leads/Conversions", "Last Checked",
+    ]
+    file_exists = os.path.isfile(tracker_path)
+    with open(tracker_path, "a", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        if not file_exists:
+            writer.writeheader()
+        writer.writerow({
+            "Date": datetime.now().date().isoformat(),
+            "Platform": platform,
+            "Topic": topic,
+            "File": os.path.relpath(filepath) if filepath else "",
+            "Status": "Draft",
+            "Reviewed By": "",
+            "Review Date": "",
+            "Clicks": "",
+            "Leads/Conversions": "",
+            "Last Checked": "",
+        })
+    return tracker_path
+
+
+def export_buffer_csv(log_rows, output_dir, zip_path):
+    """Convert a bulk run log into a Buffer-compatible import CSV."""
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    buf_path = os.path.join(output_dir, f"buffer_import_{timestamp}.csv")
+    fieldnames = ["Text", "Media URLs", "Scheduled at", "Profile"]
+    with open(buf_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        for row in log_rows:
+            if row.get("status") == "ok":
+                writer.writerow({
+                    "Text": f"[{row['platform']}] {row['topic']} — see attached prompt",
+                    "Media URLs": "",
+                    "Scheduled at": "",
+                    "Profile": "",
+                })
+    return buf_path
+
+
 def write_bulk_log(log_rows, path):
     with open(path, "w", newline="", encoding="utf-8") as lf:
         writer = csv.DictWriter(lf, fieldnames=["row", "platform", "topic", "filename", "status"])
@@ -480,7 +643,6 @@ def run_single(args):
             source_content = f.read()
         kind, key = "template", "repurpose"
         normalized = "repurpose"
-        # --platform is the TARGET platform when repurposing; treat it as platform_target
         effective_platform_target = args.platform
     else:
         normalized = args.platform.lower().strip()
@@ -492,14 +654,14 @@ def run_single(args):
         effective_platform_target = args.platform_target
 
     if kind == "text":
-        prompt = textprompts.render(
+        base_prompt = textprompts.render(
             normalized, topic=args.topic, audience=effective_audience,
             wordcount=args.wordcount, cta=args.cta, url=args.url,
         )
         folder = textprompts.subfolder_for(normalized)
         out_key = "text"
     else:
-        prompt = build_prompt(
+        base_prompt = build_prompt(
             key,
             topic=args.topic,
             audience=effective_audience,
@@ -511,33 +673,72 @@ def run_single(args):
             source_content=source_content,
             market=market_for_brand(brand_for_url(args.url) if args.url else None),
         )
-        prompt = inject_cta(prompt, args.cta)
+        base_prompt = inject_cta(base_prompt, args.cta)
         folder = subfolder_for(key)
         out_key = key
 
-    print("\n" + "=" * 60)
-    print(prompt)
-    print("=" * 60)
+    # Load keywords once if specified
+    keywords = load_keywords(args.keywords) if getattr(args, "keywords", None) else None
 
-    if args.dry_run:
-        print("\n[dry-run] Nothing written.")
-        return
+    # Build the base prompt with shared extras (keywords, tone, language, image brief)
+    base_prompt = inject_extras(
+        base_prompt,
+        tone=getattr(args, "tone", None),
+        keywords=keywords,
+        language=getattr(args, "language", None),
+        image_brief=getattr(args, "with_image_brief", False),
+    )
 
-    content, out_key = _maybe_generate(prompt, out_key, args)
+    total_variants = max(1, getattr(args, "variants", 1) or 1)
 
-    # PRINT_ONLY only applies to prompt output, not generated content.
-    if out_key in PRINT_ONLY and not args.generate:
-        return
+    for variant_num in range(1, total_variants + 1):
+        prompt = base_prompt
+        if total_variants > 1:
+            prompt += (
+                f"\n\n------------------------------------------------------------\n"
+                f"VARIANT {variant_num} OF {total_variants}\n"
+                f"------------------------------------------------------------\n"
+                f"This is variant {variant_num}. You MUST vary: the hook pattern, "
+                f"the CTA wording, and at least one structural element (list order, "
+                f"framing angle, opening line) from all other variants in this batch. "
+                f"No two variants may share an identical hook opener or CTA question."
+            )
 
-    os.makedirs(output_dir, exist_ok=True)
-    filename = make_filename(normalized, out_key)
-    subdir   = os.path.join(output_dir, folder)
-    os.makedirs(subdir, exist_ok=True)
-    filepath = os.path.join(subdir, filename)
-    with open(filepath, "w", encoding="utf-8") as f:
-        f.write(content)
-    label = "Content" if args.generate else "Prompt"
-    print(f"\n{label} saved to: {os.path.relpath(filepath)}")
+        print("\n" + "=" * 60)
+        if total_variants > 1:
+            print(f"[VARIANT {variant_num}/{total_variants}]")
+        print(prompt)
+        print("=" * 60)
+
+        if args.dry_run:
+            if variant_num == total_variants:
+                print("\n[dry-run] Nothing written.")
+            continue
+
+        content, effective_key = _maybe_generate(prompt, out_key, args)
+
+        # Apply CMS format if --generate and --format specified
+        if args.generate and getattr(args, "format", None):
+            content = format_output(content, args.format)
+
+        # PRINT_ONLY only applies to prompt output, not generated content.
+        if effective_key in PRINT_ONLY and not args.generate:
+            continue
+
+        os.makedirs(output_dir, exist_ok=True)
+        variant_index = variant_num if total_variants > 1 else None
+        filename = make_filename(normalized, effective_key, index=variant_index)
+        subdir   = os.path.join(output_dir, folder)
+        os.makedirs(subdir, exist_ok=True)
+        filepath = os.path.join(subdir, filename)
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write(content)
+        label = "Content" if args.generate else "Prompt"
+        print(f"\n{label} saved to: {os.path.relpath(filepath)}")
+
+        if getattr(args, "log_publish", False):
+            tracker = log_publish_row(args.platform, args.topic, filepath, output_dir)
+            print(f"Logged to tracker: {os.path.relpath(tracker)}")
 
 
 def _maybe_generate(prompt, out_key, args):
@@ -555,7 +756,8 @@ def _maybe_generate(prompt, out_key, args):
     return content, out_key
 
 
-def run_bulk(csv_path, output_dir_arg=None, global_cta=None, dry_run=False):
+def run_bulk(csv_path, output_dir_arg=None, global_cta=None, dry_run=False,
+             scheduler_format=None):
     if not os.path.exists(csv_path):
         print(f"Error: CSV file not found: {csv_path}")
         sys.exit(1)
@@ -700,6 +902,9 @@ def run_bulk(csv_path, output_dir_arg=None, global_cta=None, dry_run=False):
     else:
         print(f"\n{ok_count} prompt(s) packaged into: {os.path.relpath(zip_path)}")
         print(f"Run log saved to:           {os.path.relpath(log_path)}")
+        if scheduler_format == "buffer":
+            buf_path = export_buffer_csv(log_rows, output_dir, zip_path)
+            print(f"Buffer import CSV:          {os.path.relpath(buf_path)}")
 
 
 def main():
@@ -748,6 +953,36 @@ def main():
     parser.add_argument("--model",           default=None,
                         help="Override the LLM model id used by --generate (defaults to the "
                              "selected provider's entry in config.json's defaults.llm_models)")
+    # Phase 10 tooling flags
+    parser.add_argument("--variants",        type=int, default=1, metavar="N",
+                        help="Generate N alternative versions of the prompt with varied hooks "
+                             "and CTAs (default: 1). Each saved as a separate file.")
+    parser.add_argument("--keywords",        default=None, metavar="FILE",
+                        help="CSV or plain-text file of target keywords to inject into the prompt. "
+                             "CSV: expects a 'keyword' column header. Plain text: one keyword per line.")
+    parser.add_argument("--tone",            default=None,
+                        choices=TONE_OPTIONS,
+                        help="Tone override injected into the prompt: formal, conversational, "
+                             "urgent, educational, or playful.")
+    parser.add_argument("--language",        default=None, metavar="LANG",
+                        help="Locale instruction appended to the prompt (e.g. 'Brazilian Portuguese', "
+                             "'French (France)', 'Spanish (Mexico)'). All output will be generated in "
+                             "this language.")
+    parser.add_argument("--log-publish",     action="store_true", dest="log_publish",
+                        help="Append a Draft row to data/publish_tracker_YYYYMM.csv after saving "
+                             "each file. Columns match publish_tracker_template.csv.")
+    parser.add_argument("--format",          default=None, dest="format",
+                        choices=("markdown", "gutenberg", "hubspot", "contentful"),
+                        help="CMS output format for --generate content: markdown (default, no change), "
+                             "gutenberg (WordPress Gutenberg blocks JSON), hubspot (HubSpot blog JSON), "
+                             "contentful (Contentful entry JSON).")
+    parser.add_argument("--with-image-brief", action="store_true", dest="with_image_brief",
+                        help="Append a visual direction brief section to the prompt (DALL-E / "
+                             "Midjourney prompt, key visual concept, supporting visuals, what to avoid).")
+    parser.add_argument("--export-scheduler", default=None, dest="export_scheduler",
+                        choices=("buffer",),
+                        help="After a --bulk run, export a scheduler-ready CSV. Currently supports: "
+                             "buffer (Buffer import format).")
 
     args = parser.parse_args()
 
@@ -756,7 +991,8 @@ def main():
         return
 
     if args.bulk:
-        run_bulk(args.bulk, output_dir_arg=args.output_dir, global_cta=args.cta, dry_run=args.dry_run)
+        run_bulk(args.bulk, output_dir_arg=args.output_dir, global_cta=args.cta,
+                 dry_run=args.dry_run, scheduler_format=args.export_scheduler)
     elif args.repurpose:
         if not args.platform:
             parser.error("--platform is required with --repurpose (specifies the target platform)")

@@ -113,16 +113,16 @@ README, CHANGELOG, GLOSSARY.md all updated and pushed.
 
 | # | Feature | Priority | Status |
 |---|---------|----------|--------|
-| 1 | `--variants N` flag — A/B copy generator | High | ⬜ |
-| 2 | `--keywords FILE` flag — keyword injection | High | ⬜ |
-| 3 | Citation auto-verification in lint_content.py | High | ⬜ |
-| 4 | `--tone` override flag (formal/conversational/urgent/educational/playful) | High | ⬜ |
-| 5 | Social scheduler CSV export (Buffer/Later format) | Medium | ⬜ |
-| 6 | `--language` / locale flag | Medium | ⬜ |
-| 7 | `--log-publish` tracker integration | Medium | ⬜ |
-| 8 | HARO DataBank builder prompt | Medium | ⬜ |
-| 9 | `--format` CMS output (gutenberg/hubspot/contentful) | Medium | ⬜ |
-| 10 | `--with-image-brief` visual direction flag | Medium | ⬜ |
+| 1 | `--variants N` flag — A/B copy generator | High | ✅ |
+| 2 | `--keywords FILE` flag — keyword injection | High | ✅ |
+| 3 | Citation auto-verification in lint_content.py | High | ✅ (`--check-urls`) |
+| 4 | `--tone` override flag (formal/conversational/urgent/educational/playful) | High | ✅ |
+| 5 | Social scheduler CSV export (Buffer/Later format) | Medium | ✅ (`--export-scheduler buffer`) |
+| 6 | `--language` / locale flag | Medium | ✅ |
+| 7 | `--log-publish` tracker integration | Medium | ✅ |
+| 8 | HARO DataBank builder prompt | Medium | ✅ |
+| 9 | `--format` CMS output (gutenberg/hubspot/contentful) | Medium | ✅ |
+| 10 | `--with-image-brief` visual direction flag | Medium | ✅ |
 | 11 | Content performance feedback CSV | Low | ⬜ |
 | 12 | HARO DataBank population (currently 15 rows — needs 50+) | Low | ⬜ |
 
@@ -146,7 +146,7 @@ README, CHANGELOG, GLOSSARY.md all updated and pushed.
 - [ ] Duplicate Instagram prompt resolved
 - [x] All 17 Phase 8 prompts written and wired
 - [x] All 21 Phase 9 strategy docs written
-- [ ] Phase 10 tooling features implemented
+- [x] Phase 10 tooling features implemented (10/12 complete; items 11-12 low priority)
 - [x] README updated to reflect all new content
-- [x] CHANGELOG v0.8.0 written
+- [x] CHANGELOG v0.9.0 written
 - [x] Git committed and pushed
