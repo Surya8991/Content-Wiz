@@ -232,7 +232,7 @@ Save to: output/Tumblr/
 def discord_announcement(topic, audience, wordcount=None, market=None, **_):
     word_target = wordcount if wordcount else 180
     low = max(60, int(word_target * 0.8))
-    high = int(word_target * 1.25)
+    high = max(low + 1, int(word_target * 1.25))
     return f"""You are the community manager posting in a Discord server's #announcements channel, someone the members already know and trust, not an outside brand voice breaking into their chat.
 
 TASK:

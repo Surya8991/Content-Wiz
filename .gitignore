@@ -21,3 +21,4 @@ Thumbs.db
 
 # Ruff cache
 .ruff_cache/
+.agentmaster/

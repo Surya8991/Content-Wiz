@@ -9,8 +9,8 @@ from ._shared import (
 _BANNED_CTA_LIST = ", ".join(f'"{p}"' for p in BANNED_CTA_PHRASES)
 
 
-def youtube_desc(topic, audience, wordcount, **_):
-    target = max(wordcount, 350)
+def youtube_desc(topic, audience, wordcount=None, **_):
+    target = max(wordcount or 0, 350)
     return f"""You are a YouTube SEO specialist who has optimized 1000+ video descriptions across business and education channels. You understand YouTube's 2025 ranking factors: watch time, click-through rate, session duration, and how the description directly influences each.
 
 TASK:

@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+**Whole-project code review (repomix + codereview pass):**
+
+- `templates/community.py`: `discord_announcement()`'s word-count range only
+  floored the low bound, not the high one - for `wordcount` under ~48 the
+  printed range inverted (e.g. `wordcount=10` produced "60-12 words is
+  acceptable"). Floored `high` the same way `low` already was.
+- `templates/video.py`: `youtube_desc()` had no default for `wordcount`
+  (every sibling template defaults it to `None`), so `max(wordcount, 350)`
+  would raise `TypeError` if ever called without one. Matched the pattern
+  used everywhere else in `templates/`.
+
+
 **Persona-driven review pass:**
 
 - `generate.py`: `--output-dir`/`--bulk` writes to a path on a different drive
