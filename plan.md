@@ -61,23 +61,23 @@ README, CHANGELOG, GLOSSARY.md all updated and pushed.
 
 | # | File | Priority | Status |
 |---|------|----------|--------|
-| 1 | `Facebook_Organic_Post_Prompt.txt` | High | ⬜ |
-| 2 | `Twitter_Ads_Prompt.txt` | High | ⬜ |
-| 3 | `LinkedIn_Newsletter_Prompt.txt` | High | ⬜ |
-| 4 | `YouTube_Shorts_Prompt.txt` | High | ⬜ |
-| 5 | `ASO_Copy_Prompt.txt` | High | ⬜ |
-| 6 | `Competitive_Battlecard_Prompt.txt` | High | ⬜ |
-| 7 | `Customer_Success_Email_Prompt.txt` | High | ⬜ |
-| 8 | `Chatbot_Flow_Prompt.txt` | Medium | ⬜ |
-| 9 | `ABM_Content_Prompt.txt` | Medium | ⬜ |
-| 10 | `Brand_Voice_Style_Guide_Prompt.txt` | Medium | ⬜ |
-| 11 | `Partnership_Comarketing_Prompt.txt` | Medium | ⬜ |
-| 12 | `Annual_Report_Prompt.txt` | Medium | ⬜ |
-| 13 | `Podcast_Ad_Read_Prompt.txt` | Medium | ⬜ |
-| 14 | `Survey_Feedback_Copy_Prompt.txt` | Medium | ⬜ |
-| 15 | `Newsletter_Sponsorship_Pitch_Prompt.txt` | Medium | ⬜ |
-| 16 | `Community_Welcome_Prompt.txt` | Medium | ⬜ |
-| 17 | `Bing_Ads_Prompt.txt` | Low | ⬜ |
+| 1 | `Facebook_Organic_Post_Prompt.txt` | High | ✅ |
+| 2 | `Twitter_Ads_Prompt.txt` | High | ✅ |
+| 3 | `LinkedIn_Newsletter_Prompt.txt` | High | ✅ |
+| 4 | `YouTube_Shorts_Prompt.txt` | High | ✅ |
+| 5 | `ASO_Copy_Prompt.txt` | High | ✅ |
+| 6 | `Competitive_Battlecard_Prompt.txt` | High | ✅ |
+| 7 | `Customer_Success_Email_Prompt.txt` | High | ✅ |
+| 8 | `Chatbot_Flow_Prompt.txt` | Medium | ✅ |
+| 9 | `ABM_Content_Prompt.txt` | Medium | ✅ |
+| 10 | `Brand_Voice_Style_Guide_Prompt.txt` | Medium | ✅ |
+| 11 | `Partnership_Comarketing_Prompt.txt` | Medium | ✅ |
+| 12 | `Annual_Report_Prompt.txt` | Medium | ✅ |
+| 13 | `Podcast_Ad_Read_Prompt.txt` | Medium | ✅ |
+| 14 | `Survey_Feedback_Copy_Prompt.txt` | Medium | ✅ |
+| 15 | `Newsletter_Sponsorship_Pitch_Prompt.txt` | Medium | ✅ |
+| 16 | `Community_Welcome_Prompt.txt` | Medium | ✅ |
+| 17 | `Bing_Ads_Prompt.txt` | Low | ✅ |
 
 ---
 
@@ -85,27 +85,27 @@ README, CHANGELOG, GLOSSARY.md all updated and pushed.
 
 | # | File | Priority | Status |
 |---|------|----------|--------|
-| 1 | `strategy-twitter.md` | High | ⬜ |
-| 2 | `strategy-google-ads.md` | High | ⬜ |
-| 3 | `strategy-linkedin-ads.md` | High | ⬜ |
-| 4 | `strategy-lifecycle-crm.md` | High | ⬜ |
-| 5 | `strategy-sales-enablement.md` | High | ⬜ |
-| 6 | `strategy-editorial-seo.md` | High | ⬜ |
-| 7 | `strategy-cro.md` | High | ⬜ |
-| 8 | `strategy-product-marketing.md` | High | ⬜ |
-| 9 | `strategy-reddit.md` | Medium | ⬜ |
-| 10 | `strategy-pinterest.md` | Medium | ⬜ |
-| 11 | `strategy-events-webinar.md` | Medium | ⬜ |
-| 12 | `strategy-crisis-comms.md` | Medium | ⬜ |
-| 13 | `strategy-employer-branding.md` | Medium | ⬜ |
-| 14 | `strategy-link-building.md` | Medium | ⬜ |
-| 15 | `strategy-gated-content.md` | Medium | ⬜ |
-| 16 | `strategy-mobile-messaging.md` | Medium | ⬜ |
-| 17 | `strategy-discord.md` | Medium | ⬜ |
-| 18 | `strategy-competitive-analysis.md` | Medium | ⬜ |
-| 19 | `strategy-technical-seo.md` | Medium | ⬜ |
-| 20 | `strategy-pr.md` | Medium | ⬜ |
-| 21 | `strategy-investor-comms.md` | Low | ⬜ |
+| 1 | `strategy-twitter.md` | High | ✅ |
+| 2 | `strategy-google-ads.md` | High | ✅ |
+| 3 | `strategy-linkedin-ads.md` | High | ✅ |
+| 4 | `strategy-lifecycle-crm.md` | High | ✅ |
+| 5 | `strategy-sales-enablement.md` | High | ✅ |
+| 6 | `strategy-editorial-seo.md` | High | ✅ |
+| 7 | `strategy-cro.md` | High | ✅ |
+| 8 | `strategy-product-marketing.md` | High | ✅ |
+| 9 | `strategy-reddit.md` | Medium | ✅ |
+| 10 | `strategy-pinterest.md` | Medium | ✅ |
+| 11 | `strategy-events-webinar.md` | Medium | ✅ |
+| 12 | `strategy-crisis-comms.md` | Medium | ✅ |
+| 13 | `strategy-employer-branding.md` | Medium | ✅ |
+| 14 | `strategy-link-building.md` | Medium | ✅ |
+| 15 | `strategy-gated-content.md` | Medium | ✅ |
+| 16 | `strategy-mobile-messaging.md` | Medium | ✅ |
+| 17 | `strategy-discord.md` | Medium | ✅ |
+| 18 | `strategy-competitive-analysis.md` | Medium | ✅ |
+| 19 | `strategy-technical-seo.md` | Medium | ✅ |
+| 20 | `strategy-pr.md` | Medium | ✅ |
+| 21 | `strategy-investor-comms.md` | Low | ✅ |
 
 ---
 
@@ -141,12 +141,12 @@ README, CHANGELOG, GLOSSARY.md all updated and pushed.
 - [x] GLOSSARY.md created (146 terms, 13 disciplines)
 
 ## Definition of Done (v2 — in progress)
-- [ ] All 5 unwired prompts wired into CLI
-- [ ] cro.py / product.py / ugc.py imported and reachable
+- [x] All 5 unwired prompts wired into CLI
+- [x] cro.py / product.py / ugc.py imported and reachable
 - [ ] Duplicate Instagram prompt resolved
-- [ ] All 17 Phase 8 prompts written and wired
-- [ ] All 21 Phase 9 strategy docs written
+- [x] All 17 Phase 8 prompts written and wired
+- [x] All 21 Phase 9 strategy docs written
 - [ ] Phase 10 tooling features implemented
-- [ ] README updated to reflect all new content
-- [ ] CHANGELOG v0.8.0 written
-- [ ] Git committed and pushed
+- [x] README updated to reflect all new content
+- [x] CHANGELOG v0.8.0 written
+- [x] Git committed and pushed

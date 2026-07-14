@@ -5,6 +5,66 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.0] — 2026-07-14
+
+### Added
+
+**Prompt files (17 new channels — Phase 8):**
+
+High priority:
+- `prompts/Facebook_Organic_Post_Prompt.txt` — 3 formats (Standard/Video/Poll), external link suppression rules, 90-min comment velocity window, B2B and B2C pillar split
+- `prompts/Twitter_Ads_Prompt.txt` — 5 paid formats (Promoted Post/Image/Video/Carousel/Follower), character limit table, 2026 safety tiers, frequency caps, 3-second video rule
+- `prompts/LinkedIn_Newsletter_Prompt.txt` — newsletter vs article distinction, subscriber notification mechanic, 3 formats (Full Issue/Short-Form/Curated Roundup), dual-purpose title rule
+- `prompts/YouTube_Shorts_Prompt.txt` — Shorts vs TikTok/Reels differences, watch-through rate primacy, timestamped scripts, subscribe CTA placement rules
+- `prompts/ASO_Copy_Prompt.txt` — iOS and Google Play character limits table, iOS keyword field rules, A/B test variant structure with hypothesis statements
+- `prompts/Competitive_Battlecard_Prompt.txt` — verified-only competitor claims, objection handles (feel-felt-found), landmine questions, mandatory review date metadata
+- `prompts/Customer_Success_Email_Prompt.txt` — 6 email types with lifecycle trigger signals, personalization tokens per type, NPS detractor escalation rule
+
+Medium priority:
+- `prompts/Chatbot_Flow_Prompt.txt` — Lead Capture / Support Triage / Demo Booking flows with node structure
+- `prompts/ABM_Content_Prompt.txt` — 1:1 Enterprise / 1:Few Named Account / 1:Many Segment tiers
+- `prompts/Brand_Voice_Style_Guide_Prompt.txt` — Full Voice Guide / Channel Extension / Voice Audit formats
+- `prompts/Partnership_Comarketing_Prompt.txt` — Co-Authored / Joint Announcement / Co-Branded Campaign
+- `prompts/Annual_Report_Prompt.txt` — Corporate Annual Report / Nonprofit Impact Report
+- `prompts/Podcast_Ad_Read_Prompt.txt` — Pre-Roll / Mid-Roll / Host-Endorsed with FTC disclosure rules
+- `prompts/Survey_Feedback_Copy_Prompt.txt` — NPS / Post-Purchase Survey / Customer Interview Invitation
+- `prompts/Newsletter_Sponsorship_Pitch_Prompt.txt` — Media Kit / Cold Email / 3-email Follow-Up Sequence
+- `prompts/Community_Welcome_Prompt.txt` — Member Onboarding / Guidelines and Channel Descriptions / Moderation
+- `prompts/Bing_Ads_Prompt.txt` — RSA / Expanded Text / Audience Ads with LinkedIn audience targeting guidance
+
+**CLI wiring — textprompts.py:** 42 new aliases covering all 17 new prompt files plus the 5 previously-unwired prompts (Threads, TikTok Ads, Product Launch, Referral Copy, Sales Email).
+
+**Strategy documents (21 new channels — Phase 9):**
+
+High priority:
+- `strategies/strategy-twitter.md` — impressions-first algo, bookmark signals, no-link penalty, reply-led growth
+- `strategies/strategy-google-ads.md` — 4 campaign types, Quality Score optimization, RSA 15-headline pinning, bidding decision tree
+- `strategies/strategy-linkedin-ads.md` — 6 ad formats, 4-layer targeting, 2026 CPL benchmarks, Lead Gen Form advantage
+- `strategies/strategy-lifecycle-crm.md` — 5 lifecycle stages, trigger logic, 2-email/week cap, Apple Mail measurement caveat
+- `strategies/strategy-sales-enablement.md` — content-to-buyer-stage map, SDR vs AE usage, 4 objection types, feedback loop
+- `strategies/strategy-editorial-seo.md` — hub-and-spoke model, E-E-A-T implementation, original data as link asset, refresh cadence
+- `strategies/strategy-cro.md` — 5-phase hypothesis-first methodology, 95% confidence requirement, HiPPO failure mode
+- `strategies/strategy-product-marketing.md` — JTBD positioning, 3-phase launch sequence, 11-item launch asset checklist
+
+Medium priority:
+- `strategies/strategy-reddit.md` — karma-first participation, 90/10 contribution ratio, AMA planning
+- `strategies/strategy-pinterest.md` — search-engine model, keyword-first pin anatomy, 45-to-60-day seasonal calendar
+- `strategies/strategy-events-webinar.md` — 3-phase lifecycle, attended/no-show sequences, 8+ repurposing assets
+- `strategies/strategy-crisis-comms.md` — 2-hour holding statement window, employees-first stakeholder sequencing
+- `strategies/strategy-employer-branding.md` — EVP construction, full EB funnel, Glassdoor review management
+- `strategies/strategy-link-building.md` — 5 prospecting methods, 3-touch outreach cadence, anchor text distribution ratios
+- `strategies/strategy-gated-content.md` — gate/no-gate decision matrix, 4-email post-download sequence, progressive profiling
+- `strategies/strategy-mobile-messaging.md` — TCPA/GDPR compliance, frequency caps (SMS 4/month, push 2/week), trigger hierarchy
+- `strategies/strategy-discord.md` — channel architecture, 3-tier role system, MEE6/Carl-bot/Zapier stack, onboarding flow
+- `strategies/strategy-competitive-analysis.md` — 3-tier monitoring, win/loss integration, battlecard structure
+- `strategies/strategy-technical-seo.md` — 2026 Core Web Vitals targets, schema priorities, canonical strategy
+- `strategies/strategy-pr.md` — full press office workflow, newsjacking 2-to-4-hour window, pitch construction formula
+- `strategies/strategy-investor-comms.md` — monthly/quarterly/annual cadence, transparency tone rules, DocSend/Visible.vc stack
+
+**CLI wiring — generate.py + templates/__init__.py:**
+- `templates/cro.py`, `templates/product.py`, `templates/ugc.py` imported into `__init__.py` — all 14 functions now reachable
+- 14 new `PLATFORM_MAP` aliases and 9 new `SUBFOLDER_MAP` entries (CRO/, Product_Marketing/, etc.)
+
 ## [0.7.0] — 2026-07-14
 
 ### Added

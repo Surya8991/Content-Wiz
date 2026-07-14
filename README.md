@@ -49,8 +49,9 @@ delete them, or add your own.
   (linted, not just requested), fabrication guardrails on competitor claims
   and first-party numbers, FTC disclosure requirements on sponsored/UGC
   content, and a first-person disclosure rule.
-- **25 channel strategy docs** (goal, principles, structure, cadence, failure
+- **46 channel strategy docs** (goal, principles, structure, cadence, failure
   modes per channel), grounded in cited platform research.
+- **75 flat prompt files** covering every major channel and content type — from ASO copy and competitive battlecards to chatbot flows, ABM content, podcast ad reads, and brand voice guides.
 - **146-term marketing glossary** ([GLOSSARY.md](GLOSSARY.md)) covering 13 disciplines — Analytics, Brand, CRO, Email, Growth, Paid Ads, SEO, Social Media, and more — sourced from Marketing Academy.
 - **90+ curated marketing resources** ([RESOURCES.md](RESOURCES.md)) across SEO, paid media, social, email, analytics, copywriting, AI, and learning communities.
 - **Governance built in**: a publish/review tracker template, a documented
@@ -154,6 +155,27 @@ One document per channel. Each doc contains: goal and metric, core principles, r
 | [strategy-product-launch.md](strategies/strategy-product-launch.md) | Product launch campaigns | Launch-week revenue and activation rate |
 | [strategy-paid-social.md](strategies/strategy-paid-social.md) | Paid social (Meta + TikTok) | ROAS, CPL, and thumb-stop rate |
 | [strategy-substack.md](strategies/strategy-substack.md) | Substack newsletter | Paid subscriber conversion and open rate |
+| [strategy-twitter.md](strategies/strategy-twitter.md) | X / Twitter organic | Impressions, bookmarks, and follower growth |
+| [strategy-google-ads.md](strategies/strategy-google-ads.md) | Google Ads paid search | ROAS and Quality Score |
+| [strategy-linkedin-ads.md](strategies/strategy-linkedin-ads.md) | LinkedIn paid advertising | CPL and Lead Gen Form conversion rate |
+| [strategy-lifecycle-crm.md](strategies/strategy-lifecycle-crm.md) | Lifecycle email and CRM | Activation rate, retention rate, and expansion revenue |
+| [strategy-sales-enablement.md](strategies/strategy-sales-enablement.md) | Sales content enablement | Content utilization rate and pipeline influence |
+| [strategy-editorial-seo.md](strategies/strategy-editorial-seo.md) | Editorial pillar and topic cluster SEO | Organic traffic to cluster pages and ranking positions |
+| [strategy-cro.md](strategies/strategy-cro.md) | Conversion rate optimization | Conversion rate lift per test and statistical significance |
+| [strategy-product-marketing.md](strategies/strategy-product-marketing.md) | Product marketing and launches | Launch-week activation rate and win rate |
+| [strategy-reddit.md](strategies/strategy-reddit.md) | Reddit organic | Upvote rate and referral traffic from target subreddits |
+| [strategy-pinterest.md](strategies/strategy-pinterest.md) | Pinterest | Monthly impressions and outbound link clicks |
+| [strategy-events-webinar.md](strategies/strategy-events-webinar.md) | Events and webinars | Attendance rate and post-event pipeline |
+| [strategy-crisis-comms.md](strategies/strategy-crisis-comms.md) | Crisis communications | Time to first response and sentiment recovery |
+| [strategy-employer-branding.md](strategies/strategy-employer-branding.md) | Employer branding | Application conversion rate and offer acceptance rate |
+| [strategy-link-building.md](strategies/strategy-link-building.md) | Link acquisition | Referring domains growth and average DR of new links |
+| [strategy-gated-content.md](strategies/strategy-gated-content.md) | Gated content and lead magnets | Landing page conversion rate and post-download MQL rate |
+| [strategy-mobile-messaging.md](strategies/strategy-mobile-messaging.md) | SMS, push, and in-app messaging | Click-through rate and opt-out rate |
+| [strategy-discord.md](strategies/strategy-discord.md) | Discord community | Weekly active members and message volume |
+| [strategy-competitive-analysis.md](strategies/strategy-competitive-analysis.md) | Competitive content intelligence | Content gap coverage and battlecard usage by sales |
+| [strategy-technical-seo.md](strategies/strategy-technical-seo.md) | Technical SEO | Core Web Vitals scores and crawl coverage |
+| [strategy-pr.md](strategies/strategy-pr.md) | PR and media relations | Media placements per month and domain authority of placements |
+| [strategy-investor-comms.md](strategies/strategy-investor-comms.md) | Investor relations | Update open rate and investor response rate |
 
 ---
 
@@ -230,6 +252,23 @@ defined in `config.json`'s `brands` map (keyed by domain); `edstellar.com` and
 | [Substack_Post_Prompt.txt](prompts/Substack_Post_Prompt.txt) | Substack essays, Notes, and restacks |
 | [Referral_Program_Copy_Prompt.txt](prompts/Referral_Program_Copy_Prompt.txt) | Referral program invite and incentive copy |
 | [Sales_Email_Prompt.txt](prompts/Sales_Email_Prompt.txt) | Cold outreach and follow-up sales email sequences |
+| [Facebook_Organic_Post_Prompt.txt](prompts/Facebook_Organic_Post_Prompt.txt) | Facebook organic page and group posts (3 formats) |
+| [Twitter_Ads_Prompt.txt](prompts/Twitter_Ads_Prompt.txt) | X / Twitter paid ads (Promoted Post, Image, Video, Carousel, Follower) |
+| [LinkedIn_Newsletter_Prompt.txt](prompts/LinkedIn_Newsletter_Prompt.txt) | LinkedIn native newsletters with subscriber growth guidance |
+| [YouTube_Shorts_Prompt.txt](prompts/YouTube_Shorts_Prompt.txt) | YouTube Shorts scripts (distinct from TikTok/Reels structure) |
+| [ASO_Copy_Prompt.txt](prompts/ASO_Copy_Prompt.txt) | App Store Optimization copy for iOS and Google Play |
+| [Competitive_Battlecard_Prompt.txt](prompts/Competitive_Battlecard_Prompt.txt) | Internal sales competitive battlecards (verified claims only) |
+| [Customer_Success_Email_Prompt.txt](prompts/Customer_Success_Email_Prompt.txt) | Customer success and renewal emails (6 types with trigger signals) |
+| [Chatbot_Flow_Prompt.txt](prompts/Chatbot_Flow_Prompt.txt) | Chatbot and live chat conversation flows |
+| [ABM_Content_Prompt.txt](prompts/ABM_Content_Prompt.txt) | Account-based marketing personalized content (3 ABM tiers) |
+| [Brand_Voice_Style_Guide_Prompt.txt](prompts/Brand_Voice_Style_Guide_Prompt.txt) | Brand voice and style guide generator |
+| [Partnership_Comarketing_Prompt.txt](prompts/Partnership_Comarketing_Prompt.txt) | Co-branded content and partner marketing copy |
+| [Annual_Report_Prompt.txt](prompts/Annual_Report_Prompt.txt) | Corporate annual reports and nonprofit impact reports |
+| [Podcast_Ad_Read_Prompt.txt](prompts/Podcast_Ad_Read_Prompt.txt) | Podcast sponsorship scripts (pre-roll / mid-roll / host-endorsed) |
+| [Survey_Feedback_Copy_Prompt.txt](prompts/Survey_Feedback_Copy_Prompt.txt) | NPS surveys, post-purchase surveys, and interview invitation emails |
+| [Newsletter_Sponsorship_Pitch_Prompt.txt](prompts/Newsletter_Sponsorship_Pitch_Prompt.txt) | Newsletter ad slot sales: media kit, cold email, follow-up sequence |
+| [Community_Welcome_Prompt.txt](prompts/Community_Welcome_Prompt.txt) | Community onboarding and moderation copy (Slack, Discord, Circle) |
+| [Bing_Ads_Prompt.txt](prompts/Bing_Ads_Prompt.txt) | Microsoft Advertising / Bing Ads copy with LinkedIn audience targeting |
 
 ---
 
