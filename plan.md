@@ -114,12 +114,13 @@ Update all doc reference files to reflect new content:
 ---
 
 ## Definition of Done
-- [ ] All 11 new prompt files written and follow gold standard
-- [ ] All 8 new strategy files written and follow gold standard
-- [ ] 6 existing prompts enriched
-- [ ] 3 new template files written
-- [ ] RESOURCES.md created with 50+ curated links
-- [ ] README.md updated
-- [ ] CHANGELOG.md updated
-- [ ] Git committed and pushed
-- [ ] 4-hour timer set
+- [x] All 11 new prompt files written and follow gold standard
+- [x] All 8 new strategy files written and follow gold standard
+- [x] 6 existing prompts enriched
+- [x] 3 new template files written
+- [x] RESOURCES.md created with 90+ curated links
+- [x] README.md updated
+- [x] CHANGELOG.md updated
+- [x] Git committed and pushed
+- [x] 4-hour timer set
+- [x] GLOSSARY.md created (146 terms, 13 disciplines)
