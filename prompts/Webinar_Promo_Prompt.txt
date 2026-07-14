@@ -14,7 +14,7 @@ Create promotional copy for a webinar hosted by [BRAND NAME], [BRAND DESCRIPTION
 
 1. Landing Page Description (150-200 words): What the webinar covers, key takeaways (3-4 bullet points), speaker name and title, date/time, and registration CTA linking to [REGISTRATION URL].
 
-2. Email Invitation (subject line + 100-150 word body): Sent to [TARGET AUDIENCE]. Opens with a pain point, builds urgency around the webinar topic, and closes with a registration CTA.
+2. Email Invitation: Email Body (100–150 words): Opener = 1 sentence naming the specific pain point (not the webinar title). Body = 2–3 sentences building urgency around the topic. CTA = 1 sentence (15–25 words): 'Register now at [URL] — [X] spots remaining / free to attend.' Subject line ≤ 60 characters, no 'webinar' in the subject (use the outcome instead). Sent to [TARGET AUDIENCE].
 
 3. LinkedIn Post (100-150 words): Announcement post for organic reach targeting [TARGET AUDIENCE]. Ends with 3-4 relevant hashtags including [BRAND HASHTAG].
 
@@ -27,12 +27,17 @@ Webinar Details:
 - Speaker: [INSERT SPEAKER NAME AND TITLE]
 - Date and Time: [INSERT DATE AND TIME]
 - Registration URL: [INSERT URL]
+Voice/Tone: [formal B2B event / conversational community invite / urgency-led — default: professional B2B, consistent across all assets]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
 ------------------------------------------------------------
 
 Asset Type | Content
+
+Each 'Asset Type' row must be fully self-contained — no cross-references between rows.
+Asset Type column must use exact labels: Email Subject, Email Body, LinkedIn Post, Twitter Post, LinkedIn Ad Copy.
+Field encoding: wrap multi-line assets in double quotes.
 
 Rows: Landing Page Description | Email Subject | Email Body | LinkedIn Post | Social Blurb
 
@@ -48,5 +53,16 @@ RULES
 - No em dashes anywhere
 - No passive voice
 - Registration URL in every asset
+- SELF-CHECK: After drafting each asset, verify word counts: Email subject line ≤ 60 characters, Email body 100–150 words, LinkedIn post 100–200 words, Social caption ≤ 150 characters. Revise any asset outside its range before outputting.
 - Output saved to output/Webinar_Promo/
 - The identical opening hook or closing CTA reused across multiple webinars promoted in the same session - if you are generating promo copy for more than one webinar in a session, no two webinars may share an opening hook or closing CTA
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. Subject line containing the word 'webinar' — use the outcome promise instead (e.g., 'How to close skills gaps in 90 days' not 'Webinar: skills gap analysis').
+2. Email body over 150 words due to speaker biography — the speaker bio belongs on the landing page, not in the email.
+3. LinkedIn post and email using identical opening sentences — each asset must open differently.
+4. CTA missing the specific URL or registration instruction — every asset must link to the registration page explicitly.
+5. Asset types not covering all required channels — generate all five asset types in every request.

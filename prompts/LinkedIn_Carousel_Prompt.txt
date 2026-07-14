@@ -26,6 +26,7 @@ Primary Claim: [The single most counterintuitive or specific claim the carousel 
 Key Data Points: [2 to 5 stats or findings to feature - each with source and year]
 CTA Destination URL: [URL the final slide points to - goes in caption first comment, not on the slide itself]
 Slide Count: [7 to 10 recommended; 5 minimum, 12 maximum]
+Voice/Tone: [formal B2B / conversational / aspirational — default: matches brand register from _Brand_Detection_Rules.txt]
 
 ------------------------------------------------------------
 CAROUSEL TYPES - CHOOSE ONE
@@ -143,6 +144,8 @@ GLOBAL RULES
 - Every stat names source and year
 - Progress indicator recommended on all slides 2 through final
 - Source diversity: within a cluster of carousels published close together on related topics, never anchor more than one carousel on the exact same single source, name a distinct report/edition for each
+- SELF-CHECK: After drafting, verify each slide: Headline ≤ 8 words, Body copy ≤ 25 words. Count both. If any slide exceeds its limit, cut before outputting. A slide that passes word count but reads as a run-on sentence should also be revised.
+- BATCH DEDUPLICATION: When generating multiple carousels in one session, no two Slide 1 headlines may share the same structure or opening word. No two carousels may share the same CTA slide text. Vary the framework name and the leading statistic across carousels.
 - Output saved to output/LinkedIn_Carousel/
 
 ------------------------------------------------------------

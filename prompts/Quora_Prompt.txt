@@ -10,15 +10,20 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Create a Quora answer for [BRAND NAME], [BRAND DESCRIPTION], for the question "[QUORA QUESTION]". Write a well-structured, informative answer of 150-250 words that provides genuine value to the reader. Naturally reference [BRAND NAME] as a credible source without being promotional. Include at least one credible stat or research reference. Write in a helpful, expert tone targeting [TARGET AUDIENCE]. Do not use em dashes. Close with a subtle reference to the blog or resource at [URL].
+Create a Quora answer for [BRAND NAME], [BRAND DESCRIPTION], for the question "[QUORA QUESTION]". Write a well-structured, informative answer of 150-250 words that provides genuine value to the reader. Naturally reference [BRAND NAME] as a credible source without being promotional. Include at least one credible stat or research reference. Write in a helpful, expert tone targeting [TARGET AUDIENCE]. Do not use em dashes. Close with a resource reference of 15–25 words: state what the resource is and why it adds value — do not just drop a URL. Example: 'I wrote a full breakdown of the 3-metric ROI model here — [URL].' Never use 'check out my blog' or 'visit our site.'
 
 Blog URL: [INSERT URL]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
 ------------------------------------------------------------
 
 Sr. No. | Quora Question | Blog URL | Quora Answer
+
+Field encoding: wrap multi-line answers in double quotes.
+Answer must directly address the question in sentence 1, build with 2–3 supporting sentences, and close with a resource reference.
+Quora Question column must be phrased as a question ending with a question mark.
 
 ------------------------------------------------------------
 RULES
@@ -30,4 +35,15 @@ RULES
 - Brand mention must feel natural, not forced
 - Any stat or research reference cited must name its source, organization, and year (e.g. "(ATD, 2025)" or "per WEF 2025 Future of Jobs Report")
 - No em dashes anywhere
+- SELF-CHECK: After drafting each answer, count words. Target: 150–250. If over 250, trim the 'why it matters' context. If under 150, add one concrete example.
+- BATCH DEDUPLICATION: No two answers in the same batch may open with the same sentence structure. No stat may be used more than once across a batch. The resource reference sentence must be reworded for each answer.
 - Output saved to output/Quora/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. Answer that opens with 'Great question!' or any praise of the question.
+2. Answer that doesn't address the specific question asked — stay on the exact question, not the broader topic.
+3. Resource mention in the first sentence instead of the last — the resource reference belongs at the close.
+4. Answer over 250 words due to unnecessary background context — open with the insight, not the setup.

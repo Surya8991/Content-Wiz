@@ -19,12 +19,17 @@ Competitor URLs:
 3. [INSERT COMPETITOR 3 URL - OPTIONAL]
 
 Focus Area (if any): [e.g. Leadership training / Agile certifications / HR topics]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
 ------------------------------------------------------------
 
 Sr. No. | Topic Area | Competitor Covering It | Why It Matters | Recommended Content Idea for Brand | Suggested Format
+
+Field encoding: wrap any field containing commas or line breaks in double quotes.
+'Why It Matters': 1–2 sentences stating the audience need and business opportunity.
+'Recommended Content Idea': name the format and the specific angle (e.g. 'Long-form guide: How to measure behavior change after compliance training').
 
 Save to output/Competitor_Gap_Analysis/
 
@@ -33,9 +38,23 @@ RULES
 ------------------------------------------------------------
 
 - Minimum 10 gap opportunities identified
-- Each recommended content idea must be specific and actionable
+- Each recommended content idea must name the content format, the specific angle, and the primary reader question it answers. Generic topic labels ('write about leadership') fail this test.
 - No em dashes anywhere
 - No passive voice
 - Research must be grounded in actual competitor content, not assumptions
 - Any statistic or data point cited to justify why a gap matters must name its source, organization, and year. Never invent a plausible-sounding citation; if a claim cannot be verified, describe the gap qualitatively instead
+- SELF-CHECK: Each 'Why It Matters' cell must be 1–2 sentences. Each 'Recommended Content Idea' must be 1–2 sentences with a named format. Revise any under-spec cell before outputting.
+- BATCH DEDUPLICATION: When generating multiple gap analyses in one session, no two rows may recommend the same content format and angle combination; no two rows may cite the same competitor for different gaps without naming a different piece of their content. Vary angle and evidence across every item in the batch.
 - Output saved to output/Competitor_Gap_Analysis/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. GAP IDENTIFIED THAT THE BRAND ALREADY COVERS: Before flagging a topic as a gap, verify the brand does not have an existing article, guide, or resource covering that angle. A false gap wastes production budget.
+
+2. RECOMMENDED IDEA TOO BROAD TO COMMISSION DIRECTLY: "Write a guide on leadership training" is not a commissioning-ready brief. The recommended idea must name the format, the angle, and the specific reader question it answers.
+
+3. COMPETITOR LISTED WITHOUT VERIFYING THEY ACTUALLY COVER THAT TOPIC: Do not infer that a competitor covers a topic because they operate in the same niche. Confirm the specific piece of content before citing it as the gap-filler benchmark.
+
+4. 'WHY IT MATTERS' THAT RESTATES THE GAP WITHOUT EXPLAINING THE AUDIENCE NEED: "The brand does not cover this topic" is not a reason it matters. The cell must explain what the target audience needs from this topic and why the absence hurts the brand's authority or pipeline.

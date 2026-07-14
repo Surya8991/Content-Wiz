@@ -22,6 +22,7 @@ REQUIRED INPUTS
 
 Brand: [BRAND NAME OR URL]
 Author: [Name and title of the person this article is authored by]
+Voice/Tone: [formal B2B / conversational professional / first-person narrative — default: first-person, professional]
 Topic: [Primary subject - one sentence]
 Primary Claim: [The single most counterintuitive or specific argument the article makes]
 Key Evidence: [2 to 4 stats or findings with source and year]
@@ -142,6 +143,8 @@ GLOBAL RULES
 - First-person voice as the named author
 - No AI-signature phrases: "In today's fast-paced world", "Dive into", "Leverage", "Revolutionize", "Transformative", "Groundbreaking"
 - Source diversity: within a cluster of articles published close together on related topics, never anchor more than one article on the exact same single source, name a distinct report/edition for each
+- SELF-CHECK: After drafting, count words. If using the 600–900 standard form, verify word count falls in that range. If using 900–1,400 deep-form, verify likewise. Expand the PEAK section or trim the intro if outside range.
+- BATCH DEDUPLICATION: When generating multiple LinkedIn Articles in one session, no two may share the same hook pattern (e.g., two Number Openers back-to-back), the same CTA sentence, or the same primary evidence source. Alternate hook types and data sources across the batch.
 - Output saved to output/LinkedIn/
 
 ------------------------------------------------------------

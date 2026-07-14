@@ -15,6 +15,7 @@ Write an original research report for [BRAND NAME], [BRAND DESCRIPTION], titled 
 Data or Survey Input: [PASTE FINDINGS OR DESCRIBE DATASET]
 Report URL (if published): [INSERT URL]
 Research Focus Area: [e.g. L&D investment trends / Workforce skills gaps / HR priorities]
+Voice/Tone: [authoritative / analytical / accessible B2B — default: authoritative, analytical, third-person]
 
 ------------------------------------------------------------
 REPORT STRUCTURE
@@ -29,14 +30,20 @@ REPORT STRUCTURE
 7. Key Finding 4 (headline stat + analysis + implication)
 8. Key Finding 5 (optional)
 9. Recommendations for [TARGET AUDIENCE]
-10. Conclusion with CTA
-11. About [BRAND NAME]
+10. Conclusion (100–150 words): summarise 2–3 key findings, state what the reader should do differently, close with a CTA of 15–25 words naming a specific resource.
+11. About [BRAND NAME] (50–80 words): company descriptor, one proof point, one contact or URL.
 
 ------------------------------------------------------------
 OUTPUT FORMAT
 ------------------------------------------------------------
 
 Full report in plain text with clearly labelled sections.
+
+Heading format: use ALL CAPS for section titles. Subsections use Title Case. Each section must be separated by a blank line.
+
+Conclusion section: 100–150 words maximum.
+
+About [BRAND NAME] section: 50–80 words, no product claims.
 
 Save to output/Research_Reports/
 
@@ -52,4 +59,20 @@ RULES
 - No em dashes anywhere
 - No passive voice
 - Brand positioned as research source, not as vendor
+- SELF-CHECK: After drafting, count total words. Target: 1,500–2,000. If under 1,500, expand the Methodology or Key Findings sections. If over 2,000, trim the Introduction and Limitations sections first.
+- BATCH DEDUPLICATION: When generating multiple research reports in one session, no two may share the same executive summary opening sentence, the same primary data source, or the same CTA action. Vary the central finding and the evidence anchor across reports.
 - Output saved to output/Research_Reports/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. METHODOLOGY SECTION MISSING SAMPLE SIZE AND DATA SOURCE: A methodology note that says "research was conducted" without naming the sample size, data source, and date range is unverifiable and undermines the report's credibility. Always include these three elements even if brief.
+
+2. FINDINGS STATED AS OPINIONS WITHOUT SUPPORTING DATA: Every key finding section must be anchored by a headline stat with a named source. A finding presented as a general observation without data is an opinion, not research.
+
+3. CTA IN CONCLUSION THAT PROMOTES A PRODUCT INSTEAD OF A RELATED RESOURCE: The conclusion CTA should link to a resource (framework, guide, assessment) that extends the report's value, not to a product demo or sales page.
+
+4. WORD COUNT UNDER 1,500 DUE TO SKIPPED LIMITATIONS SECTION: Omitting the Limitations section is a common shortcut that also signals to readers that the research is not rigorous. Include it even if brief (2–3 sentences).
+
+5. ABOUT SECTION OVER 80 WORDS WITH SALES COPY: The About section should describe what the brand does and provide one proof point. Any language that promotes a product feature or makes an unsubstantiated claim must be removed.

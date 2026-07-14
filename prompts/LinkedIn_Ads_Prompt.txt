@@ -14,12 +14,18 @@ Create LinkedIn Sponsored Content ad copy for [BRAND NAME], [BRAND DESCRIPTION],
 
 Landing Page URL: [INSERT URL]
 Campaign Goal: [e.g. Webinar sign-up / Lead gen / Course promotion / Content download]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
+CTA Button: [Apply / Download / Get Quote / Learn More / Register / Sign Up / Subscribe / View Website — pick one LinkedIn native option]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
 ------------------------------------------------------------
 
 Ad Variation | Introductory Text | Ad Body Copy | Headline | CTA Button
+
+Field encoding: wrap any field containing commas or line breaks in double quotes.
+Introductory Text must open with the audience pain point or a concrete statistic — not with the brand name.
+CTA Button must be exactly one of the LinkedIn native options: Apply / Download / Get Quote / Learn More / Register / Sign Up / Subscribe / View Website.
 
 Save to output/LinkedIn_Ads/
 
@@ -39,4 +45,17 @@ RULES
 - 3 ad variations per request
 - Vary the exact phrasing of the hook line and CTA across variations and across requests, do not reuse the same hook or headline in the same batch. Examples of the hook pattern (write a new one each time, do not copy these verbatim): "Most teams still measure the wrong metric.", "Your onboarding timeline is costing you more than you think.", "Budget season is coming - is your data ready?"
 - The identical hook line reused across multiple ad variations or requests in the same batch - if you are generating more than one set of ads in a session, no two variations may share a hook line
+- SELF-CHECK: After drafting each ad variation, count: Introductory Text (max 150 chars), Ad Body Copy (max 600 chars), Headline (max 70 chars). If any field exceeds its limit, cut before outputting.
 - Output saved to output/LinkedIn_Ads/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. INTRODUCTORY TEXT OVER 150 CHARACTERS: LinkedIn truncates the introductory text beyond 150 characters in the feed preview. Count characters and trim before outputting.
+
+2. BODY COPY LEADING WITH THE BRAND NAME: Opening with "[Brand Name] is the leading..." centres the brand instead of the reader's problem. The first sentence must address the audience's pain point or open with a stat or challenge.
+
+3. CTA BUTTON NOT MATCHING A LINKEDIN NATIVE OPTION: LinkedIn only renders its own fixed CTA buttons. Any label outside the eight native options (Apply / Download / Get Quote / Learn More / Register / Sign Up / Subscribe / View Website) will not render correctly. Use only the listed options.
+
+4. ALL AD VARIATIONS SHARING THE SAME OPENING HOOK WITH ONLY THE CTA CHANGED: If all three ad variations open with the same pain-point sentence and differ only in the CTA button, the test produces no learnable signal. Each variation must use a distinct hook angle (pain point vs. stat vs. bold statement).

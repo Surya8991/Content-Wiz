@@ -50,6 +50,16 @@ Application: `Organizations that conduct skills gap analyses annually spend 23% 
 
 ---
 
+## Content Pillars
+
+1. **Definitional Content** — "What is X" and "how does X work" pages targeting AI direct-answer slots.
+2. **Comparison & Decision Content** — "X vs Y" and "best X for Y" pages capturing consideration-stage queries.
+3. **Proof & Validation Content** — Case studies and data pages that AI engines cite as evidence.
+4. **Process & How-To Content** — Step-by-step frameworks that AI summarises as instructional answers.
+5. **Thought Leadership Content** — Original research and opinion that positions the brand as a primary source.
+
+---
+
 ## FAQ Section Formula
 
 Every pillar page and how-to article must include a dedicated FAQ section using FAQPage schema markup. Structure:
@@ -126,6 +136,10 @@ Given that citation freshness decays at 50% within 13 weeks:
 - **Medium-priority pages** (spoke pages, how-to articles): Review and update every 6 months.
 - **Case study pages:** Update with new client data as it becomes available. A case study that references outcomes from "last year" is more credible than one citing results from 3 years ago.
 
+**Publishing Volume**
+
+New content: 2–4 new GEO-optimized pages per month. Review cycle: existing pages quarterly. Sprint approach: publish 10 pages in month 1, 4/month from month 2 onward.
+
 Add a visible "Last updated: [date]" stamp to every content page. AI retrieval systems use update timestamps as a freshness signal.
 
 ---
@@ -138,6 +152,16 @@ Track AI search visibility using:
 - **Manual query sampling** - run the brand's 20 most important target keywords in ChatGPT, Perplexity, and Google AI Mode weekly, note citation patterns
 - **Google Search Console** - the "AI Overview" filter in Search Console (available in 2026) shows which queries trigger AI Overviews where the brand appears
 - **Traffic share** - track the proportion of organic traffic coming from AI-referred sources vs traditional organic search in Google Analytics 4
+
+---
+
+## Distribution & Amplification
+
+1. After publishing, submit the URL to Google Search Console for indexing.
+2. Share on LinkedIn with a direct-answer excerpt (not a link dump) to generate early engagement signals.
+3. Add the page to the internal link network — update 3 existing related pages to link to the new one.
+4. Include the page in the next newsletter issue as a featured resource.
+5. Monitor AI citation appearance in ChatGPT, Perplexity, and Google AI Overviews within 30 days of publish.
 
 ---
 

@@ -10,17 +10,22 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Write a backlink outreach email for [BRAND NAME], [BRAND DESCRIPTION], to request a link from the target website "[TARGET WEBSITE NAME / URL]". The email should be addressed to the website editor or content team. Open with a genuine, specific compliment about their content. Introduce [BRAND NAME]'s resource at [RESOURCE URL] and explain clearly why it adds value to their existing content. Keep the ask natural and low-pressure. Write in a professional but personable tone. Do not use em dashes. Keep the email under 150 words.
+Write a backlink outreach email for [BRAND NAME], [BRAND DESCRIPTION], to request a link from the target website "[TARGET WEBSITE NAME / URL]". The email should be addressed to the website editor or content team. Open with a genuine, specific compliment about their content: 1 sentence, 15–30 words, that names a specific piece of their content (e.g. 'Your guide on blended learning frameworks is one of the clearest breakdowns I've seen on the topic.'). Introduce [BRAND NAME]'s resource at [RESOURCE URL] and explain clearly why it adds value to their existing content. Keep the ask to 1 sentence under 25 words, naming one specific action (e.g. 'Would you be open to adding it as a reference under the [section name] section?'). Write in a professional but personable tone. Do not use em dashes. Keep the email under 150 words.
 
 Resource URL to promote: [INSERT URL]
 Target Website / Page to get a link from: [INSERT TARGET URL]
 Specific page on target site that relates to the resource (if known): [INSERT OR LEAVE BLANK]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
 ------------------------------------------------------------
 
 Sr. No. | Target Website | Resource URL | Subject Line | Email Body
+
+Field encoding: wrap any field containing commas or line breaks in double quotes.
+Subject Line: max 60 characters; must read as personal correspondence, not mass outreach.
+Email Body must include these sub-elements in order: specific compliment (1 sentence), resource introduction, value explanation, and ask (1 sentence).
 
 Save to output/Backlink_Outreach/
 
@@ -35,4 +40,17 @@ RULES
 - No em dashes anywhere
 - No passive voice
 - Output saved to output/Backlink_Outreach/
+- SELF-CHECK: After drafting, count words. If over 150 words, cut before outputting.
 - Never reuse the identical subject line, opening compliment, or closing ask across multiple emails in the same batch - if you are generating more than one outreach email in a session, no two may share a subject line, opening line, or closing ask
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. GENERIC OPENER NOT TIED TO SPECIFIC CONTENT: Opening with "I love your blog" or "I found your site really helpful" without naming a specific piece of content signals mass outreach and will be ignored.
+
+2. EMAIL OVER 150 WORDS: Outreach emails over 150 words have sharply lower response rates. Every sentence that does not serve the compliment, the resource introduction, or the ask is a sentence to cut.
+
+3. ASKING FOR MULTIPLE THINGS AT ONCE: One email, one ask. Do not request a link, a social share, and a content collaboration in the same message. Choose the ask that has the lowest friction for the recipient.
+
+4. URL IN BODY TEXT INSTEAD OF NATURALLY WOVEN IN: Dropping a bare URL into a paragraph looks like spam. The resource URL must be introduced with a clear description of what it is and why it is relevant to the target page.

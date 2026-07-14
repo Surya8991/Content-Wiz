@@ -44,6 +44,7 @@ Reference URL (optional): [existing content to repurpose or expand]
 First-Party Data to Include: [any of your brand's own client stats, program outcomes, or internal data - leave blank if none]
 CTA Destination URL: [URL the conclusion links to]
 Word Count Target: [leave blank to use type default]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
 
 ------------------------------------------------------------
 ARTICLE STRUCTURE (BY TYPE)
@@ -171,6 +172,34 @@ Save to: output/Blog/
 File name: Blog_[Type]_[Short-Slug].md
 
 ------------------------------------------------------------
+COPYWRITING FRAMEWORK SELECTOR
+------------------------------------------------------------
+
+Choose one framework before drafting. State which framework you used in the output header.
+
+FRAMEWORK 1 — AIDA (Attention, Interest, Desire, Action)
+Use when: Introducing a new concept or product to a cold audience.
+- Attention: Hook the reader with a bold claim, surprising stat, or provocative question.
+- Interest: Explain why the topic matters with evidence and concrete examples.
+- Desire: Show the transformation or outcome the reader wants to achieve.
+- Action: End with a specific next step (CTA, resource, or question).
+L&D example: "3 out of 4 training programmes fail to change behaviour. (Attention) Here's why completion metrics are the wrong measure. (Interest) Teams that track behaviour instead of completion see 40% better outcomes. (Desire) Here's the 3-step audit to switch. (Action)"
+
+FRAMEWORK 2 — PAS (Problem, Agitation, Solution)
+Use when: Writing for an audience that already feels the pain — mid-funnel.
+- Problem: Name the specific problem the reader faces in concrete terms.
+- Agitation: Make the pain vivid — what happens if it goes unsolved?
+- Solution: Introduce the solution and show exactly how it resolves the problem.
+L&D example: "Most L&D budgets get cut because results are invisible. (Problem) If you can't prove ROI, training becomes the first line item removed in a downturn. (Agitation) This post shows a 3-metric ROI stack that gives finance the numbers they need. (Solution)"
+
+FRAMEWORK 3 — BAB (Before, After, Bridge)
+Use when: Showcasing a transformation — best for case-study or proof-driven posts.
+- Before: Describe the reader's current painful situation in specific terms.
+- After: Paint the desired end state in concrete, measurable detail.
+- Bridge: The blog post IS the bridge — explain how it gets from Before to After.
+L&D example: "Before: your training team spends 80% of budget on delivery, 0% on measurement. After: every programme has a named metric tied to a business outcome. Bridge: the competency framework in this guide."
+
+------------------------------------------------------------
 GLOBAL RULES
 ------------------------------------------------------------
 
@@ -181,6 +210,9 @@ GLOBAL RULES
 - No promotional brand tone in article body
 - Brand mention natural: positioned as practitioner, not advertiser
 - Paragraphs maximum 4 sentences
+- SELF-CHECK: After drafting, count the article words. If outside the target range for the selected type, cut or expand before outputting.
+- BATCH DEDUPLICATION: When generating multiple blog articles in one session, no two may share a hook sentence, primary supporting stat, or CTA sentence. Vary angle, evidence, and opening approach across the batch.
+- FRAMEWORK: Choose AIDA, PAS, or BAB before drafting. State the framework in the output header. Do not mix frameworks within a single article.
 - Output saved to output/Blog/
 
 ------------------------------------------------------------

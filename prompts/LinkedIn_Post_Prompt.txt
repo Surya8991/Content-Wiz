@@ -6,6 +6,8 @@ THREE FORMATS AVAILABLE: Standard Post / Carousel Caption / Poll Post
 
 BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
 
+Voice/Tone: [formal B2B / conversational / first-person — default: brand account, professional B2B]
+
 Once the brand is confirmed, select the format below.
 
 ------------------------------------------------------------
@@ -90,6 +92,18 @@ PATTERN 4 - FRAMEWORK TEASE:
 PATTERN 5 - REFRAME:
 "Everyone says [common belief]. The data says something different."
 
+PATTERN 6 - SOCIAL PROOF TRIGGER:
+"[Specific number] [audience peers] [achieved / chose / switched to X]. Here's what changed for them."
+Note: Name a specific peer group and a concrete result. Vague social proof ('many companies') carries no algorithmic advantage over no social proof at all.
+
+PATTERN 7 - LOSS FRAME:
+"Most [audience] will [miss / lose / fail at X] this year. Not because they lack [expected answer]. Because [counterintuitive reason]."
+Note: Loss-framed hooks generate more comments than equivalent gain-framed hooks because they trigger a defensive response the reader wants to resolve.
+
+PATTERN 8 - CURIOSITY GAP:
+"[Intriguing partial fact that creates an information gap the reader cannot close without reading more.]"
+Note: The gap must be specific enough that the reader can imagine a payoff. "Something interesting happened" is not a gap. "The metric every L&D team reports is the one that predicts nothing" is a gap.
+
 ------------------------------------------------------------
 FORMAT B: CAROUSEL CAPTION
 ------------------------------------------------------------
@@ -150,7 +164,7 @@ OUTPUT FORMAT
 ------------------------------------------------------------
 
 For single post requests:
-Output labeled sections: HOOK | TENSION | PEAK | CTC | HASHTAGS | FIRST COMMENT (URL + brief CTA)
+Output labeled sections: HOOK | TENSION | PEAK | CTC | HASHTAGS | FIRST COMMENT (URL + CTA of 10–20 words: imperative verb + specific benefit. Example: 'Full framework with ROI calculator in comments — save this for your next budget conversation.')
 
 For bulk requests (CSV):
 Sr. No. | Format | Topic | URL (for first comment) | Post Content | First Comment Content
@@ -169,8 +183,10 @@ RULES SUMMARY
 - Every stat names its source and year
 - CTC (question to comments) required on every Format A post
 - Vary the exact phrasing of the hook and CTC question post to post, do not reuse the same hook opener or CTC question across a batch. Examples of the pattern (write a new one each time, do not copy these verbatim): "Which of these metrics does your team actually track?", "What's the one blocker keeping this off your roadmap?", "Where does your process break down first?"
+- SELF-CHECK: After drafting Format A posts, count characters. If under 800 or over 1,000, revise the PEAK section (expand or trim) before outputting. Format B: verify caption is under 300 characters. Format C: verify post text is 100–200 characters.
 - The identical hook or CTC question reused across multiple posts in the same batch - if you are generating more than one LinkedIn post in a session, no two may share a hook or CTC question
 - Source diversity: within a batch of posts published close together on related topics, never anchor more than one post on the exact same single source, name a distinct report/edition for each
+- PSYCHOLOGY HOOKS: Prefer hooks that activate social proof (peer validation), loss aversion (risk of missing out), or curiosity gap (information they need to close). Pure inspirational hooks without a concrete information payoff consistently underperform these three patterns.
 - Output saved to output/LinkedIn/
 
 ------------------------------------------------------------

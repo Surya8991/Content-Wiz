@@ -140,6 +140,17 @@ The minimum viable cadence for algorithm growth is 1 long-form video per week. B
 
 ---
 
+## Recommended Tools
+
+1. **TubeBuddy** — keyword research, tag suggestions, A/B thumbnail testing, and bulk SEO optimisation for YouTube.
+2. **VidIQ** — competitor channel analysis, trending topic discovery, and video score optimisation.
+3. **Descript** — AI-powered video editing, auto-transcription, and clip extraction for repurposing long videos into Shorts.
+4. **Canva** — design YouTube thumbnails at the correct dimensions (1280×720px) with brand-consistent visual templates.
+5. **TubeBuddy or Hootsuite** — schedule video publications in advance across YouTube and notify subscribers at peak engagement times.
+6. **Google Search Console** — monitor organic search impressions and clicks from Google Video results alongside YouTube Studio analytics.
+
+---
+
 ## Adaptation for Your Brand
 
 Some brands have a natural YouTube advantage: course providers and certification trainers, for example, have educational content built into their product. Your brand's own curriculum, client case studies, and internal expertise are all raw material for YouTube content that competitors cannot replicate without the same depth of operational experience. Shorts should lead with a single data point or counterintuitive finding from your brand's own programs - "3 out of 4 employees in our assessments showed skill gaps in this one area" is a more compelling Short hook than a generic productivity tip. Long-form videos should use the same stat-backed, plain paragraph structure as written content, translated into spoken form. No em dashes in on-screen text. The brand voice for video is: expert, direct, practical, and specific - never aspirational, inspirational, or vague.

@@ -41,6 +41,10 @@ Valid JSON-LD block:
 }
 </script>
 
+JSON-LD must use 2-space indentation.
+Each schema block must include @context, @type, and all Google-required fields for that type.
+Output the JSON-LD only — no prose wrapper, no markdown heading before the code block.
+
 Save to output/Schema_Markup/
 
 ------------------------------------------------------------
@@ -49,6 +53,17 @@ RULES
 
 - Output must be valid JSON-LD
 - Use the most specific schema type available
-- Include all recommended properties, not just required ones
+- Include all required Google properties for the chosen schema type. For Article: headline, author, datePublished, image. For FAQ: mainEntity with name and acceptedAnswer. For HowTo: name, step array with @type HowToStep, name, and text. For BreadcrumbList: itemListElement array with @type ListItem, position, name, item.
 - No em dashes anywhere
+- SELF-CHECK: After generating each schema block, validate that: (a) the JSON-LD is syntactically valid (all braces and brackets closed, no trailing commas), (b) all required properties for the schema type are present, (c) the @context is 'https://schema.org'. Correct any validation error before outputting.
+- BATCH DEDUPLICATION: When generating schema blocks for multiple pages in one session, verify no two pages share identical @id values. Each Article schema must have a unique URL and unique headline.
 - Output saved to output/Schema_Markup/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. Trailing comma after the last property in a JSON object — this breaks JSON-LD validation.
+2. @context missing or set to a non-schema.org URL — always use 'https://schema.org'.
+3. Required property absent for the chosen schema type — check the type-specific required fields before outputting.
+4. JSON that is valid but does not pass Google Rich Results Test — e.g., datePublished in wrong format (must be ISO 8601: YYYY-MM-DD or YYYY-MM-DDThh:mm:ssZ).

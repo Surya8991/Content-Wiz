@@ -7,6 +7,8 @@ _Last updated: 2026-07-13_
 
 Earn upvotes and "most viewed writer" credibility in relevant topic spaces by answering real, high-traffic questions directly and completely. Target: an upvote-to-view ratio that beats the space average, tracked per answer rather than aggregated, since Quora's algorithm resurfaces individual answers independently of when they were posted.
 
+**Success Metrics:** (1) Upvote-to-view ratio above 5% within 14 days of posting; (2) Minimum 10 answers per month across target topic spaces; (3) At least 2 answers per month earning 50+ upvotes within 30 days; (4) Measurable website referral traffic from Quora — track in Google Analytics 4 under Acquisition > Referrals.
+
 ---
 
 ## Core Principles
@@ -40,6 +42,38 @@ Earn upvotes and "most viewed writer" credibility in relevant topic spaces by an
 ## Cadence
 
 - Answer opportunistically as relevant, high-traffic questions appear rather than on a fixed schedule - Quora's value comes from answering the right question, not from a consistent publishing cadence.
+- **Volume target:** 10–15 answers per month minimum. **Priority order:** (1) Questions with 1,000+ followers and fewer than 10 existing answers; (2) Questions directly referencing the brand's core topic areas; (3) Trending questions in monitored Spaces.
+- **Review cycle:** monthly — identify the top 3 answers by upvote count and repurpose each into a LinkedIn post.
+
+---
+
+## Content Pillars
+
+1. **How-To Answers** — direct, step-by-step responses to process questions ("How do I measure training ROI?").
+2. **Myth-Busting Answers** — challenge a common assumption in the question with data and a counterintuitive answer.
+3. **Framework Answers** — introduce a named system or model as the answer structure.
+4. **Case-Based Answers** — use an anonymised client scenario to illustrate the answer in concrete terms.
+5. **Resource Answers** — provide a direct answer plus a curated list of 2–3 resources, ending with a brand-relevant reference.
+
+---
+
+## Distribution & Amplification
+
+1. Every answer earning 20+ upvotes within 7 days should be repurposed as a LinkedIn post within 48 hours.
+2. Add high-performing answers to the brand's content repurposing tracker for conversion into blog sections or FAQ entries.
+3. Share notable answers in the brand's email newsletter as a "This week on Quora" snippet.
+4. Follow up on answers where the asker or other commenters have asked a clarifying question — engagement extends reach.
+5. Monitor which Quora Spaces your answers get syndicated to and follow those Spaces to find adjacent question opportunities.
+
+---
+
+## Recommended Tools
+
+1. **Quora Spaces analytics** — native dashboard tracking answer views, upvotes, and follower counts per Space.
+2. **Google Analytics 4** — monitor Quora referral traffic under Acquisition > Referrals to measure conversion impact.
+3. **Ahrefs or Semrush** — identify which Quora answers rank on Google and optimise your answers for those keywords.
+4. **Notion or Airtable** — track answered questions, upvote counts, and repurposing status.
+5. **Google Alerts** — set alerts for your brand name and key topics to find new Quora questions referencing them.
 
 ---
 

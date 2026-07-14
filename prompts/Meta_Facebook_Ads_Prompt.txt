@@ -1,41 +1,206 @@
 ============================================================
-META / FACEBOOK ADS COPY PROMPT
+META ADS PROMPT (FACEBOOK + INSTAGRAM PLACEMENTS)
 ============================================================
+
+THREE FORMATS AVAILABLE: Single Image / Video Ad / Carousel Ad / Lead Gen Ad
 
 BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
 
-Once the brand is confirmed, use the template below.
+Voice/Tone: [direct-response / conversational / aspirational / urgency-driven — default: direct-response, benefit-led]
+
+Once the brand is confirmed, select the format below.
 
 ------------------------------------------------------------
-TEMPLATE
+PLATFORM/ALGORITHM RULES (2026) - READ BEFORE GENERATING ANY FORMAT
 ------------------------------------------------------------
 
-Create Meta (Facebook/Instagram) ad copy for [BRAND NAME], [BRAND DESCRIPTION], for the campaign targeting "[CAMPAIGN TOPIC / OFFER]". Generate 3 ad variations. For each variation provide: primary text (max 125 characters for feed preview, up to 300 for full), a headline (max 40 characters), a description (max 30 characters), and a CTA button label from Meta's options (Learn More / Sign Up / Download / Get Quote / Contact Us / Apply Now). Copy should be written in a direct, benefit-led tone targeting [TARGET AUDIENCE]. Open with a hook. Do not use em dashes.
+These constraints apply to all Meta Ads content. Violating them reduces performance or wastes budget.
 
-Landing Page URL: [INSERT URL]
-Ad Placement: [e.g. Facebook Feed / Instagram Feed / Stories / Reels]
-Campaign Goal: [e.g. Awareness / Lead gen / Traffic / Conversions]
+1. CAMPAIGN STRUCTURE IS THREE LEVELS: CAMPAIGN > AD SET > AD
+   Campaign level sets one objective (Awareness, Traffic, Engagement, Leads, App Promotion, or Sales). Ad Set level defines audience, budget, schedule, and placements. Ad level holds the creative. Every element of copy must serve the campaign objective selected. A Leads objective requires a different call-to-action than a Sales objective. Never generate generic ad copy without first confirming the campaign objective.
+
+2. THE LEARNING PHASE REQUIRES 50 CONVERSIONS IN 7 DAYS
+   Every new ad set enters a learning phase where Meta's algorithm tests delivery. It ends only when the ad set collects 50 conversion events of the chosen type within a 7-day window. Pausing or heavily editing a campaign in the first 2-4 days resets the learning phase completely. Budget at least 5x your target cost-per-result as a daily budget. Generated copy must support budget concentration, not fragmentation across many small ad sets.
+
+3. ADVANTAGE+ AUDIENCE DELIVERS 27% HIGHER ROAS THAN MANUAL BIDDING
+   Meta's AI targeting mode finds converters across the full eligible population with minimal audience constraints. For most eCommerce and lead gen campaigns, Advantage+ now outperforms manual interest targeting. Generated copy should speak to a psychology and desire, not a hyper-narrow demographic filter. The average cost per lead on Meta is $27.66, less than half the $70.11 average on Google, making broad creative the correct default (WordStream, 726 US campaigns, 2025).
+
+4. CREATIVE QUALITY IS THE PRIMARY PERFORMANCE LEVER
+   In 2025, 82% of Meta advertisers use Advantage+ automation. The differentiator is creative. Vertical video at 9:16 ratio outperforms square 1:1 by up to 15% in Feed placements. The first 3 seconds of any video must hook attention before the thumb scrolls. Text on screen is required because 70%+ of mobile users watch video with sound off. UGC-style, phone-shot and authentic-looking video typically outperforms polished studio ads because it blends into the feed. Every generated ad must include creative direction alongside the copy.
+
+5. AUDIENCE SIZE MUST SUPPORT ALGORITHM LEARNING
+   Targeting an audience of fewer than 100,000 people is a structural mistake. The algorithm needs room to find the best buyers within a larger pool. For most campaigns, aim for 500,000 to 5 million people in the Ad Set audience. Stacking interest categories shrinks the audience and starves the algorithm. Generated copy should be written for the right human psychology, not the narrowest job title.
+
+6. BENCHMARK DATA FOR COPY CALIBRATION (WORDSTREAM, 2025)
+   Average CTR for Meta traffic campaigns: 1.71%. For leads campaigns: 2.59%. Average CVR across leads campaigns: 7.72%. Average CPL: $27.66. Industries with highest leads CVR: Restaurants and Food (18.25%), Attorneys and Legal (10.53%), Education (10.08%). Copy targeting these verticals should lean into specificity and urgency to capture above-average conversion rates.
+
+7. META REACHES 2.11 BILLION DAILY ACTIVE USERS
+   This is not a niche platform. Broad creative that speaks to a real human problem, not a narrow job title, consistently scales. Every ad should pass a one-sentence clarity test: can someone outside the target industry immediately understand what the ad offers and why they should care?
 
 ------------------------------------------------------------
-OUTPUT FORMAT (CSV)
+FORMAT A: SINGLE IMAGE / VIDEO AD (PRIMARY WORKHORSE)
 ------------------------------------------------------------
 
-Ad Variation | Primary Text | Headline | Description | CTA Button | Placement
+Use when: Driving traffic, generating leads, or promoting a single product or service with a clear offer.
+Best cadence: 3-5 active variants per ad set at all times; Meta auto-optimizes toward the top performer.
+Target creative spec: Vertical 9:16 video (15-30 seconds preferred) or 1:1 image. Primary text: 125 characters optimal for feed truncation, full copy under 300 characters. Headline: 27 characters max. Description: 27 characters max.
 
-Save to output/Meta_Facebook_Ads/
+Structure - follow these 4 sections exactly:
+
+PRIMARY TEXT (Feed body, visible before "see more"):
+One sentence that names the problem or the outcome. No brand intro in the first line. Never start with the brand name. Write for the thumb. The first sentence must create a reason to stop scrolling. Address the reader's desire or pain point directly before introducing any solution.
+
+[blank line]
+
+SOCIAL PROOF OR SPECIFICITY LINE (optional but recommended):
+One sentence: a specific stat, a customer outcome, or a named result. Example: "Over 4,200 teams cut reporting time by 68% in their first month." Source and year required for any stat used.
+
+[blank line]
+
+CTA LINE:
+One imperative verb plus one specific outcome. "Get the free audit" beats "Learn more." "Book your 15-minute demo" beats "Contact us." Match the CTA to the campaign objective: Leads objective = form-fill CTA; Traffic objective = click-through CTA; Sales objective = purchase CTA.
+
+[blank line]
+
+HEADLINE (below the creative, 27 characters max):
+Should complete the thought started in the primary text or give the single strongest reason to click. Example: "Free audit. No credit card." or "Save 5 hours per week."
+
+HOOK PATTERNS FOR VIDEO SCRIPTS (choose one, write the full first 3-second line):
+
+PATTERN 1 - RESULT OPENER:
+"[Specific result] in [specific timeframe] — here is exactly how."
+Example: "We cut client acquisition cost by half in 90 days — here is the exact framework."
+
+PATTERN 2 - PROBLEM MIRROR:
+"If you are [specific frustrating situation], this is why."
+Example: "If your Meta ads are profitable in week 1 and dead in week 3, this is why."
+
+PATTERN 3 - CONTRARIAN CLAIM:
+"Stop [common behavior]. It is not what you think."
+Example: "Stop narrowing your Meta audience. It is costing you conversions."
+
+PATTERN 4 - SOCIAL PROOF HOOK:
+"[Number] businesses in [industry] use this to [outcome]. Here is the method."
 
 ------------------------------------------------------------
-RULES
+FORMAT B: CAROUSEL AD (MULTI-PRODUCT OR MULTI-BENEFIT)
 ------------------------------------------------------------
 
-- Primary text: max 125 characters for preview (up to 300 full)
-- Headline: max 40 characters
-- Description: max 30 characters
-- CTA must be one of Meta's native options
-- First line of primary text must be a hook
+Use when: Showcasing multiple products, multiple features of one product, a before/after sequence, or a step-by-step framework.
+Best cadence: 1-2 active carousels per campaign alongside Format A single ads.
+Target: 3-10 cards. Each card has: Headline (40 characters max), Description (20 characters max), CTA button. Primary text above the carousel: 125 characters optimal.
+
+Structure - follow these sections exactly:
+
+PRIMARY TEXT (above the carousel):
+One sentence that teases the carousel's payoff without giving it away. "Here are the 5 reasons [Audience] switch to [Category]" tells the viewer exactly what to expect and gives them a reason to swipe. Do not write a paragraph. The cards do the heavy lifting.
+
+CARD 1 - HOOK CARD:
+Headline: Deliver the single strongest benefit or repeat the primary text promise.
+Image/Video direction: Show the problem, the product hero shot, or a number that creates curiosity.
+Purpose: Stop the scroll and make the viewer want to swipe.
+
+CARDS 2-N - BENEFIT/FEATURE CARDS:
+Each card delivers one specific benefit or feature. Write the headline as a completed thought, not a teaser. "Saves 3 hours per week on reporting" beats "Feature 2: Reporting." Include a specific number or outcome where possible.
+
+FINAL CARD - CTA CARD:
+Headline: Imperative CTA verb plus specific outcome. "Get your free trial" or "See the full case study."
+Image direction: Clean, single-focus image with the offer or product.
+This card should function as a standalone ad if someone swipes to it directly.
+
+------------------------------------------------------------
+FORMAT C: LEAD GEN AD (NATIVE FORM, NO LANDING PAGE)
+------------------------------------------------------------
+
+Use when: Collecting qualified leads directly inside the Meta platform without sending users to an external landing page. Reduces friction and increases form completion rate.
+Target CPL benchmark: $27.66 average across industries (WordStream, 2025). Education vertical average CVR: 10.08%.
+
+Structure - follow these sections exactly:
+
+AD HEADLINE (above the form, 40 characters max):
+State the exact value the viewer gets by submitting. "Get the free B2B outreach playbook" or "Book your free 30-minute audit" beats "Contact us" by directly naming the exchange.
+
+AD PRIMARY TEXT (125 characters optimal):
+One line that names the target audience, the problem, and the outcome. Write for the ideal lead, not the broadest possible reader. Qualified leads self-select when the copy names their specific situation.
+
+INSTANT FORM HEADLINE (shown at top of the native form, 60 characters max):
+Restate what the viewer receives. This is the last line of copy before the form fields appear. It must reduce anxiety and restate the value. "Your free guide ships to your inbox within 60 seconds."
+
+INTRO PARAGRAPH (inside the native form, under 80 words):
+Sentence 1: name the audience and their most frustrating problem. Sentence 2: name the specific outcome this offer delivers. Sentence 3: one social proof point with source. Sentence 4: frictionless reassurance ("No sales call unless you want one").
+
+FORM FIELDS (list which fields to request):
+Collect only what you need to deliver the offer. Every additional field reduces completion rate. For a content lead magnet: First Name, Email. For a demo booking: First Name, Last Name, Work Email, Company Size (dropdown).
+
+THANK-YOU SCREEN HEADLINE (60 characters max):
+Confirm what they receive and when. "Your guide is on its way. Check your inbox."
+
+------------------------------------------------------------
+THREE CONTENT PILLAR GUIDANCE
+------------------------------------------------------------
+
+For a balanced Meta Ads presence, rotate creatives across these three pillar types to prevent audience fatigue and maintain algorithmic performance across the funnel.
+
+PILLAR 1 - DIRECT RESPONSE (Format A, primary spend allocation):
+Conversion-focused ads that drive a specific action: a form fill, a purchase, a download. Copy leads with the outcome, uses a specific stat or proof point, and ends with a single clear CTA. Run to warm retargeting audiences and Lookalike audiences of existing customers. Objectives: Leads, Sales, App Promotion.
+
+PILLAR 2 - EDUCATION AND VALUE (Format B or Format A video):
+Top-of-funnel ads that teach the audience something useful before asking for anything. These build trust, generate video watch audiences for retargeting, and lower CPL in the follow-up direct response campaign. Objectives: Traffic, Engagement, Awareness. Example topics: "5 mistakes [Industry] businesses make with [problem]," "How [Category] works in under 60 seconds."
+
+PILLAR 3 - SOCIAL PROOF AND CASE STUDIES (Format A or Carousel):
+Customer stories, testimonials, before/after results, and named case study outcomes. These convert warm middle-of-funnel audiences who have already seen your direct response ads but have not yet converted. Write the headline around the customer's result, not the brand's product. Example: "How [Company Type] went from [pain state] to [outcome] in [timeframe]."
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Required inputs before generating:
+- Brand (confirmed via _Brand_Detection_Rules.txt)
+- Product/Service
+- Target Audience
+- Campaign Objective (Awareness / Traffic / Leads / Sales)
+- Budget Level (Low under $50/day / Mid $50-$500/day / High $500+/day)
+- Landing Page URL (for Format A and B) or Lead Magnet Description (for Format C)
+- Voice/Tone
+
+For single ad requests:
+Output labeled sections: PRIMARY TEXT | HEADLINE | DESCRIPTION | CARD DETAILS (if carousel) | FORM COPY (if lead gen) | CREATIVE DIRECTION (aspect ratio, first 3-second hook for video, or image description for static)
+
+Field encoding note: plain text only. No em dashes. Commas and periods for punctuation. Primary text: first 125 characters appear before feed truncation; keep total under 300.
+
+For bulk requests (CSV):
+Sr. No. | Format | Campaign Objective | Target Audience | Primary Text | Headline | Description | CTA Button | Creative Direction
+
+Save to output/Meta_Ads/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- Campaign objective must be stated before generating — copy for a Leads objective differs from a Sales objective
 - No em dashes anywhere
 - No passive voice
-- If any statistic appears in the copy, name its source, organization, and year
-- 3 ad variations per request
-- Vary the exact phrasing of the hook line across variations and across requests, do not reuse the same hook in the same batch. Examples of the pattern (write a new one each time, do not copy these verbatim): "Still tracking completion, not results?", "Your next cohort starts in weeks - is your team ready?", "The training gap nobody budgets for."
-- Output saved to output/Meta_Facebook_Ads/
+- Primary text: 125 characters optimal for feed preview; headline: 27 characters max for Format A
+- First line of primary text must never open with the brand name
+- Every stat names its source, organization, and year
+- CTA must be a specific imperative verb plus a specific named outcome — "Learn more" and "Click here" are prohibited
+- Creative direction is required on every output
+- At least one social proof element per Format A and C ad
+- SELF-CHECK: After drafting primary text, count characters. If over 300, trim the social proof line first. If headline exceeds 27 characters, cut adjectives before cutting the offer noun. Format C intro paragraph: if over 80 words, cut sentence 4 first.
+- BATCH DEDUPLICATION: If generating more than one ad in a session, no two ads may share the same opening line of primary text or the same headline. Vary the hook pattern and the benefit angle across every ad, even for the same product. Examples of the pattern (write a new one each time, do not copy these verbatim): "Still tracking completion, not results?", "Your next cohort starts in weeks — is your team ready?", "The training gap nobody budgets for."
+- Source diversity: within a batch of ads in the same campaign, never anchor more than one ad on the exact same single stat — name a distinct proof point for each
+- Output saved to output/Meta_Ads/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. BRAND NAME IN LINE 1: Opening the primary text with the brand name ("At [Brand], we believe...") tells the viewer they are looking at an ad before they have any reason to care. The first line must name a problem, an outcome, or a specific pain point. The brand name belongs in the headline or the CTA frame.
+
+2. GENERIC CTA: "Learn more" and "Contact us" are placeholders, not calls to action. A CTA must name what the viewer receives in exchange for clicking. "Get the free playbook," "Book your 15-minute audit," and "See the case study" each tell the viewer exactly what happens next.
+
+3. NARROW AUDIENCE COPY: Writing ad copy so specific to a job title that Advantage+ cannot serve it broadly. Copy should speak to a human psychology — the frustration, the aspiration, the fear of missing out — that the target audience shares. Broad psychological resonance combined with Advantage+ targeting outperforms niche copy with narrow audience constraints.
+
+4. IGNORING SOUND-OFF VIEWING: 70% of mobile Meta video plays without sound. Video scripts that rely entirely on voiceover with no on-screen text leave most viewers with no message at all. Every video concept generated must include a text-on-screen strategy that carries the full message without audio.
+
+5. KILLING THE LEARNING PHASE EARLY: Generating ad copy variations that encourage running 8 small-budget ad sets instead of 2-3 well-funded ones. Each ad set needs 50 conversions in 7 days to exit the learning phase. Spreading budget across too many ad sets means none of them learn and CPL stays permanently high. Budget concentration is a creative strategy decision.

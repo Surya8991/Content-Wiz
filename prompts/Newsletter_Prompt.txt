@@ -42,6 +42,7 @@ Required inputs:
 - One key insight or data point to anchor the main body
 - CTA destination URL
 - Sender first name
+- Voice/Tone: [formal B2B / conversational / editorial — default: conversational, sender as a named individual]
 
 Generate each of the 8 blocks below in order.
 
@@ -192,6 +193,7 @@ RULES SUMMARY
 - All stats named with source and year
 - Sender name is a person, not the brand
 - Output saved to output/Newsletter/
+- SELF-CHECK: After drafting, count words for each block: BLOCK 4 (MAIN INSIGHT) must be 150–250 words, BLOCK 5 (CURATED PICKS) must be 50–80 words per pick. Revise any block outside its range before outputting.
 - The identical subject line pattern, opening hook, or sign-off observation reused across multiple newsletters in the same batch - if you are generating more than one newsletter in a session, no two may share a subject line pattern, opening hook, or closing observation
 
 ------------------------------------------------------------

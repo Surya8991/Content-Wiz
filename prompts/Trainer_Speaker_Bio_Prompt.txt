@@ -10,7 +10,7 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Write a professional bio for [TRAINER / SPEAKER NAME], a trainer or speaker associated with [BRAND NAME], [BRAND DESCRIPTION]. Generate two versions: a long bio (150-200 words) and a short bio (50-75 words). Both bios should be written in third person, highlight the trainer's expertise, key credentials or certifications, industries or domains covered, and what makes their delivery style distinctive. Naturally reference [BRAND NAME] as their affiliated organisation. Keep the register confident but not boastful: state credentials and outcomes plainly rather than with superlatives ("has trained 200+ managers across APAC" rather than "is a world-renowned expert"), letting the track record carry the authority. Do not use em dashes. Avoid passive voice.
+Write a professional bio for [TRAINER / SPEAKER NAME], a trainer or speaker associated with [BRAND NAME], [BRAND DESCRIPTION]. Generate two versions: a long bio (150-200 words) and a short bio (50-75 words). Both bios should be written in third person, highlight the trainer's expertise, key credentials or certifications, industries or domains covered, and a delivery style description: 1 sentence (15–25 words) naming a specific and observable quality — not a generic descriptor. Example: 'Known for live skills-gap diagnostics that teams complete during the session, not as homework.' Avoid: 'engaging and dynamic presenter.' Naturally reference [BRAND NAME] as their affiliated organisation. Keep the register confident but not boastful: state credentials and outcomes plainly rather than with superlatives ("has trained 200+ managers across APAC" rather than "is a world-renowned expert"), letting the track record carry the authority. Do not use em dashes. Avoid passive voice.
 
 Trainer / Speaker Details:
 - Name: [INSERT NAME]
@@ -19,12 +19,17 @@ Trainer / Speaker Details:
 - Certifications or Credentials: [LIST IF KNOWN]
 - Years of Experience: [INSERT]
 - Notable Clients or Industries Served: [INSERT IF AVAILABLE]
+Voice/Tone: [confident third-person / first-person conversational / formal credentials-first — default: confident, professional third-person]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
 ------------------------------------------------------------
 
 Sr. No. | Name | Role | Long Bio | Short Bio
+
+Field encoding: wrap multi-line bio content in double quotes.
+Long Bio must follow this order: credential/role, primary expertise, proof point (metric or named client), delivery style, CTA or booking note.
+Short Bio must fit in one to two sentences: role + primary expertise + one differentiator.
 
 Save to output/Trainer_Bios/
 
@@ -38,5 +43,15 @@ RULES
 - Credentials and expertise must be prominent
 - No em dashes anywhere
 - No passive voice
+- SELF-CHECK: After drafting, count words. Long bio target: 150–200. Short bio target: 50–75. If either is outside its range, revise before outputting: for long bio, expand the 'what makes them distinctive' sentence; for short bio, cut to the credential and the primary outcome only.
 - Output saved to output/Trainer_Bios/
 - The identical opening sentence or closing line reused across multiple bios in the same batch - if you are generating more than one trainer or speaker bio in a session, no two may share an opening sentence or closing line
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. Long bio over 200 words due to a full career history — include only the 2–3 most relevant credentials and outcomes.
+2. Delivery style described with generic adjectives ('engaging', 'dynamic') with no specific example — name a specific and observable quality instead.
+3. Short bio over 75 words — trim to role + primary expertise + one differentiator.
+4. No proof point (metric or named client) in the long bio — every long bio must carry at least one verifiable outcome or named organisation.

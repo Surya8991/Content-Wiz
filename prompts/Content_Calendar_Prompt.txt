@@ -10,9 +10,10 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Create a [DURATION e.g. 4-week / monthly] content calendar for [BRAND NAME], [BRAND DESCRIPTION], targeting [TARGET AUDIENCE] across the following platforms: [PLATFORMS e.g. LinkedIn, GMB, Pinterest, Instagram, Twitter/X, YouTube]. Base the calendar on the topic/niche "[TOPIC/NICHE]". For each slot, provide the platform, content type, topic idea, post angle description, and the prompt file to use for generation. Do not use em dashes. Avoid passive voice. Ensure content variety across platforms with no repeated angles within the same week.
+Create a [DURATION e.g. 4-week / monthly] content calendar for [BRAND NAME], [BRAND DESCRIPTION], targeting [TARGET AUDIENCE] across the following platforms: [PLATFORMS e.g. LinkedIn, GMB, Pinterest, Instagram, Twitter/X, YouTube]. Base the calendar on the topic/niche "[TOPIC/NICHE]". For each slot, provide the platform, content type, topic idea, post angle description, and the prompt file to use for generation. Do not use em dashes. Avoid passive voice. Ensure content variety: no two posts in the same week may share the same angle, hook structure, or CTA. Across the full calendar, each platform must have at least 2 distinct content pillars represented per month.
 
 Reference URLs (if any): [INSERT URLS]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
 
 ------------------------------------------------------------
 AVAILABLE CONTENT TYPES (use these exactly in the Content Type column)
@@ -71,6 +72,10 @@ OUTPUT FORMAT (CSV)
 
 Week | Day | Platform | Content Type | Topic | Post Angle / Description | Prompt File to Use | Status | Reviewed By | Review Date
 
+Field encoding: wrap any field containing commas or line breaks in double quotes.
+'Post Angle/Description': 1–2 sentences naming the specific topic angle and the reader action or insight it delivers.
+Status must be 'Draft' for every row at generation time.
+
 Status starts as "Draft" for every row. Any row carrying a statistic or written in first-person/confessional voice may not move to "Published" until Reviewed By and Review Date are filled in by a human reviewer.
 
 Save to output/Content_Calendar/
@@ -86,4 +91,18 @@ RULES
 - No em dashes anywhere
 - No passive voice
 - Any stat-bearing or first-person/confessional-voice content type requires a reviewer name and date in the tracker before its Status can move to "Published"
+- SELF-CHECK: Post Angle/Description must be 1–2 sentences (20–60 words). Review each row and revise any cell outside that range before outputting.
+- BATCH DEDUPLICATION: No two posts in the same week share the same angle. Across the full calendar, no hook phrase and no CTA sentence may appear more than once. Vary angle and evidence across every item in the batch.
 - Output saved to output/Content_Calendar/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. SAME ANGLE REPEATED ACROSS PLATFORMS IN THE SAME WEEK: Posting the same idea on LinkedIn and Instagram in the same week with minor wording changes is not content variety. Each platform slot in a given week must address a distinct angle or reader need.
+
+2. POST DESCRIPTION THAT IS A TOPIC LABEL NOT AN ANGLE: "LinkedIn post about training ROI" is a topic label. "Why completion rate is the wrong metric for training ROI — and the three numbers L&D managers should track instead" is an angle. Every Post Angle/Description cell must pass this test.
+
+3. CTA REPEATED IDENTICALLY ACROSS MULTIPLE ROWS: If every post ends with "Book a free demo," the calendar loses persuasive range. Vary the CTA by stage: awareness posts link to guides, consideration posts link to case studies, decision posts link to demos.
+
+4. NO HOOKS VARYING ACROSS THE CALENDAR: If every post opens with a question or every post opens with a stat, the brand's feed becomes predictable and engagement drops. Vary hook structures: stat, question, bold claim, counterintuitive statement, and short story across the calendar.

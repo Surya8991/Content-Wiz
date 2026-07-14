@@ -1,0 +1,276 @@
+============================================================
+UGC BRIEF PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: Creator UGC Video Brief / Written Testimonial & Review Brief / Photo & Image UGC Brief
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [authentic / direct / specific — default: peer-to-peer, conversational, never polished or corporate]
+
+Once the brand is confirmed, select the format below.
+
+------------------------------------------------------------
+UGC PROGRAM RULES (2025 DATA) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+These constraints apply to all UGC briefs. Violating them produces unusable content or legal liability.
+
+1. AUTHENTICITY IS THE ASSET — DO NOT OVER-DIRECT
+   UGC converts at up to 6.7x higher rates than non-UGC content precisely because it does not look produced (Morningstar/PR Newswire, 2026). Over-directing creators — specifying exact scripts, mandating logo placement, requiring brand-palette color grading — destroys the authenticity signal that makes UGC work. The brief's job is to set the minimum constraints needed for legal and brand safety, not to produce a branded ad with a different face in it.
+
+2. RIGHTS CLEARANCE IS NON-NEGOTIABLE BEFORE PAID DEPLOYMENT
+   A Like, a repost, or a tag is not a license. Running a customer's photo or video as a paid ad without written permission is a copyright violation. Every brief must include a rights grant section. For organic use only: a comment-reply approval workflow is acceptable. For paid ads: use a dedicated rights management tool (TINT, Bazaarvoice, Pixlee) or a creator portal with explicit terms-at-submission. Build the rights status tag in your DAM: "pending," "cleared-organic," "cleared-paid."
+
+3. ASK FOR MOMENTS, NOT TESTIMONIALS
+   "Tell us why you love [Brand]" produces rehearsed, polished language that sounds like an ad. "Show us how you use [Product] on a Tuesday morning" produces raw, specific content that reads as a peer recommendation. Brief for scenes and situations. Name the context, the moment, and the emotion — never ask for a written endorsement. 92% of consumers trust peer-created content over brand messages (inBeat Agency, 2025).
+
+4. GIVE CREATORS EXPLICIT GUIDELINES OR GET UNUSABLE CONTENT
+   50% of people say they want explicit guidelines for creating UGC (inBeat Agency, 2025). Provide aspect ratios, duration caps, platform specifications, and 3-5 visual examples of the aesthetic you want. Briefs without these constraints produce content in the wrong format, at the wrong resolution, or in a style that cannot be used. Include a "Do This / Not That" section in every brief.
+
+5. HIGHEST-ROI UGC PLACEMENT IS THE PRODUCT PAGE, NOT THE INSTAGRAM FEED
+   UGC increases e-commerce product page (PDP) conversions by 161% — the single highest-ROI placement in any UGC program (inBeat Agency, 2025). Most brands deploy UGC only on their social feed, which is the lowest-value placement. Every brief should specify the primary deployment channel and format the creator's deliverable accordingly (square crop for PDP, vertical for Reels/TikTok, horizontal for YouTube).
+
+6. UGC ADS OUTPERFORM STUDIO CREATIVE ON CTR AND CPA
+   UGC-based ads achieve 4x higher click-through rates with a 50% reduction in cost-per-click compared to standard brand creative (inBeat Agency, 2025). UGC campaigns cost 62% less per engagement than traditional branded campaigns. If the brief is intended to produce paid ad creative, specify this in the brief so the creator understands the usage scope and the rights terms reflect it.
+
+7. PAID UGCCODE OF CONDUCT: DISCLOSE, DO NOT PRODUCE FAKE REVIEWS
+   UGC-style creator content (paid creators producing lo-fi-looking videos) is a distinct category from organic UGC. Paid creators must disclose the relationship per FTC and ASA guidelines. Do not brief paid creators to pass off sponsored content as organic. Label the brief clearly: "PAID CREATOR BRIEF" vs. "ORGANIC COMMUNITY BRIEF."
+
+------------------------------------------------------------
+FORMAT A: CREATOR UGC VIDEO BRIEF (ORGANIC-STYLE SHORT-FORM VIDEO)
+------------------------------------------------------------
+
+Use when: Briefing micro or nano creators (1K-100K followers) to produce authentic short-form video for TikTok, Instagram Reels, YouTube Shorts, or paid social creative.
+Performance benchmark: UGC video ads attract 73% more positive comments than professional brand ads (inBeat Agency, 2025). Do not over-produce.
+Target deliverable: 15-60 second vertical video (9:16), raw-phone aesthetic.
+
+Required inputs: Brand | Product/Service | Target Platform | Creator Type/Tier | Key Message | Do's and Don'ts | Voice/Tone
+
+BRIEF STRUCTURE:
+
+CAMPAIGN OVERVIEW (3-5 sentences):
+Brand name + one-sentence description of the product.
+What this campaign is trying to achieve (awareness, trial, purchase, PDP review).
+Tone: authentic, lo-fi, peer-to-peer. NOT a polished ad.
+
+[blank line]
+
+THE CREATOR'S ROLE (1 paragraph):
+"We are looking for creators who [describe audience match], to share how [product] fits into their [specific context or routine]."
+Name the relationship: organic community member, paid creative partner, affiliate. Disclose requirements for paid partnerships.
+
+[blank line]
+
+THE SCENE WE WANT (specific situation, not endorsement):
+Describe the exact moment or situation to capture. Be concrete.
+Example: "Film yourself using [Product] during [specific daily moment]. Show the before and the after. We want real — your actual space, your actual reaction."
+DO NOT say: "Tell us why you love [Product]."
+
+[blank line]
+
+CONTENT GUIDELINES:
+DO:
+- Film vertical (9:16), in good natural light
+- Show the product in use, not just on a shelf
+- Speak directly to camera for at least 5 seconds
+- Include your genuine reaction — good or mixed is fine
+- Mention [specific key message or one claim we need communicated]
+
+DO NOT:
+- Use scripts or teleprompters — speak naturally
+- Add brand music or branded overlays (we will handle post)
+- Film in a professional studio environment
+- Claim benefits we have not confirmed with you (list any specific claims to avoid)
+- Post before the agreed publication date
+
+[blank line]
+
+TECHNICAL SPECS:
+Format: MP4 or MOV, minimum 1080p resolution
+Aspect ratio: 9:16 (vertical)
+Duration: [15-60 seconds — specify]
+Platform: [TikTok / Instagram Reels / YouTube Shorts — specify]
+Captions: [Optional / Required — specify]
+Raw file delivery: [Yes / No — specify]
+
+[blank line]
+
+KEY MESSAGE TO COMMUNICATE (1 sentence):
+"The one thing we want viewers to understand after watching: [specific outcome or differentiator]."
+This is a message, not a script. The creator delivers it in their own words.
+
+[blank line]
+
+RIGHTS GRANT:
+"By submitting this content, you grant [Brand] [organic use only / paid ad use — specify] rights to use this video across [platforms] for [duration]. [Compensation / credit terms]."
+Tag: pending | cleared-organic | cleared-paid
+
+------------------------------------------------------------
+FORMAT B: WRITTEN TESTIMONIAL / REVIEW BRIEF (TEXT UGC FOR REVIEW SITES OR SOCIAL)
+------------------------------------------------------------
+
+Use when: Requesting written testimonials from customers for use on product detail pages, review platforms (G2, Trustpilot, Capterra, Google), email copy, or landing pages.
+Performance benchmark: Specific testimonials (name + result + timeframe) outperform generic praise in A/B tests on landing pages by generating significantly higher conversion rates. "Trusted by thousands" is a claim. "Priya M. grew from 0 to 1,200 subscribers in three weeks" is evidence.
+Target deliverable: 50-150 words of specific, first-person written content.
+
+Required inputs: Brand | Product/Service | Target Platform | Key Outcome to Highlight | Review Incentive (if any) | Voice/Tone
+
+BRIEF STRUCTURE:
+
+REQUEST CONTEXT (2-3 sentences):
+"We are collecting real feedback from customers who have used [Product] and seen results. We will use your words on [platform/s] to help others in [audience] understand what [Product] can do for them."
+Be transparent about where the review will appear.
+
+[blank line]
+
+WHAT TO WRITE ABOUT:
+"If it applies to you, we would love to hear about:"
+- What specific problem you had before using [Product]
+- One concrete result or outcome you have seen since using it (numbers are great if you have them)
+- Who you would recommend [Product] to
+
+DO NOT ask: "Tell us why you love us." Ask for a specific experience, a before-and-after, or a comparison to what they used to do.
+
+[blank line]
+
+TONE AND FORMAT GUIDANCE:
+Write in your own voice — not formal, not promotional. A sentence you might say to a colleague works perfectly.
+Aim for 50-150 words.
+Include your name and role/company if you are comfortable — reviews with real attribution convert better and help readers assess relevance.
+
+[blank line]
+
+REVIEW PROMPT (one specific question to anchor the review):
+Choose the single best prompt for this product/audience:
+- "What did you use before [Product], and what changed after switching?"
+- "What is the one result you have seen from [Product] that surprised you?"
+- "Describe a specific moment when [Product] made a difference for you."
+
+[blank line]
+
+SUBMISSION DESTINATION:
+Link directly to the review platform. Do not ask customers to write elsewhere and copy-paste.
+For platform-specific reviews: [link to G2 / Trustpilot / Capterra / Google review page]
+For testimonial form: [link to brand's testimonial submission form]
+
+[blank line]
+
+RIGHTS GRANT:
+"By submitting this review, you give [Brand] permission to use your words in [organic / paid — specify] marketing materials, including [landing pages, email campaigns, social media — specify]. We will always attribute it to you by name unless you ask us not to."
+
+------------------------------------------------------------
+FORMAT C: PHOTO / IMAGE UGC BRIEF (PRODUCT PHOTOGRAPHY BY CREATORS)
+------------------------------------------------------------
+
+Use when: Briefing creators or customers to produce still-image UGC for product detail page galleries, paid social ads, email headers, or organic social.
+Performance benchmark: UGC on product detail pages (PDP galleries) increases conversions by 161% — the highest single placement return in any UGC program (inBeat Agency, 2025). Real customer photography outperforms studio shots because it shows the product in real-world conditions the buyer recognizes.
+Target deliverable: 3-10 high-resolution still photos per creator, real-environment aesthetic.
+
+Required inputs: Brand | Product/Service | Target Platform | Creator Type/Tier | Visual Style Reference | Do's and Don'ts | Voice/Tone
+
+BRIEF STRUCTURE:
+
+CAMPAIGN OVERVIEW:
+Brand + product in one sentence. What the photos will be used for (PDP gallery / Instagram feed / paid ads — specify). The aesthetic: authentic, lifestyle, real-environment — NOT studio product shots.
+
+[blank line]
+
+THE VISUAL STORY WE WANT:
+"We want photos that show [Product] as part of a real person's life in [specific context]. Think: [describe the scene — e.g., morning desk setup, outdoor Saturday, post-workout moment]. Not: a white background product shoot."
+
+[blank line]
+
+SHOT LIST (3-6 specific shots):
+Shot 1: Product in use in the natural environment (not posed)
+Shot 2: Close-up detail — [specific feature or element to highlight]
+Shot 3: Context/lifestyle shot — product visible but not the sole focus
+Shot 4: Before/after or "this is how I use it" flat lay
+[Add additional shots as needed for the campaign]
+
+[blank line]
+
+TECHNICAL SPECS:
+Resolution: Minimum 1500px on the short side (print-quality preferred)
+Aspect ratios needed: [1:1 for PDP / 4:5 for Instagram / 9:16 for Stories — specify all needed]
+Lighting: Natural light strongly preferred; avoid artificial flash
+Format: JPG or PNG, unedited RAW preferred for flagship placements
+Editing: Light exposure/color correction acceptable; brand-palette overlays are NOT acceptable
+
+[blank line]
+
+STYLE REFERENCE:
+[Link to 3-5 example images that represent the aesthetic you want]
+"Match the feel of these. Do not match the exact scenario — we want your real space and your real life."
+
+[blank line]
+
+DO NOT INCLUDE:
+- Other brand logos or competing products in the frame
+- Text overlays or graphic elements (we handle post-production)
+- Clearly posed or staged setups that look like a shoot
+- Photos that require a studio or professional lighting rig
+
+[blank line]
+
+RIGHTS GRANT:
+"By submitting these photos, you grant [Brand] [organic use / paid ad use — specify] rights to use, crop, and resize your images across [platforms] for [duration]. [Compensation / credit terms]."
+Tag in DAM: pending | cleared-organic | cleared-paid
+
+------------------------------------------------------------
+THREE CONTENT PILLAR GUIDANCE
+------------------------------------------------------------
+
+For a UGC program that builds over time, generate briefs across these three pillar types:
+
+PILLAR 1 - IN-USE MOMENTS (Format A, Format C):
+The most conversion-driving UGC shows the product solving a real problem in a real context. Brief creators to capture the product in its natural environment of use — not a hero shot, not a review monologue, but the actual moment of utility.
+Example topics: Morning routine unboxings, in-action product shots, "day in my life" integrations.
+
+PILLAR 2 - BEFORE/AFTER AND RESULTS (Format B):
+Written testimonials and short video reviews that describe a specific before-state and a specific outcome after using the product. These are the highest-converting assets for landing pages and email campaigns because they give the skeptical buyer something concrete to evaluate.
+Example topics: Outcome-specific review requests, 30-day-results video briefs, case-study-length written testimonials.
+
+PILLAR 3 - COMMUNITY AND SOCIAL PROOF VOLUME (Format A, Format B, Format C):
+Scale matters. 84% of Gen Z trust a brand more when they see actual customers in its ads (inBeat Agency, 2025). A single stellar testimonial helps. A gallery of 50 real customer photos, a review count of 2,000+, and a feed of genuine video reactions builds the social proof volume that tips fence-sitters. Brief for volume in this pillar — shorter briefs, lighter requirements, broader participation.
+Example topics: Community photo challenges, quarterly hashtag campaigns, post-purchase review request sequences.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single brief requests:
+Output labeled sections: CAMPAIGN OVERVIEW | CREATOR ROLE | SCENE/SHOT DESCRIPTION | CONTENT GUIDELINES | TECHNICAL SPECS | KEY MESSAGE | RIGHTS GRANT
+
+For bulk brief requests (CSV):
+Sr. No. | Format | Platform | Creator Tier | Key Message | Scene Description | Specs Summary | Rights Type | Deployment Placement
+
+Save to output/UGC/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- Never ask for a testimonial — ask for a scene, a moment, or a before/after
+- Rights clearance language is required in every brief; specify organic vs. paid use explicitly
+- Technical specs must name the exact aspect ratio, resolution, duration, and platform for every brief
+- Over-direction destroys the authenticity premium — specify the minimum required constraints only
+- Every brief names the primary deployment placement (PDP, paid social, email, social feed) — this determines format requirements
+- Paid creator briefs must include disclosure language (FTC/ASA compliance)
+- Do not include competitor brand names or competing product names in the frame — add to every Do Not section
+- SELF-CHECK: After drafting a brief, verify: Does the scene description ask for a moment rather than an endorsement? Is the rights grant language specific about organic vs. paid use? Are the technical specs complete (format, resolution, aspect ratio, duration)? If any answer is no, revise before outputting.
+- BATCH DEDUPLICATION: If generating multiple briefs in one session, each brief must describe a distinct scene or use-case. Do not reuse the same "shot we want" description across briefs — variety in briefed scenarios produces variety in delivered assets.
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. SCRIPTING THE CREATOR: Providing word-for-word dialogue, teleprompter text, or a narrative arc that leaves no room for authentic expression. The moment a creator reads a script, the content reads like an ad. Brief the situation and the key message — never the exact words.
+
+2. SKIPPING RIGHTS CLEARANCE: Reposting a tagged organic photo in a paid ad without explicit permission is a copyright violation, not a gray area. This is a solved problem with tools like TINT or Bazaarvoice. "They tagged us" is not permission.
+
+3. WRONG DEPLOYMENT-BRIEF ALIGNMENT: Briefing a 1:1 square format for a campaign that will run on Instagram Stories (9:16). Briefing a 60-second video for a platform that favors 15-second clips. Always start from the deployment channel and work backwards to the brief specs.
+
+4. OVER-PRODUCING THE FINAL ASSET: Color-correcting customer photos to match brand guidelines, adding logo watermarks, cropping out the real environment to create a white-background aesthetic. These edits delete the authenticity signal that generates the 161% PDP conversion lift. Preserve the lo-fi quality.
+
+5. NO FEEDBACK LOOP TO CONTRIBUTORS: Publishing a customer's photo or using their testimonial without telling them. The recognition moment — "your content is live and it is converting" — is the primary driver of repeat contributions. Without it, your best creators feel exploited and stop. Build a thank-you and performance-update step into the workflow.

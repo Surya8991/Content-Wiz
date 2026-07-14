@@ -110,6 +110,10 @@ Case study pages rank for long-tail, high-intent queries that standard blog cont
 
 ## Distribution Sequence
 
+**Publishing Cadence**
+
+Target: 1 new case study per month minimum. Sprint: publish 3 in the first 60 days to build a library baseline. Review existing case studies every 6 months to update metrics.
+
 **Day 0 (publish):** Add case study to the website case study library. Share on LinkedIn as a narrative story post (situation → challenge → outcome format, 200-250 words). Link to full case study in first comment.
 
 **Day 2:** Email newsletter feature - 150-word summary with 3 key metrics and a link.
@@ -145,6 +149,16 @@ Buyers should be able to find a case study that mirrors their own situation with
 4. **Long case study pages with no visual hierarchy.** A 1,200-word case study presented as a wall of paragraphs will not be read. Use callout boxes for the key metrics, pull quotes from the client, and subheadings for each section. Buyers skim before they read.
 
 5. **No distribution beyond the web page.** A case study that exists only as a webpage is underexploited. The same story should appear in sales emails, proposals, LinkedIn posts, the newsletter, and the HARO data bank within 14 days of publication.
+
+---
+
+## Recommended Tools
+
+1. **Notion or Google Docs** — collaborative drafting and approval workflow with the client.
+2. **Loom** — async video testimonial capture from clients who can't do a live interview.
+3. **Canva** — PDF layout and visual case study design for website and download versions.
+4. **HubSpot or Salesforce** — tag published case studies to CRM contacts for sales enablement tracking.
+5. **Google Analytics 4** — track case study page sessions, time-on-page, and conversion-to-contact-form rate.
 
 ---
 

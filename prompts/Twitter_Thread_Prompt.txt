@@ -25,6 +25,7 @@ Primary Claim: [The single most counterintuitive or specific claim the thread ma
 Key Data Points: [2 to 5 stats to cite - each with source and year]
 CTA Destination URL: [URL the final tweet links to]
 Thread Length: [5 to 10 tweets recommended]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
 
 ------------------------------------------------------------
 THREAD TYPES - CHOOSE ONE
@@ -122,7 +123,7 @@ TWEET 2: [text] [XXX chars]
 TWEET N: [text + URL + hashtags] [XXX chars]
 
 Also output:
-THREAD HOOK SUMMARY: [The single sentence from Tweet 1 most likely to be quoted or shared]
+THREAD HOOK SUMMARY: The single sentence from Tweet 1 most likely to be quoted or shared. Must be ≤ 140 characters (half the tweet limit, for easy retweet with comment). It must make a specific, standalone claim — not a question and not a teaser.
 
 For bulk/CSV output:
 Sr. No. | Topic | Source URL | Tweet 1 | Tweet 2 | ... | Tweet N | CTA URL
@@ -140,6 +141,7 @@ GLOBAL RULES
 - Each tweet standalone and complete
 - No URL in any tweet except the final CTA tweet
 - Maximum 3 hashtags on the final tweet only, last always [BRAND HASHTAG]
+- SELF-CHECK: After drafting, count characters for each tweet. Every tweet must be ≤ 280 characters. Note the count as '(XXX chars)' after each tweet. If any tweet exceeds 280 characters, split or cut before outputting.
 - Vary the exact phrasing of the Tweet 1 hook and final CTA across threads, do not reuse the same hook or CTA sentence across a batch. Examples of the hook pattern (write a new one each time, do not copy these verbatim): "43% of training budgets fund content nobody finishes.", "Most L&D teams optimize for the wrong number.", "Your completion rate is lying to you."
 - Output saved to output/Twitter/
 

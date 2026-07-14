@@ -12,6 +12,7 @@ TEMPLATE
 
 Write a press release for [BRAND NAME], [BRAND DESCRIPTION], announcing "[ANNOUNCEMENT/NEWS TOPIC]". Follow standard press release format: headline, dateline, lead paragraph (who, what, when, where, why), body paragraphs with supporting detail, one executive quote attributed to the CEO of [BRAND NAME], and a boilerplate about [BRAND NAME] at the end. Target audience is [TARGET AUDIENCE]. Write in a formal, journalistic tone. If the release cites any statistic or figure, name its source, organization, and year, and never state an unverified or first-party number as fact without attribution. Do not use em dashes. Avoid passive voice. Keep the total length to 400-500 words.
 
+Voice/Tone: [formal journalistic / regulated-industry formal / startup press style — default: formal, journalistic, third-person]
 URL: [INSERT URL IF APPLICABLE]
 
 ------------------------------------------------------------
@@ -40,4 +41,20 @@ RULES
 - No em dashes anywhere
 - No passive voice
 - 400-500 words total
+- SELF-CHECK: After drafting, count total words. Target: 400–500. If over 500, trim the background paragraph. If under 400, expand the second supporting paragraph with one additional data point.
+- BATCH DEDUPLICATION: When generating multiple press releases in one session, no two may share the same lead paragraph structure, the same quote framing ('We are excited to announce...'), or the same boilerplate about-section phrasing. Rewrite the quote for each release to reflect a distinct angle.
 - Output saved to output/Press_Release/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. LEAD PARAGRAPH WITHOUT A NEWS HOOK: A lead that does not answer who, what, when, and where in the first sentence buries the news. Journalists and editors scan the lead; if it reads like a marketing introduction, the release gets ignored.
+
+2. QUOTE THAT READS LIKE MARKETING COPY INSTEAD OF A PERSON SPEAKING: A quote that says "We are thrilled to deliver transformative solutions for our valued customers" is not how a person speaks. The executive quote must sound like a human being making a specific, informed observation about the announcement.
+
+3. BOILERPLATE 'ABOUT' SECTION OVER 100 WORDS: The boilerplate is a reference, not a sales pitch. Keep it to 3–4 sentences maximum. Any claim in the boilerplate must be verifiable.
+
+4. WORD COUNT OUTSIDE 400–500: A press release under 400 words suggests the news is not sufficiently developed. A release over 500 words signals that non-essential detail has not been cut. Both reduce pick-up probability.
+
+5. NO DATELINE AT THE TOP OF THE RELEASE: Every press release requires a dateline (city and date) before the lead paragraph. A release without a dateline looks unfinished and is not publication-ready.

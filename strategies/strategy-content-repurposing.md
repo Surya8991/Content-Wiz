@@ -150,6 +150,16 @@ This bank means any team member can respond to a relevant HARO query in 10 minut
 
 ---
 
+## Recommended Tools
+
+1. **Descript** — transcribe long-form video/audio content and extract pull quotes for text repurposing.
+2. **Canva** — convert text frameworks and stats into carousel slides, infographics, and social visuals.
+3. **Buffer or Hootsuite** — schedule repurposed social posts across platforms from a single queue.
+4. **Airtable or Notion** — maintain a repurposing tracker mapping source content to all derivative outputs and their publish status.
+5. **CapCut or Adobe Premiere** — edit long-form video into short-form clips for LinkedIn and YouTube Shorts.
+
+---
+
 ## Adaptation for Your Brand
 
 The repurposing system connects across the brand's content channels (HARO, Medium, LinkedIn, SEO blog, email newsletter, and any other channel this tool supports, including case studies, guest articles, podcast guesting, and YouTube) into one production loop. A single original research finding becomes: a ranked SEO article, three LinkedIn posts, a newsletter issue, a Medium essay, and two HARO pitch data points - all within 10 days of original publication, with no new research required. Brand voice rules apply to each derivative independently: no em dashes in any format, plain paragraph structure for email and article derivatives, single-line structure for LinkedIn derivatives, stat-backed claims with named sources wherever a statistic appears. The pitch-ready data bank is the most immediately valuable asset to build first - it makes the HARO channel faster, the LinkedIn proof system stronger, and the newsletter more data-dense from the first week of implementation.

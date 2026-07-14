@@ -13,6 +13,7 @@ TEMPLATE
 Create a Google My Business post for [BRAND NAME], [BRAND DESCRIPTION], for the blog post titled "[BLOG TITLE]". Write a 50-word summarized description in B2B language targeting [TARGET AUDIENCE]. Do not use em dashes. Close with a soft CTA tied to the reader's role. Vary the exact phrasing post to post, do not reuse the same closing line across a batch. Examples of the pattern (write a new one each time, do not copy these verbatim): "Use it to tighten next quarter's rollout plan.", "Apply this before your next team review.", "Reference this the next time budget gets questioned.", "Bring this into your next planning conversation."
 
 Blog URL: [INSERT BLOG URL]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
@@ -20,15 +21,32 @@ OUTPUT FORMAT (CSV)
 
 Sr. No. | Blog Title | Blog URL | GMB Post Content
 
+Field encoding: wrap any field containing commas or line breaks in double quotes.
+GMB Post Content must include: (1) insight from the blog (1–2 sentences), (2) one stat or outcome, (3) one CTA sentence.
+Each post must be a standalone readable unit — no mid-sentence cut-offs.
+
 ------------------------------------------------------------
 RULES
 ------------------------------------------------------------
 
-- Description is approximately 50 words
+- Post content: 45–55 words exactly. Opening sentence must not repeat the blog title verbatim. CTA sentence: 10–20 words, imperative verb, no external URL in post body.
 - Match the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: B2B professional language, no consumer-facing tone)
 - No em dashes anywhere
 - No passive voice, active voice throughout
 - Do not use: "Don't miss out", "Click on learn more", "Click here", "Learn more", "Take advantage of", "Discover"
 - CTA is a role-relevant closing line, is the final part of the post, and is not counted in the 50-word description
-- If generating multiple GMB posts in a session, no two may share a closing line
+- If generating multiple GMB posts in a session, no two may share a closing line, the same opening hook structure, or the same data point.
+- SELF-CHECK: After drafting each post, count words. Target: 40–60. If outside this range, revise before outputting. 'Approximately 50 words' means 45–55.
 - Output saved to output/GMB/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. POST THAT SUMMARISES THE BLOG TITLE INSTEAD OF EXTRACTING AN INSIGHT: A post that opens with a restatement of the blog title (e.g. "We just published a guide on L&D strategy") adds no value. Lead with a specific insight or stat from the blog.
+
+2. WORD COUNT OVER 60 DUE TO AN ADDED CONTEXT PARAGRAPH: GMB posts are read in under 10 seconds. Any sentence that sets context before getting to the insight pushes the post over 60 words. Start with the insight, not the setup.
+
+3. CTA WITH AN EXTERNAL URL INSIDE THE POST BODY: Google My Business posts should drive traffic via the CTA button, not inline URLs. Do not paste a full URL into the post body text.
+
+4. HOOK IDENTICAL TO A PREVIOUS POST IN THE SAME BATCH: If the opening sentence structure is reused across posts (e.g. "Most [audience] don't realise..." twice in a batch), the batch reads as templated. Vary the hook angle for every post.

@@ -10,18 +10,23 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Write a course or training programme description for [BRAND NAME], [BRAND DESCRIPTION], for the programme titled "[COURSE / TRAINING TITLE]". The description should be 150-200 words. Open with a compelling statement about the problem or skill gap the course addresses. Follow with what participants will learn (3-4 key outcomes), who the course is designed for, the format and duration, and close with a CTA linking to [URL]. Match the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: professional B2B tone) targeting [TARGET AUDIENCE] (e.g. L&Ds, HRs, and decision-makers). Do not use em dashes. Avoid passive voice.
+Write a course or training programme description for [BRAND NAME], [BRAND DESCRIPTION], for the programme titled "[COURSE / TRAINING TITLE]". The description should be 150-200 words. Open with a compelling statement about the problem or skill gap the course addresses. Follow with what participants will learn (3-4 key outcomes), who the course is designed for, the format and duration, and Close with a CTA of 15–25 words: imperative verb, specific outcome, URL placeholder. Example: 'Enrol now to build a skills framework your team will actually use — [URL].'. Match the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: professional B2B tone) targeting [TARGET AUDIENCE] (e.g. L&Ds, HRs, and decision-makers). Do not use em dashes. Avoid passive voice.
 
 Course URL: [INSERT URL]
 Course Format: [e.g. Instructor-led / Online self-paced / Blended]
 Duration: [e.g. 2 days / 16 hours / 6 weeks]
 Key Topics Covered: [LIST 3-5 KEY TOPICS]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
 ------------------------------------------------------------
 
 Sr. No. | Course Title | Course URL | Short Description (150-200 words)
+
+Field encoding: wrap any field containing commas or line breaks in double quotes.
+Short Description must contain: (a) one-sentence hook on the core skill, (b) 2–3 learning outcomes, (c) one CTA sentence.
+Course Title in the CSV must match the exact title from the course platform.
 
 Save to output/Course_Descriptions/
 
@@ -36,4 +41,17 @@ RULES
 - No passive voice
 - CTA links to course URL
 - Output saved to output/Course_Descriptions/
+- SELF-CHECK: After drafting each description, count words. Target: 150–200. If under 150 expand the outcomes paragraph. If over 200, cut the opening sentence.
 - The identical opening statement or closing CTA sentence reused across multiple course descriptions in the same batch - if you are generating more than one description in a session, no two may share an opening statement or closing CTA sentence
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. DESCRIBING FORMAT INSTEAD OF OUTCOME: A description that explains the course format (e.g. "This is a two-day instructor-led programme covering six modules") instead of the learner outcome fails the reader. Lead with the skill gap solved, not the delivery method.
+
+2. WORD COUNT UNDER 150 DUE TO OMITTED OUTCOMES SECTION: If the learning outcomes paragraph is skipped or condensed to one item, the description will fall below 150 words. Include 3–4 concrete outcomes every time.
+
+3. CTA MISSING A SPECIFIC OUTCOME PROMISE: A CTA such as "Enrol today — [URL]" does not pass. The CTA must name what the learner will be able to do or achieve. Use the 15–25 word format with an outcome clause.
+
+4. GENERIC OPENING: An opening sentence such as "This course covers leadership fundamentals for modern managers" is a format statement. Replace it with a skill-gap hook: "Most managers are promoted for technical expertise, then left to figure out people leadership on their own."

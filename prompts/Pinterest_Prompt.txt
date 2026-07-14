@@ -12,6 +12,7 @@ TEMPLATE
 
 Create a Pinterest post for [BRAND NAME], [BRAND DESCRIPTION], for the blog post titled "[BLOG TITLE]". Generate a Title and Description. The title should be concise and descriptive with a subtitle. The description should be 1-2 sentences matching the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: B2B language) targeting [TARGET AUDIENCE], followed by 4-5 relevant hashtags with the last hashtag always being [BRAND HASHTAG]. Whatever the brand's market register, write in Pinterest's native register: visual and aspirational rather than corporate, favoring sensory or outcome-framed language ("picture your team...", "the resource your next planning cycle needs") over dry feature statements. Do not use em dashes.
 
+Voice/Tone: [aspirational / educational / how-to — default: visual and aspirational, matching brand register]
 Blog URL: [INSERT BLOG URL]
 
 ------------------------------------------------------------
@@ -20,13 +21,28 @@ OUTPUT FORMAT (CSV)
 
 Sr. No. | Blog URL | Title | Description
 
+Field encoding note: Description column: first sentence is the hook (states the transformation or outcome), second sentence is the hashtag line. Title column: must be a complete phrase, not a topic label. Max 100 characters.
+
 ------------------------------------------------------------
 RULES
 ------------------------------------------------------------
 
 - Title format: Main Topic: Descriptive Subtitle (e.g. Skills in Demand in Germany: Workforce Priorities)
-- Description is 1-2 sentences max before hashtags
+- Description: max 40 words across 1–2 sentences. Sentence 1 states the transformation or outcome (e.g., 'Cut new-hire ramp time by 40% with this onboarding framework'). Sentence 2 is the hashtag line. No URLs in the description.
 - 4-5 hashtags, last one is always the brand hashtag
 - No em dashes anywhere
 - Vary the exact phrasing of the description sentence(s) post to post, do not reuse the same description wording across a batch. Examples of the pattern (write new ones each time, do not copy these verbatim): "Built for teams that need results fast.", "A practical resource for the next planning cycle.", "Made for decision makers weighing this exact tradeoff."
+- SELF-CHECK: After drafting each pin description, count words. '1–2 sentences max' = maximum 40 words total. If over 40 words, cut to the strongest sentence before outputting.
 - Output saved to output/Pinterest/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. TITLE THAT IS A TOPIC LABEL NOT A TRANSFORMATION PROMISE: "Corporate Training Resources" describes a category, not an outcome. The title must promise a result or name a specific transformation the viewer will get from the pin.
+
+2. DESCRIPTION OVER 40 WORDS: Pinterest descriptions are scanned, not read. Every word above 40 reduces the chance the hook lands. Cut ruthlessly to the most outcome-specific sentence.
+
+3. HASHTAGS NOT RELATED TO THE PIN TOPIC: Generic hashtags (#business, #success) generate noise impressions, not relevant traffic. Every hashtag must be directly searchable by the target audience for this specific pin topic.
+
+4. DESCRIPTION THAT REPEATS THE TITLE VERBATIM: The description must add new information — the transformation or context — not restate what the title already said. A viewer who reads both should get two distinct pieces of information.

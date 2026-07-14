@@ -15,6 +15,7 @@ Write a [CONTENT TYPE: Whitepaper / eBook] for [BRAND NAME], [BRAND DESCRIPTION]
 Reference URL (if any): [INSERT URL]
 Content Type: [Whitepaper / eBook]
 Intended Gate: [Gated lead magnet / Ungated thought leadership]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
 
 ------------------------------------------------------------
 DOCUMENT STRUCTURE
@@ -39,6 +40,10 @@ OUTPUT FORMAT
 
 Full document in plain text or markdown with clearly labelled sections.
 
+Heading format: H1 for title, H2 for main sections, H3 for subsections — use markdown heading syntax (#, ##, ###).
+Each main section must be separated by a horizontal rule (---).
+Table of Contents must be generated as the second element after the title.
+
 Save to output/Whitepaper_eBook/
 
 ------------------------------------------------------------
@@ -48,8 +53,20 @@ RULES
 - Executive summary must stand alone as a readable summary
 - Minimum 4-6 stats or research references
 - Every stat or research reference must name the source, organization, and year - never "studies show" or "research suggests" without attribution
-- Recommendations must be specific and actionable
+- Recommendations must be specific and actionable: 3–5 bullet points, each stating a specific action + the expected outcome. Example: 'Replace post-training surveys with 30-day behavior observation checklists — this closes the completion-vs-application gap identified in Section 3.' Avoid: 'Invest in better training technology.'
 - No em dashes anywhere
 - No passive voice
 - Brand positioning is subtle, not promotional
+- SELF-CHECK: After drafting, count total words. Whitepaper target: 1,500–2,500. eBook target: 2,000–3,500. If under the minimum, expand the Recommendations section. If over the maximum, trim the Introduction and Limitations sections.
+- BATCH DEDUPLICATION: When generating multiple whitepapers or eBooks in one session, no two may share the same executive summary hook, the same primary data source, or the same CTA action. Vary the central argument and the evidence base across documents.
 - Output saved to output/Whitepaper_eBook/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. Recommendations stated as generic advice without a specific action — 'invest in training technology' fails; name the specific action and its expected outcome.
+2. Word count under minimum due to skipped Methodology or Limitations section — include both sections in every document.
+3. Executive summary that repeats the introduction instead of summarising findings — the executive summary must contain the findings, not the framing.
+4. Sources listed without year of publication — every reference must carry an author or organisation name and a year.
+5. eBook formatted as plain text without section headings — use markdown heading syntax for all sections.

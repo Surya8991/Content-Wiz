@@ -1,0 +1,197 @@
+============================================================
+TIKTOK ADS PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: In-Feed Ad / TopView Ad / Spark Ad
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [native/creator / energetic / conversational / educational — default: native/creator, authentic and unpolished]
+
+Once the brand is confirmed, select the format below.
+
+------------------------------------------------------------
+PLATFORM/ALGORITHM RULES (2026) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+These constraints apply to all TikTok Ads content. Violating them increases CPM and reduces conversion rate.
+
+1. CREATIVE QUALITY DIRECTLY LOWERS YOUR CPM
+   TikTok's ad auction factors in earned engagement signals when deciding what to show. If users watch your ad to completion, share it, or click to your profile, the system treats that as a quality signal and rewards you with lower CPMs. This means high-engagement creative literally costs less to distribute. Average CPM ranges from $8.30 to $13.26; average CPC from $0.70 to $1.50; average CTR from 0.8% to 1.1%; top 10% CTR exceeds 2.5%. (Triple Whale benchmark data, 2025.) Your creative choices are your bidding strategy.
+
+2. THE FIRST 2-3 SECONDS ARE YOUR ENTIRE INVESTMENT
+   TikTok measures a metric called Hook Rate: the percentage of viewers who watch at least the first 3 seconds. A hook rate above 30% signals strong content. Below 15% means you are paying for impressions nobody watches. Hook patterns that work consistently: open with the result not the process ("I gained 10,000 followers in 30 days doing this"), ask a question the viewer wants answered ("You are making this mistake with your skincare"), start mid-action with movement and sound already happening, use pattern interrupts with unusual angles or unexpected text overlays. Every generated script must specify the exact first 2-second hook.
+
+3. CREATIVE FATIGUE HITS IN 7-10 DAYS
+   Average creative lifespan on TikTok is 7-10 days before performance degrades. At a frequency above 2.5x — meaning the same user sees the same ad more than 2.5 times — conversions drop 30-40%. High-spend accounts need 3-5 new creative concepts per week. Always recommend a minimum of 3-5 creative variations per ad group. This is the biggest operational difference between TikTok advertising and every other paid platform.
+
+4. NATIVE TEXTURE IS NON-NEGOTIABLE
+   The moment an ad feels like an ad, users scroll past it within the first second. Lo-fi videos shot on a phone with trending audio and an abrupt hook regularly beat six-figure productions. Key native signals: raw slightly imperfect framing, captions that match TikTok's caption style (not hardcoded subtitles), cuts at natural speech breaks not branded music beds, creator voiceover not professional VO talent. Never repurpose Meta or YouTube creative without re-editing for TikTok. Horizontal video, polished color grading, and corporate voiceovers fail on this platform.
+
+5. SPARK ADS DELIVER 142% HIGHER ENGAGEMENT THAN STANDARD IN-FEED ADS
+   Spark Ads let you take an existing organic TikTok post — from your own account or from a creator who gives permission — and run it as a paid placement. The post keeps all its original likes, comments, and shares. A post with 50,000 organic likes before you start spending will show those 50,000 likes to every new paid viewer. Most experienced TikTok advertisers allocate roughly 80% of budget to Spark Ads and 20% to direct-response In-Feed creative. (TikTok platform data, 2024.)
+
+6. BROAD AUDIENCES OUTPERFORM NARROW TARGETING ON TIKTOK
+   Over-targeting backfires. Meta advertisers often stack interest categories into tight audiences. TikTok's algorithm needs room to learn. A broad audience (18-45, relevant country, no interest restrictions) with strong creative will consistently outperform a hyper-targeted audience of 500,000 people. Start broad, use strong creative as your primary filter, and only narrow after you have enough conversion data. Excessively narrow audiences prevent system learning and drive up CPMs without improving conversion rates.
+
+7. TIKTOK DRIVES 1.8X MORE CONVERSIONS RELATIVE TO AD SPEND SHARE
+   TikTok drives 1.8x more conversions relative to its share of ad spend compared to other platforms (2024 data). The platform's ad revenue exceeded $32 billion in 2025, a 24.5% year-over-year increase, and 41% of users say they trust a brand more after seeing it on TikTok — a trust signal no other social platform currently matches. (TikTok Ads Help Center and What's Next 2025 Trend Report.) Q4 CPMs spike 40-60% above Q1 due to advertiser competition during the holiday period.
+
+------------------------------------------------------------
+FORMAT A: IN-FEED AD (NATIVE VIDEO IN FOR YOU PAGE)
+------------------------------------------------------------
+
+Use when: Driving conversions, traffic, app installs, or lead generation through video content that appears organically in the For You Page feed.
+Best cadence: 3-5 active creative variations per ad group at all times. Replace underperforming creatives within 7-10 days.
+Target duration: 9-15 seconds for direct response; 15-30 seconds for education or storytelling. Keep under 60 seconds unless completion data justifies longer.
+Aspect ratio: 9:16 vertical only. Shot on phone or formatted to look phone-shot.
+
+Structure - follow these sections exactly:
+
+HOOK SCRIPT (first 2-3 seconds, written as exact spoken line or on-screen text):
+This is the most important line in the entire ad. Write it before anything else. It must answer "why should I keep watching?" in under 3 seconds. Choose one of four patterns:
+- Result-first: "I [specific outcome] in [specific timeframe]. Here is how."
+- Problem mirror: "If you are [specific frustrating situation], watch this."
+- Contrarian interrupt: "Stop [common behavior]. You are wasting [resource]."
+- Visual mid-action: (describe what is already happening on screen in second 1, no words needed)
+
+[blank line]
+
+BODY SCRIPT (seconds 3-30 or the content arc):
+Deliver the core message. One idea per sentence. Cut every 1-2 seconds to maintain attention. Use on-screen captions throughout because TikTok is watched muted in many contexts. If demonstrating a product, show it in use by second 5. If making a claim, support it with a specific number before the 15-second mark. Avoid corporate language, buzzwords, and polished transitions.
+
+[blank line]
+
+CTA CLOSE (final 3-5 seconds):
+One imperative CTA spoken aloud and displayed as on-screen text. Link destination in bio or direct click-to-destination. "Tap the link below and get yours today" outperforms "Learn more" because it names the action and the reward. Match to campaign objective: Leads = "Get your free [resource]," Sales = "Shop now before [scarcity signal]," Traffic = "Read the full breakdown at the link."
+
+[blank line]
+
+CREATIVE DIRECTION (required field):
+Specify: Setting (bedroom, office, outdoor, product-only), Talent type (founder, creator, customer, no talent/product demo), Hook visual (what appears on screen in second 0-2), Caption style (TikTok native auto-captions or bold text overlay), Audio choice (trending sound name if applicable, or voiceover-only). Never leave this section blank.
+
+------------------------------------------------------------
+FORMAT B: TOPVIEW AD (FIRST THING SEEN ON APP OPEN)
+------------------------------------------------------------
+
+Use when: Launching a new product or campaign that requires maximum awareness on day 1. TopView is a full-screen takeover the moment someone opens the app. Very high reach. Very high cost. Use for brand awareness launches, not direct-response conversion campaigns.
+Target duration: 5-60 seconds. The first 5 seconds are mandatory viewing (user cannot skip). After second 5, the ad functions like an In-Feed ad.
+Best cadence: Reserved for campaign launches, product drops, and high-importance announcements. Not a daily format.
+
+Structure - follow these sections exactly:
+
+MANDATORY 5-SECOND HOOK (user cannot skip, so quality here is non-negotiable):
+This must be the single most visually compelling moment in the entire ad. No logo intro. No brand nameplate. Immediate action, color, movement, or a provocative claim in on-screen text. The viewer did not choose to watch this. Earn their attention inside second 1. Write the exact visual direction and any on-screen text for these first 5 seconds before writing anything else.
+
+[blank line]
+
+BODY (seconds 5-30 or 5-60 depending on creative brief):
+After the mandatory viewing window ends, the user can scroll away. Everything from second 5 onward must earn the continued watch. Deliver the brand story, product demonstration, or campaign message with the same native TikTok texture as a Format A In-Feed ad. Treat it as Format A from second 5 onward: hook already cleared, now deliver value and earn the click.
+
+[blank line]
+
+CTA CLOSE:
+One specific CTA displayed as on-screen text and in the native CTA button below the video. For awareness: "Follow [Brand] for more," "Explore the collection," "Watch the full story." For product launches: "Shop the drop now," "Get yours before it sells out."
+
+[blank line]
+
+BRAND MOMENT PLACEMENT (required field):
+Specify exactly when and how the brand name or product first appears on screen. Never in the first 3 seconds. Recommended placement: second 6-10 after the hook has earned attention. State: "Brand name appears as [text overlay / product logo / spoken in VO] at second [X]."
+
+------------------------------------------------------------
+FORMAT C: SPARK AD (BOOSTING ORGANIC CONTENT)
+------------------------------------------------------------
+
+Use when: You have an existing organic TikTok post (from your brand account or from a creator) that earned strong engagement. Spark Ads amplify posts that the algorithm has already validated as engaging. The post keeps all its original likes, comments, and shares, which builds social proof with every paid impression.
+Spark Ads have 142% higher engagement than standard In-Feed Ads (TikTok platform data, 2024). Most experienced TikTok advertisers allocate 80% of budget to Spark Ads.
+Note: Spark Ads require an authorization code from the creator or your own TikTok account. The post continues to exist organically and accumulates engagement from both paid and organic sources.
+
+Structure — this format evaluates and briefs an existing organic post, not original copy:
+
+ORGANIC POST EVALUATION CRITERIA (assess before spending):
+Before amplifying any organic post as a Spark Ad, score it against these four signals:
+- Hook Rate above 30% (verified in native TikTok analytics before authorization)
+- Video completion above 50% average
+- Saves or shares present (minimum 1 save or share per 100 views as a qualifying threshold)
+- Comments contain substantive replies (not just emoji), indicating genuine audience resonance
+
+If the post clears all four signals, proceed. If it fails Hook Rate or completion, produce a new native creative as Format A instead of spending budget on a low-engagement post.
+
+[blank line]
+
+AMPLIFICATION BRIEF (written after the organic post is authorized):
+State: Post topic and format (educational, trend-led, product demo, testimonial). Target audience for paid amplification (who should see this beyond the organic followers who already did). Campaign objective for this Spark Ad (Awareness, Traffic, Conversions, Leads). Any product or offer link to attach below the organic post. Whether to add a CTA button overlay (yes/no and which CTA label).
+
+[blank line]
+
+CAPTION REFINEMENT (optional but recommended):
+If the organic post's caption is weak (under 5 words, no keyword, no CTA), suggest a revised caption that adds a keyword for TikTok search indexing and a one-line CTA directing viewers to the link or profile. Keep the revised caption under 150 characters so it does not compete with the video for attention.
+
+------------------------------------------------------------
+THREE CONTENT PILLAR GUIDANCE
+------------------------------------------------------------
+
+For a balanced TikTok Ads strategy, rotate creative across these three pillar types to prevent audience fatigue and cover the full conversion funnel.
+
+PILLAR 1 - PROBLEM-SOLUTION (Format A, direct response):
+The most reliable conversion driver on TikTok. Mirror a specific frustration the audience has, then show how your product or service eliminates it in the time it takes to watch the video. Hook names the problem in second 1, body demonstrates the solution, CTA offers the specific next step. Keep under 30 seconds. This pillar funds the other two.
+
+PILLAR 2 - SOCIAL PROOF AND CREATOR VOICE (Format C, Spark Ads):
+The second-highest converting format because it carries pre-validated engagement signals and genuine creator credibility. Use this pillar for mid-funnel audiences who have seen your brand but have not converted. The creator's voice, not the brand's voice, is the persuasion mechanism. Brief the creator to speak to their own experience, not to a scripted brand message.
+
+PILLAR 3 - BRAND STORY AND CULTURE (Format A or Format B):
+Top-of-funnel awareness content that builds brand memory without asking for a conversion. This pillar earns long-term return on the first two pillars by creating a recognizable brand presence. The content should feel identical to organic creator content: behind the scenes, founder perspective, or a provocative take on an industry topic. No conversion CTA. Reserve for campaigns with an awareness objective.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Required inputs before generating:
+- Brand (confirmed via _Brand_Detection_Rules.txt)
+- Product/Service
+- Target Audience
+- Campaign Objective (Awareness / Traffic / Leads / Conversions / App Installs)
+- Video Duration Target (9-15s / 15-30s / 30-60s)
+- Hook Concept (one sentence describing the first 2-second hook angle)
+- Voice/Tone
+
+For single ad requests:
+Output labeled sections: HOOK SCRIPT | BODY SCRIPT | CTA CLOSE | CREATIVE DIRECTION | CAPTION (under 150 characters, includes one keyword and one CTA)
+
+Field encoding note: plain text only. No em dashes. Written as spoken words for scripts, not as marketing copy. Captions: plain text under 150 characters with 3-5 hashtags at the end.
+
+For bulk requests (CSV):
+Sr. No. | Format | Campaign Objective | Hook Script | Body Script | CTA Close | Creative Direction | Caption
+
+Save to output/TikTok_Ads/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- Campaign objective must be stated before generating — a Conversions script differs from an Awareness script
+- No em dashes anywhere
+- No passive voice
+- No corporate language, buzzwords, or polished transitions in any script
+- Hook Script must be written as a single exact spoken line or on-screen text, not a description
+- Every stat names its source, organization, and year
+- Creative Direction is required on every Format A output — setting, talent type, hook visual, caption style, audio
+- Minimum 3-5 creative variations recommended per ad group — single-creative outputs should note this
+- SELF-CHECK: After drafting any script, read it aloud. If it sounds like a radio ad or a corporate presentation, rewrite it. If the first line does not make you want to hear the next sentence, the hook has failed. Hook Rate target above 30% should guide the tone.
+- BATCH DEDUPLICATION: If generating more than one ad in a session, no two ads may share the same hook line or the same CTA close. Vary the hook pattern across every ad. Examples of the pattern (write a new one each time, do not copy these verbatim): "You are making this mistake every morning and you do not know it.", "I tried every [product category] on the market. Only this one worked.", "Stop [action]. Here is what to do instead."
+- Source diversity: within a batch of ads for the same campaign, never anchor more than one ad on the same single case study or stat — reference a distinct proof point for each
+- Output saved to output/TikTok_Ads/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. REPURPOSING META OR YOUTUBE CREATIVE WITHOUT RE-EDITING: Video that works on Instagram Reels or YouTube Pre-Roll often fails on TikTok because editing conventions, pacing, text styles, and audio expectations are completely different. Horizontal video, polished color grading, and clean corporate voiceovers signal "ad" in the first second. TikTok's algorithm deprioritizes ads with poor completion signals, meaning bad creative costs more and reaches less. Always brief native-first TikTok edits.
+
+2. LOGO OR BRAND NAME IN SECONDS 0-3: Brand intros in the first 3 seconds are a retention killer. Viewers trained by the FYP skip anything that reads as an ad in the first moment. Earn attention first, then layer in the brand at second 8 or later. The hook must be about the viewer's problem or desire, not the brand's identity.
+
+3. OVER-TARGETING: Stacking interest categories, lookalikes, and behavior filters into a small audience prevents the algorithm from learning. Start broad. A broad audience of 18-45 in the target country with strong creative consistently outperforms a hyper-targeted audience of 500,000. Only narrow after 50+ conversions confirm a sub-segment is genuinely performing.
+
+4. SPENDING BEHIND LOW-ENGAGEMENT ORGANIC POSTS AS SPARK ADS: Not every organic post deserves budget. Amplifying a post with a Hook Rate below 15% or completion below 30% pays for impressions that nobody watches and wastes the campaign budget. Always verify Hook Rate and completion in native TikTok analytics before authorizing a Spark Ad. Earn before you spend.
+
+5. IGNORING CREATIVE FATIGUE: Letting a single creative run beyond 10 days at significant spend without refreshing variants. At frequency above 2.5x, conversions drop 30-40%. A creative refresh cycle is not optional. The output should always note when a creative should be retired (7-10 days or when frequency exceeds 2.5x) and what the replacement concept should test differently.

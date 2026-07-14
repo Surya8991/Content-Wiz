@@ -27,6 +27,7 @@ Brand: [BRAND NAME OR URL]
 Source Content: [Paste full text, paste transcript, or provide URL]
 Target Channel(s): [List the channels to generate derivatives for - or type ALL to use the full map for this source type]
 Priority Derivative: [If generating one piece at a time, name the single target derivative]
+Voice/Tone: [inherits from the source article's brand register — specify override here if a derivative requires a different register, e.g., Twitter = casual, whitepaper = formal]
 
 ------------------------------------------------------------
 SOURCE TYPE A: LONG-FORM ARTICLE (9 TO 12 DERIVATIVES)
@@ -85,7 +86,7 @@ Output as an FAQ block formatted for FAQPage schema markup.
 DERIVATIVE 9: GUEST ARTICLE PITCH ANGLE
 Extract the most original or data-backed claim in the article.
 Use it as the basis for a guest article pitch for one target publication from strategy-guest-articles.md.
-Output: working title, 2-3 headline options, 3 talking point bullets.
+Output: working title (max 70 chars) + 2–3 headline options (max 70 chars each) + 3 talking point bullets (1 sentence each, max 20 words per bullet, stating a specific insight not a topic label).
 
 ------------------------------------------------------------
 SOURCE TYPE B: WEBINAR OR RECORDED SESSION (12 TO 18 DERIVATIVES)
@@ -242,6 +243,12 @@ OUTPUT FORMAT
 For single derivative: Full formatted output for the target channel, following that channel's prompt rules.
 For full source map: Output all derivatives in sequence, clearly labeled by derivative number.
 Reference the relevant prompt file for channel-specific formatting rules.
+
+Each derivative row must include: the derivative type, the source section it draws from, and the complete content.
+Field encoding: wrap multi-line derivatives in double quotes.
+Do not abbreviate derivatives with '[continued]' or truncate mid-sentence.
+
+SELF-CHECK: After drafting each derivative, verify its length against the per-derivative target (e.g., LinkedIn 800–1,000 chars, Twitter tweet max 280 chars). Revise any derivative outside its platform limit before outputting.
 
 Save to: output/[Channel Name]/
 HARO data bank entries save to: data/HARO_DataBank.csv

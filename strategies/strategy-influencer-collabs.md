@@ -25,6 +25,16 @@ Build a creator program that produces attributable pipeline and a reusable libra
 
 ---
 
+## Content Pillars
+
+1. **Skills Demonstration Content** — influencer-led content showing a learning outcome, skill application, or before/after from using the brand's training.
+2. **Industry POV Content** — influencer shares a take on a trend or challenge in their professional niche, naturally crediting the brand's framework.
+3. **Behind-the-Scenes Content** — influencer documents their experience with the brand's programme or event.
+4. **Community Challenge Content** — influencer launches a challenge tied to a skill the brand teaches, driving audience participation.
+5. **Review & Recommendation Content** — influencer gives an honest structured review of a specific course or training format.
+
+---
+
 ## Repeatable Collaboration Structure
 
 **Step 1: Define the campaign type**
@@ -86,6 +96,16 @@ Industry measurement expectations have moved with the money: brands shifting bud
 5. **Undisclosed sponsorship.** Missing or buried disclosure ("collab" in a sea of hashtags, disclosure only after the caption fold) creates FTC liability for the brand as well as the creator and, once noticed, damages audience trust in both. Disclosure placement is checked at the draft-review step, every time, no exceptions.
 
 6. **Judging the program on one-off posts.** Killing the channel after a single collaboration underperforms ignores that most consumers need multiple exposures before purchasing (NeoReach 2026). The unit of evaluation is the creator relationship over a cohort window, not the individual post.
+
+---
+
+## Recommended Tools
+
+1. **Collabstr or AspireIQ** — influencer discovery and campaign management for B2B and professional-development niches.
+2. **LinkedIn Creator Mode analytics** — track influencer post performance for LinkedIn-based collaborations.
+3. **GRIN or Meltwater** — relationship management and contract/payment tracking for influencer programmes.
+4. **UTM parameters via Google Analytics 4** — track referral traffic and conversions from each influencer's content.
+5. **Notion or Airtable** — maintain an influencer roster with contact details, niche, audience size, past results, and contract status.
 
 ---
 

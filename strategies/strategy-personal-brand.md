@@ -71,6 +71,16 @@ Three or more streams is the target state; across industry surveys, diversificat
 
 ---
 
+## Distribution & Amplification
+
+1. For every long-form asset published (article, video, newsletter issue), create 3 derivative social posts within 48 hours — one for LinkedIn, one for Twitter/X, and one for a niche community or forum.
+2. Republish older high-performing articles to Medium or LinkedIn Articles with an updated intro — adds a second distribution window without new writing.
+3. Send the week's best post to your email list as a "in case you missed it" section in the newsletter.
+4. Engage with 5 relevant posts from peers in your space every day you publish — reciprocal visibility is a distribution multiplier.
+5. Track which content earns DMs and replies — these are the topics to go deeper on in the next content sprint.
+
+---
+
 ## Failure Modes
 
 1. **Pillar monotony.** An all-educational feed reads like a free textbook nobody assigned. Educational posts build authority but story and opinion posts build the relationship; a feed missing them grows slowly and converts worse.
@@ -82,6 +92,16 @@ Three or more streams is the target state; across industry surveys, diversificat
 4. **Buying followers.** Purchased audiences destroy the engagement-rate signal every algorithm and every sponsor now checks first. A 100,000-follower account with 0.2% engagement is worth less than a 5,000-follower account at 6%, and the damage is nearly impossible to launder out.
 
 5. **Outsourcing the voice until the persona collapses.** Ghostwriters and AI assistance can scale production, but if the persona is so fully outsourced that the real person cannot sustain it on a live podcast, on stage, or in a sales call, the gap between feed and person becomes the story. Delegate drafting, never delegate judgment or lived material.
+
+---
+
+## Recommended Tools
+
+1. **Shield Analytics** — track LinkedIn post reach, follower growth, and engagement rate beyond the native dashboard.
+2. **Typefully or Taplio** — draft, schedule, and thread Twitter/X and LinkedIn content with analytics.
+3. **ConvertKit (Kit)** — manage personal brand email list with automation and subscriber segmentation.
+4. **Riverside.fm** — record high-quality solo audio and video content for podcast guesting and YouTube.
+5. **Notion** — maintain a content idea bank, publishing calendar, and asset library in one personal workspace.
 
 ---
 

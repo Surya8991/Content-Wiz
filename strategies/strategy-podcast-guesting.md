@@ -144,6 +144,16 @@ The episode itself is one of eleven content pieces it should generate:
 
 ---
 
+## Recommended Tools
+
+1. **Podmatch or Rephonic** — podcast discovery and matching platforms that surface shows aligned to your expertise and audience size.
+2. **Riverside.fm or Zencastr** — high-quality remote recording for podcast interviews, ensuring audio quality regardless of host setup.
+3. **Descript** — edit your own audio clips from recorded interviews for repurposing into social content.
+4. **Notion or Airtable** — track pitch pipeline: podcast name, host, DA/audience size, pitch sent date, response status, and episode publish date.
+5. **SparkToro** — research where your target audience actually listens, to prioritise which podcasts are worth pitching.
+
+---
+
 ## Adaptation for Your Brand
 
 The brand's strongest podcast angle is operational specificity - not general thoughts on industry trends, but specific frameworks backed by data from real program outcomes. The working titles to lead pitches with should always include a number and a named outcome: for a corporate training brand, examples might be "The 3 Metrics That Predict Whether Corporate Training Will Change Behavior," "Why 70% of Skills Assessments Produce No Development Action (And How to Fix the Process)," or "How to Get Training Budget Approved When ROI Is Hard to Prove." If your brand serves certification-focused shows, it can lead with its own angle, for example: "How Corporate-Sponsored Certification Programs Changed Career Outcomes for Mid-Level Managers," backed by data from cohort outcomes. Brand voice rules apply to any frameworks or statistics cited on air: specific, sourced, no vague qualifiers. Named data points from your brand's own programs are the strongest credibility signals available and should be prepared and approved before every recording.

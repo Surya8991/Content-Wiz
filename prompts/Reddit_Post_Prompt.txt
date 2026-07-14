@@ -10,15 +10,20 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Write a Reddit post for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]" suitable for the subreddit "[TARGET SUBREDDIT e.g. r/humanresources / r/learnprogramming / r/projectmanagement]". The post should feel like a genuine community contribution, not a brand promotion. Write in a conversational, peer-to-peer tone. Share a real insight, observation, or discussion starter based on [TOPIC]. Include 1-2 relevant stats to add credibility. Do not mention [BRAND NAME] in the body unless it feels completely natural. If a URL is included, present it as a helpful resource, not an advertisement. Do not use em dashes. Target audience is [TARGET AUDIENCE].
+Write a Reddit post for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]" suitable for the subreddit "[TARGET SUBREDDIT e.g. r/humanresources / r/learnprogramming / r/projectmanagement]". The post should feel like a genuine community contribution, not a brand promotion. Write in a conversational, peer-to-peer tone. Share one specific insight, observation, or scenario (2–4 sentences) that a community member would recognise from their own experience. State it concretely — name the situation, the outcome, or the number. Do not open with a generalisation ('Many people think...'). Include 1-2 relevant stats to add credibility. Do not mention [BRAND NAME] in the body unless it feels completely natural. If a URL is included, present it as a helpful resource, not an advertisement. Do not use em dashes. Target audience is [TARGET AUDIENCE].
 
 Reference URL (if any): [INSERT URL]
+Voice/Tone: [peer-to-peer conversational / community member / neutral discussion starter — default: conversational, no promotional register]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
 ------------------------------------------------------------
 
 Sr. No. | Subreddit | Topic | Post Title | Post Body
+
+Field encoding: wrap multi-line post bodies in double quotes.
+Post Body must not contain promotional language or brand mentions in the first 2 sentences.
+Post Title must end with a question mark for discussion posts, or make a clear claim for observation posts.
 
 ------------------------------------------------------------
 RULES
@@ -32,4 +37,15 @@ RULES
 - Any stat cited must name its source, organization, and year (e.g. "(ATD, 2025)" or "per WEF 2025 Future of Jobs Report")
 - No em dashes anywhere
 - No passive voice
+- SELF-CHECK: After drafting each post, count words. Target: 100–200 for the post body. If over 200, cut to the core observation and one supporting point. If under 100, add a concrete scenario or data point.
+- BATCH DEDUPLICATION: No two posts in the same batch may target the same subreddit with the same angle. No two post titles may use the same opening word. No observation or data point may be repeated across the batch.
 - Output saved to output/Reddit/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. Post that reads as a press release or brand announcement — no product names in the opening sentences.
+2. Title that doesn't give the reader a reason to open the post — titles need a hook, not just a topic label.
+3. Post body under 100 words with only a question and no substance — ground the question in a concrete scenario or data point.
+4. Any promotional link in the body — if a URL is included, it must appear as a contextual resource, not a CTA.

@@ -38,6 +38,16 @@ Format: 5-email sequence sent over 14 days. Each email shorter than the weekly n
 
 ---
 
+## Content Pillars
+
+1. **Industry Insight** — one data point, trend, or research finding the audience hasn't seen yet, with a 2–3 sentence POV.
+2. **Practical Framework** — a named system, checklist, or process the reader can apply immediately.
+3. **Curated Reads** — 2–3 external resources with a one-line rationale for why this audience needs them.
+4. **Brand Proof Point** — a case study excerpt, testimonial, or result metric that demonstrates the brand's value without a hard sell.
+5. **Community Prompt** — a question or challenge that invites reply, keeping the sender-reader relationship active.
+
+---
+
 ## Weekly Newsletter Structure (The 8 Blocks)
 
 **Block 1: Subject line (33 characters or fewer)**
@@ -142,6 +152,16 @@ Segmented sends consistently outperform unsegmented sends on click rate by a wid
 4. **Writing for the archive, not the inbox.** Newsletters that read like formal blog posts lose the intimacy that drives replies and forwards. The word "you" should appear more often than any other pronoun. The tone should feel like a direct message, not a published article.
 
 5. **Ignoring unsubscribes as a signal.** Unsubscribe spikes after a specific issue type are data. They indicate a content format, frequency, or topic mismatch with what the audience signed up for. Review unsubscribe patterns monthly and adjust content accordingly.
+
+---
+
+## Recommended Tools
+
+1. **ConvertKit (now Kit)** — sequence automation and subscriber segmentation for B2B newsletters.
+2. **Mailchimp** — list management and A/B subject line testing for broadcast sends.
+3. **Beehiiv** — newsletter-first platform with built-in referral and growth tools.
+4. **Substack** — community-native publishing for thought-leadership-led newsletters.
+5. **Google Analytics 4 + UTM parameters** — track newsletter click-through to website conversion by issue and CTA.
 
 ---
 

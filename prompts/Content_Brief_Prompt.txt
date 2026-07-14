@@ -15,6 +15,7 @@ Create a detailed content brief for [BRAND NAME], [BRAND DESCRIPTION], for a [CO
 Reference URL (if any): [INSERT URL]
 Target Platform: [e.g. WordPress / Medium / Dev.to]
 Primary Target Keyword: [INSERT OR LEAVE BLANK]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
@@ -30,10 +31,10 @@ STANDARD SEO FIELDS:
 - Suggested Titles (3 options)
 - Recommended Word Count
 - Content Outline (H1 / H2s / H3s)
-- Key Points to Cover
+- Key Points to Cover: list 5–8 specific points, each as a complete sentence stating the point and why it matters to the reader
 - Stats or Research to Include (name source, organization, and year for each)
 - Internal Linking Suggestions (page title and URL)
-- CTA Recommendation
+- CTA Recommendation: one sentence, imperative verb, names a specific resource or action (e.g. 'Download the L&D ROI Calculator' or 'Book a free training audit'). Max 20 words.
 - Competitor Reference URLs
 
 GEO / AEO FIELDS (NEW):
@@ -62,4 +63,18 @@ RULES
 - Never invent a plausible-sounding source or statistic; if a claim cannot be verified, flag it for verification or recommend a qualitative statement instead
 - No em dashes anywhere
 - No passive voice
+- SELF-CHECK: Featured snippet answer must be 40–60 words. Count after drafting and trim or expand if outside range.
+- BATCH DEDUPLICATION: When generating multiple briefs in one session, no two may share the same suggested title structure, the same featured snippet opening phrase, or the same CTA action. Vary angle and evidence across every item in the batch.
 - Output saved to output/Content_Brief/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. PRIMARY KEYWORD NOT NATURALLY MATCHING THE STATED SEARCH INTENT: A keyword like "corporate training" assigned to a decision-stage brief targeting buyers ready to book a demo is misaligned. The keyword and the content goal must reflect the same stage of the buyer journey.
+
+2. FEATURED SNIPPET ANSWER OVER 60 WORDS: Google's featured snippet window is 40–60 words. An answer that runs to 90 words will be cut or skipped. Trim to the precise answer without preamble.
+
+3. CTA NOT TIED TO THE ARTICLE TOPIC: A CTA for a demo page on an awareness-stage article about measurement frameworks creates friction. The CTA must match the content type and the buyer's stage, as defined in the Content Goal field.
+
+4. KEY POINTS LISTED AS TOPIC LABELS NOT READER-BENEFIT STATEMENTS: "Cover ROI" is a topic label. "Explain why completion rate is a lagging indicator and what leading indicators to track instead" is a reader-benefit statement. Every key point must tell the writer what the reader should understand after reading it.

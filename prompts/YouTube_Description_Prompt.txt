@@ -29,6 +29,7 @@ Primary Keyword: [The exact search phrase this video targets]
 Chapters: [List of chapter topics with approximate timestamps - required for Mode A on videos over 5 min]
 CTA Destination: [URL, resource name, or next video to recommend]
 Related Videos: [1 to 2 other channel videos to link in the description - optional]
+Voice/Tone: [conversational YouTube creator / brand educational / tutorial guide — default: conversational, matches on-screen presenter style]
 
 ------------------------------------------------------------
 MODE A: STANDARD VIDEO DESCRIPTION (8+ MINUTES)
@@ -141,6 +142,7 @@ GLOBAL RULES
 - Chapters required for all videos over 5 minutes
 - 3 to 5 hashtags maximum
 - Pinned comment generated alongside every description
+- SELF-CHECK: After drafting, count characters for the first sentence of the description. Target: 100–150 characters (this is the preview text visible before 'Show more'). If over 150 characters, shorten the first sentence. Also verify total description is under 5,000 characters (YouTube's hard limit).
 - Output saved to output/YouTube/
 
 ------------------------------------------------------------

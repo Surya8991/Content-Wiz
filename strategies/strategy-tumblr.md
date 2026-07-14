@@ -7,6 +7,8 @@ _Last updated: 2026-07-13_
 
 Build a following among Tumblr's actual core audience for this content - not a generic "younger professional" demographic, but the specific subculture dynamics that drive what circulates on this platform: fandom communities that reblog based on tonal resonance more than topical relevance, meme-remix culture where a post's phrasing gets forked and recontextualized faster than it gets read literally, and anon-ask culture where a claim invites a rebuttal or addition reblogged onto the original rather than a reply in a separate thread. A workplace/EQ post succeeds here when it reads like something a fandom blog would reblog with "this but for [unrelated context]" tacked on, not when it reads like a LinkedIn post with the header removed. Target: reblog/like rate over raw view count - Tumblr's distribution model rewards posts that get reblogged into other people's feeds, so a post that gets shared 20 times to a small following outperforms one that gets 500 views and no reblogs.
 
+**Success Metrics:** (1) Reblog rate above 8% per post (reblogs ÷ total notes) within 7 days of posting; (2) Minimum 3 posts per week achieving 10+ notes within 48 hours; (3) At least 1 post per month achieving 50+ reblogs; (4) Month-over-month follower growth rate of 5% or above.
+
 ---
 
 ## Core Principles
@@ -37,9 +39,42 @@ Build a following among Tumblr's actual core audience for this content - not a g
 
 ---
 
+## Content Pillars
+
+1. **Aphoristic Claim Posts** — a single bold, quotable statement on a professional or industry topic, formatted for reblogging.
+2. **Visual Frameworks** — an infographic or diagram-style image summarising a model or system, with a short explanatory caption.
+3. **Curated Thread Responses** — reblog a relevant post from a community member and add a substantive 2–3 sentence POV.
+4. **Behind-the-Scenes Snapshots** — candid glimpses into the brand's process, team, or work with a conversational caption.
+5. **Question Posts** — open-ended prompts inviting the community to reblog with their answer, driving cascading engagement.
+
+---
+
 ## Cadence
 
 - 2-3 posts per week. Tumblr rewards a steady stream of short posts over infrequent long ones.
+- Batch-create posts in sets of 5–7 and schedule them using Tumblr's native queue feature (up to 300 posts queued).
+- Optimal posting times: 7–10pm local time on weekdays, 12–3pm on weekends.
+- Review monthly: posts with 20+ reblogs should be repurposed into other formats immediately.
+
+---
+
+## Distribution & Amplification
+
+1. Cross-tag every Tumblr post with 5–10 relevant tags — Tumblr's primary discovery mechanism is tag search.
+2. Reblog your own post 12–24 hours after publishing to give it a second appearance in your followers' dashboards.
+3. Identify 3–5 active Tumblr accounts in your niche and engage with their posts weekly to build reciprocal visibility.
+4. Repurpose high-reblog Tumblr posts into Twitter/X quote-tweet-style LinkedIn posts.
+5. Feature the month's top Tumblr post in the brand's email newsletter as a community engagement signal.
+
+---
+
+## Recommended Tools
+
+1. **Tumblr Queue** — native scheduling feature allowing up to 300 posts to be batched and published at set intervals.
+2. **Canva** — create visually distinct header images and infographic posts optimised for Tumblr's image-forward format.
+3. **Later** — third-party social scheduler with Tumblr support for cross-platform content batching.
+4. **Tumblr Tag search** — native discovery tool to monitor trending tags in your niche and identify reblog opportunities.
+5. **Google Analytics 4** — track Tumblr referral traffic to your main website via UTM-tagged post links.
 
 ---
 

@@ -7,6 +7,8 @@ _Last updated: 2026-07-13_
 
 Build a small, loyal readership on a genuinely niche, declining-but-real platform - not a generic "personal blog" channel with room to grow. LiveJournal's Western usage collapsed after the early-2010s migration to Dreamwidth and Tumblr; the active base that remains today skews toward two real communities: long-tenured ex-fandom and roleplay communities who never fully left, and a substantial Russian-language user base (LiveJournal has operated as a majority-Russian platform for years). A corporate workforce-training account publishing in English sits outside both of those communities, which means realistic reach here is a niche-within-a-niche, not a growth channel. Set expectations accordingly: this is a low-volume, high-fidelity channel for a small number of readers who actually read to completion, not a reach play. Target: readable-to-completion rate over raw impressions - track comment quality and return-reader signals over follower counts, and do not benchmark this platform's audience size against LinkedIn, Tumblr, or any actively growing channel in this system.
 
+**Success Metrics:** (1) Minimum 3 comments per post within 7 days of publishing; (2) 20% of posts reshared or linked to from at least one other community member per month; (3) Return-reader rate above 40% (measured via unique vs. returning sessions in site analytics if a linked blog exists); (4) At least 1 cross-platform link-back from LiveJournal content per quarter.
+
 ---
 
 ## Core Principles
@@ -37,6 +39,29 @@ Build a small, loyal readership on a genuinely niche, declining-but-real platfor
 
 - 1 post per week per topic cluster is sustainable without exhausting a single source pool. Clusters of more than 3-4 posts in a short window should span multiple distinct source bases per the diversity rule above.
 - Do not increase cadence to chase reach. Given the platform's small, declining, nostalgia-driven active base (see Goal and Metric), posting more often will not meaningfully grow an audience that is not there to be grown in the way LinkedIn's or Tumblr's is - a slower, consistent cadence that respects a small returning readership is the realistic ceiling, not a temporary phase before scale.
+- Batch-write posts on a weekly basis — draft 2 in one sitting rather than writing reactively.
+- Aim for one post per active community journal you participate in, per month.
+- Review post performance monthly: posts with 5+ comments should be repurposed into a blog or LinkedIn article.
+
+---
+
+## Content Pillars
+
+1. **Long-Form Reflection** — in-depth personal or professional narrative connecting an experience to a reader-relevant insight.
+2. **Industry Commentary** — a take on a trend, news item, or community debate, written in the community's register.
+3. **Resource Round-Up** — a curated list of useful reads, tools, or frameworks with a brief personal annotation for each.
+4. **Question-Led Post** — an open question to the community that invites structured responses and discussion.
+5. **Behind-the-Scenes** — a candid look at how a project, course, or initiative was built, including what didn't work.
+
+---
+
+## Distribution & Amplification
+
+1. Cross-post a condensed version of each LiveJournal post to a relevant community journal within the platform.
+2. Share the post link on LinkedIn with a 2-sentence excerpt to drive external readers to the LiveJournal post.
+3. Include the top-performing LiveJournal post each month in the brand's email newsletter as a "long read" feature.
+4. Tag any expert or community member mentioned in the post to notify them and encourage resharing.
+5. Archive high-performing posts by converting them into long-form blog articles on the brand's main website.
 
 ---
 
@@ -46,6 +71,16 @@ Build a small, loyal readership on a genuinely niche, declining-but-real platfor
 2. **Repeated single-source citation across a cluster.** Run the Cluster Citation Diversity Pass (README.md) before publishing the second post in a cluster that would otherwise share a source with the first.
 3. **Vague named-but-unlinked references** ("HBR has found...", "research shows..."): always name the specific report and year, or drop the reference.
 4. **Formulaic closing pattern repeated across every post** (same rhetorical question, same `<hr>` structure): vary the close, since a reader who reads 3-4 posts back to back will notice a repeated template faster than a repeated fact.
+
+---
+
+## Recommended Tools
+
+1. **LiveJournal Community Finder** — identify active communities aligned to your topic niche for cross-posting.
+2. **Google Docs** — draft and store posts with collaborative editing before publishing to LiveJournal.
+3. **Buffer** — schedule cross-platform share of LiveJournal post links on LinkedIn and Twitter.
+4. **Google Analytics 4** — track referral traffic from LiveJournal posts to your main website if posts include links.
+5. **Grammarly** — proofread long-form posts before publishing to maintain editorial quality.
 
 ---
 

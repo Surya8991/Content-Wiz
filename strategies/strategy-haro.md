@@ -107,6 +107,10 @@ Any stat-bearing pitch requires a human reviewer's sign-off before the correspon
 - Aim to respond to 3 to 5 queries per week, not per day. Volume without relevance tanks pickup rate.
 - Only respond to queries where the brand has genuine first-hand expertise. Off-topic pitches waste the journalist's time and damage the sender's credibility.
 - Block 30 minutes after each HARO email arrives to filter and respond while the queue is still short.
+- Prioritise queries with a response window under 24 hours — these have the highest pickup rate.
+- Triage queries by tier: Tier 1 = major national/industry publications (respond within 2 hours); Tier 2 = mid-tier blogs with DA 40+ (respond within 6 hours); Tier 3 = DA under 40 (respond only if time allows).
+- Log every response in a tracking sheet with query topic, publication, and response date to measure monthly pickup rate.
+- Target: 1 confirmed pickup per 10 responses submitted.
 
 ---
 
@@ -121,6 +125,16 @@ Any stat-bearing pitch requires a human reviewer's sign-off before the correspon
 4. **Responding to off-topic queries.** A marketing director answering a query about tax accounting simply because the deadline is close damages credibility with the journalist and wastes a pitch from the daily limit.
 
 5. **AI-generated responses without personal perspective.** Journalists actively flag and ignore responses that lack authentic voice, specific examples, or verifiable first-hand experience. A pitch that reads like a summary paragraph from a generic article will not be picked.
+
+---
+
+## Recommended Tools
+
+1. **HARO / Connectively / Featured** — the primary journalist query platforms.
+2. **Google Alerts** — monitor pickup of submitted quotes and brand mentions.
+3. **Ahrefs or Semrush** — verify DA of publications before responding and track earned backlinks post-pickup.
+4. **Notion or Airtable** — maintain a HARO response tracker with query, publication, submission date, response sent, and pickup status.
+5. **Gmail filters** — create label rules to auto-sort HARO digests by niche for faster triage.
 
 ---
 

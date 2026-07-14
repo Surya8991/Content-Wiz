@@ -1,0 +1,232 @@
+============================================================
+SALES EMAIL PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: Cold Outreach Email / Follow-Up Email / Re-Engagement Email
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [direct / confident / human — default: first-person sender voice, concise, specific, no corporate boilerplate]
+
+Note: This prompt is for direct 1:1 or personalised sales outreach. For automated nurture sequences, use Email_Drip_Sequence_Prompt.txt.
+
+Once the brand is confirmed, select the format below.
+
+------------------------------------------------------------
+SALES EMAIL COPY RULES (2025 DATA) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+These constraints apply to all outbound and 1:1 sales emails. Violating them reduces open rates, reply rates, and conversion.
+
+1. SUBJECT LINE LENGTH: 41-50 CHARACTERS IS THE SWEET SPOT
+   Subject lines of 41-50 characters achieved a 17.57% CTR in Belkins' 2025 cold email study — significantly above both shorter and longer alternatives. Question-format subject lines reach 46% open rates (Belkins, 2025). On mobile, subject lines are cut at approximately 33-40 characters. Write for the phone screen first: the first 35 characters must carry the meaning.
+
+2. THE FIRST SENTENCE MUST START WITH THE READER'S WORLD
+   The single most common failure mode in sales email is opening with "I" or with the company name. "Hi, I'm reaching out because we help companies like yours..." is deleted before the third word. The opening line must describe the recipient's situation, pain, or goal — before the sender has introduced themselves. "Your team is probably spending [X hours] on [pain] every week" pulls the reader in. "We are [Company Name] and we help [broad category]..." pushes them away.
+
+3. PERSONALIZATION MULTIPLIES EVERY METRIC
+   Personalized emails generate 26% higher open rates and 133% higher reply rates (Campaign Monitor). But personalization is not just first names. It includes: referencing the recipient's company, role, or recent activity; writing copy specific to their industry or business model; naming a real trigger event (funding round, hiring signal, product launch, press mention) that makes this email relevant right now. Generic personalization ("I noticed you work in [industry]") is not personalization — it is a template with a mail-merge variable.
+
+4. ONE CTA PER EMAIL — NO EXCEPTIONS
+   Emails with a single CTA get 371% more clicks than emails with multiple competing links (Moosend). For sales outreach, the CTA is almost always one of three things: book a call, reply to this email, or visit a specific page. Pick one. Every additional option you add reduces the probability that any action gets taken. The CTA must complete the sentence "I want to ___" — "Book a 20-minute call" works. "Learn more" does not.
+
+5. THE P.S. LINE IS THE SECOND MOST-READ ELEMENT IN ANY EMAIL
+   Skimmers jump from the subject line to the P.S. line before reading the body. Use it. Make it a one-sentence restatement of the CTA or the single most compelling benefit. "P.S. If now is not the right time, reply with 'later' and I will reach out in 90 days" is a better P.S. than leaving the field blank. Write it every time, for every format.
+
+6. MOBILE-FIRST FORMATTING IS NON-NEGOTIABLE
+   Over 60% of emails are opened on mobile (email industry data, 2025). Subject lines get cut at 33-40 characters on most phones. Paragraphs longer than 3 lines look like a wall of text in a mobile inbox. Every sales email must use single-column layout, 2-sentence paragraph maximum, and a tap-friendly CTA (text link or clearly labeled button). Long dense emails are deleted before they are read.
+
+7. EMAIL GENERATES $36 FOR EVERY $1 SPENT — BUT ONLY FOR RELEVANT, TARGETED OUTREACH
+   Email's $36:1 ROI (MailerLite, 2025) applies to well-targeted, relevant outreach — not to spray-and-pray cold lists. The PAS framework (Problem, Agitation, Solution) is the most reliable body copy structure for outreach emails with a conversion goal. Name the problem precisely, make the cost of ignoring it feel real, then introduce the offer as the natural resolution. Vague problems create vague desire. Precise problems create precise urgency.
+
+------------------------------------------------------------
+FORMAT A: COLD OUTREACH EMAIL (FIRST CONTACT, NO PRIOR RELATIONSHIP)
+------------------------------------------------------------
+
+Use when: First-ever contact with a prospect who has not interacted with the brand before.
+Goal: Generate a reply or a booked call — not a purchase. Cold outreach converts in multiple touches; the first email's only job is to start a conversation.
+Target length: 100-150 words for the body. Shorter is stronger for cold email.
+
+Required inputs: Brand | Sender Name/Role | Target (job title/company type) | Pain Point to Address | Offer/CTA | Trigger Event (if available: funding, hiring signal, recent news) | Voice/Tone
+
+COLD EMAIL STRUCTURE:
+
+Subject line (2 options to A/B):
+Option 1 — Question format (highest open rate): "[Pain point or result] for [job title / company type]?"
+Option 2 — Specific trigger or observation: "[Company name]'s [growth signal] — one question"
+Target: 41-50 characters. Avoid: "Following up," "Quick question," "Introduction," all are overused and signal template.
+
+Preview text:
+Continues the subject. Names the specific value in one phrase.
+
+Opening line (the reader's world first):
+Name something specific about their company, role, or situation — NOT the sender's company or product.
+Trigger event is the strongest opener: "Saw [Company] just [raised $X / launched X / hired Y] — congrats."
+No trigger event available: "Most [job title]s I talk to are dealing with [specific pain] right now."
+Do NOT start with "My name is" or "I work at" or "I wanted to reach out."
+
+Body (2-4 sentences using PAS framework):
+Problem: Name the specific pain this prospect's role deals with. Concrete and role-accurate.
+Agitation: One sentence on the cost of not solving it. Numbers help ("This typically means [X hours wasted / $X left on the table]").
+Solution: One sentence introducing the offer as the natural resolution. Not a features pitch — a specific outcome delivered: "We helped [similar company] [specific result] in [timeframe]."
+
+CTA (1 line):
+Low-friction ask for cold outreach: "Worth a 20-minute call this week?" or "Happy to send a quick example if useful?"
+Do not ask for a 60-minute demo on the first touch. The ask must match the commitment level of a first contact.
+Link to calendar if available — reduces back-and-forth friction.
+
+P.S. line:
+One sentence. Either a second social proof point ("We also worked with [similar company] on [same outcome]") or a softened fallback ("If the timing is off, happy to reconnect in [timeframe] — just reply with 'later'").
+
+COLD EMAIL CHECKLIST:
+- Body is 100-150 words
+- Opening line does NOT start with "I" or company name
+- One CTA only
+- P.S. line included
+- Trigger event or specific personalization in the first sentence if available
+
+------------------------------------------------------------
+FORMAT B: FOLLOW-UP EMAIL (AFTER NO REPLY TO COLD OUTREACH)
+------------------------------------------------------------
+
+Use when: Following up on a cold email that received no reply. Standard follow-up cadence: Day 3, Day 7, Day 14, Day 30 — each with a different angle, not a rephrased version of the first email.
+Goal: Re-engage the prospect with a new angle, new social proof, or a different entry point — not to resend the same pitch with "Just checking in."
+Key constraint: "Just checking in" and "Following up on my last email" are the two most deleted phrases in sales email. Never use either. Each follow-up must add value, a new data point, a relevant case, or a shifted perspective.
+
+Required inputs: Brand | Sender Name/Role | Target (job title/company type) | Pain Point to Address | New Angle / New Social Proof for this Email | Offer/CTA | Voice/Tone
+
+FOLLOW-UP EMAIL STRUCTURE:
+
+Subject line:
+Do NOT repeat the original subject line. Use a completely different approach.
+Option 1 — New angle: "[Specific outcome] other [company type] are seeing right now"
+Option 2 — New social proof: "How [similar company] solved [same pain] in [timeframe]"
+Option 3 — Direct honesty: "Should I stop reaching out?"
+
+Opening line:
+Reference the previous email briefly in one phrase — then immediately pivot to the new content.
+"Sent you a note last week — but I wanted to add this before I moved on."
+Or open with the new value directly without any reference: start with the new case, new data, or new angle.
+
+Body (new angle — pick one of three):
+
+ANGLE 1 — SOCIAL PROOF / MINI CASE STUDY:
+"[Similar company] had the same challenge with [pain point]. After [timeframe], they [specific measurable result]. Happy to share how they got there."
+
+ANGLE 2 — NEW DATA / RELEVANT STAT:
+"[Stat from relevant research] — [one sentence on what it means for the recipient's role]. Thought it might be useful given what [their company] is doing with [relevant context]."
+
+ANGLE 3 — SHIFTED ENTRY POINT:
+Offer a smaller, lower-commitment version of the original ask. "Instead of a full call, happy to send a 2-minute video showing [specific outcome] — easier to evaluate before committing time."
+
+CTA (1 line):
+Matches the body angle. If social proof angle: "Want me to send the full breakdown?" If data angle: "Happy to share the source if useful." If shifted ask: "Want me to send the video?"
+Each follow-up's CTA should be equal or lower commitment than the previous touch.
+
+P.S. line:
+"If this is not a fit right now, one reply lets me know — no follow-ups after that."
+
+------------------------------------------------------------
+FORMAT C: RE-ENGAGEMENT EMAIL (TO A LAPSED LEAD OR FORMER CUSTOMER)
+------------------------------------------------------------
+
+Use when: Re-contacting a prospect who went cold after showing interest, or a former customer who has not purchased or logged in within a defined period (typically 60-180 days depending on product cycle).
+Goal: Restart the conversation. The re-engagement email has the highest personalization opportunity in the sales email toolkit — it can reference the specific product the prospect expressed interest in, the last conversation they had, or the specific feature a former customer used. Use that data.
+Key constraint: Do not send a re-engagement email that reads like a cold email to someone who already knows the brand. The opening line must acknowledge the relationship, not pretend it does not exist.
+
+Required inputs: Brand | Sender Name/Role | Target (job title/company type) | Last Interaction (what they showed interest in, or what they used as a customer) | Reason to Re-Engage (what has changed? New feature, new offer, new case study, relevant news) | Offer/CTA | Voice/Tone
+
+RE-ENGAGEMENT EMAIL STRUCTURE:
+
+Subject line:
+Reference the shared history without being needy.
+Option 1 — Reference what they expressed interest in: "[Feature / Product they showed interest in] — update worth sharing"
+Option 2 — Reference time directly: "It has been [timeframe] — thought this was worth sending"
+Option 3 — Direct honesty: "Still relevant for [company name]?"
+Avoid: "We miss you!" and "Are you still interested?" — both are low-status openers.
+
+Opening line (acknowledge the relationship):
+Name the last interaction or shared context in one phrase.
+"Last time we spoke, you were looking at [specific product/feature] — a few things have changed since then."
+Or for former customers: "You used [specific feature] with us until [approximate time] — wanted to share something relevant to what you were working on."
+Do NOT pretend the previous relationship did not exist.
+
+Body (new reason to re-engage — must be specific):
+Name exactly what has changed since the last contact:
+- New feature, capability, or product line that addresses the original concern
+- A case study from a company in their space with a named result
+- A new pricing tier, offer, or entry point that lowers the original barrier
+- Relevant external trigger: industry shift, regulation, or competitive change that makes the original conversation more urgent now
+
+One sentence maximum on why this is relevant to them specifically.
+Then: the outcome they could achieve, in concrete terms.
+
+CTA (1 line):
+Lower commitment than the original conversation. Re-engagements require rebuilding trust before asking for a decision.
+"Worth 15 minutes to catch up?" or "Happy to send the case study if useful."
+
+P.S. line:
+Offer a graceful exit: "If the timing or the use-case has changed, a quick reply lets me know — no pressure either way."
+
+Grammarly's 2023 re-engagement benchmark: "You used to write 3x more with Grammarly. Here is what changed." — opened with personal data, created curiosity, and referenced loss — recovering 18% of dormant users. That structure (personal reference + what changed + curiosity gap) is the re-engagement gold standard.
+
+------------------------------------------------------------
+THREE CONTENT PILLAR GUIDANCE
+------------------------------------------------------------
+
+For a complete 1:1 sales outreach system, generate emails across these three pillar types:
+
+PILLAR 1 - PRECISION OUTREACH (Format A):
+The cold email that feels anything but generic. Trigger-event-led, role-specific pain, concrete outcome in the body, low-commitment CTA. The prospect should finish reading and think "this person did their homework." Invest the most copy craft here — cold email quality has the largest impact on pipeline generation.
+Example topics: Post-funding outreach, post-job-posting outreach (signaling a pain point they are hiring to solve), post-press-mention outreach, role-change outreach (new decision-maker in seat).
+
+PILLAR 2 - EVIDENCE-LED FOLLOW-UP (Format B):
+Each follow-up adds a new reason to believe — a case study, a stat, a different entry point. Never a copy-paste of the first email with "Just circling back." The series should tell a story: first email sets the problem, second shows proof, third shifts the ask to something smaller. Stop at three to four touches maximum for cold prospects.
+Example topics: Day 3 social proof follow-up, Day 7 relevant-data follow-up, Day 14 low-commitment-ask follow-up, Day 30 breakup email.
+
+PILLAR 3 - WARM RESTART (Format C):
+The re-engagement email earns disproportionate returns because the prospect already knows the brand and already had a moment of interest. The only question is whether the timing or the offer has improved. Reference the shared history. Name what changed. Give them a reason to revisit. One strong re-engagement email to a cold pipeline list often outperforms three cold email touches to a new list.
+Example topics: Post-product-update re-engagement, post-case-study re-engagement, seasonal relevance re-engagement, annual review or renewal-trigger re-engagement.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single email requests:
+Output labeled sections: SUBJECT LINE (2 options) | PREVIEW TEXT | OPENING LINE | BODY | CTA | P.S. LINE
+
+For bulk sequence requests (CSV):
+Sr. No. | Format | Touch Number | Target | Subject Line | Opening Line | Body Copy | CTA | P.S. | Angle Used
+
+Save to output/Sales_Emails/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- Subject lines: 41-50 characters; question format for cold email; never repeat subject across a follow-up sequence
+- Opening line never starts with "I", company name, or "Just reaching out"
+- Body uses PAS framework (Problem, Agitation, Solution) for all three formats
+- One CTA per email; CTA completes the sentence "I want to ___"
+- P.S. line is mandatory for every email — never leave it blank
+- Follow-up emails never contain "Just checking in" or "Following up on my last email" — each must add new value
+- Re-engagement emails must reference the prior relationship explicitly — do not treat a warm contact as cold
+- Maximum body length: 150 words for cold email, 120 words for follow-up, 180 words for re-engagement
+- Mobile-first: 2-sentence paragraph maximum, no walls of text
+- Every stat used names its source and year
+- SELF-CHECK: After drafting, verify: Does the opening line start with the reader's world (not "I" or company name)? Is there exactly one CTA? Is the P.S. line included? Is the body under the word limit? If any answer is no, revise before outputting.
+- BATCH DEDUPLICATION: Within a follow-up sequence, no two emails may share a subject line, an opening line structure, or a CTA phrase. Each email must use a distinct angle from the three available (social proof / new data / shifted ask).
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. "JUST CHECKING IN" FOLLOW-UP: The most deleted phrase in sales email. It signals that the sender has nothing new to offer — they are just hoping the prospect changes their mind without any new information. Every follow-up must give the prospect a new reason to respond. Replace "checking in" with a mini case study, a relevant stat, or a lower-commitment ask.
+
+2. COMPANY-FIRST OPENING: Starting any email with the company name, a product description, or "My name is [X] from [Y]." The prospect did not open the email to hear about the sender's company. The first sentence must be about their situation. Rewrite any opening that does not describe the reader's world.
+
+3. MULTIPLE CTAs IN ONE EMAIL: Including a calendar link, a resource link, a product page link, and a reply CTA in the same email. Each additional option reduces the probability that any action is taken. Pick one CTA and build the entire email toward it. Moosend data confirms single CTAs generate 371% more clicks than multi-CTA emails.
+
+4. TREATING A WARM CONTACT LIKE A COLD PROSPECT: Sending a re-engagement email that reads as if the prospect has never heard of the brand. Missing the reference to previous contact destroys the trust advantage of a warm list. The reference to prior context — even a brief one — is what separates re-engagement from cold outreach.
+
+5. IGNORING THE P.S. LINE: The P.S. is the second most-read element in any email after the subject line. Leaving it blank wastes the highest-engagement real estate in the email. Even if the P.S. simply restates the CTA with a softer fallback ("If the timing is off, reply with 'later' and I will reach out in 90 days"), it does more work than no P.S. at all.

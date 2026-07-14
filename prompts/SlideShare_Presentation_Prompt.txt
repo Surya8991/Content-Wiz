@@ -10,15 +10,20 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Create a SlideShare presentation script for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]". Generate 10-12 slides. For each slide provide: a slide number, a short headline (under 10 words), 3-5 bullet points of concise supporting content, and a speaker note of 2-3 sentences expanding on the slide. The presentation should open with a compelling title slide, build through insight slides, and close with a summary and CTA slide referencing [URL]. Target audience is [TARGET AUDIENCE]. Match the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: clear, professional B2B tone), but keep it punchier and more visual than prose: each slide should read as a scannable takeaway a viewer can absorb in seconds, not a paragraph broken into lines. Save the fuller explanation for the speaker notes. Do not use em dashes. Avoid passive voice.
+Create a SlideShare presentation script for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]". Generate 10-12 slides. For each slide provide: a slide number, a short headline (under 10 words), 3-5 bullet points of concise supporting content, and a speaker note of 2-3 sentences expanding on the slide. The presentation should open with a compelling title slide, build through insight slides, and close with a CTA slide: Headline = 'What's Your Next Step?' (or equivalent). Bullets = 2–3 action options. Speaker Notes must include a closing sentence of 15–25 words naming the specific resource at [URL]. Target audience is [TARGET AUDIENCE]. Match the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: clear, professional B2B tone), but keep it punchier and more visual than prose: each slide should read as a scannable takeaway a viewer can absorb in seconds, not a paragraph broken into lines. Save the fuller explanation for the speaker notes. Do not use em dashes. Avoid passive voice.
 
 Reference URL (if any): [INSERT URL]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
 ------------------------------------------------------------
 
 Slide No. | Slide Headline | Bullet Points | Speaker Notes
+
+Field encoding: wrap multi-line cells in double quotes.
+Bullet Points column: use a pipe | to separate individual bullet points within one CSV cell (e.g., 'Point 1 | Point 2 | Point 3').
+Speaker Notes column: min 30 words per slide, written as spoken delivery script not a repeat of the bullet points.
 
 ------------------------------------------------------------
 RULES
@@ -27,8 +32,20 @@ RULES
 - 10-12 slides total
 - Slide headline under 10 words
 - 3-5 bullet points per slide, each under 15 words
-- Speaker notes 2-3 sentences per slide
+- Speaker notes 2-3 sentences per slide, minimum 30 words
 - First slide is title, last slide is summary and CTA
 - No em dashes anywhere
 - No passive voice
+- SELF-CHECK: After drafting, verify each slide: Headline ≤ 10 words, Bullets = 3–5 per slide. Count both. If any slide exceeds its headline limit or has more than 5 bullets, revise before outputting.
+- BATCH DEDUPLICATION: When generating multiple presentations in one session, no two Slide 1 headlines may share the same opening word or structure. No two CTA slides may share the same headline or CTA sentence.
 - Output saved to output/SlideShare/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. Slide headline over 10 words — count the words and trim before outputting.
+2. Bullet points that are full sentences instead of fragments — each bullet must be a concise phrase a viewer can read in 3 seconds.
+3. Speaker notes that repeat the bullet points verbatim — notes must expand on the bullets, not restate them.
+4. CTA slide missing a specific URL or next-step action — the final slide must name where to go and why.
+5. No data or stat on slides 3–8 — at least one slide in the body must carry a named statistic with source and year.

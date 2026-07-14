@@ -1,0 +1,193 @@
+============================================================
+INSTAGRAM CONTENT PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: Reel / Carousel Post / Story
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [educational / aspirational / behind-the-scenes / conversational — default: brand account, visual-first, concise]
+
+Once the brand is confirmed, select the format below.
+
+------------------------------------------------------------
+PLATFORM/ALGORITHM RULES (2026) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+These constraints apply to all Instagram content. Violating them reduces distribution or wastes creative effort.
+
+1. FORMAT CHOICE IS A DISTRIBUTION DECISION, NOT AN AESTHETIC ONE
+   Reels deliver 1.36x more reach than carousels and 2.25x more reach than single photos. Carousels hold the highest engagement rate at 0.55% (stable year-over-year) and resurface in feeds twice via Instagram's double-exposure mechanic. Static images are in decline at 0.37% engagement, down 17% year-over-year. Choose format based on goal: Reels for reaching non-followers, carousels for converting curious visitors into followers and saves, Stories for deepening relationships with existing followers. (Social Insider, Instagram Engagement Benchmarks 2026.)
+
+2. SENDS PER REACH IS THE #1 SIGNAL FOR NON-FOLLOWER DISTRIBUTION
+   Adam Mosseri publicly identified sends per reach as the single strongest signal for reaching non-followers in January 2025 (Dataslayer, Instagram Algorithm 2025 Complete Guide for Marketers). A DM share is a stronger endorsement signal than a like. Instagram interprets a send as trust — "I trust this enough to put it in someone's inbox" — and that trust signal unlocks Explore and non-follower distribution. Every Reel must include a "send this to someone" prompt. This is not optional engagement bait: it is the primary algorithmic lever for growth.
+
+3. HOOK IN FIRST 3 SECONDS FOR REELS; CAPTION EVERYTHING
+   Instagram's algorithm measures retention past the first 3 seconds of a Reel as a primary ranking signal (Dataslayer, January 2025). Show the payoff first, then earn the watch. Cut every 1-2 seconds to maintain attention. Stay under 90 seconds — Instagram's internal data favors shorter Reels even though the 3-minute limit exists. Caption every Reel because most Instagram video plays without sound. On-screen captions also make the post indexable for keyword search within the app.
+
+4. CAROUSEL DOUBLE EXPOSURE MECHANIC COMPOUNDS REACH OVER TIME
+   Instagram can surface carousels twice: once in the feed and once later as a recommendation to the same user, the double-exposure mechanic documented by Social Insider. This means a carousel post has a second chance to reach users who scrolled past it the first time. The mechanism requires high slide completion on the first exposure. Design each slide to earn the next swipe with cliffhangers, numbered steps, or visual continuations where the image bleeds across slides.
+
+5. COVER SLIDE CLARITY BEATS COVER SLIDE CLEVERNESS FOR CAROUSELS
+   "7 ways to cut your CAC" outperforms "You are leaving money on the table" every time. Curiosity loses to clarity in a two-second scroll decision. The cover slide must name a specific outcome or a specific number. Mysterious or clever cover slides that require swiping to understand the topic lose against straightforward promise-led covers in the feed. This is documented in Notion's Instagram strategy, where cover slides naming a specific outcome ("Build your entire project system in 20 minutes") consistently outperformed clever alternatives.
+
+6. STATIC IMAGES DECLINED 17% IN ENGAGEMENT YEAR-OVER-YEAR
+   Static image posts dropped from 0.45% to 0.37% engagement rate in 2025 (Social Insider, 2026 Instagram Engagement Benchmarks). Brands increased Reel posting frequency by 33% while cutting static posts. If a content request would result in a static single image, recommend either converting it to a carousel (if the content has depth) or a Reel (if the content has motion or can be narrated). Static images are not dead but should not be the backbone of any 2025-2026 strategy.
+
+7. STORIES ARE FOR EXISTING FOLLOWERS, NOT DISCOVERY
+   Stories do not appear in Explore and do not reach non-followers. Their job is deepening the relationship with people who already follow the account. Post 1-2 Stories per day. Data from Buffer's 2025 Instagram guide shows 1-2 daily Stories outperform 5 or more on engagement rate. Use a sticker (poll, quiz, question box, or emoji slider) every 3-4 slides to spike completion rate. UTM-tag every link sticker for GA4 attribution.
+
+------------------------------------------------------------
+FORMAT A: REEL (DISCOVERY AND REACH FORMAT, 15-90 SECONDS)
+------------------------------------------------------------
+
+Use when: Reaching non-followers, gaining Explore distribution, or growing the account audience.
+Algorithmic advantage: 1.36x more reach than carousels; sends per reach is the primary non-follower distribution signal.
+Best cadence: 2-3 Reels per week. Posting more than daily dilutes quality signals and confuses the algorithm's topic clustering.
+Target duration: Under 90 seconds. 15-30 seconds for high-retention content; 30-60 seconds for educational content.
+
+Structure - follow these 5 sections exactly:
+
+HOOK (first 3 seconds, written as exact on-screen text or spoken line):
+Show the payoff first, then earn the watch. The viewer must understand the reward of watching within 3 seconds. Never start with a logo animation, a brand intro, or context-setting. Start with the result, the conflict, or the contrarian claim.
+
+[blank line]
+
+VISUAL DIRECTION (describe every 5-10 second segment):
+Cut every 1-2 seconds. Name what appears on screen in each segment. Include: setting, talent direction, product appearance if relevant, and any on-screen text overlays. Caption placement: bottom third of frame for most content, avoiding the UI elements at the corners. Note: Cross-posting TikTok Reels with a visible TikTok watermark is prohibited — Instagram's algorithm explicitly reduces recommendation eligibility for watermarked content.
+
+[blank line]
+
+CAPTION (written separately from the Reel itself):
+First line must be a standalone hook that works without the video — someone reading the caption without watching should still want to engage. Keep the caption under 150 characters for the preview that shows in the feed. Full caption can go to 300 characters before the "more" truncation. One line of body text after the hook. End with a "send this to someone" prompt — this is the most direct way to generate the send signal that unlocks non-follower reach. Then one line CTA. Then hashtags.
+
+[blank line]
+
+SEND PROMPT (required, last line before hashtags):
+Write one specific "send this to someone" line. It must name who the recipient is: "Send this to someone who just started their first job," "Send this to the teammate who has been asking about [topic]," "Tag someone who needs to hear this." Generic "share with your friends" is not acceptable — name the specific recipient persona.
+
+[blank line]
+
+HASHTAGS (3-5, final line):
+3 to 5 hashtags. One broad category hashtag, one medium-specificity hashtag, one niche hashtag, last always [BRAND HASHTAG]. More than 5 hashtags add no measurable reach benefit on Instagram as of 2026.
+
+------------------------------------------------------------
+FORMAT B: CAROUSEL POST (ENGAGEMENT AND SAVE FORMAT, UP TO 20 SLIDES)
+------------------------------------------------------------
+
+Use when: Educating the audience on a framework, process, or list. Converting profile visitors into followers. Generating saves, which compound over time as a ranking signal.
+Algorithmic advantage: 0.55% engagement rate (highest of all formats, stable); double-exposure mechanic resurfaces posts a second time.
+Best cadence: 1-2 carousels per week alongside Reels. Carousels attract saves; Reels attract reach. Both are needed.
+Target slides: 6-10 slides is the sweet spot. More slides means more time spent, which registers as engagement quality. 20 slides is the platform maximum.
+
+Structure - follow these sections exactly:
+
+COVER SLIDE (slide 1):
+A plain, specific promise. Name the exact outcome or number. "7 ways to cut your CAC" outperforms "You are leaving money on the table." The cover slide is your ad in the feed. Curiosity loses to clarity in a two-second scroll decision. Include a subtitle line if needed (under 10 words) that names who this carousel is for.
+
+SLIDE 2 - TENSION OR CONTEXT:
+Name the problem, the gap, or the common mistake this carousel addresses. One sentence per slide. Never more than 3 lines of text per slide. This slide should make the viewer feel the pain of the problem before delivering any solution.
+
+SLIDES 3-N - CONTENT SLIDES:
+Each slide delivers one specific insight, step, or piece of advice. Number each slide ("Step 3 of 7" or "Mistake 3"). Use visual continuations where the image bleeds across slides to pull the viewer to swipe. Keep each slide self-contained enough to screenshot, but compelling enough to need the next slide for context.
+
+FINAL CONTENT SLIDE - RECAP CARD:
+A summary slide that stands alone as a reference card. This slide is worth saving. Saves are a strong ranking signal and compound over time because saved posts resurface in Instagram analytics reports. The recap card should contain the core framework or list in one scannable layout.
+
+CAPTION:
+First line: repeat the exact cover slide headline for visual continuity when the image loads in the feed. Lines 2-3: tease 2-3 key insights from the carousel in one phrase each. Final line before hashtags: "Save this for [specific situation when the viewer will need this information]." Saves are the most valuable engagement signal for carousel longevity. Then hashtags.
+
+HASHTAGS (3-5, final line):
+Same rule as Format A: 3 to 5 hashtags, last always [BRAND HASHTAG].
+
+------------------------------------------------------------
+FORMAT C: STORY (COMMUNITY AND ENGAGEMENT FORMAT, 24-HOUR)
+------------------------------------------------------------
+
+Use when: Engaging existing followers, sharing time-sensitive content, running polls or questions, or promoting content with a swipe-up link.
+Note: Stories do not appear in Explore and do not generate non-follower reach. Their job is community depth, not audience growth.
+Best cadence: 1-2 Stories per day. More than 5 Stories per day reduces per-slide completion rate.
+Target slides: 6-8 slides per sequence. Front-load the context on slide 1. A viewer who does not understand the Story by slide 2 will tap away.
+
+Structure - follow these sections exactly:
+
+SLIDE 1 - CONTEXT FRAME (under 15 words on screen):
+Name what this Story sequence is about and why the viewer should tap through. One sentence maximum. This slide must communicate the Story's value proposition in under 3 seconds of reading time.
+
+SLIDES 2-5 - CORE CONTENT:
+One idea per slide. Mix text-on-background slides with image or video slides. Include a sticker every 3-4 slides: poll, quiz, emoji slider, or question box. Sticker placement: center or lower third, away from the "reply" bar at the bottom. Each sticker prompt must be specific enough to generate a genuine response, not a throwaway tap.
+
+STICKER PROMPTS (write one for every sticker placement):
+Poll sticker: two options that genuinely split the audience. Avoid obvious answers. "Which do you use more: [A] or [B]?" Quiz sticker: a question with one correct answer that teaches something. Emoji slider: "How [adjective] is your [situation] right now?" Question box: an open prompt that the audience can answer in one sentence.
+
+FINAL SLIDE - CTA OR LINK:
+If a link sticker is used, UTM-tag the URL. State the exact UTM structure in the output. Write the CTA text that appears above the link sticker: one imperative verb plus one specific outcome. "Get the full framework," "Read the case study," "Book your spot." Never leave the final slide as a dead end without a link or a reply prompt.
+
+------------------------------------------------------------
+THREE CONTENT PILLAR GUIDANCE
+------------------------------------------------------------
+
+For a balanced Instagram presence, rotate across these three pillar types to serve the algorithm's three core surfaces: Explore, Feed, and Stories.
+
+PILLAR 1 - EDUCATIONAL FRAMEWORK (Format B Carousel, 1-2x per week):
+Share a named process, checklist, or framework the audience can apply immediately. This pillar generates saves and shares, the two signals that compound most over time. Cover slide names the exact outcome. Final slide is a recap card worth saving. Example topics: "How to audit your Instagram account in 20 minutes," "The 3-slide formula that earns carousel saves," "7 captions frameworks for service businesses."
+
+PILLAR 2 - DISCOVERY AND REACH (Format A Reel, 2-3x per week):
+Content designed specifically to reach non-followers through Explore and sends. The hook names a universal frustration or aspiration in the first 3 seconds. The send prompt names a specific recipient persona. Every Reel in this pillar should end with a DM prompt. Example topics: "The one thing stopping your Reels from reaching non-followers," "What 0.55% engagement actually means for your strategy," "Why your follower count is lying to you."
+
+PILLAR 3 - COMMUNITY DEPTH (Format C Stories, 1-2 per day):
+Content that converts passive followers into active community members through stickers, polls, and questions. This pillar exists to maintain the relationship that Reels and Carousels earned. Do not use Stories to repost Feed content without context. Add a poll or question to every Story sequence. Example topics: "Which format do you spend the most time on?", "What is your biggest Instagram frustration this week?", "We are testing something new — reply if you want early access."
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Required inputs before generating:
+- Brand (confirmed via _Brand_Detection_Rules.txt)
+- Topic
+- Target Audience
+- Format (Reel / Carousel / Story)
+- Voice/Tone
+
+For single post requests:
+Output labeled sections matching the format chosen: HOOK | VISUAL DIRECTION | CAPTION | SEND PROMPT | HASHTAGS (for Reel); COVER SLIDE | SLIDES 2-N | RECAP CARD | CAPTION | HASHTAGS (for Carousel); SLIDE 1 | SLIDES 2-5 | STICKER PROMPTS | FINAL SLIDE CTA (for Story)
+
+Field encoding note: plain text only. No em dashes. Caption preview (first line): under 150 characters. Full caption before hashtags: under 300 characters. Hashtags: 3-5, last always [BRAND HASHTAG].
+
+For bulk requests (CSV):
+Sr. No. | Format | Topic | Hook / Cover Slide | Caption | Hashtags | Notes
+
+Save to output/Instagram/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- Format must be chosen before generating — a Reel script is not a Carousel caption
+- No em dashes anywhere
+- No passive voice
+- Caption preview line (first line) must be under 150 characters
+- 3 to 5 hashtags, last always [BRAND HASHTAG]
+- Every stat names its source and year
+- Send prompt required on every Reel — generic "share with friends" is not acceptable, name the specific recipient persona
+- Saves-focused CTA required on every Carousel ("Save this for [specific situation]")
+- Sticker prompt required every 3-4 slides in Stories
+- No TikTok watermarks on Reels — note this in creative direction
+- SELF-CHECK: After drafting a Reel hook, ask whether it communicates the payoff within 3 seconds without the video playing. If it requires context to make sense, rewrite it. After drafting a Carousel cover slide, ask whether it names a specific number or outcome. If it is a clever phrase without a concrete promise, rewrite it.
+- BATCH DEDUPLICATION: If generating more than one Instagram post in a session, no two posts may share the same hook, the same cover slide headline, or the same send prompt. Vary the angle and the recipient persona post to post. Examples of the pattern (write a new one each time, do not copy these verbatim): "Send this to the teammate who keeps skipping the carousel step.", "Tag someone who is still posting static images every day.", "Send this to your founder who thinks Reels are optional."
+- Source diversity: within a batch of posts on related topics, never anchor more than one post on the exact same stat — reference a distinct data point for each
+- Output saved to output/Instagram/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. REEL WITHOUT A SEND PROMPT: Most Reels end with a follow request. This is the weaker signal. A "send this to someone who..." prompt directly generates sends per reach, the single strongest signal for non-follower distribution per Adam Mosseri's January 2025 update. If a Reel ends with "follow me for more," it is optimizing for the wrong metric.
+
+2. CAROUSEL WITH A CLEVER COVER SLIDE: Mystery and curiosity fail in the feed for carousel cover slides. "You will not believe what I found" performs worse than "7 Instagram mistakes costing you reach." The cover slide is an ad in the feed, not a headline on a landing page. Clarity always beats cleverness in a two-second scroll decision.
+
+3. POSTING REELS WITHOUT ON-SCREEN CAPTIONS: The majority of Instagram video plays on mute. A Reel with no on-screen captions loses retention with every silent viewer. No captions means no retention, and no retention means no algorithmic distribution. Every Reel output must include a note about adding captions.
+
+4. CROSS-POSTING TIKTOK REELS WITH THE WATERMARK: Instagram's algorithm explicitly reduces recommendation eligibility for Reels with visible TikTok watermarks. This is a documented platform penalty, not a style preference. Creative direction must always specify re-uploading original video files, not cross-posting directly.
+
+5. OPTIMIZING STORIES FOR REACH: Stories do not reach non-followers. Treating Stories as a reach format wastes effort that should go into Reels. Stories should always be designed for completion rate and sticker interaction among existing followers, not for impressions or discovery. If the goal is reach, the format is a Reel, not a Story.

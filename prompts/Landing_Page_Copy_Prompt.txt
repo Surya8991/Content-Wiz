@@ -1,0 +1,252 @@
+============================================================
+LANDING PAGE COPY PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: Lead Gen Landing Page / Sales & Product Landing Page / Webinar & Event Registration Page
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [professional / conversational / authoritative — default: brand account, benefit-forward, plain language]
+
+Once the brand is confirmed, select the format below.
+
+------------------------------------------------------------
+CONVERSION RULES (2025 DATA) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+These constraints apply to all landing page copy. Violating them reduces conversion rate.
+
+1. ONE CTA PER PAGE — NO EXCEPTIONS
+   The median landing page conversion rate is 6.6%; top 10% of pages convert at 11.45% or higher (Unbounce Q4 2024). Every extra link, button, or offer forces a decision and causes drop-off. Pages with multiple offers convert 266% worse than single-offer pages (SEO Sherpa 2026). Build every word around one action.
+
+2. READING LEVEL: 5TH TO 7TH GRADE
+   Copy written at a 5th-to-7th grade reading level converts at 11.1%. College-level copy converts at 5.3% — the same product, less than half the conversion rate (Unbounce, 2024). Use short sentences, common words, and bullet points instead of paragraphs. Avoid jargon, passive constructions, and multi-clause sentences.
+
+3. MOBILE IS THE MAJORITY: WRITE FOR SCANNING
+   82.9% of landing page traffic arrives on mobile devices (Unbounce). Visitors scan before they read. Use one-sentence paragraphs, bold subheads, bullet points of three to seven words, and avoid any block of text longer than three lines. Every section must be readable at a glance.
+
+4. PERSONALIZED CTAs CONVERT 202% BETTER
+   Generic CTAs ("Get Started", "Submit") consistently underperform first-person, benefit-specific CTAs ("Start My Free Trial", "Get My Free Guide", "Reserve My Spot"). HubSpot research confirmed a 202% conversion lift for personalized CTAs. Always write the CTA in first-person language that names what the visitor receives.
+
+5. SOCIAL PROOF MUST BE SPECIFIC, NOT VAGUE
+   "Thousands of happy customers" is a claim, not proof. Real social proof names a person, a result, and a timeframe: "Priya M. grew from 0 to 1,200 subscribers in three weeks." Place at least one social proof element above the fold — before the visitor scrolls — because 48% of visitors exit without engaging with any content further down the page (Gartner).
+
+6. HEADLINE IS THE HIGHEST-LEVERAGE LINE ON THE PAGE
+   A/B testing headline copy alone can lift conversion by up to 20% (GetResponse 2025). Lead with the outcome the visitor wants — not the product name, not the company name, not a tagline. Weak: "Welcome to GrowMail." Strong: "Get your first 1,000 email subscribers in 30 days." Specific result + specific timeframe outperforms every other headline structure.
+
+7. PAGE STRUCTURE IS NON-NEGOTIABLE
+   Every section exists to earn the next scroll. Required order: Headline → Subheadline → Social Proof → Features/Benefits → Objection Handling → CTA. Skipping or reordering any section breaks the persuasion chain.
+
+------------------------------------------------------------
+FORMAT A: LEAD GEN LANDING PAGE (EMAIL CAPTURE / FREE RESOURCE)
+------------------------------------------------------------
+
+Use when: Capturing email addresses, offering a free resource (guide, checklist, template, tool), or building a lead list.
+Conversion benchmark: Email traffic converts at 19.3%, 77% higher than paid search — match your copy to the channel promise (Backlinko 2025).
+Target reading level: 5th to 7th grade throughout.
+
+Required inputs: Brand | Product/Service | Target Audience | Primary CTA | Key Benefit/Promise | Social Proof Assets Available | Voice/Tone
+
+Structure — follow these 7 sections exactly:
+
+HEADLINE (1 line, benefit-first):
+Name the specific outcome the visitor gets. Include a number, timeframe, or qualifier.
+Formula: "[Specific result] for [specific audience] in [timeframe or situation]."
+Never start with the brand name, product name, or "Welcome to."
+
+[blank line]
+
+SUBHEADLINE (1-2 sentences):
+Answer the two questions the headline raises: Who is this for? How does it deliver?
+Name the mechanism briefly. One sentence naming the audience + one sentence naming the method.
+
+[blank line]
+
+SOCIAL PROOF BLOCK (above the fold):
+One specific testimonial with name, role/company, and a measurable result.
+OR: A trust stat (number of users, downloads, rating) with the source named.
+Weak: "Loved by thousands." Strong: "4.9 stars from 2,340 verified users on G2."
+
+[blank line]
+
+BENEFITS LIST (3-5 bullets):
+Each bullet: Feature + "so you can" + Outcome.
+Write outcomes, not features. Test each bullet: does it answer "so what?"
+Keep each bullet under 12 words.
+
+[blank line]
+
+OBJECTION HANDLING (FAQ or trust block):
+Address the top 2-3 objections directly: Is this free? How long does it take? Is my data safe?
+Name the objection, then answer it. One sentence per answer. No hedging language.
+
+[blank line]
+
+CTA BUTTON COPY (1 line):
+First-person, benefit-specific, action-oriented.
+Strong: "Send Me the Free Guide" / "Download My Checklist Now" / "Get Instant Access"
+Weak: "Submit" / "Download" / "Click Here"
+
+[blank line]
+
+FORM MICROCOPY (1-2 lines below the form):
+Remove remaining doubt. Examples: "No spam. Unsubscribe in one click." / "Delivered immediately to your inbox." / "Free forever — no credit card needed."
+Keep forms to 4 fields maximum. Every additional field reduces conversion (SEO Sherpa 2026).
+
+------------------------------------------------------------
+FORMAT B: SALES / PRODUCT LANDING PAGE (DIRECT PURCHASE OR DEMO REQUEST)
+------------------------------------------------------------
+
+Use when: Selling a product or service directly, or driving a demo/consultation request.
+Conversion benchmark: Top 10% of sales pages convert at 11.45%+ (Unbounce Q4 2024). The gap between median (6.6%) and top-decile is almost entirely copy and structure.
+Key constraint: One CTA throughout the entire page. All navigation links removed.
+
+Required inputs: Brand | Product/Service | Target Audience | Primary CTA | Key Benefit/Promise | Price Point | Social Proof Assets Available | Voice/Tone
+
+Structure — follow these 7 sections exactly:
+
+HERO SECTION:
+- Headline (1 line): outcome-first, benefit-specific. Name the result the buyer gets.
+- Subheadline (1-2 sentences): who this is for + how it delivers the headline promise.
+- CTA button (first-person, benefit-named): appears here and repeats once near the bottom.
+- Objection microcopy (1 line below the button): "No credit card required." / "Cancel anytime." / "30-day money-back guarantee."
+
+[blank line]
+
+SOCIAL PROOF ABOVE THE FOLD:
+Logos of recognizable clients, OR a specific stat ("Used by 14,000 teams in 60 countries"), OR a star rating with source and count. This section appears before the visitor scrolls. Skepticism peaks at first load.
+
+[blank line]
+
+PROBLEM/PAIN SECTION:
+Name the specific problem the target audience has. Be concrete. Use numbers where possible.
+Do not open with company history. Open with the visitor's situation.
+Formula: "If you are [audience], you already know [specific pain]. Most [audience] solve it by [inadequate solution], which means [negative outcome]."
+
+[blank line]
+
+FEATURES + BENEFITS LIST (3-6 items):
+Format: Feature (what it does) → Benefit (what the buyer gets).
+Use: "[Feature], so you can [outcome]." or "[Feature] — which means [result]."
+Lead with the benefit. The feature is proof. The benefit is the reason to buy.
+
+[blank line]
+
+OBJECTION HANDLING:
+Address the top 3 objections your sales team hears most: price, risk, fit, effort, timing.
+Use an FAQ format with bold question headers and one-sentence answers.
+Naming and answering a doubt is more persuasive than ignoring it.
+
+[blank line]
+
+FINAL CTA BLOCK:
+Repeat the CTA button with first-person copy. Include one final social proof element or trust statement.
+Add urgency if genuine (limited seats, closing date, founding price) — never fabricate scarcity.
+
+------------------------------------------------------------
+FORMAT C: WEBINAR / EVENT REGISTRATION PAGE
+------------------------------------------------------------
+
+Use when: Driving registrations for a webinar, virtual event, live workshop, or masterclass.
+Conversion benchmark: Webinar landing pages average 22.3% conversion — the highest of any landing page type — when copy includes a specific outcome headline, a named date and time, and a clear attendee benefit list (GetResponse 2024).
+Key constraint: The time constraint is the strongest conversion lever. Make the date, time, and timezone prominent above the fold.
+
+Required inputs: Brand | Webinar/Event Name | Host Name and Credentials | Date and Time | Target Audience | Key Benefit (what attendees will learn or be able to do) | Social Proof Assets Available | Voice/Tone
+
+Structure — follow these 6 sections exactly:
+
+HEADLINE (1 line):
+Name the specific outcome attendees will walk away with.
+Formula: "Learn to [specific outcome] in [duration of event]."
+Include the event date prominently in or immediately below the headline.
+
+[blank line]
+
+HOST CREDIBILITY LINE (1-2 sentences):
+Who is speaking and why they are credible on this specific topic. One concrete credential.
+Weak: "Industry expert and thought leader." Strong: "Former Head of Growth at [Company], where she grew the email list from 0 to 220,000 in 18 months."
+
+[blank line]
+
+WHAT YOU WILL LEARN (3-5 bullets):
+Each bullet is a discrete, concrete takeaway. Not topics — outcomes.
+Format: "How to [do specific thing] so you can [specific result]."
+Make each bullet sound like something the attendee can use the same day.
+
+[blank line]
+
+SOCIAL PROOF / PAST ATTENDEE QUOTE:
+One quote from a previous attendee with name and company, naming a specific result.
+OR: Number of past attendees ("2,400 marketers attended the last session").
+
+[blank line]
+
+REGISTRATION CTA:
+First-person button: "Save My Seat" / "Register for Free" / "Claim My Spot"
+Objection microcopy below the button: "Can't attend live? Register anyway — recording sent to all signups." / "This is a free event. Cancel anytime."
+
+[blank line]
+
+URGENCY / SCARCITY BLOCK (only if genuine):
+If there is a real seat cap or closing date, state it here in plain language.
+"Registration closes [Date]." / "Live attendance limited to 500 seats."
+Never fabricate scarcity — it destroys trust on subsequent pages.
+
+------------------------------------------------------------
+THREE CONTENT PILLAR GUIDANCE
+------------------------------------------------------------
+
+For a balanced landing page strategy, build pages across these three pillar types:
+
+PILLAR 1 - OUTCOME-LED PAGES (Format A or B):
+Every word exists to move the visitor toward one action. Headline names the result. CTA names the next step. No navigation. No sidebar. No secondary links.
+Example topics: Lead magnets tied to a specific audience pain point, product trial pages, free tool pages.
+
+PILLAR 2 - TRUST-FIRST PAGES (Format B):
+Built for audiences that need more convincing before a purchase decision. Front-load social proof, address objections early, and use the longest version of the features/benefits section.
+Example topics: High-ticket service pages, enterprise demo request pages, B2B SaaS comparison pages.
+
+PILLAR 3 - TIME-BOUND PAGES (Format C):
+The deadline is the primary conversion driver. The copy's job is to make the specific outcome so compelling that the visitor registers immediately rather than waiting.
+Example topics: Webinars, masterclasses, live cohorts, launch events, limited-seat workshops.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single page requests:
+Output labeled sections: HEADLINE | SUBHEADLINE | SOCIAL PROOF BLOCK | BENEFITS LIST | OBJECTION HANDLING | CTA COPY | FORM MICROCOPY (or FINAL CTA BLOCK for Format B)
+
+For bulk requests (CSV):
+Sr. No. | Format | Brand | Target Audience | Headline | Subheadline | CTA Copy | Social Proof Element | Key Objection Handled
+
+Save to output/Landing_Pages/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- One CTA per page; remove all navigation and secondary links
+- No passive voice; no hedging language ("we think you might...")
+- Reading level: 5th to 7th grade throughout — short sentences, common words, bullets over paragraphs
+- CTA copy is always first-person and benefit-specific, never "Submit" or "Click Here"
+- Social proof is always specific: name + result + timeframe; never "thousands of happy customers"
+- Every stat names its source and year in the prompt output, so the writer can verify before publishing
+- Mobile-first: no paragraph longer than 3 lines, no bullet longer than 12 words
+- Forms: 4 fields maximum — name, email, and the minimum required to take the next step
+- SELF-CHECK: After drafting each section, verify: Does the headline name an outcome (not a product name)? Is the CTA first-person? Is there at least one specific social proof element above the fold? If any answer is no, revise before outputting.
+- BATCH DEDUPLICATION: If generating multiple pages in one session, no two pages may share a headline structure or CTA phrase. Each page is tailored to its specific audience and offer.
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. PRODUCT-LED HEADLINE: Opening with the brand name, product name, or company history instead of the visitor's desired outcome. The visitor only cares about what they get. Rewrite any headline that answers "what is this?" before it answers "what do I get?"
+
+2. MULTIPLE CTAs: Adding a secondary button, a blog link, a social share bar, or a navigation menu. Every additional option forces a decision and causes drop-off. One goal, one path, one button.
+
+3. VAGUE SOCIAL PROOF: "Trusted by thousands" or "Industry-leading solution" are claims, not evidence. Replace with a name, a number, and a timeframe. If no real social proof is available, use a specific stat with a named source instead.
+
+4. COLLEGE-LEVEL COPY: Long sentences, passive constructions, and jargon. The Unbounce 2024 data shows this halves conversion rate. Every sentence should be readable on a phone in two seconds.
+
+5. BURIED VALUE PROPOSITION: Placing the benefit after a paragraph of company background, a hero image, or a feature list. The value proposition must be the first thing the visitor reads. If a visitor has to scroll to understand what they are getting, reorder the page.

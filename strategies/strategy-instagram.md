@@ -1,0 +1,126 @@
+# Instagram Content Strategy
+
+_Last updated: 2026-07-13_
+
+## Goal and Metric
+
+Build a discovery-first Instagram presence that converts non-follower impressions into followers and DM shares. Target: reach 10% of non-follower accounts within 90 days via Reels distribution, achieve an average engagement rate of 0.50% or above across all formats, and generate at least 1 DM share per 100 Reel views as a sustained sends-per-reach signal.
+
+---
+
+## Core Principles
+
+**1. Format determines reach; format mix determines growth.** Instagram in 2025 is a format arbitrage game. Overall engagement fell 24% year-over-year, yet carousels held steady at 0.55% engagement rate while static images collapsed 17%. Treating every post identically forfeits format-specific algorithmic advantages. The strategic question is not "what should we post?" but "which format serves this content's job: discovery, trust-building, or community depth?"
+
+**2. Sends per reach is the non-follower growth lever.** Adam Mosseri confirmed in January 2025 that sends per reach is the single strongest signal for reaching non-followers. A DM share tells the algorithm that a viewer trusted the content enough to put it in someone's inbox. That endorsement unlocks Explore and non-follower distribution more reliably than likes, comments, or saves. Every Reel should be designed with one question in mind: why would someone send this to a friend?
+
+**3. Reels earn reach; carousels earn trust.** Reels deliver 1.36x more reach than carousels and 2.25x more reach than single photos, making them the top-of-funnel format for audiences who have never heard of the brand. Carousels earn saves and follows from audiences who arrived via Reels. These two formats serve different parts of the funnel and must be planned separately, not interchangeably.
+
+**4. Stories serve the existing audience, not the new one.** Stories are not a discovery format. They exist to deepen the relationship with people who already follow the account. Overloading the Stories strategy at the expense of Reels production starves the discovery channel. Buffer's 2025 data shows 1 to 2 daily Stories outperform 5 or more on engagement rate; more Stories does not equal more reach.
+
+**5. Native production beats polished production.** Instagram's algorithm rewards watch time and retention, not production quality. Cross-posting TikTok Reels with a visible watermark explicitly reduces recommendation eligibility. Content that looks native to the platform, vertical 9:16, captioned, cut at natural breaks, outperforms branded video that reads as an advertisement. The signal the algorithm acts on is whether people keep watching, not whether the lighting is professional.
+
+---
+
+## Strategy Architecture
+
+**Step 1: Establish the three-format job map**
+Before any content is produced, assign each format a specific job: Reels for discovery (reaching non-followers via Explore and the Reels tab), carousels for trust and saves (converting curious visitors into followers and saved references), and Stories for community depth (polls, replies, exclusive content for existing followers). Every piece of content should be briefed against one format and one job. Mixed-purpose content underperforms in all directions.
+
+**Step 2: Build a Reels hook library**
+Reels succeed or fail in the first 3 seconds. Retention past the 50% mark is the threshold that triggers wider distribution. Build a library of 10 to 15 proven hook patterns specific to the brand's content area. Effective hooks show the payoff first ("here is the result, here is how I got there"), use on-screen text to answer the retention question before the viewer makes the scroll decision, and end with a DM prompt rather than a follow request. Test one hook variable at a time: same script, three different openers, published 48 hours apart.
+
+**Step 3: Design carousels for double exposure**
+Instagram's "double exposure" mechanic surfaces carousels twice: once in the feed on publish, and once later as a recommendation. To maximize both windows, the cover slide must make a plain, specific promise ("7 ways to cut your CAC" outperforms "You will not believe this"). Slides 2 through 8 should each earn the next swipe with a cliffhanger, numbered step, or visual continuation. The final slide should work as a standalone reference card worth saving. Six to ten slides is the sweet spot for engagement quality.
+
+**Step 4: Cross-promote across formats**
+The most effective Instagram accounts in 2025 use each format to feed the others. A high-performing Reel generates profile visits; those visitors encounter a carousel that earns a save or follow; those followers see Stories that deepen trust and generate replies. Plan content clusters, not individual posts. A Reel on a topic should be paired with a carousel that goes deeper and a Stories sequence that invites the audience to interact.
+
+**Step 5: Optimize the send signal deliberately**
+The sends-per-reach signal is not generated by accident. End every Reel with "Send this to someone who needs to hear it" or an equivalent prompt tied directly to the content's subject. Make the send prompt the final on-screen text in the Reel, not an afterthought in the caption. Track DM metrics in Instagram Insights weekly. Accounts that do not build this habit into their production process leave the strongest non-follower reach signal permanently on the table.
+
+**Step 6: Audit and adjust by format, not by overall performance**
+Run a format-level performance review monthly. Compare carousel saves versus Reel reach versus Stories completion rate separately. An account that posts 8 Reels per month and 7 single images per month (the average shift documented by Social Insider in 2025) is moving in the right direction; an account still leading with static images is swimming against the current direction of every benchmark. Adjust format mix based on which signal is weakest relative to target.
+
+---
+
+## Content Pillars
+
+**Discovery Reels: Hook-First Insight Delivery**
+Short Reels under 90 seconds that lead with the result and earn the watch. Designed entirely for non-follower distribution. Every Reel in this pillar ends with a DM send prompt. Topics are drawn from the highest-volume search and share behavior in the brand's content area. Native production, vertical format, on-screen captions required on every video.
+
+**Educational Carousels: Deep-Dive Reference Content**
+Six to ten slide carousels that turn the brand into a trusted reference on a specific topic. Cover slides make a direct, deliverable promise. Final slides function as standalone summary cards worth saving. These are the content type most likely to compound over time because saves resurface in analytics and the double-exposure mechanic gives each carousel two distribution windows.
+
+**Community Stories: Insider Access and Interaction**
+Daily Stories designed for the existing follower base. One to two Stories per day maximum. Every sequence includes at least one interactive element: poll, quiz, emoji slider, or question box. Stories in this pillar are not repurposed from other channels; they are original, time-sensitive content that makes followers feel like insiders. UTM-tagged link stickers on every piece of traffic-driving content.
+
+**Social Proof and Case Content: Real Outcomes and Validation**
+Carousels and occasional Reels that feature real results, client outcomes, or transformational before-and-after data. This pillar serves the trust-building function for visitors who found the account through Reels and are evaluating whether to follow. Specificity is required: named metrics, timeframes, and outcomes outperform vague claims.
+
+---
+
+## Cadence
+
+Post 4 to 6 Reels per month minimum, targeting 8 at scale (the documented 2025 average for growing accounts per Social Insider). Publish 4 to 6 carousels per month. Reduce static image posts to fewer than 2 per month; they are not dead, but they should not anchor the content calendar. Publish 1 to 2 Stories per day.
+
+Review cycle: monthly format performance audit (saves by carousel, reach by Reel, completion by Stories sequence). Quarterly hook library refresh: retire patterns with below-30% 3-second retention, add patterns from the brand's top 5 Reels by sends-per-reach.
+
+**Publishing Volume**
+
+- Reels: 6 to 8 per month
+- Carousels: 4 to 6 per month
+- Stories: 7 to 14 per week (1 to 2 per day)
+- Static images: 0 to 2 per month (reserved for timely announcements only)
+- Total posts: 12 to 18 per month excluding Stories
+
+---
+
+## Distribution & Amplification
+
+1. **Optimize for the sends signal on every Reel.** End every Reel with a specific, on-screen DM prompt tied to the content. This is the single highest-leverage distribution action on Instagram because sends are the strongest signal for non-follower reach per Mosseri's January 2025 update. No other tactic compensates for missing this signal consistently.
+
+2. **Cross-post Reels to Facebook.** Reels are played over 140 billion times daily across Instagram and Facebook combined. Publishing natively to both platforms doubles the potential reach surface for the same piece of content. Ensure original video files are used; do not cross-post TikTok files with watermarks.
+
+3. **Drive carousel saves through clear CTA slides.** Every carousel should end with a slide that communicates a specific reason to save ("Keep this as your reference for X"). Saves compound over time because saved posts resurface in analytics reports and signal ongoing relevance to the algorithm.
+
+4. **Use Stories to surface evergreen Reels.** Reshare high-performing Reels to Stories with an interactive element attached: a poll asking which tip was most useful, or a question box inviting comments on the topic. This extends the distribution window of a Reel beyond its initial publish date and keeps the send signal active.
+
+5. **Repurpose top Reels to other channels to drive Instagram profile traffic.** High-performing Reels (by sends-per-reach) can be repurposed to LinkedIn, YouTube Shorts, or email newsletters with a CTA linking to the original Instagram post. External traffic signals matter less than native signals, but profile visits from external sources convert to follows at a measurable rate.
+
+---
+
+## Common Mistakes to Avoid
+
+**1. Optimizing calls to action for likes.** Likes are the weakest algorithmic signal on Instagram. They matter for reaching existing followers but do not unlock non-follower distribution. An account that ends every Reel with "double tap if you agree" is optimizing for the signal with the lowest reach multiplier. The only call to action worth building into every Reel is the DM send prompt.
+
+**2. Posting Reels without on-screen captions.** The majority of Instagram video is watched without sound. A Reel without captions loses retention at the point where viewers realize there is no text to follow, which drops completion rate below the 50% threshold that triggers wider distribution. Captions also make the post indexable for keyword search within the app. This is not optional.
+
+**3. Using a cryptic or clever cover slide on carousels.** Curiosity-gap cover slides ("You will not believe what happened") lose to clarity slides ("7 Instagram mistakes costing you reach") in a two-second scroll decision. The viewer needs to know the exact value they will receive before they choose to swipe. Clever defeats clear in a crowded feed.
+
+**4. Cross-posting TikTok Reels with the TikTok watermark.** Instagram's algorithm explicitly penalizes Reels with visible TikTok watermarks by reducing their recommendation eligibility. Accounts that recycle TikTok content without removing the watermark are actively suppressing their own non-follower reach. Always re-upload original video files.
+
+**5. Running Stories as a content dumping ground.** A 20-slide unstructured Stories sequence has lower completion than a tight 7-slide sequence with one poll. Stories completion rate affects how often Instagram shows your Stories to followers. High-volume Stories strategies that prioritize quantity over structure undermine the format's only job: deepening trust with the existing audience.
+
+---
+
+## Recommended Tools
+
+- **Instagram Insights (native):** Track saves, sends, and reach by format; the only source for sends-per-reach data specific to your account.
+- **Social Insider:** Benchmark carousel and Reel engagement rates against industry averages; used for the 0.55% carousel and 1.36x Reels reach data cited in this strategy.
+- **CapCut or native Instagram editor:** Native vertical video editing with on-screen captions; preferred over desktop editors for maintaining platform-native aesthetic.
+- **Buffer:** Schedule and publish Instagram content across formats; provides timing benchmarks and format-level analytics.
+- **Canva:** Design carousel slides with consistent visual templates; use for building the reference-card format on final slides.
+- **TikTok Creative Center:** Research hook patterns and trending formats before production; Instagram hook patterns overlap significantly with TikTok high-retention patterns.
+
+---
+
+## Adaptation for Your Brand
+
+The three-format framework applies to any brand category, but the balance between pillars depends on your audience's stage of awareness. Brands building awareness among cold audiences should weight the content calendar toward Reels (60% or more of non-Stories content) and treat carousels as the conversion layer for Reel-driven profile visitors. Brands with an existing engaged audience can balance Reels and carousels more evenly, using Reels for reach maintenance and carousels for deepening authority.
+
+The sends-per-reach target is universal regardless of brand category: any Reel that cannot be framed as something worth sending to a specific type of person should be reconsidered. If the content is not shareable enough to prompt a DM, it is likely too broad or too promotional to earn the algorithmic distribution needed for non-follower growth.
+
+If your brand operates in a visual category (food, fashion, fitness, design), Reels production quality can be slightly higher than in B2B or service categories, because aesthetic is part of the value signal. In B2B or professional services, the sends-per-reach signal comes from information value, not visual production. Calibrate accordingly, but do not mistake production budget for algorithmic advantage.
+
+Accounts with under 10,000 followers should prioritize Reels above all other formats because the follower threshold for non-follower reach via carousels is harder to cross without an established base. Use Reels to build the base, then shift toward a more balanced format mix once the follower count provides a carousel distribution floor.

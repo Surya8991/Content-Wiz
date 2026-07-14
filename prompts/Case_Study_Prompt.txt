@@ -21,6 +21,7 @@ Results: [Specific before-and-after metrics - at least 3 data points with timefr
 Client Quote: [Direct quote from a named client contact - include full name, title, company]
 CTA Destination URL: [URL the case study closes with]
 Output Mode: [A = Full Web Case Study / B = One-Page PDF Summary / Both]
+Voice/Tone: [narrative first-person client POV / brand third-person / journalistic third-person — default: narrative, professional, client-centered]
 
 ------------------------------------------------------------
 THE BAB-PLUS FRAMEWORK
@@ -165,6 +166,8 @@ GLOBAL RULES
 - At least 3 before-and-after metrics with timeframes (Mode A mandatory)
 - Named client quote with full name and title (or approved anonymous format)
 - No promotional brand language in section body
+- SELF-CHECK: After drafting, count total words. Target: 700–1,000. If under 700 add depth to the Situation or Results section. If over 1,000, trim the About section first.
+- BATCH DEDUPLICATION: When generating multiple case studies in one session, no two may share the same opening narrative structure, the same three-metric result format, or the same CTA sentence. Vary client scenario framing, result emphasis, and closing ask.
 - Output saved to output/Case_Study/
 
 ------------------------------------------------------------

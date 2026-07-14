@@ -28,6 +28,7 @@ Content to Optimize (Mode A): [Paste existing content or provide URL]
 Topic (Mode B): [TOPIC] (target keyword: [INSERT])
 Page URL (Mode C): [URL to audit]
 First-Party Data Available: [Any brand program stats, client outcomes, or original data - leave blank if none]
+Voice/Tone: [formal B2B / conversational B2B / neutral encyclopedic — default: authoritative and direct]
 
 ------------------------------------------------------------
 THE CHUNK-OPTIMIZED SECTION FORMAT (CORE STRUCTURE)
@@ -208,6 +209,27 @@ Save to: output/GEO/
 File name: GEO_[Mode]_[Short-Slug].md
 
 ------------------------------------------------------------
+AI SEARCH RANKING SIGNALS (2026)
+------------------------------------------------------------
+
+These are the signals that determine whether AI engines (ChatGPT, Perplexity, Google AI Overviews, Claude) cite a piece of content as a source. Apply them to every GEO block generated.
+
+1. DIRECT ANSWER IN SENTENCE 1
+   AI engines extract the most direct answer available. Content that buries the answer after three paragraphs of context is rarely cited. The first sentence of every GEO block must answer the implied question.
+
+2. ENTITY COVERAGE
+   Content that names and describes the key entities (brands, people, frameworks, tools, research organisations) related to a query is more likely to be cited than content that discusses the topic abstractly. Name entities specifically — "Gallup's 2024 State of the Global Workplace report" outperforms "recent research."
+
+3. STRUCTURED DATA SIGNALS
+   FAQ schema, HowTo schema, and Article schema tell AI crawlers how to parse and excerpt content. Every GEO block should map to one schema type and be formatted to match that schema's expected structure.
+
+4. CITATION AUTHORITY (CO-CITATION SIGNALS)
+   AI engines trust sources that other trusted sources reference. Content that is cited in academic papers, major publications, or industry reports is disproportionately represented in AI answers. Original data and named frameworks earn co-citations over time.
+
+5. FRESHNESS SIGNALS
+   Content with a visible publication date or "last updated" date is preferred over undated content. For fast-moving topics (AI, regulations, market data), content older than 12 months is at a structural disadvantage.
+
+------------------------------------------------------------
 GLOBAL RULES
 ------------------------------------------------------------
 
@@ -217,6 +239,9 @@ GLOBAL RULES
 - All stats named with source, organization, and year
 - FAQ section mandatory on all optimized or new content
 - Author attribution block mandatory
+- SELF-CHECK: After drafting each GEO block (Mode B), count words. Target: 400–700. If outside this range, adjust the depth of the Examples or FAQ sub-section before outputting. For Mode A insertions, verify the inserted chunk is 80–120 words before inserting.
+- BATCH DEDUPLICATION: When generating multiple GEO blocks in one session, no two blocks may share the same direct-answer opening sentence, the same FAQ question, or the same evidence citation. Vary the proof point and the opening claim for every block.
+- AI CITATION CHECK: Before outputting, verify each GEO block contains: (1) direct answer in sentence 1, (2) at least one named dated statistic, (3) at least one named entity (brand, person, or framework), (4) structured sub-headings. Blocks missing any of these are unlikely to be cited by AI engines.
 - Output saved to output/GEO/
 
 ------------------------------------------------------------

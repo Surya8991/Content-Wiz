@@ -22,6 +22,7 @@ Required inputs:
 - 3 to 5 key insights or findings from the episode
 - Any statistics cited during the episode (with source and year)
 - CTA destination URL
+- Voice/Tone: [natural conversational / formal B2B — follows the per-mode rule; use this field to specify guest or host persona style if needed]
 
 Generate the following:
 
@@ -45,7 +46,7 @@ EPISODE RESOURCES (if applicable):
 List any frameworks, reports, or tools mentioned during the episode with URLs.
 
 CTA:
-One sentence and one URL. Match the CTA to the episode topic: a relevant consultation, a free resource, or a case study.
+One sentence (10–20 words) + one URL on the next line. The sentence must name the specific resource, not just 'check out the link.' Example: 'Download the 3-metric ROI stack worksheet at [URL].'
 
 ------------------------------------------------------------
 MODE B: EPISODE SCRIPT (for recording)
@@ -189,6 +190,8 @@ GLOBAL RULES
 - Mode C pitch: under 150 words total, one link, no attachments
 - Primary takeaway must appear 3 times in any Mode B script
 - All stats named with source and year
+- SELF-CHECK: Mode A: After drafting show notes, count words. Target: 400–500. If outside range, adjust the Key Takeaways or Timestamps section. Mode B: Count spoken-word estimate against the duration. Mode C: Verify pitch is under 150 words total.
+- BATCH DEDUPLICATION: When generating multiple show notes (Mode A) in one session, no two episodes may share the same summary hook, the same Key Takeaway phrasing, or the same CTA sentence. Vary the leading insight and the resource named in the CTA.
 - Output saved to output/Podcast/
 
 ------------------------------------------------------------

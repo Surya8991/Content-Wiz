@@ -15,12 +15,17 @@ Create Google Search Ad copy for [BRAND NAME], [BRAND DESCRIPTION], for the camp
 Landing Page URL: [INSERT URL]
 Target Keyword: [INSERT KEYWORD]
 Campaign Goal: [e.g. Lead generation / Course sign-up / Blog traffic]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
 ------------------------------------------------------------
 
 Ad Variation | Headline 1 | Headline 2 | Headline 3 | Description 1 | Description 2 | Display URL Path 1 | Display URL Path 2
+
+Field encoding: wrap any field containing commas or line breaks in double quotes.
+Headlines must include at least one containing the primary keyword exactly as entered.
+Each description must end with a CTA phrase (no trailing punctuation after the CTA).
 
 Save to output/Google_Ads/
 
@@ -39,4 +44,47 @@ RULES
 - 3 ad variations per request
 - Vary the exact phrasing of headlines and descriptions across variations and across requests, do not reuse the same headline or description wording in the same batch. Examples of the pattern (write new ones each time, do not copy these verbatim): "Cut Onboarding Time 40%", "Skills Training That Sticks", "Get Your Team Certified Fast"
 - The identical headline or description reused across multiple ad variations or requests in the same batch - if you are generating more than one set of ads in a session, no two variations may share a headline or description
+- SELF-CHECK: After drafting each ad, count characters for every headline (max 30) and every description (max 90). If any field exceeds its limit, cut before outputting.
+- QUALITY SCORE CHECK: After drafting each ad, verify: (1) primary keyword appears in Headline 1 or 2, (2) ad copy matches the intent type of the keyword group, (3) the landing page URL delivers the exact promise in the headline. Mismatched intent between keyword, ad, and landing page is the most common Quality Score failure.
 - Output saved to output/Google_Ads/
+
+------------------------------------------------------------
+QUALITY SCORE OPTIMISATION
+------------------------------------------------------------
+
+Quality Score (1–10) affects your ad's position and cost-per-click. A score of 7+ reduces CPC by up to 50% vs a score of 3. Three components determine it:
+
+COMPONENT 1 — EXPECTED CTR
+What it measures: How likely users are to click your ad when it appears for a given keyword.
+How to improve with copy:
+- Include the primary keyword in Headline 1 or Headline 2 exactly as the user would search it
+- Use numbers, questions, or power words in headlines to increase click pull
+- Match the emotional register of the search intent (urgent queries need urgent headlines)
+
+COMPONENT 2 — AD RELEVANCE
+What it measures: How closely your ad copy matches the intent behind the keyword.
+How to improve with copy:
+- Never use one ad group for multiple intent types — separate informational, transactional, and navigational keywords into distinct ad groups with distinct copy
+- Mirror the exact language of the search query in the headline, not a synonym
+- If the keyword is a question ("how to measure training ROI"), the headline should answer it directly
+
+COMPONENT 3 — LANDING PAGE EXPERIENCE
+What it measures: How well the landing page delivers on the promise of the ad.
+How to improve:
+- The H1 of the landing page must echo the primary headline of the ad
+- The page must load in under 3 seconds on mobile
+- The page must contain the keyword and deliver the content implied by the ad
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. HEADLINE OVER 30 CHARACTERS: Google hard-truncates headlines beyond 30 characters. Count every character including spaces before outputting. If it exceeds 30, cut words or abbreviate.
+
+2. DESCRIPTION OVER 90 CHARACTERS: Descriptions beyond 90 characters are truncated with '...' by Google. Count characters and trim before outputting.
+
+3. ALL THREE HEADLINES USING THE SAME ANGLE: If Headline 1, 2, and 3 all lead with a benefit claim and no variety (e.g. all three start with "Boost"), Google's ad rotation will not diversify. Use different angles: one keyword-focused, one benefit-focused, one CTA-focused.
+
+4. NO PRIMARY KEYWORD IN ANY HEADLINE: The target keyword must appear in at least one headline exactly as entered. Paraphrasing or synonym substitution does not satisfy this requirement.
+
+5. DESCRIPTION ENDING WITH A PERIOD: A trailing period after the CTA is truncated by Google as '...'. End descriptions with the CTA phrase and no trailing punctuation.

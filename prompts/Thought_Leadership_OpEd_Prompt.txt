@@ -16,17 +16,22 @@ A thought leadership op-ed is a 600-900 word opinion piece written from the pers
 TEMPLATE
 ------------------------------------------------------------
 
-Write a thought leadership op-ed for [AUTHOR NAME], [AUTHOR TITLE] at [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]". The op-ed should take a clear, opinionated stance on "[POINT OF VIEW e.g. Why most L&D programmes fail / The real reason managers do not become leaders]". Open with a personal observation or bold contrarian claim. Build the argument with 2-3 evidence-backed paragraphs referencing credible research or real-world examples. Include one personal insight or anecdote that only this executive could offer. Close with a forward-looking statement and a CTA referencing [URL]. Write in first-person, conversational but authoritative tone. Do not use em dashes. Avoid passive voice. Do not use pronouns: you, we, our, your.
+Write a thought leadership op-ed for [AUTHOR NAME], [AUTHOR TITLE] at [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]". The op-ed should take a clear, opinionated stance on "[POINT OF VIEW e.g. Why most L&D programmes fail / The real reason managers do not become leaders]". Open with a personal observation or bold contrarian claim. Build the argument with 2-3 evidence-backed paragraphs referencing credible research or real-world examples. Include one personal insight or anecdote that only this executive could offer. Closing paragraph (40–60 words): state what the industry should do differently, then a CTA of 15–20 words naming a specific resource. Example: 'The full framework is in our 2025 L&D Benchmark Report — [URL]. Read it before your next board presentation.' Write in first-person, conversational but authoritative tone. Do not use em dashes. Avoid passive voice. Do not use pronouns: you, we, our, your.
 
 Point of View / Stance: [INSERT THE ARGUMENT OR OPINION]
 Reference URL (if any): [INSERT URL]
 Target Publication: [e.g. Company Blog / LinkedIn Article / Forbes / HR Magazine]
+Voice/Tone: [first-person conversational but authoritative / formal industry commentary / provocative challenger — default: first-person, conversational but authoritative]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
 ------------------------------------------------------------
 
 Sr. No. | Author | Topic | Point of View | Target Publication | Op-Ed Content
+
+Field encoding: wrap multi-line op-ed content in double quotes.
+Op-Ed Content column must contain the full piece with labelled sections: HOOK | ARGUMENT | EVIDENCE | IMPLICATION | CLOSE.
+Point of View column: one sentence stating the specific, arguable claim — not a topic ('AI in training' fails; 'AI-generated training content produces lower retention than live cohort learning' passes).
 
 Save to output/Thought_Leadership/
 
@@ -42,5 +47,16 @@ RULES
 - No pronouns: you, we, our, your - when describing a company-facing anecdote, name the company or team directly instead (e.g. "When [BRAND NAME]'s delivery team ran this experiment..." or "[BRAND NAME] clients who adopted this approach saw..." rather than "When our team ran this experiment..." or "our clients")
 - No em dashes anywhere
 - No passive voice
+- SELF-CHECK: After drafting, count words. Target: 600–900. If over 900, cut the background context paragraph. If under 600, expand the evidence or implication section.
 - The identical opening claim or closing CTA reused across multiple op-eds in the same batch - if you are generating more than one row in a session, no two may share an opening observation or a closing statement
 - Output saved to output/Thought_Leadership/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. Point of view that is not arguable — states a consensus view that no credible person would dispute. Push it to a specific, contestable claim.
+2. Evidence section with no named source or data point — every evidence paragraph must cite a named organization, study, or verifiable outcome.
+3. Close that promotes a product instead of advancing the argument — the closing should state what the industry should do differently, not pitch a solution.
+4. Word count over 900 due to an extended biography paragraph — author background goes in a byline, not in the body.
+5. First-person hook that starts with 'I have been in this industry for X years.' — open with the insight or the claim, not a credential.

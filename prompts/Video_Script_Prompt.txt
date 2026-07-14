@@ -29,6 +29,7 @@ Primary Takeaway: [the one specific claim, framework, or insight the viewer shou
 Key Data Points: [2 to 5 specific statistics or case examples to cite during the video - include source and year for each]
 CTA Destination: [URL, resource name, or action the viewer should take]
 Duration Target: [Short: 60-90 sec / How-to: 8-15 min / Case Study: 10-20 min]
+Voice/Tone: [on-camera conversational / authoritative presenter / tutorial guide — default: conversational, direct-to-camera]
 
 ------------------------------------------------------------
 TYPE 1: SHORT (60 to 90 seconds)
@@ -163,6 +164,18 @@ One ask. For case study videos: link to a full case study page or a consultation
 [VISUAL: End screen with link and subscribe]
 
 ------------------------------------------------------------
+FORMAT D: SHORT-FORM ADAPTATION (Under 60 seconds, vertical 9:16)
+------------------------------------------------------------
+
+Use when: Repurposing a long-form video script for Reels, Shorts, or TikTok.
+Target duration: 30–60 seconds.
+Structure:
+- Hook (0–3s): The single most surprising or useful line from the full script — stated as a standalone claim.
+- Core (3–45s): One idea from the full script, stripped of all context and delivered directly.
+- CTA (45–60s): One action. "Follow for more" or "Link in bio for the full version."
+Rules: No intro. No outro music ramp. Cut the moment the idea is complete.
+
+------------------------------------------------------------
 THUMBNAIL GUIDANCE (INCLUDE WITH EVERY SCRIPT)
 ------------------------------------------------------------
 
@@ -224,6 +237,30 @@ Save to: output/Video_Scripts/
 File name: VideoScript_[Type]_[Short-Slug].txt
 
 ------------------------------------------------------------
+SHORT-FORM ALGORITHM RULES (REELS / SHORTS / TIKTOK)
+------------------------------------------------------------
+
+These rules apply when adapting any script for Reels, YouTube Shorts, or TikTok. Violating them reduces distribution.
+
+1. HOOK WINDOW: 0–3 SECONDS
+   The first 3 seconds determine whether the algorithm serves the video to a wider audience. Start on the point — no intro, no logo, no "hey guys." The hook must create a reason to keep watching before the viewer can swipe.
+
+2. COMPLETION RATE IS THE PRIMARY SIGNAL
+   Platforms prioritise videos that viewers watch to the end. A 60-second video watched 100% beats a 3-minute video watched 20%. Target: completion rate above 50% for broad distribution; above 70% for viral distribution.
+
+3. CAPTION EVERY WORD
+   60–85% of short-form video is watched without sound. On-screen captions increase watch time, improve accessibility, and make content indexable for in-app keyword search. Auto-captions are acceptable but must be proofread.
+
+4. VERTICAL 9:16 IS NON-NEGOTIABLE
+   Horizontal or square video is deprioritised in vertical feeds. Shoot and edit in 9:16 from the start. Do not letterbox horizontal footage.
+
+5. NATIVE AUDIO OUTPERFORMS SILENCE; TRENDING AUDIO IS A BONUS
+   Music or sound increases watch time by keeping the viewer anchored. Use trending audio only when it fits the content — forced audio pairings hurt retention.
+
+6. ONE IDEA PER VIDEO
+   Scripts that try to cover multiple points lose viewers at each transition. One idea, one arc, one CTA. If you have three ideas, make three videos.
+
+------------------------------------------------------------
 GLOBAL RULES
 ------------------------------------------------------------
 
@@ -234,6 +271,7 @@ GLOBAL RULES
 - Primary takeaway named within first 10 minutes (for Types 2 and 3)
 - CTA is one ask, not multiple
 - Every stat names source and year
+- SELF-CHECK: After drafting, count the spoken-word total. Verify it matches the target duration (approximately 130–150 words per minute). If the word count and the target duration are misaligned by more than 20%, adjust the main content section length before outputting.
 - The identical hook line or CTA sentence reused across multiple scripts in the same batch - if you are generating more than one script in a session (e.g. a week's worth of Shorts), no two may share a hook, a transition line, or a CTA sentence
 - Output saved to output/Video_Scripts/
 

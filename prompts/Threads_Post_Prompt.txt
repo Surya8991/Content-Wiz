@@ -1,0 +1,204 @@
+============================================================
+THREADS POST PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: Single Text Post / Thread (Multi-Post Chain) / Quote Post
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [conversational / contrarian / founder voice / dry wit — default: personal account, conversational, reply-bait]
+
+Once the brand is confirmed, select the format below.
+
+------------------------------------------------------------
+PLATFORM/ALGORITHM RULES (2026) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+These constraints apply to all Threads content. Violating them reduces For You distribution and caps reach.
+
+1. REPLY DEPTH IS THE DOMINANT RANKING SIGNAL
+   The Threads ranking model weights signals in this approximate order: reply depth, time spent reading the post, follows generated, likes, then reposts. Recency is a tiebreaker, not a driver. A post with 20 replies outranks a post with 200 likes. Every post must be designed to generate a reply, not a passive reaction. Close every single post with a specific, answerable question or a provocative statement that the audience has a direct opinion on. (Threads Playbook, MediaMister 2025.)
+
+2. PERSONAL ACCOUNTS REACH 10-15X MORE THAN CORPORATE BRAND ACCOUNTS
+   Corporate brand accounts are algorithmically throttled on Threads. Personal employee accounts, founders, and product managers posting from individual accounts consistently pull 10-15x the organic reach of identical content posted from a brand handle. The primary distribution channel on Threads is the personal account, not @yourbrand. Content generated for a brand should default to being written in a personal founder or employee voice unless the brand has an established character-driven persona (like Duolingo's Duo owl). Always specify which account type this post is for.
+
+3. THE FOR YOU FEED DOES NOT REQUIRE FOLLOWERS
+   Threads' default surface is a For You feed that does not require following anyone. The algorithm decides what to show based on engagement quality signals, especially reply depth and time spent reading. A 200-follower account posting a contrarian take with a substantive early reply chain can land 80,000 impressions overnight. This means topical consistency matters more than follower count. Pick one niche and stay in it for at least 30 days minimum. Switching topics resets the interest cluster and tanks the next 10 posts' baseline reach.
+
+4. HOOK IN THE FIRST 80 CHARACTERS OR THE POST DIES IN THE FEED
+   The Threads feed truncates aggressively. If the opening line is not a pattern interrupt or a strong claim, the post dies before anyone reads past it. The first 80 characters are the only characters visible before the "more" truncation. Write the most important thing first. Never begin with context, setup, or a brand name. Begin with the tension, the claim, or the question.
+
+5. THE 500-CHARACTER LIMIT IS A FEATURE, NOT A CONSTRAINT
+   Single text posts are capped at 500 characters. Treat this as a discipline. Long posts get fewer read-completions, which hurts the time-spent signal. Front-load your value, end with the reply prompt, and keep the body tight. For content that needs more space, use the Thread format (multi-post chain). Do not squeeze 800 characters of content into a 500-character post — every extra word after the point has been made reduces completion rate.
+
+6. IMAGES OUTPERFORM TEXT-ONLY BY 60%, BUT MUST LOOK NATIVE
+   Images outperform all other formats on Threads: 0.6% more engagement than video, 37% more than links, and 60% more than text-only posts (Buffer, 2025). But the format benefit disappears if the image looks like a polished campaign asset. Native-looking images (screenshots, candid photos, simple graphics, phone-shot visuals) outperform produced creative. High production value signals "ad" and users scroll past ads. If adding an image, always specify that it should look organic and native.
+
+7. MEDIAN ENGAGEMENT RATE IS 6.25% VS X'S 3.6%
+   The median engagement rate on Threads is 6.25% versus 3.6% on X, a 73.6% advantage (WebFX, 2025). A 4-5% engagement rate is the current healthy baseline for brands. The platform has 400 million monthly active users (August 2025) and surpassed X in daily active users in September 2025, reaching 141.5M mobile DAU versus X's 125M by January 2026 (Backlinko). The organic window is narrowing as Meta began testing ads in January 2025. The brands building audience now will have a structural advantage when paid distribution becomes the norm.
+
+------------------------------------------------------------
+FORMAT A: SINGLE TEXT POST (PRIMARY FORMAT — UP TO 500 CHARACTERS)
+------------------------------------------------------------
+
+Use when: Sharing a single insight, claim, observation, or question that earns replies. The primary Threads format. Best for building niche authority through consistent daily posting.
+Character limit: 500 characters maximum. Count before outputting.
+Best cadence: 1-3 posts per day. Consistency matters more than volume — the algorithm needs posting history to establish topical clustering.
+Best posting windows: Wednesday at 7 a.m. is the single top-performing slot. The 7-9 a.m. weekday window (Tuesday through Friday) consistently outperforms afternoon and evening (Buffer, 2025).
+
+Structure - follow these 3 sections exactly:
+
+OPENING LINE (first 80 characters, the only thing visible before truncation):
+This is the entire post in one sentence. If the opening line does not earn the "more" tap, the post is invisible. Write it as the sharpest version of the point. Use one of four patterns:
+- Contrarian claim: "Everyone says [X]. The data says [Y]."
+- Specific observation: "[Number] [audience] do [specific thing]. Almost none [surprising result]."
+- Named mistake: "The [most common] mistake in [topic] is not [expected answer]. It is [real answer]."
+- Direct question: "[Specific, debated question that the audience has formed opinions on]."
+
+[blank line]
+
+BODY (up to 400 remaining characters after the opening line):
+Expand the opening claim with one specific example, one stat, or one named scenario. Do not repeat the opening line in different words. Add exactly one new piece of information that makes the claim feel concrete and worth replying to. End with a specific, low-friction question that the target audience can answer in one sentence. The question must be answerable in under 10 words to minimize the mental effort required to reply.
+
+[blank line]
+
+REPLY PROMPT (final 1-2 lines):
+State the question clearly and specifically. Not "thoughts?" or "what do you think?" Those generate passive reactions, not replies. "Which of these does your team actually use?" or "What is the one thing stopping you from fixing this?" are specific enough to earn replies. The reply prompt must connect directly to the body content — it should feel like a natural continuation, not an appended engagement tactic.
+
+HOOK PATTERNS (choose the most accurate for the content):
+
+PATTERN 1 - COUNTERINTUITIVE STAT:
+"[Number] [audience] [specific behavior]. Almost none [surprising related fact]."
+Example: "400M people use Threads every month. Most brand accounts get less reach than a 200-follower personal account."
+
+PATTERN 2 - NAMED MISTAKE:
+"The biggest mistake [audience] make with [topic] is not [expected answer]. It is [real answer]."
+
+PATTERN 3 - SPECIFIC OBSERVATION:
+"Spent [time or resource] on [activity]. Here is the one thing that actually changed [outcome]."
+
+PATTERN 4 - CONTRARIAN TAKE:
+"[Widely accepted belief about topic]. The accounts that actually grow on [platform] do the opposite."
+
+PATTERN 5 - OPEN QUESTION:
+"[Specific debated question that the audience argues about]."
+
+------------------------------------------------------------
+FORMAT B: THREAD (MULTI-POST CHAIN FOR LONGER ARGUMENTS)
+------------------------------------------------------------
+
+Use when: Making an argument, walking through a framework, or sharing a case study that requires more than 500 characters. A Thread is a chain of connected posts where each post builds on the previous one.
+Note: Each post in a Thread still has a 500-character limit. The chain length should match the argument — not longer. A 7-post Thread is a framework or case study. A 3-post Thread is a sharp take with evidence.
+Best cadence: 1-2 Threads per week alongside daily single posts. Do not use the Thread format for every post — it requires more reader commitment and should be reserved for content that earns that commitment.
+
+Structure - follow these sections exactly:
+
+POST 1 - OPENING HOOK (500 characters max):
+State the central claim or the most counterintuitive finding of the entire Thread in one sentence. This post must stand alone as a complete thought that creates curiosity about what follows. End with "Thread:" or a specific teaser ("Here is the breakdown:") to signal that more posts follow and earn the tap to expand.
+
+POST 2 - CONTEXT (500 characters max):
+Give the minimum context needed to understand why the claim matters. Who is affected, what the stakes are, what the common assumption is that the Thread is challenging. Do not repeat the opening claim — add new information.
+
+POSTS 3-N - EVIDENCE AND SPECIFICITY (500 characters max each):
+Each post delivers one specific example, one data point, or one named scenario that supports the central claim. Number each post ("2/7" or "Point 2:") so readers know where they are in the argument. Every post must add a piece of information that was not in the previous post. No filler transitions. Cut any post that is only restating what the previous post already said.
+
+FINAL POST - TAKEAWAY AND REPLY PROMPT (500 characters max):
+One sentence summary of the Thread's central lesson. Then a specific reply question: "Which of these [applies to your situation / does your team use / have you seen fail]?" The final post must feel like a conclusion, not an abrupt stop. It should invite the reader to share where they disagree or what their experience has been.
+
+------------------------------------------------------------
+FORMAT C: QUOTE POST (ENGAGING WITH AN EXISTING POST TO ADD PERSPECTIVE)
+------------------------------------------------------------
+
+Use when: An existing post in the niche presents a viewpoint, stat, or claim that the brand or founder can add meaningful perspective to. Quote Posts build visibility by association with active conversations while adding original value.
+Note: The quality of the quote post depends entirely on the quality of the perspective added. Agreeing without adding new information is not a quote post strategy — it is noise. The quote must add a named counter-example, a nuance, a stat that complicates the original, or a directly opposite lived experience.
+Best cadence: 3-5 quote posts per week as a complement to original content. Replying to other accounts is as algorithmically valuable as original posting, per Instagram's head of product.
+
+Structure - follow these sections exactly:
+
+THE ORIGINAL POST CONTEXT (include before writing the quote post):
+State: original poster's claim in one sentence, the context (what platform niche, what claim), and the angle you are adding (agreement with nuance / counter-example / data that complicates the claim / opposite lived experience).
+
+[blank line]
+
+QUOTE POST BODY (500 characters max):
+Open with the named tension: "This is true until..." or "The nuance missing from this take is..." or "We ran this exact experiment. The result was the opposite." Do not restate the original post. Go directly to the counter, the complication, or the extension. Include one specific data point or named example. End with a question that invites the original poster and their audience to reply.
+
+[blank line]
+
+SIGNAL AMPLIFICATION NOTE (output note, not part of the post text):
+State which account type should post this quote (personal founder account vs brand handle) based on the 10-15x reach differential for personal accounts. If the original post is from a major account in the niche, note that the quote post will inherit audience context and should prioritize a sharp, specific take over a diplomatic one.
+
+------------------------------------------------------------
+THREE CONTENT PILLAR GUIDANCE
+------------------------------------------------------------
+
+For a consistent Threads presence, rotate across these three pillar types to serve authority-building, distribution, and community simultaneously.
+
+PILLAR 1 - CONTRARIAN INSIGHT (Format A, 3-4x per week):
+A single post that challenges a commonly held belief in the audience's niche with a specific stat, named example, or direct experience. This pillar earns the highest reply depth because the audience has formed opinions on the topic and wants to debate. Each post must be specific enough to be debatable — generic claims generate passive agreement, not replies. Example topics: "More content does not mean more reach on Threads," "The accounts growing fastest right now are doing the opposite of what everyone says," "[Specific industry belief] is a myth — here is what the data actually shows."
+
+PILLAR 2 - FRAMEWORK AND PROCESS (Format B, 1-2x per week):
+A Thread that walks through a named system, process, or lesson in 3-7 posts. This pillar earns saves and follows because it delivers structured value that the audience can apply. Every Framework Thread should end with the central lesson restated in one sentence and a question about where the reader's process breaks down. Example topics: "How we built a Threads audience from 0 to [X followers] in 30 days — the 5-step process," "The 3-post structure that consistently earns replies, broken down post by post."
+
+PILLAR 3 - COMMUNITY CONVERSATION (Format C, 3-5x per week):
+Quote posts and replies that build visibility by association with active conversations in the niche. This pillar serves the algorithmic principle that replies are as valuable as original posts. Prioritize quotes that add a named counter-example or a specific data point, never agreement without substance. Example angles: Quote a benchmark stat with a counter-example from your own experience, quote a common recommendation with evidence it does not apply in a specific context, quote a claim and ask the audience which side of the debate they sit on.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Required inputs before generating:
+- Brand (confirmed via _Brand_Detection_Rules.txt)
+- Topic
+- Target Audience
+- Format (Single Text Post / Thread / Quote Post)
+- Voice/Tone
+
+For single post requests:
+Output labeled sections: OPENING LINE | BODY | REPLY PROMPT | CHARACTER COUNT (must be under 500 for Format A)
+
+For Thread requests:
+Output labeled sections: POST 1 | POST 2 | POSTS 3-N | FINAL POST | CHARACTER COUNT PER POST
+
+For Quote Post requests:
+Output labeled sections: ORIGINAL POST CONTEXT | QUOTE POST BODY | SIGNAL AMPLIFICATION NOTE | CHARACTER COUNT
+
+Field encoding note: plain text only. No em dashes. No external URLs in any post body — URLs suppress reach on Threads just as on LinkedIn. Place links in replies. Count characters on every output before submitting.
+
+For bulk requests (CSV):
+Sr. No. | Format | Topic | Opening Line | Body | Reply Prompt | Character Count
+
+Save to output/Threads/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- No em dashes anywhere
+- No passive voice
+- 500 character maximum per post — count before outputting every Format A post
+- No external URLs in the post body — place links in replies
+- Opening line must fit within the first 80 characters (the truncation point)
+- Every post must end with a specific, answerable reply prompt — "thoughts?" is prohibited
+- Every stat names its source and year
+- Account type recommendation (personal vs brand handle) required on every output — default to personal founder account based on the 10-15x reach differential
+- Niche consistency rule: note when a topic shift would disrupt the account's interest cluster
+- Best posting time recommendation required on bulk outputs: Wednesday 7am or 7-9am Tuesday through Friday (Buffer, 2025)
+- SELF-CHECK: After drafting any single post, count characters. If over 500, cut the body before cutting the reply prompt. If the opening line is over 80 characters, cut adjectives and specifics until the core claim fits. Read the reply prompt aloud — if it takes more than 10 words to answer, rewrite it to lower the friction.
+- BATCH DEDUPLICATION: If generating more than one Threads post in a session, no two posts may share the same opening line pattern or the same reply prompt. Vary the hook pattern and the question type across every post. Examples of the pattern (write a new one each time, do not copy these verbatim): "Which of these is your biggest blocker right now?", "What is the one thing stopping your team from fixing this?", "Where does this break down first in your experience?"
+- Source diversity: within a batch of posts for the same brand, never anchor more than one post on the same single stat — name a distinct data point for each
+- Output saved to output/Threads/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. POSTING AND GHOSTING: No reply activity in the first 30 minutes after posting means no algorithmic lift. Reply depth in the first 30 minutes signals a live conversation to the algorithm, which then pushes the post into more For You feeds. Every post should be treated as the beginning of a 60-minute active engagement session. Reply to your own replies within 30 minutes to compound reply count and keep the thread active.
+
+2. RUNNING ONLY THE BRAND ACCOUNT: With corporate accounts demonstrably throttled at 10-15x lower reach than personal accounts, a brand-only Threads strategy caps reach before posting starts. The output should always specify whether a personal founder or employee account should post this content, and flag when a brand handle post would be better served by a personal account.
+
+3. CROSS-POSTING X THREADS VERBATIM: X rewards rants, hot takes, and quote-dunks. Threads rewards questions, earnestness, and conversation starters. The tones do not transfer. A post that goes viral on X will often flatline on Threads and vice versa. X posts designed for speed and controversy need to be rewritten for Threads with a specific question or earnest observation.
+
+4. CHASING VIRALITY OUTSIDE THE NICHE: One off-topic post that performs well will scramble the For You interest cluster and depress the next 10 posts' reach. The algorithm infers topic from posting history. Consistency beats opportunism on Threads. If an off-niche topic must be posted, flag it in the output with a note that it may reset the account's interest clustering.
+
+5. USING THE FULL 500 CHARACTERS WHEN FEWER WOULD DO: More characters do not mean more value. Long posts get fewer read-completions, which hurts the time-spent signal. Every sentence that does not add a new piece of information should be cut. The ideal single post is the minimum words needed to make the point and ask the question. Padding to fill the character limit is a failure mode, not a strategy.

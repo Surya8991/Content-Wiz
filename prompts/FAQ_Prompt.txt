@@ -10,15 +10,20 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Create a FAQ section for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]". Generate 8-10 frequently asked questions with concise, authoritative answers targeting [TARGET AUDIENCE]. Each answer should be 40-60 words, informative, and naturally aligned with [BRAND NAME]'s expertise. Include at least 2-3 answers that reference a credible stat or research finding. Do not use em dashes.
+Create a FAQ section for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]". Generate 8-10 frequently asked questions with concise, authoritative answers targeting [TARGET AUDIENCE]. Each answer should be 40-60 words, informative, and naturally aligned with [BRAND NAME]'s expertise. Include at least 2–3 answers that embed a named stat in this format: '[Stat]' ([Source name], [Year]). Example: '74% of employees feel they are not reaching their full potential at work (Gallup, 2023).' Do not use em dashes.
 
 Blog URL (for reference): [INSERT URL IF APPLICABLE]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
 ------------------------------------------------------------
 
 Sr. No. | Topic | Blog URL | Question | Answer
+
+Field encoding: wrap any field containing commas or line breaks in double quotes.
+Answer must directly answer the question in sentence 1, then add 1–2 supporting sentences.
+Question must be phrased as a genuine user question (start with 'What', 'How', 'Why', 'When', 'Can', or 'Is').
 
 ------------------------------------------------------------
 RULES
@@ -30,4 +35,18 @@ RULES
 - Every cited stat or research finding must name a source, organization, and year. Never invent a plausible-sounding citation
 - No em dashes anywhere
 - No passive voice
+- SELF-CHECK: After drafting each answer, count words. Target: 40–60. If over 60, cut to the most direct answer + one supporting sentence. If under 40, add one concrete example.
+- BATCH DEDUPLICATION: When generating FAQ batches in one session, no two questions may be semantically identical. No two answers may open with the same sentence structure. No stat may be cited more than once across the batch.
 - Output saved to output/FAQ/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. QUESTION THAT NO REAL USER WOULD SEARCH: A question like "What is the strategic imperative of competency mapping?" is too academic. Phrase questions as a real person would type them into Google or a chatbot: "How do I map competencies for my team?"
+
+2. ANSWER THAT STARTS BY RESTATING THE QUESTION: An answer that opens with "Skills gap analysis refers to..." when the question is "What is a skills gap analysis?" wastes the first sentence. Start with the direct answer, not a restatement.
+
+3. ANSWER OVER 60 WORDS DUE TO UNNECESSARY CONTEXT-SETTING: Adding background before getting to the answer pushes word count over 60. Cut any sentence that the reader does not need to understand the answer.
+
+4. STAT CITED WITHOUT SOURCE NAME AND YEAR: A stat such as "74% of employees feel disengaged" with no source fails the citation rule. Every stat must include the source name and year in the format '[Stat]' ([Source], [Year]).

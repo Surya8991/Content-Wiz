@@ -14,6 +14,7 @@ Create a detailed buyer persona for [BRAND NAME], [BRAND DESCRIPTION], for the t
 
 Segment to profile: [TARGET AUDIENCE] (e.g. HR Director / L&D Manager / CEO of SME)
 Industry focus (if any): [INSERT OR LEAVE BLANK]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
@@ -25,11 +26,11 @@ Rows:
 - Persona Name
 - Job Title and Seniority
 - Industry and Company Size
-- Primary Goals and KPIs
+- Primary Goals and KPIs: list 2–4 goals, each with a named metric (e.g. 'Reduce time-to-competency — measured by post-training assessment scores, not just completion rate')
 - Key Pain Points
 - Decision-Making Role
-- Preferred Content Formats
-- Preferred Channels
+- Preferred Content Formats: list 3–5 specific formats with one-line rationale explaining why that persona uses each format
+- Preferred Channels: list 3–5 specific channels with one-line rationale explaining why that persona uses each channel
 - Common Objections
 - Winning Message
 
@@ -46,4 +47,18 @@ RULES
 - Pain points and objections must reflect real buying behaviour for the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: B2B buying behaviour)
 - No em dashes anywhere
 - No passive voice
+- SELF-CHECK: After generating each persona, verify: Key Pain Points = 2–3 sentences, Objections = 2–3 sentences, Winning Message = 1–2 sentences. Revise any field outside range before outputting.
+- BATCH DEDUPLICATION: When generating multiple personas in one session, no two personas may share the same primary pain point, the same top objection, or the same winning message phrase. Vary angle and evidence across every item in the batch.
 - Output saved to output/Buyer_Personas/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. PERSONA THAT MATCHES ALL DEMOGRAPHICS EQUALLY / IS NOT DISTINCTIVE: A persona that could describe any mid-level manager in any industry is not a useful tool. Each persona must have specific job context, company stage, and decision constraints that distinguish it from every other persona in the set.
+
+2. PAIN POINTS STATED AS GENERIC PROBLEMS NOT SPECIFIC TO THE TRAINING/L&D CONTEXT: "Too much to do, too little time" is not a pain point; it is a condition of modern work. A valid pain point names the specific trigger in the L&D or HR context: "Compliance training completion rates drop below 60% every quarter because mandatory modules compete with operational deadlines and managers deprioritize them."
+
+3. GOALS LISTED WITHOUT A MEASURABLE METRIC: "Improve employee performance" is not a goal; it is an aspiration. Every goal listed under Primary Goals and KPIs must name the metric used to measure it and the data source or method used to track it.
+
+4. WINNING MESSAGE THAT IS A PRODUCT FEATURE LIST INSTEAD OF A BENEFIT STATEMENT: A winning message that reads "AI-powered LMS with 300+ integrations and real-time analytics" describes the product, not the buyer's outcome. The winning message must state what changes for the buyer after working with the brand, in language the buyer would use themselves.
