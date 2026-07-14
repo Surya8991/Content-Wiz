@@ -36,7 +36,7 @@ README, CHANGELOG, GLOSSARY.md all updated and pushed.
 
 ---
 
-## Phase 7 — CLI Wiring Fixes (from audit) 🔄 IN PROGRESS
+## Phase 7 — CLI Wiring Fixes (from audit) ✅ COMPLETE
 
 5 prompt files existed with zero CLI path. 3 template modules were written but never imported.
 
@@ -50,10 +50,17 @@ README, CHANGELOG, GLOSSARY.md all updated and pushed.
 ### 7B — Import and wire new template modules
 - [x] cro.py → `__init__.py` + PLATFORM_MAP: `cro_lead_gen`, `cro_sales_page`, `cta_variants`, `trust_signals`, `hero_headline`
 - [x] product.py → `__init__.py` + PLATFORM_MAP: `positioning_statement`, `launch_announcement`, `pre_launch_teaser`, `messaging_hierarchy`, `launch_email_sequence`
-- [x] ugc.py → `__init__.py` + PLATFORM_MAP: `ugc_video_brief`, `testimonial_request_ugc`, `creator_brief_ugc`, `photo_brief`
+- [x] ugc.py → `__init__.py` + PLATFORM_MAP: `ugc_video_brief`, `testimonial_request`, `creator_brief`, `photo_brief`
+      (corrected 2026-07-14: this row previously listed `testimonial_request_ugc`/
+      `creator_brief_ugc`, which were never the actual PLATFORM_MAP keys - see
+      generate.py's PLATFORM_MAP for the real aliases)
 
-### 7C — Duplicate file cleanup
-- [ ] Merge Instagram_Content_Prompt.txt and Instagram_Prompt.txt → keep better one, wire it
+### 7C — Duplicate file cleanup ✅ COMPLETE (2026-07-14)
+- [x] Merge Instagram_Content_Prompt.txt and Instagram_Prompt.txt → keep better one, wire it.
+      Deleted Instagram_Prompt.txt (single-caption legacy version), wired
+      Instagram_Content_Prompt.txt (3-format, 2026-research version) into
+      textprompts.py under `instagram_content`/`ig_content`/`instagram_reel`.
+      See CHANGELOG v0.9.1.
 
 ---
 

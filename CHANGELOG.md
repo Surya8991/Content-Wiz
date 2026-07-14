@@ -5,7 +5,51 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.9.0] — 2026-07-14
+## [0.9.1] - 2026-07-14
+
+### Fixed
+
+**Persona-driven review pass:**
+
+- `generate.py`: `--output-dir`/`--bulk` writes to a path on a different drive
+  than the project (e.g. a Windows temp dir on `C:` while the repo lives on
+  `D:`) crashed every "saved to"/"packaged into" print with
+  `ValueError: path is on mount ... start on mount ...` (`os.path.relpath`
+  can't cross drives on Windows). Added `safe_relpath()`, which falls back to
+  an absolute path instead of raising. Same fix applied to `lint_content.py`'s
+  `--check-urls`/`--check-banned-phrases` reporting.
+- `lint_content.py`: fixed 152 pre-existing em-dash violations of the
+  project's own "no em dashes anywhere" rule, present in `README.md`,
+  `generate.py`, and 20 `strategies/*.md` files. `python lint_content.py` (run
+  in CI on every push/PR) was failing before this fix.
+- Phase 7C cleanup (tracked in `plan.md` since Phase 7): `prompts/Instagram_Prompt.txt`
+  and `prompts/Instagram_Content_Prompt.txt` both existed but neither was wired
+  into `textprompts.py`, so neither was reachable from the CLI despite the
+  README listing both as "reachable from the same CLI." Deleted the
+  superseded single-caption version (`Instagram_Prompt.txt`) and wired the
+  richer 3-format version under new aliases `instagram_content`, `ig_content`,
+  `instagram_reel` (distinct from the existing `instagram`/`ig` aliases, which
+  resolve to the unrelated rich Python template in `templates/social.py`).
+- `pyproject.toml`: version was frozen at `0.6.0` while `CHANGELOG.md` had
+  already moved through 0.7.0-0.9.0; bumped to match.
+- `plan.md`'s Phase 7B row documented `testimonial_request_ugc` and
+  `creator_brief_ugc` as the CLI aliases for two UGC templates; the actual
+  `PLATFORM_MAP` keys in `generate.py` are `testimonial_request` and
+  `creator_brief` (no `_ugc` suffix, and never were). Corrected the doc to
+  match the real aliases.
+
+### Verification
+
+- `python -m unittest test_generate -v` - 74/74 tests pass (was 73 passing +
+  1 error before the `safe_relpath` fix).
+- `python lint_content.py` - passes clean (was 152 errors).
+- Manual CLI pass across first-time-user, power-user (`--variants`, `--tone`,
+  `--keywords`, cross-drive `--output-dir`), bulk/marketer, admin/config
+  (malformed `config.json`), and QA/edge-case (unknown platform, missing
+  args, path traversal, invalid bulk row, missing API key, bad `--provider`)
+  workflows. No other crashes found.
+
+## [0.9.0] - 2026-07-14
 
 ### Added
 
