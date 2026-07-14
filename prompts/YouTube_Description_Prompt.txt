@@ -29,7 +29,7 @@ Primary Keyword: [The exact search phrase this video targets]
 Chapters: [List of chapter topics with approximate timestamps - required for Mode A on videos over 5 min]
 CTA Destination: [URL, resource name, or next video to recommend]
 Related Videos: [1 to 2 other channel videos to link in the description - optional]
-Voice/Tone: [conversational YouTube creator / brand educational / tutorial guide — default: conversational, matches on-screen presenter style]
+Voice/Tone: [conversational YouTube creator / brand educational / tutorial guide - default: conversational, matches on-screen presenter style]
 
 ------------------------------------------------------------
 MODE A: STANDARD VIDEO DESCRIPTION (8+ MINUTES)

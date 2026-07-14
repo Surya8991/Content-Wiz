@@ -6,7 +6,7 @@ THREE FORMATS AVAILABLE: Referral Invitation Email / Referral Landing Page Copy 
 
 BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
 
-Voice/Tone: [warm / direct / peer-to-peer — default: brand account, conversational, reward-forward, no corporate formality]
+Voice/Tone: [warm / direct / peer-to-peer - default: brand account, conversational, reward-forward, no corporate formality]
 
 Once the brand is confirmed, select the format below.
 
@@ -16,33 +16,33 @@ REFERRAL COPY RULES (2024-2025 DATA) - READ BEFORE GENERATING ANY FORMAT
 
 These constraints apply to all referral program copy. Violating them reduces share rates, conversion rates, or both.
 
-1. TRUST IS THE PRODUCT — COPY MUST BORROW IT CORRECTLY
-   92% of consumers trust recommendations from people they know over any form of advertising (Nielsen, 2024). Referral programs convert at 3-5x the rate of paid ads specifically because trust transfers with the recommendation. The copy's job is not to manufacture trust — it is to facilitate the transfer of trust that already exists between the referrer and their network. Write as if the copy is from a friend, not from a brand.
+1. TRUST IS THE PRODUCT - COPY MUST BORROW IT CORRECTLY
+   92% of consumers trust recommendations from people they know over any form of advertising (Nielsen, 2024). Referral programs convert at 3-5x the rate of paid ads specifically because trust transfers with the recommendation. The copy's job is not to manufacture trust - it is to facilitate the transfer of trust that already exists between the referrer and their network. Write as if the copy is from a friend, not from a brand.
 
 2. THE SHARE MOMENT IS MORE IMPORTANT THAN THE REWARD SIZE
-   Most programs fail not from bad incentives but from burying the share moment too deep in the product. Referral copy must surface at the exact moment the customer has experienced value — immediately after a successful first action, first purchase, or first meaningful use. Copy written for the wrong moment (too early = no satisfaction to share; too late = forgotten) produces low share rates regardless of reward size.
+   Most programs fail not from bad incentives but from burying the share moment too deep in the product. Referral copy must surface at the exact moment the customer has experienced value - immediately after a successful first action, first purchase, or first meaningful use. Copy written for the wrong moment (too early = no satisfaction to share; too late = forgotten) produces low share rates regardless of reward size.
 
 3. TWO-SIDED REWARDS CONSISTENTLY OUTPERFORM ONE-SIDED
-   Two-sided referral programs (both referrer and new customer receive a reward) outperform one-sided programs by 3-4x in gross referred revenue (referral research, Extole benchmarks). Dropbox's "give 500MB, get 500MB" is the canonical example. The copy must make both rewards explicit and make the new customer's reward as prominent as the referrer's — the referrer's confidence to share depends on knowing their friend will also benefit.
+   Two-sided referral programs (both referrer and new customer receive a reward) outperform one-sided programs by 3-4x in gross referred revenue (referral research, Extole benchmarks). Dropbox's "give 500MB, get 500MB" is the canonical example. The copy must make both rewards explicit and make the new customer's reward as prominent as the referrer's - the referrer's confidence to share depends on knowing their friend will also benefit.
 
-4. MAKE THE REWARD IMMEDIATELY LEGIBLE — NO VAGUE PROMISES
+4. MAKE THE REWARD IMMEDIATELY LEGIBLE - NO VAGUE PROMISES
    "Earn rewards" is not a referral offer. "Give your friend $25 off their first order. You get $25 when they buy" is a referral offer. Rewards must be named in specific dollar amounts, credit values, product quantities, or tier upgrades in the first sentence of every referral touchpoint. Research from Extole shows rewards representing at least 10-15% of the referred product's value produce share rates 3x higher than lower-value alternatives.
 
 5. REWARDS DELIVERED IMMEDIATELY DRIVE REPEAT REFERRALS
    Rewards delivered immediately after the referred friend's first action outperform rewards with a waiting period by 2.6x in repeat referral behavior (Extole, 2023). The psychological mechanism: the reward confirms the system works, which builds confidence to share again. Copy must set expectations clearly: when does the reward arrive? What triggers it? "You will receive your $25 credit within 24 hours of your friend's first purchase" is clear. "Rewards pending" is not.
 
 6. MOBILE SHARE FLOW IS WHERE MOST PROGRAMS TECHNICALLY FAIL
-   72% of referral shares now happen on mobile devices, with 65% of those shares going through messaging apps rather than email (AppsFlyer, 2024). Every piece of referral copy must be written for sharing via iMessage, WhatsApp, and Telegram — not just email forwarding. The referral message shared to a friend must preview correctly, be short enough to read in a message thread, and lead with the new customer's benefit, not the referrer's.
+   72% of referral shares now happen on mobile devices, with 65% of those shares going through messaging apps rather than email (AppsFlyer, 2024). Every piece of referral copy must be written for sharing via iMessage, WhatsApp, and Telegram - not just email forwarding. The referral message shared to a friend must preview correctly, be short enough to read in a message thread, and lead with the new customer's benefit, not the referrer's.
 
-7. REFERRED USERS ARE HIGHER-VALUE — COPY SHOULD REFLECT THAT
-   Referred customers have 37% higher retention at the 24-month mark compared to customers acquired through paid search (Deloitte, 2024). Airbnb's internal data showed referred users had 16% higher lifetime value than non-referred users. This means referral acquisition is not just cheaper — it is better-quality. The landing page copy and confirmation copy should reflect this premium: the tone toward the new customer arriving via referral should communicate that they are arriving as a trusted introduction, not as an anonymous lead.
+7. REFERRED USERS ARE HIGHER-VALUE - COPY SHOULD REFLECT THAT
+   Referred customers have 37% higher retention at the 24-month mark compared to customers acquired through paid search (Deloitte, 2024). Airbnb's internal data showed referred users had 16% higher lifetime value than non-referred users. This means referral acquisition is not just cheaper - it is better-quality. The landing page copy and confirmation copy should reflect this premium: the tone toward the new customer arriving via referral should communicate that they are arriving as a trusted introduction, not as an anonymous lead.
 
 ------------------------------------------------------------
 FORMAT A: REFERRAL INVITATION EMAIL (SENT TO EXISTING CUSTOMERS TO INVITE THEM TO REFER)
 ------------------------------------------------------------
 
 Use when: Emailing existing customers to invite them to join the referral program and share their personal referral link or code.
-Goal: Drive share rate — the percentage of active customers who share at least once. A share rate above 5% is strong for consumer products. Below 1% usually means the share moment is buried or the reward is unclear (Extole benchmarks).
+Goal: Drive share rate - the percentage of active customers who share at least once. A share rate above 5% is strong for consumer products. Below 1% usually means the share moment is buried or the reward is unclear (Extole benchmarks).
 Trigger timing: Send immediately after first value delivery (post-purchase, post-first-use, post-first-result).
 
 Required inputs: Brand | Product/Service | Referral Incentive (what referrer gets) | Referee Incentive (what new customer gets) | Target Audience | Voice/Tone
@@ -50,9 +50,9 @@ Required inputs: Brand | Product/Service | Referral Incentive (what referrer get
 REFERRAL INVITATION EMAIL STRUCTURE:
 
 Subject Line (2 options to A/B):
-Option 1 — Lead with the new customer's reward: "Give a friend [reward] — you get [reward] when they [action]"
-Option 2 — Lead with recognition of the referrer's satisfaction: "You seem to be enjoying [Product] — have someone to share it with?"
-Target: 41-50 characters. Avoid subject lines that lead with "Earn" — they read as a marketing push, not a peer recommendation.
+Option 1 - Lead with the new customer's reward: "Give a friend [reward] - you get [reward] when they [action]"
+Option 2 - Lead with recognition of the referrer's satisfaction: "You seem to be enjoying [Product] - have someone to share it with?"
+Target: 41-50 characters. Avoid subject lines that lead with "Earn" - they read as a marketing push, not a peer recommendation.
 
 Preview text:
 Extends the subject. Names both rewards in one line if they were not both in the subject.
@@ -63,10 +63,10 @@ Start with acknowledgment of the customer's experience, not the referral offer.
 Do NOT open with "We have an exciting opportunity for you."
 
 Body (3-5 sentences):
-Sentence 1: Name what the referred friend will get — the new customer's reward first.
+Sentence 1: Name what the referred friend will get - the new customer's reward first.
 Sentence 2: Name what the referrer gets, and when it arrives.
-Sentence 3: Name the share mechanism — is it a link, a code, or a direct send option?
-Sentence 4 (optional): One sentence of social proof — "6,400 [Brand] customers have already referred a friend this month."
+Sentence 3: Name the share mechanism - is it a link, a code, or a direct send option?
+Sentence 4 (optional): One sentence of social proof - "6,400 [Brand] customers have already referred a friend this month."
 Sentence 5: Name the expiry of the offer if applicable.
 
 CTA (first-person, benefit-named button):
@@ -85,11 +85,11 @@ Keep under 160 characters so it reads as a text, not a press release.
 FORMAT B: REFERRAL LANDING PAGE COPY (THE PAGE NEW REFERRALS LAND ON)
 ------------------------------------------------------------
 
-Use when: A referred visitor clicks a referral link and arrives on a dedicated landing page. This is the highest-stakes copy moment in the referral funnel — the visitor arrived because someone they trust sent them here.
-Goal: Convert the referred click to a signup or first purchase. Referred traffic converts at 3-5x paid ad rates — the copy should confirm and reinforce the trust already established by the referrer.
+Use when: A referred visitor clicks a referral link and arrives on a dedicated landing page. This is the highest-stakes copy moment in the referral funnel - the visitor arrived because someone they trust sent them here.
+Goal: Convert the referred click to a signup or first purchase. Referred traffic converts at 3-5x paid ad rates - the copy should confirm and reinforce the trust already established by the referrer.
 Key constraint: One CTA. No navigation. The page mirrors the referral message the visitor just received.
 
-Required inputs: Brand | Product/Service | Referee Incentive (what new customer gets) | Referral Incentive (what referrer gets — visible to new customer for transparency) | Target Audience | Voice/Tone
+Required inputs: Brand | Product/Service | Referee Incentive (what new customer gets) | Referral Incentive (what referrer gets - visible to new customer for transparency) | Target Audience | Voice/Tone
 
 REFERRAL LANDING PAGE STRUCTURE:
 
@@ -101,7 +101,7 @@ If referrer name is not dynamic: "[Brand] customers give [reward] to their frien
 [blank line]
 
 SUBHEADLINE (1-2 sentences):
-Confirm what [Brand] is and the primary benefit — one sentence. Then confirm the reward terms.
+Confirm what [Brand] is and the primary benefit - one sentence. Then confirm the reward terms.
 "[Brand] is [one-sentence product description]. Your [reward] applies automatically when you [action]."
 
 [blank line]
@@ -109,14 +109,14 @@ Confirm what [Brand] is and the primary benefit — one sentence. Then confirm t
 SOCIAL PROOF BLOCK (above the fold):
 One piece of evidence that other people trust this brand.
 Options: "Trusted by [number] customers in [countries]" / Star rating with platform and count / A short quote from another customer with name and result.
-Do not use "Thousands of happy customers" — this is the moment the visitor is deciding whether to trust the referrer's judgment. Vague claims undermine that trust.
+Do not use "Thousands of happy customers" - this is the moment the visitor is deciding whether to trust the referrer's judgment. Vague claims undermine that trust.
 
 [blank line]
 
 HOW IT WORKS (3 steps, maximum):
 Step 1: "[Create your account / Complete your first order / Start your trial]"
 Step 2: "[Your [reward] is applied automatically / arrives within [timeframe]]"
-Step 3: "[Refer your own friends and get [referrer reward]] — introduce the pay-it-forward dynamic"
+Step 3: "[Refer your own friends and get [referrer reward]] - introduce the pay-it-forward dynamic"
 Keep each step to one sentence. No paragraph explanations.
 
 [blank line]
@@ -130,7 +130,7 @@ Effort: "Setup takes under [time]."
 [blank line]
 
 CTA (first-person, reward-specific):
-"Claim My [Reward]" / "Start My Free Trial — $25 Applied" / "Get My [Reward] Now"
+"Claim My [Reward]" / "Start My Free Trial - $25 Applied" / "Get My [Reward] Now"
 Objection microcopy below the button: "No credit card required." / "Your [reward] is already waiting."
 
 ------------------------------------------------------------
@@ -142,30 +142,30 @@ Goal: Confirm the action worked, deliver the reward expectation, and prime the r
 
 Required inputs: Brand | Product/Service | Referral Incentive (what referrer gets) | Referee Incentive (what new customer gets) | Trigger Event (share sent / referral converted) | Voice/Tone
 
-VERSION 1 — SHARE SENT CONFIRMATION (immediately after referrer shares their link):
+VERSION 1 - SHARE SENT CONFIRMATION (immediately after referrer shares their link):
 
-Subject line: "Your [reward] is on its way — [Referrer name]'s referral link is live"
+Subject line: "Your [reward] is on its way - [Referrer name]'s referral link is live"
 Preview text: "Here is exactly when and how you will receive it."
 
 Opening line: "Your referral link is live. [Friend's name or 'Your friend'] will see it now."
 Body (3 sentences):
-- Name what happens next in the referral funnel — what must the friend do to trigger the reward?
+- Name what happens next in the referral funnel - what must the friend do to trigger the reward?
 - Name the referrer's reward and the exact delivery timing: "$25 credit arrives in your account within 24 hours of [friend's first purchase]."
 - Acknowledge the referrer's trust in the brand: "Thank you for sharing [Brand] with someone you know."
-CTA: "Track your referrals" — link to the referral dashboard.
+CTA: "Track your referrals" - link to the referral dashboard.
 P.S.: "Know someone else who would benefit? Your link works every time."
 
-VERSION 2 — REWARD CONFIRMATION (after referred friend converts — sent to BOTH parties):
+VERSION 2 - REWARD CONFIRMATION (after referred friend converts - sent to BOTH parties):
 
 TO THE REFERRER:
-Subject line: "It worked — your $[amount] credit just landed"
+Subject line: "It worked - your $[amount] credit just landed"
 Preview text: "Here is what you earned and how to use it."
-Body: Name the reward amount, confirm it has been applied, and name exactly where to use it. One sentence of genuine thanks: "You helped [friend or 'a new customer'] find [Brand] — that means a lot to us and to them." CTA: "See my credit" or "Use my [reward] now." P.S.: "Share again and your next [reward] is already set up."
+Body: Name the reward amount, confirm it has been applied, and name exactly where to use it. One sentence of genuine thanks: "You helped [friend or 'a new customer'] find [Brand] - that means a lot to us and to them." CTA: "See my credit" or "Use my [reward] now." P.S.: "Share again and your next [reward] is already set up."
 
 TO THE NEW CUSTOMER (referee):
-Subject line: "Welcome to [Brand] — your [reward] is applied"
+Subject line: "Welcome to [Brand] - your [reward] is applied"
 Preview text: "[Referrer name or 'A friend'] brought you here. Here is your gift."
-Body: Confirm the reward. Name where to find it in their account. One sentence reinforcing the referral trust chain: "Your [reward] is a thank-you from [Referrer name or 'the person who recommended us']." CTA: "Start using [Brand]" — link to onboarding or product. P.S.: "Love [Brand]? Refer a friend and give them [referee reward] too — you get [referrer reward] when they join."
+Body: Confirm the reward. Name where to find it in their account. One sentence reinforcing the referral trust chain: "Your [reward] is a thank-you from [Referrer name or 'the person who recommended us']." CTA: "Start using [Brand]" - link to onboarding or product. P.S.: "Love [Brand]? Refer a friend and give them [referee reward] too - you get [referrer reward] when they join."
 
 ------------------------------------------------------------
 THREE CONTENT PILLAR GUIDANCE
@@ -174,15 +174,15 @@ THREE CONTENT PILLAR GUIDANCE
 For a complete referral program, generate copy across these three pillar types:
 
 PILLAR 1 - TRUST TRANSFER (Format A):
-The referral invitation email speaks peer-to-peer, not brand-to-customer. Every word must make the existing customer feel like they are doing a friend a favor — not executing a marketing task. The reward is real, but it is framed as a bonus for generosity, not a payment for acquisition.
-Example topics: Post-first-purchase referral invites, post-first-result referral invites, milestone-triggered referral prompts ("You have been with us for 6 months — know someone else who would benefit?").
+The referral invitation email speaks peer-to-peer, not brand-to-customer. Every word must make the existing customer feel like they are doing a friend a favor - not executing a marketing task. The reward is real, but it is framed as a bonus for generosity, not a payment for acquisition.
+Example topics: Post-first-purchase referral invites, post-first-result referral invites, milestone-triggered referral prompts ("You have been with us for 6 months - know someone else who would benefit?").
 
 PILLAR 2 - FRICTIONLESS CONVERSION (Format B):
-The referral landing page has one job: convert the warm trust the referrer has already built into a signup or purchase. Every element that creates friction — navigation, secondary offers, vague reward terms — bleeds conversion from a warm audience. The page must be the fastest path from "my friend sent me here" to "I am in."
+The referral landing page has one job: convert the warm trust the referrer has already built into a signup or purchase. Every element that creates friction - navigation, secondary offers, vague reward terms - bleeds conversion from a warm audience. The page must be the fastest path from "my friend sent me here" to "I am in."
 Example topics: First-visit landing pages, A/B-tested reward-headline variants, mobile-optimized single-column referral pages.
 
 PILLAR 3 - COMPOUNDING RECOGNITION (Format C):
-The confirmation and thank-you messages are the mechanism that drives repeat referrals. A referrer who receives an immediate reward confirmation with a clear "share again" prompt is 2.6x more likely to refer again (Extole, 2023). This pillar also catches the new customer at their highest-trust moment — just after a friend vouched for the brand — and introduces the pay-it-forward mechanic before they have had time to form their own skepticism.
+The confirmation and thank-you messages are the mechanism that drives repeat referrals. A referrer who receives an immediate reward confirmation with a clear "share again" prompt is 2.6x more likely to refer again (Extole, 2023). This pillar also catches the new customer at their highest-trust moment - just after a friend vouched for the brand - and introduces the pay-it-forward mechanic before they have had time to form their own skepticism.
 Example topics: Immediate share-sent confirmations, reward-landed emails, welcome emails to referred new customers.
 
 ------------------------------------------------------------
@@ -203,22 +203,22 @@ Save to output/Referral/
 RULES SUMMARY
 ------------------------------------------------------------
 
-- Both rewards (referrer and referee) must be named explicitly in every referral touchpoint — never "earn rewards"
-- The referee's reward is named first in every piece of copy — the referrer's confidence to share depends on knowing their friend benefits
+- Both rewards (referrer and referee) must be named explicitly in every referral touchpoint - never "earn rewards"
+- The referee's reward is named first in every piece of copy - the referrer's confidence to share depends on knowing their friend benefits
 - Reward timing must be stated precisely: "within 24 hours of first purchase" not "rewards pending"
 - Mobile share messages: under 160 characters, benefit-first, no corporate language
 - Landing page: one CTA, no navigation, first-person button copy
-- No vague social proof ("thousands of happy customers") — use specific numbers, ratings, or named results
+- No vague social proof ("thousands of happy customers") - use specific numbers, ratings, or named results
 - Every stat names its source and year
-- Confirmation emails must be sent immediately after the triggering event — delayed rewards produce 2.6x fewer repeat referrals
+- Confirmation emails must be sent immediately after the triggering event - delayed rewards produce 2.6x fewer repeat referrals
 - SELF-CHECK: After drafting each referral asset, verify: Are both rewards explicitly named? Is the referee reward named first? Is reward timing stated precisely? Is the CTA first-person and benefit-specific? If any answer is no, revise before outputting.
-- BATCH DEDUPLICATION: If generating multiple referral emails in one session, no two subject lines may share the same structure. The invitation email, confirmation email, and thank-you email must each carry a distinct message — share moment, reward arrival, and repeat nudge respectively.
+- BATCH DEDUPLICATION: If generating multiple referral emails in one session, no two subject lines may share the same structure. The invitation email, confirmation email, and thank-you email must each carry a distinct message - share moment, reward arrival, and repeat nudge respectively.
 
 ------------------------------------------------------------
 FAILURE MODES TO AVOID
 ------------------------------------------------------------
 
-1. LEADING WITH THE REFERRER'S REWARD BEFORE THE FRIEND'S: Writing "Earn $25 for every friend you refer" before mentioning what the friend gets. The referrer's barrier to sharing is not "what do I get" — it is "will I look good recommending this to my friend?" Lead with the friend's benefit to lower the social friction.
+1. LEADING WITH THE REFERRER'S REWARD BEFORE THE FRIEND'S: Writing "Earn $25 for every friend you refer" before mentioning what the friend gets. The referrer's barrier to sharing is not "what do I get" - it is "will I look good recommending this to my friend?" Lead with the friend's benefit to lower the social friction.
 
 2. VAGUE REWARD LANGUAGE: "Earn amazing rewards," "exclusive benefits," or "special offer." These phrases require the reader to investigate further to understand what they are being offered. By the time they investigate, most have bounced. Name the reward in the first sentence of every referral touchpoint.
 
@@ -226,4 +226,4 @@ FAILURE MODES TO AVOID
 
 4. REWARD CONFIRMATION DELAYS: Telling a referrer their reward will arrive "in 3-5 business days" after the referral converts. The psychological window for reinforcement closes fast. Delayed reward delivery reduces repeat referral behavior by 2.6x (Extole, 2023). Set up immediate or same-day delivery and communicate it in the confirmation.
 
-5. NO REPEAT REFERRAL NUDGE: Treating the program as a one-time transaction. Morning Brew's referral program converted approximately 30% of existing subscribers into active referrers because it reminded them of the next reward tier every time they reached a milestone. Every confirmation email must include a "share again" prompt that names the next reward — not just a thank-you.
+5. NO REPEAT REFERRAL NUDGE: Treating the program as a one-time transaction. Morning Brew's referral program converted approximately 30% of existing subscribers into active referrers because it reminded them of the next reward tier every time they reached a milestone. Every confirmation email must include a "share again" prompt that names the next reward - not just a thank-you.

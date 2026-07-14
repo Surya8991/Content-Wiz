@@ -6,7 +6,7 @@ THREE FORMATS AVAILABLE: Standard Post / Carousel Caption / Poll Post
 
 BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
 
-Voice/Tone: [formal B2B / conversational / first-person — default: brand account, professional B2B]
+Voice/Tone: [formal B2B / conversational / first-person - default: brand account, professional B2B]
 
 Once the brand is confirmed, select the format below.
 
@@ -164,7 +164,7 @@ OUTPUT FORMAT
 ------------------------------------------------------------
 
 For single post requests:
-Output labeled sections: HOOK | TENSION | PEAK | CTC | HASHTAGS | FIRST COMMENT (URL + CTA of 10–20 words: imperative verb + specific benefit. Example: 'Full framework with ROI calculator in comments — save this for your next budget conversation.')
+Output labeled sections: HOOK | TENSION | PEAK | CTC | HASHTAGS | FIRST COMMENT (URL + CTA of 10–20 words: imperative verb + specific benefit. Example: 'Full framework with ROI calculator in comments - save this for your next budget conversation.')
 
 For bulk requests (CSV):
 Sr. No. | Format | Topic | URL (for first comment) | Post Content | First Comment Content

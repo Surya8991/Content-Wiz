@@ -65,7 +65,7 @@ TEXT_PROMPT_MAP = {
     "linkedin_newsletter": ("LinkedIn_Newsletter_Prompt.txt",     "LinkedIn_Newsletter"),
     "li_newsletter":       ("LinkedIn_Newsletter_Prompt.txt",     "LinkedIn_Newsletter"),
     "youtube_shorts":      ("YouTube_Shorts_Prompt.txt",          "YouTube_Shorts"),
-    "shorts":              ("YouTube_Shorts_Prompt.txt",          "YouTube_Shorts"),
+    "yt_shorts":           ("YouTube_Shorts_Prompt.txt",          "YouTube_Shorts"),
     "aso":                 ("ASO_Copy_Prompt.txt",                "ASO"),
     "app_store":           ("ASO_Copy_Prompt.txt",                "ASO"),
     "battlecard":          ("Competitive_Battlecard_Prompt.txt",  "Battlecards"),

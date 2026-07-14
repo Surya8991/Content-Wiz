@@ -14,8 +14,8 @@ Create LinkedIn Sponsored Content ad copy for [BRAND NAME], [BRAND DESCRIPTION],
 
 Landing Page URL: [INSERT URL]
 Campaign Goal: [e.g. Webinar sign-up / Lead gen / Course promotion / Content download]
-Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
-CTA Button: [Apply / Download / Get Quote / Learn More / Register / Sign Up / Subscribe / View Website — pick one LinkedIn native option]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account - default: professional B2B]
+CTA Button: [Apply / Download / Get Quote / Learn More / Register / Sign Up / Subscribe / View Website - pick one LinkedIn native option]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
@@ -24,7 +24,7 @@ OUTPUT FORMAT (CSV)
 Ad Variation | Introductory Text | Ad Body Copy | Headline | CTA Button
 
 Field encoding: wrap any field containing commas or line breaks in double quotes.
-Introductory Text must open with the audience pain point or a concrete statistic — not with the brand name.
+Introductory Text must open with the audience pain point or a concrete statistic - not with the brand name.
 CTA Button must be exactly one of the LinkedIn native options: Apply / Download / Get Quote / Learn More / Register / Sign Up / Subscribe / View Website.
 
 Save to output/LinkedIn_Ads/

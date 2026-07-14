@@ -6,7 +6,7 @@ THREE FORMATS AVAILABLE: Pre-Launch Teaser Copy / Launch Day Copy / Post-Launch 
 
 BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
 
-Voice/Tone: [bold / confident / benefit-forward — default: brand account, specific and outcome-led, no corporate fluff]
+Voice/Tone: [bold / confident / benefit-forward - default: brand account, specific and outcome-led, no corporate fluff]
 
 Once the brand is confirmed, select the format below.
 
@@ -16,8 +16,8 @@ LAUNCH COPY RULES (2025 DATA) - READ BEFORE GENERATING ANY FORMAT
 
 These constraints apply to all product launch copy. Violating them undermines awareness, adoption, and revenue in the launch window.
 
-1. POSITIONING BEFORE COPY — ALWAYS
-   The most common launch failure pattern is writing copy before locking positioning. Every downstream asset — the landing page headline, the email subject line, the social announcement — must say the same thing. The copy framework is: WHO is this for + WHAT does it do + WHY now (the differentiator). If these three are not resolved before writing starts, the output will fracture across channels.
+1. POSITIONING BEFORE COPY - ALWAYS
+   The most common launch failure pattern is writing copy before locking positioning. Every downstream asset - the landing page headline, the email subject line, the social announcement - must say the same thing. The copy framework is: WHO is this for + WHAT does it do + WHY now (the differentiator). If these three are not resolved before writing starts, the output will fracture across channels.
 
 2. THE LAUNCH WINDOW IS THE HIGHEST-LEVERAGE MOMENT
    26% of total annual product sales occur within the first 90 days of launch (SHNO, 2024). Copy quality in this window has an asymmetric impact on full-year revenue. A defined go-to-market process yields 10% higher success rates and three times greater revenue growth versus ad-hoc launches (SHNO, 2024). Every word written in this window is worth more than copy written six months later.
@@ -38,11 +38,11 @@ These constraints apply to all product launch copy. Violating them undermines aw
    Email launch copy prioritizes the subject line and the first sentence. Social launch copy prioritizes the hook and the first line before truncation. Landing page launch copy prioritizes the headline and the CTA. PR launch copy prioritizes the lede and the executive quote. Generate these as distinct assets, not rephrased versions of each other.
 
 ------------------------------------------------------------
-FORMAT A: PRE-LAUNCH TEASER COPY (BUILD ANTICIPATION — EMAIL + SOCIAL)
+FORMAT A: PRE-LAUNCH TEASER COPY (BUILD ANTICIPATION - EMAIL + SOCIAL)
 ------------------------------------------------------------
 
 Use when: 1-3 weeks before launch, building a warm pre-launch audience.
-Goal: Drive waitlist signups, early-access requests, or "notify me" captures — not yet a sale or download.
+Goal: Drive waitlist signups, early-access requests, or "notify me" captures - not yet a sale or download.
 Best cadence: 2-3 teaser touchpoints over the pre-launch window. One reveal at a time.
 
 Required inputs: Brand | Product Name | Key Differentiator | Target Audience | Launch Date | Price Point (if public pre-launch) | Voice/Tone
@@ -50,8 +50,8 @@ Required inputs: Brand | Product Name | Key Differentiator | Target Audience | L
 TEASER EMAIL STRUCTURE:
 
 Subject Line (2 options to A/B):
-Option 1 — Curiosity gap: name the problem without revealing the solution.
-Option 2 — Direct benefit tease: name the outcome, withhold the mechanism.
+Option 1 - Curiosity gap: name the problem without revealing the solution.
+Option 2 - Direct benefit tease: name the outcome, withhold the mechanism.
 Target: 41-50 characters; avoid revealing the full product name until launch day.
 
 Preview text (1 line):
@@ -63,7 +63,7 @@ The reader should feel "this is about me" within the first sentence.
 
 Body (3-5 sentences):
 Name the problem. Agitate why existing solutions fall short. Tease that a better way exists.
-Do not reveal full product details — maintain anticipation. Name the launch date explicitly.
+Do not reveal full product details - maintain anticipation. Name the launch date explicitly.
 
 CTA (1 line, first-person button copy):
 "Join the Waitlist" / "Get Early Access" / "Notify Me on [Date]"
@@ -73,31 +73,31 @@ P.S. line:
 One-sentence benefit or social proof teaser. "The first 500 signups get [specific early-access benefit]."
 
 TEASER SOCIAL POST STRUCTURE (platform-agnostic short form):
-Line 1 (hook, standalone): State the problem or the tension — never the product name yet.
+Line 1 (hook, standalone): State the problem or the tension - never the product name yet.
 Lines 2-3: Agitate. Name the cost of the status quo in concrete terms.
 Lines 4-5: Tease the solution in one sentence without full disclosure.
-CTA line: "Waitlist link in comments [launch date]" — never put the URL in the post body.
+CTA line: "Waitlist link in comments [launch date]" - never put the URL in the post body.
 
 ------------------------------------------------------------
 FORMAT B: LAUNCH DAY COPY (ANNOUNCEMENT ACROSS ALL CHANNELS)
 ------------------------------------------------------------
 
 Use when: Launch day. This is the single highest-leverage day in the product's revenue window.
-Goal: Drive immediate action — trial signup, purchase, demo request, or download — from the pre-launch warm list and cold audiences simultaneously.
+Goal: Drive immediate action - trial signup, purchase, demo request, or download - from the pre-launch warm list and cold audiences simultaneously.
 Key constraint: All channels must carry the same positioning. One message, multiple formats.
 
 Required inputs: Brand | Product Name | Key Differentiator | Target Audience | Launch Date | Price Point | Social Proof Assets Available | Voice/Tone
 
-LAUNCH DAY EMAIL (warm list — highest-intent audience):
+LAUNCH DAY EMAIL (warm list - highest-intent audience):
 
-Subject line: Name the outcome or the exact differentiator. Do not tease — the list already knows this is coming. "It is here: [Product Name] — [one-line differentiator]."
+Subject line: Name the outcome or the exact differentiator. Do not tease - the list already knows this is coming. "It is here: [Product Name] - [one-line differentiator]."
 Preview text: Confirm what they will get when they click. "Start [specific action] in under [timeframe]."
 
 Opening line: Acknowledge the anticipation directly. "Today is the day." Or name the pain one final time before revealing the solution.
 
 Body structure:
 - Name the problem solved (1-2 sentences).
-- Name the differentiator (what this does that alternatives cannot) — 1 sentence.
+- Name the differentiator (what this does that alternatives cannot) - 1 sentence.
 - List 3 specific outcomes or features as bullets (outcome-led, not feature-led).
 - Include one piece of social proof if available (beta tester quote, early-access stat, press mention).
 - Name the price point, any launch-day offer, and the expiry if applicable.
@@ -106,43 +106,43 @@ CTA (first-person, benefit-specific): "Start My Free Trial" / "Get [Product Name
 P.S. line: Restate the launch-day offer and its deadline in one sentence.
 
 LAUNCH DAY SOCIAL POST (organic announcement):
-Hook (line 1, standalone): The differentiator or the outcome — make it specific enough that the right person feels it immediately.
+Hook (line 1, standalone): The differentiator or the outcome - make it specific enough that the right person feels it immediately.
 Body (3-6 lines): Problem → Solution → 3 outcome bullets → social proof if available.
-CTA line: "Link in first comment" — never in the post body.
+CTA line: "Link in first comment" - never in the post body.
 Hashtags: 3-5 relevant hashtags, last always [BRAND HASHTAG].
 
 LAUNCH DAY PRESS QUOTE (for PR or media outreach):
 CEO/Founder quote (2-3 sentences): Opens with the market problem, names the positioning, ends with the vision.
-Format: "For too long, [audience] has had to [status quo pain]. [Product Name] changes that by [differentiator]. We built this so that [audience outcome in plain language]." — [Name, Title]
+Format: "For too long, [audience] has had to [status quo pain]. [Product Name] changes that by [differentiator]. We built this so that [audience outcome in plain language]." - [Name, Title]
 
 ------------------------------------------------------------
 FORMAT C: POST-LAUNCH FOLLOW-UP COPY (CAPTURE LATE INTEREST + REVIEWS)
 ------------------------------------------------------------
 
-Use when: 7-30 days post-launch. The launch window is still open. 26% of annual product sales happen in the first 90 days — post-launch copy captures the audience that watched but did not yet act.
+Use when: 7-30 days post-launch. The launch window is still open. 26% of annual product sales happen in the first 90 days - post-launch copy captures the audience that watched but did not yet act.
 Goal: Convert fence-sitters, collect early reviews, and surface social proof for the next wave of outreach.
-Key constraint: Post-launch copy must reflect real-world usage signals — early testimonials, usage stats, press coverage — not just launch-day promises.
+Key constraint: Post-launch copy must reflect real-world usage signals - early testimonials, usage stats, press coverage - not just launch-day promises.
 
 Required inputs: Brand | Product Name | Key Differentiator | Target Audience | Early Results/Social Proof (if available) | Re-engagement Offer (if any) | Voice/Tone
 
 POST-LAUNCH EMAIL SEQUENCE (3 emails, 7-day cadence):
 
-Email 1 — Day 7, "How it is going" update:
+Email 1 - Day 7, "How it is going" update:
 Subject: "[Specific result] [X] customers achieved in week 1" or "What happened after launch"
 Body: Share a specific early result or testimonial. Name the outcome, the person (with permission), and the timeframe. Restate the CTA for people who have not yet acted.
 
-Email 2 — Day 14, Objection crusher:
+Email 2 - Day 14, Objection crusher:
 Subject: "The question we get most about [Product Name]" or "Is [Product Name] right for [you/your team]?"
 Body: Name the single most common objection or hesitation. Answer it directly in 3-5 sentences. Offer a low-friction next step: free trial, demo, or FAQ page.
 
-Email 3 — Day 30, Social proof consolidation:
+Email 3 - Day 30, Social proof consolidation:
 Subject: "[Number] [audience] are now [achieving outcome] with [Product Name]"
 Body: Lead with a concrete usage stat or testimonial. Frame the offer as still available. Create urgency if a launch-price window is closing.
 
 REVIEW REQUEST COPY (for early customers):
 Subject: "Quick question about your first [X days] with [Product Name]"
-Body (3 sentences): Name what they have done with the product so far (personalize if possible). Ask one specific question: "What has been the most useful part for you so far?" Then make the review ask: "If [Product Name] has been helpful, a 2-minute review on [platform] would mean a lot to us — and help others in [audience] find it."
-CTA: "Leave a quick review" — link directly to the review platform.
+Body (3 sentences): Name what they have done with the product so far (personalize if possible). Ask one specific question: "What has been the most useful part for you so far?" Then make the review ask: "If [Product Name] has been helpful, a 2-minute review on [platform] would mean a lot to us - and help others in [audience] find it."
+CTA: "Leave a quick review" - link directly to the review platform.
 
 ------------------------------------------------------------
 THREE CONTENT PILLAR GUIDANCE
@@ -159,7 +159,7 @@ Post-launch copy earns its credibility from early users, not launch-day promises
 Example topics: Day 7 and Day 14 follow-up emails, review requests, case study outreach.
 
 PILLAR 3 - URGENCY AND MOMENTUM (Format B and C):
-Launch windows close. Early pricing expires. Social momentum fades. Copy that names a real deadline or a real scarcity (founding price, limited beta cohort, launch-week bonus) closes the gap between "interested" and "converted." Never fabricate scarcity — it destroys trust and compounds into a brand problem.
+Launch windows close. Early pricing expires. Social momentum fades. Copy that names a real deadline or a real scarcity (founding price, limited beta cohort, launch-week bonus) closes the gap between "interested" and "converted." Never fabricate scarcity - it destroys trust and compounds into a brand problem.
 Example topics: Launch-day CTAs, launch-week deadline emails, early-adopter offer closes.
 
 ------------------------------------------------------------
@@ -179,15 +179,15 @@ RULES SUMMARY
 ------------------------------------------------------------
 
 - Lock positioning (WHO + WHAT + WHY NOW) before writing any copy
-- One positioning message across all launch channels — no contradictions between email, social, and landing page
+- One positioning message across all launch channels - no contradictions between email, social, and landing page
 - No passive voice; no superlatives without evidence ("revolutionary," "game-changing," "industry-leading")
-- Pre-launch copy never reveals the full product — one reveal at a time
+- Pre-launch copy never reveals the full product - one reveal at a time
 - Every stat and social proof element names its source, person, or result explicitly
 - CTA copy is always first-person and benefit-specific
-- No external URLs in social post bodies — links go in the first comment
+- No external URLs in social post bodies - links go in the first comment
 - Post-launch copy must use real-world results, not launch-day promises
 - SELF-CHECK: After drafting each launch asset, verify: Does it carry the same positioning as the other assets in this suite? Is the CTA first-person and benefit-named? Is there at least one concrete outcome named (not just a feature described)? If any answer is no, revise before outputting.
-- BATCH DEDUPLICATION: Within a launch suite, no two emails may share a subject line structure. No two social posts may share a hook. Each asset advances the narrative — awareness (teaser) → decision (launch day) → conversion (post-launch).
+- BATCH DEDUPLICATION: Within a launch suite, no two emails may share a subject line structure. No two social posts may share a hook. Each asset advances the narrative - awareness (teaser) → decision (launch day) → conversion (post-launch).
 
 ------------------------------------------------------------
 FAILURE MODES TO AVOID
@@ -201,4 +201,4 @@ FAILURE MODES TO AVOID
 
 4. FABRICATED URGENCY: "Only 3 spots left!" when there are 3,000. "Price increases midnight!" when it does not. Audiences have been trained to recognize fake scarcity. When the deadline passes and nothing changes, trust is permanently damaged. Use only real constraints.
 
-5. SKIPPING THE POST-LAUNCH WINDOW: Stopping all outreach after launch week. The data shows 26% of annual product sales happen in the first 90 days — and the audience that watched the launch announcement but did not act is the warmest pool of potential customers available. Post-launch copy is not optional; it is where late-majority conversions live.
+5. SKIPPING THE POST-LAUNCH WINDOW: Stopping all outreach after launch week. The data shows 26% of annual product sales happen in the first 90 days - and the audience that watched the launch announcement but did not act is the warmest pool of potential customers available. Post-launch copy is not optional; it is where late-majority conversions live.

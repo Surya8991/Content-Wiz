@@ -12,7 +12,7 @@ TEMPLATE
 
 Create a Pinterest post for [BRAND NAME], [BRAND DESCRIPTION], for the blog post titled "[BLOG TITLE]". Generate a Title and Description. The title should be concise and descriptive with a subtitle. The description should be 1-2 sentences matching the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: B2B language) targeting [TARGET AUDIENCE], followed by 4-5 relevant hashtags with the last hashtag always being [BRAND HASHTAG]. Whatever the brand's market register, write in Pinterest's native register: visual and aspirational rather than corporate, favoring sensory or outcome-framed language ("picture your team...", "the resource your next planning cycle needs") over dry feature statements. Do not use em dashes.
 
-Voice/Tone: [aspirational / educational / how-to — default: visual and aspirational, matching brand register]
+Voice/Tone: [aspirational / educational / how-to - default: visual and aspirational, matching brand register]
 Blog URL: [INSERT BLOG URL]
 
 ------------------------------------------------------------
@@ -45,4 +45,4 @@ FAILURE MODES TO AVOID
 
 3. HASHTAGS NOT RELATED TO THE PIN TOPIC: Generic hashtags (#business, #success) generate noise impressions, not relevant traffic. Every hashtag must be directly searchable by the target audience for this specific pin topic.
 
-4. DESCRIPTION THAT REPEATS THE TITLE VERBATIM: The description must add new information — the transformation or context — not restate what the title already said. A viewer who reads both should get two distinct pieces of information.
+4. DESCRIPTION THAT REPEATS THE TITLE VERBATIM: The description must add new information - the transformation or context - not restate what the title already said. A viewer who reads both should get two distinct pieces of information.

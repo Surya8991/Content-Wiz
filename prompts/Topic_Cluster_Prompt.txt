@@ -13,7 +13,7 @@ TEMPLATE
 Create a topic cluster and pillar content strategy for [BRAND NAME], [BRAND DESCRIPTION], around the core topic "[PILLAR TOPIC]". Identify 1 pillar page topic with a recommended title and target keyword. Then generate 8-10 cluster content ideas that support the pillar, each with a suggested title, target keyword, content type (blog / FAQ / guide / listicle), and a 1–2 sentence angle description (max 40 words) stating the reader problem and the specific angle. Example: 'Most L&D managers track training hours, not skill application. This cluster shows how to build a behavior-change measurement system.' A topic label ('training ROI') fails this test. Map how each cluster piece links back to the pillar. Target audience is [TARGET AUDIENCE]. Match the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: clear, professional B2B tone), favoring analytical, structured clarity over conversational voice - this is a research and strategy-planning artifact, not reader-facing copy, so precision matters more than personality. Do not use em dashes. Avoid passive voice.
 
 Reference URL (if any): [INSERT URL]
-Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account - default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
@@ -43,7 +43,7 @@ RULES
 FAILURE MODES TO AVOID
 ------------------------------------------------------------
 
-1. Cluster topic that overlaps with the pillar page in intent — each cluster piece must have a distinct angle that the pillar does not already cover.
-2. Angle description that is a topic label not a reader-problem statement — 'training ROI' fails; 'Most L&D managers track training hours, not skill application. This cluster shows how to build a behavior-change measurement system.' passes.
-3. All cluster topics targeting the same intent type — vary between informational, transactional, and navigational angles across the cluster.
-4. Primary keyword too broad to target on a cluster post — cluster keywords must be specific enough to rank at the spoke level, not compete with the pillar page.
+1. Cluster topic that overlaps with the pillar page in intent - each cluster piece must have a distinct angle that the pillar does not already cover.
+2. Angle description that is a topic label not a reader-problem statement - 'training ROI' fails; 'Most L&D managers track training hours, not skill application. This cluster shows how to build a behavior-change measurement system.' passes.
+3. All cluster topics targeting the same intent type - vary between informational, transactional, and navigational angles across the cluster.
+4. Primary keyword too broad to target on a cluster post - cluster keywords must be specific enough to rank at the spoke level, not compete with the pillar page.

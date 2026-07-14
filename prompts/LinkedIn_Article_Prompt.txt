@@ -22,7 +22,7 @@ REQUIRED INPUTS
 
 Brand: [BRAND NAME OR URL]
 Author: [Name and title of the person this article is authored by]
-Voice/Tone: [formal B2B / conversational professional / first-person narrative — default: first-person, professional]
+Voice/Tone: [formal B2B / conversational professional / first-person narrative - default: first-person, professional]
 Topic: [Primary subject - one sentence]
 Primary Claim: [The single most counterintuitive or specific argument the article makes]
 Key Evidence: [2 to 4 stats or findings with source and year]

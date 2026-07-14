@@ -10,10 +10,10 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Write a Reddit post for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]" suitable for the subreddit "[TARGET SUBREDDIT e.g. r/humanresources / r/learnprogramming / r/projectmanagement]". The post should feel like a genuine community contribution, not a brand promotion. Write in a conversational, peer-to-peer tone. Share one specific insight, observation, or scenario (2–4 sentences) that a community member would recognise from their own experience. State it concretely — name the situation, the outcome, or the number. Do not open with a generalisation ('Many people think...'). Include 1-2 relevant stats to add credibility. Do not mention [BRAND NAME] in the body unless it feels completely natural. If a URL is included, present it as a helpful resource, not an advertisement. Do not use em dashes. Target audience is [TARGET AUDIENCE].
+Write a Reddit post for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]" suitable for the subreddit "[TARGET SUBREDDIT e.g. r/humanresources / r/learnprogramming / r/projectmanagement]". The post should feel like a genuine community contribution, not a brand promotion. Write in a conversational, peer-to-peer tone. Share one specific insight, observation, or scenario (2–4 sentences) that a community member would recognise from their own experience. State it concretely - name the situation, the outcome, or the number. Do not open with a generalisation ('Many people think...'). Include 1-2 relevant stats to add credibility. Do not mention [BRAND NAME] in the body unless it feels completely natural. If a URL is included, present it as a helpful resource, not an advertisement. Do not use em dashes. Target audience is [TARGET AUDIENCE].
 
 Reference URL (if any): [INSERT URL]
-Voice/Tone: [peer-to-peer conversational / community member / neutral discussion starter — default: conversational, no promotional register]
+Voice/Tone: [peer-to-peer conversational / community member / neutral discussion starter - default: conversational, no promotional register]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
@@ -45,7 +45,7 @@ RULES
 FAILURE MODES TO AVOID
 ------------------------------------------------------------
 
-1. Post that reads as a press release or brand announcement — no product names in the opening sentences.
-2. Title that doesn't give the reader a reason to open the post — titles need a hook, not just a topic label.
-3. Post body under 100 words with only a question and no substance — ground the question in a concrete scenario or data point.
-4. Any promotional link in the body — if a URL is included, it must appear as a contextual resource, not a CTA.
+1. Post that reads as a press release or brand announcement - no product names in the opening sentences.
+2. Title that doesn't give the reader a reason to open the post - titles need a hook, not just a topic label.
+3. Post body under 100 words with only a question and no substance - ground the question in a concrete scenario or data point.
+4. Any promotional link in the body - if a URL is included, it must appear as a contextual resource, not a CTA.

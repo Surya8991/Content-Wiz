@@ -10,13 +10,13 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Write a course or training programme description for [BRAND NAME], [BRAND DESCRIPTION], for the programme titled "[COURSE / TRAINING TITLE]". The description should be 150-200 words. Open with a compelling statement about the problem or skill gap the course addresses. Follow with what participants will learn (3-4 key outcomes), who the course is designed for, the format and duration, and Close with a CTA of 15–25 words: imperative verb, specific outcome, URL placeholder. Example: 'Enrol now to build a skills framework your team will actually use — [URL].'. Match the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: professional B2B tone) targeting [TARGET AUDIENCE] (e.g. L&Ds, HRs, and decision-makers). Do not use em dashes. Avoid passive voice.
+Write a course or training programme description for [BRAND NAME], [BRAND DESCRIPTION], for the programme titled "[COURSE / TRAINING TITLE]". The description should be 150-200 words. Open with a compelling statement about the problem or skill gap the course addresses. Follow with what participants will learn (3-4 key outcomes), who the course is designed for, the format and duration, and Close with a CTA of 15–25 words: imperative verb, specific outcome, URL placeholder. Example: 'Enrol now to build a skills framework your team will actually use - [URL].'. Match the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: professional B2B tone) targeting [TARGET AUDIENCE] (e.g. L&Ds, HRs, and decision-makers). Do not use em dashes. Avoid passive voice.
 
 Course URL: [INSERT URL]
 Course Format: [e.g. Instructor-led / Online self-paced / Blended]
 Duration: [e.g. 2 days / 16 hours / 6 weeks]
 Key Topics Covered: [LIST 3-5 KEY TOPICS]
-Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account - default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
@@ -52,6 +52,6 @@ FAILURE MODES TO AVOID
 
 2. WORD COUNT UNDER 150 DUE TO OMITTED OUTCOMES SECTION: If the learning outcomes paragraph is skipped or condensed to one item, the description will fall below 150 words. Include 3–4 concrete outcomes every time.
 
-3. CTA MISSING A SPECIFIC OUTCOME PROMISE: A CTA such as "Enrol today — [URL]" does not pass. The CTA must name what the learner will be able to do or achieve. Use the 15–25 word format with an outcome clause.
+3. CTA MISSING A SPECIFIC OUTCOME PROMISE: A CTA such as "Enrol today - [URL]" does not pass. The CTA must name what the learner will be able to do or achieve. Use the 15–25 word format with an outcome clause.
 
 4. GENERIC OPENING: An opening sentence such as "This course covers leadership fundamentals for modern managers" is a format statement. Replace it with a skill-gap hook: "Most managers are promoted for technical expertise, then left to figure out people leadership on their own."

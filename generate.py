@@ -367,6 +367,71 @@ def make_filename(platform_label, key, index=None):
     return f"{safe}{suffix}_{timestamp}{ext}"
 
 
+# Specialized templates in cro.py / product.py / ugc.py require domain-specific
+# args (brand, product, offer, cta_text, …) that the standard CLI only knows as
+# --topic, --audience, and --platform.  This table maps those standard kwargs into
+# the extra args each function needs, so the CLI works out-of-the-box with sensible
+# placeholder values.  Direct Python callers can still pass the full arg list.
+_SPECIALIZED_KWARGS = {
+    "landing_page_lead_gen": lambda t, a, p: {
+        "brand": t, "offer": t, "cta_text": "[INSERT CTA TEXT]",
+        "social_proof": "[INSERT: key customer proof point]",
+    },
+    "landing_page_sales": lambda t, a, p: {
+        "brand": t, "product": t, "key_benefit": t,
+        "price_point": "[Contact for pricing]", "cta_text": "[INSERT CTA TEXT]",
+    },
+    "cta_variants": lambda t, a, p: {
+        "action": t, "benefit": t, "urgency_level": "medium",
+    },
+    "trust_signals_block": lambda t, a, p: {
+        "testimonial_name": "[Customer Name]", "result_metric": t, "company_size": "mid-market",
+    },
+    "hero_headline_formula": lambda t, a, p: {
+        "outcome": t, "timeframe": "30 days",
+    },
+    "positioning_statement": lambda t, a, p: {
+        "brand": t, "product": t, "category": t,
+        "differentiator": "[INSERT PRIMARY DIFFERENTIATOR]",
+    },
+    "launch_announcement": lambda t, a, p: {
+        "product": t, "key_benefit": t, "cta": "[INSERT CTA LINK]", "channel": "all",
+    },
+    "pre_launch_teaser": lambda t, a, p: {
+        "product": t, "launch_date": "[INSERT LAUNCH DATE]", "hook": t, "cta": "Join the waitlist",
+    },
+    "messaging_hierarchy": lambda t, a, p: {
+        "product": t, "primary_message": t,
+        "supporting_points": "[INSERT SUPPORTING POINTS]",
+        "proof_point": "[INSERT KEY PROOF POINT]",
+    },
+    "launch_email_sequence": lambda t, a, p: {
+        "product": t, "benefit": t, "cta_url": "[INSERT CTA LINK]",
+    },
+    "ugc_video_brief": lambda t, a, p: {
+        "brand": t, "product": t, "platform": p,
+        "hook_direction": t,
+        "dos": "[Add specific creative DO directions here]",
+        "donts": "[Add specific DON'T directions here]",
+        "cta": "[INSERT CTA]",
+    },
+    "testimonial_request": lambda t, a, p: {
+        "brand": t, "product": t, "customer_name": "[Customer Name]",
+        "result_achieved": t, "platform": p,
+    },
+    "creator_brief": lambda t, a, p: {
+        "brand": t, "campaign_name": t, "creator_tier": "micro",
+        "deliverables": "[1 TikTok video or Instagram Reel]",
+        "key_message": t, "disclosure_required": "yes",
+    },
+    "photo_brief": lambda t, a, p: {
+        "brand": t, "product": t, "usage_rights": "organic and paid social",
+        "style_direction": "[natural light, lifestyle context]",
+        "required_elements": t,
+    },
+}
+
+
 def build_prompt(key, topic, audience, wordcount, platform_label, platform_target,
                  title=None, from_platform="blog", source_content=None, market=None):
     kwargs = {
@@ -388,6 +453,10 @@ def build_prompt(key, topic, audience, wordcount, platform_label, platform_targe
     fn = getattr(templates, key, None)
     if fn is None:
         raise ValueError(f"No template found for key '{key}'.")
+
+    if key in _SPECIALIZED_KWARGS:
+        kwargs.update(_SPECIALIZED_KWARGS[key](topic, audience, platform_target or platform_label))
+
     return fn(**kwargs)
 
 

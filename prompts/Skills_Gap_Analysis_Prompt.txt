@@ -10,12 +10,12 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Write a skills gap analysis report for [BRAND NAME], [BRAND DESCRIPTION], for the industry or role "[INDUSTRY / ROLE / FUNCTION e.g. HR professionals in financial services / Project managers in tech companies]". The report should be 1200-1800 words and structured as follows: an executive summary, a market context section on why this skill gap matters now, identification of the top 5-8 skills gaps with evidence, the business impact of each gap, recommended training interventions for each gap, and a conclusion with a CTA linking to [URL]. Conclusion (80–120 words): state the 2 highest-priority gaps, the recommended first action, and a CTA of 15–25 words naming a specific next step. Example CTA: 'Start with a skills assessment workshop — [URL] to book a diagnostic session.' Include at least 5 credible statistics or research references. Write in an authoritative, data-led tone targeting [TARGET AUDIENCE e.g. L&Ds, HRs, and decision-makers]. Do not use em dashes. Avoid passive voice. Naturally position [BRAND NAME] as the training partner that closes these gaps without being promotional.
+Write a skills gap analysis report for [BRAND NAME], [BRAND DESCRIPTION], for the industry or role "[INDUSTRY / ROLE / FUNCTION e.g. HR professionals in financial services / Project managers in tech companies]". The report should be 1200-1800 words and structured as follows: an executive summary, a market context section on why this skill gap matters now, identification of the top 5-8 skills gaps with evidence, the business impact of each gap, recommended training interventions for each gap, and a conclusion with a CTA linking to [URL]. Conclusion (80–120 words): state the 2 highest-priority gaps, the recommended first action, and a CTA of 15–25 words naming a specific next step. Example CTA: 'Start with a skills assessment workshop - [URL] to book a diagnostic session.' Include at least 5 credible statistics or research references. Write in an authoritative, data-led tone targeting [TARGET AUDIENCE e.g. L&Ds, HRs, and decision-makers]. Do not use em dashes. Avoid passive voice. Naturally position [BRAND NAME] as the training partner that closes these gaps without being promotional.
 
 Industry / Role Focus: [INSERT e.g. HR professionals / Sales teams / Project managers]
 Reference URL: [INSERT URL]
 Training Solutions to Reference (optional): [INSERT COURSE NAMES OR LEAVE BLANK]
-Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account - default: professional B2B]
 
 ------------------------------------------------------------
 REPORT STRUCTURE
@@ -63,7 +63,7 @@ RULES
 FAILURE MODES TO AVOID
 ------------------------------------------------------------
 
-1. Gap identified at department level instead of skill level — each row must name a discrete, trainable skill, not a broad function like 'communication'.
-2. Intervention named without a delivery method or time estimate — 'leadership training' fails; 'a 3-day in-person facilitation workshop, 4–6 weeks to competency' passes.
-3. Word count under 1,200 due to skipped Evidence section — every gap must carry named evidence, not just an assertion.
-4. CTA that promotes a product feature instead of a specific diagnostic action — close with an actionable next step (e.g., a skills assessment) not a product page link.
+1. Gap identified at department level instead of skill level - each row must name a discrete, trainable skill, not a broad function like 'communication'.
+2. Intervention named without a delivery method or time estimate - 'leadership training' fails; 'a 3-day in-person facilitation workshop, 4–6 weeks to competency' passes.
+3. Word count under 1,200 due to skipped Evidence section - every gap must carry named evidence, not just an assertion.
+4. CTA that promotes a product feature instead of a specific diagnostic action - close with an actionable next step (e.g., a skills assessment) not a product page link.

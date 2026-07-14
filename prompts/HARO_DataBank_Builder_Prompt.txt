@@ -4,7 +4,7 @@ HARO DATA BANK BUILDER PROMPT
 
 BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
 
-Voice/Tone: [Analytical and precise — this is an internal research tool, not public content]
+Voice/Tone: [Analytical and precise - this is an internal research tool, not public content]
 
 PURPOSE:
 This prompt guides the process of mining internal reports, client data, and verified
@@ -18,21 +18,21 @@ DATABANK CSV SCHEMA (do not deviate)
 
 Columns in the order they appear in HARO_DataBank.csv:
 
-1. Claim          — The precise, quotable statistical statement. No vague hedging.
+1. Claim          - The precise, quotable statistical statement. No vague hedging.
                     Example: "Organizations that invest in structured onboarding programs
                     see 82% improvement in new hire retention rates."
-2. Source         — Organization that produced the original research.
+2. Source         - Organization that produced the original research.
                     Example: "Society for Human Resource Management (SHRM)"
-3. URL            — Direct link to the original report, study, or page.
+3. URL            - Direct link to the original report, study, or page.
                     Must return a 200 OK response at time of entry.
-4. Year           — Publication or data collection year of the source. Not the year you
+4. Year           - Publication or data collection year of the source. Not the year you
                     found it. If the source spans multiple years, use the most recent data year.
-5. Context        — One sentence explaining when and how to use this stat.
+5. Context        - One sentence explaining when and how to use this stat.
                     Example: "Use in L&D / HR content about onboarding ROI."
-6. Quotable Version — A publication-ready sentence combining claim + source + year in one
+6. Quotable Version - A publication-ready sentence combining claim + source + year in one
                     flowing line. Example: "According to SHRM's 2022 research, organizations
                     with structured onboarding programs see 82% improvement in new hire retention."
-7. Topic Tags     — Comma-separated tags for filtering.
+7. Topic Tags     - Comma-separated tags for filtering.
                     Example: "onboarding, retention, L&D, HR, training"
 
 ------------------------------------------------------------
@@ -52,14 +52,14 @@ ALGORITHM:
 Step 1: Read the document in full. List every sentence that contains a specific
 number, percentage, rate, ratio, dollar amount, or time duration.
 
-Step 2: For each candidate stat, apply the following filter — remove any that are:
+Step 2: For each candidate stat, apply the following filter - remove any that are:
 - Projections or forecasts without a data methodology footnote
 - Industry estimates not backed by primary research
 - Stats attributed to unnamed or generic sources ("studies show", "research indicates")
 - Stats already present in HARO_DataBank.csv (check before adding)
 
 Step 3: For each surviving stat, draft a DataBank row in the exact schema above.
-- The Claim must match what the source actually says — do not improve or reframe the number
+- The Claim must match what the source actually says - do not improve or reframe the number
 - The Quotable Version must cite the exact organization name and year
 - Topic Tags must include the brand's core topic areas (e.g. "corporate training, L&D, HR")
 
@@ -68,7 +68,7 @@ Flag any stat you are less than 100% certain is accurately captured with [VERIFY
 start of the Claim field.
 
 OUTPUT FORMAT:
-CSV table with headers. Save to data/HARO_DataBank.csv (append mode — do not overwrite
+CSV table with headers. Save to data/HARO_DataBank.csv (append mode - do not overwrite
 existing rows). Flag [VERIFY] rows for human review before use.
 
 ------------------------------------------------------------
@@ -84,7 +84,7 @@ Step 1: Read every row in data/HARO_DataBank_PENDING.csv.
 
 Step 2: For each row that has [PLACEHOLDER] in the Claim or URL field:
 - WebSearch for the exact organization and report referenced in the Source field
-- Find the specific figure cited — confirm the number, year, and framing match
+- Find the specific figure cited - confirm the number, year, and framing match
 - If found and verified: complete the row (fill URL, confirm Year, finalize Claim),
   mark it VERIFIED in a temporary notes column
 - If not found after a real search effort: mark it UNVERIFIABLE and note what search
@@ -125,7 +125,7 @@ Step 3: For each report, state the URL where it can be found or requested.
 
 Step 4: Flag which reports are freely available vs. gated (require registration or purchase).
 
-Step 5: Output a research queue — a prioritized list of source documents to read and mine
+Step 5: Output a research queue - a prioritized list of source documents to read and mine
 using Format A of this prompt.
 
 OUTPUT FORMAT:
@@ -138,9 +138,9 @@ RULES SUMMARY
 ------------------------------------------------------------
 
 - Never add a stat to HARO_DataBank.csv without verifying the primary source URL returns 200
-- Never reframe, improve, or reword a statistic — quote it as the source states it
+- Never reframe, improve, or reword a statistic - quote it as the source states it
 - Never add a stat attributed to a vague or generic source ("studies show", "research indicates")
-- Never add a duplicate — check existing rows before inserting
+- Never add a duplicate - check existing rows before inserting
 - Every Quotable Version must include: organization name + specific report/year + precise figure
 - [VERIFY] and [PLACEHOLDER] rows must never be used in client-facing content
 - SELF-CHECK: Before outputting any row, confirm: (1) URL is live, (2) Year matches the
@@ -157,7 +157,7 @@ FAILURE MODES TO AVOID
    collected. For a 2023 report on 2022 data, Year = 2022.
 
 3. MISQUOTED FIGURE: Rounding, improving, or reframing the original number. If the source
-   says "approximately 40%", the Claim must say "approximately 40%" — not "40%" or "over 40%".
+   says "approximately 40%", the Claim must say "approximately 40%" - not "40%" or "over 40%".
 
 4. DUPLICATE ROWS: Adding a stat already present in the DataBank under a slightly different
    phrasing. Always search the existing CSV for the organization name before adding.

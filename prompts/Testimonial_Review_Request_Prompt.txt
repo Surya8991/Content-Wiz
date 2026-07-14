@@ -10,11 +10,11 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Write a testimonial or review request email for [BRAND NAME], [BRAND DESCRIPTION], to be sent to [RECIPIENT TYPE e.g. past training participants / corporate clients / course completers]. The email should thank the recipient for their engagement, reinforce value in 1–2 sentences (20–40 words), naming the specific outcome or transformation the recipient experienced. Example: 'The compliance training you completed last month cut your team's incident reports by 30% — that's a real result.' Avoid: 'We hope you enjoyed the training.' Then make a low-friction ask in 1 sentence (15–25 words): name the specific platform, estimate the time (e.g., '2 minutes'), and make the action clear. Example: 'Could you leave a 2-minute review on Google? It helps others make the same decision you did.' The ask is for either a written testimonial or a review on [PLATFORM e.g. Google / LinkedIn / Trustpilot / G2]. Include a direct link to the review page at [REVIEW URL]. Keep the tone genuine, appreciative, and conversational. Do not use em dashes. Avoid passive voice. Keep the email under 150 words.
+Write a testimonial or review request email for [BRAND NAME], [BRAND DESCRIPTION], to be sent to [RECIPIENT TYPE e.g. past training participants / corporate clients / course completers]. The email should thank the recipient for their engagement, reinforce value in 1–2 sentences (20–40 words), naming the specific outcome or transformation the recipient experienced. Example: 'The compliance training you completed last month cut your team's incident reports by 30% - that's a real result.' Avoid: 'We hope you enjoyed the training.' Then make a low-friction ask in 1 sentence (15–25 words): name the specific platform, estimate the time (e.g., '2 minutes'), and make the action clear. Example: 'Could you leave a 2-minute review on Google? It helps others make the same decision you did.' The ask is for either a written testimonial or a review on [PLATFORM e.g. Google / LinkedIn / Trustpilot / G2]. Include a direct link to the review page at [REVIEW URL]. Keep the tone genuine, appreciative, and conversational. Do not use em dashes. Avoid passive voice. Keep the email under 150 words.
 
 Review Platform URL: [INSERT URL]
 Recipient Type: [e.g. Corporate HR client / Individual course completer]
-Voice/Tone: [warm and genuine / formal appreciation / conversational — default: genuine, warm, conversational]
+Voice/Tone: [warm and genuine / formal appreciation / conversational - default: genuine, warm, conversational]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
@@ -23,7 +23,7 @@ OUTPUT FORMAT (CSV)
 Sr. No. | Recipient Type | Review Platform | Subject Line | Email Body
 
 Field encoding: wrap multi-line email bodies in double quotes.
-Subject Line max 60 characters; must reference the specific product, programme, or experience — not a generic 'feedback request'.
+Subject Line max 60 characters; must reference the specific product, programme, or experience - not a generic 'feedback request'.
 Email Body must include: (1) genuine specific value reinforcement, (2) one low-friction ask, (3) review platform link or instruction.
 
 Save to output/Testimonial_Request/
@@ -47,7 +47,7 @@ RULES
 FAILURE MODES TO AVOID
 ------------------------------------------------------------
 
-1. Value reinforcement that is generic and not tied to a specific outcome — 'We hope you enjoyed the training' fails; name a result the recipient experienced.
-2. Email body over 150 words — trim to the core ask if needed.
-3. Subject line over 60 characters — count before outputting.
-4. Asking for a review and a referral in the same email — one ask per email only.
+1. Value reinforcement that is generic and not tied to a specific outcome - 'We hope you enjoyed the training' fails; name a result the recipient experienced.
+2. Email body over 150 words - trim to the core ask if needed.
+3. Subject line over 60 characters - count before outputting.
+4. Asking for a review and a referral in the same email - one ask per email only.

@@ -27,7 +27,7 @@ Brand: [BRAND NAME OR URL]
 Source Content: [Paste full text, paste transcript, or provide URL]
 Target Channel(s): [List the channels to generate derivatives for - or type ALL to use the full map for this source type]
 Priority Derivative: [If generating one piece at a time, name the single target derivative]
-Voice/Tone: [inherits from the source article's brand register — specify override here if a derivative requires a different register, e.g., Twitter = casual, whitepaper = formal]
+Voice/Tone: [inherits from the source article's brand register - specify override here if a derivative requires a different register, e.g., Twitter = casual, whitepaper = formal]
 
 ------------------------------------------------------------
 SOURCE TYPE A: LONG-FORM ARTICLE (9 TO 12 DERIVATIVES)

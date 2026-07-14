@@ -21,7 +21,7 @@ Results: [Specific before-and-after metrics - at least 3 data points with timefr
 Client Quote: [Direct quote from a named client contact - include full name, title, company]
 CTA Destination URL: [URL the case study closes with]
 Output Mode: [A = Full Web Case Study / B = One-Page PDF Summary / Both]
-Voice/Tone: [narrative first-person client POV / brand third-person / journalistic third-person — default: narrative, professional, client-centered]
+Voice/Tone: [narrative first-person client POV / brand third-person / journalistic third-person - default: narrative, professional, client-centered]
 
 ------------------------------------------------------------
 THE BAB-PLUS FRAMEWORK

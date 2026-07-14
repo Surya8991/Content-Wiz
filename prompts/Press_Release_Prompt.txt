@@ -12,7 +12,7 @@ TEMPLATE
 
 Write a press release for [BRAND NAME], [BRAND DESCRIPTION], announcing "[ANNOUNCEMENT/NEWS TOPIC]". Follow standard press release format: headline, dateline, lead paragraph (who, what, when, where, why), body paragraphs with supporting detail, one executive quote attributed to the CEO of [BRAND NAME], and a boilerplate about [BRAND NAME] at the end. Target audience is [TARGET AUDIENCE]. Write in a formal, journalistic tone. If the release cites any statistic or figure, name its source, organization, and year, and never state an unverified or first-party number as fact without attribution. Do not use em dashes. Avoid passive voice. Keep the total length to 400-500 words.
 
-Voice/Tone: [formal journalistic / regulated-industry formal / startup press style — default: formal, journalistic, third-person]
+Voice/Tone: [formal journalistic / regulated-industry formal / startup press style - default: formal, journalistic, third-person]
 URL: [INSERT URL IF APPLICABLE]
 
 ------------------------------------------------------------

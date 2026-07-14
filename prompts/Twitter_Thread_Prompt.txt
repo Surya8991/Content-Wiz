@@ -25,7 +25,7 @@ Primary Claim: [The single most counterintuitive or specific claim the thread ma
 Key Data Points: [2 to 5 stats to cite - each with source and year]
 CTA Destination URL: [URL the final tweet links to]
 Thread Length: [5 to 10 tweets recommended]
-Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account - default: professional B2B]
 
 ------------------------------------------------------------
 THREAD TYPES - CHOOSE ONE
@@ -123,7 +123,7 @@ TWEET 2: [text] [XXX chars]
 TWEET N: [text + URL + hashtags] [XXX chars]
 
 Also output:
-THREAD HOOK SUMMARY: The single sentence from Tweet 1 most likely to be quoted or shared. Must be ≤ 140 characters (half the tweet limit, for easy retweet with comment). It must make a specific, standalone claim — not a question and not a teaser.
+THREAD HOOK SUMMARY: The single sentence from Tweet 1 most likely to be quoted or shared. Must be ≤ 140 characters (half the tweet limit, for easy retweet with comment). It must make a specific, standalone claim - not a question and not a teaser.
 
 For bulk/CSV output:
 Sr. No. | Topic | Source URL | Tweet 1 | Tweet 2 | ... | Tweet N | CTA URL

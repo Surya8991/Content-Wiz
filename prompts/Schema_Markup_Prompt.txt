@@ -43,7 +43,7 @@ Valid JSON-LD block:
 
 JSON-LD must use 2-space indentation.
 Each schema block must include @context, @type, and all Google-required fields for that type.
-Output the JSON-LD only — no prose wrapper, no markdown heading before the code block.
+Output the JSON-LD only - no prose wrapper, no markdown heading before the code block.
 
 Save to output/Schema_Markup/
 
@@ -63,7 +63,7 @@ RULES
 FAILURE MODES TO AVOID
 ------------------------------------------------------------
 
-1. Trailing comma after the last property in a JSON object — this breaks JSON-LD validation.
-2. @context missing or set to a non-schema.org URL — always use 'https://schema.org'.
-3. Required property absent for the chosen schema type — check the type-specific required fields before outputting.
-4. JSON that is valid but does not pass Google Rich Results Test — e.g., datePublished in wrong format (must be ISO 8601: YYYY-MM-DD or YYYY-MM-DDThh:mm:ssZ).
+1. Trailing comma after the last property in a JSON object - this breaks JSON-LD validation.
+2. @context missing or set to a non-schema.org URL - always use 'https://schema.org'.
+3. Required property absent for the chosen schema type - check the type-specific required fields before outputting.
+4. JSON that is valid but does not pass Google Rich Results Test - e.g., datePublished in wrong format (must be ISO 8601: YYYY-MM-DD or YYYY-MM-DDThh:mm:ssZ).

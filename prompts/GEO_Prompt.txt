@@ -28,7 +28,7 @@ Content to Optimize (Mode A): [Paste existing content or provide URL]
 Topic (Mode B): [TOPIC] (target keyword: [INSERT])
 Page URL (Mode C): [URL to audit]
 First-Party Data Available: [Any brand program stats, client outcomes, or original data - leave blank if none]
-Voice/Tone: [formal B2B / conversational B2B / neutral encyclopedic — default: authoritative and direct]
+Voice/Tone: [formal B2B / conversational B2B / neutral encyclopedic - default: authoritative and direct]
 
 ------------------------------------------------------------
 THE CHUNK-OPTIMIZED SECTION FORMAT (CORE STRUCTURE)
@@ -218,7 +218,7 @@ These are the signals that determine whether AI engines (ChatGPT, Perplexity, Go
    AI engines extract the most direct answer available. Content that buries the answer after three paragraphs of context is rarely cited. The first sentence of every GEO block must answer the implied question.
 
 2. ENTITY COVERAGE
-   Content that names and describes the key entities (brands, people, frameworks, tools, research organisations) related to a query is more likely to be cited than content that discusses the topic abstractly. Name entities specifically — "Gallup's 2024 State of the Global Workplace report" outperforms "recent research."
+   Content that names and describes the key entities (brands, people, frameworks, tools, research organisations) related to a query is more likely to be cited than content that discusses the topic abstractly. Name entities specifically - "Gallup's 2024 State of the Global Workplace report" outperforms "recent research."
 
 3. STRUCTURED DATA SIGNALS
    FAQ schema, HowTo schema, and Article schema tell AI crawlers how to parse and excerpt content. Every GEO block should map to one schema type and be formatted to match that schema's expected structure.

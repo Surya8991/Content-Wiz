@@ -6,7 +6,7 @@ THREE FORMATS AVAILABLE: Reel / Carousel Post / Story
 
 BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
 
-Voice/Tone: [educational / aspirational / behind-the-scenes / conversational — default: brand account, visual-first, concise]
+Voice/Tone: [educational / aspirational / behind-the-scenes / conversational - default: brand account, visual-first, concise]
 
 Once the brand is confirmed, select the format below.
 
@@ -20,10 +20,10 @@ These constraints apply to all Instagram content. Violating them reduces distrib
    Reels deliver 1.36x more reach than carousels and 2.25x more reach than single photos. Carousels hold the highest engagement rate at 0.55% (stable year-over-year) and resurface in feeds twice via Instagram's double-exposure mechanic. Static images are in decline at 0.37% engagement, down 17% year-over-year. Choose format based on goal: Reels for reaching non-followers, carousels for converting curious visitors into followers and saves, Stories for deepening relationships with existing followers. (Social Insider, Instagram Engagement Benchmarks 2026.)
 
 2. SENDS PER REACH IS THE #1 SIGNAL FOR NON-FOLLOWER DISTRIBUTION
-   Adam Mosseri publicly identified sends per reach as the single strongest signal for reaching non-followers in January 2025 (Dataslayer, Instagram Algorithm 2025 Complete Guide for Marketers). A DM share is a stronger endorsement signal than a like. Instagram interprets a send as trust — "I trust this enough to put it in someone's inbox" — and that trust signal unlocks Explore and non-follower distribution. Every Reel must include a "send this to someone" prompt. This is not optional engagement bait: it is the primary algorithmic lever for growth.
+   Adam Mosseri publicly identified sends per reach as the single strongest signal for reaching non-followers in January 2025 (Dataslayer, Instagram Algorithm 2025 Complete Guide for Marketers). A DM share is a stronger endorsement signal than a like. Instagram interprets a send as trust - "I trust this enough to put it in someone's inbox" - and that trust signal unlocks Explore and non-follower distribution. Every Reel must include a "send this to someone" prompt. This is not optional engagement bait: it is the primary algorithmic lever for growth.
 
 3. HOOK IN FIRST 3 SECONDS FOR REELS; CAPTION EVERYTHING
-   Instagram's algorithm measures retention past the first 3 seconds of a Reel as a primary ranking signal (Dataslayer, January 2025). Show the payoff first, then earn the watch. Cut every 1-2 seconds to maintain attention. Stay under 90 seconds — Instagram's internal data favors shorter Reels even though the 3-minute limit exists. Caption every Reel because most Instagram video plays without sound. On-screen captions also make the post indexable for keyword search within the app.
+   Instagram's algorithm measures retention past the first 3 seconds of a Reel as a primary ranking signal (Dataslayer, January 2025). Show the payoff first, then earn the watch. Cut every 1-2 seconds to maintain attention. Stay under 90 seconds - Instagram's internal data favors shorter Reels even though the 3-minute limit exists. Caption every Reel because most Instagram video plays without sound. On-screen captions also make the post indexable for keyword search within the app.
 
 4. CAROUSEL DOUBLE EXPOSURE MECHANIC COMPOUNDS REACH OVER TIME
    Instagram can surface carousels twice: once in the feed and once later as a recommendation to the same user, the double-exposure mechanic documented by Social Insider. This means a carousel post has a second chance to reach users who scrolled past it the first time. The mechanism requires high slide completion on the first exposure. Design each slide to earn the next swipe with cliffhangers, numbered steps, or visual continuations where the image bleeds across slides.
@@ -54,17 +54,17 @@ Show the payoff first, then earn the watch. The viewer must understand the rewar
 [blank line]
 
 VISUAL DIRECTION (describe every 5-10 second segment):
-Cut every 1-2 seconds. Name what appears on screen in each segment. Include: setting, talent direction, product appearance if relevant, and any on-screen text overlays. Caption placement: bottom third of frame for most content, avoiding the UI elements at the corners. Note: Cross-posting TikTok Reels with a visible TikTok watermark is prohibited — Instagram's algorithm explicitly reduces recommendation eligibility for watermarked content.
+Cut every 1-2 seconds. Name what appears on screen in each segment. Include: setting, talent direction, product appearance if relevant, and any on-screen text overlays. Caption placement: bottom third of frame for most content, avoiding the UI elements at the corners. Note: Cross-posting TikTok Reels with a visible TikTok watermark is prohibited - Instagram's algorithm explicitly reduces recommendation eligibility for watermarked content.
 
 [blank line]
 
 CAPTION (written separately from the Reel itself):
-First line must be a standalone hook that works without the video — someone reading the caption without watching should still want to engage. Keep the caption under 150 characters for the preview that shows in the feed. Full caption can go to 300 characters before the "more" truncation. One line of body text after the hook. End with a "send this to someone" prompt — this is the most direct way to generate the send signal that unlocks non-follower reach. Then one line CTA. Then hashtags.
+First line must be a standalone hook that works without the video - someone reading the caption without watching should still want to engage. Keep the caption under 150 characters for the preview that shows in the feed. Full caption can go to 300 characters before the "more" truncation. One line of body text after the hook. End with a "send this to someone" prompt - this is the most direct way to generate the send signal that unlocks non-follower reach. Then one line CTA. Then hashtags.
 
 [blank line]
 
 SEND PROMPT (required, last line before hashtags):
-Write one specific "send this to someone" line. It must name who the recipient is: "Send this to someone who just started their first job," "Send this to the teammate who has been asking about [topic]," "Tag someone who needs to hear this." Generic "share with your friends" is not acceptable — name the specific recipient persona.
+Write one specific "send this to someone" line. It must name who the recipient is: "Send this to someone who just started their first job," "Send this to the teammate who has been asking about [topic]," "Tag someone who needs to hear this." Generic "share with your friends" is not acceptable - name the specific recipient persona.
 
 [blank line]
 
@@ -136,7 +136,7 @@ PILLAR 2 - DISCOVERY AND REACH (Format A Reel, 2-3x per week):
 Content designed specifically to reach non-followers through Explore and sends. The hook names a universal frustration or aspiration in the first 3 seconds. The send prompt names a specific recipient persona. Every Reel in this pillar should end with a DM prompt. Example topics: "The one thing stopping your Reels from reaching non-followers," "What 0.55% engagement actually means for your strategy," "Why your follower count is lying to you."
 
 PILLAR 3 - COMMUNITY DEPTH (Format C Stories, 1-2 per day):
-Content that converts passive followers into active community members through stickers, polls, and questions. This pillar exists to maintain the relationship that Reels and Carousels earned. Do not use Stories to repost Feed content without context. Add a poll or question to every Story sequence. Example topics: "Which format do you spend the most time on?", "What is your biggest Instagram frustration this week?", "We are testing something new — reply if you want early access."
+Content that converts passive followers into active community members through stickers, polls, and questions. This pillar exists to maintain the relationship that Reels and Carousels earned. Do not use Stories to repost Feed content without context. Add a poll or question to every Story sequence. Example topics: "Which format do you spend the most time on?", "What is your biggest Instagram frustration this week?", "We are testing something new - reply if you want early access."
 
 ------------------------------------------------------------
 OUTPUT FORMAT
@@ -163,19 +163,19 @@ Save to output/Instagram/
 RULES SUMMARY
 ------------------------------------------------------------
 
-- Format must be chosen before generating — a Reel script is not a Carousel caption
+- Format must be chosen before generating - a Reel script is not a Carousel caption
 - No em dashes anywhere
 - No passive voice
 - Caption preview line (first line) must be under 150 characters
 - 3 to 5 hashtags, last always [BRAND HASHTAG]
 - Every stat names its source and year
-- Send prompt required on every Reel — generic "share with friends" is not acceptable, name the specific recipient persona
+- Send prompt required on every Reel - generic "share with friends" is not acceptable, name the specific recipient persona
 - Saves-focused CTA required on every Carousel ("Save this for [specific situation]")
 - Sticker prompt required every 3-4 slides in Stories
-- No TikTok watermarks on Reels — note this in creative direction
+- No TikTok watermarks on Reels - note this in creative direction
 - SELF-CHECK: After drafting a Reel hook, ask whether it communicates the payoff within 3 seconds without the video playing. If it requires context to make sense, rewrite it. After drafting a Carousel cover slide, ask whether it names a specific number or outcome. If it is a clever phrase without a concrete promise, rewrite it.
 - BATCH DEDUPLICATION: If generating more than one Instagram post in a session, no two posts may share the same hook, the same cover slide headline, or the same send prompt. Vary the angle and the recipient persona post to post. Examples of the pattern (write a new one each time, do not copy these verbatim): "Send this to the teammate who keeps skipping the carousel step.", "Tag someone who is still posting static images every day.", "Send this to your founder who thinks Reels are optional."
-- Source diversity: within a batch of posts on related topics, never anchor more than one post on the exact same stat — reference a distinct data point for each
+- Source diversity: within a batch of posts on related topics, never anchor more than one post on the exact same stat - reference a distinct data point for each
 - Output saved to output/Instagram/
 
 ------------------------------------------------------------

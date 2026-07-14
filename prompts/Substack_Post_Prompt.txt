@@ -6,7 +6,7 @@ THREE FORMATS AVAILABLE: Substack Note / Substack Newsletter Issue / Substack Th
 
 BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
 
-Voice/Tone: [personal / direct / specific — default: first-person author voice, conversational, no corporate language]
+Voice/Tone: [personal / direct / specific - default: first-person author voice, conversational, no corporate language]
 
 Once the brand is confirmed, select the format below.
 
@@ -16,8 +16,8 @@ SUBSTACK ALGORITHM RULES (2025-2026) - READ BEFORE GENERATING ANY FORMAT
 
 These constraints apply to all Substack content. Violating them reduces subscriber acquisition and distribution.
 
-1. NO EXTERNAL LINKS IN NOTES BODY — EVER
-   External links inside a Note body suppress reach significantly. The Substack algorithm deprioritizes Notes with external URLs. The only acceptable link placement is in the first comment below your own Note, or in the pinned welcome Note on your profile. This is not a suggestion — it is the documented behavior of the platform as of 2025. Write the Note; put the link in the comment.
+1. NO EXTERNAL LINKS IN NOTES BODY - EVER
+   External links inside a Note body suppress reach significantly. The Substack algorithm deprioritizes Notes with external URLs. The only acceptable link placement is in the first comment below your own Note, or in the pinned welcome Note on your profile. This is not a suggestion - it is the documented behavior of the platform as of 2025. Write the Note; put the link in the comment.
 
 2. THE CONVERSION UNIT IS EMAIL SUBSCRIBERS, NOT FOLLOWERS
    Substack crossed 50 million active subscriptions in 2025 and paid out over $600 million to creators. The platform's algorithm is explicitly engineered to ask one question when deciding whether to distribute a Note: "Will this reader eventually pay for this writer's work?" Followers on Substack are nearly worthless as a business asset. Measure subscribers per Note, not likes. A 50-like Note that drives 30 new email subscribers beats a 500-like Note that drives 5.
@@ -26,19 +26,19 @@ These constraints apply to all Substack content. Violating them reduces subscrib
    When a writer in your niche restacks your Note, Substack interprets it as an audience match and pushes your content to their readers. A restack from an account with 10,000 subscribers in your niche is worth more than 50 original likes from random accounts. The operational implication: restack 5-10 Notes from larger accounts daily with a quote-comment. When they restack back, that amplification compounds. In late 2025, Substack began treating restacks as fresh content with a second distribution window 1-2 days after the original.
 
 4. DAILY POSTING FOR 90 DAYS IS THE ENTRY COST
-   Notes posters who publish daily grow up to 70% of their subscribers from Notes alone (Substack internal data, 2025). In a three-month window in 2025, 32 million new subscriptions were sourced entirely from within the app — with Notes as the primary driver. Creators who post weekly stall. Daily posters compound because each Note trains the algorithm on what their audience looks like. Creators who quit before day 30 almost universally report no results. Those who publish daily past day 45 almost universally report compounding growth.
+   Notes posters who publish daily grow up to 70% of their subscribers from Notes alone (Substack internal data, 2025). In a three-month window in 2025, 32 million new subscriptions were sourced entirely from within the app - with Notes as the primary driver. Creators who post weekly stall. Daily posters compound because each Note trains the algorithm on what their audience looks like. Creators who quit before day 30 almost universally report no results. Those who publish daily past day 45 almost universally report compounding growth.
 
-5. FOUR PROVEN NOTE FORMATS — USE THEM IN ROTATION
+5. FOUR PROVEN NOTE FORMATS - USE THEM IN ROTATION
    Contrarian take: "Everyone says X. Here is exactly why X is wrong in 2025."
    Vulnerable confession: "I earned zero from my newsletter for 14 months. Here is the specific mistake."
    Generosity Note: Publicly recommend 5-10 writers in your niche by @-handle with a one-line reason for each.
    Behind-the-scenes: Screenshot your analytics, your draft, your reading list, your process.
-   The generosity Note drives the highest restack rates of any format — when a large writer restacks your recommendation of them, it can reach 50,000 new readers at zero cost.
+   The generosity Note drives the highest restack rates of any format - when a large writer restacks your recommendation of them, it can reach 50,000 new readers at zero cost.
 
-6. WINNING NOTES BECOME NEWSLETTERS — WITHIN 7 DAYS
-   Any Note that crosses 100 likes is a confirmed interest signal. Turn it into a full newsletter issue while the audience is warm and traffic is still building. Notes are not just discovery content — they are market research for your next issue. A newsletter issue that fails as a Note will probably underperform as a full issue too.
+6. WINNING NOTES BECOME NEWSLETTERS - WITHIN 7 DAYS
+   Any Note that crosses 100 likes is a confirmed interest signal. Turn it into a full newsletter issue while the audience is warm and traffic is still building. Notes are not just discovery content - they are market research for your next issue. A newsletter issue that fails as a Note will probably underperform as a full issue too.
 
-7. SUBSTACK OPEN RATES ARE 2X THE INDUSTRY BENCHMARK — PROTECT THAT ASSET
+7. SUBSTACK OPEN RATES ARE 2X THE INDUSTRY BENCHMARK - PROTECT THAT ASSET
    Substack email open rates average over 45%, versus roughly 20% for the email industry overall (Substack, 2025). The subscribers acquired through Notes are the most engaged list you can build. Protect the quality of that list by publishing Notes that attract readers genuinely interested in your topic, not engagement-bait that draws clicks from people who will never open your emails.
 
 ------------------------------------------------------------
@@ -51,7 +51,7 @@ Best cadence: 1-3 Notes per day. Frequency is the entry ticket.
 
 Required inputs: Brand | Author Name | Topic | Target Audience | Format (Contrarian / Confession / Generosity / Behind-the-Scenes) | Voice/Tone
 
-Structure — follow these 4 sections exactly:
+Structure - follow these 4 sections exactly:
 
 HOOK (Lines 1-2, standalone):
 The first two lines must work as a complete thought that creates curiosity, tension, or a specific claim.
@@ -73,13 +73,13 @@ Generosity Notes: list each @-handle with a one-sentence reason. Tag the handles
 [blank line]
 
 CLOSE (1-2 lines):
-End with either a specific takeaway the reader can act on, or a question that prompts a reply (not "what do you think?" — something specific to the topic).
+End with either a specific takeaway the reader can act on, or a question that prompts a reply (not "what do you think?" - something specific to the topic).
 Do NOT ask for likes or follows directly.
 
 [blank line]
 
 LINK PLACEMENT (first comment, never the Note body):
-If the Note references a newsletter issue, a resource, or an external article: "Link in comments." Write the first comment text separately, formatted as: "[Resource title/description] — [URL]."
+If the Note references a newsletter issue, a resource, or an external article: "Link in comments." Write the first comment text separately, formatted as: "[Resource title/description] - [URL]."
 
 NOTE FORMAT CHECKLIST:
 - Total word count under 300
@@ -92,17 +92,17 @@ NOTE FORMAT CHECKLIST:
 FORMAT B: SUBSTACK NEWSLETTER ISSUE (FULL LONG-FORM ISSUE, 600-1,500 WORDS)
 ------------------------------------------------------------
 
-Use when: Publishing a full newsletter issue. Notes should have been used to test the topic first — any Note that crossed 100 likes is a confirmed demand signal.
+Use when: Publishing a full newsletter issue. Notes should have been used to test the topic first - any Note that crossed 100 likes is a confirmed demand signal.
 Target length: 600-1,500 words. Focus beats length. A 700-word issue that teaches one thing well outperforms a 2,000-word issue that covers five things superficially.
 Substack email open rate benchmark: 45%+ average vs. 20% industry (Substack, 2025). Write to keep that premium.
 
 Required inputs: Brand | Author Name | Topic | Target Audience | Key Insight or Takeaway | One Supporting Stat or Story | Voice/Tone
 
-Structure — follow these 6 sections exactly:
+Structure - follow these 6 sections exactly:
 
 SUBJECT LINE (email subject, 2 options):
-Option 1 — Specific number or claim: "[Number] [audience] still do [specific wrong thing]"
-Option 2 — Question format: "Why does [common belief] fail for [audience]?"
+Option 1 - Specific number or claim: "[Number] [audience] still do [specific wrong thing]"
+Option 2 - Question format: "Why does [common belief] fail for [audience]?"
 Target: 41-50 characters. The subject line is the only reason the email gets opened.
 
 [blank line]
@@ -114,7 +114,7 @@ Example pair: Subject: "The 3 metrics I stopped tracking" / Preview: "One of the
 [blank line]
 
 OPENING HOOK (first 1-3 sentences):
-Start with a specific scene, a concrete number, or a named observation — not "In this week's issue, I am going to..."
+Start with a specific scene, a concrete number, or a named observation - not "In this week's issue, I am going to..."
 The opening must earn the read. If the reader has to reach the second paragraph to understand what the issue is about, rewrite the first paragraph.
 
 [blank line]
@@ -123,13 +123,13 @@ BODY (the core argument or insight, 400-1,200 words):
 Teach one thing. Name it. Explain why it matters. Give one concrete example or case.
 Use subheads every 200-300 words for scannability.
 Include at least one specific stat with a named source and year.
-Write in the second person ("you") more than the first ("I") — orient toward the reader's situation.
+Write in the second person ("you") more than the first ("I") - orient toward the reader's situation.
 Short paragraphs: 2-3 sentences maximum before a line break.
 
 [blank line]
 
 CALL TO ACTION / UPGRADE NUDGE (1-3 sentences):
-Free issues: One soft CTA at the end — "If this resonated, forward it to one person who would find it useful." Or: "Reply and tell me [specific question about the topic]."
+Free issues: One soft CTA at the end - "If this resonated, forward it to one person who would find it useful." Or: "Reply and tell me [specific question about the topic]."
 Paid tier teaser: "Paid subscribers got the full case study [specific detail] this week. [Subscribe link text goes in comments or the end note]."
 
 [blank line]
@@ -150,17 +150,17 @@ Required inputs: Brand | Author Name | Topic | Target Audience | Number of Notes
 Structure:
 
 THREAD OUTLINE (plan before writing):
-Note 1: The hook — the claim, question, or observation that opens the thread. This is the distribution Note — it must be the strongest of the series.
-Note 2: The evidence — one specific data point, story, or case that proves Note 1's claim.
-Note 3: The complication — the reason the common approach fails, or a counterintuitive angle.
-Note 4 (if included): The system or framework — the practical takeaway.
+Note 1: The hook - the claim, question, or observation that opens the thread. This is the distribution Note - it must be the strongest of the series.
+Note 2: The evidence - one specific data point, story, or case that proves Note 1's claim.
+Note 3: The complication - the reason the common approach fails, or a counterintuitive angle.
+Note 4 (if included): The system or framework - the practical takeaway.
 Note 5-7 (if included): Extensions, examples, or reader questions addressed.
-Final Note: The close — a one-sentence summary of the full thread argument + a gentle subscribe prompt.
+Final Note: The close - a one-sentence summary of the full thread argument + a gentle subscribe prompt.
 
 EACH NOTE IN THE THREAD:
 - Hook (lines 1-2): Works as standalone. The reader does not need Note 1 to understand Note 3.
 - Body: Advances the thread argument. Names the previous Note briefly if relevant ("Yesterday I shared X. Here is what that means in practice.").
-- Link reference: If referencing the previous or next Note, name it in the body — do NOT include external URLs inside the Note.
+- Link reference: If referencing the previous or next Note, name it in the body - do NOT include external URLs inside the Note.
 - Thread marker: Last line of each Note except the final: "Next: [one-sentence tease of the next Note in the thread]."
 
 THREAD SEQUENCING RULES:
@@ -179,11 +179,11 @@ The writer's original point of view on the topic. Backed by specific data, a nam
 Example topics: "The one metric my best issue failed on," "Why the most-shared Substack posts violate every writing rule," framework breakdowns from real issues.
 
 PILLAR 2 - GENEROSITY AND COMMUNITY (Format A: Generosity Note):
-Publicly celebrating other writers in the niche. The generosity Note drives the highest restack rates of any Note format because it triggers a social norm — writers who are named feel compelled to restack the recommendation to their audience. One well-targeted generosity Note can reach 50,000 new readers at zero cost (Substack case study, 2026). Run once per week.
+Publicly celebrating other writers in the niche. The generosity Note drives the highest restack rates of any Note format because it triggers a social norm - writers who are named feel compelled to restack the recommendation to their audience. One well-targeted generosity Note can reach 50,000 new readers at zero cost (Substack case study, 2026). Run once per week.
 Example topics: "The 7 Substack writers I always open immediately," "@-handle recommendations in [niche] worth following this week."
 
 PILLAR 3 - VULNERABILITY AND STORY (Format A: Confession, Format B):
-Personal experience, failure, or counterintuitive discovery. This pillar drives the highest reply rate and the deepest reader connection. Replies from established accounts carry more algorithmic weight than likes — the Substack algorithm treats a reply from a writer with 10,000 subscribers as a strong audience-match signal.
+Personal experience, failure, or counterintuitive discovery. This pillar drives the highest reply rate and the deepest reader connection. Replies from established accounts carry more algorithmic weight than likes - the Substack algorithm treats a reply from a writer with 10,000 subscribers as a strong audience-match signal.
 Example topics: Specific failure stats from a past issue, an honest account of what stopped working and why, the cost of an early mistake.
 
 ------------------------------------------------------------
@@ -205,16 +205,16 @@ Save to output/Substack/
 RULES SUMMARY
 ------------------------------------------------------------
 
-- No external URLs in any Note body — links always go in the first comment below the Note
+- No external URLs in any Note body - links always go in the first comment below the Note
 - Notes: under 300 words, hook must work in first 2 lines
 - Newsletter issues: 600-1,500 words, one core insight, 2-3 sentences per paragraph maximum
-- The four Note formats must be rotated — no more than two consecutive Notes in the same format
+- The four Note formats must be rotated - no more than two consecutive Notes in the same format
 - Every stat names its source and year
 - Measure success by subscribers per Note, not likes per Note
 - Subject lines: 41-50 characters, specific claim or question format
 - P.S. equivalent for newsletters: sign-off is personal, author-voiced, specific to the issue
 - SELF-CHECK: After drafting a Note, verify: Is it under 300 words? Does the hook work in the first 2 lines without reading further? Are there zero external URLs in the Note body? Does it use one of the four proven formats? If any answer is no, revise before outputting.
-- BATCH DEDUPLICATION: If generating multiple Notes in one session, no two Notes may use the same format type consecutively. No two hooks may share the same opening construction. Each Note must advance a different point — do not repeat the same insight rephrased.
+- BATCH DEDUPLICATION: If generating multiple Notes in one session, no two Notes may use the same format type consecutively. No two hooks may share the same opening construction. Each Note must advance a different point - do not repeat the same insight rephrased.
 
 ------------------------------------------------------------
 FAILURE MODES TO AVOID

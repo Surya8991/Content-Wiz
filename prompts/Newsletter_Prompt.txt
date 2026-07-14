@@ -42,7 +42,7 @@ Required inputs:
 - One key insight or data point to anchor the main body
 - CTA destination URL
 - Sender first name
-- Voice/Tone: [formal B2B / conversational / editorial — default: conversational, sender as a named individual]
+- Voice/Tone: [formal B2B / conversational / editorial - default: conversational, sender as a named individual]
 
 Generate each of the 8 blocks below in order.
 

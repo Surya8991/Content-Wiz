@@ -14,7 +14,7 @@ Create a detailed buyer persona for [BRAND NAME], [BRAND DESCRIPTION], for the t
 
 Segment to profile: [TARGET AUDIENCE] (e.g. HR Director / L&D Manager / CEO of SME)
 Industry focus (if any): [INSERT OR LEAVE BLANK]
-Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account - default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
@@ -26,7 +26,7 @@ Rows:
 - Persona Name
 - Job Title and Seniority
 - Industry and Company Size
-- Primary Goals and KPIs: list 2–4 goals, each with a named metric (e.g. 'Reduce time-to-competency — measured by post-training assessment scores, not just completion rate')
+- Primary Goals and KPIs: list 2–4 goals, each with a named metric (e.g. 'Reduce time-to-competency - measured by post-training assessment scores, not just completion rate')
 - Key Pain Points
 - Decision-Making Role
 - Preferred Content Formats: list 3–5 specific formats with one-line rationale explaining why that persona uses each format

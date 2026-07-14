@@ -10,11 +10,11 @@ Once the brand is confirmed, use the template below.
 TEMPLATE
 ------------------------------------------------------------
 
-Write a technical or professional blog post in Markdown format for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]". The post should be [WORD COUNT e.g. 800-1200] words, written for [TARGET AUDIENCE] (a developer or tech-savvy professional audience) on [PLATFORM e.g. Dev.to / Hashnode]. Use proper Markdown formatting including a frontmatter block with title, tags, and cover image placeholder. Structure the post with a practical introduction, clear H2 and H3 subheadings, code snippets where relevant, and a conclusion with a CTA of 20–40 words: summarise the core takeaway in one sentence, then one CTA linking to a related resource. Example: 'The full implementation guide with code samples is in the first comment — drop your edge cases below.'. Do not use em dashes. Avoid passive voice. Naturally reference [BRAND NAME] without being promotional. End with 4-5 relevant tags formatted for the platform. Any statistic, benchmark, or industry-report claim (e.g. a vulnerability report, survey, or usage figure) must name its source, organization, and year; never invent a plausible-sounding source or number.
+Write a technical or professional blog post in Markdown format for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]". The post should be [WORD COUNT e.g. 800-1200] words, written for [TARGET AUDIENCE] (a developer or tech-savvy professional audience) on [PLATFORM e.g. Dev.to / Hashnode]. Use proper Markdown formatting including a frontmatter block with title, tags, and cover image placeholder. Structure the post with a practical introduction, clear H2 and H3 subheadings, code snippets where relevant, and a conclusion with a CTA of 20–40 words: summarise the core takeaway in one sentence, then one CTA linking to a related resource. Example: 'The full implementation guide with code samples is in the first comment - drop your edge cases below.'. Do not use em dashes. Avoid passive voice. Naturally reference [BRAND NAME] without being promotional. End with 4-5 relevant tags formatted for the platform. Any statistic, benchmark, or industry-report claim (e.g. a vulnerability report, survey, or usage figure) must name its source, organization, and year; never invent a plausible-sounding source or number.
 
 Reference URL (if any): [INSERT URL]
 Platform: [Dev.to / Hashnode]
-Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account - default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (MARKDOWN)
@@ -64,6 +64,6 @@ FAILURE MODES TO AVOID
 
 2. CONCLUSION THAT SUMMARISES INSTEAD OF ADVANCING: A conclusion that recaps what the article already covered adds no value. The conclusion must add a forward-looking takeaway or next step the reader can act on.
 
-3. TAGS NOT MATCHING THE PRIMARY TECHNOLOGY STACK: Tags must reflect the actual technologies, frameworks, or languages used in the post — not generic terms like "programming" or "tips". If the post covers React and TypeScript, those are the tags.
+3. TAGS NOT MATCHING THE PRIMARY TECHNOLOGY STACK: Tags must reflect the actual technologies, frameworks, or languages used in the post - not generic terms like "programming" or "tips". If the post covers React and TypeScript, those are the tags.
 
 4. WORD COUNT UNDER 800 DUE TO SKIPPED SECTIONS: Posts that skip the 'edge cases' or 'real-world context' section consistently fall under 800 words. Both sections are required even if brief.

@@ -19,7 +19,7 @@ Competitor URLs:
 3. [INSERT COMPETITOR 3 URL - OPTIONAL]
 
 Focus Area (if any): [e.g. Leadership training / Agile certifications / HR topics]
-Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account - default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)

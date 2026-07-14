@@ -11,7 +11,7 @@ TEMPLATE
 ------------------------------------------------------------
 
 Generate 10 blog topic ideas for [BRAND NAME], [BRAND DESCRIPTION], targeting [TARGET AUDIENCE]. The topics should be SEO-friendly, relevant to the niche "[NICHE/TOPIC AREA]", and suitable for publication on [PLATFORM e.g. Medium / WordPress / brand blog]. For each idea, provide a suggested title, a 1–3 sentence description stating the reader problem and specific angle the piece would take, and the primary target keyword. Do not use em dashes. Topics should range in difficulty and format (listicles, how-tos, guides, thought leadership).
-Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account - default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)

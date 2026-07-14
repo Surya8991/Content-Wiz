@@ -15,7 +15,7 @@ Create Google Search Ad copy for [BRAND NAME], [BRAND DESCRIPTION], for the camp
 Landing Page URL: [INSERT URL]
 Target Keyword: [INSERT KEYWORD]
 Campaign Goal: [e.g. Lead generation / Course sign-up / Blog traffic]
-Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account - default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
@@ -54,21 +54,21 @@ QUALITY SCORE OPTIMISATION
 
 Quality Score (1–10) affects your ad's position and cost-per-click. A score of 7+ reduces CPC by up to 50% vs a score of 3. Three components determine it:
 
-COMPONENT 1 — EXPECTED CTR
+COMPONENT 1 - EXPECTED CTR
 What it measures: How likely users are to click your ad when it appears for a given keyword.
 How to improve with copy:
 - Include the primary keyword in Headline 1 or Headline 2 exactly as the user would search it
 - Use numbers, questions, or power words in headlines to increase click pull
 - Match the emotional register of the search intent (urgent queries need urgent headlines)
 
-COMPONENT 2 — AD RELEVANCE
+COMPONENT 2 - AD RELEVANCE
 What it measures: How closely your ad copy matches the intent behind the keyword.
 How to improve with copy:
-- Never use one ad group for multiple intent types — separate informational, transactional, and navigational keywords into distinct ad groups with distinct copy
+- Never use one ad group for multiple intent types - separate informational, transactional, and navigational keywords into distinct ad groups with distinct copy
 - Mirror the exact language of the search query in the headline, not a synonym
 - If the keyword is a question ("how to measure training ROI"), the headline should answer it directly
 
-COMPONENT 3 — LANDING PAGE EXPERIENCE
+COMPONENT 3 - LANDING PAGE EXPERIENCE
 What it measures: How well the landing page delivers on the promise of the ad.
 How to improve:
 - The H1 of the landing page must echo the primary headline of the ad

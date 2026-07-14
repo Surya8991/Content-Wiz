@@ -6,7 +6,7 @@ THREE FORMATS AVAILABLE: In-Feed Ad / TopView Ad / Spark Ad
 
 BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
 
-Voice/Tone: [native/creator / energetic / conversational / educational — default: native/creator, authentic and unpolished]
+Voice/Tone: [native/creator / energetic / conversational / educational - default: native/creator, authentic and unpolished]
 
 Once the brand is confirmed, select the format below.
 
@@ -23,19 +23,19 @@ These constraints apply to all TikTok Ads content. Violating them increases CPM 
    TikTok measures a metric called Hook Rate: the percentage of viewers who watch at least the first 3 seconds. A hook rate above 30% signals strong content. Below 15% means you are paying for impressions nobody watches. Hook patterns that work consistently: open with the result not the process ("I gained 10,000 followers in 30 days doing this"), ask a question the viewer wants answered ("You are making this mistake with your skincare"), start mid-action with movement and sound already happening, use pattern interrupts with unusual angles or unexpected text overlays. Every generated script must specify the exact first 2-second hook.
 
 3. CREATIVE FATIGUE HITS IN 7-10 DAYS
-   Average creative lifespan on TikTok is 7-10 days before performance degrades. At a frequency above 2.5x — meaning the same user sees the same ad more than 2.5 times — conversions drop 30-40%. High-spend accounts need 3-5 new creative concepts per week. Always recommend a minimum of 3-5 creative variations per ad group. This is the biggest operational difference between TikTok advertising and every other paid platform.
+   Average creative lifespan on TikTok is 7-10 days before performance degrades. At a frequency above 2.5x - meaning the same user sees the same ad more than 2.5 times - conversions drop 30-40%. High-spend accounts need 3-5 new creative concepts per week. Always recommend a minimum of 3-5 creative variations per ad group. This is the biggest operational difference between TikTok advertising and every other paid platform.
 
 4. NATIVE TEXTURE IS NON-NEGOTIABLE
    The moment an ad feels like an ad, users scroll past it within the first second. Lo-fi videos shot on a phone with trending audio and an abrupt hook regularly beat six-figure productions. Key native signals: raw slightly imperfect framing, captions that match TikTok's caption style (not hardcoded subtitles), cuts at natural speech breaks not branded music beds, creator voiceover not professional VO talent. Never repurpose Meta or YouTube creative without re-editing for TikTok. Horizontal video, polished color grading, and corporate voiceovers fail on this platform.
 
 5. SPARK ADS DELIVER 142% HIGHER ENGAGEMENT THAN STANDARD IN-FEED ADS
-   Spark Ads let you take an existing organic TikTok post — from your own account or from a creator who gives permission — and run it as a paid placement. The post keeps all its original likes, comments, and shares. A post with 50,000 organic likes before you start spending will show those 50,000 likes to every new paid viewer. Most experienced TikTok advertisers allocate roughly 80% of budget to Spark Ads and 20% to direct-response In-Feed creative. (TikTok platform data, 2024.)
+   Spark Ads let you take an existing organic TikTok post - from your own account or from a creator who gives permission - and run it as a paid placement. The post keeps all its original likes, comments, and shares. A post with 50,000 organic likes before you start spending will show those 50,000 likes to every new paid viewer. Most experienced TikTok advertisers allocate roughly 80% of budget to Spark Ads and 20% to direct-response In-Feed creative. (TikTok platform data, 2024.)
 
 6. BROAD AUDIENCES OUTPERFORM NARROW TARGETING ON TIKTOK
    Over-targeting backfires. Meta advertisers often stack interest categories into tight audiences. TikTok's algorithm needs room to learn. A broad audience (18-45, relevant country, no interest restrictions) with strong creative will consistently outperform a hyper-targeted audience of 500,000 people. Start broad, use strong creative as your primary filter, and only narrow after you have enough conversion data. Excessively narrow audiences prevent system learning and drive up CPMs without improving conversion rates.
 
 7. TIKTOK DRIVES 1.8X MORE CONVERSIONS RELATIVE TO AD SPEND SHARE
-   TikTok drives 1.8x more conversions relative to its share of ad spend compared to other platforms (2024 data). The platform's ad revenue exceeded $32 billion in 2025, a 24.5% year-over-year increase, and 41% of users say they trust a brand more after seeing it on TikTok — a trust signal no other social platform currently matches. (TikTok Ads Help Center and What's Next 2025 Trend Report.) Q4 CPMs spike 40-60% above Q1 due to advertiser competition during the holiday period.
+   TikTok drives 1.8x more conversions relative to its share of ad spend compared to other platforms (2024 data). The platform's ad revenue exceeded $32 billion in 2025, a 24.5% year-over-year increase, and 41% of users say they trust a brand more after seeing it on TikTok - a trust signal no other social platform currently matches. (TikTok Ads Help Center and What's Next 2025 Trend Report.) Q4 CPMs spike 40-60% above Q1 due to advertiser competition during the holiday period.
 
 ------------------------------------------------------------
 FORMAT A: IN-FEED AD (NATIVE VIDEO IN FOR YOU PAGE)
@@ -106,7 +106,7 @@ Use when: You have an existing organic TikTok post (from your brand account or f
 Spark Ads have 142% higher engagement than standard In-Feed Ads (TikTok platform data, 2024). Most experienced TikTok advertisers allocate 80% of budget to Spark Ads.
 Note: Spark Ads require an authorization code from the creator or your own TikTok account. The post continues to exist organically and accumulates engagement from both paid and organic sources.
 
-Structure — this format evaluates and briefs an existing organic post, not original copy:
+Structure - this format evaluates and briefs an existing organic post, not original copy:
 
 ORGANIC POST EVALUATION CRITERIA (assess before spending):
 Before amplifying any organic post as a Spark Ad, score it against these four signals:
@@ -169,17 +169,17 @@ Save to output/TikTok_Ads/
 RULES SUMMARY
 ------------------------------------------------------------
 
-- Campaign objective must be stated before generating — a Conversions script differs from an Awareness script
+- Campaign objective must be stated before generating - a Conversions script differs from an Awareness script
 - No em dashes anywhere
 - No passive voice
 - No corporate language, buzzwords, or polished transitions in any script
 - Hook Script must be written as a single exact spoken line or on-screen text, not a description
 - Every stat names its source, organization, and year
-- Creative Direction is required on every Format A output — setting, talent type, hook visual, caption style, audio
-- Minimum 3-5 creative variations recommended per ad group — single-creative outputs should note this
+- Creative Direction is required on every Format A output - setting, talent type, hook visual, caption style, audio
+- Minimum 3-5 creative variations recommended per ad group - single-creative outputs should note this
 - SELF-CHECK: After drafting any script, read it aloud. If it sounds like a radio ad or a corporate presentation, rewrite it. If the first line does not make you want to hear the next sentence, the hook has failed. Hook Rate target above 30% should guide the tone.
 - BATCH DEDUPLICATION: If generating more than one ad in a session, no two ads may share the same hook line or the same CTA close. Vary the hook pattern across every ad. Examples of the pattern (write a new one each time, do not copy these verbatim): "You are making this mistake every morning and you do not know it.", "I tried every [product category] on the market. Only this one worked.", "Stop [action]. Here is what to do instead."
-- Source diversity: within a batch of ads for the same campaign, never anchor more than one ad on the same single case study or stat — reference a distinct proof point for each
+- Source diversity: within a batch of ads for the same campaign, never anchor more than one ad on the same single case study or stat - reference a distinct proof point for each
 - Output saved to output/TikTok_Ads/
 
 ------------------------------------------------------------

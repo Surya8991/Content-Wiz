@@ -15,7 +15,7 @@ Write a backlink outreach email for [BRAND NAME], [BRAND DESCRIPTION], to reques
 Resource URL to promote: [INSERT URL]
 Target Website / Page to get a link from: [INSERT TARGET URL]
 Specific page on target site that relates to the resource (if known): [INSERT OR LEAVE BLANK]
-Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account - default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)

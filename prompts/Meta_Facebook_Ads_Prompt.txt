@@ -6,7 +6,7 @@ THREE FORMATS AVAILABLE: Single Image / Video Ad / Carousel Ad / Lead Gen Ad
 
 BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
 
-Voice/Tone: [direct-response / conversational / aspirational / urgency-driven — default: direct-response, benefit-led]
+Voice/Tone: [direct-response / conversational / aspirational / urgency-driven - default: direct-response, benefit-led]
 
 Once the brand is confirmed, select the format below.
 
@@ -68,8 +68,8 @@ Should complete the thought started in the primary text or give the single stron
 HOOK PATTERNS FOR VIDEO SCRIPTS (choose one, write the full first 3-second line):
 
 PATTERN 1 - RESULT OPENER:
-"[Specific result] in [specific timeframe] — here is exactly how."
-Example: "We cut client acquisition cost by half in 90 days — here is the exact framework."
+"[Specific result] in [specific timeframe] - here is exactly how."
+Example: "We cut client acquisition cost by half in 90 days - here is the exact framework."
 
 PATTERN 2 - PROBLEM MIRROR:
 "If you are [specific frustrating situation], this is why."
@@ -177,18 +177,18 @@ Save to output/Meta_Ads/
 RULES SUMMARY
 ------------------------------------------------------------
 
-- Campaign objective must be stated before generating — copy for a Leads objective differs from a Sales objective
+- Campaign objective must be stated before generating - copy for a Leads objective differs from a Sales objective
 - No em dashes anywhere
 - No passive voice
 - Primary text: 125 characters optimal for feed preview; headline: 27 characters max for Format A
 - First line of primary text must never open with the brand name
 - Every stat names its source, organization, and year
-- CTA must be a specific imperative verb plus a specific named outcome — "Learn more" and "Click here" are prohibited
+- CTA must be a specific imperative verb plus a specific named outcome - "Learn more" and "Click here" are prohibited
 - Creative direction is required on every output
 - At least one social proof element per Format A and C ad
 - SELF-CHECK: After drafting primary text, count characters. If over 300, trim the social proof line first. If headline exceeds 27 characters, cut adjectives before cutting the offer noun. Format C intro paragraph: if over 80 words, cut sentence 4 first.
-- BATCH DEDUPLICATION: If generating more than one ad in a session, no two ads may share the same opening line of primary text or the same headline. Vary the hook pattern and the benefit angle across every ad, even for the same product. Examples of the pattern (write a new one each time, do not copy these verbatim): "Still tracking completion, not results?", "Your next cohort starts in weeks — is your team ready?", "The training gap nobody budgets for."
-- Source diversity: within a batch of ads in the same campaign, never anchor more than one ad on the exact same single stat — name a distinct proof point for each
+- BATCH DEDUPLICATION: If generating more than one ad in a session, no two ads may share the same opening line of primary text or the same headline. Vary the hook pattern and the benefit angle across every ad, even for the same product. Examples of the pattern (write a new one each time, do not copy these verbatim): "Still tracking completion, not results?", "Your next cohort starts in weeks - is your team ready?", "The training gap nobody budgets for."
+- Source diversity: within a batch of ads in the same campaign, never anchor more than one ad on the exact same single stat - name a distinct proof point for each
 - Output saved to output/Meta_Ads/
 
 ------------------------------------------------------------
@@ -199,7 +199,7 @@ FAILURE MODES TO AVOID
 
 2. GENERIC CTA: "Learn more" and "Contact us" are placeholders, not calls to action. A CTA must name what the viewer receives in exchange for clicking. "Get the free playbook," "Book your 15-minute audit," and "See the case study" each tell the viewer exactly what happens next.
 
-3. NARROW AUDIENCE COPY: Writing ad copy so specific to a job title that Advantage+ cannot serve it broadly. Copy should speak to a human psychology — the frustration, the aspiration, the fear of missing out — that the target audience shares. Broad psychological resonance combined with Advantage+ targeting outperforms niche copy with narrow audience constraints.
+3. NARROW AUDIENCE COPY: Writing ad copy so specific to a job title that Advantage+ cannot serve it broadly. Copy should speak to a human psychology - the frustration, the aspiration, the fear of missing out - that the target audience shares. Broad psychological resonance combined with Advantage+ targeting outperforms niche copy with narrow audience constraints.
 
 4. IGNORING SOUND-OFF VIEWING: 70% of mobile Meta video plays without sound. Video scripts that rely entirely on voiceover with no on-screen text leave most viewers with no message at all. Every video concept generated must include a text-on-screen strategy that carries the full message without audio.
 

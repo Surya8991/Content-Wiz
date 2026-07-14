@@ -15,7 +15,7 @@ Write an original research report for [BRAND NAME], [BRAND DESCRIPTION], titled 
 Data or Survey Input: [PASTE FINDINGS OR DESCRIBE DATASET]
 Report URL (if published): [INSERT URL]
 Research Focus Area: [e.g. L&D investment trends / Workforce skills gaps / HR priorities]
-Voice/Tone: [authoritative / analytical / accessible B2B — default: authoritative, analytical, third-person]
+Voice/Tone: [authoritative / analytical / accessible B2B - default: authoritative, analytical, third-person]
 
 ------------------------------------------------------------
 REPORT STRUCTURE

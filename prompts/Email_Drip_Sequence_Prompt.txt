@@ -14,8 +14,8 @@ Create a [NUMBER e.g. 5]-email drip sequence for [BRAND NAME], [BRAND DESCRIPTIO
 
 Landing Page / Resource URL: [INSERT URL]
 Lead Magnet or Trigger (if any): [e.g. Downloaded the L&D Guide / Attended Webinar]
-Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
-Sender Persona: [individual / brand — first-person 'I' / 'we' — default: individual]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account - default: professional B2B]
+Sender Persona: [individual / brand - first-person 'I' / 'we' - default: individual]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
@@ -24,7 +24,7 @@ OUTPUT FORMAT (CSV)
 Email No. | Send Timing | Subject Line | Preview Text | Email Body
 
 Field encoding: wrap any field containing commas or line breaks in double quotes.
-Email Body sub-elements: (1) subject line hook restated as opener, (2) core value or insight, (3) CTA — all three required in every email.
+Email Body sub-elements: (1) subject line hook restated as opener, (2) core value or insight, (3) CTA - all three required in every email.
 Subject Line max 60 characters; Preview Text max 90 characters.
 
 Save to output/Email_Drip/
@@ -45,33 +45,33 @@ LIFECYCLE STAGE MAPPING
 
 Select the sequence type that matches the subscriber's lifecycle stage.
 
-STAGE 1 — WELCOME / ONBOARDING
+STAGE 1 - WELCOME / ONBOARDING
 Trigger: New subscriber or new customer sign-up (Day 0)
 Length: 3–5 emails over 7–10 days
 Primary goal: Deliver the promised value and establish the sender relationship
 Tone: Warm, personal, low-friction
-Most important email: Email 2 — this is the first email the subscriber chose to open (Email 1 is expected). Email 2 proves the subscription was worth it.
+Most important email: Email 2 - this is the first email the subscriber chose to open (Email 1 is expected). Email 2 proves the subscription was worth it.
 
-STAGE 2 — ACTIVATION
+STAGE 2 - ACTIVATION
 Trigger: User has not taken the key action within 7–14 days of sign-up
 Length: 2–3 emails over 7 days
 Primary goal: Remove friction between intent and first action
 Tone: Helpful, specific, one-CTA-only
-Most important email: Email 1 — name the exact action they haven't taken and offer to help them take it now.
+Most important email: Email 1 - name the exact action they haven't taken and offer to help them take it now.
 
-STAGE 3 — RETENTION / NURTURE
+STAGE 3 - RETENTION / NURTURE
 Trigger: Active user, periodic cadence (weekly or bi-weekly)
 Length: Ongoing, no fixed end
 Primary goal: Deliver consistent value that reinforces the subscriber's decision to stay
 Tone: Conversational, educational, low-sell
-Most important email: Whichever email in the month contains original data or a named framework — this is the one that gets forwarded.
+Most important email: Whichever email in the month contains original data or a named framework - this is the one that gets forwarded.
 
-STAGE 4 — WIN-BACK
+STAGE 4 - WIN-BACK
 Trigger: No email open or click in 60–90 days
 Length: 3 emails, sent over 2 weeks, then suppress
 Primary goal: Re-establish relevance before permanent list removal
 Tone: Direct, no-nonsense, acknowledge the silence
-Most important email: Email 1 — subject line must break the pattern. "Still want in?" outperforms "We miss you" every time.
+Most important email: Email 1 - subject line must break the pattern. "Still want in?" outperforms "We miss you" every time.
 
 ------------------------------------------------------------
 RULES
@@ -80,7 +80,7 @@ RULES
 - Subject line under 60 characters
 - Preview text under 100 characters
 - Each email body 100-150 words
-- Each email must have exactly one CTA: imperative verb, specific action, 10–20 words. Example: 'Download the behavior-change audit checklist — link below.' A vague CTA ('learn more', 'check it out') fails this test.
+- Each email must have exactly one CTA: imperative verb, specific action, 10–20 words. Example: 'Download the behavior-change audit checklist - link below.' A vague CTA ('learn more', 'check it out') fails this test.
 - Narrative arc must flow logically across all emails
 - Any stat or data point cited (e.g. in the social proof or case study email) must name a source, organization, and year. Never invent a plausible-sounding citation
 - Never reuse the identical subject line or CTA phrasing across multiple sequences generated in the same session - if you are generating more than one drip sequence in a session, no two sequences may share a subject line or CTA phrasing
@@ -96,10 +96,10 @@ FAILURE MODES TO AVOID
 
 1. EMAIL BODY OVER 150 WORDS: Drip emails are read on mobile in under 30 seconds. An email body over 150 words loses the reader before the CTA. Cut to one core point per email.
 
-2. MORE THAN ONE CTA IN A SINGLE EMAIL: Multiple CTAs split attention and reduce click-through. Every email must close with exactly one CTA — the most important action for that stage of the sequence.
+2. MORE THAN ONE CTA IN A SINGLE EMAIL: Multiple CTAs split attention and reduce click-through. Every email must close with exactly one CTA - the most important action for that stage of the sequence.
 
 3. SUBJECT LINE OVER 60 CHARACTERS: Subject lines beyond 60 characters are truncated on most email clients. Count characters before outputting and trim if needed.
 
 4. EMAIL 1 ASKING FOR A SALE BEFORE DELIVERING VALUE: The first email must deliver the promised lead magnet or resource. Asking for a purchase or demo in Email 1 breaks trust with a cold-to-warm lead.
 
-5. PREVIEW TEXT THAT REPEATS THE SUBJECT LINE WORD-FOR-WORD: Preview text is a second opportunity to earn the open. Repeating the subject line wastes that slot. Write preview text that adds context or a reason to open — different words, different angle.
+5. PREVIEW TEXT THAT REPEATS THE SUBJECT LINE WORD-FOR-WORD: Preview text is a second opportunity to earn the open. Repeating the subject line wastes that slot. Write preview text that adds context or a reason to open - different words, different angle.

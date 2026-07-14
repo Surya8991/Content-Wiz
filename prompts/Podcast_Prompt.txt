@@ -22,7 +22,7 @@ Required inputs:
 - 3 to 5 key insights or findings from the episode
 - Any statistics cited during the episode (with source and year)
 - CTA destination URL
-- Voice/Tone: [natural conversational / formal B2B — follows the per-mode rule; use this field to specify guest or host persona style if needed]
+- Voice/Tone: [natural conversational / formal B2B - follows the per-mode rule; use this field to specify guest or host persona style if needed]
 
 Generate the following:
 

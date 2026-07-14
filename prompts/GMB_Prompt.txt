@@ -13,7 +13,7 @@ TEMPLATE
 Create a Google My Business post for [BRAND NAME], [BRAND DESCRIPTION], for the blog post titled "[BLOG TITLE]". Write a 50-word summarized description in B2B language targeting [TARGET AUDIENCE]. Do not use em dashes. Close with a soft CTA tied to the reader's role. Vary the exact phrasing post to post, do not reuse the same closing line across a batch. Examples of the pattern (write a new one each time, do not copy these verbatim): "Use it to tighten next quarter's rollout plan.", "Apply this before your next team review.", "Reference this the next time budget gets questioned.", "Bring this into your next planning conversation."
 
 Blog URL: [INSERT BLOG URL]
-Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account - default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
@@ -23,7 +23,7 @@ Sr. No. | Blog Title | Blog URL | GMB Post Content
 
 Field encoding: wrap any field containing commas or line breaks in double quotes.
 GMB Post Content must include: (1) insight from the blog (1–2 sentences), (2) one stat or outcome, (3) one CTA sentence.
-Each post must be a standalone readable unit — no mid-sentence cut-offs.
+Each post must be a standalone readable unit - no mid-sentence cut-offs.
 
 ------------------------------------------------------------
 RULES

@@ -6,7 +6,7 @@ THREE FORMATS AVAILABLE: Educational / How-To TikTok / Trend-Led TikTok / Brand 
 
 BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
 
-Voice/Tone: [native creator / educational / behind-the-scenes / challenger brand — default: native creator, unpolished and direct]
+Voice/Tone: [native creator / educational / behind-the-scenes / challenger brand - default: native creator, unpolished and direct]
 
 Once the brand is confirmed, select the format below.
 
@@ -17,7 +17,7 @@ PLATFORM/ALGORITHM RULES (2026) - READ BEFORE GENERATING ANY FORMAT
 These constraints apply to all TikTok organic content. Violating them reduces FYP distribution and caps reach.
 
 1. COMPLETION RATE IS THE MASTER SIGNAL
-   The For You Page (FYP) is a ranked feed driven by completion rate, saves, shares, and replays — not follower count or posting history. Videos with completion rates above 50% receive 6.2x more distribution than videos below 30% completion (Brandwatch, 2025). A zero-follower account posting a 22-second tutorial with 70% completion beats an established account posting polished ads with 18% completion, every time. Every script must be structured to earn the next 3 seconds of watch time, not to deliver information in order of brand priority.
+   The For You Page (FYP) is a ranked feed driven by completion rate, saves, shares, and replays - not follower count or posting history. Videos with completion rates above 50% receive 6.2x more distribution than videos below 30% completion (Brandwatch, 2025). A zero-follower account posting a 22-second tutorial with 70% completion beats an established account posting polished ads with 18% completion, every time. Every script must be structured to earn the next 3 seconds of watch time, not to deliver information in order of brand priority.
 
 2. THE FIRST 3 SECONDS DETERMINE WHETHER THE VIDEO GETS DISTRIBUTED AT ALL
    If retention dips before second 5, the FYP buries the video immediately. The algorithm runs a real-time test in the first 15 minutes after posting. High completion in this window triggers expansion to a second audience cluster. Low completion keeps the video in limited distribution. Four proven hook patterns: pattern interrupt ("Don't scroll if you run paid ads"), contrarian claim ("Stop posting every day. Here is why."), visual reveal (start mid-action, already demonstrating, already on location), question loop (pose a question that requires the next 20 seconds to answer). Write the hook first, then the rest of the script.
@@ -29,10 +29,10 @@ These constraints apply to all TikTok organic content. Violating them reduces FY
    Over 40% of U.S. users search TikTok before Google for product research and discovery (TikTok Playbook, SocialPlug 2025). The algorithm indexes spoken words, on-screen text, captions, and descriptions. To optimize for TikTok search: say the target keyword out loud in the first 5 seconds, place it in the on-screen caption at least once, include it in the video description with 1-2 related terms. Use 3-5 hashtags: one broad, two medium-specificity, two niche. Every generated script must specify which keyword to say in the first 5 seconds.
 
 5. SOUND STRATEGY: USE RISING SOUNDS, NOT PEAKED SOUNDS
-   A sound is "rising" between roughly 5,000 and 100,000 uses. Below 5,000 uses is too early — not enough users have the association yet. Above 1 million uses, the trend is decaying and a video carries no novelty signal. The TikTok Creative Center (ads.tiktok.com/business/creativecenter) shows rising sounds filtered by category. Queue 3-5 sounds per week on Monday. Pair each sound to a script concept before posting. For educational and brand story content, voiceover-only with no trending sound is acceptable and often preferable — do not force a trending sound onto content where it does not fit.
+   A sound is "rising" between roughly 5,000 and 100,000 uses. Below 5,000 uses is too early - not enough users have the association yet. Above 1 million uses, the trend is decaying and a video carries no novelty signal. The TikTok Creative Center (ads.tiktok.com/business/creativecenter) shows rising sounds filtered by category. Queue 3-5 sounds per week on Monday. Pair each sound to a script concept before posting. For educational and brand story content, voiceover-only with no trending sound is acceptable and often preferable - do not force a trending sound onto content where it does not fit.
 
 6. SAVES AND SHARES OUTWEIGH LIKES AS ALGORITHMIC SIGNALS
-   Videos with a save rate above 2% are 3.4x more likely to appear on the For You Page than videos with similar view counts but lower save rates (Brandwatch, 2025). Likes are the weakest signal on TikTok. Average shares per post rose 45% year-over-year in 2025, reaching 248 shares per post (WebFX, 2025). Design every video around one question: "Why would someone send this to a friend or save it to watch again?" Every generated script must have a natural save trigger — a framework, a checklist, or a moment of "I will need this later."
+   Videos with a save rate above 2% are 3.4x more likely to appear on the For You Page than videos with similar view counts but lower save rates (Brandwatch, 2025). Likes are the weakest signal on TikTok. Average shares per post rose 45% year-over-year in 2025, reaching 248 shares per post (WebFX, 2025). Design every video around one question: "Why would someone send this to a friend or save it to watch again?" Every generated script must have a natural save trigger - a framework, a checklist, or a moment of "I will need this later."
 
 7. POST 3-5 TIMES PER WEEK, NOT DAILY
    Optimal posting frequency is 3-5 times per week. Quality of retention signals beats volume of posts. Posting too often with mixed-quality videos confuses the algorithm's topic clustering and dilutes niche authority. TikTok's average engagement rate of 2.50% is 5x higher than Instagram's 0.50% (Dataslayer, 2025), and that advantage compounds when a consistent niche authority is established. Stick to one niche for at least 30 days before pivoting topics.
@@ -49,7 +49,7 @@ Search keyword: Every educational video must be optimized for one specific TikTo
 Structure - follow these 5 sections exactly:
 
 HOOK (first 3 seconds, exact spoken line or on-screen text):
-State the outcome the viewer will have by the end of the video. Not the topic — the outcome. "By the end of this video, you will know how to [specific result]" is weaker than "This 30-second trick [specific result] — I wish I knew it 2 years ago." The hook must answer "why should I watch this?" immediately.
+State the outcome the viewer will have by the end of the video. Not the topic - the outcome. "By the end of this video, you will know how to [specific result]" is weaker than "This 30-second trick [specific result] - I wish I knew it 2 years ago." The hook must answer "why should I watch this?" immediately.
 
 [blank line]
 
@@ -84,18 +84,18 @@ Structure - follow these sections exactly:
 TREND IDENTIFICATION (complete before scripting):
 Name: the specific sound, format, or meme being used.
 Current use count: verify it is between 5,000 and 100,000 uses in the TikTok Creative Center.
-Connection to brand/niche: one sentence explaining why this trend is relevant to the brand's audience — not why it is funny or popular, but why the brand's angle on it is credible.
+Connection to brand/niche: one sentence explaining why this trend is relevant to the brand's audience - not why it is funny or popular, but why the brand's angle on it is credible.
 If the connection is weak, do not proceed with the trend. Recommend an alternative.
 
 [blank line]
 
 HOOK (first 3 seconds):
-Use the trend's native hook format — whatever the trend expects to see in second 1. If the trend uses a point-of-view framing, open with that framing. If the trend uses an on-screen text reveal, open with that structure. The hook must be recognizable as participating in the trend, not borrowing the audio and ignoring the format.
+Use the trend's native hook format - whatever the trend expects to see in second 1. If the trend uses a point-of-view framing, open with that framing. If the trend uses an on-screen text reveal, open with that structure. The hook must be recognizable as participating in the trend, not borrowing the audio and ignoring the format.
 
 [blank line]
 
 BRAND ANGLE (seconds 3-20):
-Deliver the brand's specific perspective, product tie-in, or niche insight inside the trend's format. This section must feel native to both the trend and the brand. The brand angle should not feel like a sponsored interruption inside an organic format. "The moment you realize [brand-relevant insight]" or "[Category] perspective on [trend topic]" are natural containers. Keep this tight — the trend format sets expectations for brevity.
+Deliver the brand's specific perspective, product tie-in, or niche insight inside the trend's format. This section must feel native to both the trend and the brand. The brand angle should not feel like a sponsored interruption inside an organic format. "The moment you realize [brand-relevant insight]" or "[Category] perspective on [trend topic]" are natural containers. Keep this tight - the trend format sets expectations for brevity.
 
 [blank line]
 
@@ -123,7 +123,7 @@ Start mid-story. Do not start at the beginning. Open with the most interesting, 
 [blank line]
 
 CONTEXT (seconds 3-15):
-Give the viewer exactly enough context to understand the stakes of the story. Who is involved. What the situation was. What was at risk or what was being tried. Keep this tight — the viewer does not need the full background, they need enough to care about the outcome.
+Give the viewer exactly enough context to understand the stakes of the story. Who is involved. What the situation was. What was at risk or what was being tried. Keep this tight - the viewer does not need the full background, they need enough to care about the outcome.
 
 [blank line]
 
@@ -133,12 +133,12 @@ The moment things changed. A decision made, a result discovered, a failure that 
 [blank line]
 
 TAKEAWAY (seconds 45-60 or the final 10 seconds):
-One sentence that names what the brand learned, what the viewer should take from the story, or what changed as a result of the turning point. This is the save-worthy moment. Make it universally applicable — a lesson that a viewer in any industry could identify with, not just a brand-specific detail.
+One sentence that names what the brand learned, what the viewer should take from the story, or what changed as a result of the turning point. This is the save-worthy moment. Make it universally applicable - a lesson that a viewer in any industry could identify with, not just a brand-specific detail.
 
 [blank line]
 
 CAPTION:
-First line: name the story's conflict or lesson in plain language. Not the brand name. Not the product. The human situation. Include the primary keyword. End with one question that invites the viewer to share a similar experience in the comments — comment depth is a strong FYP signal and brand story content earns the most substantive comment threads when the closing question is specific. Then hashtags: 3-5, last always [BRAND HASHTAG].
+First line: name the story's conflict or lesson in plain language. Not the brand name. Not the product. The human situation. Include the primary keyword. End with one question that invites the viewer to share a similar experience in the comments - comment depth is a strong FYP signal and brand story content earns the most substantive comment threads when the closing question is specific. Then hashtags: 3-5, last always [BRAND HASHTAG].
 
 ------------------------------------------------------------
 THREE CONTENT PILLAR GUIDANCE
@@ -147,7 +147,7 @@ THREE CONTENT PILLAR GUIDANCE
 For a consistent TikTok presence, rotate across these three pillar types weekly to serve discovery, search, and trust simultaneously.
 
 PILLAR 1 - EDUCATIONAL AUTHORITY (Format A, 2x per week):
-Establishes the brand as the most useful account in its niche. Optimized for search, saves, and FYP distribution through high completion rates. The niche keyword must be spoken aloud in the first 5 seconds of every video in this pillar. Example topics: "How to [specific skill] in under 60 seconds," "The [number] step process for [outcome]," "[Common mistake] — here is what to do instead."
+Establishes the brand as the most useful account in its niche. Optimized for search, saves, and FYP distribution through high completion rates. The niche keyword must be spoken aloud in the first 5 seconds of every video in this pillar. Example topics: "How to [specific skill] in under 60 seconds," "The [number] step process for [outcome]," "[Common mistake] - here is what to do instead."
 
 PILLAR 2 - CULTURAL RELEVANCE (Format B, 1x per week):
 Keeps the brand visible in trending conversation without abandoning the niche. Only execute this pillar when the trend connection is genuine. This pillar earns reach with audiences who would not search for the brand's educational content. It should feed viewers into Pillar 1 via the follow hook: "Follow for more [niche] content."
@@ -181,14 +181,14 @@ Save to output/TikTok/
 RULES SUMMARY
 ------------------------------------------------------------
 
-- Format must be chosen before generating — an educational script has a different structure than a brand story
+- Format must be chosen before generating - an educational script has a different structure than a brand story
 - No em dashes anywhere
 - No passive voice
 - Hook must be written as an exact spoken line or on-screen text, not a description of a concept
 - Keyword to speak aloud in first 5 seconds is required on every Educational and Brand Story output
 - Every stat names its source and year
 - Save trigger required on every Educational output
-- Sound use-count check required on every Trend-Led output — must be between 5,000 and 100,000 uses
+- Sound use-count check required on every Trend-Led output - must be between 5,000 and 100,000 uses
 - 3 to 5 hashtags, last always [BRAND HASHTAG]
 - SELF-CHECK: After drafting any hook, ask whether it answers "why should I keep watching?" within 3 seconds without context. If it requires setup to make sense, rewrite it. After drafting Educational body content, verify each step can be understood with the video muted by reading on-screen text alone.
 - BATCH DEDUPLICATION: If generating more than one TikTok in a session, no two videos may share the same hook line or the same save trigger. Vary the hook pattern and the keyword angle across every video. Examples of the pattern (write a new one each time, do not copy these verbatim): "The framework every [role] should know but nobody talks about.", "I spent [time] figuring this out so you don't have to.", "Here is what [common source] gets wrong about [topic]."

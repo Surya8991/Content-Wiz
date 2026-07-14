@@ -15,7 +15,7 @@ Create a detailed content brief for [BRAND NAME], [BRAND DESCRIPTION], for a [CO
 Reference URL (if any): [INSERT URL]
 Target Platform: [e.g. WordPress / Medium / Dev.to]
 Primary Target Keyword: [INSERT OR LEAVE BLANK]
-Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account - default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)

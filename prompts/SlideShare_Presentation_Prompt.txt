@@ -13,7 +13,7 @@ TEMPLATE
 Create a SlideShare presentation script for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]". Generate 10-12 slides. For each slide provide: a slide number, a short headline (under 10 words), 3-5 bullet points of concise supporting content, and a speaker note of 2-3 sentences expanding on the slide. The presentation should open with a compelling title slide, build through insight slides, and close with a CTA slide: Headline = 'What's Your Next Step?' (or equivalent). Bullets = 2–3 action options. Speaker Notes must include a closing sentence of 15–25 words naming the specific resource at [URL]. Target audience is [TARGET AUDIENCE]. Match the brand's market register per _Brand_Detection_Rules.txt rule 3 (default: clear, professional B2B tone), but keep it punchier and more visual than prose: each slide should read as a scannable takeaway a viewer can absorb in seconds, not a paragraph broken into lines. Save the fuller explanation for the speaker notes. Do not use em dashes. Avoid passive voice.
 
 Reference URL (if any): [INSERT URL]
-Voice/Tone: [formal B2B / conversational B2B / first-person / brand account — default: professional B2B]
+Voice/Tone: [formal B2B / conversational B2B / first-person / brand account - default: professional B2B]
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
@@ -44,8 +44,8 @@ RULES
 FAILURE MODES TO AVOID
 ------------------------------------------------------------
 
-1. Slide headline over 10 words — count the words and trim before outputting.
-2. Bullet points that are full sentences instead of fragments — each bullet must be a concise phrase a viewer can read in 3 seconds.
-3. Speaker notes that repeat the bullet points verbatim — notes must expand on the bullets, not restate them.
-4. CTA slide missing a specific URL or next-step action — the final slide must name where to go and why.
-5. No data or stat on slides 3–8 — at least one slide in the body must carry a named statistic with source and year.
+1. Slide headline over 10 words - count the words and trim before outputting.
+2. Bullet points that are full sentences instead of fragments - each bullet must be a concise phrase a viewer can read in 3 seconds.
+3. Speaker notes that repeat the bullet points verbatim - notes must expand on the bullets, not restate them.
+4. CTA slide missing a specific URL or next-step action - the final slide must name where to go and why.
+5. No data or stat on slides 3–8 - at least one slide in the body must carry a named statistic with source and year.

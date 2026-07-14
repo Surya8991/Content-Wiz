@@ -26,7 +26,7 @@ Primary Claim: [The single most counterintuitive or specific claim the carousel 
 Key Data Points: [2 to 5 stats or findings to feature - each with source and year]
 CTA Destination URL: [URL the final slide points to - goes in caption first comment, not on the slide itself]
 Slide Count: [7 to 10 recommended; 5 minimum, 12 maximum]
-Voice/Tone: [formal B2B / conversational / aspirational — default: matches brand register from _Brand_Detection_Rules.txt]
+Voice/Tone: [formal B2B / conversational / aspirational - default: matches brand register from _Brand_Detection_Rules.txt]
 
 ------------------------------------------------------------
 CAROUSEL TYPES - CHOOSE ONE
