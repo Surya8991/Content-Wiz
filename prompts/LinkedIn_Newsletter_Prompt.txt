@@ -1,0 +1,210 @@
+============================================================
+LINKEDIN NEWSLETTER PROMPT
+============================================================
+
+THREE SECTION STRUCTURES AVAILABLE: Full Issue / Short-Form Issue / Curated Roundup Issue
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [expert-practitioner / first-person brand voice / editorial authority -- default: professional B2B, newsletter-native, warmer than a LinkedIn post but more structured than a blog]
+
+Once the brand is confirmed, select the format below.
+
+------------------------------------------------------------
+HOW LINKEDIN NEWSLETTERS DIFFER FROM LINKEDIN ARTICLES (READ FIRST)
+------------------------------------------------------------
+
+LinkedIn Newsletters are a distinct content product from LinkedIn Articles. The differences matter for strategy:
+
+SUBSCRIBER NOTIFICATIONS: Every new newsletter issue triggers a push notification AND an in-app notification to all subscribers. LinkedIn Articles send no notifications. This makes newsletters the highest-distribution organic content format on LinkedIn in 2026, but only for the subscriber base already built.
+
+SEO INDEXING: LinkedIn Newsletters are indexed by Google as standalone URLs. Each issue functions as a search-discoverable web page. Title optimization follows the same keyword logic as an article title, but with the added constraint that it must also read well as a notification subject line (the subscriber sees the issue title in their notification before they click).
+
+DISCOVERABILITY IN LINKEDIN SEARCH: LinkedIn surfaces newsletters in its own search results under the "Newsletters" filter. A consistent cadence (minimum 2 issues per month) signals to LinkedIn's algorithm that the newsletter is active and earns inclusion in recommended newsletter lists shown to users with relevant interests.
+
+DIFFERENCE FROM EMAIL NEWSLETTERS: LinkedIn Newsletters do not require an email address. Subscription happens with a single LinkedIn click. Subscriber growth is organic and LinkedIn-native. The reader stays on LinkedIn; there is no migration to an external email list. Treat this as an audience-building asset on LinkedIn, not a substitute for an email list.
+
+------------------------------------------------------------
+ALGORITHM RULES (2026) - READ BEFORE GENERATING ANY ISSUE
+------------------------------------------------------------
+
+These constraints apply to all LinkedIn Newsletter content.
+
+1. SUBSCRIBER GROWTH THROUGH CONSISTENT CADENCE
+   LinkedIn's newsletter recommendation system in 2026 favors newsletters with a consistent publishing cadence over sporadic high-quality issues. Publish on a fixed schedule (weekly or biweekly). Missing two consecutive issues reduces algorithmic recommendation eligibility. Every issue should note the cadence in the footer ("Published every [day]").
+
+2. ENGAGEMENT SIGNALS THAT DRIVE DISTRIBUTION
+   LinkedIn measures: opens (notification click-through rate), time-on-page (scroll depth), reactions, and comments on the issue page. Comments carry the highest weight. Every issue must close with a genuine question that invites comments on the issue page itself, not an external survey link.
+
+3. SEO TITLE OPTIMIZATION
+   Issue titles serve two purposes simultaneously: notification subject line and Google search entry point.
+   Structure: [Primary keyword] + [specific year or context] + [tension or promise].
+   Example: "Why L&D Budgets Survive Cuts in 2026 (And Which Ones Do Not)"
+   Never use generic titles: "Our Monthly Newsletter," "Issue 12," or "Updates from [Brand]" waste the SEO and notification opportunity.
+
+4. LENGTH AND SCROLL DEPTH
+   Optimal issue length in 2026 for LinkedIn native newsletters: 600 to 1,200 words. Issues under 400 words signal low effort to the algorithm. Issues over 1,500 words see significant drop-off in scroll depth. Target the 600 to 1,000 word range for each issue.
+
+5. INTERNAL LINKS OVER EXTERNAL LINKS
+   External links inside a LinkedIn Newsletter issue do not trigger the same reach suppression as external links in LinkedIn posts, because the newsletter is its own page. However, LinkedIn gives slight preference in recommendation to issues that keep readers within the LinkedIn ecosystem. Use external links sparingly; prioritize linking to other LinkedIn content (past issues, LinkedIn Articles) where possible. When an external link is essential, place it at the end of the relevant section, not in the opening paragraph.
+
+6. SUBSCRIBER GROWTH TACTICS WITHIN THE ISSUE
+   Every issue should include at least one subscriber growth mechanism:
+   - A CTA to share the issue ("If this issue was useful, forward it to one colleague or share the link")
+   - A brief mention of what the next issue will cover (creates anticipation and reduces unsubscribes)
+   - A prompt to follow the brand page if the reader is not already following
+
+------------------------------------------------------------
+FORMAT A: FULL ISSUE (EDUCATIONAL DEEP DIVE)
+------------------------------------------------------------
+
+Use when: Delivering a substantial framework, research-backed insight, or named methodology the audience can apply.
+Word count target: 700 to 1,000 words.
+Cadence: Primary format, used for most issues.
+
+Structure - follow these sections exactly:
+
+ISSUE TITLE (doubles as SEO title and notification subject):
+[Primary keyword] + [specific year or audience] + [tension or concrete promise]
+Under 70 characters preferred for notification display. Under 120 characters maximum.
+
+INTRO HOOK (First 2 to 3 sentences, before any subheadings):
+The opening must hook the reader before the first scroll. Treat this like a LinkedIn post hook: a specific tension, a counterintuitive claim, or a named scenario.
+Never open with: "Welcome to Issue [N] of [Newsletter Name]" or "This week we are covering..."
+
+SECTION 1 - THE PROBLEM OR TENSION:
+Name the problem specifically. Use a concrete scenario, a named stat, or a brief story.
+Subheading required. Keep the section to 150 to 200 words.
+
+SECTION 2 - THE FRAMEWORK OR INSIGHT:
+Deliver the core intellectual content. Name the framework if it has one.
+Use numbered lists or short paragraphs (no dense blocks over 60 words).
+Include one named stat with source and year.
+Subheading required. Keep the section to 250 to 400 words.
+
+SECTION 3 - APPLICATION (WHAT TO DO MONDAY):
+Translate the framework into 3 to 5 specific actions the reader can take immediately.
+Keep each action to 1 to 2 sentences. Label this section "What To Do Next" or equivalent.
+Subheading required.
+
+ISSUE CLOSE (final paragraph):
+A single question that invites a comment on the issue page.
+A teaser for the next issue topic (1 sentence).
+A subscriber growth CTA (1 sentence: "Share this issue with one colleague who would find it useful").
+
+FOOTER:
+Newsletter name | Cadence statement ("Published every [day]") | Brand page follow CTA
+
+------------------------------------------------------------
+FORMAT B: SHORT-FORM ISSUE (ONE INSIGHT, ONE TAKEAWAY)
+------------------------------------------------------------
+
+Use when: The content is a single sharp insight, a reaction to a timely industry event, or a "quick read" positioned as a lighter issue between full issues.
+Word count target: 400 to 600 words.
+Cadence: 1 per month maximum as the solo format. Works best alternating with Format A.
+
+Structure:
+
+ISSUE TITLE: Same rules as Format A.
+
+INTRO HOOK: 2 sentences maximum. Get to the point faster than Format A.
+
+THE SINGLE INSIGHT (main body):
+One idea, delivered clearly, with one named stat and one concrete example.
+No subheadings required for this format. Write in short paragraphs.
+
+ONE ACTION:
+A single immediate action the reader can take. One sentence.
+
+ISSUE CLOSE:
+Comment question + next issue teaser + share CTA. Same as Format A close.
+
+------------------------------------------------------------
+FORMAT C: CURATED ROUNDUP ISSUE
+------------------------------------------------------------
+
+Use when: Aggregating industry news, research, or tools the audience should know about. This format signals the brand as a trusted curator, not just a content creator.
+Word count target: 500 to 800 words across 3 to 5 curated items.
+Cadence: 1 per month maximum. Overuse reduces the brand's positioning as an original thinker.
+
+Structure:
+
+ISSUE TITLE: Frame around what ties the items together ("5 Research Findings Reshaping L&D in 2026").
+
+INTRO HOOK (3 to 4 sentences):
+State the theme that connects the curated items.
+Explain why this set of findings matters right now.
+
+CURATED ITEMS (3 to 5):
+For each item:
+   - ITEM HEADLINE (bold or subheading)
+   - Source and publication date (required)
+   - 2 to 3 sentence summary of what it found
+   - 1 sentence "why it matters for [audience]"
+   - External link at the end of the item block (not mid-paragraph)
+
+EDITORIAL TAKEAWAY:
+One paragraph synthesizing what the curated items collectively signal.
+This is where the brand voice earns trust: the synthesis, not just the curation.
+
+ISSUE CLOSE: Same as Format A close.
+
+------------------------------------------------------------
+CONTENT PILLAR GUIDANCE
+------------------------------------------------------------
+
+Rotate across these three pillar themes for a sustained LinkedIn Newsletter strategy:
+
+PILLAR 1 - FRAMEWORKS AND METHODOLOGY (Format A, primary):
+Name a specific process, model, or system the audience does not currently have.
+Create intellectual property the audience returns to. Reference past issues.
+
+PILLAR 2 - INDUSTRY INTELLIGENCE (Format C or Format B):
+Synthesize research, reports, and signals from the audience's field.
+Position the brand as the editor the audience trusts to filter signal from noise.
+
+PILLAR 3 - APPLICATION AND CASE SCENARIOS (Format A or B):
+Walk through a specific scenario with the audience in the role of the protagonist.
+Name a challenge, show how the framework applies, and state the outcome.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single issue requests:
+Output labeled sections: ISSUE TITLE | INTRO HOOK | SECTION 1 | SECTION 2 | SECTION 3 | ISSUE CLOSE | FOOTER | WORD COUNT
+
+For bulk requests (editorial calendar CSV):
+Sr. No. | Issue Number | Format | Pillar | Issue Title | Word Count Target | Primary Keyword | Publish Date | Status
+
+Save to output/LinkedInNewsletter/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- No em dashes anywhere
+- No passive voice
+- Issue titles must serve dual purpose: notification subject line AND Google search keyword target
+- Minimum word count 400 words; maximum 1,200 words; target 700 to 1,000 for Format A
+- Every issue closes with a comment question, a next-issue teaser, and a share CTA
+- Every stat names its source and year
+- External links placed at the end of sections, never in the opening paragraph
+- Every issue includes a subscriber growth mechanism
+- SELF-CHECK: After drafting, count words. If under 600 for Format A or under 400 for Format B, expand the framework section or add a concrete application example. If over 1,200, cut the least specific sentences from Section 2. Confirm the issue title functions as both a notification subject line (under 70 characters preferred) and a keyword-targeted page title.
+- BATCH DEDUP: When generating multiple issues in a session, no two issues may share the same intro hook pattern or the same comment question. Each issue must carry a distinct primary keyword target. No two consecutive issues may use the same format type. No two issues in the same editorial calendar batch may cite the same single source as their sole statistical anchor.
+- Output saved to output/LinkedInNewsletter/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. TREATING IT LIKE A BLOG POST: A blog post optimizes for search traffic from cold audiences. A LinkedIn Newsletter optimizes for subscriber notification click-through, scroll depth, and comments from a warm audience. Blog-style intros ("In this article, we will cover...") lose subscribers in the first sentence. Lead with tension, not table-of-contents language.
+
+2. IGNORING SUBSCRIBER GROWTH TACTICS: A newsletter that does not actively prompt sharing and next-issue anticipation plateaus in subscriber count. Every issue must earn the next subscription through a teaser and a share prompt.
+
+3. GENERIC ISSUE TITLES: "Issue 14: What We Learned This Month" wastes both the notification impression and the Google indexing opportunity. Every title must carry a primary keyword and a specific tension.
+
+4. PUBLISHING INCONSISTENTLY: Missing two consecutive issues removes the newsletter from LinkedIn's active recommendation pool. If the publishing cadence cannot be maintained, reduce frequency before missing dates.
+
+5. CLOSING WITHOUT A COMMENT QUESTION: An issue that ends with a summary or a link generates passive reads. A genuine question that connects to the issue's argument drives comments, which are the highest-weight engagement signal on the issue's page.

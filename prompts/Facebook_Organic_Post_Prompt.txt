@@ -1,0 +1,189 @@
+============================================================
+FACEBOOK ORGANIC POST PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: Standard Post / Video Description / Poll
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [conversational B2B / community-facing / brand account -- default: professional but approachable, warmer than LinkedIn]
+
+Once the brand is confirmed, select the format below.
+
+------------------------------------------------------------
+ALGORITHM RULES (2026) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+These constraints apply to all Facebook organic content. Violating them reduces distribution.
+
+1. EXTERNAL LINKS THROTTLE ORGANIC REACH
+   Facebook's algorithm in 2026 suppresses posts with external links in the body by approximately 40% compared to link-free posts. If a URL must be included, post it in the first comment and reference it with "Link in the first comment." For direct link posts, accept that reach will be lower and compensate with a strong native hook.
+
+2. VIDEO POSTS LEAD ORGANIC REACH IN 2026
+   Native Facebook video (uploaded directly, not YouTube links) generates approximately 2.3x the reach of static image posts and 3.5x the reach of text-only posts on brand pages. Reels uploaded natively perform highest in the Reels tab and the main feed simultaneously. Prioritize native video whenever the content format allows.
+
+3. COMMENT VELOCITY IN THE FIRST 90 MINUTES
+   Facebook's EdgeRank weights comment activity heavily in the first 90 minutes after publishing. A post with 8+ comments in the first 90 minutes enters broader distribution loops. Every post must close with a comment hook (not a vague "tell us below" prompt) that asks a specific, low-friction question the audience will answer in one line.
+
+4. REPLY WINDOW IS A DISTRIBUTION MULTIPLIER
+   Responding to comments within the first 90 minutes increases the post's reach by signaling active engagement to the algorithm. Plan posting around times when a page manager can monitor and reply. Optimal organic post times for B2B pages: Tuesday through Thursday, 9am to 11am and 1pm to 3pm local time. Optimal for B2C: Wednesday through Friday, 7pm to 9pm local time.
+
+5. IMAGE AND TEXT COMBINATION RULES
+   For static posts, pairing an image with text outperforms text-only. However, images with heavy text overlays (more than 20% of the image area) trigger Facebook's text-heavy image filter and reduce paid boost eligibility. Organic image posts still serve best with clean visuals and all messaging in the post body.
+
+6. GROUP POSTS OUTPERFORM PAGE POSTS
+   For B2B brands, posting in a brand-owned or partner Facebook Group consistently outperforms brand page posting in raw organic reach. When group posting is available, adapt the format to feel community-native (less branded, more conversational, first-person anecdote style).
+
+7. NO ENGAGEMENT BAIT
+   Facebook explicitly penalizes posts that ask for reactions, tags, or shares directly ("Like if you agree," "Tag a friend who needs this"). Use a genuine question that creates value through the conversation, not one that instructs a mechanical action.
+
+------------------------------------------------------------
+FORMAT A: STANDARD POST (EDUCATIONAL OR INSIGHT)
+------------------------------------------------------------
+
+Use when: Sharing a framework, industry insight, case scenario, or counterintuitive claim on a brand page or group.
+Best cadence: 3 to 4 times per week on a page, 1 to 2 times per week in a group.
+Target length: 150 to 400 characters for link-free posts; up to 500 characters when no external link competes for attention.
+
+Structure - follow these 4 sections exactly:
+
+HOOK (Line 1, standalone):
+The first line must stop the scroll. It must work without any context from what follows.
+Never start with: "We are excited to..." / "Check out our latest..." / "In today's fast-paced world..."
+Write the hook as a provocative claim, a specific number, or an incomplete thought that demands resolution.
+
+[blank line]
+
+BODY (Lines 2-6):
+Name the tension or problem in concrete terms.
+Deliver the insight or takeaway in short, single-sentence lines.
+Use a specific number or named source where possible.
+Keep each line under 15 words. Facebook users read on mobile; dense paragraphs lose readers mid-scroll.
+
+[blank line]
+
+COMMENT HOOK (Final 1-2 lines):
+Ask one specific question the audience can answer in a single sentence.
+Make the question feel like an invitation to share experience, not a survey.
+Example: "What does your team track in the first 30 days of a new hire?" or "Which of these gaps shows up most in your training rollouts?"
+
+[blank line]
+
+HASHTAGS (3 to 5, optional on Facebook):
+Facebook hashtags have limited algorithmic impact in 2026. Include 2 to 3 if the brand uses them for content categorization. Always include [BRAND HASHTAG] if used. If the brand strategy does not use Facebook hashtags, omit entirely.
+
+HOOK PATTERNS (choose the most accurate for the content):
+
+PATTERN 1 - SPECIFIC NUMBER:
+"[Number] out of [total] [audience] [finding]. Most never fix it."
+
+PATTERN 2 - NAMED MISTAKE:
+"The most common mistake [audience] make with [topic] is not [expected answer]. It is [counterintuitive answer]."
+
+PATTERN 3 - SCENARIO OPENER:
+"A [role] at a [industry] company spent [time] on [X]. What happened next is worth avoiding."
+
+PATTERN 4 - BELIEF CHALLENGE:
+"Everyone in [industry] believes [common belief]. The numbers say otherwise."
+
+PATTERN 5 - COMMUNITY QUESTION LEAD:
+"Quick question for [audience]: [specific question]? The answer changes how you approach [related topic]."
+
+------------------------------------------------------------
+FORMAT B: VIDEO DESCRIPTION
+------------------------------------------------------------
+
+Use when: Publishing a native Facebook video (Reel, recorded explainer, behind-the-scenes clip, or short educational video).
+Target length: 80 to 200 characters for the description text. The video carries the content; the description handles the hook and the comment prompt.
+Algorithmic note: Facebook prioritizes native video upload over links to external video. Always upload the file directly.
+
+Structure:
+
+Line 1: Mirror the opening spoken line of the video (creates continuity between the text hook and the video start)
+Lines 2-3: Tease 2 key takeaways from the video in one short phrase each
+Line 4: Comment hook question
+Optional Line 5: "Full guide/article in the comments" if a URL is relevant
+
+Do not describe the video in general terms ("This video covers..."). Repeat or adapt the video's own hook language.
+
+------------------------------------------------------------
+FORMAT C: POLL POST
+------------------------------------------------------------
+
+Use when: Researching audience opinion, warming up a content series, or generating low-effort engagement at the start of a content cluster.
+Algorithmic note: Facebook native polls generate comment activity when the options spark disagreement. Design options to have a clear "right" answer the audience will debate.
+Best cadence: 1 to 2 times per month. Overuse flattens the engagement signal.
+Target post text: 80 to 150 characters.
+
+Structure:
+
+Line 1: Frame the poll question as a business tension or a genuine knowledge gap (1 sentence)
+Line 2: Tell the audience why their answer matters ("Sharing the breakdown next week" or "Building our next guide around what you tell us")
+[blank line]
+Poll options: 2 to 4 options. Keep each option under 25 characters. Design at least one option the audience will feel compelled to debate in the comments.
+Final line: "Results + our take in the comments on [day]."
+Hashtags: 2 maximum for polls.
+
+------------------------------------------------------------
+CONTENT PILLAR GUIDANCE
+------------------------------------------------------------
+
+Rotate across these three pillar types for a balanced Facebook organic presence:
+
+PILLAR 1 - EDUCATIONAL UTILITY (Format A or B, 2x/week):
+Practical content the audience can apply immediately.
+B2B examples: "How to measure training ROI in three steps," "The onboarding metric most teams overlook."
+B2C examples: "The fastest way to [achieve outcome] without [common pain point]," "What to look for in [product category] before you buy."
+
+PILLAR 2 - SOCIAL PROOF AND COMMUNITY (Format A, 1-2x/week):
+Specific results, client scenarios, or community wins framed as stories.
+Name the result concretely ("Teams that added peer coaching to their program saw 31% higher skill retention at 90 days" -- source required).
+For B2C brands: customer outcome stories, before/after scenarios, user-generated content adaptation.
+
+PILLAR 3 - CONVERSATION STARTER (Format C or Format A with community question, 1x/week):
+Posts designed primarily to generate comments and surface audience intelligence.
+The value exchange: the brand gets data, the audience gets visibility of the results.
+Example: Poll on the biggest challenge in [audience's workflow], followed by a breakdown post the next week.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single post requests:
+Output labeled sections: HOOK | BODY | COMMENT HOOK | HASHTAGS | FIRST COMMENT (URL + CTA of 10 to 20 words if applicable)
+
+For bulk requests (CSV):
+Sr. No. | Format | Pillar | Topic | Post Content | First Comment Content | Recommended Post Time
+
+Save to output/Facebook/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- No external URLs in post body; URLs go in the first comment only
+- No em dashes anywhere
+- No passive voice
+- 150 to 400 characters for Format A; 80 to 200 for Format B description; 80 to 150 for Format C text
+- Never use engagement bait phrasing ("Like if you agree," "Tag a friend," "Share this")
+- Comment hook required on every Format A and Format B post
+- Every stat names its source and year
+- Native video always uploads directly to Facebook, never as a YouTube link
+- Hashtag use follows the brand's declared Facebook hashtag strategy; if none is declared, omit hashtags
+- SELF-CHECK: After drafting Format A, confirm character count falls between 150 and 400. For Format B, confirm description is under 200 characters and does not summarize the video in generic terms. For Format C, confirm post text is 80 to 150 characters and that at least one poll option creates a debatable contrast.
+- BATCH DEDUP: When generating more than one post in a session, no two posts may share the same comment hook question or the same hook opening phrase. Vary the hook pattern across formats in a batch. No two posts in the same batch may cite the same single source as their sole statistical anchor.
+- Output saved to output/Facebook/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. GOING TOO PROMOTIONAL: Facebook's algorithm reads promotional language as low-quality content and limits distribution. Posts that lead with product offers, pricing, or "contact us" calls to action reach the smallest slice of followers. Lead with insight or utility; let the brand context follow naturally.
+
+2. POSTING WITHOUT A COMMENT HOOK: A post that ends with a statement instead of a question generates passive reactions at best. Reactions carry far less algorithmic weight than comments. Every post must invite a specific, answerable reply.
+
+3. IGNORING THE REPLY WINDOW: Posting and walking away during the first 90 minutes wastes the engagement window the algorithm uses to judge a post's quality. Assign a page manager to monitor and reply to comments in the first 90 minutes after publishing.
+
+4. EXTERNAL LINK IN THE POST BODY: Placing a URL in the post text triggers Facebook's outbound link suppression, cutting organic reach by approximately 40%. Always move the URL to the first comment.
+
+5. VAGUE SOCIAL PROOF: Phrases like "many of our clients" or "leading organizations" trigger credibility skepticism in Facebook audiences. Name a specific result with a concrete number and a verified source every time social proof is used.

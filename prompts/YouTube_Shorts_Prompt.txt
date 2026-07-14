@@ -1,0 +1,195 @@
+============================================================
+YOUTUBE SHORTS PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: Educational Short / Entertainment Short / Product Demo Short
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [direct and fast-paced / brand account -- default: confident authority, no filler, every second earns its place]
+
+Once the brand is confirmed, select the format below.
+
+------------------------------------------------------------
+HOW YOUTUBE SHORTS DIFFERS FROM TIKTOK AND REELS (READ FIRST)
+------------------------------------------------------------
+
+YouTube Shorts is a distinct platform with distinct algorithm behavior. Do not treat Shorts scripts as interchangeable with TikTok or Reels scripts.
+
+SHORTS SHELF VS. MAIN FEED: YouTube distributes Shorts through two surfaces: the Shorts shelf on the YouTube homepage and within the dedicated Shorts feed. Shorts also appear in Google Search results when optimized with keyword-rich titles and descriptions. This gives Shorts an SEO discovery layer that TikTok and Reels do not have.
+
+LONG-FORM SUBSCRIBER DRIVER: YouTube measures whether Shorts viewers convert to long-form video viewers and channel subscribers. A Short that converts viewers to channel subscribers earns higher ongoing distribution. Every Short should function as a preview of what the channel's long-form content delivers, not a standalone content island.
+
+WATCH-THROUGH RATE IS THE PRIMARY SIGNAL: YouTube's Shorts algorithm ranks Shorts primarily on watch-through rate (the percentage of viewers who watch to the end) rather than on total views. A Short with 10,000 views and 85% watch-through rate outranks a Short with 100,000 views and 30% watch-through rate in recommendation priority. Scripts must be structured to hold attention at every second, not just the hook.
+
+END SCREEN BEHAVIOR: Shorts do not support the swipe-up link format. YouTube shows a subscribe button overlay at the end of each Short, not a clickable link. Verbal CTAs to subscribe, to visit the link in the description, or to watch a specific linked video replace any swipe-up mechanic.
+
+------------------------------------------------------------
+ALGORITHM RULES (2026) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+1. HOOK WITHOUT CONTEXT (FIRST 2 SECONDS)
+   The first 2 seconds of a Short must deliver a hook that works for a viewer who has never seen the channel before and who did not choose to watch this Short (it appeared in their feed automatically). No context-setting allowed: no "Hey, welcome back," no brand name, no "In this Short I'm going to show you." The hook must create a tension, ask a question, or make a claim that the viewer cannot dismiss in 2 seconds.
+
+2. WATCH-THROUGH ARCHITECTURE
+   Each scene or idea in the script must earn the transition to the next. Use a cliffhanger micro-moment every 5 to 7 seconds: a partial answer, a "but wait," or a revealed number that requires explanation. This technique maintains watch-through rate past the 50% mark, where YouTube's algorithm begins weighting distribution.
+
+3. OPTIMAL SHORT LENGTH
+   Ideal YouTube Shorts length for maximizing watch-through rate and subscriber conversion in 2026: 30 to 55 seconds. Under 20 seconds leaves insufficient time for a complete idea with a payoff. Over 60 seconds (the Shorts format ceiling) is not possible technically. Target 40 to 55 seconds for most scripts.
+
+4. TITLE AND DESCRIPTION FOR SHORTS SHELF + SEARCH
+   Shorts titles function as both Shorts shelf headlines and Google/YouTube search keywords.
+   Title structure: [Primary keyword question or statement] + [year if relevant]
+   Title length: under 60 characters for full Shorts shelf display.
+   Description: 2 to 5 sentences. First sentence must contain the primary keyword. Include a CTA to subscribe or to watch a specific related long-form video. Place any links in the description, not in the spoken CTA (verbal CTAs drive description clicks from mobile viewers).
+
+5. SUBSCRIBE CTA TIMING
+   Place the subscribe verbal CTA at second 45 to 50 for a 55-second Short, not at the end. Viewers who are going to leave the Short do so at the end of the main content; placing the CTA just before the payoff lands (while they are still engaged) captures more conversions than an end-of-video CTA.
+
+6. NO CAPTION REQUIRED BUT STRONGLY RECOMMENDED
+   YouTube auto-generates captions for Shorts. However, auto-captions often error on technical terminology and brand names. For brand Shorts, upload a corrected SRT caption file. Shorts with accurate captions show higher watch-through rates in 2026 benchmarks because a significant share of viewers watch muted.
+
+------------------------------------------------------------
+FORMAT A: EDUCATIONAL SHORT
+------------------------------------------------------------
+
+Use when: Teaching one specific skill, debunking one common mistake, or demonstrating one framework in under 55 seconds.
+Word count guideline: 120 to 160 spoken words (at an average delivery pace of 3 words per second for clarity).
+
+Script Structure (time-stamped):
+
+[0:00 to 0:02] HOOK (no more than 2 sentences, no context):
+State the tension, the counterintuitive fact, or the specific outcome without naming the brand or setting up context.
+The viewer must feel compelled to watch the next frame.
+Never start with: "Today I'm going to..." / "Hi, I'm [name] from..." / "Have you ever wondered..."
+
+[0:02 to 0:08] TENSION OR PROBLEM FRAME:
+Name the specific pain or mistake that makes the hook relevant.
+Use a concrete number where possible.
+One visual element or text overlay must appear here to reinforce the spoken line.
+
+[0:08 to 0:40] CORE CONTENT (the answer, in 3 to 5 numbered points or steps):
+Each point gets 5 to 7 seconds of screen time.
+State the point in one sentence. Support it with one specific detail.
+End each point with a micro-cliffhanger that makes the next point necessary.
+Visual: text overlay of the point label appears as it is spoken.
+
+[0:40 to 0:48] SUBSCRIBE CTA (before the final payoff):
+"Subscribe if you want [specific content type the channel delivers] every [cadence]."
+Do not say "Subscribe if you liked this." Name the value exchange.
+
+[0:48 to 0:55] CLOSING PAYOFF AND DESCRIPTION CTA:
+Deliver the final insight or the summary line.
+End with: "Full breakdown in the description" or "Watch [linked long-form video title] next."
+
+ON-SCREEN TEXT OVERLAYS BRIEF (for editor):
+List the exact text for each on-screen text moment in the script. Include timing.
+
+------------------------------------------------------------
+FORMAT B: ENTERTAINMENT SHORT
+------------------------------------------------------------
+
+Use when: Building brand awareness through humor, a surprising reveal, a behind-the-scenes moment, or a relatable scenario that the audience shares.
+Word count guideline: 80 to 130 spoken words. Silence, reaction shots, and visual punchlines replace some spoken content.
+
+Script Structure:
+
+[0:00 to 0:03] VISUAL OR AUDIO HOOK:
+The hook is often visual in entertainment Shorts. If the first frame shows something unexpected, unusual, or tension-creating, the spoken line can be secondary.
+Write the visual direction first, then the spoken hook line.
+
+[0:03 to 0:35] THE BUILD:
+Establish the scenario in quick cuts (3 to 4 seconds per scene).
+Create a pattern the viewer expects to continue, then break it.
+The brand's point of view or personality must be visible in this section without a hard product pitch.
+
+[0:35 to 0:50] THE PAYOFF:
+Deliver the punchline, reveal, or twist.
+The payoff must connect back to something the brand stands for or teaches.
+
+[0:50 to 0:55] CTA:
+One verbal CTA. Subscribe, follow, or watch next. Not both. Pick the one that fits the Short's conversion goal.
+
+------------------------------------------------------------
+FORMAT C: PRODUCT DEMO SHORT
+------------------------------------------------------------
+
+Use when: Showing a specific product feature, workflow, or result in a way that creates desire or demonstrates ease of use.
+Word count guideline: 100 to 140 spoken words.
+Key rule: show the result in the first 5 seconds, then explain how. Viewers do not want a preamble before the payoff in a product demo context.
+
+Script Structure:
+
+[0:00 to 0:05] RESULT FIRST:
+Show the completed outcome, finished product, or final result in the first 5 seconds.
+Spoken line names what the viewer is seeing: "This took 12 minutes with [tool/feature]."
+This reverses the traditional demo order on purpose. Showing the result first answers "why should I watch?" before the viewer can ask it.
+
+[0:05 to 0:45] THE HOW (step-by-step):
+Walk through the process in real time or fast-cut.
+Each step gets one spoken sentence and one clear visual.
+Label each step with an on-screen text number or label.
+
+[0:45 to 0:52] SUBSCRIBE CTA:
+Name the channel's content promise: "Subscribe for [specific tool/topic] breakdowns every [cadence]."
+
+[0:52 to 0:55] DESCRIPTION CTA:
+"Link to [product / full tutorial / free resource] in the description."
+
+------------------------------------------------------------
+CONTENT PILLAR GUIDANCE
+------------------------------------------------------------
+
+Rotate across these three pillar themes to drive both Shorts-shelf reach and long-form subscriber conversion:
+
+PILLAR 1 - SKILL AND KNOWLEDGE SHORTS (Format A, primary):
+Teach one actionable skill per Short. Sequence related Skills Shorts into a numbered series to drive replay behavior ("Part 1 of 5: How to...").
+
+PILLAR 2 - BRAND PERSONALITY SHORTS (Format B, 1 to 2 per month):
+Build audience affinity through relatable humor, behind-the-scenes content, or unexpected reveals. These Shorts grow brand search volume when they earn shares.
+
+PILLAR 3 - PRODUCT PROOF SHORTS (Format C, 1 per month):
+Drive product consideration by showing a specific outcome rather than features. Link each Product Demo Short to a long-form tutorial or a product page in the description.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single Short requests:
+Output labeled sections: TITLE | DESCRIPTION (with keyword + CTA) | SCRIPT (time-stamped) | ON-SCREEN TEXT OVERLAYS BRIEF | EDITOR NOTES (transitions, visual direction)
+
+For bulk requests (content calendar CSV):
+Sr. No. | Format | Pillar | Title | Primary Keyword | Script Summary | Publish Date | Linked Long-Form Video
+
+Save to output/YouTubeShorts/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- No em dashes anywhere
+- No passive voice
+- No context-setting in the first 2 seconds; hook must work for a first-time viewer
+- Target script length: 120 to 160 words for Format A; 80 to 130 words for Format B; 100 to 140 words for Format C
+- Subscribe CTA placed at second 45 to 50, not at the end
+- Every Short description includes the primary keyword in the first sentence
+- Short title under 60 characters for full Shorts shelf display
+- Every script includes an on-screen text overlays brief for the editor
+- Every stat names its source and year
+- SELF-CHECK: After drafting the script, read it aloud and time it. If under 35 seconds, expand the core content section. If it reads over 58 seconds, cut the weakest supporting point from the main content section. Confirm the first spoken words do not contain "I," "We," "Hi," "Today," or the brand name.
+- BATCH DEDUP: When generating more than one Short in a session, no two Shorts may share the same hook sentence structure or the same subscribe CTA phrasing. Rotate pillar types across the batch. No two Shorts in the same batch may target the same primary keyword.
+- Output saved to output/YouTubeShorts/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. CONTEXT-SETTING HOOK: Opening with "Hi, welcome back to the channel" or "In this Short we will cover" wastes the first 2 seconds, which YouTube weights most heavily for drop-off rate. The first spoken line must create a reason to stay.
+
+2. LOW WATCH-THROUGH STRUCTURE: Front-loading all the value in the first 15 seconds and then summarizing gives the viewer permission to leave early. Distribute the payoff across the Short using micro-cliffhangers every 5 to 7 seconds.
+
+3. END-SCREEN SWIPE-UP EXPECTATION: YouTube Shorts do not support swipe-up links. Scripting a "swipe up for the link" CTA produces a dead instruction. All link CTAs must direct viewers to the description.
+
+4. MISSING LONG-FORM BRIDGE: A Short that does not reference or link to any long-form content on the channel misses the primary subscriber conversion mechanism. Every Short must connect to a longer piece of content in its description or verbal CTA.
+
+5. SUBSCRIBE CTA AT THE END ONLY: Viewers who plan to leave do so after the content ends. A subscribe CTA at the final second reaches only the most loyal viewers. Place the subscribe CTA at second 45 to 50, before the final payoff, to capture viewers who are still engaged.

@@ -1,0 +1,201 @@
+============================================================
+TWITTER (X) ADS PROMPT
+============================================================
+
+FIVE AD FORMATS AVAILABLE: Promoted Post / Image Ad / Video Ad / Carousel Ad / Follower Ad
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [concise and direct / punchy B2B or B2C -- default: brand account, short-form authoritative, no filler words]
+
+Once the brand is confirmed, select the format below.
+
+------------------------------------------------------------
+PLATFORM RULES (2026) - READ BEFORE GENERATING ANY FORMAT
+------------------------------------------------------------
+
+These constraints apply to all X/Twitter paid advertising. Violating them reduces ad performance or triggers rejection.
+
+1. CHARACTER LIMITS ARE HARD STOPS
+   Promoted Post (text): 280 characters including spaces and hashtags
+   Image Ad primary text: 280 characters
+   Video Ad primary text: 280 characters
+   Carousel Ad headline per card: 70 characters maximum
+   Follower Ad text: 160 characters
+   Exceeding these limits causes automatic truncation or ad rejection. Count characters before finalizing.
+
+2. X ADS SAFETY LEVELS (2026)
+   X applies brand safety tiers to all ads. The default safety level is "Standard." Content categories flagged at Standard include: political commentary, adult content, graphic violence, and speculative financial claims. Ads that touch these categories require elevated brand safety tier setup in Ads Manager. This prompt generates content for Standard safety tier by default. Flag any topic that could conflict with Standard tier and note it in the output.
+
+3. FREQUENCY CAPS AND AUDIENCE FATIGUE
+   X Ads in 2026 recommend a maximum frequency of 3 to 5 impressions per unique user per 7-day period for awareness campaigns. Direct response campaigns: 5 to 8 impressions per user per 7-day period. Beyond these thresholds, CTR declines sharply. When generating a batch, write enough creative variations to support rotation (minimum 3 variations per audience segment).
+
+4. BIDDING GUIDANCE
+   X uses a second-price auction. For awareness (CPM) campaigns targeting professional B2B audiences in 2026, expected CPMs range from $12 to $22 USD. For engagement-optimized campaigns, optimize for reply or retweet rather than like (replies signal higher intent). For website click campaigns, the landing page URL must be final and functional before trafficking, and must not redirect more than once.
+
+5. THUMB-STOP HOOK RULE
+   The first 3 seconds of a video ad and the first 5 words of any text ad determine whether a user stops scrolling. The hook must create a tension, name a specific outcome, or pose a genuine question the audience wants answered. Generic openers ("We are pleased to introduce...", "Discover how...") produce the lowest stop-rate in X's internal benchmarking.
+
+6. THE 3-SECOND VIDEO RULE
+   Video ads on X must deliver a single clear message within the first 3 seconds, before the sound-off viewer decides to tap for audio. Use text overlays for the hook in the first 3 seconds. Optimal video length for X Ads: 6 to 15 seconds for awareness, 15 to 30 seconds for direct response.
+
+7. HASHTAGS IN ADS
+   X recommends using no more than 1 hashtag in a promoted post or image ad. Two or more hashtags in an ad reduce CTR by creating competing exit points. Use a hashtag only when it directly amplifies the campaign concept. Never use trending hashtags in paid content unless the brand is genuinely part of that conversation.
+
+------------------------------------------------------------
+FORMAT A: PROMOTED POST / IMAGE AD
+------------------------------------------------------------
+
+Use when: Driving awareness, promoting content, or pushing a specific CTA with or without an image.
+Character limit: 280 characters including hashtags and handles.
+Optimal length: 180 to 240 characters (leaves room for engagement without feeling truncated).
+
+Structure:
+
+LINE 1 (Hook, under 60 characters):
+State the core tension, outcome, or question in the fewest possible words.
+The hook must stand alone: if only Line 1 displays, does it still stop the scroll?
+
+LINE 2 (Body, under 120 characters):
+Deliver the single most compelling supporting point.
+Name a specific outcome, number, or named benefit. No filler.
+
+LINE 3 (CTA, under 50 characters):
+One imperative action. Be specific: "Download the free guide" outperforms "Learn more" by a documented margin.
+Never use "Click here." Name the destination or the reward.
+
+[Optional] 1 HASHTAG (if strategically warranted)
+
+IMAGE SPECS (for Image Ad):
+Recommended: 1200 x 628 pixels (16:9). Minimum: 600 x 335 pixels.
+Text on image: keep under 20% of image area to avoid X's text-heavy suppression signal.
+No price claims on the image itself (reserve for the text).
+
+HOOK PATTERNS:
+
+PATTERN 1 - OUTCOME PROMISE:
+"[Audience] who [did X action] report [specific outcome]. Your team is next."
+
+PATTERN 2 - FEAR OF MISSING OUT:
+"Every week you delay [action], [cost/loss] compounds. Here is how to stop it."
+
+PATTERN 3 - DIRECT CHALLENGE:
+"Most [audience] skip [step]. That is why [negative outcome] keeps happening."
+
+PATTERN 4 - PROOF ANCHOR:
+"[Specific number] [audience peers] already [achieved X]. What they did differently:"
+
+------------------------------------------------------------
+FORMAT B: VIDEO AD
+------------------------------------------------------------
+
+Use when: Driving awareness, product education, or high-impact brand storytelling in the X feed.
+Video length: 6 to 15 seconds for awareness; 15 to 30 seconds for direct response.
+Primary text: up to 280 characters.
+
+Structure:
+
+PRIMARY TEXT (up to 280 characters):
+Line 1: Mirror the opening text overlay of the video (creates continuity between copy and creative)
+Line 2: Deliver one supporting benefit in one sentence
+Line 3: CTA that names the specific action and destination
+
+VIDEO SCRIPT BRIEF (for creative team handoff):
+Second 0 to 3: Hook frame. Text overlay states the core tension in under 6 words. No logo. No brand name. Only the tension.
+Second 3 to 10 (or 3 to 25 for longer format): Problem and solution. Show, do not tell. Visuals carry the argument, text overlays reinforce the key moment.
+Final 3 seconds: Logo + CTA overlay. One clear action statement. No website URL on screen (place in the ad's destination URL field).
+
+SOUND-OFF REQUIREMENT:
+Every key message must be readable from text overlays with sound off. Captions are mandatory. X's internal data shows over 70% of in-feed video plays occur on mute.
+
+------------------------------------------------------------
+FORMAT C: CAROUSEL AD
+------------------------------------------------------------
+
+Use when: Showcasing multiple products, steps in a process, a list of outcomes, or a sequential story.
+Card count: 2 to 6 cards. Optimal for B2B: 3 to 5 cards (a problem, 3 proof points or steps, and a CTA card).
+Headline per card: 70 characters maximum.
+Description per card: 70 characters maximum (optional but recommended).
+Primary text (above the carousel): 280 characters maximum.
+
+Structure:
+
+PRIMARY TEXT (above carousel):
+Line 1: The overarching tension or promise that the carousel resolves
+Line 2: "Swipe to see [specific reward the user gets by swiping]"
+Optional: 1 hashtag
+
+CARD STRUCTURE (repeat for each card):
+Card 1: State the problem or the promise in the headline. Use the image to visualize the pain or the opportunity.
+Cards 2 to N-1: One proof point, step, or outcome per card. Headline names the point. Image shows it. Description adds one supporting detail.
+Final Card: CTA card. Headline states the action. Image is brand-forward. Link destination is the campaign landing page.
+
+FOLLOWER AD FORMAT NOTE:
+Follower Ads (designed to grow the brand's X following) use a distinct format:
+Text: 160 characters maximum
+No image (X uses the account's profile picture and header)
+CTA is fixed as "Follow" by the platform
+Hook must state a clear reason to follow: name the content type the audience will receive, not a generic invitation
+
+------------------------------------------------------------
+CONTENT PILLAR GUIDANCE
+------------------------------------------------------------
+
+Rotate creative across these campaign objectives for sustained X Ads performance:
+
+PILLAR 1 - AWARENESS AND REACH (Format A Image Ad or Format B Video Ad):
+Goal: introduce the brand or a key message to cold audiences.
+Lead with the problem the audience experiences, not the brand solution.
+No product pitch in the hook. The hook earns the right to mention the brand in Line 2.
+
+PILLAR 2 - CONSIDERATION AND ENGAGEMENT (Format C Carousel Ad):
+Goal: walk a warm audience through a multi-step argument or product comparison.
+Each card must earn the swipe to the next. Do not frontload all the value in Card 1.
+
+PILLAR 3 - CONVERSION (Format A Promoted Post with direct CTA):
+Goal: push a bottom-of-funnel audience to a specific action (download, sign-up, purchase).
+Lead with the outcome the audience gets from completing the action, not the action itself.
+"Get your personalized skills gap report in 3 minutes" outperforms "Download our guide" for conversion-optimized campaigns.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single ad requests:
+Output labeled sections: FORMAT | PRIMARY TEXT | [VISUAL BRIEF or CARD STRUCTURE] | CTA | DESTINATION URL placeholder | SAFETY TIER NOTE
+
+For bulk requests (CSV):
+Sr. No. | Format | Campaign Objective | Audience Segment | Primary Text | Visual Brief or Card Breakdown | CTA | Character Count | Safety Note
+
+Save to output/TwitterAds/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- Character limits are hard stops; count before finalizing every ad
+- No em dashes anywhere
+- No passive voice
+- Maximum 1 hashtag per ad unit
+- Never use trending hashtags in paid content unless the brand is genuinely part of that conversation
+- Every stat names its source and year
+- All video scripts include a sound-off text overlay brief
+- Flag any topic that conflicts with X Ads Standard safety tier
+- CTA must name the specific action and destination, never "Click here" or "Learn more" alone
+- SELF-CHECK: After drafting each ad, count characters against the hard limit for that format. Confirm the hook works as a standalone line if nothing below it renders. For Video Ads, confirm the script brief specifies text overlays for the first 3 seconds.
+- BATCH DEDUP: When generating more than one ad in a session, no two ads may share the same hook pattern or the same CTA phrase. Rotate hook patterns across the batch. When generating creative variations for rotation, each variation must use a distinct tension framing, not just synonym-swapped language from the previous variation. No two ads in the same batch may cite the same single source as their sole statistical anchor.
+- Output saved to output/TwitterAds/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. GENERIC OPENER: Starting an ad with "Discover," "Learn how," or "We are excited to introduce" produces the lowest thumb-stop rate. Name a specific tension, outcome, or number in the first 5 words.
+
+2. MULTIPLE HASHTAGS: Two or more hashtags in a paid post create competing exit points and reduce CTR. Use one hashtag maximum, or none if it does not directly strengthen the campaign concept.
+
+3. IGNORING SOUND-OFF: More than 70% of X video plays happen on mute. A video ad whose message depends on the voiceover fails for the majority of its viewers. Every key message requires a text overlay.
+
+4. FREQUENCY NEGLECT: Running the same creative against the same audience beyond 5 impressions per 7 days collapses CTR. Generate creative variations upfront for rotation rather than relying on a single ad unit.
+
+5. VAGUE CTA: "Learn more" directs attention without naming a reward. State exactly what the user gets when they click: "Get the free ROI calculator," "Book a 20-minute demo," or "Download the 2026 skills report." Specificity increases CTR measurably.

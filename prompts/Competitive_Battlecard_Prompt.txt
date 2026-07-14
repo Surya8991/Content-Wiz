@@ -1,0 +1,194 @@
+============================================================
+COMPETITIVE BATTLECARD PROMPT
+============================================================
+
+THREE FORMATS AVAILABLE: Full Battlecard / Quick Reference Card / Objection Handle Sheet
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [internal, direct, sales-native -- no marketing polish; write for a sales rep who needs to respond quickly in a live conversation; factual, confident, zero spin]
+
+Once the brand is confirmed and the competitor is named, select the format below.
+
+------------------------------------------------------------
+CRITICAL RULE: NO FABRICATED COMPETITOR CLAIMS
+------------------------------------------------------------
+
+This prompt generates internal sales content. Every competitor claim must trace to verified public information only.
+
+ACCEPTABLE SOURCES:
+- The competitor's own public website, pricing pages, and published documentation
+- Third-party review platforms (G2, Capterra, Gartner Peer Insights, Trustpilot) with named source and date
+- Public news coverage with outlet name and publication date
+- Industry analyst reports with report name and year (Gartner, Forrester, IDC, etc.)
+- Publicly disclosed legal filings or regulatory actions
+
+NOT ACCEPTABLE:
+- Assumptions about competitor pricing not publicly listed
+- Claims from anonymous sales conversations ("a prospect told us...")
+- Internal estimates of competitor weaknesses not supported by public evidence
+- Review platform scores cited without the platform name and as-of date
+
+When a competitor claim cannot be verified against a public source at the time of generation, mark it [VERIFY BEFORE USE] and note where to verify. A battlecard with unverified claims can create legal liability if shared externally and can destroy rep credibility if challenged in a discovery call.
+
+------------------------------------------------------------
+ALGORITHM RULES (BATTLECARD BEST PRACTICES) - READ BEFORE GENERATING
+------------------------------------------------------------
+
+1. THE BATTLECARD ANSWERS ONE QUESTION: "WHY US OVER THEM?"
+   Every section must answer this question from the buyer's perspective, not the sales team's perspective. Write for the prospect's decision logic, not for internal morale. Avoid chest-thumping language ("We are the clear market leader"). State concrete differentiators the buyer can verify.
+
+2. THREE WIN THEMES MAXIMUM
+   A battlecard with 12 differentiators is a battlecard with zero. Sales reps in a live conversation need 3 sharp win themes they can deploy in 90 seconds. Select the 3 differentiators that are most defensible, most verifiable, and most relevant to the ICP (Ideal Customer Profile). Name them as "Win Theme 1," "Win Theme 2," "Win Theme 3."
+
+3. LANDMINE QUESTIONS BEFORE PRODUCT DEMO
+   The highest-value battlecard element is a set of questions the rep asks before the competitor even comes up in conversation. These questions "plant a landmine" by surfacing a competitor weakness naturally, before the buyer has anchored to the competitor's positioning. Write 3 to 5 landmine questions for each battlecard.
+
+4. OBJECTION HANDLES FOLLOW THE FEEL-FELT-FOUND STRUCTURE
+   For each common objection:
+   FEEL: Acknowledge the concern without agreeing with it ("I understand why that looks like a factor...")
+   FELT: Name a peer customer who shared that concern ("A [role] at [industry type] told us the same thing before they signed...")
+   FOUND: State the specific outcome that resolved the concern, with a number if available ("After [time], they reported [result]")
+   Never use feel-felt-found with fabricated examples. Use only verified customer outcomes. Mark any unverified example [REPLACE WITH VERIFIED PROOF POINT].
+
+5. PROOF POINTS MUST BE SPECIFIC AND SOURCED
+   Vague proof points ("customers love us") damage credibility more than no proof point at all. Every proof point must include: customer type (industry + company size), the specific outcome, and the timeframe. Do not name individual customers without consent verification.
+   Example format: "A mid-market professional services firm (500 employees) reduced onboarding time by 34% in 90 days after switching from [Competitor]."
+
+6. UPDATE CADENCE
+   Battlecards become liabilities when competitor details go stale. Every battlecard must include a "Last Verified" date and a "Next Review" date (maximum 6 months out). The generating prompt should note the verification date of all competitor claims in the output metadata.
+
+------------------------------------------------------------
+FORMAT A: FULL BATTLECARD
+------------------------------------------------------------
+
+Use when: Equipping a rep for a complex, multi-stakeholder deal where the competitor is a known finalist.
+Length: 1 to 2 pages (internal document). All sections required.
+
+SECTION 1 - COMPETITOR SNAPSHOT:
+Competitor name, headquarters, founding year, funding stage or public/private status, approximate headcount, primary market, and one-line positioning statement (use their own language from their website).
+
+SECTION 2 - OUR POSITIONING VS. THEIR POSITIONING:
+Two columns: [OUR BRAND] vs. [COMPETITOR]
+For each of 4 to 6 key dimensions (e.g., deployment model, pricing structure, target customer size, core use case, support model, integration depth): state each side's position in one line.
+No spin. State facts. The contrast speaks for itself.
+
+SECTION 3 - THEIR STRENGTHS (acknowledge honestly):
+2 to 4 genuine competitor strengths, sourced from public reviews or verified data.
+A sales rep who cannot acknowledge a competitor's real strengths will lose credibility the moment the prospect names one. Acknowledging strengths and pivoting to context builds trust.
+
+SECTION 4 - THEIR WEAKNESSES (publicly documented only):
+3 to 5 weaknesses traceable to public sources (review platforms, support tickets, public documentation gaps, known limitations).
+Source each weakness. Mark any unverified claim [VERIFY BEFORE USE].
+
+SECTION 5 - WIN THEMES (3 maximum):
+WIN THEME 1: [Name of theme] - One sentence statement of the differentiator. One supporting proof point (sourced).
+WIN THEME 2: [Name of theme] - Same structure.
+WIN THEME 3: [Name of theme] - Same structure.
+
+SECTION 6 - OBJECTION HANDLES:
+List the 3 to 5 most common objections when this competitor is in the deal.
+For each objection:
+  OBJECTION: [What the prospect says]
+  HANDLE (feel-felt-found): [Full response, 3 to 5 sentences]
+  PROOF POINT: [Specific verified customer outcome or [REPLACE WITH VERIFIED PROOF POINT]]
+
+SECTION 7 - LANDMINE QUESTIONS:
+3 to 5 discovery questions the rep asks early in the process to surface the competitor's weaknesses before the prospect has anchored to the competitor's strengths.
+Each question must sound natural in a discovery call, not like a trap.
+Example: "How important is it to you that training content updates automatically when the underlying skill standard changes?" (surfaces a competitor's known static content library weakness)
+
+SECTION 8 - PROOF POINTS AND CUSTOMER REFERENCES:
+2 to 4 specific win stories where the brand displaced this competitor.
+Format: [Industry] + [Company size] + [Problem] + [Outcome with number] + [Timeframe]
+Mark any unverified story [REPLACE WITH VERIFIED PROOF POINT].
+
+METADATA FOOTER:
+Battlecard Version: [N]
+Competitor: [Name]
+Last Verified: [Date]
+Next Review Date: [Date, maximum 6 months out]
+Owner: [Role responsible for updates]
+
+------------------------------------------------------------
+FORMAT B: QUICK REFERENCE CARD
+------------------------------------------------------------
+
+Use when: A rep needs a 30-second refresher before a call or a discovery meeting where the competitor might come up.
+Length: Half a page. Priority sections only.
+
+Include only:
+- Competitor one-line positioning (their words)
+- Our 3 Win Themes (one sentence each)
+- Top 3 objections and one-line handles (abbreviated)
+- 3 landmine questions
+- 1 anchor proof point
+
+Omit: Competitor snapshot detail, full objection handles, full proof point library.
+
+------------------------------------------------------------
+FORMAT C: OBJECTION HANDLE SHEET
+------------------------------------------------------------
+
+Use when: A sales team needs a focused document for a specific deal stage (e.g., a post-demo objection wave when the competitor has been named).
+Length: 1 page. Objection handles only, expanded.
+
+Include:
+- 5 to 8 objections specific to this competitor
+- For each: full feel-felt-found handle + named proof point
+- One "reframe" line per objection: a single sentence that shifts the buyer's evaluation criteria
+
+------------------------------------------------------------
+CONTENT PILLAR GUIDANCE
+------------------------------------------------------------
+
+Prioritize battlecard coverage in this order based on deal impact:
+
+TIER 1 - DIRECT FINALISTS: Competitors who appear in the final 2 of competitive deals most often. Full Battlecard required. Updated quarterly.
+
+TIER 2 - CATEGORY ALTERNATIVES: Competitors who represent a different category approach the prospect might choose instead (e.g., "build internally" vs. buying). Full Battlecard with stronger emphasis on Sections 2 and 7.
+
+TIER 3 - LEGACY INCUMBENTS: Competitors the prospect currently uses and must displace. Objection Handle Sheet focus. Win Themes center on switching cost vs. cost of staying.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single battlecard requests:
+Output all sections in the order listed for the selected format. Include the metadata footer with Last Verified date and Next Review date.
+
+For bulk requests (competitive library CSV):
+Sr. No. | Competitor | Format | Win Theme 1 | Win Theme 2 | Win Theme 3 | Top Objection 1 | Last Verified | Next Review Date
+
+Save to output/Battlecards/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- No em dashes anywhere
+- No passive voice
+- Every competitor claim traces to a verified public source; unverified claims marked [VERIFY BEFORE USE]
+- No more than 3 Win Themes per battlecard
+- Objection handles follow feel-felt-found structure with sourced proof points
+- Proof points include industry, company size, specific outcome, and timeframe
+- Every battlecard includes metadata footer with Last Verified and Next Review dates
+- Never fabricate competitor weaknesses; only document what public evidence supports
+- Never claim a competitor endorses or recommends the brand
+- SELF-CHECK: After drafting, audit every competitor claim and tag its source. Confirm no claim appears without a source or a [VERIFY BEFORE USE] flag. Confirm Win Themes number 3 or fewer. Confirm every objection handle follows feel-felt-found structure. Confirm the metadata footer includes both Last Verified and Next Review dates.
+- BATCH DEDUP: When generating battlecards for multiple competitors in a session, no two battlecards may share the same Win Theme language or the same objection handle phrasing even if the objection is similar. Each battlecard must reflect that specific competitor's documented behavior and positioning, not a generic competitive response template.
+- Output saved to output/Battlecards/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. FABRICATED OR ASSUMED COMPETITOR CLAIMS: Any claim about a competitor that cannot be verified from a named public source is a liability. Sales reps who cite inaccurate competitor weaknesses lose credibility the moment the prospect checks. Every weakness must trace to a review platform entry, a public support thread, a published limitation, or a named analyst report.
+
+2. TOO MANY WIN THEMES: A battlecard that lists 10 differentiators trains the rep to say nothing memorable. Three sharp, defensible Win Themes that the rep can deliver in 90 seconds outperform a comprehensive feature comparison list in every live selling context.
+
+3. SPIN INSTEAD OF CONTRAST: Writing competitor weaknesses as attacks ("Their product is outdated and poorly designed") rather than factual contrasts destroys rep credibility. State the contrast neutrally and let the proof point make the case.
+
+4. NO LANDMINE QUESTIONS: A battlecard that only prepares the rep to respond to the competitor (reactive) misses the highest-value use case: surfacing competitor weaknesses before the competitor comes up (proactive). Landmine questions are the most underused and highest-leverage section of a battlecard.
+
+5. STALE BATTLECARD IN CIRCULATION: A competitor's pricing, product features, and positioning change. A battlecard with no Last Verified date or no review schedule becomes a source of misinformation. Battlecards without metadata footers must be treated as unverified and should not be used in live deals.

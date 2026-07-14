@@ -1,0 +1,293 @@
+============================================================
+CUSTOMER SUCCESS EMAIL PROMPT
+============================================================
+
+SIX EMAIL TYPES AVAILABLE: Health Check-In / QBR Prep Email / Renewal Notice / Expansion and Upsell Trigger / NPS Follow-Up / Customer Anniversary
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [partner-level, human, proactive -- default: warm professional; this email comes from a person who knows the customer's situation, not from a marketing list; no vendor tone, no broadcast language]
+
+Once the brand is confirmed and the email type is selected, gather the lifecycle signals before generating.
+
+------------------------------------------------------------
+HOW CUSTOMER SUCCESS EMAILS DIFFER FROM ONBOARDING AND WIN-BACK EMAILS
+------------------------------------------------------------
+
+Customer success emails target customers who are active and mid-lifecycle. They are not:
+
+ONBOARDING EMAILS: Those target new customers in their first 30 to 90 days and focus on setup completion and first value realization. Onboarding emails are covered in a separate prompt.
+
+WIN-BACK EMAILS: Those target churned or at-risk customers who have already disengaged and require a distinct recovery tone. This prompt does not cover win-back.
+
+MARKETING BROADCAST EMAILS: This prompt does not cover product newsletters, feature announcement blasts, or promotional campaigns. Those tools go in a separate prompt.
+
+Customer success emails in this prompt target customers who are: active (using the product), in a defined lifecycle stage (post-onboarding through renewal), and in a relationship with a named CSM or account team. Every email in this prompt reads as coming from a person who knows this customer, not from an automated marketing list.
+
+------------------------------------------------------------
+LIFECYCLE SIGNALS THAT TRIGGER EACH EMAIL TYPE
+------------------------------------------------------------
+
+Read these triggers before selecting an email type. Using the wrong email type for the wrong signal is a failure mode in itself.
+
+HEALTH CHECK-IN:
+Trigger signals: Customer has not logged in for 14 to 21 days (product type dependent); feature adoption rate drops below 50% of expected baseline; support ticket volume spikes without a corresponding support resolution; customer contact has gone silent for 30+ days.
+Do NOT send a health check-in to a visibly churning account without first acknowledging the risk internally and preparing a specific recovery conversation, not a generic check-in.
+
+QBR PREP EMAIL:
+Trigger signals: 2 to 3 weeks before a scheduled Quarterly Business Review; no scheduled QBR exists and the account is 90+ days post-onboarding.
+Purpose: Confirm the QBR agenda, request data the customer needs to bring, and set the narrative frame for the review meeting.
+
+RENEWAL NOTICE:
+Trigger signals: 90 days before contract renewal; 60 days before renewal; 30 days before renewal.
+Each timing sends a distinct email with distinct framing. The 90-day notice focuses on value delivered. The 60-day notice introduces the renewal conversation formally. The 30-day notice confirms terms and next steps.
+
+EXPANSION AND UPSELL TRIGGER:
+Trigger signals: Customer reaches 80% or higher of their current license or usage limit; a new use case surfaces in a recent customer conversation; a champion changes roles and the new contact has a broader budget mandate; the account achieves a documented success milestone.
+Do NOT send expansion emails to accounts flagged as health risk. Expansion conversations require a stable, satisfied customer base.
+
+NPS FOLLOW-UP:
+Trigger signals: Customer submits an NPS score. Three response types required:
+  Promoter (score 9 to 10): Thank and activate for referral or case study.
+  Passive (score 7 to 8): Probe for the gap between satisfied and enthusiastic.
+  Detractor (score 0 to 6): Immediate acknowledgment, escalation flag, recovery path.
+
+CUSTOMER ANNIVERSARY:
+Trigger signals: 1-year, 2-year, or multi-year contract renewal anniversary with the brand.
+Purpose: Reinforce relationship, quantify value delivered since start, create a human moment in an otherwise transactional relationship.
+
+------------------------------------------------------------
+TONE RULES (APPLY TO ALL EMAIL TYPES)
+------------------------------------------------------------
+
+1. PARTNER VOICE, NOT VENDOR VOICE
+   Vendor voice says: "We wanted to check in and see if there is anything we can help you with."
+   Partner voice says: "I noticed your team's completion rate jumped to 78% last month. That is a 20-point increase from when we started. I want to make sure we build on that momentum before your renewal."
+   Partner voice names specific data. Vendor voice speaks in generalities.
+
+2. EVERY EMAIL OPENS WITH A SPECIFIC OBSERVATION, NOT A GREETING FILLER
+   Wrong: "Hope this email finds you well! Just reaching out to..."
+   Right: "Your team ran 14 training sessions in Q3. That is the highest single-quarter count since you launched. I want to make sure you are set up to sustain that going into Q4."
+   The opening observation demonstrates that the CSM pays attention. It creates immediate relevance.
+
+3. ONE CLEAR NEXT STEP PER EMAIL
+   Each email closes with a single, specific action the customer needs to take or confirm. Multiple competing actions (reply to confirm, schedule a call, review the attached report, fill out the survey) reduce response rates. State one action. Offer one fallback (a direct meeting link or a reply option).
+
+4. PERSONALIZATION TOKENS (REQUIRED FIELDS)
+   Every email in this prompt requires the following tokens before generation. If a token is not available, note it in the output as [MISSING: token name] so the CSM can fill it in manually.
+
+   Required for all types:
+   [CUSTOMER COMPANY NAME]
+   [CUSTOMER CONTACT FIRST NAME]
+   [CSM FIRST NAME]
+   [CONTRACT START DATE or TENURE]
+   [PRIMARY PRODUCT OR PLAN NAME]
+
+   Additional tokens per email type:
+   Health Check-In: [LAST LOGIN DATE] [FEATURE ADOPTION RATE] [SPECIFIC USE CASE THEY BOUGHT FOR]
+   QBR Prep: [QBR DATE] [QBR ATTENDEES] [TOP 2 OUTCOMES CUSTOMER WANTED AT CONTRACT START]
+   Renewal Notice: [RENEWAL DATE] [CURRENT CONTRACT VALUE] [RENEWAL WINDOW TIMING: 90/60/30 day]
+   Expansion: [CURRENT USAGE PERCENTAGE] [PROPOSED EXPANSION TIER OR FEATURE] [MILESTONE OR TRIGGER EVENT]
+   NPS Follow-Up: [NPS SCORE] [NPS SCORE CATEGORY: Promoter/Passive/Detractor] [VERBATIM COMMENT IF PROVIDED]
+   Anniversary: [ANNIVERSARY YEAR NUMBER] [2 TO 3 QUANTIFIED OUTCOMES SINCE CONTRACT START]
+
+5. NO BROADCAST LANGUAGE
+   Words and phrases that signal "this is an automated email" and must never appear:
+   "As a valued customer..."
+   "We are reaching out to all of our..."
+   "In case you missed our recent..."
+   "Exciting news!"
+   "This is an automated message..."
+   If any of these phrases appear in a draft, rewrite the sentence.
+
+------------------------------------------------------------
+FORMAT A: HEALTH CHECK-IN EMAIL
+------------------------------------------------------------
+
+Use when: Product engagement signals suggest the customer may be under-utilizing the product or drifting toward disengagement.
+Timing: Send within 48 hours of the trigger signal surfacing.
+Length target: 120 to 200 words. This email must feel like a quick personal note, not a formal communication.
+
+Structure:
+
+SUBJECT LINE: Specific, observation-based, low-pressure.
+Example: "[CUSTOMER COMPANY NAME]: quick question on your [SPECIFIC USE CASE] rollout"
+Never: "Checking In" / "How Is Everything Going?" / "Following Up"
+
+OPENING (1 to 2 sentences):
+Name a specific data point you observed. State what it tells you.
+"I noticed [CUSTOMER COMPANY NAME]'s team has not run a new [SESSION TYPE] since [DATE]. Given that you were targeting [GOAL], I wanted to check in before that gap grows."
+
+BODY (2 to 3 sentences):
+Ask one specific question about what is happening on their end.
+Offer one specific, small thing you can do to help (not a generic "let me know how I can help").
+
+CLOSE (1 sentence + CTA):
+State the one action you want them to take.
+Offer a low-friction fallback: "Even a two-line reply helps me understand what to prioritize for you."
+
+SIGNATURE: CSM name, title, direct contact, calendar link.
+
+------------------------------------------------------------
+FORMAT B: QBR PREP EMAIL
+------------------------------------------------------------
+
+Use when: Preparing a customer for an upcoming Quarterly Business Review meeting.
+Timing: Send 2 to 3 weeks before the QBR date.
+Length target: 200 to 300 words.
+
+Structure:
+
+SUBJECT LINE: "[CUSTOMER COMPANY NAME] QBR on [DATE]: what I need from you before we meet"
+
+OPENING (2 sentences):
+Reference the QBR date and express a specific expectation for the meeting.
+
+AGENDA PREVIEW (bulleted list, 3 to 5 items):
+List what the CSM will cover: outcomes delivered, adoption data, challenges, roadmap preview, and renewal or expansion (if applicable).
+
+WHAT THE CUSTOMER NEEDS TO BRING (bulleted list, 2 to 3 items):
+Name specific inputs the customer should prepare: their team's top priorities for the next quarter, any implementation challenges they want to solve, a list of stakeholders who should attend or review results.
+
+CLOSE:
+One sentence confirming the meeting logistics.
+A direct calendar link or a request to confirm the meeting invitation.
+
+------------------------------------------------------------
+FORMAT C: RENEWAL NOTICE EMAIL
+------------------------------------------------------------
+
+Use when: Initiating or advancing the renewal conversation.
+Three timing variants required (90-day, 60-day, 30-day).
+Length target: 150 to 250 words per timing variant.
+
+90-DAY RENEWAL NOTICE:
+Subject: "Your [BRAND] renewal is in 90 days. Here is what you have built."
+Frame: Value delivered. Lead with 2 to 3 quantified outcomes. Do not mention price. Close by scheduling a renewal conversation call.
+
+60-DAY RENEWAL NOTICE:
+Subject: "[CUSTOMER COMPANY NAME]: let us talk renewal terms before [RENEWAL DATE]"
+Frame: Introduce the renewal formally. Reference the outcomes from the 90-day email if sent. Name the renewal date, the current contract terms, and the proposed renewal terms (or note that the CSM will share these on the call). Close with a specific meeting request.
+
+30-DAY RENEWAL NOTICE:
+Subject: "30 days to [CUSTOMER COMPANY NAME]'s renewal: confirming next steps"
+Frame: Confirm that all parties know the renewal date, the terms, and the signature process. Name any outstanding items. Close with the specific action needed to complete the renewal (signature, PO, approval chain).
+
+------------------------------------------------------------
+FORMAT D: EXPANSION AND UPSELL TRIGGER EMAIL
+------------------------------------------------------------
+
+Use when: A usage milestone, a champion change, or a new use case surfaces that justifies a conversation about expanding the contract.
+Prerequisite: Account health must be stable or strong before this email sends.
+Length target: 150 to 220 words.
+
+Structure:
+
+SUBJECT LINE: Reference the specific trigger, not the upsell.
+Example: "[CUSTOMER COMPANY NAME] just hit 80% of your [FEATURE] capacity. What is next?"
+Never: "Upgrade Your Plan Today" / "Exciting New Features Available"
+
+OPENING:
+Name the trigger event specifically.
+
+BODY:
+Connect the trigger to a business outcome the customer cares about (not a feature).
+Name the proposed next tier or feature and what it enables for them.
+Provide one proof point: another customer in a similar situation who expanded and achieved a named result.
+
+CLOSE:
+One specific next step (a 20-minute call to review options). Offer an alternative (a written proposal if they prefer to review async).
+
+------------------------------------------------------------
+FORMAT E: NPS FOLLOW-UP EMAIL
+------------------------------------------------------------
+
+PROMOTER (score 9 to 10):
+Length: 100 to 150 words.
+Subject: "Thank you for the [N] score, [FIRST NAME]: one quick ask"
+Open: Acknowledge the score specifically. Name one outcome the brand helped them achieve.
+Body: Ask one specific question: either an invitation to a case study conversation, a referral ask with a named peer, or a request to leave a review on a named platform.
+Close: Thank them. No pressure language.
+
+PASSIVE (score 7 to 8):
+Length: 120 to 180 words.
+Subject: "Your [N] score, [FIRST NAME]: what would move the needle for you?"
+Open: Acknowledge the score. Note that a 7 or 8 means something is not fully landing.
+Body: Ask one direct, open question about what is missing. Offer a 20-minute call to dig in.
+Close: Name a specific improvement you want to understand better.
+
+DETRACTOR (score 0 to 6):
+Length: 150 to 200 words.
+Subject: "Your feedback, [FIRST NAME]: I want to understand what happened"
+Open: Acknowledge the score without defensiveness. Do not over-apologize. State that you take it seriously.
+Body: Ask one specific question about the core experience gap. Name the CSM or escalation contact who will own the response.
+Close: Commit to a specific next step with a timeline.
+Internal note: Flag this account for CSM leadership review before sending.
+
+------------------------------------------------------------
+FORMAT F: CUSTOMER ANNIVERSARY EMAIL
+------------------------------------------------------------
+
+Use when: A customer hits a 1-year or multi-year milestone with the brand.
+Length target: 150 to 200 words.
+Tone: Warm, specific, non-gimmicky. This email must feel meaningful, not like a loyalty program notification.
+
+Structure:
+
+SUBJECT LINE: "[ANNIVERSARY YEAR NUMBER] year with [BRAND], [FIRST NAME]: here is what your team built"
+
+OPENING (2 sentences):
+Name the anniversary milestone and one specific thing the customer achieved in that period.
+
+BODY (3 to 5 sentences):
+List 2 to 3 quantified outcomes the customer achieved since the contract start.
+Reference something specific about this customer's use case or team.
+Do not use this email to pitch a renewal or expansion. Let the value statement stand alone.
+
+CLOSE:
+Express a genuine statement about the partnership (one sentence).
+Offer one low-pressure next step: a call to discuss what the next year should look like, or simply an invitation to reply.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single email requests:
+Output labeled sections: EMAIL TYPE | SUBJECT LINE | EMAIL BODY (with personalization tokens in [BRACKETS]) | INTERNAL NOTE (any flags the CSM needs to act on before sending) | WORD COUNT
+
+For bulk requests (CSV):
+Sr. No. | Email Type | Trigger Signal | Customer Segment | Subject Line | Body Preview (first 2 sentences) | Personalization Tokens Required | Send Timing
+
+Save to output/CustomerSuccessEmails/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- No em dashes anywhere
+- No passive voice
+- No broadcast language ("as a valued customer," "we are reaching out to all," "exciting news")
+- Every email opens with a specific, named observation, not a filler greeting
+- One clear next step per email; one fallback option
+- All personalization tokens listed in brackets; missing tokens flagged as [MISSING: token name]
+- Health check-in emails must not go to visibly churning accounts without internal escalation first
+- Expansion emails must not go to accounts flagged as health risk
+- NPS Detractor responses require internal flag and escalation review before sending
+- Renewal emails follow the 90/60/30 timing sequence; do not collapse all three into one email
+- SELF-CHECK: After drafting, confirm the opening sentence names a specific data point or observation. Confirm no email contains more than one primary CTA. Confirm all personalization tokens appear in [BRACKETS] with a note of what data to plug in. Confirm the email does not contain any of the banned broadcast phrases. Count words; revise if outside the target range for the selected format.
+- BATCH DEDUP: When generating multiple emails of the same type in a session, no two emails may share the same subject line structure or the same opening observation sentence. Each email must reflect the specific lifecycle signal and account context provided for that customer. No two emails in the same batch may use identical CTA phrasing.
+- Output saved to output/CustomerSuccessEmails/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. TREATING RENEWAL LIKE A TRANSACTION: A renewal email that opens with "Your contract expires on [DATE]" without any reference to value delivered reads as a payment reminder, not a partnership conversation. Lead every renewal email with the outcomes the customer achieved, then connect those outcomes to the forward-looking value of renewing.
+
+2. SENDING HEALTH CHECK-INS TO CHURNING ACCOUNTS WITHOUT ACKNOWLEDGMENT: A generic health check-in email to an account that is visibly disengaged ("Hope things are going well!") signals that the CSM is not paying attention. An account showing churn signals needs a recovery conversation plan, not a standard check-in template. Flag these accounts internally before sending any outbound email.
+
+3. VENDOR TONE IN PARTNER EMAILS: Phrases like "We wanted to touch base," "As a valued customer," and "Please do not hesitate to reach out" are vendor signals, not partner signals. A partner opens with a specific observation about the customer's situation. A vendor opens with a generic filler phrase. Rewrite any sentence that the customer could receive from any SaaS company without noticing the brand difference.
+
+4. MULTIPLE CTAs IN ONE EMAIL: An email that asks the customer to schedule a call, complete a survey, review the attached report, and reply with their Q4 priorities creates decision paralysis and reduces the response rate for all four asks. State one primary action. If a secondary option is needed for flexibility, offer it as a fallback in the last line only.
+
+5. EXPANSION EMAIL TO AN AT-RISK ACCOUNT: Sending an upsell email to a customer who is showing disengagement, reduced usage, or open support complaints reads as tone-deaf and damages the relationship. Account health must be confirmed as stable or strong before any expansion conversation begins. A CSM who tries to expand a struggling account before fixing the core problem will accelerate churn, not prevent it.

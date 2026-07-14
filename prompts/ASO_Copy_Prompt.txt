@@ -1,0 +1,213 @@
+============================================================
+APP STORE OPTIMIZATION (ASO) COPY PROMPT
+============================================================
+
+TWO PLATFORMS AVAILABLE: iOS App Store / Google Play Store
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Voice/Tone: [benefit-led, action-oriented, zero jargon -- default: direct B2C or B2B product voice matching the app's category and target user]
+
+Once the brand is confirmed, select the platform and field set below.
+
+------------------------------------------------------------
+PLATFORM CHARACTER LIMITS (HARD STOPS -- READ BEFORE WRITING)
+------------------------------------------------------------
+
+iOS APP STORE:
+  App Name (Title):        30 characters (includes spaces and special characters)
+  Subtitle:                30 characters
+  Promotional Text:       170 characters (shown above the description; updateable without a new app submission)
+  Description:           4,000 characters
+  Keyword Field:           100 characters (comma-separated, no spaces after commas; iOS only; not publicly visible)
+
+GOOGLE PLAY STORE:
+  App Title:               50 characters
+  Short Description:        80 characters (displayed in search results and app page header)
+  Long Description:      4,000 characters
+  Developer Name:          50 characters (not a copy field; listed for reference)
+
+These limits are hard stops. Exceeding them causes app submission rejection (title/subtitle/keyword fields) or automatic truncation (description fields). Count every character including spaces before finalizing.
+
+------------------------------------------------------------
+ALGORITHM RULES (2026) - READ BEFORE GENERATING ANY FIELD
+------------------------------------------------------------
+
+1. KEYWORD STRATEGY: IOS KEYWORD FIELD (100 CHARACTERS)
+   The iOS keyword field is the primary organic search driver on the App Store, separate from the title and subtitle. Rules for 2026:
+   - No spaces after commas (commas act as separators; spaces waste characters)
+   - Do not repeat keywords already in the title or subtitle (the store indexes title and subtitle keywords automatically)
+   - Do not include your own app name or brand name (irrelevant to search discovery)
+   - Include competitor category terms (not brand names) that users search when they do not know your app
+   - Prioritize mid-volume, high-conversion keywords over high-volume generic terms (e.g., "project tracker for teams" over "productivity")
+   - Format: keyword1,keyword2,keyword3 (no spaces, no periods)
+
+2. TITLE AND SUBTITLE CARRY THE HIGHEST KEYWORD WEIGHT
+   Both App Store and Google Play weight app title keywords more heavily than description keywords. The app name should include one primary keyword alongside the brand name where character limits allow. Subtitle (iOS) and Short Description (Google Play) are the second-highest weighted fields. Both must contain secondary keywords while also reading naturally as a value proposition.
+
+3. BENEFIT-LED DESCRIPTIONS CONVERT HIGHER THAN FEATURE-LED DESCRIPTIONS
+   App Store and Google Play both use the first 3 lines of the description as preview text (visible before "Read More"). These first 3 lines determine whether a user expands the description. Lead with the primary outcome the user achieves, not the feature that enables it.
+   Wrong: "Our app uses AI-powered task management with calendar sync and team collaboration tools."
+   Right: "Finish your team's weekly review in 20 minutes. Assign tasks, track progress, and close loops without switching apps."
+
+4. SCREENSHOT CAPTIONS DRIVE CONVERSION RATE
+   Screenshot captions appear as text overlays on app screenshots in the store listing. In 2026, apps that use benefit-framed screenshot captions convert 18 to 25% higher than apps with feature-label captions (Sensor Tower, 2024 App Store Conversion Benchmarks). Each caption must name the user outcome visible in the screenshot, not the feature name. Caption length: under 40 characters per caption to ensure full display on all device sizes.
+
+5. A/B TESTING GUIDANCE FOR STORE LISTINGS
+   iOS: Use Apple's Product Page Optimization (PPO) to test up to 3 variants of icon, screenshots, and preview video. Run each test for a minimum of 7 days with sufficient traffic (minimum 1,000 impressions per variant) before reading results. Test one element at a time.
+   Google Play: Use Google Play Store Listing Experiments to A/B test icon, screenshots, short description, and feature graphic. Minimum 2-week test duration. Do not test more than one element simultaneously.
+   Priority testing order: Screenshots first (highest conversion impact), then icon, then short description text.
+
+6. GOOGLE PLAY DESCRIPTION KEYWORD DENSITY
+   Google Play's algorithm indexes the long description for search. Include the primary keyword 5 to 7 times naturally across 4,000 characters (approximately once every 600 characters). Do not exceed this density; keyword stuffing triggers Google Play's spam filter and can suppress the listing.
+
+------------------------------------------------------------
+FORMAT A: IOS APP STORE FULL COPY SET
+------------------------------------------------------------
+
+Use when: Writing or refreshing all copyfields for an iOS App Store listing.
+
+Output the following fields in order:
+
+APP NAME (30 characters maximum):
+[Brand Name] + [Primary Keyword] if character budget allows.
+If the brand name alone fills 30 characters, the title carries only the brand name. In that case, the subtitle carries the primary keyword.
+
+SUBTITLE (30 characters maximum):
+State the primary outcome or category keyword in one short phrase.
+Must read naturally (not a keyword list).
+Example: "Skills Training for Teams" or "Corporate Learning Platform"
+
+PROMOTIONAL TEXT (170 characters maximum):
+Time-sensitive or evergreen callout shown above the description.
+Use for seasonal promotions, new feature announcements, or an always-on value hook.
+This field updates without a new app submission; keep it current.
+
+KEYWORD FIELD (100 characters maximum, no spaces after commas):
+List keywords not already in the title or subtitle.
+Format: keyword1,keyword2,keyword3
+Include at least 3 long-tail phrases (2 to 3 words each) that match real user search intent.
+
+DESCRIPTION (4,000 characters maximum):
+
+OPENING HOOK (first 3 lines, visible before "Read More"):
+State the primary user outcome in 1 to 2 sentences.
+Follow with one concrete supporting detail (a number, a time saving, a named pain point solved).
+
+FEATURES WITH BENEFIT FRAMING (main body):
+List 5 to 8 features. Each feature entry: Feature name + "[blank] so you can [outcome]."
+Use short paragraphs or bullet points.
+
+SOCIAL PROOF SECTION (optional if verified):
+One customer result or rating callout. Source required.
+
+CLOSING CTA:
+One sentence inviting download. Name the primary action the user takes first.
+
+SCREENSHOT CAPTIONS (6 to 10 captions, under 40 characters each):
+Write one caption per screenshot. Each caption names the user outcome visible in that screen, not the feature label.
+
+------------------------------------------------------------
+FORMAT B: GOOGLE PLAY STORE FULL COPY SET
+------------------------------------------------------------
+
+Use when: Writing or refreshing all copy fields for a Google Play Store listing.
+
+Output the following fields in order:
+
+APP TITLE (50 characters maximum):
+[Brand Name] [Primary Keyword or Category]
+Google Play allows a longer title than iOS. Use the extra characters to include a secondary keyword if natural.
+
+SHORT DESCRIPTION (80 characters maximum):
+Appears in search results and at the top of the app page. Functions like a meta description.
+Lead with the primary outcome. Include the primary keyword.
+Must read as a complete, compelling thought within 80 characters.
+
+LONG DESCRIPTION (4,000 characters maximum):
+Follow the same structure as the iOS Description above.
+Additionally: weave the primary keyword 5 to 7 times naturally across the full description (approximately once every 600 characters). Do not cluster keywords.
+
+SCREENSHOT CAPTIONS: Same rules as Format A. Google Play supports captions on screenshots in the same way.
+
+------------------------------------------------------------
+FORMAT C: A/B TEST COPY VARIANTS
+------------------------------------------------------------
+
+Use when: Preparing copy variants for Product Page Optimization (iOS) or Store Listing Experiments (Google Play).
+Output: 3 complete variant sets of the highest-impact fields (Short Description / Subtitle, and Screenshot Captions).
+
+Variant structure:
+
+VARIANT A (Control): Current live copy or the most conservative version.
+VARIANT B (Benefit emphasis): Lead with a bolder outcome claim. Use a specific number in the short description.
+VARIANT C (Problem-solution framing): Open by naming the problem the app solves before stating the solution.
+
+For each variant, provide:
+- Short Description / Subtitle (within character limit)
+- Caption set for screenshots 1 to 3 (the highest-impact screen positions)
+- Hypothesis: one sentence stating what this variant tests and why it should win.
+
+------------------------------------------------------------
+CONTENT PILLAR GUIDANCE
+------------------------------------------------------------
+
+Organize the copy strategy around these three pillars:
+
+PILLAR 1 - SEARCH DISCOVERY (Keyword fields, Title, Short Description):
+Every keyword choice must trace to documented user search behavior.
+Use app store intelligence tools (AppFollow, Sensor Tower, data.ai) to validate search volume before finalizing keyword strategy.
+Do not rely on assumption for keyword selection.
+
+PILLAR 2 - CONVERSION (Screenshots, Description, Promotional Text):
+Every screenshot caption and description opening must answer "what does this do for me right now?"
+The user decides to download or leave in under 10 seconds of viewing the listing. Lead with outcomes.
+
+PILLAR 3 - CREDIBILITY AND PROOF (Social proof, ratings reference, named stats):
+One verifiable credibility signal in the description (ratings count, a named award, a specific user result with source) increases download conversion.
+Never fabricate or inflate a rating or review count.
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For single platform requests:
+Output labeled fields in the order listed in the relevant format section above. Include character counts next to each field value.
+
+For dual platform requests (iOS + Google Play):
+Output both full copy sets side by side for comparison. Flag any differences in keyword strategy between platforms.
+
+For A/B test requests:
+Output all 3 variants with hypothesis statements.
+
+Save to output/ASO/
+
+------------------------------------------------------------
+RULES SUMMARY
+------------------------------------------------------------
+
+- No em dashes anywhere
+- No passive voice
+- All character limits are hard stops; include character count next to every field in output
+- iOS keyword field: no spaces after commas; no brand name; no repeated keywords from title or subtitle
+- Lead every description with outcome, not feature
+- Screenshot captions under 40 characters and benefit-framed only
+- Every stat names its source and year
+- Never keyword-stuff the Google Play description beyond 7 uses of the primary keyword in 4,000 characters
+- SELF-CHECK: After drafting each field, count characters explicitly. Confirm the iOS keyword field contains no spaces after commas and no keywords repeated from the title or subtitle. Confirm the first 3 lines of every description state a user outcome (not a feature) without jargon. Confirm every screenshot caption is under 40 characters.
+- BATCH DEDUP: When generating copy for multiple apps in a session, no two apps may share the same subtitle phrasing or the same screenshot caption set. A/B test variants within the same listing must use distinct framing strategies, not synonym swaps. No two listings in the same batch may rely on the same source for their social proof claim.
+- Output saved to output/ASO/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. KEYWORD STUFFING IN THE TITLE: Filling the app title with comma-separated keywords ("Task Manager, To-Do List, Planner App") reads as spam to users and triggers store algorithm suppression on both platforms. Use the title for brand name plus one primary keyword, and reserve additional keywords for the subtitle and keyword field.
+
+2. FEATURE-LED DESCRIPTION OPENING: Starting the description with a features list ("Our app includes AI scheduling, smart reminders, team chat, file sharing, and...") fails the conversion test. The user sees a list of names, not a reason to download. Lead with the outcome the user achieves in the first 3 lines.
+
+3. WASTING THE IOS KEYWORD FIELD WITH REPEATED TERMS: Including keywords already in the title or subtitle in the 100-character keyword field wastes the field's indexing capacity. Every character in the keyword field must introduce a keyword not covered elsewhere in the listing.
+
+4. STATIC PROMOTIONAL TEXT: The iOS Promotional Text field updates without a new app submission. Brands that write it once and never update it miss the opportunity to run seasonal campaigns, announce new features, and test messaging without going through the full submission process.
+
+5. SCREENSHOT CAPTIONS THAT NAME FEATURES: "Dashboard View," "Settings Panel," and "Notification Center" are feature labels, not captions. They tell the user what the screen shows, not what it enables. "See every project's status in one view" and "Never miss a deadline with smart reminders" convert higher because they name what the user gains.
