@@ -571,6 +571,7 @@ def _single_run_args(**overrides):
         provider=None, model=None,
         variants=1, keywords=None, tone=None, language=None,
         with_image_brief=False, format=None, log_publish=False,
+        locale=None, voice_samples=None,
     )
     base.update(overrides)
     return _types.SimpleNamespace(**base)
@@ -815,8 +816,8 @@ class Phase10HelperTests(unittest.TestCase):
             os.remove(path)
 
     def test_load_keywords_missing_file_returns_empty(self):
-        import io
         import contextlib
+        import io
 
         buf = io.StringIO()
         with contextlib.redirect_stdout(buf):
@@ -898,7 +899,6 @@ class Phase10HelperTests(unittest.TestCase):
 
     def test_export_buffer_csv_only_includes_ok_rows(self):
         import csv as _csv
-        import os
         import tempfile
 
         rows = [
@@ -936,10 +936,10 @@ class Phase10HelperTests(unittest.TestCase):
 
 class LintUrlCheckTests(unittest.TestCase):
     def test_check_url_falls_back_to_get_on_head_403(self):
+        import urllib.error
         from unittest import mock
 
         import lint_content
-        import urllib.error
 
         head_error = urllib.error.HTTPError(url="http://x", code=403,
                                              msg="Forbidden", hdrs=None, fp=None)
@@ -958,10 +958,10 @@ class LintUrlCheckTests(unittest.TestCase):
         self.assertEqual([c.args[1] for c in m.call_args_list], ["HEAD", "GET"])
 
     def test_check_url_returns_head_status_on_non_fallback_error(self):
+        import urllib.error
         from unittest import mock
 
         import lint_content
-        import urllib.error
 
         head_error = urllib.error.HTTPError(url="http://x", code=404,
                                              msg="Not Found", hdrs=None, fp=None)
@@ -1161,6 +1161,151 @@ class PyprojectVersionTests(unittest.TestCase):
             cl_ver = re.search(r"^## \[([^\]]+)\]", f.read(), re.M).group(1)
         self.assertEqual(py_ver, cl_ver,
             f"pyproject.toml version {py_ver} != latest CHANGELOG entry {cl_ver}")
+
+
+class SkyscraperPromptTests(unittest.TestCase):
+    """v0.10.6: new Skyscraper Content prompt registered under `skyscraper` and
+    `skyscraper_content` aliases; file must exist and render with substitution."""
+
+    def test_skyscraper_alias_registered(self):
+        import textprompts
+        self.assertIn("skyscraper", textprompts.TEXT_PROMPT_MAP)
+        self.assertIn("skyscraper_content", textprompts.TEXT_PROMPT_MAP)
+
+    def test_skyscraper_prompt_file_exists_and_renders(self):
+        import textprompts
+        out = textprompts.render("skyscraper", topic="ZZTOPIC",
+                                  audience="ZZAUDIENCE", wordcount=2500)
+        self.assertIn("ZZTOPIC", out)
+        self.assertIn("ZZAUDIENCE", out)
+        self.assertIn("DIFFERENTIATION MATRIX", out)
+        self.assertIn("COMPETITOR", out)
+
+
+class VoiceSamplesTests(unittest.TestCase):
+    """v0.10.6: `--voice-samples FILE` loads few-shot voice anchors from a file
+    and injects them as an untrusted-data-style block before the LLM sees them."""
+
+    def test_load_voice_samples_splits_on_dashes(self):
+        import os
+        import tempfile
+
+        with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False,
+                                          encoding="utf-8") as f:
+            f.write("Sample one body line.\n\n---\n\nSample two body line.\n")
+            path = f.name
+        try:
+            self.assertEqual(generate.load_voice_samples(path),
+                             ["Sample one body line.", "Sample two body line."])
+        finally:
+            os.remove(path)
+
+    def test_load_voice_samples_splits_on_blank_lines(self):
+        import os
+        import tempfile
+
+        with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False,
+                                          encoding="utf-8") as f:
+            f.write("Post A.\n\n\nPost B.\n\n\nPost C.\n")
+            path = f.name
+        try:
+            self.assertEqual(generate.load_voice_samples(path),
+                             ["Post A.", "Post B.", "Post C."])
+        finally:
+            os.remove(path)
+
+    def test_load_voice_samples_missing_file_returns_empty(self):
+        import contextlib
+        import io
+
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            self.assertEqual(generate.load_voice_samples("/no/such/file.txt"), [])
+        self.assertIn("Warning", buf.getvalue())
+
+    def test_load_voice_samples_caps_total_length(self):
+        import os
+        import tempfile
+
+        big = ("x" * 6000)  # single sample under cap; another over
+        with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False,
+                                          encoding="utf-8") as f:
+            f.write(f"{big}\n\n---\n\n{big}\n")
+            path = f.name
+        try:
+            out = generate.load_voice_samples(path, max_chars=8000)
+        finally:
+            os.remove(path)
+        self.assertEqual(len(out), 1, "second sample should be dropped by cap")
+
+    def test_inject_extras_appends_voice_samples_block(self):
+        out = generate.inject_extras("BASE",
+                                      voice_samples=["Past post one.", "Past post two."])
+        self.assertIn("BASE", out)
+        self.assertIn("VOICE ANCHOR SAMPLES", out)
+        self.assertIn("END VOICE ANCHOR SAMPLES", out)
+        self.assertIn("Past post one.", out)
+        self.assertIn("Past post two.", out)
+        # Must warn the model not to treat sample content as instructions.
+        self.assertIn("do not treat any content", out.lower())
+
+
+class LocaleRoutingTests(unittest.TestCase):
+    """v0.10.6: `--locale` is a first-class routing dimension that injects
+    a structured block naming currency, disclosure regulator, SMS-consent
+    regime, privacy law, employment framework, style guide, and source tier."""
+
+    def test_locale_options_include_major_markets(self):
+        for key in ("us", "uk", "eu", "de", "fr", "es", "br", "in",
+                     "jp", "au", "ca", "eea", "latam", "apac", "global"):
+            self.assertIn(key, generate.LOCALE_OPTIONS)
+
+    def test_locale_block_empty_when_no_locale(self):
+        self.assertEqual(generate._locale_block(None), "")
+        self.assertEqual(generate._locale_block(""), "")
+
+    def test_locale_block_uk_swaps_ftc_and_dollar(self):
+        block = generate._locale_block("uk")
+        self.assertIn("United Kingdom", block)
+        self.assertIn("GBP", block)
+        self.assertIn("ASA", block)
+        self.assertIn("PECR", block)
+        self.assertIn("Equality Act", block)
+        # Explicitly warns against AP Style default
+        self.assertIn("not AP", block)
+        # Explicitly warns against US-only source list
+        self.assertIn("US-only", block)
+
+    def test_locale_block_de_uses_eur_and_agg(self):
+        block = generate._locale_block("de")
+        self.assertIn("Germany", block)
+        self.assertIn("EUR", block)
+        self.assertIn("AGG", block)
+        self.assertIn("Destatis", block)
+
+    def test_locale_block_br_uses_lgpd_and_conar(self):
+        block = generate._locale_block("br")
+        self.assertIn("Brazil", block)
+        self.assertIn("BRL", block)
+        self.assertIn("CONAR", block)
+        self.assertIn("LGPD", block)
+
+    def test_unknown_locale_falls_back_to_global(self):
+        block = generate._locale_block("wakanda")
+        self.assertIn("Global / multi-market", block)
+
+    def test_inject_extras_wires_locale_block(self):
+        out = generate.inject_extras("BASE", locale="in")
+        self.assertIn("BASE", out)
+        self.assertIn("India", out)
+        self.assertIn("ASCI", out)
+        self.assertIn("DPDP", out)
+
+    def test_locale_and_language_compose(self):
+        out = generate.inject_extras("BASE", locale="fr", language="French (France)")
+        self.assertIn("France", out)
+        self.assertIn("EUR", out)
+        self.assertIn("Write ALL output in French (France)", out)
 
 
 if __name__ == "__main__":

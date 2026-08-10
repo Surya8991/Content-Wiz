@@ -130,7 +130,7 @@ def market_persona_label(market=None, key="label"):
 # labels, cookie/consent, telemarketing consent, and equal-opportunity notices.
 # Templates should prefer this over hardcoding a single jurisdiction's regime.
 DISCLOSURE_REGIME_NOTE = """
-DISCLOSURE / CONSENT REGIME — apply the framework of the recipient audience's
+DISCLOSURE / CONSENT REGIME - apply the framework of the recipient audience's
 jurisdiction, not the US default:
 - Sponsored / UGC labels: FTC (US), ASA/CAP (UK), Competition Bureau (Canada),
   ACCC (Australia), each EU member state's advertising regulator under the

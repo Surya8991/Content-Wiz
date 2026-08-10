@@ -15,8 +15,8 @@ Exit code 1 if any error is found.
 import os
 import re
 import sys
-import urllib.request
 import urllib.error
+import urllib.request
 
 from templates._shared import BANNED_CTA_PHRASES
 

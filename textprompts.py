@@ -134,6 +134,11 @@ TEXT_PROMPT_MAP = {
     "lead_magnet":         ("Lead_Magnet_Prompt.txt",             "Lead_Magnets"),
     "checklist":           ("Lead_Magnet_Prompt.txt",             "Lead_Magnets"),
     "calculator_copy":     ("Lead_Magnet_Prompt.txt",             "Lead_Magnets"),
+    # v0.10.6: SEO Skyscraper plan (competitor teardown + differentiation
+    # matrix + gap-fill outline + outreach list). Closes the gap flagged by
+    # the SEO-strategist persona audit.
+    "skyscraper":          ("Skyscraper_Content_Prompt.txt",      "Skyscraper"),
+    "skyscraper_content":  ("Skyscraper_Content_Prompt.txt",      "Skyscraper"),
 }
 
 
