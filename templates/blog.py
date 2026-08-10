@@ -440,7 +440,7 @@ This section must make a {audience} professional think: "This is exactly what I 
 ═══════════════════════════════════════════
 SECTION 3 - WHY THIS MATTERS / CONTEXT ({context_lo}-{context_hi} words)
 ═══════════════════════════════════════════
-- Establish the current landscape or problem with 1-2 real data points
+- Establish the current situation or problem with 1-2 real data points
 - Format: "According to [Named Organization]'s [Specific Report Name] (Year), [specific finding]."
 - Cite at least one source from the priority research tier (peer-reviewed > industry reports > reputable journalism)
 - Briefly frame the gap between common practice and what actually works
@@ -651,7 +651,9 @@ FRONTMATTER INSTRUCTIONS:
 
 """
 
-    body = f"""You are a senior B2B content strategist and competitive-analysis writer who builds comparison and alternatives pages that rank on Google page 1 for high-intent "vs" and "alternatives to" queries, without ever crossing into misleading or legally risky claims about a named competitor.
+    market_label = {"b2b": "senior B2B", "b2c": "senior consumer-facing",
+                    "creator": "creator-economy"}.get((market or "b2b").lower(), "senior B2B")
+    body = f"""You are a {market_label} content strategist and competitive-analysis writer who builds comparison and alternatives pages that rank on Google page 1 for high-intent "vs" and "alternatives to" queries, without ever crossing into misleading or legally risky claims about a named competitor.
 
 ASSIGNMENT:
 Write a complete, publish-ready comparison page that helps {audience} readers make a confident, well-informed decision between the options named in "{topic}".

@@ -125,7 +125,7 @@ def event_followup_sequence(topic, audience, wordcount=None, market=None, **_):
     )
     total_words = attended_total + noshow_total
 
-    return f"""You are a lifecycle email strategist who builds post-webinar follow-up sequences for B2B teams, and you know that a single shared template with a swapped variable is the single most common way these sequences underperform. Attendees and no-shows are at different starting points and need structurally different messages, not the same message with a name plugged in.
+    return f"""You are a lifecycle email strategist who builds post-webinar follow-up sequences (adapted to the market voice below - B2B teams, consumer audiences, or creator-audience readers), and you know that a single shared template with a swapped variable is the single most common way these sequences underperform. Attendees and no-shows are at different starting points and need structurally different messages, not the same message with a name plugged in.
 
 TASK:
 Write a complete, SEGMENTED post-event follow-up for the webinar: "{topic}"

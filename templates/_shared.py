@@ -103,6 +103,52 @@ def market_voice(market=None):
     return MARKET_VOICE_RULES.get((market or "b2b").lower(), MARKET_VOICE_RULES["b2b"])
 
 
+# Common labels for interpolating `market` into an opening persona line so a
+# template's role-play doesn't contradict the `market_voice()` rules appended
+# below it. Pattern: f"You are a {market_persona_label(market)} writer …".
+_MARKET_LABELS = {
+    "b2b":     {"label": "B2B",     "brand_kind": "B2B brands",         "buyer": "professional buyers"},
+    "b2c":     {"label": "consumer", "brand_kind": "consumer brands",   "buyer": "everyday shoppers"},
+    "creator": {"label": "creator-economy", "brand_kind": "solo creators", "buyer": "creator-audience readers"},
+}
+
+
+def market_persona_label(market=None, key="label"):
+    """Return a short adjective/noun describing the persona to interpolate into
+    a template's opening role-play. `key` selects a facet:
+    - "label"      -> "B2B" / "consumer" / "creator-economy"      (adjective)
+    - "brand_kind" -> "B2B brands" / "consumer brands" / "solo creators"
+    - "buyer"      -> "professional buyers" / "everyday shoppers" / "creator-audience readers"
+    Default falls back to the b2b variant so callers that omit `market` behave
+    exactly as before.
+    """
+    entry = _MARKET_LABELS.get((market or "b2b").lower(), _MARKET_LABELS["b2b"])
+    return entry.get(key, entry["label"])
+
+
+# Region-aware disclosure-regime language for prompts that discuss sponsored/UGC
+# labels, cookie/consent, telemarketing consent, and equal-opportunity notices.
+# Templates should prefer this over hardcoding a single jurisdiction's regime.
+DISCLOSURE_REGIME_NOTE = """
+DISCLOSURE / CONSENT REGIME — apply the framework of the recipient audience's
+jurisdiction, not the US default:
+- Sponsored / UGC labels: FTC (US), ASA/CAP (UK), Competition Bureau (Canada),
+  ACCC (Australia), each EU member state's advertising regulator under the
+  UCPD + DSA (EU/EEA), CONAR (Brazil), ASCI (India). Use the label form the
+  recipient regulator requires (#ad/#sponsored/Werbung/publicidade/etc.).
+- SMS/telemarketing consent: TCPA + state law (US), PECR (UK), CASL (Canada),
+  GDPR + ePrivacy (EU/EEA), Spam Act (Australia), LGPD (Brazil).
+- Data/privacy: CCPA/CPRA + state law (US), UK GDPR, EU GDPR, LGPD (Brazil),
+  PIPEDA (Canada), APPI (Japan), DPDP Act (India).
+- Employment / equal opportunity: EEO Act + state law (US), Equality Act (UK),
+  EU Pay Transparency Directive + national equality laws (EU), Fair Work Act
+  (Australia).
+When the target audience or `market` is unclear, name the regime that applies
+and add a "confirm the local equivalent" reviewer note - do not silently assume
+the US framework governs.
+""".strip()
+
+
 TONE_RULES = {
     "formal": (
         "TONE OVERRIDE - FORMAL: Use precise vocabulary, complete sentences, and a "

@@ -74,7 +74,7 @@ PROOF BEAT (5-10 seconds):
 
 CTA (final 3-5 seconds):
 - "{cta}" - write the exact call-to-action the creator should say and/or show on screen
-- Disclosure note if applicable: "[REQUIRED: add '#ad' or '#sponsored' to the caption per FTC guidelines]"
+- Disclosure note if applicable: "[REQUIRED: add the disclosure label required by the recipient market's regulator - '#ad' or '#sponsored' (FTC US, ASA UK, ACCC AU, Competition Bureau CA), 'Werbung' (Germany), 'Publicidade' (Brazil - CONAR), or the local equivalent - to the caption; do not default to the US FTC form if the audience is elsewhere]"
 
 DOS (specific creative direction the creator must follow):
 {dos}
@@ -225,8 +225,8 @@ PRE-WRITE DIAGNOSTIC:
 2025 CREATOR PARTNERSHIP CONTEXT:
 - UGC now accounts for 35% of influencer marketing campaigns worldwide, surpassing TikTok-specific campaigns in volume (eMarketer, 2025)
 - Creator content that matches the creator's existing native voice outperforms scripted brand-voice content on CTR, saves, and shares - the brief must allow for this adaptation
-- Disclosure is an FTC compliance requirement, not a brand preference - failing to disclose paid partnerships exposes both the brand and the creator to enforcement action
-- Nano and micro creators (10K-100K) deliver 60% higher engagement rates on average than mega influencers, with significantly lower CPM, making them the highest-ROI tier for most brand campaigns (Stack Influence, 2025)
+- Disclosure is a compliance requirement in every major market (FTC in the US, ASA/CAP in the UK, ACCC in Australia, Competition Bureau in Canada, national regulators under UCPD/DSA in the EU/EEA, CONAR in Brazil, ASCI in India) - not a brand preference. Failing to disclose paid partnerships exposes both the brand and the creator to enforcement action under whichever regime governs the recipient audience.
+- Nano and micro creators (10K-100K) deliver higher engagement rates on average than mega influencers, with significantly lower CPM, making them the highest-ROI tier for most brand campaigns (source: various industry benchmarks - confirm with a current report before quoting the multiple in output)
 
 CREATOR BRIEF DOCUMENT (write all sections):
 
@@ -263,16 +263,16 @@ SECTION 4 - BRAND GUIDELINES (the non-negotiables):
 SECTION 5 - DISCLOSURE AND COMPLIANCE (non-negotiable):
 Disclosure required: {disclosure_required}
 
-FTC DISCLOSURE REQUIREMENTS (as of 2025):
-- Any paid, gifted, or affiliate partnership requires clear and conspicuous disclosure
-- Acceptable disclosure labels: "#ad", "#sponsored", "#paidpartnership" - placed at the START of any caption or verbal statement, not buried at the end
-- NOT acceptable: "#collab", "#partner", "#gifted" alone - these have been found insufficient by the FTC in enforcement actions
-- Verbal disclosure on video: if the video is a paid partnership, the creator must state it verbally in the video itself, not only in the caption - platform "Paid Partnership" tags are supplementary, not a substitute
-- Instagram and TikTok paid partnership labels are required IN ADDITION TO caption disclosure, not instead of
-- Consequences of non-disclosure: both the brand and the creator are liable for FTC enforcement - the brand's brief must not instruct or imply that disclosure is optional
+DISCLOSURE REQUIREMENTS (as of 2025 - apply the regime of the audience's jurisdiction, do NOT default to US FTC if the audience is elsewhere):
+- Any paid, gifted, or affiliate partnership requires clear and conspicuous disclosure in every major market: FTC (US), ASA/CAP (UK), ACCC + Ad Standards (AU), Competition Bureau + Ad Standards (CA), national regulators under UCPD + DSA (EU/EEA), CONAR (Brazil), ASCI (India).
+- Acceptable disclosure labels vary by regulator. Common globally-recognized forms placed at the START of the caption or verbal statement (never buried): "#ad", "#sponsored", "#paidpartnership". Use the local form the recipient market's regulator requires (e.g. "Werbung" in Germany, "Publicidade"/"Publi" in Brazil, "#advertisement" in India per ASCI).
+- NOT acceptable in most jurisdictions on their own: "#collab", "#partner", "#gifted" alone - the FTC, ASA, and other regulators have found these insufficient in enforcement actions.
+- Verbal disclosure on video: if the video is a paid partnership, the creator must state it verbally in the video itself, not only in the caption - platform "Paid Partnership" tags are supplementary, not a substitute in most regimes.
+- Instagram and TikTok paid partnership labels are required IN ADDITION TO caption disclosure, not instead of, in most jurisdictions.
+- Consequences of non-disclosure: both the brand and the creator are liable for enforcement under whichever regulator governs the audience - the brand's brief must not instruct or imply that disclosure is optional. If the campaign runs in multiple markets, name every regime that applies and use the strictest common denominator.
 
 REQUIRED DISCLOSURE TEXT FOR THIS CAMPAIGN:
-Caption: "[{brand}] gifted me this product / paid me to create this content." + #ad (or #sponsored) at the start of the caption
+Caption: "[{brand}] gifted me this product / paid me to create this content." + the disclosure label required by the recipient market's regulator (e.g. #ad or #sponsored for US/UK/AU/CA/global-English audiences; Werbung / Publicidade / #advertisement / etc. for the local market) at the START of the caption. Reviewer note: confirm the label form with the brand's compliance or legal team before posting.
 Verbal (if applicable): "[Creator states at or near the start of the video]: '{brand} sent me this to try / This video is sponsored by {brand}.'"
 
 SECTION 6 - SUBMISSION AND APPROVAL PROCESS:

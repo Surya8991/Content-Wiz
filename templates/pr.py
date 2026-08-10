@@ -1,4 +1,10 @@
-from ._shared import HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES, market_voice
+from ._shared import (
+    HUMAN_WRITING_RULES,
+    RANKABILITY_RULES,
+    RESEARCH_RULES,
+    market_persona_label,
+    market_voice,
+)
 
 
 def case_study(topic, audience, **_):
@@ -195,11 +201,16 @@ Return the complete case study with all sections, formatted with clear "══�
 """
 
 
-def press_release(topic, audience, **_):
-    return f"""You are a senior B2B PR writer who has placed releases in TechCrunch, Forbes, HBR, and major industry trade publications. You write to AP Style strictly, understand journalists' news values, and know that a press release lives or dies on its first 50 words.
+def press_release(topic, audience, market=None, **_):
+    outlet_examples = {"b2b": "TechCrunch, Forbes, HBR, and major industry trade publications",
+                        "b2c": "consumer-facing outlets across lifestyle, tech, and mainstream press",
+                        "creator": "creator-economy publications, industry newsletters, and platform-native outlets"}.get(
+                            (market or "b2b").lower(),
+                            "TechCrunch, Forbes, HBR, and major industry trade publications")
+    return f"""You are a senior {market_persona_label(market)} PR writer who has placed releases in {outlet_examples}. You write to the style guide of the recipient market (AP Style for US media, Guardian/Times style for UK, or the local wire-service standard), understand journalists' news values, and know that a press release lives or dies on its first 50 words.
 
 TASK:
-Write a professional, journalist-ready B2B press release about: "{topic}"
+Write a professional, journalist-ready press release (in the tone appropriate for the market voice below) about: "{topic}"
 
 TARGET AUDIENCE / READER: {audience} AND the journalists, editors, and industry analysts who cover this space
 
@@ -214,10 +225,10 @@ PRE-WRITE DIAGNOSTIC:
    - NOVELTY: Is this a first, a record, or a meaningful change?
 4. EMBARGO STRATEGY: Should this release be sent under embargo to selected journalists 24-48 hours ahead, or distributed openly?
 
-PRESS RELEASE NEWS VALUE CONTEXT:
-- Journalists receive 100-300 press releases daily; 90%+ are deleted within 8 seconds based on the headline alone
+PRESS RELEASE NEWS VALUE PRINCIPLES (qualitative, do not repeat these framings as stats in the output unless independently sourceable):
+- Beat reporters receive very high volumes of press releases daily and delete most of them on headline alone; the headline earns or loses the read
 - The lead paragraph (first 50 words) decides whether the release earns a deeper read
-- Releases with specific data points and named sources are 3-4x more likely to be quoted vs. those with generic claims
+- Releases with specific data points and named sources are meaningfully more likely to be quoted than releases with generic claims - if you cite a stat inside the release, it must include a real named source (organization + report + year)
 - Quotes that sound like real human speech (vs. corporate boilerplate) are the most-quoted element when journalists write the story
 - Inverted pyramid is non-negotiable: every paragraph should be removable from the bottom up without losing the core story
 
@@ -420,8 +431,8 @@ Return the complete press release formatted exactly as it should be distributed 
 """
 
 
-def haro(topic, audience, **_):
-    return f"""You are a B2B PR specialist who writes HARO (Help A Reporter Out) pitch responses that consistently earn media citations and backlinks. You write for journalists covering: {audience}.
+def haro(topic, audience, market=None, **_):
+    return f"""You are a {market_persona_label(market)} PR specialist who writes HARO (Help A Reporter Out) pitch responses that consistently earn media citations and backlinks. You write for journalists covering: {audience}.
 
 TASK:
 Write a pitch response for a journalist query about: "{topic}"
@@ -624,8 +635,8 @@ Return the complete one-page memo with the header block, all six numbered sectio
 # ─────────────────────────────────────────────
 
 
-def guest_article(topic, audience, **_):
-    return f"""You are a guest article strategist who secures placements in Tier 1 and Tier 2 B2B publications by writing pitch emails that pass the editor's 8-second scan and full articles that match publication editorial standards without sounding like branded content.
+def guest_article(topic, audience, market=None, **_):
+    return f"""You are a guest article strategist who secures placements in Tier 1 and Tier 2 publications appropriate to the market voice below (B2B trade press for professional markets, consumer/lifestyle press for consumer markets, creator-economy and platform-native outlets for creator markets), writing pitch emails that pass the editor's 8-second scan and full articles that match publication editorial standards without sounding like branded content.
 
 TASK:
 Write a guest article pitch or full article draft on: "{topic}"

@@ -39,7 +39,7 @@ PRE-WRITE DIAGNOSTIC:
 3. What is the one action the click should trigger, stated as a 2-4 word button label?
 
 2026 PROGRAMMATIC DISPLAY CONTEXT:
-- Five IAB standard sizes carry over 70% of all display impressions: 300x250 (Medium Rectangle), 728x90 (Leaderboard), 160x600 (Wide Skyscraper), 300x600 (Half Page), and 320x50 (Mobile Banner)
+- Five IAB standard sizes carry the majority of display impressions across most networks: 300x250 (Medium Rectangle), 728x90 (Leaderboard), 160x600 (Wide Skyscraper), 300x600 (Half Page), and 320x50 (Mobile Banner)
 - Google Ads-served display headlines cap at 30 characters (short headline) with a 90-character long headline field, and descriptions cap at 90 characters - copy that runs longer gets truncated with an ellipsis, not wrapped
 - Every size shares the same ~150 KB creative file-weight ceiling most networks enforce, which is why the copy itself has to carry the message; there is no room for a second visual idea
 - Smaller units (320x50, 728x90) have almost no vertical room - one line of headline, no room for a body line at all in the 320x50
@@ -129,12 +129,20 @@ PRE-WRITE DIAGNOSTIC:
 - Description/caption fields cap around 200 characters with roughly 100 characters recommended as the practical read-through length
 - The winning pattern for 2026 clickbait-resistant headlines: state the specific, concrete outcome or finding directly (a real number, a named method, a plain claim) rather than withholding it to force a click
 
-MANDATORY DISCLOSURE (this is an FTC compliance requirement, not a style choice):
+MANDATORY DISCLOSURE (compliance requirement in every major market, not a style choice - apply the recipient market's regulator, not the US FTC by default):
 - Every native unit must carry a visible disclosure placed close enough to the unit that a reader sees it before engaging, not buried behind a tap or only on the landing page
-- Acceptable disclosure labels per FTC guidance: "Ad", "Advertisement", "Paid Advertisement", "Sponsored Content"
-- NOT acceptable on their own, because the FTC has found them ambiguous or misleading: "Promoted", "Promoted Story", "Suggested for you" with no other marker
-- If this unit could be mistaken for the surrounding editorial content in look or topic (the more it resembles the feed, the more disclosure it needs), state that explicitly and require the stronger label ("Sponsored Content" or "Advertisement") rather than the bare minimum
+- Acceptable disclosure labels vary by jurisdiction. Use the label form the recipient regulator requires:
+  * US (FTC): "Ad", "Advertisement", "Paid Advertisement", "Sponsored Content"
+  * UK (ASA/CAP): "Ad", "Advertisement", "Advertisement Feature", "#ad" (must be prominent)
+  * EU/EEA (national regulators under UCPD + DSA): "Werbung"/"Anuncio"/"Publicidade"/"Publicité" or the local equivalent per member state
+  * Canada (Competition Bureau + Ad Standards): "Ad", "Advertisement", "Sponsored"
+  * Australia (ACCC + Ad Standards): "Ad", "Advertisement", "Sponsored"
+  * Brazil (CONAR): "Publicidade", "Publi", "Publieditorial"
+  * India (ASCI): "#ad", "#advertisement", "#sponsored" (must be prominent)
+- NOT acceptable on their own in most jurisdictions (FTC and equivalents have found them ambiguous): "Promoted", "Promoted Story", "Suggested for you" with no other marker
+- If this unit could be mistaken for the surrounding editorial content in look or topic (the more it resembles the feed, the more disclosure it needs), state that explicitly and require the stronger label ("Sponsored Content" / "Advertisement Feature" / local equivalent) rather than the bare minimum
 - Disclosure applies to both the in-feed teaser AND the landing page it clicks through to - note this as a requirement for whoever builds the landing page, not just the ad unit
+- If the target market is unclear, name the primary regime (usually the audience's country of residence) and add a reviewer note to confirm any secondary market's local rules before launch
 
 VARIANT STRUCTURE (write all {variant_count} variants, each distinct):
 

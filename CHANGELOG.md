@@ -5,6 +5,92 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.4] - 2026-08-10
+
+### Changed (category-by-category content sweep across 18 template modules)
+
+Three parallel audit agents scanned every template category (SEO/blog/growth,
+paid ads/lifecycle/sales/mobile/events, social/community/creator/PR/product/
+recruitment) for four defect families: unsourced stats in prompt scaffolding,
+hardcoded B2B persona lines that ignore the `market` kwarg, banned AI-signature
+phrases that leaked into scaffolding, and US-centric regulatory or source
+assumptions presented as universal. Highest-impact fixes shipped in this
+release:
+
+**Global (`templates/_shared.py`):**
+- New `market_persona_label(market, key)` helper - returns a market-aware
+  adjective ("B2B" / "consumer" / "creator-economy"), brand-kind noun, or
+  buyer noun to interpolate into a template's opening role-play, so the
+  persona line no longer contradicts the `market_voice()` rules below it.
+- New `DISCLOSURE_REGIME_NOTE` constant that names the sponsored/consent/
+  privacy/EEO framework of every major market (US/UK/EU/CA/AU/BR/IN) for
+  templates that discuss disclosure.
+
+**US-centric regulatory framing de-universalized:**
+- `paid_ads.py::native_ad_copy` FTC-only disclosure section rewritten to
+  cover FTC (US), ASA/CAP (UK), UCPD+DSA national regulators (EU/EEA),
+  Competition Bureau (CA), ACCC (AU), CONAR (BR), and ASCI (IN).
+- `mobile_messaging.py::sms_blast` TCPA-only framing rewritten to name
+  the recipient market's SMS-consent regime (TCPA, PECR, CASL, GDPR+ePrivacy,
+  Spam Act, LGPD) at the persona line, hard-consent rule, and compliance note.
+- `ugc.py::creator_brief` FTC-only disclosure section rewritten to name every
+  major regulator and use the local label form (Werbung, Publicidade, etc.).
+- `ugc.py::ugc_video_brief` disclosure line now names the recipient
+  regulator instead of defaulting to FTC.
+- `recruitment.py::job_posting` pay-transparency and EEO sections rewritten
+  to provide parallel language for US/UK/EU/CA/AU legal frameworks; the
+  US EEO paragraph is now one option among many, not the default.
+
+**Persona lines now honor the brand's market register (not hardcoded B2B):**
+- `blog.py::comparison_page` and `growth.py::landing_page` interpolate
+  `market_persona_label(market)` into the opening role-play; tone
+  guidance updated to defer to `market_voice()` instead of asserting
+  peer-to-peer B2B by default.
+- `social.py::linkedin_post`, `twitter_thread`, and `instagram` now accept
+  `market=None` and swap the brand-type framing in the persona line
+  ("B2B brands" -> "consumer brands" / "solo creators" per market).
+- `sales_enablement.py` all four functions (`pitch_deck_narrative`,
+  `cold_call_script`, `inmail_template`, `proposal_copy`) interpolate
+  `market_persona_label(market)` and a new `_deal_context(market)` helper
+  instead of hardcoding "B2B deals".
+- `lifecycle.py::churn_prevention` and `upsell_cross_sell`, `events.py::
+  event_followup_sequence`, `product.py::positioning_statement` and
+  `launch_announcement` reworded to defer to the market voice instead of
+  asserting B2B/B2B-SaaS as the universal frame.
+- `pr.py::press_release`, `haro`, and `guest_article` now accept `market`
+  and interpolate the label; press_release outlet examples and style-guide
+  guidance swap by market (drops AP-Style-as-universal).
+
+**Unsourced numeric framing softened (models were mirroring these as
+fabricated stats in output):**
+- `growth.py::newsletter` (42%/21%/12% dropped), `growth.py::geo` AI-Overview
+  citation-decay percentage (50%/13-week specifics dropped, qualitative kept).
+- `social.py::twitter_thread` "30-50%" image engagement multiplier softened.
+- `paid_ads.py::display_banner_copy` "over 70%" IAB-share stat softened.
+- `pr.py::press_release` "100-300 releases", "90%+ deleted in 8 seconds",
+  "3-4x more likely to be quoted" rewritten as qualitative principles.
+- `lifecycle.py::upsell_cross_sell` "40% of new ARR" / "median of about 25%"
+  softened to qualitative framing.
+
+**AI-signature phrase leaked into prompt scaffolding:**
+- `blog.py:443` "current landscape or problem" -> "current situation or
+  problem" (landscape is on the banned list).
+
+**Region-aware sourcing already in `RESEARCH_RULES`** (from v0.10.3) is now
+consistently applied - templates that mention a source list now defer to
+it instead of naming US-only exemplars.
+
+### Notes
+
+- No breaking changes; test suite unchanged at 105 tests, all passing.
+- The full punch list surfaced ~40 issues across 14 template files. This
+  release addresses the highest-impact set (all US-centric regulatory
+  hardcodings, the top persona-line contradictions, the most visible
+  unsourced-stat framings). Remaining lower-severity items - a handful
+  of unsourced-stat framings inside carefully sourced blocks, and a few
+  more persona lines in smaller-surface templates - are tracked for a
+  future sweep.
+
 ## [0.10.3] - 2026-08-10
 
 ### Changed (content-quality follow-up from 7-persona content audit)

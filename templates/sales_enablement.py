@@ -1,4 +1,21 @@
-from ._shared import BANNED_CTA_PHRASES, HUMAN_WRITING_RULES, RESEARCH_RULES, market_voice
+from ._shared import (
+    BANNED_CTA_PHRASES,
+    HUMAN_WRITING_RULES,
+    RESEARCH_RULES,
+    market_persona_label,
+    market_voice,
+)
+
+
+def _deal_context(market):
+    """One-line 'deals like this' context for interpolating into a persona line
+    so sales-enablement templates match the brand's market register instead of
+    hardcoding B2B."""
+    return {
+        "b2b":     "six and seven-figure B2B deals",
+        "b2c":     "high-ticket consumer and prosumer sales conversations",
+        "creator": "creator-economy partnership and sponsorship deals",
+    }.get((market or "b2b").lower(), "six and seven-figure B2B deals")
 
 _BANNED_CTA_LIST = ", ".join(f'"{p}"' for p in BANNED_CTA_PHRASES)
 
@@ -15,7 +32,7 @@ def pitch_deck_narrative(topic, audience, wordcount=None, market=None, **_):
     proof_lo, proof_hi = round(wordcount * 0.16), round(wordcount * 0.20)
     objection_lo, objection_hi = round(wordcount * 0.12), round(wordcount * 0.16)
     ask_lo, ask_hi = round(wordcount * 0.08), round(wordcount * 0.11)
-    return f"""You are a sales enablement writer who has built the narrative script behind pitch decks for reps closing six and seven-figure B2B deals. You do not design slides - you write the words a rep says while a slide is on screen, or the speaker notes underneath it. A pitch deck's visuals get remembered; the narrative is what actually moves a buyer through a decision.
+    return f"""You are a sales enablement writer who has built the narrative script behind pitch decks for reps closing {_deal_context(market)}. You do not design slides - you write the words a rep says while a slide is on screen, or the speaker notes underneath it. A pitch deck's visuals get remembered; the narrative is what actually moves a buyer through a decision.
 
 TASK:
 Write the slide-by-slide narrative script (speaker notes, not slide copy or visual design) for a sales pitch deck about: "{topic}"
@@ -116,7 +133,7 @@ def cold_call_script(topic, audience, wordcount=None, market=None, **_):
     value_lo, value_hi = round(wordcount * 0.14), round(wordcount * 0.18)
     objection_lo, objection_hi = round(wordcount * 0.22), round(wordcount * 0.28)
     close_lo, close_hi = round(wordcount * 0.08), round(wordcount * 0.11)
-    return f"""You are a B2B sales trainer who has coached reps on cold calling for over a decade. You build skeletons, not scripts - a rep who reads a word-for-word script out loud sounds like a robot and gets hung up on in the first ten seconds. Every section below is a flexible framework the rep adapts live, not a transcript to recite.
+    return f"""You are a {market_persona_label(market)} sales trainer who has coached reps on cold calling for over a decade in the market context described below. You build skeletons, not scripts - a rep who reads a word-for-word script out loud sounds like a robot and gets hung up on in the first ten seconds. Every section below is a flexible framework the rep adapts live, not a transcript to recite.
 
 TASK:
 Write a cold call opening-and-discovery script skeleton (framework, not a verbatim transcript) for a rep calling about: "{topic}"
@@ -222,7 +239,7 @@ def inmail_template(topic, audience, wordcount=None, market=None, **_):
     hook_lo, hook_hi = round(wordcount * 0.25), round(wordcount * 0.32)
     body_lo, body_hi = round(wordcount * 0.40), round(wordcount * 0.48)
     ask_lo, ask_hi = round(wordcount * 0.14), round(wordcount * 0.18)
-    return f"""You are a B2B sales rep who has sent thousands of LinkedIn InMails and connection requests, and who knows the actual current mechanics: InMail allows up to 200 characters in the subject line and up to 1,900 characters in the body, but the shortest InMails - under roughly 400 characters total - see meaningfully higher response rates than longer ones. Connection request notes are capped at 300 characters, and the strongest-performing notes run far shorter than the cap, in the 120-180 character range.
+    return f"""You are a {market_persona_label(market)} sales rep who has sent thousands of LinkedIn InMails and connection requests, and who knows the actual current mechanics: InMail allows up to 200 characters in the subject line and up to 1,900 characters in the body, but the shortest InMails - under roughly 400 characters total - see meaningfully higher response rates than longer ones. Connection request notes are capped at 300 characters, and the strongest-performing notes run far shorter than the cap, in the 120-180 character range.
 
 TASK:
 Write a LinkedIn InMail message and a separate connection-request note template related to: "{topic}"
@@ -293,7 +310,7 @@ def proposal_copy(topic, audience, wordcount=None, market=None, **_):
     scope_lo, scope_hi = round(wordcount * 0.26), round(wordcount * 0.32)
     outcomes_lo, outcomes_hi = round(wordcount * 0.22), round(wordcount * 0.28)
     next_lo, next_hi = round(wordcount * 0.10), round(wordcount * 0.14)
-    return f"""You are a B2B sales rep who writes the narrative copy that wraps around a proposal's pricing table - the words that make a buyer's procurement team and economic buyer actually read the document instead of jumping straight to the number at the bottom. You know that proposals sent within 24 hours of the discovery call and built around what the buyer specifically said outperform generic templates by a wide margin.
+    return f"""You are a {market_persona_label(market)} sales rep who writes the narrative copy that wraps around a proposal's pricing table - the words that make a buyer's procurement team and economic buyer actually read the document instead of jumping straight to the number at the bottom. You know that proposals sent within 24 hours of the discovery call and built around what the buyer specifically said outperform generic templates by a wide margin.
 
 TASK:
 Write the narrative copy (not the pricing table itself) for a sales proposal about: "{topic}"

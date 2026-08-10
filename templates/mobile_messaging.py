@@ -17,7 +17,7 @@ _BANNED_CTA_LIST = ", ".join(f'"{p}"' for p in BANNED_CTA_PHRASES)
 
 
 def sms_blast(topic, audience, wordcount=None, market=None, **_):
-    return f"""You are an SMS marketing copywriter who has written compliant, high-converting text campaigns for brands operating under US TCPA rules, and you know a single well-written but non-compliant blast can cost more in statutory damages than a year of campaigns earns in revenue.
+    return f"""You are an SMS marketing copywriter who has written compliant, high-converting text campaigns for brands operating under the recipient market's telemarketing-consent regime (TCPA + state law in the US, PECR in the UK, CASL in Canada, GDPR + ePrivacy in the EU/EEA, Spam Act in Australia, LGPD in Brazil), and you know a single well-written but non-compliant blast can cost more in statutory damages or regulator fines than a year of campaigns earns in revenue.
 
 TASK:
 Write ONE standalone SMS marketing message about: "{topic}"
@@ -35,7 +35,7 @@ HARD CONSENT RULE (non-negotiable, read before writing):
 - This template assumes prior express consent already exists for every recipient. Never write copy that suggests, jokes about, or hints at outreach to someone who has not opted in.
 - Never write copy implying a cold or unsolicited send ("thought you'd want to know," "since you're in our system," etc. are fine ONLY as an already-subscribed brand voice, never as a justification for reaching someone new).
 - If the brand's consent basis is unclear from the inputs, do not assume marketing-grade consent - flag it: "[INSERT: confirm this list has valid prior express written consent for marketing texts before sending]".
-- Never fabricate or assert a specific legal conclusion (e.g. "this satisfies TCPA" or "this is fully compliant in all states"). Encode current general practice below, but the actual campaign must be verified by the brand's own compliance or legal review before sending - state this in the note that follows the message.
+- Never fabricate or assert a specific legal conclusion (e.g. "this satisfies TCPA/PECR/CASL/GDPR" or "this is fully compliant in all states/countries"). Encode current general practice below, but the actual campaign must be verified by the brand's own compliance or legal review under the recipient market's regime before sending - state this in the note that follows the message.
 
 SMS CHARACTER MECHANICS (encode exactly, this is mechanics not style):
 - A single GSM-7 segment (standard Latin text, no emoji, no special unicode characters) holds 160 characters. Going over 160 does not fail - it splits into multiple linked segments, and each linked segment then only holds 153 characters (7 are used for the linking header), so a message just over 160 characters silently becomes two segments and costs double to send.
@@ -83,7 +83,7 @@ SMS MESSAGE:
 [encoding: GSM-7 / UCS-2 - state which]
 
 COMPLIANCE NOTE:
-[One line confirming this assumes existing consent and one line recommending the brand's compliance or legal reviewer confirm current TCPA and state-level requirements before sending. Include the "[INSERT: opt-in confirmation if required by jurisdiction]" placeholder if applicable.]
+[One line confirming this assumes existing consent and one line recommending the brand's compliance or legal reviewer confirm the current SMS-consent rules in the recipient's jurisdiction before sending: TCPA + state law (US), PECR (UK), CASL (Canada), GDPR + ePrivacy (EU/EEA), Spam Act (Australia), LGPD (Brazil), or the local equivalent. Include the "[INSERT: opt-in confirmation if required by jurisdiction]" placeholder if applicable.]
 """
 
 

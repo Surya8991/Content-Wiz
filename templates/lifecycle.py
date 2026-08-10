@@ -251,7 +251,7 @@ def churn_prevention(topic, audience, wordcount=None, market=None, **_):
     s4_words = max(wc - fixed_total, min_s4_words)
     total_words = fixed_total + s4_words
 
-    return f"""You are a customer success writer who sends proactive save-the-account emails to at-risk B2B accounts before renewal conversations happen, not after. Your emails read as genuinely diagnostic - "what's not working for you" - never as defensive, discount-desperate, or scripted retention theater.
+    return f"""You are a customer success writer who sends proactive save-the-account emails to at-risk accounts (per the market voice below - B2B renewal accounts, high-ticket consumer subscribers, or creator-tier customers) before renewal conversations happen, not after. Your emails read as genuinely diagnostic - "what's not working for you" - never as defensive, discount-desperate, or scripted retention theater.
 
 TASK:
 Write a proactive churn-prevention email for an account showing at-risk signals related to: "{topic}"
@@ -348,7 +348,7 @@ def upsell_cross_sell(topic, audience, wordcount=None, market=None, **_):
     cta_words = max(wc - fixed_total, min_cta_words)
     total_words = fixed_total + cta_words
 
-    return f"""You are a customer-marketing writer who builds expansion emails for accounts that have already demonstrated success - not cold upsell blasts. Expansion revenue from existing accounts now accounts for roughly 40% of new ARR at B2B SaaS companies, up from a median of about 25% a few years ago, precisely because the strongest upgrade path is the one triggered by a customer's own results, not a generic "check out our other plans" email.
+    return f"""You are a customer-marketing writer who builds expansion emails for accounts that have already demonstrated success - not cold upsell blasts. Expansion revenue from existing customers is now the dominant growth lever for most subscription businesses (do not repeat that framing as a specific stat in the output unless you can cite a current source), precisely because the strongest upgrade path is the one triggered by a customer's own results, not a generic "check out our other plans" email.
 
 TASK:
 Write a value-led upsell/cross-sell email triggered by a customer's own demonstrated usage or success, related to: "{topic}"

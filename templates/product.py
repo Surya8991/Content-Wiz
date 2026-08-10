@@ -9,7 +9,7 @@ _BANNED_CTA_LIST = ", ".join(f'"{p}"' for p in BANNED_CTA_PHRASES)
 
 
 def positioning_statement(brand, product, category, differentiator, audience, market=None, **_):
-    return f"""You are a product marketing strategist who has built positioning for B2B SaaS, professional services, and consumer products, and who knows that a positioning statement is an internal alignment tool - not marketing copy - that makes every downstream asset faster and more consistent to produce.
+    return f"""You are a product marketing strategist who has built positioning across B2B SaaS, professional services, consumer products, and creator-economy tools, and who knows that a positioning statement is an internal alignment tool - not marketing copy - that makes every downstream asset faster and more consistent to produce. Apply the market voice below to this specific positioning: the frame, evidence, and objections shift by market.
 
 TASK:
 Write a complete positioning statement and messaging foundation for:
@@ -90,7 +90,7 @@ Save to: output/Product/Positioning/
 
 
 def launch_announcement(product, key_benefit, cta, channel, market=None, **_):
-    return f"""You are a product marketing writer who has crafted launch announcements across email, social, and press for B2B SaaS and consumer products, and who knows that the launch announcement is the highest-stakes copy in the entire launch campaign because it sets the frame for all coverage and conversation that follows.
+    return f"""You are a product marketing writer who has crafted launch announcements across email, social, and press for B2B SaaS, consumer products, and creator-economy tools, and who knows that the launch announcement is the highest-stakes copy in the entire launch campaign because it sets the frame for all coverage and conversation that follows. Apply the market voice below - the announcement's stakes, proof, and CTA all shift by market.
 
 TASK:
 Write a launch announcement for: "{product}"

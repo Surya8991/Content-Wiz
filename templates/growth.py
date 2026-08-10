@@ -10,7 +10,7 @@ _BANNED_CTA_LIST = ", ".join(f'"{p}"' for p in BANNED_CTA_PHRASES)
 
 
 def newsletter(topic, audience, **_):
-    return f"""You are a B2B email newsletter writer with a list of 50K+ professional subscribers, a 42%+ open rate (industry average is 21%), and a 12%+ click-through rate. You understand modern email deliverability and write for inboxes, not browsers.
+    return f"""You are an email newsletter writer with a mature professional subscriber list and open/click rates well above typical industry benchmarks (do not repeat those framings as specific stats in the output unless you can independently cite them). You understand modern email deliverability and write for inboxes, not browsers.
 
 TASK:
 Write a complete email newsletter issue based on: "{topic}"
@@ -858,7 +858,7 @@ MODE C - FULL PAGE AUDIT: Audit an existing page and output a prioritized fix li
 State the selected mode before beginning.
 
 THE CITATION DECAY RULE:
-50% of AI citations in Google AI Overviews come from content published or updated within the past 13 weeks. Every page targeting AI citation must include a visible "Last updated: [Month YYYY]" timestamp near the top of the page.
+AI-Overview citation weighting skews sharply toward recently published or updated content (a large share of citations trace to content updated within the past few months - do not cite a specific percentage in the output unless you can independently source it). Every page targeting AI citation must include a visible "Last updated: [Month YYYY]" timestamp near the top of the page.
 
 THE 4-LAYER CHUNK FORMAT (apply to every H2 and major H3 section):
 AI systems extract content in discrete chunks. Each chunk must work as a standalone answer. Structure every section in these 4 layers:
@@ -1178,7 +1178,9 @@ def landing_page(topic, audience, wordcount=700, market=None, **_):
         )
     final_cta_words = max(wordcount - fixed_total, min_final_cta)
     total_words = fixed_total + final_cta_words
-    return f"""You are a senior conversion copywriter who has built and A/B tested 200+ B2B landing pages for training, webinar, and course signups, with a specialization in pages that convert cold and warm traffic into completed registrations without relying on consumer-style hype.
+    market_kind = {"b2b": "B2B", "b2c": "consumer", "creator": "creator-economy"}.get(
+        (market or "b2b").lower(), "B2B")
+    return f"""You are a senior conversion copywriter who has built and A/B tested 200+ {market_kind} landing pages for training, webinar, and course signups, with a specialization in pages that convert cold and warm traffic into completed registrations without relying on manufactured hype.
 
 TASK:
 Write a complete, publish-ready landing page for the offer: "{topic}"
@@ -1199,7 +1201,7 @@ PAGE PRINCIPLES (non-negotiable):
 - Paragraphs: 1-3 sentences maximum. No walls of text - if a paragraph runs past 3 sentences, break it or convert it to a bullet list
 - Bold the key outcome phrase in every benefit bullet and every section's opening sentence - the skimmer should get the pitch from bolded text alone
 - Use bullet lists for anything enumerable (benefits, who it's for, FAQ answers where possible) instead of dense prose
-- Tone: authoritative peer-to-peer B2B, never consumer-hype. No exclamation-point stacking, no "AMAZING", no fake countdown timers, no manufactured scarcity
+- Tone: matches the market voice above (authoritative peer-to-peer for B2B, warm and consumer-native for B2C, first-person creator voice for creator markets); regardless of market, never manufactured hype. No exclamation-point stacking, no "AMAZING", no fake countdown timers, no manufactured scarcity
 
 PAGE STRUCTURE (follow this order exactly - it is the page's visual hierarchy):
 

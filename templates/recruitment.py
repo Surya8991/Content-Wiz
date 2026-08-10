@@ -84,7 +84,7 @@ SECTION 5 - NICE-TO-HAVE QUALIFICATIONS ({nice_lo} to {nice_hi} words)
 SECTION 6 - COMPENSATION & BENEFITS ({comp_lo} to {comp_hi} words)
 ═══════════════════════════════════════════
 - Salary range: [INSERT: salary range for this role] - use this placeholder, never a fabricated or estimated number
-- Add this compliance note directly beneath the placeholder: "A growing number of U.S. states and cities (including California, Colorado, New York, Washington, and others) legally require a good-faith salary range in job postings, and remote postings are often held to the strictest applicable law across every state where the role could be performed. Confirm the applicable requirement for this posting's location(s) before publishing, and never publish this posting with the placeholder still in place."
+- Add this compliance note directly beneath the placeholder: "Pay-transparency requirements vary by jurisdiction and are trending stricter globally. In the US, a growing number of states and cities (California, Colorado, New York, Washington, Illinois, and others) require a good-faith salary range in job postings, and remote postings are often held to the strictest applicable law across every state where the role could be performed. In the EU, the EU Pay Transparency Directive (transposed into member-state law by June 2026) requires salary ranges in job postings and bans employer questions about prior pay; individual member states may have earlier or stricter deadlines. In the UK, transparency is best practice but not yet mandated. In other markets, confirm the local pay-transparency requirement (or absence thereof) with the brand's compliance or legal team. Never publish this posting with the placeholder still in place."
 - Benefits: list only what the brand has actually configured/confirmed (health coverage, PTO policy, retirement match, remote/hybrid policy, professional development budget, etc.) - use "[INSERT: benefit]" placeholders for anything not confirmed rather than inventing standard-sounding perks
 
 ═══════════════════════════════════════════
@@ -97,9 +97,14 @@ SECTION 7 - ABOUT THE COMPANY & TEAM ({cult_lo} to {cult_hi} words)
 ═══════════════════════════════════════════
 SECTION 8 - EQUAL OPPORTUNITY STATEMENT (MANDATORY) ({eeo_lo} to {eeo_hi} words)
 ═══════════════════════════════════════════
-Include a standard EEO statement covering protected classes, adapted for the brand:
-"[Brand] is an equal opportunity employer and does not discriminate on the basis of race, color, religion, sex (including pregnancy, sexual orientation, and gender identity), national origin, age, disability, or genetic information. [INSERT: add any jurisdiction-specific protected classes or federal-contractor OFCCP language that applies to this posting's location.]"
-- Note beneath it: "Confirm this statement against current legal requirements for every jurisdiction this posting runs in before publishing - requirements vary by state and by federal-contractor status."
+Include an equal-opportunity/equality statement adapted to the recipient market's regime, NOT the US EEO framework by default. Match one of:
+- US (Title VII / EEO / ADA / ADEA / GINA and where applicable OFCCP): "[Brand] is an equal opportunity employer and does not discriminate on the basis of race, color, religion, sex (including pregnancy, sexual orientation, and gender identity), national origin, age, disability, or genetic information. [INSERT: add any jurisdiction-specific protected classes or federal-contractor OFCCP language that applies to this posting's location.]"
+- UK (Equality Act 2010): "[Brand] is committed to equality of opportunity and welcomes applications from all candidates regardless of age, disability, gender reassignment, marriage or civil partnership, pregnancy or maternity, race, religion or belief, sex, or sexual orientation."
+- EU/EEA (EU Employment Equality Directive + national law): "[Brand] is an equal-opportunity employer and does not discriminate on any ground protected by EU or national law (including racial or ethnic origin, religion or belief, disability, age, or sexual orientation), and welcomes applicants from all backgrounds."
+- Canada (Canadian Human Rights Act / provincial codes): Adapt to name the protected grounds in the applicable jurisdiction (race, national or ethnic origin, colour, religion, age, sex, sexual orientation, gender identity or expression, marital status, family status, genetic characteristics, disability).
+- Australia (Fair Work Act + state anti-discrimination law): "[Brand] is an equal-opportunity employer and welcomes applications from all backgrounds regardless of any characteristic protected by federal or state law."
+- Other markets: use the local equality-law framework; do not paste US EEO language into a posting for a jurisdiction where it does not apply.
+- Note beneath the chosen statement: "Confirm this statement against current legal requirements for every jurisdiction this posting runs in before publishing - protected classes and mandatory language vary by country and by employer status (e.g. US federal-contractor OFCCP)."
 
 ═══════════════════════════════════════════
 SECTION 9 - HOW TO APPLY ({cta_lo} to {cta_hi} words)
