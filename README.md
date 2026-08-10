@@ -11,6 +11,28 @@ defaults. `--audience` always overrides. Edstellar and Invensis Learning ship as
 working example brands, plus a placeholder creator-brand entry - edit them,
 delete them, or add your own.
 
+## 60-second quick start
+
+```bash
+git clone https://github.com/Surya8991/Content-Wiz.git && cd Content-Wiz
+pip install .                # zero required dependencies
+content-wiz --list           # see all platforms and aliases
+content-wiz --platform linkedin --topic "cutting onboarding time in half"
+```
+
+That prints a fully-specified prompt to paste into any LLM. To skip the
+paste step and get finished content:
+
+```bash
+pip install .[llm-anthropic]                              # or llm-openai / llm-gemini / llm-local
+export ANTHROPIC_API_KEY=sk-...
+content-wiz --platform linkedin --topic "onboarding" --generate
+```
+
+For a non-US audience add `--locale de` (or uk/eu/fr/es/br/in/jp/au/ca/eea/
+latam/apac). To match a specific writer's voice, add `--voice-samples
+~/my_past_posts.txt`. Everything else lives in `content-wiz --help`.
+
 ## What it can do
 
 - **80+ rich content-type templates** across blog/SEO (pillar posts, Dev.to/
@@ -38,18 +60,44 @@ delete them, or add your own.
   business register, consumer register, or first-person personal-brand
   register - without touching any template code.
 - **Provider-agnostic live generation**: `--generate` writes finished content
-  via Claude (Anthropic), Gemini (Google), or OpenAI - same prompts, same
-  house-style rules, whichever model you have a key for.
-- **Phase 10 production tooling**: `--variants N` (generate N differentiated
-  versions in one run), `--keywords FILE` (inject a keyword list), `--tone`
-  (formal/conversational/urgent/educational/playful), `--language` (any
-  target language), `--log-publish` (append to a monthly tracker CSV),
-  `--format` (reformat output for Gutenberg/HubSpot/Contentful/Markdown),
-  `--with-image-brief` (attach a 3-field visual brief), `--export-scheduler
-  buffer` (generate a Buffer import CSV from a bulk run).
+  via Claude (Anthropic), Gemini (Google), OpenAI, or any OpenAI-compatible
+  local endpoint (`--provider local` for Ollama / vLLM / LM Studio / llama.cpp -
+  data never leaves your machine) - same prompts, same house-style rules,
+  whichever model you have a key for. Transient errors (429 / 5xx / rate limit)
+  auto-retry with exponential backoff.
+- **Locale routing** (`--locale us|uk|eu|de|fr|es|br|in|jp|au|ca|eea|latam|
+  apac|global`): first-class routing dimension that deterministically injects
+  currency, sponsored-disclosure regulator (FTC / ASA / UCPD-DSA / CONAR /
+  ASCI / etc.), SMS-consent regime, privacy law, employment-equality framework,
+  editorial style guide, and regional source tier. Composes with `--language`.
+- **Voice anchoring** (`--voice-samples FILE`): load 1-N past posts as
+  few-shot voice anchors; injected under the same UNTRUSTED fence as
+  `--repurpose` content. Especially for personal-brand and creator posts.
+- **Cost + budget controls**: `--estimate-cost` prints a token+USD
+  pre-flight against the pricing table in `llm.py`; `--budget-cap USD`
+  refuses the run (exit 3) if the estimate exceeds the cap. Works
+  per-prompt and across `--bulk`.
+- **Bulk parallelism**: `--generate --bulk --parallel N` fans out LLM
+  calls across N threads with retry/backoff.
+- **SEO cluster mode** (`--keyword-cluster CSV_FILE`): generate one
+  pillar + N supporting blog posts per cluster, plus an internal-link
+  manifest describing how they should cross-link.
+- **Skyscraper Content** (`--platform skyscraper` + `--fetch-competitors
+  URL,URL,URL`): auto-fetches competitor pages, extracts main text, and
+  runs a competitor teardown + 10-row differentiation matrix + gap-fill
+  outline + outreach list.
+- **Review workflow CLI** (`--review list | approve FILE | reject FILE
+  | inreview FILE | published FILE`): mutates `data/publish_tracker_
+  YYYYMM.csv` with reviewer name + date. Wires the publish-gate rule
+  from prose to enforcement.
+- **Author-time tooling**: `--variants N`, `--keywords FILE`, `--tone`
+  (formal/conversational/urgent/educational/playful), `--language`,
+  `--log-publish`, `--format` (Gutenberg/HubSpot/Contentful/Markdown),
+  `--with-image-brief`, `--export-scheduler buffer`.
 - **Dead-link linter**: `lint_content.py --check-urls DIR` crawls all `.md`
   and `.txt` files in a directory, deduplicates URLs, and HEAD-checks each
-  with an 8-second timeout - reports dead links with file and line number.
+  (with GET fallback on 403/405) with an 8-second timeout - reports dead
+  links with file and line number.
 - **HARO DataBank Builder**: internal research tool (Format A: mine a report,
   Format B: verify pending rows, Format C: generate research targets) for
   populating `data/HARO_DataBank.csv` with verified, citable statistics.
@@ -93,14 +141,21 @@ Content Wiz/
 ├── generate.py                       ← CLI prompt generator (single + bulk + --generate)
 ├── templates/                        ← 80+ rich, parameterized prompt builders, split by domain
 │   ├── __init__.py                   ← Re-exports every function at package level
-│   ├── _shared.py                    ← HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES
+│   ├── _shared.py                    ← HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES,
+│   │                                    market_voice / market_persona_label helpers,
+│   │                                    DISCLOSURE_REGIME_NOTE
+│   ├── registry.py                   ← Optional @register decorator + consistency_check
+│   │                                    (guards against a template being added but not routed)
 │   ├── local.py, blog.py, social.py, community.py, creator.py, personal.py, video.py, growth.py, pr.py, lifecycle.py, sales_enablement.py, paid_ads.py, recruitment.py, events.py, mobile_messaging.py
 │   ├── cro.py                        ← Landing page copy, CTA variants, hero formula, trust signals
 │   ├── product.py                    ← Product launch copy, positioning statements, messaging hierarchy
 │   └── ugc.py                        ← UGC briefs, creator briefs, testimonial requests, photo briefs
 ├── textprompts.py                    ← Loader wiring the flat prompts/*.txt into the CLI
 ├── llm.py                            ← Optional live generation (--generate); provider-agnostic:
-│                                        Anthropic/Claude, Google/Gemini, or OpenAI/Codex-GPT
+│                                        Anthropic/Claude, Google/Gemini, OpenAI, or local
+│                                        (Ollama / vLLM / LM Studio / llama.cpp) - includes
+│                                        pricing table for --estimate-cost / --budget-cap and
+│                                        exponential-backoff retries on 429/5xx
 ├── lint_content.py                   ← Content-rule linter (no em-dashes, etc.)
 ├── pyproject.toml                    ← Packaging + ruff config (content-wiz entry point)
 ├── hooks/pre-commit                  ← Lint + tests before every commit
@@ -425,16 +480,27 @@ Run `python generate.py --list` for the live, authoritative list of every alias.
 
 | Flag | Purpose |
 |------|---------|
-| `--platform`, `--topic` | Required for a single run (or use `--bulk`). |
-| `--wordcount`, `--audience`, `--cta`, `--url` | Optional generation parameters. |
+| `--version` | Print the installed content-wiz version and exit. |
+| `--platform`, `--topic` | Required for a single run (or use `--bulk` / `--keyword-cluster`). |
+| `--wordcount`, `--audience`, `--cta`, `--url` | Optional generation parameters. `--cta` warns to stderr if the template doesn't emit `[INSERT CTA LINK]`. |
 | `--title` | Medium step 2: the chosen article title. |
-| `--repurpose FILE` | Repurpose an existing file into `--platform`. |
-| `--bulk CSV` | Batch mode: writes a ZIP + run-log CSV. |
+| `--repurpose FILE` | Repurpose an existing file into `--platform`. Content is wrapped in an UNTRUSTED fence before hitting the LLM. |
+| `--bulk CSV` | Batch mode: writes a ZIP + run-log CSV. Exits code 2 on any row error. |
+| `--parallel N` | Bulk-mode concurrency: number of `--generate` calls to run in parallel (default 1). |
 | `--list` | Print all platforms/aliases and exit. |
 | `--dry-run` | Print the assembled prompt without writing a file. |
 | `--generate` | Call an LLM and save finished content instead of just the prompt (needs that provider's API key + SDK - see "LLM Providers" below). |
-| `--provider` | Which LLM to use for `--generate`: `anthropic` (default), `gemini`, or `openai`. |
+| `--provider` | Which LLM to use for `--generate`: `anthropic` (default), `gemini`, `openai`, or `local`. |
 | `--model` | Override the LLM model id for `--generate` (defaults to the selected provider's entry in `config.json`). |
+| `--estimate-cost` | Pre-flight: print an approximate token count and USD cost against the pricing table in `llm.py`. |
+| `--budget-cap USD` | Refuse the run (exit 3) if the pre-flight cost estimate exceeds this USD figure. Works per-prompt and per-bulk (projected total). |
+| `--locale` | Recipient market: `us|uk|eu|de|fr|es|br|in|jp|au|ca|eea|latam|apac|global`. Selects currency, disclosure regulator, SMS-consent regime, privacy law, employment framework, style guide, and regional source tier. Composes with `--language`. |
+| `--language` | Free-form output language ("Brazilian Portuguese", "French (France)"). When combined with `--locale`, drops its localization body and only emits the "write in this language" line. |
+| `--voice-samples FILE` | Load 1-N past posts (split on `---` / `===` / two blank lines, cap ~8000 chars) as few-shot voice anchors, wrapped in an UNTRUSTED fence. |
+| `--fetch-competitors URL,URL,URL` | Fetch competitor pages, extract main text, append under UNTRUSTED fence. Primarily for `--platform skyscraper`. |
+| `--keyword-cluster CSV_FILE` | SEO cluster mode: one pillar + N supporting blog posts per cluster + an internal-link manifest. CSV columns: `cluster_id, primary_keyword, supporting_keywords, search_intent, notes`. |
+| `--review list \| approve FILE \| reject FILE \| inreview FILE \| published FILE` | Review workflow: mutates `data/publish_tracker_YYYYMM.csv` with reviewer + date. |
+| `--variants N`, `--keywords FILE`, `--tone`, `--log-publish`, `--format`, `--with-image-brief`, `--export-scheduler buffer` | Author-time tooling. |
 
 ## LLM Providers (`--generate`)
 
@@ -452,6 +518,7 @@ key:
 | `anthropic` (default) | `pip install .[llm-anthropic]` (or `pip install anthropic`) | `ANTHROPIC_API_KEY` |
 | `gemini` | `pip install .[llm-gemini]` (or `pip install google-genai`) | `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) |
 | `openai` | `pip install .[llm-openai]` (or `pip install openai`) | `OPENAI_API_KEY` |
+| `local` (Ollama / vLLM / LM Studio / llama.cpp, OpenAI-compatible) | `pip install .[llm-local]` (or `pip install openai`) | `LOCAL_LLM_API_KEY` (optional; `LOCAL_LLM_BASE_URL` defaults to `http://localhost:11434/v1`) |
 
 ```bash
 export ANTHROPIC_API_KEY=sk-ant-...
@@ -462,7 +529,16 @@ python generate.py --platform blog --topic "..." --generate --provider gemini
 
 export OPENAI_API_KEY=sk-...
 python generate.py --platform blog --topic "..." --generate --provider openai --model gpt-5
+
+# Local endpoint (no cost, no data leaves the machine):
+ollama serve &                                                                  # or vLLM / LM Studio / llama.cpp
+python generate.py --platform blog --topic "..." --generate --provider local --model llama3.1
 ```
+
+`--generate` calls automatically retry on transient errors (429 / 5xx /
+rate limit) with exponential backoff. Set `defaults.llm_max_retries` in
+`config.json` (default 3) to tune. Add `--estimate-cost` for a pre-flight
+token+USD estimate, `--budget-cap 5.00` to refuse runs above a USD ceiling.
 
 Change the default provider for every run in `config.json`'s `defaults.llm_provider`
 (see below) instead of passing `--provider` every time.

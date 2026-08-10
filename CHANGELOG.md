@@ -5,6 +5,88 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.7] - 2026-08-10
+
+Fixes every open item and ships every "worth adding" capability from the
+v0.10.6 10-persona re-audit.
+
+### Fixed (open items)
+
+- **Silent `--cta` no-op** - `inject_cta` (`generate.py:527-548`) now warns
+  to stderr when `--cta` is supplied but the template does not emit
+  `[INSERT CTA LINK]`, instead of silently returning the prompt unchanged.
+- **Symlink traversal bypass** - `_resolve_contained_path` (`generate.py:
+  496-522`) now rejects the target if any component up to the containment
+  root is a symlink (previous `Path.resolve()` silently followed symlinks
+  out of the project tree).
+- **Voice samples now UNTRUSTED-fenced** - `inject_extras`
+  (`generate.py:865-883`) wraps voice-anchor samples with the same
+  `BEGIN/END UNTRUSTED USER-SUPPLIED CONTENT` fence as `--repurpose`, so
+  an injection attempt inside a sample cannot override editorial rules.
+- **`--locale` + `--language` de-duplicated** - `inject_extras`
+  (`generate.py:834-882`) now emits ONE localization block: when
+  `--locale` is set, `--language` collapses to a plain "write in this
+  language" line and the LOCALE ROUTING block owns currency / sources /
+  disclosure / style / cultural framing. Fixes the
+  `--locale de --language French` contradiction the audit called out.
+- **Three-map consistency** - new `templates/registry.py` provides a
+  `@register` decorator (co-located aliases + subfolder for new
+  templates) and `consistency_check(templates, PLATFORM_MAP,
+  SUBFOLDER_MAP)`. A new test asserts the three maps are in sync and
+  fails loud on the "template added but forgot to route it" bug class.
+- **No `--version`** - added `--version` (reads from pyproject.toml).
+
+### Added (capabilities)
+
+- **`--estimate-cost` + `--budget-cap USD`** (`generate.py` + `llm.py`).
+  Pre-flight token+USD estimate against a per-model pricing table
+  (`llm._DEFAULT_PRICING`; overridable via `config.json`
+  `defaults.llm_pricing`). `--budget-cap` refuses the run with exit 3
+  if the estimate exceeds the cap. Works for single mode (per-prompt)
+  and `--bulk` (projected total). Local provider is free by default.
+- **`--parallel N`** on bulk generation. When `--generate --bulk
+  --parallel N` is used, LLM calls fan out on a ThreadPoolExecutor.
+  Exponential-backoff retries (up to `defaults.llm_max_retries`, default
+  3) on transient errors (429 / 5xx / rate-limit) added in `llm.py`.
+- **Ollama / vLLM / LM Studio / llama.cpp support**: new `local`
+  provider (`llm.py` `_generate_local`) reuses the openai SDK against
+  an OpenAI-compatible endpoint. `LOCAL_LLM_BASE_URL`
+  (default `http://localhost:11434/v1`) + optional `LOCAL_LLM_API_KEY`.
+  Enables data-doesn't-leave-premises workflows for enterprise
+  reviewers. `pip install .[llm-local]` installs the openai dep only.
+- **Keyword-cluster mode (`--keyword-cluster CSV_FILE`)**. Reads
+  cluster CSV (`cluster_id, primary_keyword, supporting_keywords,
+  search_intent, notes`), generates one pillar + N supporting blog
+  posts per cluster, and writes an internal-link manifest per cluster
+  alongside the drafts describing how pillar and supporting posts
+  should cross-link.
+- **Review workflow CLI (`--review list | approve FILE | reject FILE
+  | inreview FILE | published FILE | draft FILE`)**. Mutates
+  `data/publish_tracker_YYYYMM.csv`, stamping reviewer name + review
+  date. Wires the "publish gate" rule in `RESEARCH_RULES` from prose
+  to enforcement.
+- **`--fetch-competitors URL,URL,URL`**. Fetches each URL, extracts
+  main-text content via a stdlib-only HTML-to-text pass, and appends
+  under an UNTRUSTED fence. Primarily for the Skyscraper prompt
+  (avoids the manual copy-paste of three competitor pages), also
+  usable for `--repurpose` workflows.
+
+### Packaging / docs
+
+- `pyproject.toml`: bumped to 0.10.7, added Python 3.9-3.12 classifiers
+  and OS Independent, Console, End-Users audience classifiers.
+- `pyproject.toml`: new `[llm-local]` extra for the local provider.
+- README: 60-second quick-start block at the top.
+
+### Tests
+
+- Suite: 120 -> 141 tests, all passing. New coverage: `--cta` warn,
+  symlink containment, locale/language dedupe, cost estimator, retry
+  predicate, local provider registration, keyword-cluster loader +
+  manifest, review workflow (list / approve / rejects unknown status),
+  HTML-to-text extractor, `--version`, registry consistency check.
+- One test skipped on Windows without symlink privileges (expected).
+
 ## [0.10.6] - 2026-08-10
 
 ### Added

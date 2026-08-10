@@ -156,6 +156,43 @@ See CHANGELOG v0.10.0.
 
 ---
 
+## Phase 12 - Hardening + Persona Coverage (v0.10.1 - v0.10.7) ✅ COMPLETE
+
+Rolled up multiple code, security, content, and persona audits into six
+patch releases. Full list in CHANGELOG.md; headlines:
+
+- **Code hardening (v0.10.1):** duplicate PLATFORM_MAP key, project-anchored
+  path containment, OpenAI `max_completion_tokens` on gpt-5, `log_publish_row`
+  now writes to `data/`, URL linter HEAD→GET fallback, gutenberg formatter
+  handles lists/quotes/code/inline, `config.load()` deep-copies fallback,
+  README/agents counts corrected, `load_keywords` CSV detection fixed.
+- **Security + UX (v0.10.2):** `--generate` wired through `run_bulk`, bulk exits
+  code 2 on any row error, `--repurpose` and bulk `source_file` content wrapped
+  in a BEGIN/END UNTRUSTED fence, `brand_for_url` uses strict hostname match
+  (blocks lookalike-domain hijack), `--platform linkedin` → `linkedin_post`.
+- **Content sweep (v0.10.3-0.10.5):** banned AI-phrase list refreshed with
+  ~40 current 2025 LLM tells, unsourced-stat framings purged across 12+
+  templates (case_study, landing_page_lead_gen, growth, social, ugc, pr,
+  lifecycle, product), US-centric regulatory framing (FTC/TCPA/EEO/AP Style)
+  de-universalized across paid_ads, mobile_messaging, ugc, recruitment,
+  creator; persona lines de-hardcoded to honor `market` (b2b/b2c/creator).
+- **New capabilities (v0.10.6):** `--locale` first-class routing (us/uk/eu/
+  de/fr/es/br/in/jp/au/ca/eea/latam/apac/global), `--voice-samples FILE` for
+  few-shot voice anchoring, new Skyscraper Content prompt.
+- **Open items + capabilities (v0.10.7):** `--cta` no-op warning, symlink
+  guard in `_resolve_contained_path`, voice samples now UNTRUSTED-fenced,
+  `--locale`+`--language` de-duplicated, `--version`, `--estimate-cost`,
+  `--budget-cap USD`, `--parallel N` bulk with retry/backoff, Ollama/vLLM/
+  LM Studio `local` provider, `--keyword-cluster` (pillar + supporting
+  posts + internal-link manifest), `--review` workflow CLI,
+  `--fetch-competitors` (competitor page fetch with HTML→text), optional
+  `templates/registry.py` with consistency-check test.
+
+Tests: 76 → 141 (all passing; one symlink test skipped on Windows without
+symlink privileges).
+
+---
+
 ## Definition of Done (v1 - complete ✅)
 - [x] All 11 new prompt files written and follow gold standard
 - [x] All 8 new strategy files written and follow gold standard

@@ -1243,7 +1243,10 @@ class VoiceSamplesTests(unittest.TestCase):
                                       voice_samples=["Past post one.", "Past post two."])
         self.assertIn("BASE", out)
         self.assertIn("VOICE ANCHOR SAMPLES", out)
-        self.assertIn("END VOICE ANCHOR SAMPLES", out)
+        # v0.10.7: voice samples wrapped in the shared UNTRUSTED fence so an
+        # injection attempt inside a sample can't override editorial rules.
+        self.assertIn("BEGIN UNTRUSTED USER-SUPPLIED CONTENT", out)
+        self.assertIn("END UNTRUSTED USER-SUPPLIED CONTENT", out)
         self.assertIn("Past post one.", out)
         self.assertIn("Past post two.", out)
         # Must warn the model not to treat sample content as instructions.
@@ -1306,6 +1309,293 @@ class LocaleRoutingTests(unittest.TestCase):
         self.assertIn("France", out)
         self.assertIn("EUR", out)
         self.assertIn("Write ALL output in French (France)", out)
+
+
+class CtaWarnTests(unittest.TestCase):
+    """v0.10.7: `--cta` warns when the template doesn't emit [INSERT CTA LINK]."""
+
+    def test_cta_warns_when_placeholder_absent(self):
+        import contextlib
+        import io
+
+        buf = io.StringIO()
+        with contextlib.redirect_stderr(buf):
+            out = generate.inject_cta("plain prompt with no placeholder",
+                                       "https://x.com")
+        self.assertEqual(out, "plain prompt with no placeholder")
+        self.assertIn("Warning: --cta was provided", buf.getvalue())
+
+    def test_cta_no_warn_on_success(self):
+        import contextlib
+        import io
+
+        buf = io.StringIO()
+        with contextlib.redirect_stderr(buf):
+            out = generate.inject_cta("Visit [INSERT CTA LINK] now",
+                                       "https://x.com")
+        self.assertIn("https://x.com", out)
+        self.assertEqual(buf.getvalue(), "")
+
+    def test_cta_no_warn_when_cta_omitted(self):
+        import contextlib
+        import io
+
+        buf = io.StringIO()
+        with contextlib.redirect_stderr(buf):
+            generate.inject_cta("plain prompt", None)
+        self.assertEqual(buf.getvalue(), "")
+
+
+class SymlinkContainmentTests(unittest.TestCase):
+    """v0.10.7: `_resolve_contained_path` rejects symlinked targets so an
+    attacker can't sneak `/etc/passwd` past the containment check."""
+
+    def test_symlink_target_is_rejected(self):
+        import os
+        import tempfile
+
+        if not hasattr(os, "symlink"):
+            self.skipTest("symlinks not supported on this platform")
+        project = os.path.dirname(os.path.abspath(generate.__file__))
+        target = tempfile.NamedTemporaryFile(mode="w", delete=False,
+                                              suffix=".txt", encoding="utf-8")
+        target.write("hostile content")
+        target.close()
+        link_path = os.path.join(project, "test_symlink_pointer.tmp")
+        try:
+            try:
+                os.symlink(target.name, link_path)
+            except (OSError, NotImplementedError):
+                self.skipTest("cannot create symlink (permissions or platform)")
+            self.assertIsNone(generate._resolve_contained_path(link_path))
+        finally:
+            if os.path.islink(link_path) or os.path.exists(link_path):
+                try:
+                    os.remove(link_path)
+                except OSError:
+                    pass
+            os.remove(target.name)
+
+
+class LocaleLanguageDedupeTests(unittest.TestCase):
+    """v0.10.7: passing --locale together with --language emits ONE localization
+    block (the locale one) instead of two overlapping/contradictory ones."""
+
+    def test_locale_alone_emits_locale_block(self):
+        out = generate.inject_extras("BASE", locale="uk")
+        self.assertIn("LOCALE ROUTING: United Kingdom", out)
+        self.assertNotIn("LOCALIZATION - not just translation", out)
+
+    def test_language_alone_emits_full_localization_body(self):
+        out = generate.inject_extras("BASE", language="French (France)")
+        self.assertIn("LANGUAGE / LOCALE: French (France)", out)
+        self.assertIn("LOCALIZATION - not just translation", out)
+
+    def test_locale_plus_language_emits_only_language_line_not_full_body(self):
+        out = generate.inject_extras("BASE", locale="fr", language="French (France)")
+        self.assertIn("OUTPUT LANGUAGE: French (France)", out)
+        # The LOCALE ROUTING block is the single source of truth for
+        # currency/sources/disclosure/style/culture.
+        self.assertIn("LOCALE ROUTING: France", out)
+        # And the language block's own localization body must be suppressed
+        # to avoid duplication/contradiction.
+        self.assertNotIn("LOCALIZATION - not just translation", out)
+
+
+class LlmCostAndRetryTests(unittest.TestCase):
+    def test_estimate_cost_for_known_model(self):
+        import llm
+        cost, meta = llm.estimate_cost_usd("x" * 1000, provider="anthropic",
+                                            model="claude-sonnet-5")
+        self.assertIsNotNone(cost)
+        self.assertGreater(cost, 0)
+        self.assertEqual(meta["provider"], "anthropic")
+
+    def test_estimate_cost_for_local_is_zero(self):
+        import llm
+        cost, _meta = llm.estimate_cost_usd("x" * 1000, provider="local",
+                                             model="llama3.1")
+        self.assertEqual(cost, 0.0)
+
+    def test_retryable_predicate(self):
+        import llm
+
+        class _E(Exception):
+            pass
+
+        self.assertTrue(llm._is_retryable(_E("rate limit exceeded")))
+        self.assertFalse(llm._is_retryable(_E("something else")))
+
+    def test_local_provider_registered(self):
+        import llm
+        self.assertIn("local", llm._PROVIDERS)
+        self.assertTrue(llm._PROVIDERS["local"].get("keyless_ok"))
+
+
+class KeywordClusterTests(unittest.TestCase):
+    def test_load_keyword_clusters_from_csv(self):
+        import os
+        import tempfile
+
+        with tempfile.NamedTemporaryFile("w", suffix=".csv", delete=False,
+                                          encoding="utf-8") as f:
+            f.write("cluster_id,primary_keyword,supporting_keywords,search_intent\n")
+            f.write("saas_onboarding,saas onboarding,\"activation, first-value, aha moment\",informational\n")
+            f.write("churn_reduction,churn reduction,\"retention|win back|save\",commercial\n")
+            path = f.name
+        try:
+            clusters = generate.load_keyword_clusters(path)
+        finally:
+            os.remove(path)
+        self.assertEqual(len(clusters), 2)
+        first = clusters[0]
+        self.assertEqual(first["cluster_id"], "saas_onboarding")
+        self.assertEqual(first["primary"], "saas onboarding")
+        self.assertIn("activation", first["supporting"])
+        self.assertIn("first-value", first["supporting"])
+        self.assertEqual(first["intent"], "informational")
+
+    def test_load_keyword_clusters_missing_columns(self):
+        import contextlib
+        import io
+        import os
+        import tempfile
+
+        with tempfile.NamedTemporaryFile("w", suffix=".csv", delete=False,
+                                          encoding="utf-8") as f:
+            f.write("only_column\nfoo\n")
+            path = f.name
+        try:
+            buf = io.StringIO()
+            with contextlib.redirect_stderr(buf):
+                out = generate.load_keyword_clusters(path)
+        finally:
+            os.remove(path)
+        self.assertEqual(out, [])
+        self.assertIn("cluster_id and primary_keyword", buf.getvalue())
+
+    def test_internal_link_manifest_lists_cross_links(self):
+        cluster = {"cluster_id": "c1", "primary": "kw", "intent": "informational"}
+        manifest = generate._internal_link_manifest(cluster, [
+            ("pillar", "pillar.txt"),
+            ("supporting", "sup_a.txt"),
+            ("supporting", "sup_b.txt"),
+        ])
+        self.assertIn("cluster: c1", manifest)
+        self.assertIn("PILLAR (pillar.txt)", manifest)
+        self.assertIn("SUPPORTING (sup_a.txt)", manifest)
+        self.assertIn("link back UP to pillar: pillar.txt", manifest)
+        self.assertIn("link SIDEWAYS to sibling: sup_b.txt", manifest)
+
+
+class ReviewWorkflowTests(unittest.TestCase):
+    def setUp(self):
+        import os
+        import tempfile
+        self.tmpdir = tempfile.mkdtemp()
+        self.month = "999901"  # unique so it never collides with a real month
+        # Redirect the tracker location by monkey-patching the helper.
+        self._orig = generate._publish_tracker_path
+        tracker = os.path.join(self.tmpdir, f"publish_tracker_{self.month}.csv")
+        generate._publish_tracker_path = lambda month=None: tracker
+        self.tracker = tracker
+
+    def tearDown(self):
+        import shutil
+        generate._publish_tracker_path = self._orig
+        shutil.rmtree(self.tmpdir, ignore_errors=True)
+
+    def test_review_list_reports_missing_tracker(self):
+        import contextlib
+        import io
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            rc = generate.review_list()
+        self.assertEqual(rc, 0)
+        self.assertIn("Tracker not found", buf.getvalue())
+
+    def test_review_update_moves_draft_to_approved(self):
+        import contextlib
+        import csv as _csv
+        import io
+        with open(self.tracker, "w", encoding="utf-8", newline="") as f:
+            w = _csv.DictWriter(f, fieldnames=[
+                "Date", "Platform", "Topic", "File", "Status",
+                "Reviewed By", "Review Date", "Clicks", "Leads/Conversions", "Last Checked",
+            ])
+            w.writeheader()
+            w.writerow({"Date": "2026-08-10", "Platform": "blog", "Topic": "t",
+                         "File": "output/Blog/post_x.txt", "Status": "Draft",
+                         "Reviewed By": "", "Review Date": "", "Clicks": "",
+                         "Leads/Conversions": "", "Last Checked": ""})
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            rc = generate.review_update("post_x.txt", "Approved", reviewer="alice")
+        self.assertEqual(rc, 0)
+        with open(self.tracker, "r", encoding="utf-8") as f:
+            row = next(_csv.DictReader(f))
+        self.assertEqual(row["Status"], "Approved")
+        self.assertEqual(row["Reviewed By"], "alice")
+        self.assertTrue(row["Review Date"])
+
+    def test_review_update_rejects_unknown_status(self):
+        import contextlib
+        import io
+        buf = io.StringIO()
+        with contextlib.redirect_stderr(buf):
+            rc = generate.review_update("post_x.txt", "Bogus")
+        self.assertEqual(rc, 1)
+
+
+class HtmlToTextTests(unittest.TestCase):
+    def test_html_to_text_strips_scripts_and_tags(self):
+        html = """<html><head><style>a{color:red}</style></head>
+                    <body><script>alert('x')</script><h1>Title</h1><p>Body.</p></body></html>"""
+        text = generate._html_to_text(html)
+        self.assertIn("Title", text)
+        self.assertIn("Body.", text)
+        self.assertNotIn("alert", text)
+        self.assertNotIn("color:red", text)
+
+
+class RegistryConsistencyTests(unittest.TestCase):
+    """v0.10.7: guard against a template being added to templates/__init__.py
+    but omitted from PLATFORM_MAP or SUBFOLDER_MAP (the three-map problem the
+    audit called out). Uses the new templates/registry.consistency_check."""
+
+    def test_platform_map_and_subfolder_map_are_in_sync(self):
+        import templates
+        from templates.registry import consistency_check
+        problems = consistency_check(templates, generate.PLATFORM_MAP,
+                                      generate.SUBFOLDER_MAP)
+        self.assertEqual(
+            problems, [],
+            "PLATFORM_MAP / SUBFOLDER_MAP / templates/ are out of sync:\n  - "
+            + "\n  - ".join(problems)
+        )
+
+    def test_register_decorator_reserves_alias(self):
+        from templates import registry
+
+        @registry.register(aliases=("regtest_alias",), subfolder="Regtest")
+        def regtest_dummy_fn(topic, audience, **_):
+            return "ok"
+
+        self.assertIn("regtest_alias", registry._ALIASES)
+        self.assertEqual(registry._SUBFOLDERS["regtest_dummy_fn"], "Regtest")
+        # Cleanup so the registry stays as-shipped for other tests.
+        del registry._ALIASES["regtest_alias"]
+        del registry._SUBFOLDERS["regtest_dummy_fn"]
+
+
+class VersionFlagTests(unittest.TestCase):
+    def test_project_version_matches_pyproject(self):
+        import os
+        import re
+        root = os.path.dirname(os.path.abspath(generate.__file__))
+        with open(os.path.join(root, "pyproject.toml"), "r", encoding="utf-8") as f:
+            py_ver = re.search(r'^version\s*=\s*"([^"]+)"', f.read(), re.M).group(1)
+        self.assertEqual(generate.__version__, py_ver)
 
 
 if __name__ == "__main__":

@@ -13,9 +13,13 @@ Invensis Learning ship as example brand configs in `config.json`, not the tool's
 identity - add, edit, or delete brand entries freely. By default the tool assembles
 fully-specified prompts and writes them to `output/` for a human to paste into an AI
 tool. With `--generate` it can also call an LLM directly and write finished content -
-Anthropic/Claude, Google/Gemini, or OpenAI/Codex-GPT, chosen with `--provider` (see
-`llm.py`) - so the same prompt/rule set produces the same house-style content
-regardless of which model actually writes it. Prompts encode channel strategy, brand
+Anthropic/Claude, Google/Gemini, OpenAI/Codex-GPT, or any OpenAI-compatible
+local endpoint (`--provider local` for Ollama / vLLM / LM Studio / llama.cpp),
+chosen with `--provider` (see `llm.py`) - so the same prompt/rule set produces
+the same house-style content regardless of which model actually writes it.
+`--estimate-cost` prints a token+USD pre-flight against the pricing table in
+`llm.py`; `--budget-cap USD` refuses the run if the estimate exceeds the cap.
+Transient errors (429 / 5xx / rate limit) auto-retry with exponential backoff. Prompts encode channel strategy, brand
 voice, and formatting rules so output is consistent across platforms and providers.
 
 Two prompt layers, one unified CLI:
@@ -33,14 +37,24 @@ prints the authoritative alias list.
 - Python 3 (standard library only for the core tool). No required deps.
 - Optional, only for `--generate`, install just the provider(s) you use:
   `anthropic` (`pip install .[llm-anthropic]`), `google-genai`
-  (`.[llm-gemini]`), `openai` (`.[llm-openai]`), or `.[llm]` for all three.
-  `ruff` (`.[dev]`) for style lint.
+  (`.[llm-gemini]`), `openai` (`.[llm-openai]`), local
+  (`.[llm-local]` - reuses `openai` for OpenAI-compatible endpoints
+  like Ollama/vLLM/LM Studio/llama.cpp), or `.[llm]` for all three
+  hosted providers. `ruff` (`.[dev]`) for style lint.
 - `pyproject.toml` defines the `content-wiz` console entry point.
 
 ## Key files & dirs
 - `generate.py` - CLI entry point. `PLATFORM_MAP` (alias → template key),
-  `SUBFOLDER_MAP` (key → folder), `resolve()`/`build_prompt()`, single + `--bulk` modes.
+  `SUBFOLDER_MAP` (key → folder), `resolve()`/`build_prompt()`, single +
+  `--bulk` + `--keyword-cluster` modes plus `--review` subcommand. Also owns:
+  `_fence_untrusted` (prompt-injection guard), `_locale_block`, `load_voice_samples`,
+  `fetch_competitor_pages` (stdlib HTML-to-text), `_print_cost_estimate`,
+  `load_keyword_clusters`, `_internal_link_manifest`, review-workflow helpers.
   Reconfigures stdout to UTF-8 so prompt printing never crashes on Windows consoles.
+- `templates/registry.py` - optional `@register(aliases=..., subfolder=...)`
+  decorator for new templates (co-locates alias + subfolder with the fn), plus
+  `consistency_check(templates, PLATFORM_MAP, SUBFOLDER_MAP)` used by the test
+  suite to fail loud when a template is added but not routed.
 - `templates/` - one function per template key (except `medium`, a 2-step
   builder dispatching to `medium_step1`/`medium_step2`); each returns a
   prompt string.
@@ -57,9 +71,13 @@ prints the authoritative alias list.
   provider, so switching `--provider` without a `--model` override still
   gets a sane model.
 - `llm.py` - optional live generation, provider-agnostic (Anthropic/Claude, Google/Gemini,
-  OpenAI/Codex-GPT behind one interface, selected via `--provider` or `config.json`'s
-  `defaults.llm_provider`). Raises a clean RuntimeError if that provider's key/SDK is missing.
-  Every provider's SDK is imported lazily, so picking one never requires installing the others.
+  OpenAI/Codex-GPT, and `local` for OpenAI-compatible endpoints behind one interface,
+  selected via `--provider` or `config.json`'s `defaults.llm_provider`). Raises a clean
+  RuntimeError if that provider's key/SDK is missing. Every provider's SDK is imported
+  lazily, so picking one never requires installing the others. Owns the `_DEFAULT_PRICING`
+  table used by `--estimate-cost` / `--budget-cap` (overridable via
+  `config.json` `defaults.llm_pricing`), and wraps every call in exponential-backoff
+  retry on 429/5xx via `_is_retryable` + `_sleep_backoff`.
 - `lint_content.py` - fails on em-dashes in prompt/strategy/template source.
 - `prompts/` - standalone prompt text; `_Brand_Detection_Rules.txt` is shared by all.
 - `strategies/` - one strategy doc per channel (goal, structure, cadence, failure modes).
@@ -93,6 +111,26 @@ python generate.py --platform faq --topic "..." --generate --provider gemini
 
 export OPENAI_API_KEY=sk-...
 python generate.py --platform faq --topic "..." --generate --provider openai --model gpt-5
+
+# Local endpoint (Ollama/vLLM/LM Studio/llama.cpp - no cost, no data leaves the machine):
+ollama serve &
+python generate.py --platform faq --topic "..." --generate --provider local --model llama3.1
+
+# Cost + safety pre-flight:
+python generate.py --platform blog --topic "..." --generate --estimate-cost --budget-cap 0.50
+
+# SEO cluster mode (one pillar + N supporting posts + internal-link manifest per cluster):
+python generate.py --keyword-cluster clusters.csv --wordcount 2500 --generate
+
+# Skyscraper with auto-fetch (competitor pages -> UNTRUSTED-fenced -> differentiation matrix):
+python generate.py --platform skyscraper --topic "onboarding" --fetch-competitors https://a,https://b,https://c
+
+# Review workflow (moves rows in data/publish_tracker_YYYYMM.csv):
+python generate.py --review list
+python generate.py --review approve post_x.txt
+
+# Locale routing (currency, disclosure regulator, style guide, source tier per market):
+python generate.py --platform linkedin --topic "..." --locale de --language "German"
 ```
 
 ## How to test / lint
@@ -108,20 +146,27 @@ CI runs all three (`.github/workflows/ci.yml`).
 - `ANTHROPIC_API_KEY` - only needed for `--generate --provider anthropic` (the default).
 - `GEMINI_API_KEY` (or `GOOGLE_API_KEY` as a fallback) - only needed for `--generate --provider gemini`.
 - `OPENAI_API_KEY` - only needed for `--generate --provider openai`.
+- `LOCAL_LLM_BASE_URL` (default `http://localhost:11434/v1`) and
+  optional `LOCAL_LLM_API_KEY` - only needed for `--generate --provider local`.
 Never commit any of these.
 
 ## Agent notes / gotchas
 - **`gmb` and `pinterest` are print-only** in single-run mode (`PRINT_ONLY`) unless
   `--generate` is used; they still get a folder inside the bulk ZIP.
-- **Alias trap:** `--platform linkedin` → `blog_writing` (a blog), NOT a LinkedIn post.
-  Use `linkedin_post`.
+- **`--platform linkedin` now routes to the LinkedIn post (short-form)** as of
+  v0.10.2 - the intuitive default. For the long-form pillar-article path use
+  the new `linkedin_blog` alias. `linkedin_article` remains a dedicated flat
+  text prompt.
 - **No em-dashes anywhere** is a hard rule; `lint_content.py` + tests enforce it.
 - **Two alias maps must not collide** - a test asserts `PLATFORM_MAP` and
   `TEXT_PROMPT_MAP` share no aliases. Keep new aliases unique.
 - Adding a rich type: fn in a `templates/*.py` module + its `__init__.py` import
-  + `PLATFORM_MAP` alias + `SUBFOLDER_MAP` entry + README row, same change.
-  Adding a flat type: drop the `.txt` + one `TEXT_PROMPT_MAP` row. Tests and the
-  doc tables will otherwise drift.
+  + `PLATFORM_MAP` alias + `SUBFOLDER_MAP` entry + README row. New templates
+  can alternatively co-locate the alias + subfolder via the
+  `@templates.registry.register(aliases=..., subfolder=...)` decorator; the
+  test suite's `registry.consistency_check` fails if a template is added to
+  `templates/__init__.py` but not routed anywhere. Adding a flat type: drop
+  the `.txt` + one `TEXT_PROMPT_MAP` row.
 - Templates are large; grep for `def <key>(` across `templates/`, don't read whole files.
 - **Citations are not auto-verified.** Rule 4/8 in README's Global Content Rules
   requires every statistic to name a real source, org, and year, but nothing in
