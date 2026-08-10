@@ -80,7 +80,7 @@ The "before" state, before the story's intervention:
 - What had they already tried that wasn't working? (Show that easy answers had been exhausted.)
 - What was at stake if nothing changed? (Quantify the business impact: cost, time, revenue at risk, team morale.)
 - Include at least one quantified description of the problem:
-  * "They were losing $X per month to [specific cause]"
+  * "They were losing [amount in the recipient's currency] per month to [specific cause]"
   * "The process took [X] hours weekly across [Y] employees"
   * "Customer onboarding consistently exceeded [X] days, missing the [Y]-day target by [Z]%"
 
@@ -131,7 +131,7 @@ BEFORE / AFTER COMPARISON TABLE (use this format):
 | [Metric 3] | [Value] | [Value] | [+/- X%] |
 
 ROI / BUSINESS IMPACT (if applicable):
-- Total dollar value of the impact ("$X saved annually" or "$Y in additional revenue")
+- Total value of the impact in the recipient audience's currency ("[amount] saved annually" or "[amount] in additional revenue" - do not default to USD if the audience is elsewhere)
 - ROI calculation if relevant: investment vs. return
 
 QUALITATIVE OUTCOMES (briefly, where real):
@@ -594,10 +594,10 @@ SECTION 5 - COST / INVESTMENT SUMMARY ({cost_lo}-{cost_hi} words)
 ═══════════════════════════════════════════
 | Line Item | Cost |
 | --------- | ---- |
-| [Program/vendor fee] | [INSERT: $ amount] |
-| [Staff time / backfill cost] | [INSERT: $ amount] |
-| [Materials/platform/licensing] | [INSERT: $ amount] |
-| Total | [INSERT: total] |
+| [Program/vendor fee] | [INSERT: amount in the recipient's currency] |
+| [Staff time / backfill cost] | [INSERT: amount in the recipient's currency] |
+| [Materials/platform/licensing] | [INSERT: amount in the recipient's currency] |
+| Total | [INSERT: total in the same currency] |
 
 One sentence noting the budget source (existing L&D line, new request, cross-department split) - use a placeholder if unconfirmed.
 

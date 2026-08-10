@@ -33,7 +33,7 @@ PRE-WRITE DIAGNOSTIC:
 - UGC ads achieve 4x higher click-through rates with 50% lower cost-per-click compared to standard brand creative (inBeat Agency, 2025)
 
 PLATFORM CONTEXT ({platform}):
-- TikTok: vertical (9:16), 15-60 seconds optimal, hook must land in the first 1.5 seconds, native-first (no studio lighting, no polished cuts), captions recommended as 80% of TikTok is watched sound-off at least partially
+- TikTok: vertical (9:16), 15-60 seconds optimal, hook must land in the first 1.5 seconds, native-first (no studio lighting, no polished cuts). Captions strongly recommended: a large share of TikTok viewing happens sound-off at least partially (do not paste a specific percentage in the output unless you can cite it)
 - Instagram Reels: vertical (9:16), 15-90 seconds, Saves and Shares are the primary algorithm signals, hook must land before the 3-second mark, slightly more polished than TikTok but still raw > refined
 - YouTube Shorts: vertical (9:16), under 60 seconds, hook in the first 2 seconds, higher tolerance for information density than TikTok
 - LinkedIn Video: horizontal or vertical accepted, 15-120 seconds, muted-first (captions required), professional context - the creator's experience and outcome carry more weight than production style
@@ -173,7 +173,7 @@ Write the attribution line format the brand will use when publishing this testim
 
 [Full Name], [Title], [Company], [Company Size or Industry if relevant]
 - Instruct {customer_name} to confirm this attribution is accurate before the testimonial is published
-- Note: first-name-only attributions are treated as fabricated by B2B buyers - full attribution is required for maximum credibility
+- Note: first-name-only attributions read as fabricated to most professional and considered-purchase audiences - full attribution (name, title, company, and where relevant company size/industry) is required for maximum credibility. In consumer or creator markets where full attribution is a privacy concern, first name + city/role is the acceptable minimum, still never a bare first name.
 
 ELEMENT 4 - RIGHTS AND USAGE NOTE (to include in the outreach or as a follow-up):
 - Plain-language explanation of where this testimonial will be used: {platform} (organic content, paid ads, sales materials, or all three - specify)

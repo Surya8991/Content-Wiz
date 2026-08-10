@@ -64,7 +64,7 @@ NO-GO LIST:
 
 MEDIUM-SPECIFIC TITLE NOTES:
 - Subtitle is the second deliverable - Medium gives almost as much weight to the subtitle as the title
-- Titles starting with a number consistently outperform on Medium (3-7% higher CTR)
+- Titles starting with a number tend to outperform on Medium (do not cite a specific CTR multiplier in the output unless you can source it)
 - "How I" / "What I learned" titles work well for narrative-driven Medium readers
 - Avoid colons over-stuffing the title (one colon max, e.g. "The Hidden Cost: How [X] Affects [Y]")
 
@@ -125,7 +125,7 @@ PRE-WRITE DIAGNOSTIC:
 3. What is the natural bridge from this article's specific topic to the pillar post's broader topic? (The CTA must feel like a logical "and if you want to go deeper, here's where to look" rather than a hard pitch.)
 
 MEDIUM PLATFORM CONTEXT:
-- Medium's curation algorithm rewards: 5+ minute read times, high read-completion rates, clap-to-view ratios above 8%, and quality engagement (highlights, follows, comments)
+- Medium's curation algorithm rewards: 5+ minute read times, high read-completion rates, strong clap-to-view ratios, and quality engagement (highlights, follows, comments) - do not paste a specific clap-ratio threshold as a hard number in the output unless you can source it
 - The first 3 paragraphs decide if a reader scrolls or bounces - Medium's "above the fold" matters
 - Bolded text creates visual scan anchors - readers who scan are more likely to clap and follow
 - Medium highlights (the yellow text-highlighting feature) are a strong engagement signal - write at least 2-3 sentences that beg to be highlighted (clean, quotable insights)

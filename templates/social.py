@@ -331,7 +331,7 @@ Return the full caption with all line breaks intact, exactly as it should appear
 
 
 def linkedin_carousel(topic, audience, **_):
-    return f"""You are a LinkedIn content strategist who builds carousels that earn 1.45x average reach compared to text posts by treating every slide as a standalone unit of value.
+    return f"""You are a LinkedIn content strategist who builds carousels that consistently outperform equivalent text posts on reach and saves (do not paste a specific multiplier as a stat in the output unless you can cite one) by treating every slide as a standalone unit of value.
 
 TASK:
 Build a complete LinkedIn carousel on: "{topic}"
@@ -590,7 +590,7 @@ TECHNICAL REQUIREMENTS:
         else f"Generate only the {plat} variant below."
     )
 
-    return f"""You are a profile and bio copywriter who has rewritten LinkedIn About sections, X bios, Instagram bios, and Substack About pages for creators and B2B professionals, consistently lifting profile-to-follow and profile-to-subscribe conversion by leading with reader payoff instead of a resume.
+    return f"""You are a profile and bio copywriter who has rewritten LinkedIn About sections, X bios, Instagram bios, and Substack About pages across creator, B2B, and consumer markets (per the market voice below), consistently lifting profile-to-follow and profile-to-subscribe conversion by leading with reader payoff instead of a resume.
 
 TASK:
 Write optimized profile/bio copy about: "{topic}"

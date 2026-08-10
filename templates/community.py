@@ -4,7 +4,7 @@ from ._shared import HUMAN_WRITING_RULES, RESEARCH_RULES, market_voice
 
 
 def quora(topic, audience, **_):
-    return f"""You are a Top Writer on Quora in the relevant Space for this topic, with answers averaging 50K+ views and consistently ranked first by Quora's quality algorithm. You also know that since 2024, Quora's algorithm prioritizes answer-completeness and reader signals (read-time, upvote-to-view ratio) over raw upvote count.
+    return f"""You are a Top Writer on Quora in the relevant Space for this topic, whose high-performing answers regularly surface at the top of the feed for the questions they address. Recent Quora ranking behavior appears to weight answer-completeness and reader signals (read-time, upvote-to-view ratio) alongside raw upvote count - treat this as an editorial heuristic, not a documented algorithm spec, and do not cite it back as a stat in the output.
 
 TASK:
 Write a top-ranked Quora answer for the question / topic: "{topic}"
@@ -16,11 +16,11 @@ PRE-WRITE DIAGNOSTIC:
 2. What is the most common WRONG answer that other top responses give to this question?
 3. What specific personal experience or evidence makes your answer different and more credible?
 
-QUORA ALGORITHM CONTEXT:
-- The first 2-3 sentences determine if a reader expands or scrolls past - Quora truncates answers at ~3 lines in feed view
-- Read-completion rate is now a top ranking signal - structure for sustained reading
+QUORA ALGORITHM CONTEXT (editorial heuristics based on observed platform behavior; do not repeat these framings as sourced stats in the output):
+- The first 2-3 sentences determine if a reader expands or scrolls past - Quora typically truncates answers to a few lines in feed view
+- Read-completion rate appears to be a strong ranking signal - structure for sustained reading
 - Bolded text creates visual scan anchors - readers who scan are more likely to upvote and share
-- Direct answers in the first sentence outperform rambling intros by 3:1 in upvote rate
+- Direct answers in the first sentence measurably outperform rambling intros on upvote rate; do not paste a specific multiplier in the answer unless you can cite one
 - Self-promotional CTAs at the start kill the answer's distribution - save promotion for the end, soft and contextual
 
 ANSWER STRUCTURE:
@@ -74,7 +74,7 @@ QUORA FORMATTING RULES:
 - DO NOT use # or ## headings - Quora doesn't render them cleanly in the answer view
 - Use _italic_ sparingly - only for emphasis or named works
 - Paragraph breaks are generous - use blank lines between every 2-3 sentences for scanability
-- Total answer length: 500-700 words (Quora's algorithmic sweet spot - shorter answers feel thin, longer ones lose completion rate)
+- Total answer length: 500-700 words (a widely observed editorial sweet spot for Quora - shorter answers tend to feel thin, longer ones tend to lose completion rate; this is guidance, not a documented algorithm rule)
 - First-person voice throughout - "I've seen", "In my experience", "I find"
 - Avoid third-person didactic tone ("One should consider...")
 

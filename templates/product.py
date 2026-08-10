@@ -200,7 +200,7 @@ PRE-WRITE DIAGNOSTIC:
 3. Why does {launch_date} matter as a specific date - is there a market event, a seasonal moment, or a competitive trigger that makes the timing meaningful? If yes, name it. If not, create internal urgency around the waitlist or early access instead.
 
 2025 PRE-LAUNCH CONTEXT:
-- Notion AI generated 1 million waitlist signups before general availability by anchoring their pre-launch on a single, clear positioning message ("AI that works inside your existing workspace, not beside it") repeated consistently across every teaser touchpoint
+- Notion AI is a widely cited example of a large pre-launch waitlist built by anchoring on a single clear positioning message ("AI that works inside your existing workspace, not beside it") repeated consistently across every teaser touchpoint. Do not paste a specific signup count in the output unless you can independently source it.
 - The pre-launch period is for positioning, not feature revelation - revealing features pre-launch cannibalizes launch-day coverage and gives competitors time to respond
 - A waitlist or early-access CTA converts better than a generic "coming soon" page because it gives the audience a specific action that creates commitment and self-selection
 

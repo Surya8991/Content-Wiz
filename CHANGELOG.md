@@ -5,6 +5,60 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.5] - 2026-08-10
+
+### Changed (future-sweep follow-up to v0.10.4)
+
+Cleared the remaining lower-severity items surfaced by the category audits.
+
+**Unsourced numeric framings softened** (all patterns where the LLM was
+being trained to fabricate stats in output by seeing them in scaffolding):
+- `community.py::quora` persona "50K+ views" + "since 2024, Quora's
+  algorithm" claim + "3:1 upvote rate" + "500-700 words algorithmic sweet
+  spot" all reframed as editorial heuristics with an explicit "do not
+  paste as a sourced stat" note.
+- `growth.py::faq` "outperform by 2-3x", `growth.py::meta` "lifts CTR
+  15-30%" + "Google rewrites ~60% of titles" + "5-7% higher CTR",
+  `growth.py::content_calendar` "30-50% MoM" + "4-6x cumulative traffic"
+  all softened to qualitative language.
+- `blog.py` Medium "3-7% higher CTR" and "clap-to-view ratios above 8%"
+  softened.
+- `social.py::linkedin_carousel` "1.45x average reach" softened.
+- `ugc.py` "80% of TikTok watched sound-off" softened.
+- `lifecycle.py::onboarding_sequence` "roughly 90% chance of never
+  activating" and `win_back_sequence` "10-30% recovery" reframed as
+  observed patterns, not paste-in stats.
+- `product.py::pre_launch_teaser` Notion AI "1 million waitlist signups"
+  reframed as "widely cited example" without the specific figure.
+
+**US-centric residual fixes:**
+- `creator.py::influencer_outreach` disclosure block rewritten from
+  FTC+ASA-as-universe to a full multi-jurisdiction list (US/UK/EU/CA/
+  AU/BR/IN) with local label examples.
+- `creator.py::influencer_outreach` "dollar amounts" -> "currency
+  amounts" in the offer placeholder.
+- `pr.py::business_case_one_pager` cost table swapped "$ amount"
+  placeholders for "amount in the recipient's currency".
+- `pr.py::case_study` "$X saved / $Y in revenue" example swapped for
+  currency-neutral phrasing.
+
+**Persona lines:**
+- `social.py::profile_bio` "creators and B2B professionals" now spans
+  "creator, B2B, and consumer markets (per the market voice below)".
+- `ugc.py::testimonial_request` "treated as fabricated by B2B buyers"
+  generalized to "most professional and considered-purchase audiences"
+  with a consumer/creator-market note.
+
+### Notes
+
+- Tests: 105 unchanged, all passing.
+- The content-quality punch list from the 3-agent category sweep is now
+  fully worked through. Only genuinely-open items remaining are the
+  larger scope changes flagged as follow-ups (full `--locale` flag with
+  disclosure-regime routing; the Skyscraper prompt; a voice-samples
+  input for personal-brand posts). Those are tracked but not attempted
+  in this release.
+
 ## [0.10.4] - 2026-08-10
 
 ### Changed (category-by-category content sweep across 18 template modules)

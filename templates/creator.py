@@ -73,7 +73,7 @@ BLOCK 1 - PERSONALIZED OPENER ({open_lo} to {open_hi} words):
 BLOCK 2 - THE OFFER, CREATOR-FIRST ({offer_lo} to {offer_hi} words):
 What's in it for THEM, stated before any brand requirements:
 - Name the compensation model the inputs specify: flat fee, affiliate/commission, or product-plus-fee hybrid
-- NEVER invent specific dollar amounts, commission percentages, or product values - use placeholders: "[INSERT: offer details - fee range / commission rate / product + fee terms]"
+- NEVER invent specific currency amounts, commission percentages, or product values (in any currency) - use placeholders: "[INSERT: offer details - fee range in the recipient's currency / commission rate / product + fee terms]"
 - One line on scope: what kind of content, roughly how much, and that they keep creative control of how they say it
 - One line on why their audience benefits (the offer has to make sense for their followers, not just the brand)
 
@@ -221,14 +221,14 @@ Kept deliberately SHORT - a brief with 20 don'ts kills the creator's voice, and 
 ═══════════════════════════════════════════
 SECTION 8 - DISCLOSURE AND COMPLIANCE (MANDATORY) ({disc_lo} to {disc_hi} words)
 ═══════════════════════════════════════════
-This section is a legal requirement, not a style preference. Encode current FTC (US) and ASA (UK) guidance:
+This section is a legal requirement in every major market, not a style preference. Apply the disclosure regime of the recipient audience's jurisdiction (FTC in the US, ASA/CAP in the UK, ACCC + Ad Standards in Australia, Competition Bureau + Ad Standards in Canada, national regulators under UCPD + DSA in the EU/EEA, CONAR in Brazil, ASCI in India). Do NOT default to US FTC if the audience is elsewhere:
 - The material connection (payment, free product, or both - gifted product counts as payment) must be disclosed clearly and conspicuously WITH the content itself, not only on a profile page or behind a "more" tap
 - Caption disclosure goes at the START of the caption, before the truncation point on platforms that cut captions (Instagram, TikTok, Facebook)
-- Acceptable disclosure language: "Ad", "Sponsored", "Paid partnership with [brand]". NOT acceptable on their own: "collab", "sp", "spon", "partner", "thanks [brand]"
+- Acceptable disclosure language varies by regulator: "#ad", "Sponsored", "Paid partnership with [brand]" are broadly accepted in English-language markets; use "Werbung" (Germany), "Publicidade" or "Publi" (Brazil/CONAR), "#advertisement" (India/ASCI), or the local equivalent when the audience is elsewhere. NOT acceptable on their own in most regimes: "collab", "sp", "spon", "partner", "thanks [brand]"
 - For video: the disclosure must also be IN the video (spoken and/or clearly readable on-screen), not caption-only, since videos get reshared without captions
-- Platform disclosure tools (e.g. paid-partnership labels) may be used IN ADDITION to, not instead of, the caption/in-content disclosure
-- State that the brand requires this on every deliverable and will not publish or pay for undisclosed content - regulators can penalize both creator and brand
-- UK/other markets: "#ad" upfront per ASA rules; adapt to "[INSERT: campaign markets]" if the inputs specify markets
+- Platform disclosure tools (e.g. paid-partnership labels) may be used IN ADDITION to, not instead of, the caption/in-content disclosure in most jurisdictions
+- State that the brand requires this on every deliverable and will not publish or pay for undisclosed content - regulators in every major market can penalize both creator and brand
+- If the campaign runs in multiple markets, name every regime that applies and default to the strictest common denominator; use "[INSERT: campaign markets]" if the inputs do not specify
 
 ═══════════════════════════════════════════
 SECTION 9 - USAGE RIGHTS AND PAYMENT ({rights_lo} to {rights_hi} words)

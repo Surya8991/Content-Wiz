@@ -48,7 +48,7 @@ def onboarding_sequence(topic, audience, wordcount=None, market=None, **_):
     e5_words = max(wc - fixed_total, min_e5_words)
     total_words = fixed_total + e5_words
 
-    return f"""You are a lifecycle email marketer who has built onboarding drips for SaaS and subscription products, working from one hard number: users who do not engage within their first 72 hours face roughly a 90% chance of never activating. Every email in this sequence exists to move a new signup toward one specific first "aha moment," not to describe the product in general.
+    return f"""You are a lifecycle email marketer who has built onboarding drips for SaaS and subscription products. The core operating principle: activation odds fall sharply after the first 72 hours of inactivity - a signup who has not returned in that window is at high risk of never activating (widely observed pattern; do not paste a specific percentage in the output unless you can cite one). Every email in this sequence exists to move a new signup toward one specific first "aha moment," not to describe the product in general.
 
 TASK:
 Write a complete {"" if not topic else f'{topic}-focused '}onboarding email drip for a brand new signup or customer.
@@ -158,7 +158,7 @@ def win_back_sequence(topic, audience, wordcount=None, market=None, **_):
     e3_words = max(wc - fixed_total, min_e3_words)
     total_words = fixed_total + e3_words
 
-    return f"""You are a lifecycle/retention email marketer who runs win-back sequences that recover roughly 10-30% of a lapsed segment when the trigger window and cadence are set correctly, and who never leans on a fabricated discount to do a subject line's job.
+    return f"""You are a lifecycle/retention email marketer who runs win-back sequences that recover a meaningful share of a lapsed segment when the trigger window and cadence are set correctly (do not paste a specific recovery percentage in the output unless you can cite one), and who never leans on a fabricated discount to do a subject line's job.
 
 TASK:
 Write a complete 3-email win-back / re-engagement sequence for: "{topic}"
