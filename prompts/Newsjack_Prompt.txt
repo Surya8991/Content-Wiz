@@ -1,0 +1,128 @@
+============================================================
+NEWSJACK PROMPT
+============================================================
+
+Covers: rapid trend-response social post or short blog on a live news event,
+with a mandatory 24-hour risk-check gate before publish (legal, tonal
+appropriateness, brand-safety scoring). Newsjacking done wrong causes real
+brand damage; the risk check is not optional.
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+INPUTS REQUIRED
+------------------------------------------------------------
+
+- BRAND: [BRAND NAME], [BRAND DESCRIPTION]
+- MARKET: [b2b / b2c / creator]
+- THE NEWS EVENT (verbatim from the source, with LINK): [INSERT news item + primary source URL - the actual reporting outlet, not a secondhand recap]
+- WHY THIS BRAND HAS STANDING TO COMMENT: one sentence naming the specific expertise / lived experience / product connection that makes THIS brand credible on this news (not "we all care about X"). If none, STOP - see failure mode 1.
+- TARGET FORMAT: [linkedin post / x post / thread / instagram carousel / short blog / newsletter blurb]
+- LOCALE: [us / uk / eu / de / fr / es / br / in / jp / au / ca / global] - drives cultural sensitivity + regulatory framing
+
+------------------------------------------------------------
+STAGE 0 - RISK CHECK (BEFORE writing any copy)
+------------------------------------------------------------
+
+Score every box. If ANY answer is red, do NOT publish - route to comms + legal instead.
+
+1. IS THIS A TRAGEDY, DEATH, VIOLENCE, DISASTER, OR ONGOING HUMAN SUFFERING?
+   - If yes and the brand cannot offer material help (donation, product free to affected, expertise), do not post. RED.
+   - If yes and material help is being offered, the post is a public-service note - not a newsjack. Route to comms; use a straight, un-branded voice.
+
+2. IS THE NEWS ITEM SUBJECT TO ACTIVE LITIGATION OR REGULATORY INVESTIGATION?
+   - If yes and it involves a named party the brand is connected to (customer, competitor, employer of a founder), do not post. RED.
+   - If yes and the brand is unrelated, comment must not speculate on outcome or guilt. YELLOW - proceed with restraint.
+
+3. DOES THE POST REQUIRE THE BRAND TO TAKE A POSITION ON A PROTECTED-CLASS, ELECTORAL, OR CONTESTED SOCIAL ISSUE?
+   - If yes and the brand does not have a documented public position on it, do not post. RED.
+   - If the brand HAS a documented position, cite the internal policy document by name in the post plan; do not extemporise.
+
+4. IS THE PRIMARY SOURCE VERIFIED?
+   - Named outlet, real reporter, dated within the last 48 hours? If secondhand or "someone on X said", do not post. RED.
+
+5. WILL THIS AGE POORLY IF THE STORY UPDATES IN THE NEXT 24 HOURS?
+   - Breaking events shift. If the brand's take depends on facts still unfolding, wait 24 hours or post with a "based on reporting as of [datestamp]" hedge. YELLOW.
+
+6. IS THE ANGLE GENUINELY THE BRAND'S OWN EXPERTISE, OR ARE WE FORCING A CONNECTION?
+   - If the angle is "we happen to make X and this news mentions X-adjacent things", the connection is forced. RED.
+
+7. LOCALE SENSITIVITY:
+   - Does the news carry region-specific sensitivities that a global brand voice might miss (religious observance, political flashpoint, national tragedy anniversary, ongoing conflict)? If yes and the brand does not have a local reviewer to gut-check the post, hold. YELLOW.
+
+Only proceed to Stage 1 if all 7 boxes are green or explicitly-managed yellow.
+
+------------------------------------------------------------
+STAGE 1 - THE POST
+------------------------------------------------------------
+
+Structure (adapt to the target format):
+
+- OPENING: 1-2 sentences stating the news factually + primary source. Do not editorialise the setup.
+- THE INSIGHT: 2-4 sentences of the brand's actual view - drawn from the standing named in inputs. Named person or team behind the view is stronger than "at [Brand], we believe".
+- SPECIFIC PROOF OR EXAMPLE: 1-2 sentences of first-hand data, an in-house observation, or a specific customer pattern that supports the insight. If none, drop the post - see failure mode 3.
+- SO-WHAT FOR THE READER: 1-2 sentences naming what the reader should do, watch, or think differently starting now.
+- SIGN-OFF: byline (name + role) for LinkedIn / long-form. For X, a plain sentence; no logo, no hashtag stuffing.
+
+Format constraints per target:
+- LinkedIn: 900-1400 chars, blank lines between beats, 0-2 hashtags on the final line.
+- X: single post, under 260 chars, no hashtags unless one is genuinely canonical for the topic.
+- Instagram carousel: 6-9 slides, one beat per slide.
+- Short blog / newsletter blurb: 250-400 words, add a "sources" line at the bottom with the primary source URL.
+
+Voice rules:
+- Match the brand's market register (b2b / b2c / creator).
+- Zero "hot take" theatre. Zero "unpopular opinion" framing.
+- No banned CTA phrases. If a CTA is appropriate, it is genuinely useful ("here's the source" / "here's what we told our team about it") - not a sales pitch.
+- No em dashes.
+
+------------------------------------------------------------
+STAGE 2 - POST-PUBLISH MONITORING (mandatory)
+------------------------------------------------------------
+
+Fill this out before scheduling:
+- MONITORING WINDOW: the first 4 hours after publish. A named human owns replies, not an automated inbox.
+- ESCALATION TRIGGER: if the post accumulates X negative-sentiment comments or gets picked up in unfavourable coverage, escalate to comms lead within 30 min.
+- CORRECTION PLAN: if the underlying story updates in a way that invalidates the post, delete + issue a correction with a link to the update. Do not silently edit a published post.
+- SUNSET / REFRESH: if the news is superseded within 72 hours, add an "Update ([date]):" line at the top and keep the original visible below. Never let a superseded newsjack sit un-updated at the top of the brand's feed.
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. NO STANDING TO COMMENT: the biggest newsjack disasters are brands with no genuine tie to a story chasing engagement. If Stage 0 question 6 is red, walk.
+2. LEADING WITH THE BRAND, NOT THE NEWS: readers came for the news; the brand voice is what earns the reader's attention AFTER the setup. Do not flip the order.
+3. FIRST-PARTY DATA MISSING: without a specific observation or proof, the post is just a summary of someone else's reporting. Add real evidence or do not publish.
+4. TONE-DEAF ON A TRAGEDY: the moment a story involves loss of life, violence, or ongoing suffering, the brand voice is out. If the brand cannot offer material help, the correct action is silence.
+5. HASHTAG-JACKING ON A TRAUMA HASHTAG: NEVER attach a promotional post to a hashtag being used by affected people.
+6. FABRICATED PRIMARY SOURCE: no secondhand claims, no "someone on Twitter said". Named outlet or don't post.
+7. DELETING WITHOUT A CORRECTION: silent deletion of a bad post is worse than the post - it is discovered and screenshotted. Correct in place, then delete only if legally advised.
+
+------------------------------------------------------------
+SELF-CHECK BEFORE OUTPUT
+------------------------------------------------------------
+
+- Stage 0 all-green or explicitly-managed yellow?
+- Standing to comment is a real, specific tie (not "we all care about X")?
+- Primary source is a named outlet, dated within 48 hours, linked?
+- First-party proof or example present?
+- So-what for the reader is a specific take, not a slogan?
+- Monitoring window + escalation trigger + correction plan filled out?
+- No em dashes, no banned CTA phrases, no trauma-hashtag jacking?
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Return, in order:
+1. STAGE 0 RISK CHECK (with green/yellow/red per box)
+2. THE POST (formatted to the target)
+3. STAGE 2 MONITORING PLAN
+
+If Stage 0 is red on any box, output ONLY:
+"HOLD. Failed risk-check on [numbered items]. Do not publish."
+followed by a one-paragraph explanation.
+
+Save to output/Newsjack/

@@ -1,0 +1,120 @@
+============================================================
+RELEASE NOTES / CHANGELOG PROMPT
+============================================================
+
+Covers: user-facing release notes in three registers - DEVELOPER (API
+consumers, integrators), ADMIN (workspace / IT admins), END-USER (day-to-day
+in-product users). Same underlying release, three different framings.
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+INPUTS REQUIRED
+------------------------------------------------------------
+
+- BRAND: [BRAND NAME], [BRAND DESCRIPTION]
+- RELEASE VERSION (or date): [e.g. v2.14.0 or 2026-08-15]
+- CHANGE LIST (raw, from engineering - one bullet per change):
+  - [Added: ...] / [Changed: ...] / [Deprecated: ...] / [Removed: ...] /
+    [Fixed: ...] / [Security: ...] / [Breaking: ...]
+  - Include: PR/ticket reference if the audience is technical enough to care;
+    affected surface (API / dashboard / mobile app / integration name).
+- AUDIENCE MIX: which of the three registers to produce? [dev / admin / user / all]
+  (default: all three, each as a separate labeled block)
+
+If the CHANGE LIST is missing or vague ("added some improvements"), stop and
+ask for the actual change list. Do NOT invent release contents.
+
+------------------------------------------------------------
+COMMON RULES ACROSS ALL THREE REGISTERS
+------------------------------------------------------------
+
+- Grouping order: Breaking changes / Security fixes FIRST, always, no matter the register - a buried security or breaking-change note is a real support incident waiting to happen.
+- Every item names WHAT changed, WHY (one line, only if non-obvious), and any ACTION the reader needs to take. If no action, mark "No action required".
+- Deprecations must include the removal timeline ("will be removed in v2.16, October 2026"). "Deprecated" with no date is theatre.
+- Never a "Various improvements" or "Under the hood" catch-all as the only entry - either name the improvements or drop the section.
+- No em dashes, no marketing puffery ("we're thrilled to..."), no banned CTA phrases.
+
+------------------------------------------------------------
+REGISTER A - DEVELOPER (API consumers, integrators)
+------------------------------------------------------------
+
+Voice: precise, terse, code-adjacent. Include exact endpoint names, schema fields, versions.
+
+Sections (in order):
+1. BREAKING CHANGES: for each - what breaks, migration path, deadline.
+2. SECURITY FIXES: for each - CVE / severity / affected versions / upgrade action. Do not disclose exploit details.
+3. ADDED: new endpoints, new fields, new SDK methods. Include one code snippet per major addition.
+4. CHANGED: behavior changes on existing endpoints. Include the before/after in structured form.
+5. DEPRECATED: what + removal date + recommended replacement.
+6. REMOVED: what + last-supported version + link to migration guide.
+7. FIXED: bug fixes with reproducible symptom → fixed behavior.
+
+Format: markdown with code blocks where useful. Every changed API surface named exactly as it appears in the docs (case-sensitive).
+
+------------------------------------------------------------
+REGISTER B - ADMIN (workspace / IT admins, super-users)
+------------------------------------------------------------
+
+Voice: operational, checklist-friendly. Focus on rollout implications and admin controls.
+
+Sections (in order):
+1. BREAKING / IMMEDIATE-ACTION ITEMS (top of page): what admins must do this week.
+2. NEW ADMIN CONTROLS: settings, policies, permission changes that admins now manage.
+3. SECURITY / COMPLIANCE-RELEVANT CHANGES: audit-log changes, SSO/SAML behavior, data-residency updates, compliance certifications (SOC 2 / ISO 27001 / GDPR / HIPAA scope changes).
+4. ROLLOUT CONTROLS: is the new feature default-on or off? Can admins gate it? Any phased rollout note.
+5. USER-FACING CHANGES ADMINS SHOULD BROADCAST: 2-4 bullets an admin can copy into their internal comms channel.
+6. INTEGRATION / IDENTITY-PROVIDER NOTES: SCIM / SAML / OIDC changes, connector-version bumps.
+
+Format: markdown with checklist-style bullets and one "Admin action required by [date]" callout at the top if anything triggers it.
+
+------------------------------------------------------------
+REGISTER C - END-USER (day-to-day product users)
+------------------------------------------------------------
+
+Voice: plain-language, benefit-first. Users do not care about internal names or PR numbers.
+
+Sections (in order):
+1. WHAT'S NEW (2-4 bullets): each bullet = "You can now [outcome]" or "[Thing] is faster / cleaner / less annoying now". Never a feature name in isolation ("Introducing Threads Pro" - what does that mean to the user?).
+2. WHAT CHANGED: any UI/UX changes the user will notice, in a matter-of-fact voice. Address the "wait, where did X go?" question head-on.
+3. FIXED: user-visible bug fixes only. Skip anything the user would never have noticed.
+4. HOW TO TRY IT: one-line pointer to where in the product the new thing lives (or a link to a short doc / video).
+
+Format: short paragraphs + tight bullets. Optional screenshot placeholders (`[SCREENSHOT: hero of the new panel]`). One playful line is allowed if the brand voice permits; two playful lines is too many.
+
+------------------------------------------------------------
+DISTRIBUTION CHANNELS + REFORMATTING
+------------------------------------------------------------
+
+The release notes need to reach users through more than one channel. Generate short reformats for each:
+- IN-APP BANNER (single line, ≤80 chars): headline + link to full notes.
+- EMAIL SUBJECT LINE + PREVIEW TEXT (subject ≤50 chars, preview ≤90 chars).
+- SLACK / TEAMS COMMUNITY POST (≤400 chars): headline + 2 bullets + link.
+- SOCIAL POST (LinkedIn / X, ≤200 chars for X, ≤500 for LinkedIn): benefit-led, not "we're excited to announce".
+
+------------------------------------------------------------
+SELF-CHECK BEFORE OUTPUT
+------------------------------------------------------------
+
+- Breaking changes and security fixes at the top of EVERY register?
+- Every deprecation carries a removal date?
+- No "various improvements" catch-all?
+- Developer register uses exact endpoint / field names?
+- Admin register calls out any action required and the deadline?
+- End-user register speaks in benefits, never in internal feature names alone?
+- Distribution reformats fit their character budgets?
+- No em dashes, no banned CTA phrases?
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Return, in order:
+1. REGISTER A - DEVELOPER
+2. REGISTER B - ADMIN
+3. REGISTER C - END-USER
+4. DISTRIBUTION REFORMATS (in-app / email / community / social)
+
+Save to output/Release_Notes/

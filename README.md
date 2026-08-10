@@ -112,7 +112,7 @@ latam/apac). To match a specific writer's voice, add `--voice-samples
   content, and a first-person disclosure rule.
 - **51 channel strategy docs** (goal, principles, structure, cadence, failure
   modes per channel), grounded in cited platform research.
-- **79 flat prompt files** covering every major channel and content type - from ASO copy and competitive battlecards to chatbot flows, ABM content, podcast ad reads, brand voice guides, programmatic SEO pages, technical SEO audits, lead magnets, and the HARO DataBank Builder (internal research tool).
+- **90 flat prompt files** covering every major channel and content type - from ASO copy and competitive battlecards to chatbot flows, ABM content, podcast ad reads, brand voice guides, programmatic SEO pages, technical SEO audits, lead magnets, historical content-refresh audits, pricing pages, solution / use-case pages, UX microcopy packs, release notes, trust / security overview pages, expert roundups, newsjacking with a mandatory risk-check gate, MEDDIC/SPICED discovery-call scripts, LinkedIn Document Ads, and the HARO DataBank Builder (internal research tool).
 - **146-term marketing glossary** ([GLOSSARY.md](GLOSSARY.md)) covering 13 disciplines - Analytics, Brand, CRO, Email, Growth, Paid Ads, SEO, Social Media, and more - sourced from Marketing Academy.
 - **90+ curated marketing resources** ([RESOURCES.md](RESOURCES.md)) across SEO, paid media, social, email, analytics, copywriting, AI, and learning communities.
 - **Governance built in**: a publish/review tracker template, a documented

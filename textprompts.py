@@ -139,6 +139,38 @@ TEXT_PROMPT_MAP = {
     # the SEO-strategist persona audit.
     "skyscraper":          ("Skyscraper_Content_Prompt.txt",      "Skyscraper"),
     "skyscraper_content":  ("Skyscraper_Content_Prompt.txt",      "Skyscraper"),
+    # v0.10.8: 10 new prompts closing gaps flagged by the v0.10.7 prompt-library
+    # audit (see CHANGELOG). Covers historical SEO refresh, pricing pages,
+    # solution/use-case pages, UX microcopy, release notes, trust/security
+    # pages, expert roundups, newsjacking (with a mandatory risk-check gate),
+    # MEDDIC/SPICED discovery scripts, and LinkedIn Document Ads.
+    "content_refresh":     ("Content_Refresh_Prompt.txt",         "Content_Refresh"),
+    "refresh":             ("Content_Refresh_Prompt.txt",         "Content_Refresh"),
+    "historical_optimization": ("Content_Refresh_Prompt.txt",     "Content_Refresh"),
+    "pricing_page":        ("Pricing_Page_Prompt.txt",            "Pricing_Page"),
+    "pricing":             ("Pricing_Page_Prompt.txt",            "Pricing_Page"),
+    "solution_page":       ("Solution_Page_Prompt.txt",           "Solution_Pages"),
+    "use_case_page":       ("Solution_Page_Prompt.txt",           "Solution_Pages"),
+    "usecase":             ("Solution_Page_Prompt.txt",           "Solution_Pages"),
+    "microcopy":           ("Microcopy_Pack_Prompt.txt",          "Microcopy"),
+    "microcopy_pack":      ("Microcopy_Pack_Prompt.txt",          "Microcopy"),
+    "ux_writing":          ("Microcopy_Pack_Prompt.txt",          "Microcopy"),
+    "release_notes":       ("Release_Notes_Prompt.txt",           "Release_Notes"),
+    "changelog":           ("Release_Notes_Prompt.txt",           "Release_Notes"),
+    "trust_page":          ("Trust_Page_Prompt.txt",              "Trust_Page"),
+    "security_overview":   ("Trust_Page_Prompt.txt",              "Trust_Page"),
+    "trust_center":        ("Trust_Page_Prompt.txt",              "Trust_Page"),
+    "expert_roundup":      ("Expert_Roundup_Prompt.txt",          "Expert_Roundup"),
+    "roundup":             ("Expert_Roundup_Prompt.txt",          "Expert_Roundup"),
+    "newsjack":            ("Newsjack_Prompt.txt",                "Newsjack"),
+    "trend_response":      ("Newsjack_Prompt.txt",                "Newsjack"),
+    "discovery_call_script": ("Discovery_Call_Script_Prompt.txt", "Sales_Enablement"),
+    "discovery_script":    ("Discovery_Call_Script_Prompt.txt",   "Sales_Enablement"),
+    "meddic":              ("Discovery_Call_Script_Prompt.txt",   "Sales_Enablement"),
+    "spiced":              ("Discovery_Call_Script_Prompt.txt",   "Sales_Enablement"),
+    "linkedin_document_ad": ("LinkedIn_Document_Ad_Prompt.txt",   "LinkedIn_Document_Ads"),
+    "linkedin_doc_ad":     ("LinkedIn_Document_Ad_Prompt.txt",    "LinkedIn_Document_Ads"),
+    "document_ad":         ("LinkedIn_Document_Ad_Prompt.txt",    "LinkedIn_Document_Ads"),
 }
 
 

@@ -1,0 +1,161 @@
+============================================================
+TRUST PAGE / SECURITY OVERVIEW PROMPT
+============================================================
+
+Covers: public-facing trust center / security overview page copy - the page
+enterprise buyers, security reviewers, and IT/compliance procurement land on
+to answer "can we approve this vendor?". Complements the pricing and solution
+pages; typically lives at /trust or /security.
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+INPUTS REQUIRED
+------------------------------------------------------------
+
+- BRAND: [BRAND NAME], [BRAND DESCRIPTION]
+- COMPLIANCE POSTURE (confirmed only - never fabricate):
+    * Certifications held: [SOC 2 Type II / Type I / ISO 27001 / ISO 27017 / ISO 27018 / PCI DSS level N / HIPAA / FedRAMP / etc.]
+    * Certifications in progress: [with expected certification date]
+    * Regulations complied with: [GDPR / UK GDPR / CCPA / CPRA / HIPAA / LGPD / DPDP Act / etc.]
+- HOSTING: [AWS / GCP / Azure / on-prem / hybrid] + REGIONS: [us-east-1, eu-west-1, ...] + DATA-RESIDENCY OPTIONS
+- ENCRYPTION: [in-transit standard, at-rest standard (AES-256 / KMS provider)]
+- ACCESS CONTROL: [SSO providers supported / SCIM support yes-no / role-based access control (RBAC) yes-no / audit log retention window]
+- SUB-PROCESSORS: full current list with purpose + location. If no list published, flag as `[INSERT: current sub-processor list]`.
+- UPTIME / SLA: [published SLA % or "no public SLA"]
+- INCIDENT-RESPONSE POLICY: notification-window commitment (e.g. "72 hours for personal-data incidents per GDPR")
+- SECURITY-QUESTIONNAIRE ARTIFACT: [SOC 2 report / pen-test summary / ISO cert / insurance certs] - which are available on request?
+- LOCALE: [us / uk / eu / de / fr / es / br / in / jp / au / ca] - drives regulatory framing
+
+Any input listed as "unknown" / "TBD" must be flagged with `[INSERT: ...]` in the output - never invented.
+
+------------------------------------------------------------
+CORE PRINCIPLE
+------------------------------------------------------------
+
+Every claim on a trust page is a promise a security reviewer can hold you to. Everything must be:
+- SOURCEABLE (a specific control, cert, or document backs it)
+- SPECIFIC (dates, versions, regions, standards)
+- FRESH (dated, and dated recently - a trust page with a 2-year-old audit date reads as abandoned)
+
+If a section cannot be filled in with the above, better to omit it than to over-promise. Security reviewers explicitly downrank vague-language trust pages.
+
+------------------------------------------------------------
+SECTION 1 - HERO / TRUST PROMISE
+------------------------------------------------------------
+
+- HEADLINE (7-11 words): plain-language security promise. "Your data, secured to the standards your compliance team runs." Not "We take security seriously" (banned - every trust page says this).
+- SUBHEADLINE (1 sentence, 20-30 words): summary of the compliance posture in one line + link down to the sub-processor + document sections.
+- ONE-LINE STATUS: "Last updated: [Month YYYY]" - update this every quarter or when any material change ships.
+
+------------------------------------------------------------
+SECTION 2 - CERTIFICATIONS + AUDITS (proof strip)
+------------------------------------------------------------
+
+For each certification held:
+- Badge / icon (real - do not use a certification badge the brand has not earned)
+- Certification name + version (SOC 2 Type II, ISO 27001:2022)
+- Auditor firm name
+- Most recent audit date + next audit due date
+- One-line link: "Request the report" (with a note that the report requires an NDA if that is the policy)
+
+For each certification in progress: same format + "Expected: [Month YYYY]".
+
+------------------------------------------------------------
+SECTION 3 - DATA HANDLING
+------------------------------------------------------------
+
+Answer these questions directly. Each answer 1-3 sentences, no marketing hedge.
+
+- Where is customer data stored? (list every region + provider)
+- Can customers pin data to a specific region? (yes / no + which plans / cost)
+- How is data encrypted in transit? (TLS version)
+- How is data encrypted at rest? (AES-256, KMS provider)
+- How long is customer data retained after account deletion? (specific number of days)
+- Is customer data used to train AI models? (yes / no / opt-in - be unambiguous)
+- Backups: cadence, retention, encryption, region.
+
+------------------------------------------------------------
+SECTION 4 - ACCESS + IDENTITY
+------------------------------------------------------------
+
+- SSO / IdP support (list providers: Okta, Azure AD/Entra, Google Workspace, PingFederate, generic SAML/OIDC)
+- SCIM provisioning: yes / no + version
+- Password + MFA policy (min complexity, MFA options: TOTP / WebAuthn / hardware key)
+- Role-based access control: yes / no + does the brand ship pre-built roles?
+- Audit log: what is logged, retention window, export format (JSON / SIEM integration name)
+- Session management: max session length, forced re-auth on sensitive actions
+
+------------------------------------------------------------
+SECTION 5 - PRIVACY + REGULATION (locale-aware)
+------------------------------------------------------------
+
+- Personal-data legal basis (GDPR/UK-GDPR/DPDP/LGPD): named legal basis per processing purpose.
+- DPA (Data Processing Agreement) availability: linked download or "on request via [contact]".
+- Subject-access request handling: turnaround commitment (typically 30 days GDPR).
+- Cross-border transfer mechanism: SCCs / adequacy / BCRs where applicable.
+- Regional variants: if the brand serves regulated markets (EU / UK / CA-CCPA / BR-LGPD / IN-DPDP), each gets a named line.
+
+------------------------------------------------------------
+SECTION 6 - SUB-PROCESSORS
+------------------------------------------------------------
+
+Public table. Columns: Name | Purpose | Location. Every row must be a current, real sub-processor. Include: cloud provider, database provider, email provider, analytics, error-tracking, AI/LLM providers, payment processor, support tools. Note the change-notification policy ("we notify customers X days before adding a sub-processor").
+
+------------------------------------------------------------
+SECTION 7 - INCIDENT RESPONSE + UPTIME
+------------------------------------------------------------
+
+- Public status page URL (link, real)
+- Incident-notification commitment window
+- Post-incident review policy (customer post-mortem within N days for material incidents)
+- Uptime SLA (if published): percentage + credit schedule + link to SLA doc
+- Security-incident contact: dedicated email address (`security@[brand].com`)
+
+------------------------------------------------------------
+SECTION 8 - RESPONSIBLE DISCLOSURE + BUG BOUNTY
+------------------------------------------------------------
+
+- Coordinated disclosure policy (safe harbor language, scope, out-of-scope items)
+- Bug bounty program (platform: HackerOne / Bugcrowd / Intigriti / in-house; reward range)
+- Reporting channel: dedicated email or platform link
+
+------------------------------------------------------------
+SECTION 9 - REQUEST DOCUMENTATION (call to action for reviewers)
+------------------------------------------------------------
+
+- Single form or contact line to request: SOC 2 report / ISO cert / pen-test summary / cyber insurance certificate of insurance / DPA / security questionnaire responses (CAIQ / SIG).
+- Turnaround commitment ("we respond within 2 business days").
+- NDA policy up front.
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. "We take security seriously" as the hero line - immediate credibility loss with security reviewers.
+2. Certification badges the brand has not earned - fraud + trademark risk.
+3. Missing sub-processor list, or a list without notification policy - GDPR-red-flag.
+4. Vague retention windows ("we keep data for as long as needed") - GDPR-red-flag.
+5. No date-stamped "Last updated" line - reviewers assume the page is stale.
+6. AI-training question left ambiguous - 2026 default question; unanswered = assumed yes.
+7. Fabricated auditor firm or audit date - grounds for contract void + legal exposure.
+
+------------------------------------------------------------
+SELF-CHECK BEFORE OUTPUT
+------------------------------------------------------------
+
+- Every certification listed is one the brand actually holds (or clearly marked "in progress")?
+- Data-residency, encryption, retention, and AI-training questions all answered without hedge?
+- Sub-processor table is complete + carries a notification policy?
+- Every regulatory reference matches the locale set in the input?
+- Incident-notification window is a specific number, not "promptly"?
+- "Last updated: [Month YYYY]" line present?
+- No em dashes, no banned CTA phrases?
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Return in section order (1-9). Save to output/Trust_Page/

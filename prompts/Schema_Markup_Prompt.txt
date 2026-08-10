@@ -20,14 +20,24 @@ Primary Topic: [INSERT TOPIC]
 SCHEMA TYPES REFERENCE
 ------------------------------------------------------------
 
-- Blog post             -> Article or BlogPosting
-- FAQ section           -> FAQPage
-- Course or training    -> Course
-- How-to guide          -> HowTo
-- Organisation page     -> Organization
-- Event / webinar       -> Event
-- Review or rating      -> Review / AggregateRating
-- Breadcrumb            -> BreadcrumbList
+- Blog post              -> Article or BlogPosting
+- FAQ section            -> FAQPage
+- Course or training     -> Course
+- How-to guide           -> HowTo
+- Organisation page      -> Organization
+- Event / webinar        -> Event
+- Review or rating       -> Review / AggregateRating
+- Breadcrumb             -> BreadcrumbList
+- Product page           -> Product (+ Offer, aggregateRating, review) - required for e-commerce/SaaS/pricing pages that Google surfaces in Product / Shopping / AI Overviews
+- Video content          -> VideoObject (name, description, thumbnailUrl, uploadDate, duration, contentUrl or embedUrl) - required for YouTube/Wistia/self-hosted video to earn video snippets and AI-Overview video citations
+- SaaS product / app     -> SoftwareApplication (name, operatingSystem, applicationCategory, offers) - primary schema for SaaS category pages
+- Physical location      -> LocalBusiness (extend with Restaurant/HotelBusiness/etc. subclass where applicable) - required for local SEO, Maps, and "near me" AI Overviews
+- Job posting            -> JobPosting (title, description, datePosted, validThrough, hiringOrganization, jobLocation, baseSalary) - required to appear in Google for Jobs
+- Recipe                 -> Recipe (name, recipeIngredient, recipeInstructions, nutrition, cookTime, prepTime, recipeYield, aggregateRating) - required for recipe rich results
+
+GEO ENTITY SIGNALS (sameAs) - required in 2026 for AI Overviews / Perplexity / ChatGPT search to bind citations to the correct brand entity:
+- Every schema block that names the brand as a subject or publisher must include a `sameAs` array on the Organization/Person node linking to authoritative entity records: Wikipedia URL, Wikidata Q-id URL (https://www.wikidata.org/wiki/Q...), LinkedIn company page, Crunchbase profile, official social profiles (X, GitHub for dev-facing brands, YouTube for creator brands).
+- If the brand has no Wikipedia/Wikidata entry yet, flag the gap explicitly in a comment (`<!-- TODO: create Wikidata entry to strengthen entity binding -->`) - never fabricate a URL. AI systems that cross-check sameAs will drop the entity binding on any bad link, so a partial-but-real sameAs beats a longer-but-invented one.
 
 ------------------------------------------------------------
 OUTPUT FORMAT

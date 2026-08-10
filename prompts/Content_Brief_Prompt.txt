@@ -23,6 +23,19 @@ OUTPUT FORMAT (CSV)
 
 Field | Detail
 
+FUNNEL STAGE ROUTER (fill first; the sections below adapt to this stage):
+- Funnel Stage: `TOFU` (top of funnel - awareness / educational; primary success metric = organic reach and email signups) | `MOFU` (middle - consideration / comparison; primary metric = product-qualified page views and demo requests) | `BOFU` (bottom - decision / conversion; primary metric = pipeline created and closed-won attribution)
+- Stage-specific brief rules:
+    * TOFU: broaden the keyword set (add semantic and related-question keywords); prioritise educational depth and cited data; CTA is a low-friction lead magnet, not a demo.
+    * MOFU: narrow to problem-aware, product-adjacent keywords; require a comparison, evaluation criteria, or checklist section; CTA is a mid-friction offer (case study, ROI calculator, live workshop).
+    * BOFU: single high-intent commercial keyword (`X pricing`, `X vs Y`, `X alternatives`, `best X for [use case]`); require pricing/proof/objection-handling sections; CTA is the primary conversion action (demo, trial, buy).
+
+E-E-A-T SIGNALS REQUIRED (Google Helpful Content / 2024+ ranking; do not skip):
+- Author expertise: name the credentialed author (title, years in field, one credible bio link). If author is a house/brand persona, name the real subject-matter reviewer instead.
+- First-hand experience proof: at least one first-hand element - original data, a named customer example, a screenshot of the tool in action, a quote from someone the brand has actually worked with. If none exists, flag it as `[MISSING - blocks publish]` rather than proceeding.
+- Primary sources: at least 2 sources must be primary (original research, official platform documentation, government/academic data), not secondary aggregators. List them explicitly.
+- Fact-check / update trigger: date-based trigger for the next review (`Review by [YYYY-MM]`; typically 6 months for BOFU/product topics, 12 for evergreen educational topics).
+
 STANDARD SEO FIELDS:
 - Content Goal
 - Target Audience

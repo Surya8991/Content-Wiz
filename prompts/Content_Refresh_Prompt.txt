@@ -1,0 +1,104 @@
+============================================================
+CONTENT REFRESH / HISTORICAL OPTIMIZATION PROMPT
+============================================================
+
+Covers: existing-URL refresh audit (what to keep, cut, add, re-target, re-link)
+to recapture rankings on a page that has decayed or been overtaken.
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+INPUTS REQUIRED (do NOT proceed with placeholders)
+------------------------------------------------------------
+
+- TARGET URL: [INSERT URL of the existing page being refreshed]
+- CURRENT PRIMARY KEYWORD: [INSERT keyword the page currently targets]
+- CURRENT RANK (if known): [INSERT position 1-100 or "not ranking"]
+- CURRENT TRAFFIC TREND: [INSERT last 12 months direction: growing / flat / declining, with % if known]
+- REFRESH TRIGGER: [INSERT one: ranking dropped / traffic declining / competitor overtook / topic evolved / page > 12 months old / all]
+- 3 COMPETITOR URLS currently outranking this page (or top 3 SERP results for the target keyword)
+
+If any input is missing, stop and list what is missing. Do NOT fabricate a competitor URL, a rank, or a traffic figure.
+
+------------------------------------------------------------
+SECTION 1 - AUDIT (what the page is doing now)
+------------------------------------------------------------
+
+Analyse the target URL and produce:
+- WORD COUNT and reading time (as observed)
+- PUBLISH DATE and LAST-UPDATED DATE (both, as visible on page)
+- ON-PAGE INTENT MATCH: does the page's angle match the current SERP's dominant intent (informational / commercial / transactional)? Yes / partial / no + one-line explanation.
+- E-E-A-T SIGNALS PRESENT: named author with credentials (yes/no), original data (yes/no), first-hand experience proof (yes/no), primary sources cited (count).
+- ENGAGEMENT SIGNAL PROXIES: dated stats > 24 months old (count - each is a decay signal), broken internal or outbound links (count if detectable), images with missing alt text (yes/no if detectable).
+- COMPETITIVE DELTA: for each of the 3 competitor URLs, list one thing they do that this page does NOT (a section, a data point, a visual, a schema type, a named example).
+
+------------------------------------------------------------
+SECTION 2 - REFRESH DECISION MATRIX (per section of the page)
+------------------------------------------------------------
+
+For every H2 in the existing page, one row in this table:
+
+| H2 Section | Decision | Why | New Content Notes |
+|------------|----------|-----|-------------------|
+| [H2 verbatim] | KEEP | still current and best in class | (none) |
+| [H2 verbatim] | REVISE | dated stat / weak example / broken link | [what to change] |
+| [H2 verbatim] | EXPAND | competitor covers a subsection this page misses | [name the subsection + source] |
+| [H2 verbatim] | CUT | duplicates another section / off-intent / cannibalizes another URL | [where the removed value goes, if anywhere] |
+| [H2 verbatim] | RE-ORDER | correct answer buried below the fold | [target position] |
+| [NEW H2] | ADD | competitor advantage + reader gap | [what the new section covers + evidence source] |
+
+Rule: every DECISION column value must be one of KEEP / REVISE / EXPAND / CUT / RE-ORDER / ADD. No vague "improve" verdicts.
+
+------------------------------------------------------------
+SECTION 3 - RE-TARGET DECISION
+------------------------------------------------------------
+
+Answer explicitly:
+- KEEP CURRENT KEYWORD or RE-TARGET to a new primary keyword? Justify in one sentence based on current-SERP intent match.
+- IF RE-TARGETING: name the new primary keyword, new secondary keywords, and the URL slug change (if any). If the URL slug should NOT change (backlink preservation), explicitly say so and note that the H1 / title / meta will do the re-targeting instead.
+- REDIRECT PLAN: if the URL slug DOES need to change, output the 301 redirect line to add (`/old-slug -> /new-slug`).
+
+------------------------------------------------------------
+SECTION 4 - INTERNAL LINK RE-WIRING
+------------------------------------------------------------
+
+- INBOUND LINKS TO ADD: 3-5 other pages on the site that should now link INTO this page (list the page + suggested anchor text natural to the paragraph). If the site's link graph is unknown, flag as `[INSERT: audit sitemap for inbound-link candidates]`.
+- OUTBOUND LINKS TO ADD: 3-5 authority external references this refresh should add (name the source; do not fabricate URLs).
+- INTERNAL LINKS TO REMOVE OR UPDATE: any existing outbound links in the page that are broken, dated, or now point to a competitor.
+
+------------------------------------------------------------
+SECTION 5 - PUBLISH-DAY CHECKLIST
+------------------------------------------------------------
+
+- [ ] Update visible "Last updated: [Month YYYY]" timestamp at top of page (AI-Overview freshness signal)
+- [ ] Update JSON-LD `dateModified` in schema
+- [ ] Re-generate meta title + meta description if the primary keyword changed (see Meta_SEO_Prompt.txt)
+- [ ] Re-generate FAQ / PAA section against the current SERP's People Also Ask (see Content_Brief_Prompt.txt for the AEO block)
+- [ ] Add 301 redirect if slug changed
+- [ ] Manually re-index the URL in Google Search Console (URL inspection > Request indexing)
+- [ ] Note the refresh in the content calendar tracker with today's date so the next refresh trigger is 12 months out
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Return, in order:
+1. AUDIT block (Section 1)
+2. REFRESH DECISION MATRIX (Section 2)
+3. RE-TARGET DECISION (Section 3)
+4. INTERNAL LINK RE-WIRING (Section 4)
+5. PUBLISH-DAY CHECKLIST (Section 5)
+
+Save to output/Content_Refresh/
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. VAGUE VERDICTS: "improve this section" is not a decision. Every H2 gets KEEP / REVISE / EXPAND / CUT / RE-ORDER / ADD.
+2. FABRICATED AUDIT NUMBERS: if you cannot access the page or a competitor page directly, state that and list what is needed - never invent a word count, a rank, or a traffic figure.
+3. RE-WRITE THE PAGE AS A BLOG POST INSTEAD OF A REFRESH: this prompt outputs a refresh PLAN. Do not draft the new article; use blog_writing (or the platform-specific template) to draft from this plan.
+4. SLUG CHANGE WITHOUT A REDIRECT LINE: any recommended slug change must ship with the 301 line or it will kill the page's backlink equity.
+5. LEAVING FRESHNESS UPDATES OFF THE CHECKLIST: a refresh without an updated `dateModified` and visible "Last updated" line loses the freshness signal AI Overviews rely on.

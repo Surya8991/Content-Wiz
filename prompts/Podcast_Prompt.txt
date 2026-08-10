@@ -163,7 +163,7 @@ A 40-minute podcast appearance generates 11 derivative content pieces. Generate 
 | Newsletter feature (key insights + link to episode) | Email | Within 1 week |
 | Long-form article (expand the episode's primary framework) | Blog / Medium | Within 2 weeks |
 | Episode added to website media/press page | Website | Same day as publish |
-| Data points extracted for HARO pitch bank | output/DataBank/ | Within 1 week |
+| Data points extracted for HARO pitch bank | output/HARO_DataBank/ | Within 1 week |
 | Twitter/X thread (episode's key argument) | Twitter/X | Within 3 days |
 
 TAG THE HOST AND SHOW on every derivative piece. This generates goodwill, increases the probability of the host sharing the content, and signals ongoing engagement with the relationship.

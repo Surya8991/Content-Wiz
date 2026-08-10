@@ -1,0 +1,115 @@
+============================================================
+EXPERT ROUNDUP PROMPT
+============================================================
+
+Covers: expert-quotes article (10+ named practitioners answering one focused
+question) + the outreach email + the contribution brief + the final
+attribution / promotion pack. Built for link-earning and citation authority.
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+INPUTS REQUIRED
+------------------------------------------------------------
+
+- BRAND: [BRAND NAME], [BRAND DESCRIPTION]
+- ROUNDUP QUESTION: the single focused question every expert will answer (must be narrow enough that a specific expert with a specific view can answer it in 100-200 words). Bad: "How is AI changing marketing?" Good: "What is the one thing your team stopped doing in 2026 because AI made it obsolete?"
+- TARGET AUDIENCE: [AUDIENCE - who reads this]
+- TARGET EXPERT COUNT: 10-30 (default 15)
+- EXPERT SEGMENT: named category(-ies) of practitioner (e.g. "Head of Growth at Series B B2B SaaS in the US and UK", "DTC founders under 5M ARR", "creator-economy operators")
+- PUBLISH DATE (target): [YYYY-MM-DD]
+
+If the ROUNDUP QUESTION is broad or off-brand, propose 2-3 sharper alternatives and stop.
+
+------------------------------------------------------------
+DELIVERABLE 1 - THE OUTREACH EMAIL (to prospective contributors)
+------------------------------------------------------------
+
+Rules:
+- 100-140 words. Any longer and busy experts do not reply.
+- Personalisation slot at the top: `[Recipient-specific line - reference their recent work by name and year, not "I love your content"]`. If personalisation is impossible for a batch, do NOT send - a bulk-templated expert email tanks reply rate.
+- Name the SPECIFIC question up front. Reader must know in the first 30 words what you are asking of them.
+- State the concrete ask: how many words (100-200), by when (specific date, at least 2 weeks out), and where it will publish (blog URL + estimated publish date + audience size context).
+- State what they get in return: a named-link back to their profile / company, a heads-up when it goes live, permission to reuse their quote in their own content.
+- No banned CTA phrases ("Learn more", "Discover"). CTA is a single question: "Are you in?" or "Would you have 15 minutes to answer this by [date]?"
+- Sign off with a real named human, not a marketing alias.
+
+Output the email as ready-to-send text plus a suggested subject line (under 55 chars, plain, no ALL CAPS, no emoji unless the audience is B2C).
+
+------------------------------------------------------------
+DELIVERABLE 2 - THE CONTRIBUTION BRIEF (sent to experts who say yes)
+------------------------------------------------------------
+
+One-page brief they can act on without a second email:
+- THE QUESTION (verbatim, front and centre)
+- WORD COUNT: 100-200 words
+- ANGLE ASK: "Answer from your own direct experience, not general theory. One specific example beats three general points. First-person voice is fine and encouraged."
+- BANNED (in their submission): fabricated stats, generic frameworks, unattributed claims. If they cite a stat, they must name the source and year.
+- FORMAT: plain text or Google Doc, no formatting required
+- SUBMISSION: email their response to [address] by [deadline]
+- ATTRIBUTION FORMAT: "Name, Title at Company - [linked to profile URL of their choice: LinkedIn / personal site / X]"
+- HEADSHOT REQUEST: 400x400 minimum, .jpg or .png, transparent-background version if available
+- RIGHTS: brand can use the quote in the article + one social pull-quote per contributor; contributor keeps all other rights
+- HEADS-UP PROMISE: brand will email the day the article goes live + tag them in the launch social post
+
+------------------------------------------------------------
+DELIVERABLE 3 - THE ARTICLE STRUCTURE
+------------------------------------------------------------
+
+- H1: names the question, promises the number of experts ("15 growth leads on the one thing they stopped doing in 2026")
+- INTRO (120-180 words): frames why this question matters right now, in the target audience's vocabulary. Ends with "Here is what N practitioners told us."
+- STRUCTURING PATTERN: choose ONE based on the answers:
+    * If answers cluster: group by theme (3-5 themes) with 3-5 expert quotes per theme + a section intro tying them together.
+    * If answers diverge: one quote per section, ordered by strongest-claim-first, most-contrarian second, safest-consensus last (order matters for time-on-page).
+- EACH EXPERT QUOTE:
+    * Attribution line: Name, Title at Company (with the link the expert supplied)
+    * Headshot at consistent size on the left
+    * Quote body (100-200 words, lightly edited for clarity only - never re-written)
+    * Optional 1-line editor's note beneath if the quote references something worth linking or explaining
+- CONCLUSION (150-200 words): synthesise across the answers WITHOUT flattening them. Name the tension between the divergent views if there is one; do not fake a consensus.
+- METHODOLOGY NOTE (mandatory footer): who was asked, how many replied, publication date, and whether any responses were edited for length.
+
+------------------------------------------------------------
+DELIVERABLE 4 - PROMOTION PACK
+------------------------------------------------------------
+
+- SOCIAL PULL-QUOTES: one per contributor, ready to schedule, with the contributor tagged and the article URL. Format for LinkedIn (200-400 chars) and X (under 260 chars).
+- CONTRIBUTOR-HEADS-UP EMAIL: sent the day of publish - short thank-you + link + the tagged social posts (asking, not requiring, a reshare).
+- INTERNAL DISTRIBUTION: 1-line internal Slack post + 1-line for the sales team + 1-line for CS.
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. QUESTION TOO BROAD: "How is X changing?" gets vague answers and looks like a listicle. Must be narrow enough to answer specifically.
+2. TEMPLATED OUTREACH: a form email to 500 experts gets a 2% reply rate. Personalise or do not send.
+3. RE-WRITING CONTRIBUTOR QUOTES: light editing for clarity only. If a quote fundamentally changes meaning, ask the contributor - never silently rewrite.
+4. FABRICATED CONTRIBUTORS: if you fall short of the target count, publish with what you have and update later; NEVER invent an expert or attribute a quote to someone who did not send one.
+5. NO METHODOLOGY NOTE: a roundup with no "who was asked / how many replied" reads as PR, not research.
+6. TAKING CREDIT FOR THEIR IDEAS IN THE CONCLUSION: synthesise, don't rebrand. Do not put the sharpest contributor line in the intro as if it were the brand's own thesis.
+
+------------------------------------------------------------
+SELF-CHECK BEFORE OUTPUT
+------------------------------------------------------------
+
+- Outreach email under 140 words with real personalisation slot?
+- Brief lists word count, deadline, format, attribution format, rights, and heads-up promise?
+- Article structure follows either cluster-by-theme OR order-by-tension?
+- Each expert has attribution + headshot + linked profile URL slot?
+- Methodology note present at the bottom?
+- Promotion pack tags contributors, does not compel a reshare?
+- No banned CTA phrases, no em dashes?
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Return, in order:
+1. OUTREACH EMAIL (with subject line)
+2. CONTRIBUTION BRIEF
+3. ARTICLE STRUCTURE (with placeholders for the quotes)
+4. PROMOTION PACK
+
+Save to output/Expert_Roundup/

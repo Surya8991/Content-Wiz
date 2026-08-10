@@ -1,0 +1,125 @@
+============================================================
+PRICING PAGE PROMPT
+============================================================
+
+Covers: SaaS / DTC / services pricing page copy - plan naming, tier positioning,
+feature comparison matrix, anchor-price psychology, per-plan objection handling,
+pricing-page FAQ. Not to be confused with `landing_page` (offer-specific) or
+`comparison_page` (vs-competitor).
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+INPUTS REQUIRED
+------------------------------------------------------------
+
+- BRAND: [BRAND NAME], [BRAND DESCRIPTION]
+- TARGET AUDIENCE: [AUDIENCE]
+- MARKET: [b2b / b2c / creator - drives voice per _shared.py's MARKET_VOICE_RULES]
+- LOCALE / CURRENCY: [e.g. US/USD, UK/GBP, EU/EUR, IN/INR - determines the currency symbol AND local disclosure norms]
+- PLAN COUNT: [2, 3, 4, or "custom-only enterprise"; default recommendation: 3, matching the standard "Starter / Pro / Enterprise" cognitive frame]
+- PLAN NAMES (if fixed): [INSERT or "propose based on positioning"]
+- PRICING MODEL: [per-seat / per-usage / flat-tier / freemium+paid / usage-based-with-commit]
+- ANCHOR PRICE STRATEGY: [true anchor (rarely bought high tier) / decoy (asymmetrically dominated middle) / mid-anchor (middle plan is the intended sell)]
+
+If any of these are missing, ask before generating; do NOT default silently.
+
+------------------------------------------------------------
+SECTION 1 - HERO
+------------------------------------------------------------
+
+- HEADLINE (6-10 words): outcome-led, NOT "Pricing". Bad: "Pricing". Better: "Simple pricing that scales with your team". Best: names the specific outcome the reader pays for.
+- SUBHEADLINE (15-25 words): who each plan is for in one line + the pricing-model disclosure (per-seat vs usage vs flat) so users are not surprised at checkout.
+- BILLING TOGGLE COPY (monthly / annual): "Save X% with annual billing" - state the actual discount, do not invent a savings number.
+
+------------------------------------------------------------
+SECTION 2 - PLAN CARDS (one per plan)
+------------------------------------------------------------
+
+For each plan:
+- PLAN NAME (1-2 words, meaningful - not "Silver / Gold / Platinum" if you can help it; name what the user actually gets: "Starter" / "Team" / "Business" / "Enterprise")
+- ONE-LINE POSITIONING (10-14 words): "For [who] who need [outcome]". Every plan must be for a DIFFERENT reader; if two plans have the same positioning line, one of them is redundant.
+- PRICE (in the specified currency): number + billing period (per user / per month / per 1,000 credits / etc.). For enterprise: "Custom" + "Talk to sales".
+- 4-7 FEATURE BULLETS (in order of persuasion weight, not alphabetical): what THIS plan adds vs the plan below it should be visually highlighted (e.g. bold or an "everything in Starter, plus:" preface).
+- CTA BUTTON LABEL: names the specific action - "Start free trial", "Talk to sales", "Get a demo", "Buy now". Not "Learn more" (banned).
+- SOCIAL PROOF SNIPPET (optional but recommended for the intended-sell tier): one-line customer quote or logo cluster mention, real or "[INSERT: named customer proof]" - never a fabricated quote.
+
+ANCHOR PRICE PSYCHOLOGY (apply based on `ANCHOR PRICE STRATEGY` input):
+- `true anchor`: highest tier is deliberately expensive to make the middle look reasonable. Middle is the intended sell.
+- `decoy`: create a middle tier that is asymmetrically dominated - same price as another tier but strictly worse, making the "correct" choice obvious. Middle is the intended sell.
+- `mid-anchor`: middle is priced ~2x the entry tier and delivers ~3x the value; visually pre-selected. Middle is the intended sell.
+
+Mark the intended-sell tier with a "Most popular" / "Best value" ribbon, not both.
+
+------------------------------------------------------------
+SECTION 3 - COMPARISON MATRIX (all features, all plans, one table)
+------------------------------------------------------------
+
+Every feature listed in any plan card must appear as a row; every plan is a column. Cells: `Yes`, `Limited (N)`, `Add-on`, or a dash. Group rows by category (Core / Collaboration / Security / Integrations / Support). No "coming soon" cells that stay coming-soon for 6+ months - if it is not shipping in the next quarter, leave it out.
+
+------------------------------------------------------------
+SECTION 4 - PER-PLAN OBJECTION HANDLING
+------------------------------------------------------------
+
+Immediately under each plan card, address ONE specific objection for that plan (not a generic FAQ):
+- Entry tier objection: "Is X included in the free/starter plan?" or "What happens when I hit the limit?"
+- Middle tier objection: "How is this different from the entry plan?" or "Do I have to talk to sales?" (answer: no)
+- Enterprise objection: "How much does it actually cost?" (answer: name the starting range or the model, not a canned "let's chat")
+
+------------------------------------------------------------
+SECTION 5 - PRICING-PAGE FAQ (5-8 questions)
+------------------------------------------------------------
+
+Every FAQ answer is 2-4 sentences, direct. Mandatory questions if applicable to the pricing model:
+- What happens if I go over my plan limit?
+- Do you offer discounts for annual / non-profit / education / startup?
+- Can I change plans mid-cycle? How is it prorated?
+- What payment methods do you accept? (For international audiences: name local methods where relevant - SEPA / iDEAL / Pix / UPI - not just credit card + PayPal.)
+- Is there a free trial? For how long? Credit card required?
+- What is your refund policy?
+- Is my data used to train AI models? (2026+ user default question; do not omit this even if the answer is "no".)
+- Where is my data hosted / which region? (Enterprise / EU / regulated-industry buyers ask this first.)
+
+------------------------------------------------------------
+SECTION 6 - FOOTER TRUST STRIP
+------------------------------------------------------------
+
+Below the FAQ: single-row strip with the trust signals relevant to the pricing decision - compliance badges (SOC 2 / ISO 27001 / GDPR / HIPAA where applicable), payment security (PCI DSS / Stripe / Adyen), uptime SLA figure (only if the brand publishes one). Fabricate nothing; use `[INSERT: compliance badge]` for any the brand has not confirmed.
+
+------------------------------------------------------------
+LOCALIZATION / DISCLOSURE NOTES
+------------------------------------------------------------
+
+Match the locale set in the input:
+- Currency symbol and formatting (e.g. `$1,299` US, `£1,299` UK, `1.299 €` DE, `R$ 1.299` BR, `₹99,000` IN).
+- Tax / VAT / GST disclosure: EU/UK prices legally must display tax-inclusive to consumers; B2B often lists ex-VAT. Name which and add "prices exclude VAT" or "prices include VAT (X%)" as required.
+- Consumer-protection right of withdrawal (EU/UK 14-day statutory cooling-off period for consumer subscriptions).
+- Auto-renewal disclosure (US state laws - California/Oregon/etc.; EU rules) - a single visible sentence next to the CTA.
+
+------------------------------------------------------------
+SELF-CHECK BEFORE OUTPUT
+------------------------------------------------------------
+
+- Every plan has a distinct positioning line (no two plans for the same reader)?
+- Anchor-price strategy is visible in the tier ordering, not just stated?
+- Every feature listed in any plan card appears in the comparison matrix?
+- Currency, tax disclosure, and auto-renewal language match the input locale?
+- The 2026 default AI-training question is in the FAQ?
+- Every CTA is a specific verb (never "Learn more" / "Click here" / "Discover")?
+- No fabricated customer quote, compliance badge, or "coming soon" cell?
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Return in this order:
+1. HERO (headline, subheadline, billing toggle)
+2. PLAN CARDS (one block per plan)
+3. COMPARISON MATRIX (markdown table)
+4. PER-PLAN OBJECTION HANDLING
+5. FAQ
+6. FOOTER TRUST STRIP
+
+Save to output/Pricing_Page/

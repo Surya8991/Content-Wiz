@@ -1,0 +1,116 @@
+============================================================
+SOLUTION / USE-CASE PAGE PROMPT
+============================================================
+
+Covers: SaaS solution page anchored on either a specific INDUSTRY (e.g.
+"for Financial Services") or a specific JOB-TO-BE-DONE / role (e.g. "for
+Product Managers", "for revenue operations"). Distinct from product-feature
+pages (feature-anchored) and comparison pages (vs-competitor anchored).
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+INPUTS REQUIRED
+------------------------------------------------------------
+
+- BRAND: [BRAND NAME], [BRAND DESCRIPTION]
+- ANCHOR TYPE: `industry` OR `role` OR `use-case` (choose one; if in doubt, ask)
+- ANCHOR VALUE: [e.g. "Financial Services", "Product Managers", "Revenue Operations", "Onboarding new hires"]
+- KEY CUSTOMER TYPES within the anchor: 2-3 real customer names or "[INSERT: named customer]" placeholders (never fabricate)
+- 2-3 PRIMARY REGULATIONS / STANDARDS the anchor cares about (e.g. FS = FINRA/SOC2/PCI; healthcare = HIPAA; EU = GDPR; nothing = "none - flag as general market")
+- PRIMARY OBJECTION for this anchor (the one thing this audience always pushes back on)
+- MARKET: [b2b default; b2c/creator only if the SaaS sells to individuals]
+- LOCALE: [us/uk/eu/de/fr/es/br/in/jp/au/ca] - drives regulatory / currency language
+
+------------------------------------------------------------
+SECTION 1 - HERO
+------------------------------------------------------------
+
+- HEADLINE (7-12 words): names the anchor + the outcome. Bad: "Solutions for Financial Services". Better: "The compliance-first workspace for Financial Services teams". Best: names the specific outcome AND the audience: "Ship faster in Financial Services without failing your next SOC 2 audit".
+- SUBHEADLINE (18-28 words): who it's for + the primary regulation/constraint + the outcome. Example: "For product and engineering teams at regulated FS firms who need to move fast without SOC 2 or FINRA exceptions on every release."
+- PRIMARY CTA: `Get a demo` / `Talk to sales` / `Start free trial` - one, above the fold. Not "Learn more".
+
+------------------------------------------------------------
+SECTION 2 - "BUILT FOR [ANCHOR]" PROOF STRIP
+------------------------------------------------------------
+
+Immediately below the hero: single-row proof strip specific to the anchor:
+- Named customer logos IN THIS SEGMENT ONLY (never generic logo wall; if [INSERT: FS customer logos]).
+- Compliance badges relevant to the anchor (SOC 2 / HIPAA / PCI / GDPR / FINRA / etc. as applicable; only badges the brand actually has).
+- One quantitative signal: "N FS teams" / "N regulated deployments" / "N onboarded per quarter" - only if defensible; else omit.
+
+------------------------------------------------------------
+SECTION 3 - THE PROBLEM FRAMED IN THIS ANCHOR'S LANGUAGE
+------------------------------------------------------------
+
+150-220 words. Rules:
+- Frame the problem in the anchor's own vocabulary, not generic SaaS language. FS team, not "customer". Retail buyer, not "user". PM says "spec", not "requirements doc".
+- Name the specific structural constraint this anchor lives with that non-anchor readers do not (regulation / cadence / procurement path / team topology).
+- End with the specific loss: what breaks when this problem isn't solved. Quantify only if you can source the number; otherwise qualitative.
+
+------------------------------------------------------------
+SECTION 4 - HOW [BRAND] SOLVES IT (3-5 outcome-led capability blocks)
+------------------------------------------------------------
+
+Each block:
+- H3: outcome-led verb phrase, NOT a feature name. Bad: "Advanced SSO". Better: "Give every reviewer the right access on day one".
+- 2-3 sentences on the mechanism (how it works) - specific enough that a technical evaluator understands the shape of the solution, not marketing abstraction.
+- ONE proof element under each block: a named customer example, a screenshot idea, a metric with source, or an integration name.
+- Bind each block to the anchor's regulation/constraint from Section 3 where relevant ("meets SOC 2 CC6.3 access-review requirement" / "audit trail retained for 7 years per FINRA").
+
+------------------------------------------------------------
+SECTION 5 - COMPARISON / DISPLACE (optional, include if the anchor has an obvious incumbent)
+------------------------------------------------------------
+
+Small 3-4 row table: what the anchor is likely using today vs. what this brand offers. Rules per row: factual delta, not opinion; no unnamed "legacy system"; if the incumbent has a strength the brand does not match, acknowledge it.
+
+------------------------------------------------------------
+SECTION 6 - CUSTOMER STORY (single, deep, in-anchor)
+------------------------------------------------------------
+
+150-250 words. Named FS customer (or `[INSERT: named customer in the anchor]` if not confirmed). Structure: situation → constraint → what they did with the brand → outcome (metric + timeframe). Pull one quote with named person + title + company. Never a composite or "one customer we work with" hedge.
+
+------------------------------------------------------------
+SECTION 7 - PRIMARY OBJECTION HANDLED HEAD-ON
+------------------------------------------------------------
+
+150-180 words. Restate the primary objection in the anchor's voice (from the input), then answer it with mechanism + evidence + one-line summary. This is the section a skeptical buyer scrolls to first; it must not read as PR.
+
+Examples of anchor-specific objections that must be answered directly:
+- FS: "How do you handle SOC 2 and data residency?" - name the control set + hosting regions.
+- Healthcare: "Do you sign a BAA?" - yes/no + which plan tier.
+- EU: "Where is my data hosted / GDPR data-processing-agreement?" - name the region + DPA availability.
+- Regulated / procurement-heavy: "What is your security review process?" - name the artifact package (SOC 2 report, pen-test summary, insurance certs).
+
+------------------------------------------------------------
+SECTION 8 - RESOURCES + SECONDARY CTA
+------------------------------------------------------------
+
+3-4 links relevant to THIS anchor only (case study, security overview, integration doc, industry report). Then a secondary CTA that gives a non-demo path: "Download the FS security overview" / "Read the SOC 2 report request instructions".
+
+------------------------------------------------------------
+LOCALIZATION / DISCLOSURE NOTES
+------------------------------------------------------------
+
+- Regulations must match the input locale (US = FINRA/SEC/HIPAA/SOC 2; UK = FCA/PRA; EU = MiCA/PSD2/GDPR; India = RBI/SEBI/DPDP; APAC as applicable).
+- Currency in any pricing / cost-of-inaction claim must match the locale.
+- Named-customer logos should come from the same locale where possible; a fully US-logo strip on an EU-anchored page misfires.
+
+------------------------------------------------------------
+SELF-CHECK BEFORE OUTPUT
+------------------------------------------------------------
+
+- Every section frames the problem/solution in the anchor's own language, not generic SaaS voice?
+- Every compliance badge / regulation named is one the brand actually meets (no fabrication)?
+- The primary objection from the input is answered head-on in Section 7 (not buried in the FAQ)?
+- Customer story is real or clearly flagged `[INSERT: named customer]` - never composite?
+- Every capability block ties back to the anchor's specific constraint from Section 3?
+- No em dashes, no banned CTA phrases?
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Return in section order (1-8). Save to output/Solution_Pages/

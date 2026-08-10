@@ -1,0 +1,108 @@
+============================================================
+MICROCOPY PACK PROMPT
+============================================================
+
+Covers: UX-writing bundle for a single user flow - empty states, error
+messages, button labels, tooltip copy, confirmation modals, loading strings,
+success toasts, permission prompts.
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+INPUTS REQUIRED
+------------------------------------------------------------
+
+- BRAND: [BRAND NAME], [BRAND DESCRIPTION]
+- MARKET: [b2b / b2c / creator]
+- LOCALE: [us / uk / eu / de / fr / es / br / in / jp / au / ca] - drives spelling, formality, and legal-notice defaults
+- FLOW: what specific user flow is this pack for? (e.g. "first-run onboarding for our task-management app", "checkout flow for our DTC subscription", "creator payout flow")
+- VOICE ANCHOR (optional): 2-3 real strings from the existing product that this pack must match in tone (helps consistency)
+
+If the FLOW is missing, ask before generating - a generic microcopy pack is worthless.
+
+------------------------------------------------------------
+CORE VOICE RULES (apply to every string, override with input)
+------------------------------------------------------------
+
+- Human, not corporate. Say "You" and "We".
+- Contractions on (it's, you're, don't, we've) unless the market is enterprise-formal.
+- Never blame the user. Not "Invalid entry" - "This needs to be a valid email address" or "That email address doesn't match one we have on file".
+- Say what happens next, always. Not "Something went wrong" - "We couldn't save that. Try again, or reach us at [support]".
+- Match the input locale's spelling and units (colour/color, kilograms/pounds, DD/MM/YYYY vs MM/DD/YYYY).
+
+------------------------------------------------------------
+DELIVERABLES (all mandatory unless flagged N/A for this flow)
+------------------------------------------------------------
+
+1. EMPTY STATES (3-5 for this flow):
+   - Zero-data first-run: what the user sees BEFORE they've done anything. Rules: name the value they'll get + the ONE first action. Not "You have no items yet."
+   - After-search zero-result: honest about the miss + next best action.
+   - After-filter zero-result: same, plus a one-tap "clear filters" affordance.
+   - After-delete-all: acknowledges the delete + confirms nothing is unrecoverable, if that's true.
+
+2. BUTTON LABELS (10-15):
+   - Every button = imperative verb + object where useful ("Save changes", "Send invite", "Cancel plan").
+   - Never "OK" alone on a destructive action - name the action ("Delete post", "Discard draft").
+   - Ghost / secondary button pairs (cancel next to a primary) - the cancel label should NOT be "Cancel" if that could mean two things ("Cancel this dialog" vs. "Cancel my subscription"); use "Never mind" / "Back" / "Keep editing" when disambiguation matters.
+
+3. TOOLTIPS (5-10):
+   - Under 8 words each.
+   - Explain what happens on click, not what the icon is.
+
+4. CONFIRMATION MODALS (3-5, at least one destructive):
+   - Title: what will happen ("Delete 12 items?"), not "Are you sure?".
+   - Body: 1-2 sentences on consequences + irreversibility marker if irreversible ("This can't be undone").
+   - Buttons: destructive verb + object on the primary, safe on the secondary. Destructive = red / warning color per the design system; safe = default.
+
+5. INLINE ERROR MESSAGES (5-10 for this flow):
+   - Never generic ("Error occurred"). Always: what happened + why (if helpful) + what to do.
+   - Field-level: attach to the specific field; do NOT toast a form-level error for a fixable field mistake.
+   - Rate-limit / server 5xx: honest + retry guidance + support link.
+
+6. LOADING STRINGS (3-5):
+   - Under 6 words. Verb-forward: "Saving..." / "Uploading photos..." / "Reticulating splines..." (personality OK for consumer, restrained for enterprise).
+   - For anything > 5 seconds, include a progress signal or a "This may take a minute..." hint.
+
+7. SUCCESS TOASTS (3-5):
+   - What just happened, one line, past tense: "Draft saved.", "Invite sent to 3 people.", "Payout scheduled for Friday.".
+   - If there's a next action worth surfacing, include it as a link: "Draft saved. Continue writing? [link]".
+
+8. PERMISSION PROMPTS (2-3, if the flow needs any - camera/mic/notifications/location):
+   - Name the specific benefit the user gets IF they grant, in one line.
+   - Never trigger the prompt without pre-priming - always the "pre-permission" screen first, THEN the OS prompt.
+
+9. EDGE-CASE / OFFLINE STRINGS (2-3):
+   - Offline banner ("You're offline. Changes will save when you reconnect.").
+   - Rate-limit banner.
+   - Session-expired reveal (with a one-click re-auth path).
+
+------------------------------------------------------------
+LEGAL / CONSENT MICROCOPY (locale-aware)
+------------------------------------------------------------
+
+Emit these if the flow involves any consent or data-processing step, matching the input LOCALE:
+- Cookie / analytics banner short copy (GDPR-strict for EU/EEA; softer opt-out for US; CCPA link for California).
+- "By continuing you agree to [Terms] and [Privacy]" line - MUST link to real Terms/Privacy pages; do not fabricate URLs.
+- Age-gate string if the flow serves alcohol/gambling/regulated goods.
+- Marketing-opt-in checkbox default: OPT-OUT for EU/EEA/UK/BR (unchecked by default; explicit consent required); OPT-IN allowed for US only where lawful.
+
+------------------------------------------------------------
+SELF-CHECK BEFORE OUTPUT
+------------------------------------------------------------
+
+- Every string says what happens next (no dead ends)?
+- No "Something went wrong" or "OK" as a standalone destructive-modal button?
+- Every destructive confirmation names the object being destroyed ("Delete post" not "Delete")?
+- Spelling / units / date format match the input locale?
+- Marketing opt-in default respects the locale's consent regime?
+- No em dashes anywhere?
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+For each section (1-9), return a labeled block with `Context | String | Notes` rows.
+Legal / Consent block returned separately at the end.
+Save to output/Microcopy/

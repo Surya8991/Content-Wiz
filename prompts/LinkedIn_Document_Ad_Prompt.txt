@@ -1,0 +1,152 @@
+============================================================
+LINKEDIN DOCUMENT AD PROMPT
+============================================================
+
+Covers: LinkedIn Document Ad (carousel-PDF paid format) copy - 8-12 slide
+copy blocks, feed intro post, gated-lead-form copy, and a thought-leadership
+variant. Distinct from `linkedin_ads` (single-image / video / sponsored
+content) and `linkedin_carousel` (organic multi-image post).
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+INPUTS REQUIRED
+------------------------------------------------------------
+
+- BRAND: [BRAND NAME], [BRAND DESCRIPTION]
+- MARKET: [b2b default; occasionally b2c-professional] - drives voice
+- TOPIC: [what the document teaches / proves]
+- TARGET AUDIENCE: [ICP / persona - who this ad targets in LinkedIn Campaign Manager]
+- CAMPAIGN OBJECTIVE: [lead-gen with gated form / brand awareness (ungated) / demand gen with retargeting]
+- SLIDE COUNT: 8-12 (default 10; LinkedIn allows more but engagement drops past 12)
+- LEAD-FORM ASSET (if gated): what the user gets after submitting (a report, a template, a video, an assessment)
+- VOICE ANCHOR: is this a company voice or a named executive/thought-leader voice? [company / person - name]
+
+------------------------------------------------------------
+FORMAT NOTES (2026)
+------------------------------------------------------------
+
+- Document Ads render inline in the feed as a swipeable multi-page PDF preview. The first slide has to earn the swipe with no headline text overlay from LinkedIn.
+- Portrait 4:5 or 9:16 aspect ratios outperform 1:1 and landscape in the feed - state which ratio the slides are built for.
+- Text-on-slide should be legible without zoom on mobile; max ~40 words per slide, larger headlines.
+- LinkedIn Document Ads with a lead-form gate lock swiping past slide N (typically 3-5): only the first slides are free-swipe; the gate blocks the rest. Design the free slides to earn the form-fill.
+- Character caps: intro post 3,000 chars (aim 300-600 to stay in the "see more" fold); form CTA 20 chars; gated report title 100 chars.
+
+------------------------------------------------------------
+DELIVERABLE 1 - FEED INTRO POST (the text above the document card)
+------------------------------------------------------------
+
+- 300-600 chars (fits the mobile "see more" fold).
+- Hook line = first 140 chars, standalone. Same rules as `linkedin_post` template.
+- Signals what the document is + what the reader gets from swiping. Never "check out our new report" - name the specific insight.
+- One clear CTA: "Swipe to see [specific finding]" or "Swipe to grab the framework".
+- 3-5 lowercase hashtags on the final line, one broad + two-three niche.
+
+------------------------------------------------------------
+DELIVERABLE 2 - SLIDE-BY-SLIDE COPY (8-12 slides)
+------------------------------------------------------------
+
+Standard 10-slide skeleton (adapt as needed):
+
+SLIDE 1 - HOOK COVER
+- Big headline: 5-9 words, promises the payoff of swiping.
+- Sub-line: 8-12 words, names who it's for.
+- Small brand mark bottom-right; do NOT let the logo dominate slide 1.
+- If gated: DO NOT tease the gated payoff on slide 1 - slide 1 has to earn slide 2, not slide 10.
+
+SLIDE 2 - THE PROBLEM IN ONE SENTENCE
+- Names the specific pain the target audience feels. Reader must think "yes, that's me" in one glance.
+
+SLIDE 3 - THE STAKES / COST OF NOT SOLVING IT
+- One data point (named source + year) OR one specific consequence in the reader's language.
+
+SLIDE 4 - THE UNEXPECTED INSIGHT / CONTRARIAN CLAIM
+- The one thing that makes THIS document different from the 20 other posts they've seen on the topic. This is what earns the reader continuing past a gate.
+- If gated: slide 4 is typically the LAST free slide - it must sell the gate.
+
+SLIDES 5-8 - THE FRAMEWORK / EVIDENCE (4 slides)
+- One idea per slide. No "part 2 of 4" spillover.
+- Each slide has a headline (5-8 words) + a body (20-30 words) + one visual concept (icon / diagram / stat callout - described in a note, not text-heavy).
+- If the document is a step-by-step, one step per slide.
+- If it's a framework, one component per slide.
+- If it's a data story, one chart or stat per slide.
+
+SLIDE 9 - THE ONE-LINE TAKEAWAY
+- If the reader only remembers ONE thing from the ad, it is this. State it plainly.
+
+SLIDE 10 - CTA COVER
+- What to do next: "Book a 15-min consult" / "Download the full report" / "Get the template".
+- Named next step + URL / CTA verb (matches Campaign Manager's CTA button).
+- Attribution / author byline if this is a thought-leadership piece.
+
+Output per slide as: `Slide N | Headline | Body Copy | Visual Note`.
+
+------------------------------------------------------------
+DELIVERABLE 3 - LEAD FORM COPY (if the campaign objective is gated lead-gen)
+------------------------------------------------------------
+
+- FORM HEADLINE (up to 100 chars): promises the deliverable.
+- FORM DESCRIPTION (up to 200 chars): one sentence on what the reader gets + one sentence naming what happens after (no spam, one follow-up, etc.).
+- FIELDS (fewer is better): ask only for name, work email, company - do NOT default to 8 fields. Every extra field costs 5-10% conversion.
+- PRIVACY NOTICE: locale-appropriate (GDPR / UK-GDPR / CCPA / LGPD language + link to privacy policy). Never fabricate the privacy-policy URL.
+- CONFIRMATION MESSAGE (post-submit, 60-100 chars): "Check your inbox for [asset name]. Arriving from [sender] within 5 minutes."
+- SUBMIT BUTTON LABEL (up to 20 chars): specific verb ("Get the report", "Send it now"). Not "Submit".
+
+------------------------------------------------------------
+DELIVERABLE 4 - THOUGHT-LEADERSHIP VARIANT (LinkedIn Thought Leader Ad)
+------------------------------------------------------------
+
+If the campaign is running under a named executive / thought-leader account (LinkedIn Thought Leader Ad format):
+- The intro post is written in the person's first-person voice, not the brand's.
+- Slide 1 attribution: named person + role, subtle brand mark.
+- Slide 10 CTA can be softer ("DM me if this is on your mind" or "read the full essay: [link]") since the goal is often awareness + follow, not immediate conversion.
+- No LinkedIn Lead Form gate on Thought Leader Ads - the payoff must be in the swipes themselves; use the follow / DM / off-platform link as the conversion signal.
+
+------------------------------------------------------------
+DELIVERABLE 5 - CAMPAIGN MANAGER SETUP NOTES
+------------------------------------------------------------
+
+- CTA BUTTON (LinkedIn's dropdown): pick one - "Download" / "Learn more" / "View report" / "Register" / "Sign up" / "Contact us". Match the ad's actual next step.
+- HEADLINE FIELD (below the card, 70 chars): repeats the payoff.
+- DESCRIPTION FIELD (150 chars): one line of context.
+- SUGGESTED CAMPAIGN OBJECTIVE: Lead Generation (gated) / Website Visits (ungated report link) / Engagement (thought-leadership).
+- AUDIENCE-TARGETING NOTES: match the ICP - job title + company size + industry + optional "member skills" match. Note any exclusions (competitors, employees, existing customers).
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. TEXT-HEAVY SLIDES: > 40 words on a slide reads as tiny on mobile and hurts swipe-through. Move body to a visual or trim.
+2. LOGO ON SLIDE 1: dominant branding on slide 1 pattern-matches to "ad, skip". Brand mark subtle; hook dominant.
+3. GATED PAYOFF ON SLIDE 4 BUT NO SELL FOR THE GATE: if slide 4 is the last free slide, it must promise what's behind slide 5+ specifically enough that submitting the form feels worth it.
+4. LEAD FORM WITH 8 FIELDS: consumer-grade friction on a B2B ad. Cut to 3.
+5. GENERIC CTA BUTTON ("Learn more"): the CTA has to say what happens on click. "Download" / "Register" / "Get the report" outperform "Learn more" consistently.
+6. THOUGHT LEADER AD WRITTEN IN CORPORATE VOICE: kills the format's whole purpose. Voice must be the named person's.
+
+------------------------------------------------------------
+SELF-CHECK BEFORE OUTPUT
+------------------------------------------------------------
+
+- Slide 1 earns swipe without a logo taking over?
+- Every slide under 40 words of on-slide text?
+- If gated: slide 4 (or the last free slide) sells the gate specifically?
+- Form fields limited to 3 unless a stronger reason?
+- CTA button + intro-post CTA + slide 10 CTA all point at the SAME next step?
+- Voice matches the deliverable (brand vs named-person for Thought Leader Ad)?
+- Privacy notice matches the target locale's regime?
+- No em dashes, no banned CTA phrases?
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Return in order:
+1. FEED INTRO POST (with hashtags)
+2. SLIDE-BY-SLIDE COPY (10-row table by default)
+3. LEAD FORM COPY (if gated)
+4. THOUGHT-LEADERSHIP VARIANT (if applicable; else "N/A")
+5. CAMPAIGN MANAGER SETUP NOTES
+
+Save to output/LinkedIn_Document_Ads/

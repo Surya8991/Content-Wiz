@@ -14,7 +14,18 @@ MODE A - QUIZ / SELF-ASSESSMENT
 
 Create a [QUIZ / SELF-ASSESSMENT] for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]". Generate 8-10 questions targeting [TARGET AUDIENCE]. For each question provide: the question text, 3-4 answer options, the correct answer or scoring weight, and a brief explanation of what the answer reveals about the respondent. End with 3 result profiles based on score ranges (e.g. Beginner / Intermediate / Advanced), each with a 2-3 sentence description and a CTA linking to [URL]. Do not use em dashes. Avoid passive voice.
 
-Example use cases: Skills gap assessment / Leadership readiness quiz / L&D maturity assessment
+Example use cases: Skills gap assessment / Leadership readiness quiz / Product maturity assessment.
+
+SCORING RUBRIC (mandatory - do not skip):
+- Each answer option must carry an explicit weight: 0-3 points, or -1 / 0 / +1 for tension-style questions. Never leave weights implicit.
+- Total possible score = sum of the maximum weight across all questions. Print this number so the reader can verify score ranges are contiguous and cover the full range.
+- Score ranges for the 3 result profiles must be non-overlapping and contiguous (no gaps): e.g. 0-10 / 11-20 / 21-30, not 0-10 / 15-20 / 25-30.
+
+OUTCOME-TO-CTA MAPPING (mandatory):
+Each result profile must map to a distinct CTA tuned to the reader's actual state, not a single generic "learn more" for all three:
+- Low-score profile: highest-empathy, lowest-friction CTA (a diagnostic checklist, a foundational guide, a 15-minute intro webinar) - do NOT push the highest-ticket product to someone the quiz just told they are a beginner.
+- Mid-score profile: mid-friction CTA (a specific solution page, a case study matching their score band, a mid-tier consultation).
+- High-score profile: highest-intent CTA (a demo, an advanced workshop, a direct link to the flagship offering) - they have self-selected as ready.
 
 ------------------------------------------------------------
 MODE B - CALCULATOR SCRIPT
@@ -22,29 +33,63 @@ MODE B - CALCULATOR SCRIPT
 
 Create a calculator concept and copy for [BRAND NAME], [BRAND DESCRIPTION], that helps [TARGET AUDIENCE] calculate "[WHAT IT CALCULATES e.g. Training ROI / Cost of Employee Turnover / Skills Gap Score]". Define the input fields (what the user enters), the calculation logic, and the output message shown based on the result. Write the UI copy for all labels, input descriptions, and result messages. Include a CTA on the results screen linking to [URL]. Do not use em dashes. Avoid passive voice.
 
+Input-validation notes: for each numeric input, name the sane min/max the UI should enforce (e.g. `annual_revenue: 0 - 10,000,000,000`) so a bad input can't produce a nonsense result. For each percentage input, name whether it is entered as `12` or `0.12`.
+
 ------------------------------------------------------------
 MODE C - POLL
 ------------------------------------------------------------
 
-Create 5 LinkedIn or social media poll ideas for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]" targeting [TARGET AUDIENCE]. For each poll provide: the poll question, 4 answer options, and a 1-line rationale for why this poll will drive engagement. Do not use em dashes. Avoid passive voice.
+Create 5 LinkedIn or social media poll ideas for [BRAND NAME], [BRAND DESCRIPTION], on the topic "[TOPIC]" targeting [TARGET AUDIENCE]. For each poll provide: the poll question, 4 answer options, a 1-line rationale for why this poll will drive engagement, and a 1-line follow-up post the brand can publish 48 hours later summarising results and adding a specific take.
+
+STAT ATTRIBUTION RULE: any statistic used to frame a poll (in the setup line or the follow-up post) must name a real source (organization + report + year). Do not paste plausible-sounding percentages without a citation - a poll invalidated on a fabricated stat is worse than one with no stat at all.
 
 ------------------------------------------------------------
 OUTPUT FORMAT (CSV)
 ------------------------------------------------------------
 
-Mode A: Q No. | Question | Option A | Option B | Option C | Option D | Correct / Weight | Explanation
-Mode B: Field | Label | Description | Calculation Logic | Result Message
-Mode C: Poll No. | Question | Option A | Option B | Option C | Option D | Rationale
+Mode A: Q No. | Question | Option A | A Weight | Option B | B Weight | Option C | C Weight | Option D | D Weight | Correct/Highest | Explanation
+Mode A (result profiles, separate block): Profile | Score Range | Description | CTA Label | CTA URL
+Mode B: Field | Label | Type | Min | Max | Description | Calculation Logic | Result Message
+Mode C: Poll No. | Question | Option A | Option B | Option C | Option D | Rationale | 48h Follow-up Post | Stat Source (if cited)
 
 Save to output/Interactive_Content/
+
+------------------------------------------------------------
+BATCH DEDUP RULE
+------------------------------------------------------------
+
+Across a batch of polls or quizzes generated in one run, no two rows may share the same primary question wording, the same 4-option set, or the same result-profile CTA. Cross-poll duplication signals a lazy brand feed and reduces engagement over time.
+
+------------------------------------------------------------
+SELF-CHECK BEFORE OUTPUT
+------------------------------------------------------------
+
+- Mode A: every answer option has an explicit numeric weight; score ranges are non-overlapping and cover the full possible range; each result profile has its own tuned CTA (not one shared CTA)?
+- Mode B: every numeric field has min/max bounds; every percentage input names the format (12 vs 0.12); the results screen has one CTA, not three competing ones?
+- Mode C: any cited stat names a real source + year; 48h follow-up post exists for every poll; no two polls in a batch share the same wording?
+- All modes: no em dashes anywhere; no passive voice; every CTA URL is `[INSERT CTA LINK]` or a real supplied URL, never a fabricated slug?
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. QUIZ SCORE RANGES OVERLAP OR LEAVE GAPS: a reader scoring 14/30 must land in exactly one profile. If 0-10 / 11-20 / 21-30, a 14 fits (mid); if 0-10 / 15-20 / 25-30, a 14 has no profile and the quiz breaks.
+
+2. ALL THREE QUIZ PROFILES SHARE THE SAME CTA: the whole point of a diagnostic is to route people differently. One shared "book a demo" CTA turns the quiz into a lead-capture form pretending to be a diagnostic.
+
+3. CALCULATOR OUTPUT MESSAGE IS THREE PARAGRAPHS AND NO NUMBER: users came for the number. Lead with the computed result on its own line at large weight; put the interpretation below it, not before it.
+
+4. POLL OPTIONS ARE NOT MUTUALLY EXCLUSIVE OR NOT COLLECTIVELY EXHAUSTIVE: 4 options that overlap or omit an obvious answer (usually "none of the above" or "we don't do this") drive low engagement and complaints in comments. Test each option against MECE.
+
+5. FABRICATED FRAMING STAT: a poll opening with "73% of teams struggle with X (no source)" is worse than opening with no stat. If the stat can't be attributed, drop it and lead with a specific observation instead.
 
 ------------------------------------------------------------
 RULES
 ------------------------------------------------------------
 
-- Mode A: 8-10 questions, 3 result profiles with CTAs
-- Mode B: Input fields, calculation logic, and result copy all required
-- Mode C: 5 poll ideas, 4 options each
+- Mode A: 8-10 questions, explicit weights, 3 result profiles with distinct CTAs
+- Mode B: Input fields with min/max, calculation logic, and result copy all required
+- Mode C: 5 poll ideas, 4 mutually-exclusive options each, 48h follow-up post
 - No em dashes anywhere
 - No passive voice
 - Output saved to output/Interactive_Content/

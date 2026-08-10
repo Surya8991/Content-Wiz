@@ -1,0 +1,167 @@
+============================================================
+DISCOVERY CALL SCRIPT PROMPT (MEDDIC / SPICED)
+============================================================
+
+Covers: B2B sales discovery-call script tuned to a named qualification
+framework (MEDDIC, MEDDPICC, SPICED, or BANT). Distinct from
+cold_call_script (that's outbound-cold; this is a first-call agenda with
+someone who has already agreed to talk).
+
+BRAND DETECTION: Follow _Brand_Detection_Rules.txt before generating.
+
+Once the brand is confirmed, use the template below.
+
+------------------------------------------------------------
+INPUTS REQUIRED
+------------------------------------------------------------
+
+- BRAND: [BRAND NAME], [BRAND DESCRIPTION]
+- FRAMEWORK: [MEDDIC / MEDDPICC / SPICED / BANT / CHAMP] - default MEDDPICC for enterprise SaaS; SPICED for velocity / mid-market; BANT only if the brand explicitly uses it (falling out of favour in modern SaaS).
+- PROSPECT PERSONA: role + seniority + likely reporting line (e.g. "VP RevOps at 500-2000 headcount SaaS, reports to CRO")
+- ICP FIT SIGNALS (2-4): what makes this prospect a good fit vs. a filler meeting
+- COMMON DISQUALIFIERS (2-3): what should make the rep politely end the call early
+- PRODUCT: 1-line reminder of what the brand sells (used for demo-triggering question at the end)
+- CALL LENGTH: [30 min default / 45 / 60]
+- LOCALE: [us / uk / eu / de / fr / es / br / in / jp / au / ca] - shifts style register and question phrasing
+
+------------------------------------------------------------
+CORE PRINCIPLES
+------------------------------------------------------------
+
+- The rep talks 30% of the time, the prospect 70%. Every section below is question-first, not pitch-first.
+- Every question serves the chosen qualification framework (see mapping below). If a question doesn't map to a framework letter, cut it.
+- The rep is DISQUALIFYING as much as qualifying. A well-run discovery ends 40% of first calls without a next step; that is a feature, not a failure.
+- No product features until the prospect names a problem the product solves. Feature-dumping in discovery kills conversion.
+- The call ends with either (a) a specific next step and calendar hold, or (b) a graceful no-fit close - never a vague "we'll follow up".
+
+------------------------------------------------------------
+STRUCTURE (adapt duration to input)
+------------------------------------------------------------
+
+For a 30-minute call:
+- 0:00-0:03 - CALL OPEN + AGENDA (3 min)
+- 0:03-0:20 - QUALIFICATION QUESTIONS (17 min) - the bulk
+- 0:20-0:26 - PRODUCT-RELEVANT NARRATIVE (6 min) - short, tailored, not a demo
+- 0:26-0:30 - NEXT-STEP CLOSE (4 min)
+
+For 45/60 min: expand qualification (25-40 min) and add a live product walkthrough section instead of narrative.
+
+------------------------------------------------------------
+BLOCK 1 - CALL OPEN + AGENDA (3 min)
+------------------------------------------------------------
+
+Suggested opener (rep to adapt to their voice):
+"Hi [name] - thanks for making time. What I want to do is spend most of the call understanding your side - what you're trying to do, what's in the way, and how you're thinking about solving it. In the last 5 minutes I'll share where we might fit, and either agree a specific next step or agree we're not the right fit. Does that work?"
+
+Notes:
+- Named agenda contract up front (permission-based selling).
+- "Might not be a fit" is stated on purpose - it lowers pressure and calibrates for honest answers.
+- Ask if the prospect has any hard-stops on time before the 20-minute mark.
+
+------------------------------------------------------------
+BLOCK 2 - QUALIFICATION QUESTIONS (per framework)
+------------------------------------------------------------
+
+Generate a bank of 15-25 open questions, TAGGED with the framework letter each serves. Rep will not ask all of them; they pick the ones that fit the flow. Structure:
+
+For MEDDIC / MEDDPICC:
+- METRICS (3-4 questions): what number they own, what number they need to move, what happens if it moves / doesn't move.
+- ECONOMIC BUYER (2-3): who signs, who else is affected, how deals of this size get bought here.
+- DECISION CRITERIA (3-4): what will they compare on, must-haves vs nice-to-haves, non-negotiables.
+- DECISION PROCESS (3-4): steps between today and signature, who's involved at each step, historical timeline of similar decisions.
+- IDENTIFY PAIN (3-4): what triggered this evaluation now, what have they tried, what's the cost of doing nothing for 6 more months.
+- CHAMPION (2-3): who else is pushing this internally, who would sponsor.
+- (MEDDPICC only) PAPER PROCESS (2): procurement / legal / security path from verbal yes to signed.
+- COMPETITION (2): who else are they looking at, why those.
+
+For SPICED (Winning by Design):
+- SITUATION (2-3), PAIN (3-4), IMPACT (3-4), CRITICAL EVENT (2-3), DECISION (3-4).
+
+For BANT (only when explicitly requested):
+- BUDGET (2), AUTHORITY (2), NEED (3), TIMELINE (2).
+
+Question-quality rules:
+- Open-ended (start with What / How / Walk me through). No leading questions.
+- One question per turn. Do not string 3 questions together - it forces the prospect to pick one and the other 2 evaporate.
+- Include ONE "objection surfacing" question near the end of the block ("What would have to be true for this NOT to be the right move for you in the next 6 months?").
+
+Output the question bank as a labeled table: `Framework Tag | Question | Follow-up prompt if answer is thin`.
+
+------------------------------------------------------------
+BLOCK 3 - DISQUALIFY GATES
+------------------------------------------------------------
+
+Explicit "if you hear X, exit gracefully" gates - the rep should not push past these:
+- Prospect names a hard timeline that misses the brand's earliest possible delivery
+- Prospect says the economic buyer is a specific named person the rep can neither meet nor is buying-authority for another 12 months
+- Prospect names an incumbent with a signed multi-year contract not up for renewal
+- Prospect confirms a hard budget floor below the brand's minimum viable engagement
+- Prospect describes a use case the brand does not solve (name 2-3 out-of-scope patterns for this brand)
+
+For each gate: the ONE graceful-exit line the rep uses. Example: "That sounds like a decision that has to be made after your renewal cycle - I don't want to run a process that isn't real for you. Can I check back in Q3?"
+
+------------------------------------------------------------
+BLOCK 4 - PRODUCT-RELEVANT NARRATIVE (6 min)
+------------------------------------------------------------
+
+Not a demo. A 3-4 minute story that maps directly to the specific pain the prospect named. Structure:
+- One sentence naming the pattern the prospect just described.
+- One paragraph of a real customer (named) with the same pattern - the mechanism, not the marketing.
+- One outcome (metric + timeframe) from that customer.
+- Explicitly named: "Where I think we might fit for you is [specific mechanism]. Where we probably don't help is [specific limit]."
+
+The last sentence - honest scoping - is what separates discovery from a pitch. Keep it.
+
+------------------------------------------------------------
+BLOCK 5 - NEXT-STEP CLOSE (4 min)
+------------------------------------------------------------
+
+Named-next-step recipes based on the read of the call:
+- Strong fit + urgency: schedule a technical deep-dive on the calendar right now (rep pulls up calendar in the meeting).
+- Strong fit + no urgency: agree a specific "before the next call I'll do X, you'll do Y" homework list + a booked meeting in 2 weeks.
+- Fit uncertain: send a one-page written summary of the call within 24 hours + a 2-question response invite ("does this match your read?") + a soft check-back date.
+- No fit: name it kindly, offer a resource that IS useful (a doc, a peer they should talk to, another tool that fits better). Leave the door open, do not force-fit.
+
+Ask three questions before closing:
+- "Given what we just discussed, what's the ONE thing you'd want to see to be sure this is worth pursuing?"
+- "Who else needs to be in the next conversation?"
+- "What would push this from Q4 to Q1?"
+
+------------------------------------------------------------
+POST-CALL WRAP (rep's 15-minute discipline)
+------------------------------------------------------------
+
+Immediate CRM notes template (rep fills within 15 min of call end):
+- FRAMEWORK LETTERS SCORED: for each letter in the chosen framework, a 1-line summary of what was learned + a confidence score (High / Med / Low / Unknown).
+- REP READ: fit yes / fit maybe / no fit / disqualified.
+- NEXT STEP + DATE: booked in calendar or clearly listed.
+- RED FLAGS: 1-3 concerns for the manager review.
+- WHAT WOULD MOVE THIS FORWARD FASTEST: 1 sentence.
+
+------------------------------------------------------------
+FAILURE MODES TO AVOID
+------------------------------------------------------------
+
+1. DEMOING IN DISCOVERY: if the rep opens a product screen in the first 20 minutes, discovery is dead.
+2. STRINGING QUESTIONS: "So what are you using now, and why did you pick it, and how's it going?" gets one answer at best. One question, one turn.
+3. LEADING QUESTIONS: "Would faster onboarding be valuable to you?" is a pitch. "Walk me through what happens between a new customer signing and their first login" is a discovery question.
+4. NO EXIT LANE: forcing a next step on a call that has clearly disqualified wastes the next 3 meetings and hurts pipeline hygiene.
+5. HAPPY-EARS SUMMARY: writing up the call as if everything was strong when the prospect had 3 red flags. The manager reviewing pipeline needs the honest read.
+
+------------------------------------------------------------
+SELF-CHECK BEFORE OUTPUT
+------------------------------------------------------------
+
+- Every question in Block 2 tagged to a framework letter?
+- Disqualify gates in Block 3 have named exit lines?
+- Product narrative in Block 4 includes the "where we probably don't help" line?
+- Close in Block 5 has next-step recipes for all 4 read types (strong+urgent, strong+no-urgency, uncertain, no-fit)?
+- No leading questions, no strung questions?
+- No em dashes, no banned CTA phrases?
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Return in block order (1-5) + POST-CALL WRAP.
+Save to output/Sales_Enablement/

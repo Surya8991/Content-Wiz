@@ -5,6 +5,128 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.8] - 2026-08-10
+
+Ships every improvement + every new prompt flagged by the v0.10.7
+prompt-library audit.
+
+### Fixed (existing prompts)
+
+- **`prompts/Buyer_Persona_Prompt.txt:60-62`**: removed L&D-locked failure-mode
+  examples that contradicted the v0.10.4 persona dehardcoding. Replaced with
+  market-conditional placeholders that scale across B2B / B2C / creator.
+- **`prompts/Podcast_Prompt.txt:166`**: broken cross-reference to
+  `output/DataBank/` corrected to `output/HARO_DataBank/`, matching
+  `textprompts.py`.
+- **`prompts/Meta_SEO_Prompt.txt`**: full rewrite. Added Open Graph tags
+  (title/description/type/url/image/image:alt/site_name/published_time/author),
+  Twitter/X Card tags, canonical URL emission, GEO entity signals (sameAs to
+  Wikipedia/Wikidata/LinkedIn/Crunchbase), plus the standard batch dedup /
+  self-check / failure-modes trio the other SEO prompts have.
+- **`prompts/Interactive_Content_Prompt.txt`**: brought to library parity.
+  Mode A quizzes now require explicit numeric weights per option, contiguous
+  non-overlapping score ranges, and distinct CTAs per result profile (kills
+  the "3 profiles, 1 shared CTA" anti-pattern). Mode B calculators now
+  require min/max validation per numeric input. Mode C polls now require a
+  48-hour follow-up post and named source for any framing stat. Added
+  failure-modes + self-check + batch dedup rules.
+- **`prompts/Schema_Markup_Prompt.txt:22-30`**: reference table extended with
+  Product/VideoObject/SoftwareApplication/LocalBusiness/JobPosting/Recipe
+  (the schema types Google Rich Results and 2026 AI Overviews surface most).
+  New "GEO entity signals" block requires `sameAs` array on Organization /
+  Person nodes bound to authoritative entity records (Wikipedia, Wikidata,
+  LinkedIn, Crunchbase) - with explicit "flag as gap, never fabricate" rule.
+- **`prompts/Content_Brief_Prompt.txt`**: new Funnel Stage router
+  (TOFU / MOFU / BOFU) that adapts brief sections + CTA type per stage; new
+  E-E-A-T Signals Required field (author expertise, first-hand experience
+  proof, primary sources, fact-check date trigger).
+- **`prompts/Topic_Cluster_Prompt.txt`**: output CSV now includes
+  `Search Intent` (informational / commercial / transactional / navigational)
+  and `Priority (1-3)` columns so the deliverable is directly actionable by
+  an SEO PM without a second pass. Explicit rule that a cluster must span at
+  least 2 intent types.
+- **`prompts/Chatbot_Flow_Prompt.txt`**: new **Format D - LLM-Grounded
+  Assistant** covering 2026's dominant chatbot pattern. Ships a system-prompt
+  template, KB-grounding spec, a deterministic-response topics list (pricing/
+  SLA/legal/medical/security/refunds must NOT be model-generated), refusal
+  templates including one for prompt-injection attempts, and a hallucination
+  containment self-check.
+
+### Added (new prompts - 10 files, 27 aliases)
+
+Each closes a real coverage gap flagged by a specific persona:
+
+- **`skyscraper` / `skyscraper_content`** already shipped in v0.10.6.
+- **`content_refresh` / `refresh` / `historical_optimization`**
+  ([Content_Refresh_Prompt.txt](prompts/Content_Refresh_Prompt.txt)) - historical
+  optimization brief for an existing URL: audit, per-H2 keep/kill/expand/cut
+  /re-order/add decisions, re-target decision with 301 plan, internal-link
+  re-wiring, publish-day checklist. Persona: SEO strategist.
+- **`pricing_page` / `pricing`** ([Pricing_Page_Prompt.txt](prompts/Pricing_Page_Prompt.txt))
+  - full pricing page copy with plan naming, anchor-price psychology
+  (true anchor / decoy / mid-anchor), per-plan objection handling, locale-aware
+  currency + VAT/GST disclosure + auto-renewal language. Persona: B2B SaaS
+  PMM / DTC founder.
+- **`solution_page` / `use_case_page` / `usecase`**
+  ([Solution_Page_Prompt.txt](prompts/Solution_Page_Prompt.txt)) - industry-
+  or role-anchored SaaS solution page distinct from product-feature and
+  comparison pages. Requires anchor-specific proof strip, primary objection
+  handled head-on, compliance/regulation binding. Persona: B2B SaaS.
+- **`microcopy` / `microcopy_pack` / `ux_writing`**
+  ([Microcopy_Pack_Prompt.txt](prompts/Microcopy_Pack_Prompt.txt)) - UX-writing
+  bundle for a specific user flow: empty states, buttons, tooltips, modals,
+  errors, loading, success toasts, permission prompts, edge cases, plus
+  locale-aware legal/consent microcopy. Persona: product marketing / product
+  designer.
+- **`release_notes` / `changelog`** ([Release_Notes_Prompt.txt](prompts/Release_Notes_Prompt.txt))
+  - user-facing release notes in three registers (Developer / Admin /
+  End-User) + distribution reformats (in-app banner, email subject/preview,
+  Slack/Teams post, social). Breaking + security items always first. Persona:
+  SaaS PMM / DevRel.
+- **`trust_page` / `security_overview` / `trust_center`**
+  ([Trust_Page_Prompt.txt](prompts/Trust_Page_Prompt.txt)) - trust / security
+  center page: certifications with real audit dates, data handling (with the
+  2026 default "is my data used to train AI?" question), access + identity,
+  privacy + regulation, sub-processors table, incident response + uptime,
+  responsible disclosure, documentation-request CTA. Explicit "fabricate
+  nothing" rule. Persona: enterprise marketer / sales engineering.
+- **`expert_roundup` / `roundup`** ([Expert_Roundup_Prompt.txt](prompts/Expert_Roundup_Prompt.txt))
+  - complete expert-roundup pack: outreach email (with real personalisation),
+  contribution brief, article structure (cluster-by-theme or order-by-tension),
+  and a promotion pack. Explicit "never fabricate a contributor" rule.
+  Persona: SEO strategist / link-builder.
+- **`newsjack` / `trend_response`** ([Newsjack_Prompt.txt](prompts/Newsjack_Prompt.txt))
+  - trend-response post with a mandatory 7-question 24-hour risk-check gate
+  (tragedy / active litigation / protected-class positioning / source
+  verification / staleness / forced-connection / locale sensitivity). If any
+  is red, the prompt outputs "HOLD" not a post. Persona: PR lead / DTC social.
+- **`discovery_call_script` / `discovery_script` / `meddic` / `spiced`**
+  ([Discovery_Call_Script_Prompt.txt](prompts/Discovery_Call_Script_Prompt.txt))
+  - full discovery-call script tuned to a named qualification framework
+  (MEDDIC / MEDDPICC / SPICED / BANT / CHAMP). Every question tagged to a
+  framework letter, disqualify gates with named exit lines, honest scoping
+  in the product narrative, CRM post-call template. Persona: B2B sales
+  enablement.
+- **`linkedin_document_ad` / `linkedin_doc_ad` / `document_ad`**
+  ([LinkedIn_Document_Ad_Prompt.txt](prompts/LinkedIn_Document_Ad_Prompt.txt))
+  - LinkedIn Document Ad (carousel-PDF paid format): feed intro post, 8-12
+  slide copy blocks with mid-doc lead-form gate handling, lead-form copy,
+  Thought Leader Ad variant, Campaign Manager setup notes. Persona: B2B paid
+  social.
+
+### Counts
+
+- Rich templates: 80+ (unchanged).
+- Flat prompt files in `prompts/`: 90 (was 79) after adding
+  `Skyscraper_Content_Prompt.txt` in v0.10.6 + the 10 new v0.10.8 prompts
+  above. Text-prompt aliases: 136 (was ~110).
+
+### Tests
+
+Suite: 141, all passing (one Windows-symlink test skipped). Content
+lint: 165 files clean (was 154). Alias-collision test still passes with
+27 new aliases added.
+
 ## [0.10.7] - 2026-08-10
 
 Fixes every open item and ships every "worth adding" capability from the

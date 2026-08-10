@@ -19,7 +19,11 @@ Voice/Tone: [formal B2B / conversational B2B / first-person / brand account - de
 OUTPUT FORMAT (CSV)
 ------------------------------------------------------------
 
-Content Type | Title | Target Keyword | Content Format | Angle Description | Links to Pillar (Yes/No)
+Content Type | Title | Target Keyword | Content Format | Search Intent | Priority | Angle Description | Links to Pillar (Yes/No)
+
+Column definitions:
+- `Search Intent`: `informational` (educational / how-to / definitional) | `commercial` (comparison / evaluation / "best X for Y") | `transactional` (buy / pricing / signup / demo) | `navigational` (brand or tool name search). The full cluster must span at least 2 intent types; do not build a cluster that is 100% informational or 100% commercial.
+- `Priority`: `1` (highest - build first: high volume + achievable difficulty + directly supports pillar) | `2` (build in month 2-3) | `3` (nice-to-have; only build if priorities 1-2 all shipped). Pillar page is always Priority 1. Across the cluster, Priority-1 rows should be no more than 40% of the total (a plan with everything at Priority 1 is not a plan).
 
 First row should always be the Pillar Page.
 Remaining rows are cluster content pieces.
