@@ -348,7 +348,7 @@ After the Top 3, identify any 2-3 ideas from the list that could form a content 
 """
 
 
-def blog_writing(topic, wordcount, platform, audience, **_):
+def blog_writing(topic, wordcount, platform, audience, market=None, **_):
     # Section-length guidance scales proportionally with the requested wordcount
     # instead of using fixed absolute floors, so a shorter request (e.g. 800
     # words) isn't silently forced past its target by section minimums that
@@ -360,7 +360,10 @@ def blog_writing(topic, wordcount, platform, audience, **_):
     takeaways_lo, takeaways_hi = max(round(wordcount * 0.09), 50), max(round(wordcount * 0.13), 80)
     faq_lo, faq_hi = max(round(wordcount * 0.08), 50), max(round(wordcount * 0.12), 80)
     conclusion_lo, conclusion_hi = max(round(wordcount * 0.06), 40), max(round(wordcount * 0.09), 60)
-    return f"""You are a senior B2B writer and SEO strategist whose articles regularly rank in Google's top 3 positions for high-intent commercial queries. You write content that satisfies both Google's E-E-A-T quality signals and the human reader's need for substance over fluff.
+    market_label = {"b2b": "senior B2B writer", "b2c": "senior consumer-facing writer",
+                    "creator": "creator-economy writer"}.get((market or "b2b").lower(),
+                                                              "senior B2B writer")
+    return f"""You are a {market_label} and SEO strategist whose articles regularly rank in Google's top 3 positions for high-intent queries. You write content that satisfies both Google's E-E-A-T quality signals and the human reader's need for substance over fluff.
 
 ASSIGNMENT:
 Write a complete, publish-ready blog article that can rank on Google page 1 and convert {audience} readers into engaged followers.
@@ -556,6 +559,8 @@ WRITING STANDARDS:
 {RANKABILITY_RULES}
 
 {RESEARCH_RULES}
+
+{market_voice(market)}
 
 ---
 PLATFORM-SPECIFIC NOTES FOR {platform.upper()}:

@@ -15,12 +15,13 @@ PRE-WRITE DIAGNOSTIC:
 3. Is this based on a real, verifiable case, OR is it an illustrative composite? (Be transparent - label composites clearly.)
 4. What is the single sentence a {audience} reader will quote when sharing this case study with their team?
 
-CASE STUDY EFFECTIVENESS CONTEXT:
-- 73% of B2B buyers say case studies are the most influential content type in their decision process (Demand Gen Report 2024)
-- Specific numbers outperform vague claims by 5-10x in perceived credibility
-- Pull quotes from named individuals (with title and company) earn 30-40% higher engagement than generic quotes
-- Case studies under 800 words feel thin; 1,200-1,800 words is the conversion sweet spot for B2B
-- Visuals (data tables, before/after charts) increase reader retention by 60%+
+CASE STUDY EFFECTIVENESS PRINCIPLES (qualitative craft guidance, no unverified stats):
+- Case studies drive late-stage B2B decisions when the reader recognizes their own situation in the subject's before-state and can trace a specific mechanism to the after-state
+- Specific numbers with named sources beat vague claims - if the number isn't verifiable, don't use it
+- Named pull quotes (person + title + company) carry more weight than anonymous or attributed-to-"the client" quotes; a quote you cannot verify is worse than no quote
+- Length is a function of complexity, not a target: cover the situation, mechanism, and outcome in the words it takes and no more
+- Visuals earn their place when they make a claim concrete (a before/after chart with real numbers) - decorative visuals dilute credibility
+- Do not fabricate benchmark statistics inside the case study itself; if you cannot cite a source, describe the pattern qualitatively instead
 
 CASE STUDY STRUCTURE (follow exactly):
 

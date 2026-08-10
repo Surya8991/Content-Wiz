@@ -120,7 +120,7 @@ PILLAR D - ENGAGEMENT (start a conversation):
 {norms}
 
 LENGTH:
-Target about {wc} words total for the post body (the section ranges above bracket this target approximately; land the total near {wc}). Respect the platform's structural norms above; if they conflict with the word target, the platform norms win.
+Target about {wc} words total for the post body. The per-beat word ranges above are LOOSE GUIDANCE ONLY - use them to check pacing, not to fill in a form. A post that lands its idea in fewer words than the ranges suggest is better than a post that hits the ranges by adding filler. If a beat wants 15 words and the range says 30, write 15. Rhythm and specificity beat range compliance every time. Respect the platform's structural norms above; if they conflict with the word target, the platform norms win.
 
 CITATION RULE:
 If the post cites any statistic or research finding, name the source organization and year inline (e.g. "Gallup's 2025 workplace report found..."). Never state a bare number with no attribution. Most posts in this format need zero stats - lived experience is the evidence.

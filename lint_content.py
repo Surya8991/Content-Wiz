@@ -276,17 +276,41 @@ def extract_urls(path):
     return found
 
 
+def _http_request(url, method):
+    req = urllib.request.Request(url, method=method,
+                                 headers={"User-Agent": "Mozilla/5.0 (content-wiz linter)"})
+    return urllib.request.urlopen(req, timeout=_URL_CHECK_TIMEOUT)
+
+
 def check_url(url):
-    """Return (status_code, error_str). status_code is None on network error."""
+    """Return (status_code, error_str). status_code is None on network error.
+
+    Tries HEAD first; when a host rejects HEAD (403/405, common on Cloudflare,
+    LinkedIn, Medium) falls back to GET so those pages aren't misreported as dead.
+    """
     try:
-        req = urllib.request.Request(url, method="HEAD",
-                                     headers={"User-Agent": "Mozilla/5.0 (content-wiz linter)"})
-        with urllib.request.urlopen(req, timeout=_URL_CHECK_TIMEOUT) as resp:
+        with _http_request(url, "HEAD") as resp:
             return resp.status, None
     except urllib.error.HTTPError as e:
+        if e.code in (403, 405, 501):
+            try:
+                with _http_request(url, "GET") as resp:
+                    return resp.status, None
+            except urllib.error.HTTPError as e2:
+                return e2.code, None
+            except Exception as e2:
+                return None, str(e2)
         return e.code, None
     except Exception as e:
-        return None, str(e)
+        # Some hosts drop HEAD outright (connection reset, protocol error).
+        # Retry with GET before declaring the URL dead.
+        try:
+            with _http_request(url, "GET") as resp:
+                return resp.status, None
+        except urllib.error.HTTPError as e2:
+            return e2.code, None
+        except Exception:
+            return None, str(e)
 
 
 def run_url_check(target_dir, root):

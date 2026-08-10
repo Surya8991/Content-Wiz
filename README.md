@@ -13,7 +13,7 @@ delete them, or add your own.
 
 ## What it can do
 
-- **64 rich content-type templates** across blog/SEO (pillar posts, Dev.to/
+- **80+ rich content-type templates** across blog/SEO (pillar posts, Dev.to/
   Hashnode, Medium, comparison pages, Substack, SEO glossary pages), social
   (LinkedIn, Twitter/X, Instagram, carousels, profile/bio optimization), video
   (YouTube, podcasts, Reels/Shorts/TikTok scripts, CTV/streaming ads), community
@@ -30,7 +30,7 @@ delete them, or add your own.
   employee spotlights), events (webinar registration pages, segmented
   post-event follow-up, booth follow-up), and mobile messaging (SMS, push
   notifications, in-app messages).
-- **49 flat prompt files** covering everything from ad copy (Google, Meta,
+- **79 flat prompt files** covering everything from ad copy (Google, Meta,
   LinkedIn ads) to buyer personas, whitepapers, webinar promos, and schema
   markup - all reachable from the same CLI.
 - **Market registers**: each brand declares `b2b` (default), `b2c`, or
@@ -91,7 +91,7 @@ Content Wiz/
 ├── config.json                       ← Brands + defaults (edit here, not in code)
 ├── config.py                         ← Loads config.json with a safe fallback
 ├── generate.py                       ← CLI prompt generator (single + bulk + --generate)
-├── templates/                        ← 64 rich, parameterized prompt builders, split by domain
+├── templates/                        ← 80+ rich, parameterized prompt builders, split by domain
 │   ├── __init__.py                   ← Re-exports every function at package level
 │   ├── _shared.py                    ← HUMAN_WRITING_RULES, RANKABILITY_RULES, RESEARCH_RULES
 │   ├── local.py, blog.py, social.py, community.py, creator.py, personal.py, video.py, growth.py, pr.py, lifecycle.py, sales_enablement.py, paid_ads.py, recruitment.py, events.py, mobile_messaging.py

@@ -149,17 +149,40 @@ def _generate_gemini(prompt, api_key, model, max_tokens):
     return text
 
 
+def _openai_uses_completion_tokens(model):
+    """gpt-5, o1, o3, and o4 families reject `max_tokens` and require
+    `max_completion_tokens`. Older gpt-4/gpt-3.5 chat models accept `max_tokens`."""
+    m = (model or "").lower()
+    return m.startswith(("gpt-5", "o1", "o3", "o4", "gpt-4.1", "gpt-4o"))
+
+
 def _generate_openai(prompt, api_key, model, max_tokens):
     try:
         import openai
     except ImportError as exc:
         raise _missing_sdk("openai") from exc
     client = openai.OpenAI(api_key=api_key)
-    response = client.chat.completions.create(
-        model=model,
-        max_tokens=max_tokens,
-        messages=[{"role": "user", "content": prompt}],
-    )
+    token_kwarg = ("max_completion_tokens" if _openai_uses_completion_tokens(model)
+                   else "max_tokens")
+    try:
+        response = client.chat.completions.create(
+            model=model,
+            messages=[{"role": "user", "content": prompt}],
+            **{token_kwarg: max_tokens},
+        )
+    except openai.BadRequestError as exc:
+        # Fall back to the other kwarg if the server disagrees with our guess.
+        msg = str(exc).lower()
+        if "max_tokens" in msg or "max_completion_tokens" in msg:
+            fallback_kwarg = ("max_tokens" if token_kwarg == "max_completion_tokens"
+                              else "max_completion_tokens")
+            response = client.chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": prompt}],
+                **{fallback_kwarg: max_tokens},
+            )
+        else:
+            raise
     if not response.choices:
         raise _empty_response_error("openai", "no choices returned")
     text = response.choices[0].message.content

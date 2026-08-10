@@ -26,11 +26,12 @@ PRE-WRITE DIAGNOSTIC:
 2. What is the most likely objection that stops {audience} from filling out the form at the moment they hover over the CTA button?
 3. What is the minimum information needed to deliver {offer} - that is the maximum number of form fields.
 
-2025 LEAD-GEN PAGE CONTEXT:
-- Pages with 4 form fields convert 120% better than the industry average of 11 fields (SEO Sherpa, 2026)
-- Personalized CTAs outperform generic ones by 202% - the CTA label must name what happens after the click, not just "Submit"
-- 83% of landing page traffic is mobile - every copy block must be readable in 3 seconds on a phone screen
+2025 LEAD-GEN PAGE CRAFT PRINCIPLES (qualitative - do not cite these framings back as stats in the output unless you can independently source them):
+- Fewer form fields convert better than long forms; every additional field is a cost the visitor pays. Ask only for what sales genuinely needs to route the lead.
+- CTAs that name the post-click outcome outperform generic verbs; the label should complete "When I click this, I get..."
+- Mobile is the dominant landing-page surface for most consumer and mid-market B2B traffic; every copy block must be readable in a few seconds on a phone screen
 - Social proof placed directly above the CTA removes last-moment hesitation for visitors who have already scrolled to the bottom
+- If you cite a conversion-rate benchmark inside the page copy, it must include a named, real source (organization + report + year); no unsourced "studies show" claims
 
 PAGE SECTIONS (write each section in full, in this order):
 

@@ -3,6 +3,7 @@
 Falls back to hardcoded defaults if config.json is missing or unreadable, so the
 tool never hard-fails on a config problem.
 """
+import copy
 import json
 import os
 
@@ -30,13 +31,16 @@ def load():
         with open(_CONFIG_PATH, "r", encoding="utf-8") as f:
             data = json.load(f)
     except (OSError, ValueError):
-        return _FALLBACK
+        return copy.deepcopy(_FALLBACK)
     # Merge missing default keys from fallback so callers can rely on all keys.
-    merged = dict(_FALLBACK)
-    merged.update(data)
-    defaults = dict(_FALLBACK["defaults"])
-    defaults.update(data.get("defaults", {}))
-    merged["defaults"] = defaults
+    # Deep-copy the fallback so callers mutating merged["brands"] (or defaults)
+    # never leak into the module-level _FALLBACK dict.
+    merged = copy.deepcopy(_FALLBACK)
+    for k, v in data.items():
+        if k == "defaults":
+            merged["defaults"].update(v)
+        else:
+            merged[k] = v
     return merged
 
 
@@ -45,13 +49,44 @@ DEFAULTS = CONFIG["defaults"]
 BRANDS = CONFIG["brands"]
 
 
+def _hostname(url):
+    """Extract a lowercased hostname from `url`, tolerating scheme-less input.
+
+    `edstellar.com`, `www.edstellar.com`, `https://edstellar.com/x?y=1`, and
+    `mailto:foo@edstellar.com` all normalize to `edstellar.com` (www stripped).
+    """
+    from urllib.parse import urlparse
+
+    if not url:
+        return ""
+    s = url.strip()
+    if "://" not in s and not s.startswith("//"):
+        s = "//" + s  # let urlparse treat it as netloc, not path
+    host = (urlparse(s).hostname or "").lower()
+    if host.startswith("www."):
+        host = host[4:]
+    return host
+
+
 def brand_for_url(url):
-    """Return the brand dict for a URL by matching its root domain, or None."""
+    """Return the brand dict for a URL by matching its hostname against the
+    registered brand keys in `config.json`, or None.
+
+    A brand key `edstellar.com` matches hostnames `edstellar.com` and
+    `blog.edstellar.com`, but NOT `edstellar.com.attacker.com` or
+    `notedstellar.com` — the previous naive `in` check accepted both, which
+    let a lookalike URL borrow a real brand's audience and voice.
+    """
     if not url:
         return None
-    u = url.lower()
+    host = _hostname(url)
+    if not host:
+        return None
     for domain, brand in BRANDS.items():
-        if domain in u:
+        d = domain.strip().lower().lstrip(".")
+        if not d:
+            continue
+        if host == d or host.endswith("." + d):
             return brand
     return None
 

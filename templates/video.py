@@ -214,7 +214,9 @@ Save to: output/Video_Scripts/
 
 
 def short_form_video(topic, audience, wordcount=None, market=None, **_):
-    return f"""You are a short-form vertical video scriptwriter who has produced Reels, Shorts, and TikToks for B2B brands that hold above 50% average view duration on a 15 to 60 second runtime by applying the 3-second scroll-stop rule and a single-idea discipline.
+    brand_kind = {"b2b": "B2B brands", "b2c": "consumer brands",
+                  "creator": "solo creators"}.get((market or "b2b").lower(), "B2B brands")
+    return f"""You are a short-form vertical video scriptwriter who has produced Reels, Shorts, and TikToks for {brand_kind} that hold above 50% average view duration on a 15 to 60 second runtime by applying the 3-second scroll-stop rule and a single-idea discipline.
 
 TASK:
 Write a complete short-form vertical video script (Instagram Reels, YouTube Shorts, TikTok) on: "{topic}"

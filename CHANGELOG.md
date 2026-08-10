@@ -5,6 +5,144 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.3] - 2026-08-10
+
+### Changed (content-quality follow-up from 7-persona content audit)
+
+- **Banned AI-signature phrases refreshed** for the 2025 LLM output
+  patterns (`_shared.py` `HUMAN_WRITING_RULES`). The list now bans the
+  current-era Claude/GPT/Gemini tells missed by the 2023 list: *elevate,
+  harness, navigate the, the landscape of, a tapestry of, pivotal,
+  crucial, underscores, meticulous, rapidly evolving, ever-evolving,
+  stands out, ensure that, not only... but also, testament to, embark
+  on, in the realm of, at its core, in essence, bustling, vibrant,
+  thriving, nestled, boasts, a treasure trove, look no further, say
+  goodbye to, unleash, foster, curate, bespoke, cornerstone, beacon,
+  actionable insights, data-driven decisions* (when unsourced), and more.
+- **Case-study prompt no longer models fabrication** (`pr.py`
+  `case_study`). The old "CASE STUDY EFFECTIVENESS CONTEXT" block
+  contained four unsourced stats (73%/5-10x/30-40%/60%+) that LLMs were
+  mirroring in output. Replaced with qualitative craft principles and an
+  explicit "if you cannot cite it, don't state it" rule.
+- **Landing-page framing purged of unsourced stats** (`cro.py`
+  `landing_page_lead_gen`). Replaced 120%/202%/83% numbers with
+  qualitative principles and the same "cite or omit" rule.
+- **Persona line now honors the brand's market register**
+  (`blog.py::blog_writing`, `video.py::short_form_video`). The opening
+  role-play ("You are a senior B2B writer…") interpolates the brand's
+  `market` (b2b/b2c/creator) instead of hardcoding B2B, so the persona
+  line no longer contradicts the `market_voice()` rules appended below.
+  `blog_writing` also now injects `market_voice()` into its writing
+  standards block (previously omitted).
+- **Global sourcing guidance is now region-aware** (`_shared.py`
+  `RESEARCH_RULES`). Adds Tier-2 and Tier-3 source examples for UK/EU,
+  APAC, and LATAM audiences alongside the US-default list, and adds a
+  rule that US-only sources on a European/APAC piece read as sloppy
+  localization.
+- **`--language` block now covers real localization, not just
+  translation** (`generate.py::inject_extras`). Explicitly instructs the
+  model to convert currency, prefer regional sources (Eurostat/INSEE/ADB
+  /NASSCOM/CEPAL/IBGE), apply the local disclosure regime (GDPR/CAP-ASA/
+  LGPD/CONAR/etc.) instead of defaulting to US FTC, drop AP Style when
+  the audience is not US, and swap US-centric cultural references.
+- **Personal-brand post length ranges relaxed for creator voice**
+  (`personal.py::personal_brand_post`). Per-beat word ranges are now
+  explicitly labeled loose guidance; a beat that lands its idea in 15
+  words is preferred over one that hits a 30-word range with filler.
+
+### Notes
+
+- No breaking changes; test suite unchanged at 105 tests, all passing.
+- Locale/style-guide toggle promised in the audit is partially delivered
+  here (source list + `--language` block); a full `--locale` flag with
+  disclosure-regime routing remains open for a future release.
+
+## [0.10.2] - 2026-08-10
+
+### Fixed (persona-audit follow-up)
+
+- **`--generate` in bulk mode** - `run_bulk` now actually calls the LLM per
+  row and packages the generated content (with `--format` applied) into the
+  ZIP. Previously `--generate --bulk` silently wrote prompts only, so
+  nightly CI pipelines expecting finished content got templates instead.
+- **Bulk exit code** - `run_bulk` exits non-zero (code 2) when any row
+  errors, so CI can detect partial failures without parsing the log CSV.
+- **Prompt-injection hardening** - `--repurpose` and bulk `source_file`
+  contents are wrapped in explicit `BEGIN/END UNTRUSTED USER-SUPPLIED
+  CONTENT` fences before being spliced into any template. Injection
+  attempts inside repurposed files are now presented to the LLM as data,
+  not as instructions that override the editorial rules.
+- **`brand_for_url` strict hostname matching** - parses the URL and matches
+  against registered brand keys as `host == domain or host endswith
+  '.'+domain`. Fixes a lookalike-domain attack where
+  `edstellar.com.attacker.com` inherited the real brand's audience/voice
+  via the previous naive substring check.
+- **`PLATFORM_MAP["linkedin"]`** - now maps to `linkedin_post` (short-form),
+  matching what a user typing `--platform linkedin` intuitively expects.
+  Long-form pillar articles are still reachable via the new `linkedin_blog`
+  alias. `linkedin_article` remains a dedicated text prompt.
+- **`pyproject.toml` version** - bumped to `0.10.2` (was drifting behind
+  the CHANGELOG). Added a regression test that compares `pyproject.toml`
+  and the latest CHANGELOG heading.
+
+### Tests
+
+- 12 new tests: hostname exact/subdomain/lookalike coverage for
+  `brand_for_url`, LinkedIn alias mapping, untrusted-content fencing (empty
+  input, fence markers present, propagation through the repurpose
+  template), `run_bulk --generate` end-to-end with a mocked LLM,
+  `run_bulk` exit-2 on row failure, and pyproject-vs-CHANGELOG version
+  consistency. Suite: 105 tests, all passing.
+
+## [0.10.1] - 2026-08-10
+
+### Fixed
+
+- **PLATFORM_MAP** - removed duplicate `creator_brief` key that silently
+  shadowed the `ugc_brief` route with the standalone `creator_brief` template.
+  Kept the standalone route (a dedicated template already exists in
+  `templates/ugc.py`). Added an AST-based uniqueness regression test.
+- **`_resolve_contained_path`** - anchors on the project directory
+  (`os.path.dirname(__file__)`) instead of `os.getcwd()`, so `--repurpose`
+  and bulk `source_file` entries resolve correctly when the CLI runs from
+  outside the project root.
+- **OpenAI provider** - `_generate_openai` now sends
+  `max_completion_tokens` for `gpt-5`, `o1`, `o3`, `o4`, `gpt-4o`, and
+  `gpt-4.1` families (which reject `max_tokens`), and transparently retries
+  with the other kwarg if the server disagrees. Fixes an out-of-the-box
+  400 on the default `gpt-5` model.
+- **`log_publish_row`** - writes to the project's `data/` directory
+  (matching the `--log-publish` help text) instead of the caller's
+  `output_dir`. Creates `data/` if missing.
+- **URL linter** - `check_url` falls back from HEAD to GET on 403/405/501
+  (and on hard connection errors), fixing false-positive dead links on
+  Cloudflare-fronted hosts, LinkedIn, and Medium.
+- **`load_keywords`** - CSV detection now inspects all header tokens, so
+  multi-column CSVs like `keyword,volume,intent` are recognised instead
+  of being read as plain text.
+- **`format_output` (gutenberg)** - now handles unordered/ordered lists,
+  blockquotes, fenced code blocks, inline formatting (bold/italic/code/
+  links) and standalone images. Previously all non-heading content
+  collapsed silently into `<p>` blocks.
+- **`config.load()`** - deep-copies `_FALLBACK` before merging, so callers
+  mutating `CONFIG["brands"]` can't leak into the module-level fallback
+  or into subsequent `load()` calls.
+- **`export_buffer_csv`** - dropped unused `zip_path` parameter.
+
+### Docs
+
+- **README / agents.md** - prompt-count claims now match reality (79 flat
+  prompt files, 80+ rich templates). README no longer contradicts itself.
+
+### Tests
+
+- Added 17 tests covering Phase-10 tooling (`load_keywords`,
+  `inject_extras`, `format_output` across all formats, `log_publish_row`,
+  `export_buffer_csv`, `--variants` prompt injection), URL-linter
+  HEAD-then-GET fallback, OpenAI model → token-kwarg selection,
+  `config.load` deepcopy isolation, and PLATFORM_MAP key uniqueness.
+  Suite: 93 tests, all passing.
+
 ## [0.10.0] - 2026-07-14
 
 ### Added

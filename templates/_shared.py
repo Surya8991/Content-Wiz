@@ -6,7 +6,9 @@ HUMAN WRITING & GRAMMAR RULES (Non-negotiable - apply to every word):
 - Vary sentence length intentionally: mix short punchy sentences (6-10 words) with medium ones (15-20 words). Never three long sentences in a row
 - Each paragraph: 2-4 sentences maximum. No walls of text
 - Transitions must feel organic - not "Furthermore", "Moreover", "In addition", "It is worth noting"
-- NEVER use these AI-signature phrases: "In today's fast-paced world", "In conclusion", "It's important to note", "Dive into", "Delve into", "Leverage", "Utilize", "Unlock the potential", "Game-changer", "Holistic approach", "Robust", "Paradigm shift", "Synergy", "It goes without saying", "Needless to say", "At the end of the day", "Move the needle", "Take it to the next level", "Cutting-edge", "Transformative", "Groundbreaking", "Revolutionize", "Empower", "Seamlessly", "Streamline"
+- NEVER use these AI-signature phrases (2025 refresh - checked against current LLM output patterns):
+  Classic tells: "In today's fast-paced world", "In conclusion", "It's important to note", "It's worth noting", "It goes without saying", "Needless to say", "At the end of the day", "Dive into", "Delve into", "Leverage", "Utilize", "Unlock the potential", "Game-changer", "Holistic approach", "Robust", "Paradigm shift", "Synergy", "Move the needle", "Take it to the next level", "Cutting-edge", "Transformative", "Groundbreaking", "Revolutionize", "Empower", "Seamlessly", "Streamline"
+  Current-era LLM tells (Claude/GPT/Gemini 2024-2025 patterns): "Elevate", "Elevated", "Harness", "Navigate the", "The landscape of", "A tapestry of", "Pivotal", "Crucial", "Underscores", "Underscoring", "Meticulous", "Meticulously", "Rapidly evolving", "Ever-evolving", "Ever-changing", "Stands out", "Ensure that", "Not only... but also", "Whether you're a... or a...", "This isn't just... it's...", "It's more than just", "Testament to", "A journey", "Journey towards", "Embark on", "Embark upon", "In the realm of", "The world of", "At its core", "In essence", "Ultimately", "That being said", "With that said", "Bustling", "Vibrant", "Thriving", "Nestled", "Boasts", "Boasting", "A treasure trove", "Look no further", "Say goodbye to", "Say hello to", "Unleash", "Unleashing", "Foster", "Fostering", "Curate", "Curated", "Bespoke", "Cornerstone", "Beacon", "Testament", "Ecosystem" (when used as filler), "Best practices" (when unsupported), "Actionable insights", "Data-driven decisions" (when unsupported)
 - Replace ALL em dashes with regular hyphens (-)
 - Use contractions naturally where they fit (it's, you're, don't, we've)
 - Write from direct experience - not "studies show" without naming the study
@@ -29,7 +31,15 @@ SEO & RANKABILITY RULES:
 RESEARCH_RULES = """
 RESEARCH & AUTHORITY RULES:
 - Every major claim needs a real source: name the organization, report title, and year (e.g. "LinkedIn's 2024 Workplace Learning Report found that...")
-- Prioritize sources: peer-reviewed journals > industry reports (McKinsey, Deloitte, Gallup, SHRM, LinkedIn) > reputable news (HBR, Forbes, WSJ)
+- Prioritize sources by tier, then by regional fit for the target audience:
+  Tier 1 (peer-reviewed journals) > Tier 2 (industry reports) > Tier 3 (reputable news)
+  Tier 2 examples by region - use the source list appropriate to the audience:
+    - US / global default: McKinsey, Deloitte, Gallup, SHRM, LinkedIn, Pew, Bureau of Labor Statistics
+    - UK / EU: Eurostat, INSEE (France), Destatis (Germany), CIPD (UK HR), Statista Europe, EU-OSHA, EIB
+    - APAC: NSO country stats agencies, ADB, MOM (Singapore), NASSCOM (India), Nikkei/Nikkei Asia research
+    - LATAM: CEPAL, INEGI (Mexico), IBGE (Brazil), Statista LATAM
+  Tier 3 examples by region: HBR/Forbes/WSJ (US), FT/Economist/Reuters (UK/global), Nikkei (Japan), Handelsblatt (Germany), Les Echos (France), Folha/Estadao (Brazil), Economic Times (India)
+  Rule: if the audience is regional or non-US, lead with regional sources rather than US-only ones; US-only sources on a European or APAC piece read as sloppy localization
 - Include at least 2-3 real statistics with proper attribution per 500 words
 - Reference real companies, real case studies, or real named experts where relevant
 - If quoting a stat you are not 100% certain of, flag it with a note to verify before publishing
