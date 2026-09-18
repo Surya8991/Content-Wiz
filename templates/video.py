@@ -436,3 +436,102 @@ STATE THE MODE, then output the full content for that mode, followed by the 11-D
 
 Save to: output/Podcast/
 """
+
+
+# ─────────────────────────────────────────────
+# AI VIDEO AD TEMPLATE (text-to-video prompt sheet)
+# ─────────────────────────────────────────────
+
+
+def ai_video_ad(topic, audience, wordcount=None, market=None, **_):
+    """Builds a clip-by-clip prompt SHEET for a text-to-video generator
+    (Google Flow/Veo, Sora, Kling, Runway, and others). The output is not a
+    human shooting script - it is a set of paste-ready generation prompts, one
+    per clip, plus a post/edit layer for the things the generators cannot do
+    (legible on-screen text, synced voiceover)."""
+    return f"""You are an AI-video creative director who ships text-to-video ads by writing one self-contained generation prompt per clip, the way modern generators (Google Flow/Veo, OpenAI Sora, Kling, Runway, Luma, Pika, PixVerse) actually respond best.
+
+TASK:
+Write a complete clip-by-clip AI-video-generator prompt sheet for a video ad on: "{topic}"
+
+TARGET AUDIENCE: {audience}
+
+{market_voice(market)}
+
+BRIEF LOCK (state these first, in one line each, before any prompts):
+- AUDIENCE: who this ad is for and the tone that follows from it
+- GOAL: awareness, feature-showcase, direct-response, or a stated blend
+- FEATURES / MESSAGE BEATS: the ordered list of things the ad must land
+- FORMAT: aspect ratio (16:9, 9:16, or 1:1) and total runtime
+- GENERATOR: the target tool (default Google Flow/Veo) - this sets the clip length and whether audio is generated natively (see GENERATOR NOTES)
+
+GENERATOR NOTES (pick one, adapt clip length and audio handling to it):
+- GOOGLE FLOW / VEO (Veo 3.1): approx 8-second clips, extendable; 1080p; native audio (ambient, SFX, some dialogue) but NOT reliable legible on-screen text or synced voiceover; strong world/character consistency and prompt adherence. Default choice for this template.
+- OPENAI SORA 2 / SORA 2 PRO: longer single generations (roughly 10 to 25 seconds); native audio; strong physical realism and cameo/character consistency.
+- KLING (3.0): strong motion and physics, cost-effective per usable clip, excellent image-to-video; up to 1080p.
+- RUNWAY (Gen-4): best explicit camera control (motion brush, keyframes, director-style moves); shorter clips (approx 5 to 10 seconds).
+- LUMA (Dream Machine / Ray): natural, fluid motion and fast image-to-video.
+- PIKA: fast, low-cost social clips and stylized effects.
+- PIXVERSE (V6): affordable, marketing-oriented templates, strong for vertical/social; short default clips with explicit ratio/duration control.
+
+LOCAL / OPEN-SOURCE GENERATORS (self-hosted, run via ComfyUI on a CUDA GPU with real VRAM, or a rented cloud GPU instance):
+- WAN 2.2 (Alibaba, Apache 2.0): the safest default for self-hosted commercial use, no license threshold. TI2V-5B variant runs from approx 8GB VRAM (GGUF, quantized) up to approx 24GB (FP8); the 14B variant needs approx 12GB (GGUF + CPU-offloaded text encoder) up to approx 24GB (FP8) for best quality. Up to 720p, no native audio, text-to-video and image-to-video.
+- LTX-2.3 (Lightricks, Community/Commercial license, free under $10M revenue): the only open-source model with native synced audio generated in the same pass. Up to 4K at 50fps, clips up to approx 20 seconds. Needs approx 16GB VRAM distilled up to 80GB at full precision.
+- HUNYUANVIDEO 1.5 (Tencent Community license, free under 100M MAU): strongest open-source motion realism and facial quality. Runs from approx 14GB VRAM (FP8 + CPU-offloaded text encoder) on a single high-end consumer GPU. Up to 1080p, no native audio.
+- COGVIDEOX (Zhipu/THUDM, 2B is Apache 2.0, 5B has added restrictions): best open-source prompt adherence for detailed, multi-clause prompts. Runs from approx 16GB VRAM (2B) to approx 24GB (5B). Up to 720p, no native audio.
+- MOCHI 1 (Genmo, Apache 2.0): best open-source fine-tuning base (official single-GPU LoRA trainer) and smooth secondary motion (hair, fabric, water). Capped at 480p, so a poor fit for HD/4K delivery. Needs approx 20GB VRAM at FP8.
+Every local/open-source option above except LTX-2.3 has no native audio: route its clips through the same POST/EDIT LAYER as the hosted tools. Before recommending a specific VRAM figure or GPU tier to the user, note that these numbers shift with each model release and should be verified against the model's current model card, not treated as fixed.
+Set the per-clip runtime to the chosen generator's native clip length, then divide the total runtime into that many clips.
+
+REFERENCE / CONSISTENCY BLOCK (write this before the clips):
+Define every recurring subject once, in concrete, reusable detail (age, build, hair, wardrobe, and for products the material, finish, and defining features). Instruct the operator to generate the first clip's subject/product first, then carry it forward using the tool's reference-image / ingredients feature so characters and the product stay identical across clips.
+
+STRUCTURE - ONE PROMPT PER CLIP:
+Divide the ad into clips sized to the chosen generator. Standard ad arc:
+- CLIP 1: HOOK - the scroll-stopping opening image, before any branding.
+- MIDDLE CLIPS: one message beat / feature per clip, in the brief's order.
+- SYNTHESIS CLIP: the payoff moment that ties the beats together.
+- CLOSE / HERO CLIP: a clean product or logo shot with generous negative space for text to be added in edit.
+
+PROMPT-WRITING RULES (per clip):
+Write each clip's prompt as ONE dense paragraph that bundles, in this order:
+shot type and framing -> subject with wardrobe/appearance (or product) -> the specific action/motion -> setting -> time of day -> lighting -> lens and camera movement -> color grade / mood -> ambient audio. End weak or generic clips by making the ONE action concrete and physically plausible.
+- Describe physically accurate motion and hands/objects explicitly ("both hands steady and anatomically correct, the object stays solid and consistent, no morphing, no duplicate objects") to reduce the melt/morph artifacts these tools produce on hands-manipulating-objects shots.
+- Do NOT instruct the generator to render on-screen text, captions, logos as text, UI text, or a spoken voiceover. Generators cannot render legible text or synced narration reliably. Put every word the viewer must READ or HEAR in the POST/EDIT LAYER instead.
+- Keep each clip to ONE idea and one camera setup. Complexity across a single clip is where these tools break.
+
+POST / EDIT LAYER (write this after the clips, as a separate section):
+- VOICEOVER: the exact lines and the clip each lands on (added in an editor or via a dedicated TTS/voice tool, not the video generator).
+- ON-SCREEN TEXT / CAPTIONS: the exact overlay text per beat, plus the final card's headline and CTA.
+- MUSIC: the intended music arc (build, swell, resolve) to layer under the generators' ambient beds.
+- CTA: use the placeholder [INSERT CTA LINK] for any link and [DATE] for any date - never fabricate a real URL or launch date. Banned CTA phrases (do not use anywhere): {_BANNED_CTA_LIST}.
+
+CLAIM / CITATION CAUTION:
+If any clip or overlay states a statistic, spec, benchmark, or comparison, flag it in the POST/EDIT LAYER as "verify before airing" and name the source it must be checked against. These tools (and this prompt) must never invent a precise number, spec, or benchmark that ends up on screen as fact.
+
+NO EM DASHES: Use hyphens or restructure. This applies to every prompt, overlay line, and note.
+
+{RESEARCH_RULES}
+
+SELF-CHECK BEFORE OUTPUT:
+- Is the brief locked (audience, goal, beats, format, generator) before any clip prompt?
+- Is there a reference/consistency block for every recurring subject and the product?
+- Is the per-clip runtime matched to the chosen generator's native clip length, and do the clips sum to the total runtime?
+- Does every clip prompt bundle framing, subject, action, setting, time of day, lighting, camera move, color grade, and ambient audio in one paragraph?
+- Is all readable/hearable copy (voiceover, captions, CTA) in the POST/EDIT LAYER, not inside the generation prompts?
+- Are links [INSERT CTA LINK], dates [DATE], and any stat/spec flagged "verify before airing"?
+- Are there zero em dashes anywhere in the output?
+
+OUTPUT FORMAT:
+BRIEF LOCK: [the five one-line items]
+REFERENCE / CONSISTENCY BLOCK: [recurring subjects and product]
+
+Then the clips in order, each as:
+CLIP [n] ([start]-[end], BEAT NAME)
+PROMPT: [one paste-ready paragraph]
+
+Then:
+POST / EDIT LAYER: [voiceover, on-screen text, music, CTA]
+
+Save to: output/AI_Video_Ads/
+"""

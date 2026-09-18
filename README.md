@@ -393,6 +393,7 @@ for what `generate.py` can produce.
 | `livejournal_post` | `livejournal`, `lj` | LiveJournal |
 | `tumblr_post` | `tumblr` | Tumblr |
 | `short_form_video` | `short_form_video`, `shorts`, `reels`, `tiktok` | Short_Form_Video |
+| `ai_video_ad` | `ai_video_ad`, `ai_video`, `ai_ad`, `veo`, `flow`, `sora` | AI_Video_Ads |
 | `landing_page` | `landing_page`, `landing`, `lp` | Landing_Pages |
 | `comparison_page` | `comparison_page`, `comparison`, `vs`, `alternative` | Comparison_Pages |
 | `business_case_one_pager` | `business_case_one_pager`, `business_case`, `one_pager`, `internal_pitch` | Business_Case |

@@ -19,7 +19,7 @@ from .pr import (  # noqa: F401
 from .recruitment import employee_spotlight, job_posting  # noqa: F401
 from .sales_enablement import cold_call_script, inmail_template, pitch_deck_narrative, proposal_copy  # noqa: F401
 from .social import instagram, linkedin_carousel, linkedin_post, profile_bio, twitter_thread  # noqa: F401
-from .video import podcast, short_form_video, video_script, youtube_desc  # noqa: F401
+from .video import ai_video_ad, podcast, short_form_video, video_script, youtube_desc  # noqa: F401
 from .cro import (  # noqa: F401
     cta_variants, hero_headline_formula, landing_page_lead_gen,
     landing_page_sales, trust_signals_block,
