@@ -169,6 +169,14 @@ See strategies/strategy-additional-platforms.md for the dated strategy reference
 
 ## Runtime behavior (v0.11.0)
 
+- Pilot follow-up: every single/bulk/cluster CLI prompt, including flat prompts,
+  receives a delimited JSON brand brief via `inject_brand_context`. Only selected
+  writing fields are included. Optional `author` (name/title) and `approved_facts`
+  (list of nonempty strings) are validated. Missing/placeholder identities never
+  become fabricated bylines; supplied statistics still need supporting evidence.
+- LinkedIn receives full market voice rules and a CTA token. Its output separates
+  POST, optional FIRST COMMENT, and EDITOR NOTES. Source-free briefs may produce
+  qualitative advice without invented personal experience or numerical claims.
 - `CONTENT_WIZ_WORKSPACE` selects the writable workspace; it defaults to the
   current directory. Default output and review trackers are workspace-relative.
   Relative repurpose/source-file paths resolve inside it; escapes and symlinks

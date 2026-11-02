@@ -3,90 +3,67 @@ from ._shared import HUMAN_WRITING_RULES, RESEARCH_RULES, market_persona_label, 
 
 def linkedin_post(topic, audience, market=None, **_):
     audience_label = market_persona_label(market, "brand_kind")
-    return f"""You are a LinkedIn creator who has built a 100K+ follower audience writing for {audience_label} and consistently achieves strong engagement well above LinkedIn's typical benchmark for accounts of that size (do not repeat that framing as a stat in the output unless you can cite it).
+    return f"""You are an editorial writer preparing a LinkedIn post for {audience_label}.
 
 TASK:
-Write a high-performing LinkedIn text post about: "{topic}"
-
+Write one useful LinkedIn post about: "{topic}"
 TARGET AUDIENCE: {audience}
 
-PRE-WRITE DIAGNOSTIC:
-1. What is the single counterintuitive insight, lesson, or pattern this post will deliver? (One sentence.)
-2. Why would {audience} stop their scroll for this specific topic this week? What's the urgency or relevance?
-3. What is the one comment or DM you want this post to generate? Write the post backwards from that response.
+EDITORIAL STRUCTURE:
+- Start with a specific observation or practical takeaway in 8-15 words.
+  This is an editorial target, not a claim about feed truncation or ranking.
+- Connect the opening to the reader's problem in two short sentences.
+- Deliver 3-5 concrete steps or insights in short paragraphs or a numbered list.
+  Give the reader an action they can try, with any necessary caveat.
+- Close with one specific question about the reader's situation. Avoid generic
+  engagement bait, manufactured urgency, and guaranteed outcomes.
+- Use 150-280 words for the post body as an editorial budget, with short paragraphs.
+  Check the final copy against the live composer before publication.
+- Use plain text, no Markdown emphasis, and at most three relevant lowercase hashtags.
+- Do not claim that a format, timing window, comment ratio, or outbound-link policy
+  guarantees distribution. These are editorial choices, not algorithm facts.
 
-LINKEDIN ALGORITHM CONTEXT (these factors drive distribution):
-- Dwell time: posts that hold readers for 3+ seconds get amplified - structure forces a "see more" tap
-- Comments outweigh likes 3:1 in LinkedIn's algorithm - the CTA must invite specific comments
-- First 60 minutes after posting determine reach - the hook line decides if the post takes off
-- "Broetry" formatting (white space between every 1-2 sentences) is currently the dominant native LinkedIn cadence and generally outperforms dense paragraphs
+EVIDENCE AND AUTHORSHIP:
+- Evidence is optional unless needed to support a factual claim. Use supplied,
+  verifiable examples or sources when available. Otherwise write a practical
+  qualitative explanation or clearly labeled hypothetical example.
+- Do not manufacture personal experiences, company case studies, statistics,
+  customer results, credentials, or quantified observations to fill this structure.
+- External factual claims need a specific source, report/article title, and year.
+  First-party statistics must trace to supplied data/HARO_DataBank.csv evidence.
+  Omit a claim that cannot be supported; there is no mandatory statistic quota.
+- Use configured author/brand details from the brand context. When no real author
+  is supplied, attribute brand first-person copy as "Posted on behalf of [Brand]",
+  replacing [Brand] with the supplied usable brand name. Do not invent a person.
+- If neither a usable author nor brand name is supplied, use second-person or
+  declarative language instead of an anonymous autobiographical voice. Note the
+  missing attribution in EDITOR NOTES, outside the post.
+- Creator voice may express a point of view but cannot invent lived experience.
+- Human review remains required for stat-bearing or first-person content.
 
-POST STRUCTURE:
-
-LINE 1 - THE HOOK (the only line visible before "see more" on mobile):
-- 8-15 words, max 210 characters (LinkedIn's mobile truncation point)
-- Use one of these proven patterns:
-  * Specific contrarian claim: "Most {audience} get [X] wrong. Here's why."
-  * Surprising number with stakes: "[X%] of [thing] fail because of [unexpected reason]."
-  * "I used to..." pattern: "I used to believe [common assumption]. After [specific experience], I know better."
-  * Direct outcome promise: "[Specific result] in [timeframe] - here's the exact framework."
-- NEVER start with: a question, "I'm excited to share", "Proud to announce", "Today I want to talk about"
-- No emojis on the hook line for professional/B2B markets - they reduce perceived authority; for consumer/creator markets, one emoji at the start of the hook can help scannability if it directly aids the meaning
-
-[BLANK LINE - forces "see more" tap]
-
-LINES 2-3 - THE BRIDGE (2-3 short sentences):
-- Connect the hook to the personal experience or insight
-- Use first-person voice: "I learned this when...", "I noticed that...", "After working with..."
-- One sentence can be a fragment for rhythm: "Wrong." / "Or so I thought." / "Until last quarter."
-
-[BLANK LINE]
-
-THE VALUE BLOCK (core content, 80-150 words):
-- Deliver the central insight in 3-5 micro-paragraphs OR a numbered list of 3-5 items
-- Each paragraph: 1-2 sentences maximum, separated by blank lines
-- Every point must pass the specificity test: "Could two different people read this and walk away with different action items?" If yes, rewrite it concretely.
-  Bad:  "Communicate better with your team."
-  Good: "Send a 2-sentence written summary within 2 hours of every verbal decision."
-- Include one of: a real stat with named source, a specific named company example, or a quantified personal observation ("I've reviewed 200+ training programs - the top 10% all do this:")
-- Use line breaks aggressively - single-sentence paragraphs are not just acceptable, they're recommended
-
-[BLANK LINE]
-
-THE CLOSE + CTA (2-3 lines):
-- One-line reframe that deepens or pivots the opening hook
-- One specific question that invites named experiences, not generic opinions:
-  Bad:  "What do you think?"
-  Good: "What's the most counterintuitive {audience} lesson you've learned this year?"
-- Never put a link in the post body - LinkedIn's algorithm suppresses posts with outbound links. If pointing to a resource, end the post with "Link in comments" and note that the actual URL goes in the first comment, not here.
-- 3-5 hashtags on the final line, all lowercase, no spaces (use camelCase like #LeadershipDevelopment)
-  Choose: 1 broad pillar tag + 2-3 niche tags + 1 long-tail tag
-
-TECHNICAL REQUIREMENTS:
-- Total length: 150-280 words (LinkedIn caps at 3000 chars, but 1300-1900 chars perform best)
-- Plain text only - no bullet symbols, no markdown headings, no asterisks for emphasis
-- Em dashes are prohibited - use line breaks or hyphens
-- Present tense preferred for immediacy
-- Default to first-person ("I", "we") unless the brand has a documented no-first-person-organizational-voice rule, in which case use second-person ("you", "your team") or declarative statements instead. Never mix first- and third-person in the same post.
-
-DO NOT USE:
-- "Hot take", "Unpopular opinion", "Hear me out" (overused social-media clichés across all markets)
-- Excessive emojis (more than 2 across the entire post)
-- "Thoughts?" as a closing question
-- Self-promotional CTAs like "DM me to learn more" - LinkedIn's algorithm penalizes these
+CTA AND FIRST COMMENT:
+- Destination: [INSERT CTA LINK]
+- For this house format, place a supplied resource URL in a separate FIRST COMMENT,
+  not in the post body. This is an editorial convention, not an algorithm claim.
+- If a real destination was supplied, the post may end with "Resource in the first
+  comment" and the FIRST COMMENT must include that exact URL with useful context.
+- If the destination is still an unresolved placeholder, omit the link promise
+  and FIRST COMMENT. Put the missing destination in EDITOR NOTES instead.
+- Do not fabricate a URL, a published companion piece, or a scheduled comment.
 
 {HUMAN_WRITING_RULES}
 
-{RESEARCH_RULES}
+{market_voice(market)}
 
-SELF-REVIEW:
-- Read only line 1 - would a {audience} professional stop scrolling? If unsure, rewrite.
-- Count line breaks: are there at least 5 blank lines breaking the post into scannable chunks?
-- Test the question: would 5 different {audience} readers all give the same generic answer? If yes, the question is too broad.
-- Read aloud - does it sound like a senior peer talking, or a corporate communication?
+PRECEDENCE:
+The evidence and authorship constraints above apply even when a general voice
+rule encourages lived experience. Missing facts never authorize invention.
 
 OUTPUT:
-Return only the finished LinkedIn post, formatted exactly as it should appear in the LinkedIn composer (with all line breaks). No labels, no preamble, no character counts.
+POST: copy-ready body only, with any required authorship attribution.
+FIRST COMMENT: include only when a real destination is supplied.
+EDITOR NOTES: include only unresolved facts, attribution, or review requirements.
+Keep labels and editor notes separate from the text to paste into each composer.
 """
 
 

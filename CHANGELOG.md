@@ -5,6 +5,20 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Pending - quality-pilot follow-up (2026-11-02)
+
+- Deliver configured brand names/descriptions, effective audience, attribution,
+  optional approved facts, and CTA destinations to rich/flat prompts across
+  single, bulk, and cluster CLI modes. Exclude unrelated configuration fields.
+- Validate optional brand `author` and `approved_facts` fields. Placeholder author
+  and brand names are not treated as usable authorship lines.
+- Repair LinkedIn market-rule and CTA delivery; emit separate post/first-comment
+  drafts and editor notes. Remove unsupported algorithm claims and mandatory
+  anecdote/statistic requirements from briefs that contain no evidence.
+- Seven regression tests cover context delivery, author/fact validation, and
+  LinkedIn instructions. The original 15-case prompt matrix now passes all brand,
+  audience, market-rule, CTA, and resolved-attribution checks. No live API calls.
+
 ## [0.11.0] - 2026-11-02
 
 ### Added

@@ -78,6 +78,14 @@ def _validate(data):
                 require(isinstance(brand[key], str), f"{field}.{key}", "a string")
         require((brand.get("market", "").strip().lower() or "b2b") in ("b2b", "b2c", "creator"),
                 f"{field}.market", "b2b, b2c, or creator")
+        author = brand.get("author", {})
+        require(isinstance(author, dict), f"{field}.author", "an object")
+        for key in ("name", "title"):
+            if key in author:
+                require(isinstance(author[key], str), f"{field}.author.{key}", "a string")
+        facts = brand.get("approved_facts", [])
+        require(isinstance(facts, list) and all(isinstance(fact, str) and fact.strip() for fact in facts),
+                f"{field}.approved_facts", "a list of nonempty strings")
         overrides = brand.get("platform_audience_overrides", {})
         require(isinstance(overrides, dict), f"{field}.platform_audience_overrides", "an object")
         for platform, audience in overrides.items():

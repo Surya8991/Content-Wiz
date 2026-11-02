@@ -655,6 +655,13 @@ belong in the workspace rather than the installation directory.
 
 Each brand entry can also declare:
 
+- **`author`** - an optional object with `name` and `title` for a real configured
+  author. Names are supplied attribution, not verified identities or evidence of
+  personal experience. Without a usable author, the prompt uses
+  `Posted on behalf of <brand name>`. Placeholder names are not usable bylines.
+- **`approved_facts`** - an optional list of nonempty strings containing approved
+  product facts or source-backed assertions. This does not waive citation checks:
+  statistics still need source/DataBank evidence and human review.
 - **`market`** - `"b2b"` (default), `"b2c"`, or `"creator"`. Selects the voice
   register (`MARKET_VOICE_RULES` in `templates/_shared.py`) that flows into
   templates: professional business language, consumer language, or a
@@ -663,6 +670,18 @@ Each brand entry can also declare:
 - **`platform_audience_overrides`** - an optional map of platform alias →
   audience string, so e.g. a LiveJournal post can target a community audience
   while the brand's default stays B2B decision-makers.
+
+Single, bulk, and cluster CLI modes append a delimited JSON brand brief to every
+rich or flat prompt. It carries the selected brand's name, description, hashtag,
+market, effective audience, optional author/facts, URL, and CTA destination.
+Unrelated config fields are excluded. An unknown brand leaves identity absent;
+writers must flag missing attribution rather than invent a person or brand.
+
+LinkedIn output now separates `POST`, optional `FIRST COMMENT`, and `EDITOR NOTES`.
+A supplied `--cta` belongs in the first-comment draft as a house convention, not
+an algorithm claim. With no destination, the writer must omit the link promise
+and flag the gap. Evidence and personal anecdotes are conditional on supplied,
+verifiable material; the template does not require invented statistics or history.
 
 ## Development
 
