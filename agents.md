@@ -18,7 +18,9 @@ local endpoint (`--provider local` for Ollama / vLLM / LM Studio / llama.cpp),
 chosen with `--provider` (see `llm.py`) - so the same prompt/rule set produces
 the same house-style content regardless of which model actually writes it.
 `--estimate-cost` prints a token+USD pre-flight against the pricing table in
-`llm.py`; `--budget-cap USD` refuses the run if the estimate exceeds the cap.
+`llm.py`; `--budget-cap USD` sums all variants, bulk rows, or cluster posts
+and refuses the run if the estimate exceeds the cap or pricing is unknown.
+Caps must be finite and nonnegative; they constrain estimates, not billed usage.
 Transient errors (429 / 5xx / rate limit) auto-retry with exponential backoff. Prompts encode channel strategy, brand
 voice, and formatting rules so output is consistent across platforms and providers.
 
@@ -127,7 +129,8 @@ python generate.py --platform skyscraper --topic "onboarding" --fetch-competitor
 
 # Review workflow (moves rows in data/publish_tracker_YYYYMM.csv):
 python generate.py --review list
-python generate.py --review approve post_x.txt
+python generate.py --review approve post_x.txt --reviewer "Reviewer Name"
+python generate.py --review published post_x.txt  # requires recorded approval
 
 # Locale routing (currency, disclosure regulator, style guide, source tier per market):
 python generate.py --platform linkedin --topic "..." --locale de --language "German"
@@ -135,7 +138,7 @@ python generate.py --platform linkedin --topic "..." --locale de --language "Ger
 
 ## How to test / lint
 ```bash
-python -m unittest test_generate -v   # smoke tests (grows over time - see test output for current count)
+python -m unittest discover -p "test_*.py" -v   # all regression and smoke tests
 python lint_content.py                # content-rule lint
 ruff check .                          # style lint
 git config core.hooksPath hooks       # enable pre-commit hook (once per clone)
@@ -143,12 +146,55 @@ git config core.hooksPath hooks       # enable pre-commit hook (once per clone)
 CI runs all three (`.github/workflows/ci.yml`).
 
 ## Env vars
+- `CONTENT_WIZ_WORKSPACE` - optional absolute user workspace directory.
+- `CONTENT_WIZ_CONFIG` - optional path to a config file, overriding discovery.
 - `ANTHROPIC_API_KEY` - only needed for `--generate --provider anthropic` (the default).
 - `GEMINI_API_KEY` (or `GOOGLE_API_KEY` as a fallback) - only needed for `--generate --provider gemini`.
 - `OPENAI_API_KEY` - only needed for `--generate --provider openai`.
 - `LOCAL_LLM_BASE_URL` (default `http://localhost:11434/v1`) and
   optional `LOCAL_LLM_API_KEY` - only needed for `--generate --provider local`.
 Never commit any of these.
+
+## Additional platforms (v0.11.0)
+
+`templates/platforms.py` adds 20 channel builders: Bluesky, Mastodon, Telegram,
+WhatsApp Channels, YouTube Community posts, Snapchat, Twitch, Kick, Spotify,
+Patreon, Product Hunt, Slack, Nextdoor, Lemon8, WeChat, Weibo, Xiaohongshu,
+Douyin, Bilibili, and LINE. Aliases and subfolders are in generate.py; the
+README table and `--list` enumerate them. Facebook organic also accepts
+`facebook` and `fb`. All work through single/bulk generation. These are prompt
+builders, not posting integrations. Channel budgets override generic wordcount;
+current field limits and feature eligibility need publisher-side confirmation.
+See strategies/strategy-additional-platforms.md for the dated strategy reference.
+
+## Runtime behavior (v0.11.0)
+
+- `CONTENT_WIZ_WORKSPACE` selects the writable workspace; it defaults to the
+  current directory. Default output and review trackers are workspace-relative.
+  Relative repurpose/source-file paths resolve inside it; escapes and symlinks
+  are rejected. `--output-dir` overrides the output destination.
+- `CONTENT_WIZ_CONFIG` overrides config selection. Otherwise, use workspace
+  config.json when present, then packaged config.json. Invalid fields emit a
+  warning and fall back to generic defaults. Installed prompt assets stay beside
+  the Python modules, separate from the user's workspace.
+- `--dry-run` makes no provider calls or output writes in single, bulk, or
+  cluster mode. Budget checks precede generation and output creation.
+- Bulk rejects unsupported authoring flags: tone, language, locale, voice
+  samples, publish logging, keyword files, image briefs, competitor fetching,
+  and multiple variants. Use CSV columns for per-row settings rather than
+  global platform/topic/audience/wordcount/title/URL/source flags.
+- Bulk errors are logged per row and exit 2, including parallel failures.
+  Buffer export contains generated payloads only; prompt-only exports have
+  headers but no content rows. Scheduler/profile fields still need filling.
+- Cluster failures exit 2, write failures_*.json, and keep labeled fallback
+  prompts in failed_prompts/*.prompt.txt. Manifests link successful drafts only.
+- Known truncated/blocked provider responses raise IncompleteResponseError;
+  they are not saved as finished content or retried automatically.
+- Output filenames carry unique IDs. Gutenberg escapes raw HTML/code and
+  rejects unsafe URL schemes.
+- Packaging uses setup.py and MANIFEST.in to include config and prompt assets.
+  Test all suites with unittest discovery. CI also verifies installed
+  assets and workspace behavior outside the checkout.
 
 ## Agent notes / gotchas
 - **`gmb` and `pinterest` are print-only** in single-run mode (`PRINT_ONLY`) unless
@@ -210,23 +256,17 @@ Never commit any of these.
   This is the same research process described in README's "Citation
   Verification" section, this is just the name to refer to it by
   ("run a Cluster Citation Diversity Pass on X") when scoping the work.
-- **Governance / review gate (standing rule, not yet code-enforced).** No
-  content in this pipeline has an enforced human sign-off gate before
-  landing in `output/`. The only automated enforcement anywhere in the
-  pipeline is the em-dash/passive-voice linter (`lint_content.py`); it does
-  not check citation accuracy, brand-safety, or claim validity. Standing
-  rule going forward: any stat-bearing post, or any post using first-person/
-  confessional voice, requires a human reviewer's sign-off (name + date,
-  tracked on the content calendar tracker) before its `Status` can move to
-  "Published." Use `publish_tracker_template.csv` (repo root) for this: it
-  is a generic, reusable tracker template with `Reviewed By`/`Review Date`
-  columns built in, plus `Status`, `Clicks`, `Leads/Conversions`, and
-  `Last Checked` for basic performance follow-up. At the start of each
-  publishing cycle, copy it to a dated working file (e.g.
-  `jul2026_publish_tracker.csv`) and fill it in per batch, do not edit the
-  template in place. This is currently a process discipline enforced by
-  humans following the rule, not something `generate.py`/`lint_content.py`
-  can block on.
+- **Governance / review gate (CLI-enforced).** Draft output can be saved before
+  review. The review CLI requires Approved status, a nonempty reviewer, and a
+  valid review date before moving any row to Published. It matches one exact
+  path or unique basename; ambiguous matches fail. Approval/rejection records
+  `--reviewer NAME` or the current OS user and today's date. Returning a row to
+  Draft or InReview clears its sign-off. Direct CSV edits bypass this gate;
+  the CLI does not authenticate reviewers or verify citations, brand safety,
+  claim validity, or disclosure. Stat-bearing and first-person content still
+  requires the documented human checks. Copy publish_tracker_template.csv for
+  each publishing cycle; never edit the template in place. CLI trackers live
+  in the workspace's data/publish_tracker_YYYYMM.csv.
 - **Disclosure rule for first-person/confessional voice (standing rule,
   decided).** Any template using first-person "I" voice (e.g. LiveJournal's
   confessional style) must either (a) be clearly disclosed as a branded

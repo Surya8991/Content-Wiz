@@ -1,11 +1,16 @@
 import argparse
 import csv
+import html
+import math
 import os
 import re
 import sys
 import zipfile
 from datetime import datetime
 from pathlib import Path
+from threading import Lock
+from urllib.parse import urlsplit
+from uuid import uuid4
 
 import templates
 import textprompts
@@ -219,6 +224,57 @@ PLATFORM_MAP = {
     "testimonial_request": "testimonial_request",
     "creator_brief":    "creator_brief",
     "photo_brief":      "photo_brief",
+    # Additional global and regional channels
+    'bluesky': 'bluesky_post',
+    'bsky': 'bluesky_post',
+    'bluesky_post': 'bluesky_post',
+    'mastodon': 'mastodon_post',
+    'mastodon_post': 'mastodon_post',
+    'telegram': 'telegram_channel_post',
+    'telegram_channel': 'telegram_channel_post',
+    'telegram_channel_post': 'telegram_channel_post',
+    'whatsapp': 'whatsapp_channel_update',
+    'whatsapp_channel': 'whatsapp_channel_update',
+    'whatsapp_channel_update': 'whatsapp_channel_update',
+    'youtube_community': 'youtube_community_post',
+    'youtube_post': 'youtube_community_post',
+    'youtube_community_post': 'youtube_community_post',
+    'snapchat': 'snapchat_story',
+    'snapchat_story': 'snapchat_story',
+    'snapchat_spotlight': 'snapchat_story',
+    'twitch': 'twitch_stream',
+    'twitch_stream': 'twitch_stream',
+    'kick': 'kick_stream',
+    'kick_stream': 'kick_stream',
+    'spotify': 'spotify_episode',
+    'spotify_episode': 'spotify_episode',
+    'patreon': 'patreon_post',
+    'patreon_post': 'patreon_post',
+    'product_hunt': 'product_hunt_launch',
+    'producthunt': 'product_hunt_launch',
+    'product_hunt_launch': 'product_hunt_launch',
+    'slack': 'slack_community_post',
+    'slack_community': 'slack_community_post',
+    'slack_community_post': 'slack_community_post',
+    'nextdoor': 'nextdoor_post',
+    'nextdoor_post': 'nextdoor_post',
+    'lemon8': 'lemon8_post',
+    'lemon8_post': 'lemon8_post',
+    'wechat': 'wechat_article',
+    'wechat_article': 'wechat_article',
+    'weibo': 'weibo_post',
+    'weibo_post': 'weibo_post',
+    'xiaohongshu': 'xiaohongshu_note',
+    'rednote': 'xiaohongshu_note',
+    'xiaohongshu_note': 'xiaohongshu_note',
+    'douyin': 'douyin_script',
+    'douyin_script': 'douyin_script',
+    'bilibili': 'bilibili_video',
+    'bilibili_video': 'bilibili_video',
+    'line': 'line_message',
+    'line_message': 'line_message',
+    'line_official': 'line_message',
+
 }
 
 MD_KEYS   = {"blog_writing_md"}
@@ -310,6 +366,27 @@ SUBFOLDER_MAP = {
     "testimonial_request":   "Testimonial_Request",
     "creator_brief":         "UGC_Briefs",
     "photo_brief":           "UGC_Briefs",
+    'bluesky_post': 'Bluesky',
+    'mastodon_post': 'Mastodon',
+    'telegram_channel_post': 'Telegram',
+    'whatsapp_channel_update': 'WhatsApp_Channels',
+    'youtube_community_post': 'YouTube_Community',
+    'snapchat_story': 'Snapchat',
+    'twitch_stream': 'Twitch',
+    'kick_stream': 'Kick',
+    'spotify_episode': 'Spotify',
+    'patreon_post': 'Patreon',
+    'product_hunt_launch': 'Product_Hunt',
+    'slack_community_post': 'Slack',
+    'nextdoor_post': 'Nextdoor',
+    'lemon8_post': 'Lemon8',
+    'wechat_article': 'WeChat',
+    'weibo_post': 'Weibo',
+    'xiaohongshu_note': 'Xiaohongshu',
+    'douyin_script': 'Douyin',
+    'bilibili_video': 'Bilibili',
+    'line_message': 'LINE',
+
 }
 
 
@@ -393,13 +470,18 @@ def print_platform_list():
         print(f"  {folder:<24} aliases: {', '.join(aliases)}")
 
 
+def workspace_root():
+    """Writable user workspace, independent of the installed package location."""
+    return Path(os.environ.get("CONTENT_WIZ_WORKSPACE") or Path.cwd()).resolve()
+
+
 def default_output_dir():
-    return os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
+    return str(workspace_root() / "output")
 
 
 def make_filename(platform_label, key, index=None):
     safe      = re.sub(r"[^\w]+", "_", platform_label.lower())
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S") + "_" + uuid4().hex
     suffix    = f"_{index:03d}" if index is not None else ""
     ext       = ".md" if key in MD_KEYS else ".html" if key in HTML_KEYS else ".txt"
     return f"{safe}{suffix}_{timestamp}{ext}"
@@ -521,15 +603,14 @@ def build_prompt(key, topic, audience, wordcount, platform_label, platform_targe
 def _resolve_contained_path(path, base_dir=None):
     """Resolve `path` and verify it stays within `base_dir`'s tree.
 
-    Default boundary is the project directory (the directory holding generate.py),
-    not the CWD - so `content-wiz --repurpose ./file.md` works from any working
-    directory as long as the target lives inside the project. Both --repurpose
-    files and bulk-CSV source_file entries are expected to live inside the project.
-    Returns the resolved Path, or None if `path` escapes that boundary (absolute
-    path elsewhere, ../ traversal, UNC path, etc.).
+    The default boundary is CONTENT_WIZ_WORKSPACE, or the current directory.
+    Relative paths are resolved against that workspace. Symlinks and paths
+    outside it are rejected.
     """
-    base = Path(base_dir or os.path.dirname(os.path.abspath(__file__))).resolve()
+    base = Path(base_dir or workspace_root()).resolve()
     raw = Path(path)
+    if not raw.is_absolute():
+        raw = base / raw
     # Reject the target itself and every parent up to `base` if any is a
     # symlink - resolve() would follow it out of the project tree silently,
     # so an attacker (or an accidental symlink) could sneak `C:\Windows\…`
@@ -1015,13 +1096,39 @@ _MD_LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 _MD_IMAGE = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
 
 
+def _safe_html_url(value, image=False):
+    value = html.unescape(value).strip()
+    if any(ord(c) < 32 or ord(c) == 127 for c in value) or "\\" in value:
+        return None
+    try:
+        scheme = urlsplit(value).scheme.lower()
+    except ValueError:
+        return None
+    allowed = ("", "http", "https") if image else ("", "http", "https", "mailto", "tel")
+    return html.escape(value, quote=True) if scheme in allowed else None
+
+
 def _md_inline_to_html(s):
-    """Convert inline markdown (bold/italic/code/link) to HTML. Images handled at block level."""
-    s = _MD_INLINE_CODE.sub(lambda m: f"<code>{m.group(1)}</code>", s)
-    s = _MD_BOLD.sub(lambda m: f"<strong>{m.group(1)}</strong>", s)
-    s = _MD_ITALIC.sub(lambda m: f"<em>{m.group(1)}</em>", s)
-    s = _MD_LINK.sub(lambda m: f'<a href="{m.group(2)}">{m.group(1)}</a>', s)
-    return s
+    """Render a small safe Markdown subset; raw HTML is always literal text."""
+    pattern = re.compile(r"`([^`]+)`|\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*|(?<!\*)\*([^*]+)\*(?!\*)")
+    result = []
+    cursor = 0
+    for match in pattern.finditer(s):
+        result.append(html.escape(s[cursor:match.start()]))
+        code, label, url, bold, italic = match.groups()
+        if code is not None:
+            result.append(f"<code>{html.escape(code)}</code>")
+        elif label is not None:
+            safe_url = _safe_html_url(url)
+            text = html.escape(label)
+            result.append(f'<a href="{safe_url}">{text}</a>' if safe_url is not None else text)
+        elif bold is not None:
+            result.append(f"<strong>{html.escape(bold)}</strong>")
+        else:
+            result.append(f"<em>{html.escape(italic)}</em>")
+        cursor = match.end()
+    result.append(html.escape(s[cursor:]))
+    return "".join(result)
 
 
 def _to_gutenberg(content):
@@ -1051,7 +1158,7 @@ def _to_gutenberg(content):
                 code_lines.append(lines[i])
                 i += 1
             i += 1  # skip closing fence
-            code = "\n".join(code_lines)
+            code = html.escape("\n".join(code_lines))
             blocks.append({"blockName": "core/code", "attrs": {},
                             "innerHTML": f"<pre class=\"wp-block-code\"><code>{code}</code></pre>"})
             continue
@@ -1059,8 +1166,14 @@ def _to_gutenberg(content):
         img_m = _MD_IMAGE.match(stripped)
         if img_m and img_m.end() == len(stripped):
             alt, src = img_m.group(1), img_m.group(2)
+            safe_src = _safe_html_url(src, image=True)
+            if safe_src is None:
+                blocks.append({"blockName": "core/paragraph", "attrs": {},
+                               "innerHTML": f"<p>{html.escape(alt)}</p>"})
+                i += 1
+                continue
             blocks.append({"blockName": "core/image", "attrs": {"url": src, "alt": alt},
-                            "innerHTML": f'<figure class="wp-block-image"><img src="{src}" alt="{alt}"/></figure>'})
+                            "innerHTML": f'<figure class="wp-block-image"><img src="{safe_src}" alt="{html.escape(alt, quote=True)}"/></figure>'})
             i += 1
             continue
         # Headings
@@ -1085,9 +1198,9 @@ def _to_gutenberg(content):
             while i < len(lines) and lines[i].strip().startswith(">"):
                 quote_lines.append(lines[i].strip().lstrip(">").strip())
                 i += 1
-            html = "".join(f"<p>{_md_inline_to_html(q)}</p>" for q in quote_lines if q)
+            quote_html = "".join(f"<p>{_md_inline_to_html(q)}</p>" for q in quote_lines if q)
             blocks.append({"blockName": "core/quote", "attrs": {},
-                            "innerHTML": f'<blockquote class="wp-block-quote">{html}</blockquote>'})
+                            "innerHTML": f'<blockquote class="wp-block-quote">{quote_html}</blockquote>'})
             continue
         # Unordered list
         if stripped.startswith(("- ", "* ", "+ ")):
@@ -1147,13 +1260,12 @@ def format_output(content, fmt):
 def log_publish_row(platform, topic, filepath, output_dir=None):
     """Append a Draft row to the current month's publish tracker CSV.
 
-    Writes to the project's `data/` directory (co-located with HARO_DataBank.csv
-    and matching the --log-publish help text); creates the directory if missing.
+    Writes to the workspace's `data/` directory; creates it if missing.
     `output_dir` is accepted for backward compatibility and ignored.
     """
     del output_dir  # kept for backward compatibility
     month_str = datetime.now().strftime("%Y%m")
-    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+    data_dir = str(workspace_root() / "data")
     os.makedirs(data_dir, exist_ok=True)
     tracker_path = os.path.join(data_dir, f"publish_tracker_{month_str}.csv")
     fieldnames = [
@@ -1180,18 +1292,18 @@ def log_publish_row(platform, topic, filepath, output_dir=None):
     return tracker_path
 
 
-def export_buffer_csv(log_rows, output_dir):
-    """Convert a bulk run log into a Buffer-compatible import CSV."""
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+def export_buffer_csv(log_rows, output_dir, payloads=None):
+    """Export finished content; omit prompt-only rows and failed generations."""
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S") + "_" + uuid4().hex
     buf_path = os.path.join(output_dir, f"buffer_import_{timestamp}.csv")
     fieldnames = ["Text", "Media URLs", "Scheduled at", "Profile"]
-    with open(buf_path, "w", newline="", encoding="utf-8") as f:
+    with open(buf_path, "x", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         for row in log_rows:
-            if row.get("status") == "ok":
+            if row.get("status") == "generated" and payloads is not None:
                 writer.writerow({
-                    "Text": f"[{row['platform']}] {row['topic']} - see attached prompt",
+                    "Text": payloads[row["filename"]],
                     "Media URLs": "",
                     "Scheduled at": "",
                     "Profile": "",
@@ -1275,6 +1387,32 @@ def _internal_link_manifest(cluster, files):
 _REVIEW_STATES = ("Draft", "InReview", "Approved", "Rejected", "Published")
 
 
+def _preflight_cost(prompts, provider=None, model=None, cap=None, show=False):
+    """Validate the complete run before provider calls or output writes."""
+    if cap is None and not show:
+        return
+    if cap is not None and (not math.isfinite(cap) or cap < 0):
+        print("Error: --budget-cap must be finite and nonnegative.", file=sys.stderr)
+        sys.exit(3)
+    import llm
+    total = 0.0
+    for prompt in prompts:
+        cost, meta = llm.estimate_cost_usd(prompt, provider=provider, model=model)
+        if show:
+            _print_cost_estimate(cost, meta)
+        if cost is None:
+            if cap is not None:
+                print("Error: unknown model pricing; cannot enforce --budget-cap.", file=sys.stderr)
+                sys.exit(3)
+        else:
+            total += cost
+    if cap is not None:
+        print(f"[budget] projected total ${total:.4f}", file=sys.stderr)
+        if total > cap:
+            print(f"Error: estimated cost exceeds --budget-cap ${cap:.4f}.", file=sys.stderr)
+            sys.exit(3)
+
+
 def _print_cost_estimate(cost, meta):
     """Human-readable pre-flight print for --estimate-cost / --budget-cap."""
     p, m = meta["provider"], meta["model"]
@@ -1291,7 +1429,7 @@ def _print_cost_estimate(cost, meta):
 def _publish_tracker_path(month=None):
     """Return the current (or a specified YYYYMM) publish tracker CSV path."""
     m = month or datetime.now().strftime("%Y%m")
-    return os.path.join(os.path.dirname(os.path.abspath(__file__)), "data",
+    return os.path.join(workspace_root(), "data",
                          f"publish_tracker_{m}.csv")
 
 
@@ -1333,8 +1471,7 @@ def review_list(month=None):
 
 
 def review_update(filename, new_status, reviewer=None, month=None):
-    """Move a row from one status to another. `filename` is matched as a
-    suffix of the tracker's File column so callers can pass the basename."""
+    """Update one exact path or unique basename; publishing requires approval."""
     if new_status not in _REVIEW_STATES:
         print(f"error: status must be one of {_REVIEW_STATES}", file=sys.stderr)
         return 1
@@ -1343,32 +1480,49 @@ def review_update(filename, new_status, reviewer=None, month=None):
     if not rows:
         print(f"error: no rows in {safe_relpath(path)}", file=sys.stderr)
         return 1
-    matched = 0
-    today = datetime.now().date().isoformat()
-    reviewer = reviewer or os.environ.get("USER") or os.environ.get("USERNAME") or "unknown"
-    for r in rows:
-        if r.get("File", "").endswith(filename) or r.get("File", "") == filename:
-            r["Status"] = new_status
-            if new_status in ("Approved", "Rejected"):
-                r["Reviewed By"] = reviewer
-                r["Review Date"] = today
-            matched += 1
-    if matched == 0:
-        print(f"error: no rows in tracker match '{filename}'", file=sys.stderr)
+    normalized = filename.strip().replace("\\", "/")
+    if not normalized:
+        print("error: filename must not be empty", file=sys.stderr)
         return 1
+    def matches(row):
+        stored = (row.get("File") or "").replace("\\", "/")
+        return stored == normalized if "/" in normalized else stored.rsplit("/", 1)[-1] == normalized
+    selected = [r for r in rows if matches(r)]
+    if len(selected) != 1:
+        print(f"error: expected one matching row for '{filename}', found {len(selected)}; "
+              "use the exact File value from the tracker", file=sys.stderr)
+        return 1
+    row = selected[0]
+    if new_status == "Published":
+        try:
+            datetime.strptime(row.get("Review Date", ""), "%Y-%m-%d")
+            valid_date = True
+        except (TypeError, ValueError):
+            valid_date = False
+        if row.get("Status") != "Approved" or not (row.get("Reviewed By") or "").strip() or not valid_date:
+            print("error: publishing requires Approved status, reviewer name, and review date", file=sys.stderr)
+            return 1
+    if new_status in ("Approved", "Rejected"):
+        reviewer = (reviewer or os.environ.get("USER") or os.environ.get("USERNAME") or "").strip()
+        if not reviewer:
+            print("error: reviewer name is required", file=sys.stderr)
+            return 1
+        row["Reviewed By"] = reviewer
+        row["Review Date"] = datetime.now().date().isoformat()
+    elif new_status in ("Draft", "InReview"):
+        row["Reviewed By"] = ""
+        row["Review Date"] = ""
+    row["Status"] = new_status
+    fields = list(dict.fromkeys(fields + ["Reviewed By", "Review Date"]))
     _write_tracker(path, fields, rows)
-    print(f"Updated {matched} row(s) to {new_status} in {safe_relpath(path)}")
+    print(f"Updated 1 row to {new_status} in {safe_relpath(path)}")
     return 0
 
 
-def _parallel_generate_bulk(jobs, zf, process_job, workers):
+def _parallel_generate_bulk(jobs, zf, process_job, workers, on_error):
     """Run `process_job(i, job, zf)` for every (i, job) in `jobs` across a
-    ThreadPoolExecutor of `workers` threads. `process_job` is the closure
-    from `run_bulk`; the underlying list appends and `zf.writestr` are
-    Python-level operations already implicitly serialized by the GIL for
-    our purposes (log_rows/errors are list.append; ZipFile.writestr holds
-    the zip's internal lock). We still cap concurrency at `workers` to
-    respect provider rate limits."""
+    ThreadPoolExecutor of `workers` threads. The caller serializes ZIP
+    writes and records failed futures through `on_error`."""
     from concurrent.futures import ThreadPoolExecutor, as_completed
 
     workers = max(1, int(workers))
@@ -1378,8 +1532,7 @@ def _parallel_generate_bulk(jobs, zf, process_job, workers):
             # Surface any unexpected exception rather than losing it silently.
             exc = fut.exception()
             if exc is not None:
-                print(f"  [row {futures[fut]:03d}] unexpected error: {exc}",
-                       file=sys.stderr)
+                on_error(futures[fut], exc)
 
 
 def write_bulk_log(log_rows, path):
@@ -1401,6 +1554,7 @@ def parse_bulk_row(row, i):
         return None, f"Row {i}: skipped - invalid wordcount"
     return {
         "platform":        platform,
+        "url":             url,
         "topic":           topic,
         "wordcount":       wordcount,
         "audience":        resolve_audience(row.get("audience", "").strip() or None, url, platform.lower()),
@@ -1503,21 +1657,8 @@ def run_single(args):
             + _fence_untrusted(block_body)
         )
 
-    # --estimate-cost: compute a pre-flight cost estimate and print. Also
-    # enforce --budget-cap if set (raises before any provider call).
-    if getattr(args, "estimate_cost", False) or getattr(args, "budget_cap", None):
-        import llm
-        cost, meta = llm.estimate_cost_usd(
-            base_prompt, provider=args.provider, model=args.model)
-        _print_cost_estimate(cost, meta)
-        cap = getattr(args, "budget_cap", None)
-        if cap is not None and cost is not None and cost > cap:
-            print(f"Error: estimated cost ${cost:.4f} exceeds --budget-cap ${cap:.4f}. "
-                  f"Aborting.", file=sys.stderr)
-            sys.exit(3)
-
     total_variants = max(1, getattr(args, "variants", 1) or 1)
-
+    prompts = []
     for variant_num in range(1, total_variants + 1):
         prompt = base_prompt
         if total_variants > 1:
@@ -1531,6 +1672,11 @@ def run_single(args):
                 f"No two variants may share an identical hook opener or CTA question."
             )
 
+        prompts.append(prompt)
+
+    _preflight_cost(prompts, args.provider, args.model, getattr(args, "budget_cap", None),
+                    getattr(args, "estimate_cost", False))
+    for variant_num, prompt in enumerate(prompts, start=1):
         print("\n" + "=" * 60)
         if total_variants > 1:
             print(f"[VARIANT {variant_num}/{total_variants}]")
@@ -1558,7 +1704,7 @@ def run_single(args):
         subdir   = os.path.join(output_dir, folder)
         os.makedirs(subdir, exist_ok=True)
         filepath = os.path.join(subdir, filename)
-        with open(filepath, "w", encoding="utf-8") as f:
+        with open(filepath, "x", encoding="utf-8") as f:
             f.write(content)
         label = "Content" if args.generate else "Prompt"
         print(f"\n{label} saved to: {safe_relpath(filepath)}")
@@ -1585,7 +1731,7 @@ def _maybe_generate(prompt, out_key, args):
 
 def run_bulk(csv_path, output_dir_arg=None, global_cta=None, dry_run=False,
              scheduler_format=None, generate_content=False, provider=None, model=None,
-             fmt=None, parallel=1, budget_cap=None):
+             fmt=None, parallel=1, budget_cap=None, estimate_cost=False):
     if not os.path.exists(csv_path):
         print(f"Error: CSV file not found: {csv_path}")
         sys.exit(1)
@@ -1595,8 +1741,6 @@ def run_bulk(csv_path, output_dir_arg=None, global_cta=None, dry_run=False,
         _validate_provider_or_exit(provider)
 
     output_dir = output_dir_arg or default_output_dir()
-    if not dry_run:
-        os.makedirs(output_dir, exist_ok=True)
 
     jobs = []
     errors = []
@@ -1622,56 +1766,19 @@ def run_bulk(csv_path, output_dir_arg=None, global_cta=None, dry_run=False,
             print(f"  Row {i}: '{platform}'")
         print()
 
-    # Budget cap: with --generate --budget-cap X, refuse the whole run if the
-    # summed pre-flight cost estimate would exceed X. Cheap sample: estimate
-    # cost from the first row's prompt and multiply by len(jobs) - crude but
-    # a real ceiling. Only runs when --generate is set.
-    if generate_content and not dry_run and budget_cap is not None:
-        import llm
-        sample_i, sample_job = jobs[0]
-        try:
-            sample_prompt = build_prompt(
-                resolve(sample_job["platform"])[1] or "blog_writing",
-                topic=sample_job["topic"], audience=sample_job["audience"],
-                wordcount=sample_job["wordcount"],
-                platform_label=sample_job["platform"].lower(),
-                platform_target=sample_job["platform_target"],
-                title=sample_job["title"], from_platform=sample_job["from_platform"],
-                market=sample_job["market"],
-            ) if resolve(sample_job["platform"])[0] == "template" else textprompts.render(
-                sample_job["platform"].lower(), topic=sample_job["topic"],
-                audience=sample_job["audience"], wordcount=sample_job["wordcount"],
-            )
-        except Exception:
-            sample_prompt = " ".join([sample_job.get("topic", ""), sample_job.get("audience", "")])
-        cost, meta = llm.estimate_cost_usd(sample_prompt, provider=provider, model=model)
-        if cost is not None:
-            projected = cost * len(jobs)
-            print(f"[budget] estimated ${cost:.4f} per row x {len(jobs)} rows "
-                   f"= projected ${projected:.2f} on {meta['provider']}/{meta['model']}",
-                   file=sys.stderr)
-            if projected > budget_cap:
-                print(f"Error: projected bulk cost ${projected:.2f} exceeds "
-                      f"--budget-cap ${budget_cap:.2f}. Aborting before any provider call.",
-                      file=sys.stderr)
-                sys.exit(3)
-        else:
-            print(f"[budget] no pricing table for {meta['provider']}/{meta['model']}; "
-                   f"budget cap cannot be enforced pre-flight.", file=sys.stderr)
-
     print(f"Processing {len(jobs)} job(s) from {os.path.basename(csv_path)}...\n")
 
-    timestamp     = datetime.now().strftime("%Y%m%d_%H%M%S")
+    timestamp     = datetime.now().strftime("%Y%m%d_%H%M%S") + "_" + uuid4().hex
     zip_filename  = f"bulk_{timestamp}.zip"
     zip_path      = os.path.join(output_dir, zip_filename)
     log_filename  = f"log_{timestamp}.csv"
     log_path      = os.path.join(output_dir, log_filename)
     log_rows      = []
+    payloads = {}
+    zip_lock = Lock()
 
-    def process_job(i, job, zf):
-        """Build the prompt for one row. Writes it into `zf` (real run), or just
-        prints it when `zf` is None (--dry-run: nothing touches disk). Appends
-        to the enclosing `errors`/`log_rows` lists as it goes."""
+    def prepare_job(i, job):
+        """Assemble each row once, before estimating or executing the batch."""
         platform = job["platform"]
         kind, key = resolve(platform)
 
@@ -1706,7 +1813,7 @@ def run_bulk(csv_path, output_dir_arg=None, global_cta=None, dry_run=False,
             if kind == "text":
                 prompt = textprompts.render(
                     platform.lower(), topic=job["topic"], audience=job["audience"],
-                    wordcount=job["wordcount"], cta=cta,
+                    wordcount=job["wordcount"], cta=cta, url=job["url"],
                 )
                 folder = textprompts.subfolder_for(platform.lower())
                 file_key = "text"
@@ -1732,6 +1839,11 @@ def run_bulk(csv_path, output_dir_arg=None, global_cta=None, dry_run=False,
                               "filename": "", "status": f"error: {e}"})
             return
 
+        return prompt, folder, file_key
+
+    def process_job(i, job, zf):
+        prompt, folder, file_key = prepared[i]
+        platform = job["platform"]
         payload = prompt
         status = "ok"
         if generate_content and zf is not None:
@@ -1757,25 +1869,49 @@ def run_bulk(csv_path, output_dir_arg=None, global_cta=None, dry_run=False,
             print(payload)
             print("-" * 60)
         else:
-            zf.writestr(arcname, payload)
+            with zip_lock:
+                zf.writestr(arcname, payload)
             print(f"  [{i:03d}] {arcname}")
 
+        payloads[arcname] = payload
         log_rows.append({"row": i, "platform": platform, "topic": job["topic"],
                           "filename": arcname, "status": status})
+
+    def record_failure(i, exc):
+        job = dict(jobs)[i]
+        errors.append(f"Row {i}: {exc}")
+        log_rows.append({"row": i, "platform": job["platform"], "topic": job["topic"],
+                         "filename": "", "status": f"error: {exc}"})
+
+    prepared = {}
+    for i, job in jobs:
+        try:
+            result = prepare_job(i, job)
+            if result is not None:
+                prepared[i] = result
+        except Exception as exc:
+            record_failure(i, exc)
+    jobs = [(i, job) for i, job in jobs if i in prepared]
+    _preflight_cost([prompt for prompt, _, _ in prepared.values()], provider, model,
+                    budget_cap, estimate_cost)
 
     if dry_run:
         for i, job in jobs:
             process_job(i, job, None)
     else:
+        os.makedirs(output_dir, exist_ok=True)
         try:
-            with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
+            with zipfile.ZipFile(zip_path, "x", zipfile.ZIP_DEFLATED) as zf:
                 if generate_content and parallel and parallel > 1:
                     # Parallelize only the LLM-bound path. Prompt building is
                     # cheap, so serial is fine for prompt-only bulk.
-                    _parallel_generate_bulk(jobs, zf, process_job, parallel)
+                    _parallel_generate_bulk(jobs, zf, process_job, parallel, record_failure)
                 else:
                     for i, job in jobs:
-                        process_job(i, job, zf)
+                        try:
+                            process_job(i, job, zf)
+                        except Exception as exc:
+                            record_failure(i, exc)
         finally:
             # Flush whatever log rows were produced so far, even if the loop above
             # crashed partway through - a truncated zip should never ship with no log.
@@ -1794,7 +1930,7 @@ def run_bulk(csv_path, output_dir_arg=None, global_cta=None, dry_run=False,
         print(f"\n{ok_count} {label}(s) packaged into: {safe_relpath(zip_path)}")
         print(f"Run log saved to:           {safe_relpath(log_path)}")
         if scheduler_format == "buffer":
-            buf_path = export_buffer_csv(log_rows, output_dir)
+            buf_path = export_buffer_csv(log_rows, output_dir, payloads)
             print(f"Buffer import CSV:          {safe_relpath(buf_path)}")
 
     # CI-friendly exit code: any row-level failure surfaces as a non-zero exit
@@ -1822,16 +1958,14 @@ def run_keyword_cluster(args):
         _validate_provider_or_exit(args.provider)
 
     output_dir = args.output_dir or default_output_dir()
-    os.makedirs(output_dir, exist_ok=True)
     cluster_folder = os.path.join(output_dir, "Keyword_Clusters")
-    os.makedirs(cluster_folder, exist_ok=True)
+    planned = []
 
     print(f"Processing {len(clusters)} cluster(s) from {os.path.basename(args.keyword_cluster)}...")
 
     for cluster in clusters:
         print(f"\n[cluster] {cluster['cluster_id']} - primary: '{cluster['primary']}' "
               f"({len(cluster['supporting'])} supporting)")
-        files_for_manifest = []
         # 1) Pillar post
         pillar_kwargs = {
             "topic": cluster["primary"],
@@ -1850,10 +1984,7 @@ def run_keyword_cluster(args):
             image_brief=getattr(args, "with_image_brief", False),
             locale=getattr(args, "locale", None),
         )
-        pillar_file = _write_cluster_post(cluster_folder, cluster["cluster_id"], "pillar",
-                                           cluster["primary"], pillar_prompt, args,
-                                           out_key="blog_writing")
-        files_for_manifest.append(("pillar", pillar_file))
+        posts = [("pillar", cluster["primary"], pillar_prompt)]
 
         # 2) One supporting post per supporting keyword
         supporting_wc = max(400, int(args.wordcount * 0.6))
@@ -1875,17 +2006,45 @@ def run_keyword_cluster(args):
                 image_brief=getattr(args, "with_image_brief", False),
                 locale=getattr(args, "locale", None),
             )
-            sup_file = _write_cluster_post(cluster_folder, cluster["cluster_id"], "supporting",
-                                            kw, sup_prompt, args, out_key="blog_writing")
-            files_for_manifest.append(("supporting", sup_file))
+            posts.append(("supporting", kw, sup_prompt))
 
-        # 3) Internal-link manifest
+        planned.append((cluster, posts))
+
+    _preflight_cost([prompt for _, posts in planned for _, _, prompt in posts],
+                    args.provider, args.model, getattr(args, "budget_cap", None),
+                    getattr(args, "estimate_cost", False))
+    if args.dry_run:
+        for _, posts in planned:
+            for role, topic, prompt in posts:
+                print(f"[{role}] {topic}\n{prompt}")
+        print("[dry-run] Nothing written.")
+        return
+
+    os.makedirs(cluster_folder, exist_ok=True)
+    failures = []
+    for cluster, posts in planned:
+        files_for_manifest = []
+        for role, topic, prompt in posts:
+            try:
+                filename = _write_cluster_post(cluster_folder, cluster["cluster_id"], role,
+                                               topic, prompt, args, out_key="blog_writing")
+                files_for_manifest.append((role, filename))
+            except Exception as exc:
+                failures.append({"cluster": cluster["cluster_id"], "role": role,
+                                 "topic": topic, "error": str(exc)})
+                print(f"  [{role}] failed: {exc}", file=sys.stderr)
         manifest = _internal_link_manifest(cluster, files_for_manifest)
         manifest_path = os.path.join(cluster_folder,
-                                      f"{_safe_cluster_slug(cluster['cluster_id'])}_manifest.txt")
-        with open(manifest_path, "w", encoding="utf-8") as f:
+                                     f"{_safe_cluster_slug(cluster['cluster_id'])}_{uuid4().hex}_manifest.txt")
+        with open(manifest_path, "x", encoding="utf-8") as f:
             f.write(manifest)
         print(f"  manifest -> {safe_relpath(manifest_path)}")
+    if failures:
+        import json
+        failure_path = Path(cluster_folder) / f"failures_{uuid4().hex}.json"
+        failure_path.write_text(json.dumps(failures, indent=2), encoding="utf-8")
+        print(f"Failure log: {failure_path}", file=sys.stderr)
+        sys.exit(2)
 
 
 def _safe_cluster_slug(s):
@@ -1903,14 +2062,17 @@ def _write_cluster_post(folder, cluster_id, role, topic, prompt, args, out_key):
             payload = llm.generate_content(prompt, model=args.model, provider=args.provider)
             if args.format:
                 payload = format_output(payload, args.format)
-        except RuntimeError as e:
-            print(f"  [{role}] generation failed - {e}", file=sys.stderr)
-            payload = prompt  # fall back to the prompt so writers still get something
+        except Exception as exc:
+            fallback_dir = Path(folder) / "failed_prompts"
+            fallback_dir.mkdir(exist_ok=True)
+            fallback = fallback_dir / f"{slug}_{uuid4().hex}.prompt.txt"
+            fallback.write_text("GENERATION FAILED - PROMPT ONLY\n\n" + prompt, encoding="utf-8")
+            raise RuntimeError(f"{exc}; fallback prompt: {fallback.name}") from exc
     ext = ".md" if out_key in MD_KEYS else ".html" if out_key in HTML_KEYS else ".txt"
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S") + "_" + uuid4().hex
     filename = f"{slug}_{timestamp}{ext}"
     fpath = os.path.join(folder, filename)
-    with open(fpath, "w", encoding="utf-8") as f:
+    with open(fpath, "x", encoding="utf-8") as f:
         f.write(payload)
     print(f"  [{role}] {topic!r} -> {safe_relpath(fpath)}")
     return filename
@@ -2016,8 +2178,8 @@ def main():
     parser.add_argument("--budget-cap",      type=float, default=None, dest="budget_cap",
                         metavar="USD",
                         help=("Refuse the run if the pre-flight cost estimate exceeds this USD "
-                              "figure. For --bulk, applies to the projected total (per-row estimate "
-                              "x row count). Exits 3 when tripped."))
+                              "figure or model pricing is unknown. Sums all variants, bulk rows, "
+                              "or cluster posts before generation. Exits 3 when tripped."))
     parser.add_argument("--parallel",        type=int, default=1, dest="parallel", metavar="N",
                         help=("Bulk-mode concurrency: number of --generate calls to run in parallel "
                               "(default 1). Ignored when --generate is not set."))
@@ -2032,10 +2194,12 @@ def main():
                               "publish tracker; `--review approve FILE` / `--review reject FILE` / "
                               "`--review inreview FILE` / `--review published FILE` update rows in "
                               "data/publish_tracker_YYYYMM.csv, stamping reviewer + date."))
+    parser.add_argument("--reviewer", default=None,
+                        help="Reviewer name for approval/rejection (defaults to the current OS user).")
     parser.add_argument("--export-scheduler", default=None, dest="export_scheduler",
                         choices=("buffer",),
-                        help="After a --bulk run, export a scheduler-ready CSV. Currently supports: "
-                             "buffer (Buffer import format).")
+                        help="After a --bulk --generate run, export finished content as a scheduler CSV. "
+                             "Prompt-only and failed rows are omitted. Supports: buffer.")
 
     args = parser.parse_args()
 
@@ -2052,9 +2216,9 @@ def main():
                       "inreview": "InReview", "published": "Published",
                       "draft": "Draft"}
         if sub in state_map:
-            if not rest:
-                parser.error(f"--review {sub} needs a FILE argument")
-            sys.exit(review_update(rest[0], state_map[sub]))
+            if len(rest) != 1:
+                parser.error(f"--review {sub} needs exactly one FILE argument")
+            sys.exit(review_update(rest[0], state_map[sub], reviewer=args.reviewer))
         parser.error(f"--review: unknown subcommand '{sub}'. "
                       "Use: list | approve FILE | reject FILE | inreview FILE | "
                       "published FILE | draft FILE")
@@ -2064,11 +2228,24 @@ def main():
         return
 
     if args.bulk:
+        unsupported = [flag for flag, value in (
+            ("--tone", args.tone), ("--language", args.language), ("--locale", args.locale),
+            ("--voice-samples", args.voice_samples), ("--log-publish", args.log_publish),
+            ("--keywords", args.keywords), ("--with-image-brief", args.with_image_brief),
+            ("--fetch-competitors", args.fetch_competitors), ("--variants", args.variants != 1),
+        ) if value]
+        row_flags = {"--platform", "--topic", "--audience", "--wordcount", "--title",
+                     "--platform-target", "--url", "--repurpose", "--from-platform", "--reviewer"}
+        unsupported.extend(sorted({arg.split("=", 1)[0] for arg in sys.argv[1:]} & row_flags))
+        if unsupported:
+            parser.error("Bulk mode does not support " + ", ".join(unsupported)
+                         + "; use CSV columns for row settings or single-run mode for authoring options.")
         run_bulk(args.bulk, output_dir_arg=args.output_dir, global_cta=args.cta,
                  dry_run=args.dry_run, scheduler_format=args.export_scheduler,
                  generate_content=args.generate, provider=args.provider,
                  model=args.model, fmt=args.format,
-                 parallel=args.parallel, budget_cap=args.budget_cap)
+                 parallel=args.parallel, budget_cap=args.budget_cap,
+                 estimate_cost=args.estimate_cost)
     elif args.repurpose:
         if not args.platform:
             parser.error("--platform is required with --repurpose (specifies the target platform)")

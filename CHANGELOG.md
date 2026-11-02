@@ -5,6 +5,66 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.11.0] - 2026-11-02
+
+### Added
+
+- 20 rich platform builders: Bluesky, Mastodon, Telegram Channels, WhatsApp
+  Channels, YouTube Community posts, Snapchat, Twitch, Kick, Spotify, Patreon,
+  Product Hunt, Slack, Nextdoor, Lemon8, WeChat, Weibo, Xiaohongshu/RED, Douyin,
+  Bilibili, and LINE Official Account.
+- Platform-specific deliverables and editorial budgets, market-aware B2B/B2C/
+  creator voice, CTA handling, truthful authorship and evidence rules, CLI aliases,
+  dedicated output folders, strategy notes, and regression tests.
+- `facebook` and `fb` aliases for the existing Facebook organic text prompt.
+- This expands content generation only; direct platform publishing is not added.
+
+### Fixed
+
+- Cluster dry-runs now print prompts without provider calls or output writes.
+- Cost preflight sums every assembled bulk prompt, variant, and cluster post.
+  Zero caps are enforced; unknown pricing and invalid caps fail with exit 3.
+  Estimates remain estimates rather than a guarantee of actual billed usage.
+- Parallel and serial bulk failures produce per-row error logs and exit 2.
+  ZIP writes are serialized across workers.
+- Wheels and source distributions include config.json and all 90 prompt assets.
+  CI exercises the installed CLI outside the checkout.
+- Unique output IDs and exclusive content-file creation prevent same-second
+  runs from overwriting prior output.
+- Bulk text prompts retain each CSV row's brand URL. Buffer export contains
+  finished generated text, excluding failed and prompt-only rows.
+- Review updates require an exact path or unique basename. Publishing requires
+  Approved status, a nonempty reviewer, and a valid review date. Resetting a
+  row to Draft or InReview clears its prior sign-off.
+- Gutenberg conversion escapes raw HTML, code examples, and attributes, and
+  rejects unsafe link/image URL schemes.
+- Cluster failures produce a failure log and exit 2. Fallback prompts are
+  explicitly labeled and stored in failed_prompts; manifests list successful
+  drafts only.
+- All provider adapters reject nonempty responses with known truncation or
+  blocking finish reasons rather than saving partial text as finished content.
+- Configuration types and consumed values are validated. Invalid configuration
+  reports the offending field and uses an independent copy of fallback defaults.
+
+### Changed
+
+- User workspaces are separate from installed package resources. The current
+  directory is the default workspace; CONTENT_WIZ_WORKSPACE overrides it.
+  Output, review trackers, and relative source-file paths use the workspace.
+- Configuration precedence: CONTENT_WIZ_CONFIG, workspace config.json, packaged
+  example config. Source path containment still rejects escapes and symlinks.
+- Unsupported bulk authoring flags now fail explicitly with exit 2. Per-row
+  settings belong in CSV columns; authoring options require single-run mode.
+- Added --reviewer for explicit approval/rejection attribution.
+- Updated README, agent instructions, audit status, and improvement-plan status.
+
+### Validation
+
+- 176 tests ran: 175 passed, one skipped; content lint and Ruff passed.
+- Installed-wheel checks rendered every text-prompt alias and verified custom
+  workspace config, repurpose input, output, and review tracker paths.
+- Regression tests use mocked providers; no live LLM calls were made.
+
 ## [0.10.8] - 2026-08-10
 
 Ships every improvement + every new prompt flagged by the v0.10.7

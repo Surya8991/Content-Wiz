@@ -59,6 +59,8 @@ TEXT_PROMPT_MAP = {
     # Phase 8 high-priority prompts (added 2026-07-14)
     "facebook_organic":    ("Facebook_Organic_Post_Prompt.txt",   "Facebook"),
     "facebook_post":       ("Facebook_Organic_Post_Prompt.txt",   "Facebook"),
+    "facebook":       ("Facebook_Organic_Post_Prompt.txt",   "Facebook"),
+    "fb":       ("Facebook_Organic_Post_Prompt.txt",   "Facebook"),
     "fb_post":             ("Facebook_Organic_Post_Prompt.txt",   "Facebook"),
     "twitter_ads":         ("Twitter_Ads_Prompt.txt",             "Twitter_Ads"),
     "x_ads":               ("Twitter_Ads_Prompt.txt",             "Twitter_Ads"),

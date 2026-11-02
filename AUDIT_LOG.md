@@ -1,3 +1,33 @@
+# Content Wiz - Current Audit Status
+
+## Reliability remediation - 2026-11-02 (v0.11.0)
+
+Both recent review rounds are fixed and regression-tested. The 14 findings
+covered budget/dry-run handling, bulk failure reporting, packaged assets,
+output collisions, brand URL propagation, scheduler payloads, review approval,
+HTML escaping, cluster failure handling, truncated responses, config validation,
+workspace separation, and unsupported bulk flags. Cluster dry-run and budget
+handling were one finding; zero/unknown-price single-run caps were another.
+
+Evidence: 176 tests ran (175 passed, one skipped), content lint and Ruff passed,
+and the installed wheel rendered every flat prompt alias outside the checkout.
+Custom workspace config, repurpose input, output, and tracker checks passed.
+Provider regression tests were mocked; no live LLM calls were made.
+
+The release also adds 20 platform builders, Facebook short aliases, a dated
+strategy reference, and single/bulk regression coverage for the additions.
+
+Scope limits: preflight costs are estimates, human citation/disclosure review
+remains necessary, direct CSV edits bypass the review CLI, and reviewer names
+are attribution rather than authenticated identities. Unsupported bulk authoring
+options fail explicitly rather than being implemented in bulk mode.
+
+See CHANGELOG.md and README.md for current behavior. Everything below is an
+archived, point-in-time audit; old line numbers, test counts, and open-finding
+statements do not describe the current release.
+
+---
+
 # Content Wiz — Full Project Audit Log (v2)
 
 **Generated:** 2026-07-13

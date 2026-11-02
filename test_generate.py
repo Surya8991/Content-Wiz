@@ -897,20 +897,20 @@ class Phase10HelperTests(unittest.TestCase):
         # Cleanup: remove any row we added to keep repeated test runs deterministic.
         os.remove(tracker)
 
-    def test_export_buffer_csv_only_includes_ok_rows(self):
+    def test_export_buffer_csv_only_includes_generated_content(self):
         import csv as _csv
         import tempfile
 
         rows = [
             {"row": 1, "platform": "twitter", "topic": "topic-A",
-             "filename": "x.txt", "status": "ok"},
+             "filename": "x.txt", "status": "generated"},
             {"row": 2, "platform": "gmb",     "topic": "topic-B",
              "filename": "y.txt", "status": "error: unknown platform"},
             {"row": 3, "platform": "linkedin", "topic": "topic-C",
-             "filename": "z.txt", "status": "ok"},
+             "filename": "z.txt", "status": "generated"},
         ]
         with tempfile.TemporaryDirectory() as tmp:
-            path = generate.export_buffer_csv(rows, tmp)
+            path = generate.export_buffer_csv(rows, tmp, {"x.txt": "topic-A finished", "z.txt": "topic-C finished"})
             with open(path, "r", encoding="utf-8") as f:
                 reader = list(_csv.DictReader(f))
         self.assertEqual(len(reader), 2)

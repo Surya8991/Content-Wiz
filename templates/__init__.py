@@ -29,3 +29,26 @@ from .product import (  # noqa: F401
     positioning_statement, pre_launch_teaser,
 )
 from .ugc import creator_brief, photo_brief, testimonial_request, ugc_video_brief  # noqa: F401
+
+from .platforms import (  # noqa: F401
+    bluesky_post,
+    mastodon_post,
+    telegram_channel_post,
+    whatsapp_channel_update,
+    youtube_community_post,
+    snapchat_story,
+    twitch_stream,
+    kick_stream,
+    spotify_episode,
+    patreon_post,
+    product_hunt_launch,
+    slack_community_post,
+    nextdoor_post,
+    lemon8_post,
+    wechat_article,
+    weibo_post,
+    xiaohongshu_note,
+    douyin_script,
+    bilibili_video,
+    line_message,
+)

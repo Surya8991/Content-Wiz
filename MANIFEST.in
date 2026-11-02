@@ -1,0 +1,2 @@
+include config.json
+recursive-include prompts *.txt

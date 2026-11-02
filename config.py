@@ -5,9 +5,14 @@ tool never hard-fails on a config problem.
 """
 import copy
 import json
+import math
 import os
+import sys
 
-_CONFIG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json")
+_PACKAGED_CONFIG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json")
+_WORKSPACE_CONFIG_PATH = os.path.join(os.environ.get("CONTENT_WIZ_WORKSPACE") or os.getcwd(), "config.json")
+_CONFIG_PATH = (os.environ.get("CONTENT_WIZ_CONFIG") or
+                (_WORKSPACE_CONFIG_PATH if os.path.isfile(_WORKSPACE_CONFIG_PATH) else _PACKAGED_CONFIG_PATH))
 
 _FALLBACK = {
     "defaults": {
@@ -26,11 +31,68 @@ _FALLBACK = {
 }
 
 
+def _validate(data):
+    """Validate consumed fields before they can break prompt or provider code."""
+    def require(condition, field, expected):
+        if not condition:
+            raise ValueError(f"{field}: expected {expected}")
+
+    require(isinstance(data, dict), "config", "an object")
+    defaults = data.get("defaults", {})
+    brands = data.get("brands", {})
+    require(isinstance(defaults, dict), "defaults", "an object")
+    require(isinstance(brands, dict), "brands", "an object")
+    for key in ("audience", "llm_provider", "llm_model"):
+        if key in defaults:
+            require(isinstance(defaults[key], str) and bool(defaults[key].strip()),
+                    f"defaults.{key}", "a nonempty string")
+    if "llm_provider" in defaults:
+        require(defaults["llm_provider"] in ("anthropic", "gemini", "openai", "local"),
+                "defaults.llm_provider", "anthropic, gemini, openai, or local")
+    for key in ("wordcount", "llm_max_tokens", "llm_max_retries"):
+        if key in defaults:
+            minimum = 0 if key == "llm_max_retries" else 1
+            require(type(defaults[key]) is int and defaults[key] >= minimum,
+                    f"defaults.{key}", f"an integer >= {minimum}")
+    models = defaults.get("llm_models", {})
+    require(isinstance(models, dict), "defaults.llm_models", "an object")
+    for key, value in models.items():
+        require(isinstance(value, str) and bool(value.strip()), f"defaults.llm_models.{key}", "a model name")
+    prices = defaults.get("llm_pricing", {})
+    require(isinstance(prices, dict), "defaults.llm_pricing", "an object")
+    for provider, table in prices.items():
+        require(isinstance(table, dict), f"defaults.llm_pricing.{provider}", "an object")
+        for model, rates in table.items():
+            field = f"defaults.llm_pricing.{provider}.{model}"
+            require(isinstance(rates, dict), field, "an object with input/output rates")
+            for kind in ("input", "output"):
+                value = rates.get(kind)
+                require(type(value) in (int, float) and math.isfinite(value) and value >= 0,
+                        f"{field}.{kind}", "a finite nonnegative number")
+    for domain, brand in brands.items():
+        field = f"brands.{domain}"
+        require(bool(domain.strip()), "brands", "nonempty domain keys")
+        require(isinstance(brand, dict), field, "an object")
+        for key in ("name", "description", "audience", "hashtag", "market"):
+            if key in brand:
+                require(isinstance(brand[key], str), f"{field}.{key}", "a string")
+        require((brand.get("market", "").strip().lower() or "b2b") in ("b2b", "b2c", "creator"),
+                f"{field}.market", "b2b, b2c, or creator")
+        overrides = brand.get("platform_audience_overrides", {})
+        require(isinstance(overrides, dict), f"{field}.platform_audience_overrides", "an object")
+        for platform, audience in overrides.items():
+            require(isinstance(audience, str) and bool(audience.strip()),
+                    f"{field}.platform_audience_overrides.{platform}", "a nonempty string")
+
+
 def load():
     try:
         with open(_CONFIG_PATH, "r", encoding="utf-8") as f:
             data = json.load(f)
-    except (OSError, ValueError):
+        _validate(data)
+    except (OSError, ValueError) as exc:
+        print(f"Warning: invalid or unavailable config '{_CONFIG_PATH}': {exc}. Using fallback defaults.",
+              file=sys.stderr)
         return copy.deepcopy(_FALLBACK)
     # Merge missing default keys from fallback so callers can rely on all keys.
     # Deep-copy the fallback so callers mutating merged["brands"] (or defaults)

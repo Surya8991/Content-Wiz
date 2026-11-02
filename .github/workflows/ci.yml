@@ -38,7 +38,16 @@ jobs:
         run: pip install .
 
       - name: Smoke test console script
-        run: content-wiz --list
+        working-directory: ${{ runner.temp }}
+        run: |
+          content-wiz --list
+          content-wiz --platform whitepaper --topic "Package asset test" --url edstellar.com --dry-run
+          python -c "import config; assert config.BRANDS, 'Packaged brand config is missing'"
+          mkdir -p content-wiz-workspace
+          export CONTENT_WIZ_WORKSPACE="$PWD/content-wiz-workspace"
+          printf 'Source material for the installed CLI.' > "$CONTENT_WIZ_WORKSPACE/source.md"
+          content-wiz --platform twitter --topic "Workspace test" --repurpose source.md --log-publish
+          python -c "import os; from pathlib import Path; p = Path(os.environ['CONTENT_WIZ_WORKSPACE']); assert list((p / 'output').rglob('*.*')); assert list((p / 'data').glob('publish_tracker_*.csv'))"
 
       - name: Install LLM provider extras
         run: pip install .[llm]

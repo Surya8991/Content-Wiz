@@ -75,8 +75,8 @@ latam/apac). To match a specific writer's voice, add `--voice-samples
   `--repurpose` content. Especially for personal-brand and creator posts.
 - **Cost + budget controls**: `--estimate-cost` prints a token+USD
   pre-flight against the pricing table in `llm.py`; `--budget-cap USD`
-  refuses the run (exit 3) if the estimate exceeds the cap. Works
-  per-prompt and across `--bulk`.
+  refuses the run (exit 3) if the estimate exceeds the cap or pricing is
+  unknown. Sums all variants, bulk rows, or cluster posts before generation.
 - **Bulk parallelism**: `--generate --bulk --parallel N` fans out LLM
   calls across N threads with retry/backoff.
 - **SEO cluster mode** (`--keyword-cluster CSV_FILE`): generate one
@@ -121,6 +121,24 @@ latam/apac). To match a specific writer's voice, add `--voice-samples
 - **Zero required dependencies** for the core tool (Python 3.9+ stdlib);
   provider SDKs install per-choice via extras.
 
+Current release: **0.11.0 (2026-11-02)**. See
+[CHANGELOG.md](CHANGELOG.md) for fixes and compatibility changes.
+
+The platform expansion adds 20 channels: Bluesky, Mastodon, Telegram Channels,
+WhatsApp Channels, YouTube Community posts, Snapchat, Twitch, Kick, Spotify,
+Patreon, Product Hunt, Slack, Nextdoor, Lemon8, WeChat, Weibo, Xiaohongshu,
+Douyin, Bilibili, and LINE. Existing Facebook organic prompts also accept
+`facebook` and `fb`. All additions work in single and bulk prompt generation,
+with optional LLM generation; they are not direct publishing integrations.
+See [additional-platform strategy notes](strategies/strategy-additional-platforms.md)
+for deliverables, editorial budgets, feature checks, and official references.
+
+```bash
+python generate.py --platform bluesky --topic "A practical onboarding lesson" --dry-run
+python generate.py --platform whatsapp --topic "This week's workshop" --url yourdomain.com
+python generate.py --platform wechat --topic "Customer onboarding" --language "Simplified Chinese" --dry-run
+```
+
 ## Directory Structure
 
 ```
@@ -159,11 +177,13 @@ Content Wiz/
 ├── lint_content.py                   ← Content-rule linter (no em-dashes, etc.)
 ├── pyproject.toml                    ← Packaging + ruff config (content-wiz entry point)
 ├── hooks/pre-commit                  ← Lint + tests before every commit
-├── .github/workflows/ci.yml          ← CI: content lint + ruff + tests
+├── .github/workflows/ci.yml          ← CI: lint + tests + installed-package/workspace checks
 └── test_generate.py                  ← Smoke tests (python -m unittest test_generate)
 ```
 
-`generate.py` creates each `output/` subfolder on demand from `SUBFOLDER_MAP`.
+`generate.py` creates each workspace `output/` subfolder on demand from
+`SUBFOLDER_MAP`. In an installed CLI, output and tracker folders belong to the
+workspace, not the package directory.
 The subfolders it can produce are:
 
 ```
@@ -406,6 +426,26 @@ for what `generate.py` can produce.
 | `substack_post` | `substack_post`, `substack` | Substack |
 | `glossary_page` | `glossary_page`, `glossary`, `definition_page` | Glossary_Pages |
 | `discord_announcement` | `discord_announcement`, `discord` | Discord |
+| `bluesky_post` | `bluesky`, `bsky`, `bluesky_post` | Bluesky |
+| `mastodon_post` | `mastodon`, `mastodon_post` | Mastodon |
+| `telegram_channel_post` | `telegram`, `telegram_channel`, `telegram_channel_post` | Telegram |
+| `whatsapp_channel_update` | `whatsapp`, `whatsapp_channel`, `whatsapp_channel_update` | WhatsApp_Channels |
+| `youtube_community_post` | `youtube_community`, `youtube_post`, `youtube_community_post` | YouTube_Community |
+| `snapchat_story` | `snapchat`, `snapchat_story`, `snapchat_spotlight` | Snapchat |
+| `twitch_stream` | `twitch`, `twitch_stream` | Twitch |
+| `kick_stream` | `kick`, `kick_stream` | Kick |
+| `spotify_episode` | `spotify`, `spotify_episode` | Spotify |
+| `patreon_post` | `patreon`, `patreon_post` | Patreon |
+| `product_hunt_launch` | `product_hunt`, `producthunt`, `product_hunt_launch` | Product_Hunt |
+| `slack_community_post` | `slack`, `slack_community`, `slack_community_post` | Slack |
+| `nextdoor_post` | `nextdoor`, `nextdoor_post` | Nextdoor |
+| `lemon8_post` | `lemon8`, `lemon8_post` | Lemon8 |
+| `wechat_article` | `wechat`, `wechat_article` | WeChat |
+| `weibo_post` | `weibo`, `weibo_post` | Weibo |
+| `xiaohongshu_note` | `xiaohongshu`, `rednote`, `xiaohongshu_note` | Xiaohongshu |
+| `douyin_script` | `douyin`, `douyin_script` | Douyin |
+| `bilibili_video` | `bilibili`, `bilibili_video` | Bilibili |
+| `line_message` | `line`, `line_message`, `line_official` | LINE |
 | `onboarding_sequence` | `onboarding_sequence`, `onboarding` | Lifecycle_Email |
 | `win_back_sequence` | `win_back_sequence`, `win_back`, `winback` | Lifecycle_Email |
 | `churn_prevention` | `churn_prevention`, `churn` | Lifecycle_Email |
@@ -489,18 +529,19 @@ Run `python generate.py --list` for the live, authoritative list of every alias.
 | `--bulk CSV` | Batch mode: writes a ZIP + run-log CSV. Exits code 2 on any row error. |
 | `--parallel N` | Bulk-mode concurrency: number of `--generate` calls to run in parallel (default 1). |
 | `--list` | Print all platforms/aliases and exit. |
-| `--dry-run` | Print the assembled prompt without writing a file. |
+| `--dry-run` | Print assembled prompts without provider calls or output writes, including bulk and cluster modes. |
 | `--generate` | Call an LLM and save finished content instead of just the prompt (needs that provider's API key + SDK - see "LLM Providers" below). |
 | `--provider` | Which LLM to use for `--generate`: `anthropic` (default), `gemini`, `openai`, or `local`. |
 | `--model` | Override the LLM model id for `--generate` (defaults to the selected provider's entry in `config.json`). |
 | `--estimate-cost` | Pre-flight: print an approximate token count and USD cost against the pricing table in `llm.py`. |
-| `--budget-cap USD` | Refuse the run (exit 3) if the pre-flight cost estimate exceeds this USD figure. Works per-prompt and per-bulk (projected total). |
+| `--budget-cap USD` | Refuse the run (exit 3) if the summed estimate exceeds this finite, nonnegative USD figure or model pricing is unknown. Includes all variants, bulk rows, and cluster posts. |
 | `--locale` | Recipient market: `us|uk|eu|de|fr|es|br|in|jp|au|ca|eea|latam|apac|global`. Selects currency, disclosure regulator, SMS-consent regime, privacy law, employment framework, style guide, and regional source tier. Composes with `--language`. |
 | `--language` | Free-form output language ("Brazilian Portuguese", "French (France)"). When combined with `--locale`, drops its localization body and only emits the "write in this language" line. |
 | `--voice-samples FILE` | Load 1-N past posts (split on `---` / `===` / two blank lines, cap ~8000 chars) as few-shot voice anchors, wrapped in an UNTRUSTED fence. |
 | `--fetch-competitors URL,URL,URL` | Fetch competitor pages, extract main text, append under UNTRUSTED fence. Primarily for `--platform skyscraper`. |
 | `--keyword-cluster CSV_FILE` | SEO cluster mode: one pillar + N supporting blog posts per cluster + an internal-link manifest. CSV columns: `cluster_id, primary_keyword, supporting_keywords, search_intent, notes`. |
 | `--review list \| approve FILE \| reject FILE \| inreview FILE \| published FILE` | Review workflow: mutates `data/publish_tracker_YYYYMM.csv` with reviewer + date. |
+| `--reviewer NAME` | Reviewer for approval/rejection; defaults to the current OS user. Publishing requires an approved row with a reviewer and valid review date. |
 | `--variants N`, `--keywords FILE`, `--tone`, `--log-publish`, `--format`, `--with-image-brief`, `--export-scheduler buffer` | Author-time tooling. |
 
 ## LLM Providers (`--generate`)
@@ -539,7 +580,32 @@ python generate.py --platform blog --topic "..." --generate --provider local --m
 `--generate` calls automatically retry on transient errors (429 / 5xx /
 rate limit) with exponential backoff. Set `defaults.llm_max_retries` in
 `config.json` (default 3) to tune. Add `--estimate-cost` for a pre-flight
-token+USD estimate, `--budget-cap 5.00` to refuse runs above a USD ceiling.
+token+USD estimate, `--budget-cap 5.00` to refuse runs whose total estimate
+exceeds $5. The cap checks estimates, not actual billed usage. Unknown pricing
+blocks capped runs; add a `defaults.llm_pricing` override for a custom model.
+
+Bulk preflight estimates each assembled prompt, including repurposed source
+content. Failed bulk rows are recorded in the run log and cause exit code 2,
+including failures during parallel generation. Output filenames include unique
+IDs so repeated runs in the same second preserve earlier files.
+
+Bulk mode rejects unsupported authoring flags (`--tone`, `--language`, `--locale`,
+`--voice-samples`, `--log-publish`, `--keywords`, `--with-image-brief`,
+`--fetch-competitors`, and multiple `--variants`) with exit code 2. Use single-run
+mode for these features. Supply per-row settings such as audience, URL, topic,
+and word count through CSV columns rather than global flags.
+
+Responses stopped by token limits or known blocking reasons are treated as
+incomplete, even if they contain text. Cluster generation continues other posts
+after a failure, writes a `failures_*.json` log, and exits 2. Fallback prompts
+live separately under `failed_prompts/*.prompt.txt`; manifests link only to
+successful drafts. Gutenberg conversion escapes raw HTML and code examples,
+and rejects unsafe link/image URL schemes.
+
+`--bulk ... --generate --export-scheduler buffer` exports the generated text.
+Failed rows and prompt-only rows are omitted; a prompt-only export contains
+just the header. Review the content and fill scheduling/profile fields before
+importing it into your scheduler.
 
 Change the default provider for every run in `config.json`'s `defaults.llm_provider`
 (see below) instead of passing `--provider` every time.
@@ -573,8 +639,19 @@ Brands, default audience, default word count, and the LLM provider/model/token
 defaults live in `config.json` - edit there, not in code. `defaults.llm_provider`
 sets which provider `--generate` uses when `--provider` isn't passed;
 `defaults.llm_models` maps each provider name to its default model id, used when
-`--model` isn't passed. `config.py` loads it with a safe fallback if the file is
-missing.
+`--model` isn't passed. Invalid types or values produce a warning naming the
+field and fall back to generic defaults, as do missing or unreadable files.
+
+The workspace defaults to the current working directory. Set
+`CONTENT_WIZ_WORKSPACE` to an absolute directory to choose a different workspace.
+Default output, review trackers, and relative repurpose/source-file paths use
+that directory. Source paths outside the workspace and symlinks are rejected.
+Use `--output-dir` to override the output destination.
+
+Configuration loads from `CONTENT_WIZ_CONFIG` when set, otherwise from the
+workspace's `config.json` when present, otherwise from the packaged example
+config. Installed prompts remain package resources; user files and trackers
+belong in the workspace rather than the installation directory.
 
 Each brand entry can also declare:
 
@@ -590,7 +667,7 @@ Each brand entry can also declare:
 ## Development
 
 ```bash
-python -m unittest test_generate -v   # tests
+python -m unittest discover -p "test_*.py" -v   # all test suites
 python lint_content.py                # content-rule lint (no em-dashes, etc.)
 ruff check .                          # style lint
 git config core.hooksPath hooks       # enable the pre-commit hook (once per clone)
@@ -641,8 +718,8 @@ All content produced in this system follows these rules (defined in [prompts/_Br
     requires a human reviewer's sign-off (name + date) before its `Status`
     can move to "Published" on the content calendar tracker (use
     `publish_tracker_template.csv`, copied to a dated working file per
-    cycle, see Governance note below), this is a process discipline today,
-    not code-enforced
+    cycle, see Governance note below). The review CLI enforces approval before
+    a row can move to Published; citation verification remains a human task
 
 Rule 4 is enforced by the prompt instructions at generation time; it does not by
 itself guarantee the citation is accurate; a model can name a real organization
@@ -708,14 +785,16 @@ posts all anchored on "Gallup's State of the Global Workplace"):
 
 ### Governance note
 
-No content in this pipeline has an enforced human sign-off gate before it
-lands in `output/`. The only automated enforcement anywhere in this pipeline
-is `lint_content.py`'s em-dash/passive-voice check, it does not check citation
-accuracy, brand-safety, or claim validity. Standing rule: any stat-bearing
-post, or any post written in first-person/confessional voice, requires a
-human reviewer's sign-off (name + date, tracked on the content calendar
-tracker) before its `Status` can move to "Published." This is a process
-discipline today, not something the code blocks on.
+Drafts can land in `output/` before review. The review CLI allows a row to move
+to Published only from Approved, with a nonempty reviewer and valid review date.
+Approval records the OS user, or the explicit `--reviewer NAME`, and today's date.
+Returning a row to Draft or InReview clears its prior sign-off. File selection
+requires an exact path or unique basename; ambiguous matches are rejected.
+
+This gate records approval; it does not verify citation accuracy, brand safety,
+claim validity, or the reviewer's identity. Direct CSV edits bypass the CLI.
+Stat-bearing and first-person/confessional content still needs the documented
+human citation and disclosure checks before approval.
 
 Use [publish_tracker_template.csv](publish_tracker_template.csv) as the
 actual tracker artifact: it already has the `Reviewed By`/`Review Date`

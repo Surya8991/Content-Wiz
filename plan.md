@@ -1,8 +1,23 @@
 # Content-Wiz Improvement Plan
 **Created:** 2026-07-13  
-**Updated:** 2026-07-14 (v2 - full audit findings added)  
+**Updated:** 2026-11-02 (reliability fixes and platform expansion)
 **Source for new content:** D:\Coding\marketing-academy (406 lessons, 16 disciplines)  
 **Status tracking:** See CHANGELOG.md after each phase completes
+
+## Current status - 2026-11-02
+
+The two reliability reviews are remediated in v0.11.0. Completed work covers
+budget/dry-run enforcement, per-row failures, packaged assets, unique output
+names, brand URL propagation, generated scheduler payloads, review approval,
+safe HTML conversion, cluster failure isolation, truncation checks, config
+validation, user workspaces, and explicit unsupported-bulk errors.
+
+Validation: 176 tests ran (175 passed, one skipped), both linters passed, and
+installed-package checks passed outside the checkout with mocked/no LLM calls.
+See CHANGELOG.md for the release record and README.md for current operation.
+The platform expansion adds 20 global/regional channel builders, Facebook
+short aliases, platform strategy notes, and single/bulk regression coverage.
+The phases below are historical implementation notes, not a list of open bugs.
 
 ---
 
@@ -22,7 +37,7 @@ See CHANGELOG v0.7.0.
 ---
 
 ## Phase 4 - New Python Templates (3 files) ✅ COMPLETE
-cro.py, product.py, ugc.py written. **Note: not yet wired into CLI - see Phase 8.**
+cro.py, product.py, ugc.py written. **Wiring completed in Phase 7B below.**
 
 ---
 
@@ -208,7 +223,7 @@ symlink privileges).
 ## Definition of Done (v2 - in progress)
 - [x] All 5 unwired prompts wired into CLI
 - [x] cro.py / product.py / ugc.py imported and reachable
-- [ ] Duplicate Instagram prompt resolved
+- [x] Duplicate Instagram prompt resolved (Phase 7C)
 - [x] All 17 Phase 8 prompts written and wired
 - [x] All 21 Phase 9 strategy docs written
 - [x] Phase 10 tooling features implemented (10/12 complete; items 11-12 low priority)

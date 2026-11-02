@@ -240,6 +240,22 @@ def _empty_response_error(provider, detail=""):
     )
 
 
+class IncompleteResponseError(RuntimeError):
+    """Provider returned partial text that must not be saved as finished content."""
+
+
+def _check_completion(provider, reason):
+    name = getattr(reason, "name", reason)
+    if isinstance(name, str) and name.lower().split(".")[-1] in {
+        "max_tokens", "length", "max_output_tokens", "content_filter", "safety",
+        "recitation", "blocklist", "prohibited_content", "spii", "pause_turn",
+    }:
+        raise IncompleteResponseError(
+            f"{provider} returned incomplete or blocked content (finish reason: {name}). "
+            "Review the request or increase defaults.llm_max_tokens before retrying."
+        )
+
+
 def _generate_anthropic(prompt, api_key, model, max_tokens):
     try:
         import anthropic
@@ -254,6 +270,7 @@ def _generate_anthropic(prompt, api_key, model, max_tokens):
     text = "".join(block.text for block in message.content if block.type == "text")
     if not text:
         raise _empty_response_error("anthropic", f"stop_reason={getattr(message, 'stop_reason', '?')}")
+    _check_completion("anthropic", getattr(message, "stop_reason", None))
     return text
 
 
@@ -276,6 +293,7 @@ def _generate_gemini(prompt, api_key, model, max_tokens):
     if not text:
         finish_reason = getattr(response.candidates[0], "finish_reason", "?")
         raise _empty_response_error("gemini", f"finish_reason={finish_reason}")
+    _check_completion("gemini", getattr(response.candidates[0], "finish_reason", None))
     return text
 
 
@@ -311,6 +329,7 @@ def _generate_local(prompt, api_key, model, max_tokens):
     if not text:
         finish_reason = getattr(response.choices[0], "finish_reason", "?")
         raise _empty_response_error("local", f"finish_reason={finish_reason}")
+    _check_completion("local", getattr(response.choices[0], "finish_reason", None))
     return text
 
 
@@ -347,4 +366,5 @@ def _generate_openai(prompt, api_key, model, max_tokens):
     if not text:
         finish_reason = getattr(response.choices[0], "finish_reason", "?")
         raise _empty_response_error("openai", f"finish_reason={finish_reason}")
+    _check_completion("openai", getattr(response.choices[0], "finish_reason", None))
     return text
