@@ -22,7 +22,9 @@ class ReliabilityTests(unittest.TestCase):
     def setUp(self):
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
-        self.root = Path(temp.name)
+        # resolve(): on Windows TEMP can be an 8.3 short path (C:\Users\SURYA-~1\...),
+        # while workspace_root() returns the resolved long path; compare canonical forms.
+        self.root = Path(temp.name).resolve()
         self.stack = contextlib.ExitStack()
         self.addCleanup(self.stack.close)
         self.stdout, self.stderr = io.StringIO(), io.StringIO()
