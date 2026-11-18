@@ -689,7 +689,7 @@ verifiable material; the template does not require invented statistics or histor
 python -m unittest discover -p "test_*.py" -v   # all test suites
 python lint_content.py                # content-rule lint (no em-dashes, etc.)
 ruff check .                          # style lint
-git config core.hooksPath hooks       # enable the pre-commit hook (once per clone)
+git config core.hooksPath .githooks   # enable the pre-push gate (once per clone)
 ```
 
 CI runs all three on every push/PR (`.github/workflows/ci.yml`).

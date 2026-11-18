@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Content Wiz pre-commit hook: enforce content rules + tests before every commit.
-# Enable once per clone with:  git config core.hooksPath hooks
+# Superseded by .githooks/pre-push, which runs these checks before every push
+# (core.hooksPath is .githooks). Still handy to run by hand: bash hooks/pre-commit
 set -e
 
 repo_root="$(git rev-parse --show-toplevel)"
