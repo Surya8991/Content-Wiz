@@ -141,7 +141,7 @@ python generate.py --platform linkedin --topic "..." --locale de --language "Ger
 python -m unittest discover -p "test_*.py" -v   # all regression and smoke tests
 python lint_content.py                # content-rule lint
 ruff check .                          # style lint
-git config core.hooksPath hooks       # enable pre-commit hook (once per clone)
+git config core.hooksPath .githooks   # enable the pre-push gate (once per clone)
 ```
 CI runs all three (`.github/workflows/ci.yml`).
 
